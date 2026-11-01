@@ -139,6 +139,13 @@ section[id]{scroll-margin-top:84px}
 .s-navy .cards div{background:rgba(255,255,255,.95);color:var(--navy);border-radius:10px;padding:18px 18px 16px}
 .s-navy .cards b{display:block;font-size:17px;margin-bottom:4px}
 .s-navy .cards span{font-size:13.5px;color:#4A5866}
+.s-navy .cards a{background:rgba(255,255,255,.95);color:var(--navy);border-radius:10px;padding:12px 14px 14px;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s}
+.s-navy .cards a:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.25)}
+.s-navy .cards a b{display:block;font-size:16px;margin:8px 0 4px;line-height:1.25}
+.s-navy .cards a>span:not(.th){font-size:13px;color:#4A5866}
+.pcards .th{display:grid;place-items:center;aspect-ratio:4/3;background:#fff;border-radius:6px;overflow:hidden;color:var(--navy)}
+.pcards .th img{width:100%;height:100%;object-fit:contain}
+.pcards .th svg{width:52%;height:auto}
 .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:58px;height:58px;border:0;background:rgba(255,255,255,.25);cursor:pointer;display:grid;place-items:center}
 .arrow:hover{background:rgba(255,255,255,.45)}
 .arrow svg{width:26px;height:26px;stroke:#fff;stroke-width:2.5;fill:none}
@@ -155,6 +162,8 @@ section[id]{scroll-margin-top:84px}
   .s-navy .cards{grid-template-columns:1fr 1fr;gap:10px}
   .s-navy .cards div{padding:12px}
   .s-navy .cards span{display:none}
+  .s-navy .cards a>span:not(.th){display:none}
+  .pcards .th{aspect-ratio:16/9}
   .s-photo .badges{gap:18px}
   .badge i{width:50px;height:50px}
   .arrow{display:none}
@@ -422,7 +431,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <!-- HERO -->
 <div class="hero" id="hero" aria-roledescription="carousel">
   <div class="slides" id="slides">
-    <div class="slide s-photo" aria-label="1 / 4">
+    <div class="slide s-photo" aria-label="1 / 3">
       <img src="/tru-so.jpg" alt="" width="1000" height="988">
       <div class="wrap in">
         <div class="badges">
@@ -434,43 +443,23 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
         <a class="btn cta" href="#gioi-thieu">Learn more</a>
       </div>
     </div>
-    <div class="slide s-light" aria-label="2 / 4">
+    <div class="slide s-navy" aria-label="2 / 3">
       <div class="wrap in">
-        <div class="stage" aria-hidden="true">
-          <div class="dev" style="width:17%;aspect-ratio:3/5" data-i="cabinet"></div>
-          <div class="dev" style="width:21%;aspect-ratio:4/5" data-i="cabinet"></div>
-          <div class="dev" style="width:15%;aspect-ratio:1/1" data-i="autoclave"></div>
-          <div class="dev" style="width:14%;aspect-ratio:5/4" data-i="centrifuge"></div>
-          <div class="dev" style="width:15%;aspect-ratio:4/5" data-i="oven"></div>
+        <h2>Products</h2>
+        <p class="lead">Equipment and supplies for industry, healthcare, laboratories and education.</p>
+        <div class="cards pcards">
+          <a href="#san-pham" data-cat="cn"><span class="th"><img src="/anh-san-pham/crs1414.jpg" alt="" loading="lazy"></span><b>Industrial equipment</b><span>Machinery, pumps, fans, gearboxes, spare parts</span></a>
+          <a href="#san-pham" data-cat="yt"><span class="th"><img src="/anh-san-pham/bk-6310.jpg" alt="" loading="lazy"></span><b>Medical equipment</b><span>Clinical analyzers, hospital beds, sterilization</span></a>
+          <a href="#san-pham" data-cat="tn"><span class="th"><img src="/anh-san-pham/bsc-1300iia2-x.jpg" alt="" loading="lazy"></span><b>Laboratory equipment</b><span>Safety cabinets, ovens, furnaces, balances, centrifuges, consumables</span></a>
+          <a href="#san-pham" data-cat="dt"><span class="th" data-i="plc"></span><b>Electrical, electronics &amp; automation</b><span>PLCs, inverters, sensors, instruments</span></a>
+          <a href="#san-pham" data-cat="th"><span class="th" data-i="server"></span><b>Computers &amp; IT</b><span>Computers, servers, networking, software</span></a>
         </div>
-        <div class="r">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6h12M20 6v12L9 38a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L28 18V6"/><path d="M14 30h20"/></svg>
-          <h2>Laboratory<br>Equipment</h2>
-          <p class="sub">Biosafety cabinets, fume hoods, ovens, centrifuges, analytical balances</p>
-          <a class="btn" href="#san-pham" data-cat="tn">View more</a>
-        </div>
+        <p style="margin:26px 0 0"><a class="btn cta" href="#san-pham">View products</a></p>
       </div>
     </div>
-    <div class="slide s-light" aria-label="3 / 4">
+    <div class="slide s-navy" aria-label="3 / 3">
       <div class="wrap in">
-        <div class="stage" aria-hidden="true">
-          <div class="dev" style="width:18%;aspect-ratio:4/5" data-i="plc"></div>
-          <div class="dev" style="width:13%;aspect-ratio:3/5" data-i="drive"></div>
-          <div class="dev" style="width:20%;aspect-ratio:1/1" data-i="server"></div>
-          <div class="dev" style="width:20%;aspect-ratio:5/4" data-i="pc"></div>
-          <div class="dev" style="width:13%;aspect-ratio:3/4" data-i="sensor"></div>
-        </div>
-        <div class="r">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M8 18h32M14 26h6M14 32h6M26 26h8v6h-8z"/></svg>
-          <h2>Electrical – Automation<br>&amp; IT</h2>
-          <p class="sub">PLCs, inverters, sensors, computers, servers, software</p>
-          <a class="btn" href="#san-pham" data-cat="dt">View more</a>
-        </div>
-      </div>
-    </div>
-    <div class="slide s-navy" aria-label="4 / 4">
-      <div class="wrap in">
-        <h2>Engineering – Trading</h2>
+        <h2>Services</h2>
         <p class="lead">With you from consulting and design to supply, installation and maintenance.</p>
         <div class="cards">
           <div><b>Scientific &amp; technological research</b><span>Development, technology transfer</span></div>
@@ -479,7 +468,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
           <div><b>Equipment design – fabrication – repair</b><span>Industrial, medical, laboratory</span></div>
           <div><b>Trading, import – export</b><span>Materials, equipment, software</span></div>
         </div>
-        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">Fields of activity</a></p>
+        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">View services</a></p>
       </div>
     </div>
   </div>
@@ -844,7 +833,7 @@ const ICONS = {
 const CATS = [
   {id:'cn', name:'Industrial equipment', subs:['Mechanical machinery & equipment','Pumps, fans, gearboxes','Consumables & spare parts']},
   {id:'yt', name:'Medical equipment', subs:['Clinical analyzers','Hospital beds & trolleys','Sterilization equipment']},
-  {id:'tn', name:'Laboratory equipment', subs:['Biosafety cabinets, clean benches, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges','Freeze dryers, stirrers']},
+  {id:'tn', name:'Laboratory equipment', subs:['Biosafety cabinets, clean benches, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges','Freeze dryers, stirrers','Lab instruments, meters & consumables']},
   {id:'dt', name:'Electrical, Electronics & Automation', subs:['PLCs, controllers','Inverters, soft starters','Sensors, measuring instruments']},
   {id:'th', name:'Computers & IT', subs:['Computers, servers','Network equipment, cameras','Licensed software']}
 ];
@@ -863,6 +852,12 @@ const PRODUCTS = [
   {c:'yt', s:2, n:'BIOBASE BKQ-B50II vertical autoclave', code:'BKQ-B50II', img:'bkq-b50ii', d:'Capacity 50 L, working pressure 0.23 MPa, sterilising temperature 105–136 °C, resolution 0.1 °C; S30408 stainless steel chamber Φ386 × 514 mm; power 4.4 kW. Manufacturer: BIOBASE.', i:'autoclave', hot:1},
   {c:'yt', s:0, n:'BIOBASE BK-6310 5-part hematology analyzer', code:'BK-6310', img:'bk-6310', d:'60 tests/hour; 5-part differential, 25 parameters, 3 histograms and 3D scattergram; tri-angle laser scatter with impedance method; sample volume ≤ 20 μl; stores 300,000 results; bi-directional LIS (HL7). Manufacturer: BIOBASE.', i:'monitor', hot:1},
   {c:'yt', s:1, n:'BIOBASE MF301D-11 three-function electric bed', code:'MF301D-11', img:'mf301d-11', d:'Size 2120 × 910 × 520–770 mm; back rest 0–70°, thigh 0–30°, calf 0–10°; overall height 520–770 mm; safe load 175 kg; power 100–240 V; IPX4. Manufacturer: BIOBASE.', i:'bed'},
+  {c:'tn', s:1, n:'BIOBASE MX series muffle furnace', code:'MX series', img:'mx-series', vid:'/video/lo-nung-mx.mp4', d:'Stable high temperature for every thermal test. Suited to universities, research institutes, laboratories and industrial parks for ashing, sample calcination, heat treatment and materials testing. Chamber 6–30 L, max temperature 1000–1200 °C (special models up to 1700 °C), accuracy ±1 °C; ceramic fibre chamber, heating on 4 sides. Please contact us for advice on the right model for your laboratory. Manufacturer: BIOBASE.', i:'oven', hot:1},
+  {c:'tn', s:4, n:'BIOBASE micropipettes', code:'BIOBASE', img:'micropipette', d:'For aspirating and dispensing small sample volumes. Use standard or filter tips to suit the application. Single-channel and multichannel models.', i:'sensor', hot:1},
+  {c:'tn', s:4, n:'BIOBASE pH meters', code:'BIOBASE', img:'may-do-ph', d:"For checking the pH of water samples, raw materials and products according to the lab's methods. Supplied with suitable buffer solutions, storage solution and electrodes.", i:'sensor'},
+  {c:'tn', s:4, n:'BIOBASE vacuum filtration sets', code:'BIOBASE', img:'bo-loc-chan-khong', d:'For sample filtration, sample preparation and testing procedures. Membranes are chosen by pore size, membrane material and sample properties.', i:'pump'},
+  {c:'tn', s:4, n:'BIOBASE laboratory water purifiers', code:'BIOBASE', img:'may-loc-nuoc', d:'Water quality and output are chosen to match demand, together with the correct replacement filter cartridges, RO membranes and DI columns.', i:'pump'},
+  {c:'tn', s:2, n:'BIOBASE centrifuges and centrifuge tubes', code:'BIOBASE', img:'ong-ly-tam', d:'For sample separation and preparation. Rotors, adapters and centrifuge tubes should be selected as a matched set for the work.', i:'centrifuge'},
   {c:'cn', s:1, n:'Industrial gearbox', code:'VP-CN-01', d:'Fabrication, repair and replacement to technical requirements.', i:'gear', hot:1},
   {c:'cn', s:1, n:'Industrial pumps and fans', code:'VP-CN-02', d:'Supply, installation and maintenance for plants and sites.', i:'pump'},
   {c:'dt', s:0, n:'PLC controller', code:'VP-DT-01', d:'Control panels and production-line automation programming.', i:'plc', hot:1},
@@ -879,7 +874,7 @@ const norm = t => t.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').r
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* hero devices */
-document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dataset.i]);
+document.querySelectorAll('.dev[data-i],.th[data-i]').forEach(d => d.innerHTML = ICONS[d.dataset.i]);
 
 /* hero carousel */
 (function(){
@@ -932,7 +927,7 @@ function renderGrid(){
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'All products');
   $('catCount').textContent=list.length+' products'+(query.trim()?' matching “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-en.pdf" target="_blank" rel="noopener">Application paper (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Drawing (PDF)</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 for advice.</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-en.pdf" target="_blank" rel="noopener">Application paper (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Drawing (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 for advice.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Previous page">‹</button>';
   for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';

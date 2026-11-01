@@ -139,6 +139,13 @@ section[id]{scroll-margin-top:84px}
 .s-navy .cards div{background:rgba(255,255,255,.95);color:var(--navy);border-radius:10px;padding:18px 18px 16px}
 .s-navy .cards b{display:block;font-size:17px;margin-bottom:4px}
 .s-navy .cards span{font-size:13.5px;color:#4A5866}
+.s-navy .cards a{background:rgba(255,255,255,.95);color:var(--navy);border-radius:10px;padding:12px 14px 14px;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s}
+.s-navy .cards a:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.25)}
+.s-navy .cards a b{display:block;font-size:16px;margin:8px 0 4px;line-height:1.25}
+.s-navy .cards a>span:not(.th){font-size:13px;color:#4A5866}
+.pcards .th{display:grid;place-items:center;aspect-ratio:4/3;background:#fff;border-radius:6px;overflow:hidden;color:var(--navy)}
+.pcards .th img{width:100%;height:100%;object-fit:contain}
+.pcards .th svg{width:52%;height:auto}
 .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:58px;height:58px;border:0;background:rgba(255,255,255,.25);cursor:pointer;display:grid;place-items:center}
 .arrow:hover{background:rgba(255,255,255,.45)}
 .arrow svg{width:26px;height:26px;stroke:#fff;stroke-width:2.5;fill:none}
@@ -155,6 +162,8 @@ section[id]{scroll-margin-top:84px}
   .s-navy .cards{grid-template-columns:1fr 1fr;gap:10px}
   .s-navy .cards div{padding:12px}
   .s-navy .cards span{display:none}
+  .s-navy .cards a>span:not(.th){display:none}
+  .pcards .th{aspect-ratio:16/9}
   .s-photo .badges{gap:18px}
   .badge i{width:50px;height:50px}
   .arrow{display:none}
@@ -422,7 +431,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <!-- HERO -->
 <div class="hero" id="hero" aria-roledescription="carousel">
   <div class="slides" id="slides">
-    <div class="slide s-photo" aria-label="1 / 4">
+    <div class="slide s-photo" aria-label="1 / 3">
       <img src="/tru-so.jpg" alt="" width="1000" height="988">
       <div class="wrap in">
         <div class="badges">
@@ -434,43 +443,23 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
         <a class="btn cta" href="#gioi-thieu">Tìm hiểu thêm</a>
       </div>
     </div>
-    <div class="slide s-light" aria-label="2 / 4">
+    <div class="slide s-navy" aria-label="2 / 3">
       <div class="wrap in">
-        <div class="stage" aria-hidden="true">
-          <div class="dev" style="width:17%;aspect-ratio:3/5" data-i="cabinet"></div>
-          <div class="dev" style="width:21%;aspect-ratio:4/5" data-i="cabinet"></div>
-          <div class="dev" style="width:15%;aspect-ratio:1/1" data-i="autoclave"></div>
-          <div class="dev" style="width:14%;aspect-ratio:5/4" data-i="centrifuge"></div>
-          <div class="dev" style="width:15%;aspect-ratio:4/5" data-i="oven"></div>
+        <h2>Sản phẩm</h2>
+        <p class="lead">Thiết bị, vật tư cho Công nghiệp, Y tế, Phòng thí nghiệm, Giáo dục.</p>
+        <div class="cards pcards">
+          <a href="#san-pham" data-cat="cn"><span class="th"><img src="/anh-san-pham/crs1414.jpg" alt="" loading="lazy"></span><b>Thiết bị công nghiệp</b><span>Máy cơ khí, bơm, quạt, hộp giảm tốc, phụ tùng</span></a>
+          <a href="#san-pham" data-cat="yt"><span class="th"><img src="/anh-san-pham/bk-6310.jpg" alt="" loading="lazy"></span><b>Thiết bị y tế</b><span>Xét nghiệm, giường bệnh, tiệt trùng</span></a>
+          <a href="#san-pham" data-cat="tn"><span class="th"><img src="/anh-san-pham/bsc-1300iia2-x.jpg" alt="" loading="lazy"></span><b>Thiết bị thí nghiệm</b><span>Tủ an toàn, tủ sấy, lò nung, cân, máy ly tâm, vật tư</span></a>
+          <a href="#san-pham" data-cat="dt"><span class="th" data-i="plc"></span><b>Điện – Điện tử, Tự động hóa</b><span>PLC, biến tần, cảm biến, thiết bị đo</span></a>
+          <a href="#san-pham" data-cat="th"><span class="th" data-i="server"></span><b>Máy tính – Tin học</b><span>Máy tính, máy chủ, mạng, phần mềm</span></a>
         </div>
-        <div class="r">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6h12M20 6v12L9 38a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L28 18V6"/><path d="M14 30h20"/></svg>
-          <h2>Thiết bị<br>Thí nghiệm</h2>
-          <p class="sub">Tủ an toàn, tủ hút, tủ sấy, máy ly tâm, cân phân tích</p>
-          <a class="btn" href="#san-pham" data-cat="tn">Xem thêm</a>
-        </div>
+        <p style="margin:26px 0 0"><a class="btn cta" href="#san-pham">Xem sản phẩm</a></p>
       </div>
     </div>
-    <div class="slide s-light" aria-label="3 / 4">
+    <div class="slide s-navy" aria-label="3 / 3">
       <div class="wrap in">
-        <div class="stage" aria-hidden="true">
-          <div class="dev" style="width:18%;aspect-ratio:4/5" data-i="plc"></div>
-          <div class="dev" style="width:13%;aspect-ratio:3/5" data-i="drive"></div>
-          <div class="dev" style="width:20%;aspect-ratio:1/1" data-i="server"></div>
-          <div class="dev" style="width:20%;aspect-ratio:5/4" data-i="pc"></div>
-          <div class="dev" style="width:13%;aspect-ratio:3/4" data-i="sensor"></div>
-        </div>
-        <div class="r">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M8 18h32M14 26h6M14 32h6M26 26h8v6h-8z"/></svg>
-          <h2>Điện – Tự động hóa<br>&amp; Tin học</h2>
-          <p class="sub">PLC, biến tần, cảm biến, máy tính, máy chủ, phần mềm</p>
-          <a class="btn" href="#san-pham" data-cat="dt">Xem thêm</a>
-        </div>
-      </div>
-    </div>
-    <div class="slide s-navy" aria-label="4 / 4">
-      <div class="wrap in">
-        <h2>Kỹ thuật – Thương mại</h2>
+        <h2>Dịch vụ</h2>
         <p class="lead">Đồng hành từ tư vấn, thiết kế đến cung cấp, lắp đặt và bảo trì.</p>
         <div class="cards">
           <div><b>Nghiên cứu khoa học công nghệ</b><span>Phát triển, chuyển giao công nghệ</span></div>
@@ -479,7 +468,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
           <div><b>Thiết kế – Chế tạo – Sửa chữa thiết bị</b><span>Công nghiệp, Y tế, Phòng thí nghiệm</span></div>
           <div><b>Thương mại, xuất – nhập khẩu</b><span>Vật tư, thiết bị, phần mềm</span></div>
         </div>
-        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">Lĩnh vực hoạt động</a></p>
+        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">Xem dịch vụ</a></p>
       </div>
     </div>
   </div>
@@ -844,7 +833,7 @@ const ICONS = {
 const CATS = [
   {id:'cn', name:'Thiết bị công nghiệp', subs:['Máy và thiết bị cơ khí','Bơm, quạt, hộp giảm tốc','Vật tư, phụ tùng thay thế']},
   {id:'yt', name:'Thiết bị y tế', subs:['Thiết bị xét nghiệm','Giường, xe đẩy y tế','Thiết bị tiệt trùng']},
-  {id:'tn', name:'Thiết bị thí nghiệm', subs:['Tủ an toàn, tủ cấy, tủ hút','Tủ sấy, tủ ấm, lò nung','Cân, máy ly tâm','Máy đông khô, máy khuấy']},
+  {id:'tn', name:'Thiết bị thí nghiệm', subs:['Tủ an toàn, tủ cấy, tủ hút','Tủ sấy, tủ ấm, lò nung','Cân, máy ly tâm','Máy đông khô, máy khuấy','Dụng cụ, máy đo, vật tư phòng thí nghiệm']},
   {id:'dt', name:'Điện – Điện tử, Tự động hóa', subs:['PLC, bộ điều khiển','Biến tần, khởi động mềm','Cảm biến, thiết bị đo']},
   {id:'th', name:'Máy tính – Tin học', subs:['Máy tính, máy chủ','Thiết bị mạng, camera','Phần mềm bản quyền']}
 ];
@@ -863,6 +852,12 @@ const PRODUCTS = [
   {c:'yt', s:2, n:'Nồi hấp tiệt trùng đứng BIOBASE BKQ-B50II', code:'BKQ-B50II', img:'bkq-b50ii', d:'Dung tích 50 lít, áp suất làm việc 0,23 MPa, nhiệt độ tiệt trùng 105–136 °C, độ phân giải 0,1 °C; buồng thép không gỉ S30408 Φ386 × 514 mm; công suất 4,4 kW. Hãng BIOBASE.', i:'autoclave', hot:1},
   {c:'yt', s:0, n:'Máy phân tích huyết học 5 thành phần BIOBASE BK-6310', code:'BK-6310', img:'bk-6310', d:'60 mẫu/giờ; 5 thành phần bạch cầu, 25 thông số, 3 biểu đồ histogram và đồ thị phân tán 3D; tán xạ laser 3 góc kết hợp đo tổng trở; thể tích mẫu ≤ 20 μl; lưu 300.000 kết quả; kết nối LIS 2 chiều (HL7). Hãng BIOBASE.', i:'monitor', hot:1},
   {c:'yt', s:1, n:'Giường bệnh điện 3 chức năng BIOBASE MF301D-11', code:'MF301D-11', img:'mf301d-11', d:'Kích thước 2120 × 910 × 520–770 mm; nâng tựa lưng 0–70°, đùi 0–30°, bắp chân 0–10°; nâng hạ toàn giường 520–770 mm; tải an toàn 175 kg; nguồn 100–240 V; chống nước IPX4. Hãng BIOBASE.', i:'bed'},
+  {c:'tn', s:1, n:'Lò nung BIOBASE dòng MX', code:'MX series', img:'mx-series', vid:'/video/lo-nung-mx.mp4', d:'Nhiệt độ cao ổn định cho mọi phép thử nhiệt. Phù hợp cho trường đại học, viện nghiên cứu, phòng thí nghiệm và khu công nghiệp trong các phép thử tro hóa, nung mẫu, xử lý nhiệt và kiểm nghiệm vật liệu. Dung tích 6–30 lít, nhiệt độ tối đa 1000–1200 °C (model đặc biệt đến 1700 °C), độ chính xác ±1 °C; buồng sợi gốm, gia nhiệt 4 mặt. Quý khách vui lòng liên hệ để được tư vấn model phù hợp. Hãng BIOBASE.', i:'oven', hot:1},
+  {c:'tn', s:4, n:'Micropipette BIOBASE', code:'BIOBASE', img:'micropipette', d:'Thao tác hút, chia mẫu thể tích nhỏ. Kết hợp đầu côn thường hoặc đầu côn lọc phù hợp ứng dụng. Có loại đơn kênh và đa kênh.', i:'sensor', hot:1},
+  {c:'tn', s:4, n:'Máy đo pH BIOBASE', code:'BIOBASE', img:'may-do-ph', d:'Phục vụ kiểm tra pH mẫu nước, nguyên liệu và sản phẩm theo phương pháp của phòng lab. Lựa chọn kèm dung dịch chuẩn, dung dịch bảo quản và điện cực phù hợp.', i:'sensor'},
+  {c:'tn', s:4, n:'Bộ lọc chân không BIOBASE', code:'BIOBASE', img:'bo-loc-chan-khong', d:'Phục vụ lọc mẫu, chuẩn bị mẫu và quy trình kiểm nghiệm phù hợp. Lựa chọn màng lọc theo kích thước lỗ, vật liệu màng và tính chất mẫu.', i:'pump'},
+  {c:'tn', s:4, n:'Máy lọc nước phòng thí nghiệm BIOBASE', code:'BIOBASE', img:'may-loc-nuoc', d:'Lựa chọn chất lượng nước và công suất theo nhu cầu sử dụng, đồng thời xác định đúng lõi lọc, màng RO và cột DI thay thế.', i:'pump'},
+  {c:'tn', s:2, n:'Máy ly tâm và ống ly tâm BIOBASE', code:'BIOBASE', img:'ong-ly-tam', d:'Phục vụ tách và chuẩn bị mẫu. Cần chọn đồng bộ rotor, adapter và ống ly tâm theo yêu cầu công việc.', i:'centrifuge'},
   {c:'cn', s:1, n:'Hộp giảm tốc công nghiệp', code:'VP-CN-01', d:'Chế tạo, sửa chữa, thay thế theo yêu cầu kỹ thuật.', i:'gear', hot:1},
   {c:'cn', s:1, n:'Bơm và quạt công nghiệp', code:'VP-CN-02', d:'Cung cấp, lắp đặt, bảo dưỡng cho nhà máy, công trường.', i:'pump'},
   {c:'dt', s:0, n:'Bộ điều khiển PLC', code:'VP-DT-01', d:'Tủ điều khiển, lập trình tự động hóa dây chuyền.', i:'plc', hot:1},
@@ -879,7 +874,7 @@ const norm = t => t.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').r
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* hero devices */
-document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dataset.i]);
+document.querySelectorAll('.dev[data-i],.th[data-i]').forEach(d => d.innerHTML = ICONS[d.dataset.i]);
 
 /* hero carousel */
 (function(){
@@ -932,7 +927,7 @@ function renderGrid(){
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'Tất cả sản phẩm');
   $('catCount').textContent=list.length+' sản phẩm'+(query.trim()?' khớp với “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/vi/'+p.pdf+'.pdf" target="_blank" rel="noopener">Tải catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'.pdf" target="_blank" rel="noopener">Bài báo ứng dụng (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Bản vẽ (PDF)</a>':'')+'<a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 để được tư vấn.</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/vi/'+p.pdf+'.pdf" target="_blank" rel="noopener">Tải catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'.pdf" target="_blank" rel="noopener">Bài báo ứng dụng (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Bản vẽ (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video giới thiệu</a>':'')+'<a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 để được tư vấn.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Trang trước">‹</button>';
   for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';

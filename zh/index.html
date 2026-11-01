@@ -139,6 +139,13 @@ section[id]{scroll-margin-top:84px}
 .s-navy .cards div{background:rgba(255,255,255,.95);color:var(--navy);border-radius:10px;padding:18px 18px 16px}
 .s-navy .cards b{display:block;font-size:17px;margin-bottom:4px}
 .s-navy .cards span{font-size:13.5px;color:#4A5866}
+.s-navy .cards a{background:rgba(255,255,255,.95);color:var(--navy);border-radius:10px;padding:12px 14px 14px;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s}
+.s-navy .cards a:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.25)}
+.s-navy .cards a b{display:block;font-size:16px;margin:8px 0 4px;line-height:1.25}
+.s-navy .cards a>span:not(.th){font-size:13px;color:#4A5866}
+.pcards .th{display:grid;place-items:center;aspect-ratio:4/3;background:#fff;border-radius:6px;overflow:hidden;color:var(--navy)}
+.pcards .th img{width:100%;height:100%;object-fit:contain}
+.pcards .th svg{width:52%;height:auto}
 .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:58px;height:58px;border:0;background:rgba(255,255,255,.25);cursor:pointer;display:grid;place-items:center}
 .arrow:hover{background:rgba(255,255,255,.45)}
 .arrow svg{width:26px;height:26px;stroke:#fff;stroke-width:2.5;fill:none}
@@ -155,6 +162,8 @@ section[id]{scroll-margin-top:84px}
   .s-navy .cards{grid-template-columns:1fr 1fr;gap:10px}
   .s-navy .cards div{padding:12px}
   .s-navy .cards span{display:none}
+  .s-navy .cards a>span:not(.th){display:none}
+  .pcards .th{aspect-ratio:16/9}
   .s-photo .badges{gap:18px}
   .badge i{width:50px;height:50px}
   .arrow{display:none}
@@ -422,7 +431,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <!-- HERO -->
 <div class="hero" id="hero" aria-roledescription="carousel">
   <div class="slides" id="slides">
-    <div class="slide s-photo" aria-label="1 / 4">
+    <div class="slide s-photo" aria-label="1 / 3">
       <img src="/tru-so.jpg" alt="" width="1000" height="988">
       <div class="wrap in">
         <div class="badges">
@@ -434,43 +443,23 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
         <a class="btn cta" href="#gioi-thieu">了解更多</a>
       </div>
     </div>
-    <div class="slide s-light" aria-label="2 / 4">
+    <div class="slide s-navy" aria-label="2 / 3">
       <div class="wrap in">
-        <div class="stage" aria-hidden="true">
-          <div class="dev" style="width:17%;aspect-ratio:3/5" data-i="cabinet"></div>
-          <div class="dev" style="width:21%;aspect-ratio:4/5" data-i="cabinet"></div>
-          <div class="dev" style="width:15%;aspect-ratio:1/1" data-i="autoclave"></div>
-          <div class="dev" style="width:14%;aspect-ratio:5/4" data-i="centrifuge"></div>
-          <div class="dev" style="width:15%;aspect-ratio:4/5" data-i="oven"></div>
+        <h2>产品</h2>
+        <p class="lead">面向工业、医疗、实验室和教育的设备与物资。</p>
+        <div class="cards pcards">
+          <a href="#san-pham" data-cat="cn"><span class="th"><img src="/anh-san-pham/crs1414.jpg" alt="" loading="lazy"></span><b>工业设备</b><span>机械设备、泵、风机、减速机、备件</span></a>
+          <a href="#san-pham" data-cat="yt"><span class="th"><img src="/anh-san-pham/bk-6310.jpg" alt="" loading="lazy"></span><b>医疗设备</b><span>检验分析、病床、灭菌</span></a>
+          <a href="#san-pham" data-cat="tn"><span class="th"><img src="/anh-san-pham/bsc-1300iia2-x.jpg" alt="" loading="lazy"></span><b>实验室设备</b><span>安全柜、干燥箱、马弗炉、天平、离心机、耗材</span></a>
+          <a href="#san-pham" data-cat="dt"><span class="th" data-i="plc"></span><b>电气、电子与自动化</b><span>PLC、变频器、传感器、测量仪表</span></a>
+          <a href="#san-pham" data-cat="th"><span class="th" data-i="server"></span><b>计算机与信息技术</b><span>计算机、服务器、网络、软件</span></a>
         </div>
-        <div class="r">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6h12M20 6v12L9 38a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L28 18V6"/><path d="M14 30h20"/></svg>
-          <h2>实验室<br>设备</h2>
-          <p class="sub">生物安全柜、通风橱、干燥箱、离心机、分析天平</p>
-          <a class="btn" href="#san-pham" data-cat="tn">查看更多</a>
-        </div>
+        <p style="margin:26px 0 0"><a class="btn cta" href="#san-pham">查看产品</a></p>
       </div>
     </div>
-    <div class="slide s-light" aria-label="3 / 4">
+    <div class="slide s-navy" aria-label="3 / 3">
       <div class="wrap in">
-        <div class="stage" aria-hidden="true">
-          <div class="dev" style="width:18%;aspect-ratio:4/5" data-i="plc"></div>
-          <div class="dev" style="width:13%;aspect-ratio:3/5" data-i="drive"></div>
-          <div class="dev" style="width:20%;aspect-ratio:1/1" data-i="server"></div>
-          <div class="dev" style="width:20%;aspect-ratio:5/4" data-i="pc"></div>
-          <div class="dev" style="width:13%;aspect-ratio:3/4" data-i="sensor"></div>
-        </div>
-        <div class="r">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M8 18h32M14 26h6M14 32h6M26 26h8v6h-8z"/></svg>
-          <h2>电气 – 自动化<br>与信息技术</h2>
-          <p class="sub">PLC、变频器、传感器、计算机、服务器、软件</p>
-          <a class="btn" href="#san-pham" data-cat="dt">查看更多</a>
-        </div>
-      </div>
-    </div>
-    <div class="slide s-navy" aria-label="4 / 4">
-      <div class="wrap in">
-        <h2>技术 – 贸易</h2>
+        <h2>服务</h2>
         <p class="lead">从咨询、设计到供货、安装与维护，全程相伴。</p>
         <div class="cards">
           <div><b>科学技术研究</b><span>研发、技术转让</span></div>
@@ -479,7 +468,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
           <div><b>设备设计 – 制造 – 维修</b><span>工业、医疗、实验室</span></div>
           <div><b>贸易及进出口</b><span>物资、设备、软件</span></div>
         </div>
-        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">业务领域</a></p>
+        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">查看服务</a></p>
       </div>
     </div>
   </div>
@@ -844,7 +833,7 @@ const ICONS = {
 const CATS = [
   {id:'cn', name:'工业设备', subs:['机械设备','泵、风机、减速机','耗材及备品备件']},
   {id:'yt', name:'医疗设备', subs:['检验分析设备','病床、医用推车','灭菌设备']},
-  {id:'tn', name:'实验室设备', subs:['生物安全柜、超净工作台、通风橱','干燥箱、培养箱、马弗炉','天平、离心机','冷冻干燥机、搅拌器']},
+  {id:'tn', name:'实验室设备', subs:['生物安全柜、超净工作台、通风橱','干燥箱、培养箱、马弗炉','天平、离心机','冷冻干燥机、搅拌器','实验室器具、仪表及耗材']},
   {id:'dt', name:'电气电子与自动化', subs:['PLC、控制器','变频器、软启动器','传感器、测量仪器']},
   {id:'th', name:'计算机与信息技术', subs:['计算机、服务器','网络设备、摄像机','正版软件']}
 ];
@@ -863,6 +852,12 @@ const PRODUCTS = [
   {c:'yt', s:2, n:'BIOBASE BKQ-B50II 立式压力蒸汽灭菌器', code:'BKQ-B50II', img:'bkq-b50ii', d:'容积 50 L，工作压力 0.23 MPa，灭菌温度 105–136 °C，精度 0.1 °C；S30408 不锈钢内胆 Φ386 × 514 mm；功率 4.4 kW。制造商：BIOBASE。', i:'autoclave', hot:1},
   {c:'yt', s:0, n:'BIOBASE BK-6310 五分类血液分析仪', code:'BK-6310', img:'bk-6310', d:'每小时 60 个测试；五分类，25 项参数，3 个直方图及 3D 散点图；三角度激光散射结合电阻抗法；样本量 ≤ 20 μl；可存储 300,000 条结果；双向 LIS（HL7）。制造商：BIOBASE。', i:'monitor', hot:1},
   {c:'yt', s:1, n:'BIOBASE MF301D-11 三功能电动病床', code:'MF301D-11', img:'mf301d-11', d:'尺寸 2120 × 910 × 520–770 mm；背板 0–70°，大腿板 0–30°，小腿板 0–10°；整床升降 520–770 mm；安全负载 175 kg；电源 100–240 V；防护等级 IPX4。制造商：BIOBASE。', i:'bed'},
+  {c:'tn', s:1, n:'BIOBASE MX 系列马弗炉', code:'MX series', img:'mx-series', vid:'/video/lo-nung-mx.mp4', d:'稳定高温，满足各类热学试验。适用于高校、科研院所、实验室及工业园区的灰化、样品灼烧、热处理和材料检测。容积 6–30 L，最高温度 1000–1200 °C（特殊型号可达 1700 °C），控温精度 ±1 °C；陶瓷纤维炉膛，四面加热。欢迎联系我们，为您的实验室推荐合适型号。制造商：BIOBASE。', i:'oven', hot:1},
+  {c:'tn', s:4, n:'BIOBASE 移液器', code:'BIOBASE', img:'micropipette', d:'用于小体积样品的吸取和分配。可根据应用搭配普通吸头或滤芯吸头。提供单道和多道型号。', i:'sensor', hot:1},
+  {c:'tn', s:4, n:'BIOBASE pH 计', code:'BIOBASE', img:'may-do-ph', d:'按实验室方法检测水样、原料和产品的 pH 值。可配套选择标准缓冲液、保存液及合适的电极。', i:'sensor'},
+  {c:'tn', s:4, n:'BIOBASE 真空过滤装置', code:'BIOBASE', img:'bo-loc-chan-khong', d:'用于样品过滤、样品前处理及相关检测流程。滤膜按孔径、材质和样品性质选择。', i:'pump'},
+  {c:'tn', s:4, n:'BIOBASE 实验室纯水机', code:'BIOBASE', img:'may-loc-nuoc', d:'根据用水需求选择水质和产水量，并确定匹配的替换滤芯、RO 膜和 DI 柱。', i:'pump'},
+  {c:'tn', s:2, n:'BIOBASE 离心机及离心管', code:'BIOBASE', img:'ong-ly-tam', d:'用于样品分离和前处理。转子、适配器和离心管需按工作要求配套选择。', i:'centrifuge'},
   {c:'cn', s:1, n:'工业减速机', code:'VP-CN-01', d:'按技术要求制造、维修与更换。', i:'gear', hot:1},
   {c:'cn', s:1, n:'工业泵与风机', code:'VP-CN-02', d:'为工厂及工地供货、安装与保养。', i:'pump'},
   {c:'dt', s:0, n:'PLC控制器', code:'VP-DT-01', d:'控制柜及生产线自动化编程。', i:'plc', hot:1},
@@ -879,7 +874,7 @@ const norm = t => t.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').r
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* hero devices */
-document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dataset.i]);
+document.querySelectorAll('.dev[data-i],.th[data-i]').forEach(d => d.innerHTML = ICONS[d.dataset.i]);
 
 /* hero carousel */
 (function(){
@@ -932,7 +927,7 @@ function renderGrid(){
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'全部产品');
   $('catCount').textContent='共 '+list.length+' 个产品'+(query.trim()?'，匹配“'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/zh/'+p.pdf+'.pdf" target="_blank" rel="noopener">产品资料 PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-zh.pdf" target="_blank" rel="noopener">应用论文（PDF）</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">图纸（PDF）</a>':'')+'<a href="#lien-he">询价 →</a></div></div></article>'}).join(''):'<div class="empty">未找到匹配的产品。请致电 +84 899 990 683 咨询。</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/zh/'+p.pdf+'.pdf" target="_blank" rel="noopener">产品资料 PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-zh.pdf" target="_blank" rel="noopener">应用论文（PDF）</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">图纸（PDF）</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">产品视频</a>':'')+'<a href="#lien-he">询价 →</a></div></div></article>'}).join(''):'<div class="empty">未找到匹配的产品。请致电 +84 899 990 683 咨询。</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="上一页">‹</button>';
   for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';
