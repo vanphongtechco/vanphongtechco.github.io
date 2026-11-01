@@ -275,8 +275,18 @@ section{padding:70px 0}
 .cert .doc::before{content:"";position:absolute;inset:8px;border:2px solid #D7DEE6}
 .cert .doc span{position:relative;background:#fff;padding:8px 10px;font-size:12.5px;color:var(--muted)}
 .cert b{display:block;background:#36414D;color:#fff;font-size:14px;font-weight:500;padding:11px 14px;text-align:center}
-.cert small{display:block;padding:0 14px 12px;background:#36414D;color:#C9CED6;text-align:center;font-size:12px;margin-top:-4px}
+.cert small{display:block;padding:0 14px 12px;background:#36414D;color:#C9CED6;text-align:center;font-size:12px;margin-top:-4px;flex:1}
 @media (max-width:860px){.certs{grid-template-columns:1fr 1fr;gap:12px}}
+.cert-real{border:0;padding:0;font:inherit;text-align:inherit;cursor:zoom-in}
+.cert .doc.real{padding:0;background:#fff}
+.cert .doc.real::before{display:none}
+.cert .doc.real img{width:100%;height:100%;object-fit:cover;object-position:top}
+.cert-real:hover .doc.real{outline:3px solid var(--sky)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,20,35,.88);display:none;overflow:auto;padding:56px 16px 24px}
+.lb.open{display:block}
+.lb img{max-width:min(900px,100%);margin:0 auto 16px;box-shadow:0 10px 30px rgba(0,0,0,.4);background:#fff}
+.lb-close{position:fixed;top:12px;right:16px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;font-size:24px;line-height:1;cursor:pointer}
+.lb-note{color:#C9DBEE;text-align:center;font-size:13px;margin:0 0 14px}
 
 /* quick links */
 .qlinks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 22px}
@@ -493,9 +503,9 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 
 <!-- CERTIFICATES -->
 <section class="certs-band" id="chung-nhan"><div class="wrap">
-  <div class="title"><h2>Chứng nhận</h2><p>Ảnh chụp bản gốc các giấy tờ sẽ được cập nhật.</p></div>
+  <div class="title"><h2>Chứng nhận</h2><p>Bấm vào giấy tờ để xem. Các giấy tờ khác sẽ được cập nhật.</p></div>
   <div class="certs">
-    <div class="cert"><div class="doc"><span>Giấy chứng nhận đăng ký doanh nghiệp</span></div><b>Đăng ký doanh nghiệp</b><small>MSDN 0108797479 · thay đổi lần 4: 29/09/2026</small></div>
+    <button type="button" class="cert cert-real" data-gallery="../giay-to/dkdn-trang-1.jpg|../giay-to/dkdn-trang-2.jpg" aria-label="Xem Giấy chứng nhận đăng ký doanh nghiệp"><div class="doc real"><img src="../giay-to/dkdn-trang-1-nho.jpg" alt="Giấy chứng nhận đăng ký doanh nghiệp – trang 1" width="520" height="736" loading="lazy"></div><b>Giấy chứng nhận đăng ký doanh nghiệp</b><small>MSDN 0108797479 · thay đổi lần 4: 29/09/2026 · Bấm để xem</small></button>
     <div class="cert"><div class="doc"><span>Chứng chỉ năng lực hoạt động xây dựng</span></div><b>Chứng chỉ năng lực</b><small>Tư vấn thiết kế, thẩm tra, giám sát</small></div>
     <div class="cert"><div class="doc"><span>Chứng nhận chất lượng</span></div><b>Chứng nhận chất lượng</b><small>Cập nhật khi có</small></div>
     <div class="cert"><div class="doc"><span>Hồ sơ năng lực (PDF)</span></div><b>Hồ sơ năng lực</b><small>Liên hệ để nhận bản đầy đủ</small></div>
@@ -535,7 +545,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 
 <a class="float-chat" href="#lien-he"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/></svg>Liên hệ</a>
 <a class="float-call" href="tel:0899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>0899 990 683</a>
-<button class="to-top" id="toTop" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button>
+<button class="to-top" id="toTop" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem giấy tờ"><button class="lb-close" id="lbClose" aria-label="Đóng">×</button><p class="lb-note">Một số thông tin cá nhân đã được che.</p><div id="lbImgs"></div></div>
 
 <script>
 const ICONS = {
@@ -667,6 +677,10 @@ $('topSearch').onsubmit=e=>{e.preventDefault();query=$('topQ').value;$('q').valu
 $('searchForm').onsubmit=e=>{e.preventDefault();query=$('q').value;page=1;renderGrid()};
 $('q').oninput=e=>{query=e.target.value;page=1;if(query.trim()&&(cur!=='all'||sub!==null)){cur='all';sub=null;renderTree()}renderGrid()};
 const tt=$('toTop'); addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>600),{passive:true}); tt.onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+const lb=$('lb');
+document.addEventListener('click',e=>{const g=e.target.closest('[data-gallery]'); if(g){$('lbImgs').innerHTML=g.dataset.gallery.split('|').map((s,k)=>'<img src="'+s+'" alt="Trang '+(k+1)+'">').join(''); lb.classList.add('open'); document.body.style.overflow='hidden'; $('lbClose').focus();}});
+function closeLb(){lb.classList.remove('open'); document.body.style.overflow='';}
+$('lbClose').onclick=closeLb; lb.addEventListener('click',e=>{if(e.target===lb)closeLb()}); document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 renderMenus();renderTree();renderGrid();
 </script>
 </body>
