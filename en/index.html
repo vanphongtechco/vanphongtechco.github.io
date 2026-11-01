@@ -271,6 +271,14 @@ section{padding:70px 0}
 .n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
 @media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
 
+.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pt{background:#fff;border:1px solid var(--line);padding:22px 18px;display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center}
+.pt .lg{grid-row:1/3;width:72px;height:72px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:.02em;background:#fff}
+.pt .lg img{width:60px;height:60px;object-fit:contain}
+.pt b{font-size:15px;color:#26313C;line-height:1.35;align-self:end}
+.pt span{font-size:13px;color:var(--muted);align-self:start}
+@media (max-width:900px){.partners{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.partners{grid-template-columns:minmax(0,1fr)}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
@@ -360,6 +368,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <div class="dd"><button type="button" aria-expanded="false">Certificates <span class="caret"></span></button><div class="panel">
       <a href="#chung-nhan">Enterprise registration</a><a href="#chung-nhan">Company profile</a></div></div>
     <a href="#gioi-thieu">About us</a>
+    <a href="#doi-tac">Partners</a>
     <a href="#tin-tuc">News</a>
     <div class="dd"><button type="button" aria-expanded="false">Services <span class="caret"></span></button><div class="panel">
       <a href="#linh-vuc">Scientific &amp; technological research</a><a href="#linh-vuc">Construction consulting</a><a href="#linh-vuc">Testing – Inspection</a><a href="#linh-vuc">Equipment design – fabrication – repair</a><a href="#linh-vuc">Trading, import – export</a></div></div>
@@ -495,7 +504,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
       </div>
       <div class="grid" id="grid"></div>
       <nav class="pager" id="pager" aria-label="Pagination"></nav>
-      <p class="note">The catalogue and product images are illustrative and will be updated with our actual product list.</p>
+      <p class="note">The first 6 products are equipment from Van Phong's recent contracts and projects. Other items and images are illustrative and will be updated.</p>
     </div>
   </div>
 </div></section>
@@ -512,6 +521,20 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   </div>
 </div></section>
 
+
+<!-- PARTNERS -->
+<section class="grey" id="doi-tac"><div class="wrap">
+  <div class="title"><h2>Partners &amp; Clients</h2><p>Organizations Van Phong has worked with, supplying materials, equipment and services.</p></div>
+  <div class="partners">
+    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Vang Danh Coal JSC – Vinacomin</b><span>Installation services; interlaced disc screen consulting</span></div>
+    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>Institute of Energy and Mining Mechanical Engineering – Vinacomin (IEMM)</b><span>Technical services; supply of materials and equipment</span></div>
+    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Dai Duong Electromechanical</b><span>Equipment supply</span></div>
+    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>Lam Dong Bauxite – Alumina Project Management Board</b><span>Cooperation</span></div>
+    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>Lam Dong Aluminium Company – Vinacomin</b><span>Cooperation</span></div>
+    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>Gongbei Heavy Machinery (Shijiazhuang, China)</b><span>Interlaced disc screen cooperation</span></div>
+    <div class="pt"><div class="lg" style="--c:#0F7C8C">TL</div><b>Tramina – Thang Long Hydropower &amp; Irrigation Consulting</b><span>Cooperation</span></div>
+  </div>
+</div></section>
 
 <!-- NEWS -->
 <section id="tin-tuc"><div class="wrap">
@@ -590,16 +613,26 @@ const ICONS = {
   pc:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="10" width="38" height="28" rx="2"/><path d="M18 46h14M25 38v8"/><rect x="48" y="10" width="10" height="36" rx="1"/><path d="M51 16h4M51 22h4"/></svg>',
   server:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="12" y="8" width="40" height="14" rx="2"/><rect x="12" y="25" width="40" height="14" rx="2"/><rect x="12" y="42" width="40" height="14" rx="2"/><path d="M18 15h10M18 32h10M18 49h10"/><circle cx="45" cy="15" r="1.5"/><circle cx="45" cy="32" r="1.5"/><circle cx="45" cy="49" r="1.5"/></svg>',
   camera:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 20h34l8 6v8l-8 6H8z"/><circle cx="24" cy="30" r="5"/><path d="M28 40v10h-14"/></svg>',
+  freeze:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="10" y="30" width="44" height="26" rx="2"/><path d="M20 30V12a12 12 0 0 1 24 0v18"/><path d="M26 18h12M26 24h12"/><rect x="16" y="38" width="14" height="8"/><circle cx="44" cy="42" r="3"/></svg>',
+  bench:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="8" width="52" height="12" rx="1"/><path d="M8 20h48v22H8z"/><path d="M8 30h48M12 42v14M52 42v14M14 14h10"/></svg>',
+  stirrer:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 58h36M22 58V6h8v52"/><rect x="26" y="10" width="22" height="12" rx="2"/><path d="M37 22v22M30 46h14"/><path d="M28 34h18v20H28z" stroke-dasharray="3 3"/></svg>',
+  screen:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 26h52v12H6z"/><circle cx="14" cy="32" r="4"/><circle cx="24" cy="32" r="4"/><circle cx="34" cy="32" r="4"/><circle cx="44" cy="32" r="4"/><circle cx="54" cy="32" r="3"/><path d="M10 38v14M54 38v14M6 18l10 8M58 18 48 26"/><path d="M18 52h28"/></svg>',
   software:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="10" width="48" height="40" rx="2"/><path d="M8 20h48M24 30l-6 6 6 6M40 30l6 6-6 6M35 28l-6 16"/></svg>'
 };
 const CATS = [
   {id:'cn', name:'Industrial equipment', subs:['Mechanical machinery & equipment','Pumps, fans, gearboxes','Consumables & spare parts']},
   {id:'yt', name:'Medical equipment', subs:['Patient monitoring','Hospital beds & trolleys','Sterilization equipment']},
-  {id:'tn', name:'Laboratory equipment', subs:['Biosafety cabinets, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges']},
+  {id:'tn', name:'Laboratory equipment', subs:['Biosafety cabinets, clean benches, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges','Freeze dryers, stirrers']},
   {id:'dt', name:'Electrical, Electronics & Automation', subs:['PLCs, controllers','Inverters, soft starters','Sensors, measuring instruments']},
   {id:'th', name:'Computers & IT', subs:['Computers, servers','Network equipment, cameras','Licensed software']}
 ];
 const PRODUCTS = [
+  {c:'cn', s:0, n:'CRS350-15 interlaced disc screen (350 t/h)', code:'CRS350-15', d:'Coal screen: feed size 150 mm, undersize 15 mm, capacity 350 t/h, motors 3 × 7.5 kW. Solution proposed for Vang Danh Coal JSC – Vinacomin, in cooperation with Gongbei Heavy Machinery (China).', i:'screen', hot:3},
+  {c:'cn', s:0, n:'CRS-1414 interlaced disc screen', code:'CRS-1414', d:'Interlaced disc screen for sizing bulk materials (coal, minerals). Supplied in cooperation with a Chinese partner.', i:'screen', hot:3},
+  {c:'tn', s:3, n:'BIOBASE BK-FD10P freeze dryer (-60°C)', code:'BK-FD10P', d:'Laboratory freeze dryer with cold trap down to -60°C. Brand: BIOBASE.', i:'freeze', hot:2},
+  {c:'tn', s:0, n:'BIOBASE BBS-H1500 clean bench', code:'BBS-H1500', d:'Laboratory clean bench, supplied with installation, commissioning and user training. Brand: BIOBASE.', i:'bench', hot:2},
+  {c:'tn', s:0, n:'BIOBASE BKCB-V900 clean bench', code:'BKCB-V900', d:'Vertical laminar flow clean bench. Brand: BIOBASE.', i:'bench', hot:2},
+  {c:'tn', s:3, n:'Drawell OS20-Pro overhead stirrer', code:'OS20-Pro', d:'Overhead mechanical stirrer for chemistry laboratories. Brand: Drawell.', i:'stirrer', hot:2},
   {c:'tn', s:0, n:'Class II biosafety cabinet', code:'VP-TN-01', d:'Protects the operator, samples and the laboratory environment.', i:'cabinet', hot:1},
   {c:'tn', s:0, n:'Fume hood', code:'VP-TN-02', d:'Extracts and treats chemical vapours during sample handling.', i:'cabinet'},
   {c:'tn', s:1, n:'Drying oven, incubator', code:'VP-TN-03', d:'Drying and incubating samples at stable controlled temperature.', i:'oven', hot:1},
@@ -643,7 +676,7 @@ document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dat
 /* hot products carousel */
 (function(){
   const box=$('hot'), track=box.querySelector('.track');
-  const hot=PRODUCTS.filter(p=>p.hot);
+  const hot=PRODUCTS.filter(p=>p.hot).sort((a,b)=>b.hot-a.hot);
   track.innerHTML=hot.map(p=>'<div class="pitem" data-code="'+p.code+'" role="button" tabindex="0"><div class="pimg">'+ICONS[p.i]+'</div><h3>'+esc(p.n)+'</h3><span>'+esc(p.code)+'</span></div>').join('');
   let i=0;
   const per=()=>innerWidth<=900?2:4;

@@ -271,6 +271,14 @@ section{padding:70px 0}
 .n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
 @media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
 
+.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pt{background:#fff;border:1px solid var(--line);padding:22px 18px;display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center}
+.pt .lg{grid-row:1/3;width:72px;height:72px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:.02em;background:#fff}
+.pt .lg img{width:60px;height:60px;object-fit:contain}
+.pt b{font-size:15px;color:#26313C;line-height:1.35;align-self:end}
+.pt span{font-size:13px;color:var(--muted);align-self:start}
+@media (max-width:900px){.partners{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.partners{grid-template-columns:minmax(0,1fr)}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
@@ -360,6 +368,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <div class="dd"><button type="button" aria-expanded="false">证书 <span class="caret"></span></button><div class="panel">
       <a href="#chung-nhan">企业登记证书</a><a href="#chung-nhan">公司简介</a></div></div>
     <a href="#gioi-thieu">关于我们</a>
+    <a href="#doi-tac">合作伙伴</a>
     <a href="#tin-tuc">新闻</a>
     <div class="dd"><button type="button" aria-expanded="false">服务 <span class="caret"></span></button><div class="panel">
       <a href="#linh-vuc">科学技术研究</a><a href="#linh-vuc">建设咨询</a><a href="#linh-vuc">试验 – 检定</a><a href="#linh-vuc">设备设计 – 制造 – 维修</a><a href="#linh-vuc">贸易及进出口</a></div></div>
@@ -495,7 +504,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
       </div>
       <div class="grid" id="grid"></div>
       <nav class="pager" id="pager" aria-label="分页"></nav>
-      <p class="note">目录及产品图片仅为示意，将根据实际产品清单更新。</p>
+      <p class="note">目录前6项为 Van Phong 近期合同及项目中的设备，其余产品及图片仅为示意，将陆续更新。</p>
     </div>
   </div>
 </div></section>
@@ -512,6 +521,20 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   </div>
 </div></section>
 
+
+<!-- PARTNERS -->
+<section class="grey" id="doi-tac"><div class="wrap">
+  <div class="title"><h2>合作伙伴与客户</h2><p>Van Phong 曾合作并提供物资、设备及服务的单位。</p></div>
+  <div class="partners">
+    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Vang Danh 煤炭股份公司 – Vinacomin</b><span>安装服务；交叉筛方案咨询</span></div>
+    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>能源与矿山机械研究院 – Vinacomin（IEMM）</b><span>技术服务；物资、设备供应</span></div>
+    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Dai Duong 机电</b><span>设备供应</span></div>
+    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>林同铝土矿 – 氧化铝项目管理委员会</b><span>合作</span></div>
+    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>林同铝业公司 – Vinacomin</b><span>合作</span></div>
+    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>石家庄功倍重型机械有限公司</b><span>交叉筛合作</span></div>
+    <div class="pt"><div class="lg" style="--c:#0F7C8C">TL</div><b>Tramina – Thang Long 水电水利咨询</b><span>合作</span></div>
+  </div>
+</div></section>
 
 <!-- NEWS -->
 <section id="tin-tuc"><div class="wrap">
@@ -590,16 +613,26 @@ const ICONS = {
   pc:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="10" width="38" height="28" rx="2"/><path d="M18 46h14M25 38v8"/><rect x="48" y="10" width="10" height="36" rx="1"/><path d="M51 16h4M51 22h4"/></svg>',
   server:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="12" y="8" width="40" height="14" rx="2"/><rect x="12" y="25" width="40" height="14" rx="2"/><rect x="12" y="42" width="40" height="14" rx="2"/><path d="M18 15h10M18 32h10M18 49h10"/><circle cx="45" cy="15" r="1.5"/><circle cx="45" cy="32" r="1.5"/><circle cx="45" cy="49" r="1.5"/></svg>',
   camera:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 20h34l8 6v8l-8 6H8z"/><circle cx="24" cy="30" r="5"/><path d="M28 40v10h-14"/></svg>',
+  freeze:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="10" y="30" width="44" height="26" rx="2"/><path d="M20 30V12a12 12 0 0 1 24 0v18"/><path d="M26 18h12M26 24h12"/><rect x="16" y="38" width="14" height="8"/><circle cx="44" cy="42" r="3"/></svg>',
+  bench:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="8" width="52" height="12" rx="1"/><path d="M8 20h48v22H8z"/><path d="M8 30h48M12 42v14M52 42v14M14 14h10"/></svg>',
+  stirrer:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 58h36M22 58V6h8v52"/><rect x="26" y="10" width="22" height="12" rx="2"/><path d="M37 22v22M30 46h14"/><path d="M28 34h18v20H28z" stroke-dasharray="3 3"/></svg>',
+  screen:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 26h52v12H6z"/><circle cx="14" cy="32" r="4"/><circle cx="24" cy="32" r="4"/><circle cx="34" cy="32" r="4"/><circle cx="44" cy="32" r="4"/><circle cx="54" cy="32" r="3"/><path d="M10 38v14M54 38v14M6 18l10 8M58 18 48 26"/><path d="M18 52h28"/></svg>',
   software:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="10" width="48" height="40" rx="2"/><path d="M8 20h48M24 30l-6 6 6 6M40 30l6 6-6 6M35 28l-6 16"/></svg>'
 };
 const CATS = [
   {id:'cn', name:'工业设备', subs:['机械设备','泵、风机、减速机','耗材及备品备件']},
   {id:'yt', name:'医疗设备', subs:['病人监护设备','病床、医用推车','灭菌设备']},
-  {id:'tn', name:'实验室设备', subs:['生物安全柜、通风橱','干燥箱、培养箱、马弗炉','天平、离心机']},
+  {id:'tn', name:'实验室设备', subs:['生物安全柜、超净工作台、通风橱','干燥箱、培养箱、马弗炉','天平、离心机','冷冻干燥机、搅拌器']},
   {id:'dt', name:'电气电子与自动化', subs:['PLC、控制器','变频器、软启动器','传感器、测量仪器']},
   {id:'th', name:'计算机与信息技术', subs:['计算机、服务器','网络设备、摄像机','正版软件']}
 ];
 const PRODUCTS = [
+  {c:'cn', s:0, n:'CRS350-15 交叉筛（350 t/h）', code:'CRS350-15', d:'筛分物料：煤；入料粒度 150 mm，筛下粒度 15 mm，处理量 350 t/h，电机功率 3×7.5 kW。为 Vang Danh 煤炭股份公司 – Vinacomin 提供的方案，与石家庄功倍重型机械有限公司合作。', i:'screen', hot:3},
+  {c:'cn', s:0, n:'CRS-1414 交叉筛', code:'CRS-1414', d:'用于煤炭、矿产等散料分级的交叉筛，与中国合作伙伴合作供货。', i:'screen', hot:3},
+  {c:'tn', s:3, n:'BIOBASE BK-FD10P 冷冻干燥机（-60°C）', code:'BK-FD10P', d:'实验室冷冻干燥机，冷阱温度可达 -60°C。品牌：BIOBASE。', i:'freeze', hot:2},
+  {c:'tn', s:0, n:'BIOBASE BBS-H1500 超净工作台', code:'BBS-H1500', d:'实验室超净工作台，含安装、调试及使用培训。品牌：BIOBASE。', i:'bench', hot:2},
+  {c:'tn', s:0, n:'BIOBASE BKCB-V900 超净工作台', code:'BKCB-V900', d:'垂直层流超净工作台。品牌：BIOBASE。', i:'bench', hot:2},
+  {c:'tn', s:3, n:'Drawell OS20-Pro 顶置式机械搅拌器', code:'OS20-Pro', d:'化学实验室用顶置式机械搅拌器。品牌：Drawell。', i:'stirrer', hot:2},
   {c:'tn', s:0, n:'II级生物安全柜', code:'VP-TN-01', d:'保护操作人员、样品及实验室环境。', i:'cabinet', hot:1},
   {c:'tn', s:0, n:'通风橱', code:'VP-TN-02', d:'在样品操作时排出并处理化学气体。', i:'cabinet'},
   {c:'tn', s:1, n:'干燥箱、培养箱', code:'VP-TN-03', d:'在稳定受控温度下干燥、培养样品。', i:'oven', hot:1},
@@ -643,7 +676,7 @@ document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dat
 /* hot products carousel */
 (function(){
   const box=$('hot'), track=box.querySelector('.track');
-  const hot=PRODUCTS.filter(p=>p.hot);
+  const hot=PRODUCTS.filter(p=>p.hot).sort((a,b)=>b.hot-a.hot);
   track.innerHTML=hot.map(p=>'<div class="pitem" data-code="'+p.code+'" role="button" tabindex="0"><div class="pimg">'+ICONS[p.i]+'</div><h3>'+esc(p.n)+'</h3><span>'+esc(p.code)+'</span></div>').join('');
   let i=0;
   const per=()=>innerWidth<=900?2:4;

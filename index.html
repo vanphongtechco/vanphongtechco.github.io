@@ -271,6 +271,14 @@ section{padding:70px 0}
 .n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
 @media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
 
+.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pt{background:#fff;border:1px solid var(--line);padding:22px 18px;display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center}
+.pt .lg{grid-row:1/3;width:72px;height:72px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:.02em;background:#fff}
+.pt .lg img{width:60px;height:60px;object-fit:contain}
+.pt b{font-size:15px;color:#26313C;line-height:1.35;align-self:end}
+.pt span{font-size:13px;color:var(--muted);align-self:start}
+@media (max-width:900px){.partners{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.partners{grid-template-columns:minmax(0,1fr)}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
@@ -360,6 +368,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <div class="dd"><button type="button" aria-expanded="false">Chứng nhận <span class="caret"></span></button><div class="panel">
       <a href="#chung-nhan">Đăng ký doanh nghiệp</a><a href="#chung-nhan">Hồ sơ năng lực</a></div></div>
     <a href="#gioi-thieu">Giới thiệu</a>
+    <a href="#doi-tac">Đối tác</a>
     <a href="#tin-tuc">Tin tức</a>
     <div class="dd"><button type="button" aria-expanded="false">Dịch vụ <span class="caret"></span></button><div class="panel">
       <a href="#linh-vuc">Nghiên cứu khoa học công nghệ</a><a href="#linh-vuc">Tư vấn xây dựng</a><a href="#linh-vuc">Thí nghiệm – Kiểm định</a><a href="#linh-vuc">Thiết kế – Chế tạo – Sửa chữa thiết bị</a><a href="#linh-vuc">Thương mại, xuất – nhập khẩu</a></div></div>
@@ -495,7 +504,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
       </div>
       <div class="grid" id="grid"></div>
       <nav class="pager" id="pager" aria-label="Phân trang"></nav>
-      <p class="note">Danh mục và hình sản phẩm đang là bản minh họa. Sẽ cập nhật theo danh sách sản phẩm thật (tên, mã, ảnh, mô tả).</p>
+      <p class="note">6 sản phẩm đầu danh mục là thiết bị trong các hợp đồng, dự án gần đây của Vân Phong. Các sản phẩm còn lại và hình ảnh đang là bản minh họa, sẽ được cập nhật.</p>
     </div>
   </div>
 </div></section>
@@ -512,6 +521,20 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   </div>
 </div></section>
 
+
+<!-- PARTNERS -->
+<section class="grey" id="doi-tac"><div class="wrap">
+  <div class="title"><h2>Đối tác – Khách hàng</h2><p>Các đơn vị Vân Phong đã hợp tác, cung cấp vật tư, thiết bị và dịch vụ.</p></div>
+  <div class="partners">
+    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Công ty CP Than Vàng Danh – Vinacomin</b><span>Dịch vụ lắp đặt; tư vấn sàng đĩa đan xen</span></div>
+    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>Viện Cơ khí Năng lượng và Mỏ – Vinacomin</b><span>Dịch vụ kỹ thuật; mua bán vật tư, thiết bị</span></div>
+    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Cơ điện Đại Dương</b><span>Mua bán thiết bị</span></div>
+    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>Ban QLDA Bauxit – Nhôm Lâm Đồng</b><span>Hợp tác</span></div>
+    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>Công ty Nhôm Lâm Đồng – Vinacomin</b><span>Hợp tác</span></div>
+    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>Gongbei Heavy Machinery (Thạch Gia Trang, Trung Quốc)</b><span>Hợp tác sàng đĩa đan xen</span></div>
+    <div class="pt"><div class="lg" style="--c:#0F7C8C">TL</div><b>Tramina – Tư vấn Thủy điện Thủy lợi Thăng Long</b><span>Hợp tác</span></div>
+  </div>
+</div></section>
 
 <!-- NEWS -->
 <section id="tin-tuc"><div class="wrap">
@@ -590,16 +613,26 @@ const ICONS = {
   pc:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="10" width="38" height="28" rx="2"/><path d="M18 46h14M25 38v8"/><rect x="48" y="10" width="10" height="36" rx="1"/><path d="M51 16h4M51 22h4"/></svg>',
   server:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="12" y="8" width="40" height="14" rx="2"/><rect x="12" y="25" width="40" height="14" rx="2"/><rect x="12" y="42" width="40" height="14" rx="2"/><path d="M18 15h10M18 32h10M18 49h10"/><circle cx="45" cy="15" r="1.5"/><circle cx="45" cy="32" r="1.5"/><circle cx="45" cy="49" r="1.5"/></svg>',
   camera:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 20h34l8 6v8l-8 6H8z"/><circle cx="24" cy="30" r="5"/><path d="M28 40v10h-14"/></svg>',
+  freeze:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="10" y="30" width="44" height="26" rx="2"/><path d="M20 30V12a12 12 0 0 1 24 0v18"/><path d="M26 18h12M26 24h12"/><rect x="16" y="38" width="14" height="8"/><circle cx="44" cy="42" r="3"/></svg>',
+  bench:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="8" width="52" height="12" rx="1"/><path d="M8 20h48v22H8z"/><path d="M8 30h48M12 42v14M52 42v14M14 14h10"/></svg>',
+  stirrer:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 58h36M22 58V6h8v52"/><rect x="26" y="10" width="22" height="12" rx="2"/><path d="M37 22v22M30 46h14"/><path d="M28 34h18v20H28z" stroke-dasharray="3 3"/></svg>',
+  screen:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 26h52v12H6z"/><circle cx="14" cy="32" r="4"/><circle cx="24" cy="32" r="4"/><circle cx="34" cy="32" r="4"/><circle cx="44" cy="32" r="4"/><circle cx="54" cy="32" r="3"/><path d="M10 38v14M54 38v14M6 18l10 8M58 18 48 26"/><path d="M18 52h28"/></svg>',
   software:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="10" width="48" height="40" rx="2"/><path d="M8 20h48M24 30l-6 6 6 6M40 30l6 6-6 6M35 28l-6 16"/></svg>'
 };
 const CATS = [
   {id:'cn', name:'Thiết bị công nghiệp', subs:['Máy và thiết bị cơ khí','Bơm, quạt, hộp giảm tốc','Vật tư, phụ tùng thay thế']},
   {id:'yt', name:'Thiết bị y tế', subs:['Thiết bị theo dõi bệnh nhân','Giường, xe đẩy y tế','Thiết bị tiệt trùng']},
-  {id:'tn', name:'Thiết bị thí nghiệm', subs:['Tủ an toàn, tủ hút','Tủ sấy, tủ ấm, lò nung','Cân, máy ly tâm']},
+  {id:'tn', name:'Thiết bị thí nghiệm', subs:['Tủ an toàn, tủ cấy, tủ hút','Tủ sấy, tủ ấm, lò nung','Cân, máy ly tâm','Máy đông khô, máy khuấy']},
   {id:'dt', name:'Điện – Điện tử, Tự động hóa', subs:['PLC, bộ điều khiển','Biến tần, khởi động mềm','Cảm biến, thiết bị đo']},
   {id:'th', name:'Máy tính – Tin học', subs:['Máy tính, máy chủ','Thiết bị mạng, camera','Phần mềm bản quyền']}
 ];
 const PRODUCTS = [
+  {c:'cn', s:0, n:'Sàng đĩa đan xen CRS350-15 (350 t/h)', code:'CRS350-15', d:'Sàng than: cỡ hạt cấp liệu 150 mm, cỡ hạt dưới sàng 15 mm, năng suất 350 t/h, động cơ 3 × 7,5 kW. Phương án tư vấn cho Công ty CP Than Vàng Danh – Vinacomin, hợp tác cùng Gongbei Heavy Machinery (Trung Quốc).', i:'screen', hot:3},
+  {c:'cn', s:0, n:'Sàng đĩa đan xen CRS-1414', code:'CRS-1414', d:'Sàng đĩa đan xen phân loại vật liệu rời (than, khoáng sản). Hợp tác cung cấp cùng đối tác Trung Quốc.', i:'screen', hot:3},
+  {c:'tn', s:3, n:'Máy đông khô BIOBASE BK-FD10P (-60°C)', code:'BK-FD10P', d:'Máy sấy đông khô phòng thí nghiệm, nhiệt độ bẫy lạnh đến -60°C. Hãng BIOBASE.', i:'freeze', hot:2},
+  {c:'tn', s:0, n:'Tủ cấy vi sinh BIOBASE BBS-H1500', code:'BBS-H1500', d:'Tủ cấy vi sinh cho phòng thí nghiệm; cung cấp kèm lắp đặt, chạy thử, hướng dẫn sử dụng. Hãng BIOBASE.', i:'bench', hot:2},
+  {c:'tn', s:0, n:'Tủ cấy vi sinh BIOBASE BKCB-V900', code:'BKCB-V900', d:'Tủ cấy vi sinh dòng khí thổi đứng. Hãng BIOBASE.', i:'bench', hot:2},
+  {c:'tn', s:3, n:'Máy khuấy cơ học Drawell OS20-Pro', code:'OS20-Pro', d:'Máy khuấy đũa cơ học cho phòng thí nghiệm hóa học. Hãng Drawell.', i:'stirrer', hot:2},
   {c:'tn', s:0, n:'Tủ an toàn sinh học cấp II', code:'VP-TN-01', d:'Bảo vệ người thao tác, mẫu và môi trường phòng thí nghiệm.', i:'cabinet', hot:1},
   {c:'tn', s:0, n:'Tủ hút khí độc', code:'VP-TN-02', d:'Hút và xử lý hơi hóa chất khi thao tác mẫu.', i:'cabinet'},
   {c:'tn', s:1, n:'Tủ sấy, tủ ấm', code:'VP-TN-03', d:'Sấy, ủ mẫu với nhiệt độ điều khiển ổn định.', i:'oven', hot:1},
@@ -643,7 +676,7 @@ document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dat
 /* hot products carousel */
 (function(){
   const box=$('hot'), track=box.querySelector('.track');
-  const hot=PRODUCTS.filter(p=>p.hot);
+  const hot=PRODUCTS.filter(p=>p.hot).sort((a,b)=>b.hot-a.hot);
   track.innerHTML=hot.map(p=>'<div class="pitem" data-code="'+p.code+'" role="button" tabindex="0"><div class="pimg">'+ICONS[p.i]+'</div><h3>'+esc(p.n)+'</h3><span>'+esc(p.code)+'</span></div>').join('');
   let i=0;
   const per=()=>innerWidth<=900?2:4;
