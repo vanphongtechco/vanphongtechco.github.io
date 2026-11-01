@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vân Phong Tech</title>
+<meta name="description" content="Công ty TNHH Kỹ thuật và Thương mại Vân Phong – thiết bị, vật tư và dịch vụ kỹ thuật cho Công nghiệp, Y tế, Thí nghiệm. Hotline 0899 990 683.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap">
+<style>
+:root{
+  --navy:#0E2F5A;      /* brand navy: nav, footer bands */
+  --navy-2:#173F72;
+  --blue:#1580BF;      /* Vân Phong blue */
+  --sky:#35B9F7;
+  --cta:#F07C1B;       /* call-to-action */
+  --bg:#FFFFFF;
+  --grey:#F0F2F4;      /* section grey */
+  --grey-2:#E4E7EB;
+  --line:#DCE1E6;
+  --fg:#1F2933;
+  --muted:#5F6B77;
+  --foot:#2B3038;
+  --foot-fg:#C9CED6;
+  --font:"Be Vietnam Pro","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 var(--font)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* ---------- top strip ---------- */
+.top{background:var(--grey);font-size:13px;color:#4A545E}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:8px 24px;flex-wrap:wrap;padding-block:6px}
+.top .ct{display:flex;gap:22px;flex-wrap:wrap}
+.top .ct span{display:inline-flex;align-items:center;gap:7px}
+.ico{width:22px;height:22px;border-radius:50%;background:#5A636D;display:inline-grid;place-items:center;flex:none}
+.ico svg{width:12px;height:12px;fill:#fff}
+.top .addr{color:#6A737D}
+@media (max-width:700px){.top .addr,.top .ct>span:first-child{display:none}.top .wrap{justify-content:center}}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 1px 0 var(--line)}
+header .wrap{display:flex;align-items:stretch;gap:18px;min-height:76px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{height:44px;width:auto}
+.brand small{border-left:1px solid var(--line);padding-left:12px;font-size:10.5px;line-height:1.4;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+nav.main{display:flex;align-items:stretch;margin-left:auto}
+nav.main>a,nav.main>.dd>button{display:flex;align-items:center;gap:6px;padding:0 18px;font:600 14.5px var(--font);text-transform:uppercase;letter-spacing:.02em;color:#26313C;background:none;border:0;cursor:pointer;height:100%;white-space:nowrap}
+nav.main>a:hover,nav.main>.dd>button:hover,nav.main>.dd.open>button{color:var(--blue)}
+nav.main>a.on{color:var(--navy)}
+.caret{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.7}
+.dd{position:relative;display:flex}
+.panel{display:none;position:absolute;top:100%;left:0;min-width:240px;background:#fff;border-top:3px solid var(--blue);box-shadow:0 14px 30px rgba(14,47,90,.16);padding:10px 0;z-index:60}
+.dd.open .panel{display:block}
+.panel a,.panel button{display:block;width:100%;text-align:left;padding:9px 20px;font:500 14px var(--font);color:#26313C;background:none;border:0;cursor:pointer}
+.panel a:hover,.panel button:hover{background:var(--grey);color:var(--blue)}
+.mega{left:auto;right:-320px;width:min(860px,92vw);display:none;grid-template-columns:repeat(3,1fr);gap:4px 18px;padding:18px 20px}
+.dd.open .mega{display:grid}
+.mega h4{margin:6px 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy)}
+.mega h4 button{padding:0;font-weight:700;color:var(--navy);font-size:13px;text-transform:uppercase}
+.mega ul{list-style:none;margin:0 0 10px;padding:0}
+.mega li button{padding:4px 0;font-size:13.5px;color:var(--muted)}
+.mega li button:hover{background:none}
+.search-btn{flex:none;width:76px;border:0;border-left:1px solid var(--line);border-right:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer}
+.search-btn svg{width:24px;height:24px;stroke:#5A636D}
+.searchbar{display:none;background:var(--grey);border-bottom:1px solid var(--line)}
+.searchbar.open{display:block}
+.searchbar form{display:flex;gap:8px;padding-block:12px}
+.searchbar input{flex:1;min-width:0;padding:11px 14px;border:1px solid var(--line);font:15px var(--font)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 22px;font:600 15px var(--font);border:0;cursor:pointer;color:#fff;background:var(--navy)}
+.btn.cta{background:var(--cta)}
+.btn.line{background:#fff;color:#4A545E;border:1px solid var(--line);font-weight:500}
+.btn.line:hover{border-color:var(--navy);color:var(--navy)}
+.menu-btn{display:none;margin-left:auto;align-self:center;background:none;border:1px solid var(--line);padding:8px 12px;font:600 14px var(--font);cursor:pointer}
+@media (max-width:1440px){nav.main>a,nav.main>.dd>button{padding:0 13px}}
+@media (max-width:1260px){
+  nav.main>a,nav.main>.dd>button{padding:0 10px;font-size:13.5px}
+  .brand small{display:none}
+}
+@media (max-width:900px){
+  .menu-btn{display:block}
+  .search-btn{width:52px;border:0}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;box-shadow:0 12px 24px rgba(0,0,0,.12);padding:6px 0}
+  nav.main.open{display:flex}
+  nav.main>a,nav.main>.dd>button{padding:12px 20px;height:auto;width:100%}
+  .dd{flex-direction:column}
+  .panel,.mega{position:static;box-shadow:none;border:0;width:auto;min-width:0;padding:0 20px 8px}
+  .mega{grid-template-columns:1fr 1fr}
+  header .wrap{position:relative;min-height:64px}
+  .brand img{height:36px}
+}
+
+/* ---------- hero carousel ---------- */
+.hero{position:relative;overflow:hidden;background:#DCEAF5}
+.slides{display:flex;transition:transform .7s ease}
+.slide{flex:0 0 100%;position:relative;height:clamp(380px,46vw,600px);overflow:hidden;display:flex;align-items:center}
+.slide .in{position:relative;z-index:2;width:100%}
+.s-photo{background:#0E2F5A}
+.s-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.55}
+.s-photo .in{text-align:center;color:#fff}
+.s-photo .badges{display:flex;justify-content:center;gap:40px;margin-bottom:22px}
+.badge{display:grid;justify-items:center;gap:8px;font-weight:700;font-size:15px;line-height:1.2;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.badge i{width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.badge i svg{width:32px;height:32px;stroke:#1F2933}
+.s-photo p{font-size:clamp(17px,2vw,24px);margin:0 auto 24px;max-width:46ch;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.s-light{background:linear-gradient(90deg,#C9DDF0 0%,#E6EFF7 55%,#D5E6F4 100%)}
+.s-light::after{content:"";position:absolute;right:0;top:0;bottom:0;width:38%;background:linear-gradient(180deg,#EFF5FA,#DCE9F4);clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.s-light .in{display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:24px}
+.stage{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(6px,1.5vw,22px);padding-bottom:34px}
+.stage::after{content:"";position:absolute;left:4%;right:4%;bottom:0;height:56px;border-radius:50%;background:radial-gradient(ellipse at center,#fff 0%,#F3F7FB 55%,#C8D9EA 100%);box-shadow:0 10px 24px rgba(14,47,90,.15);z-index:-1}
+.dev{background:#fff;border:1px solid #CBD6E2;border-radius:6px;box-shadow:0 8px 18px rgba(14,47,90,.14);display:grid;place-items:center;color:var(--navy)}
+.dev svg{width:62%;height:auto}
+.s-light h2{font-size:clamp(28px,4vw,54px);font-weight:800;line-height:1.08;color:var(--navy);margin:0 0 10px;text-align:right;position:relative;z-index:2}
+.s-light .sub{text-align:right;color:#3B4B5C;margin:0 0 18px;font-size:clamp(14px,1.4vw,17px)}
+.s-light .r{text-align:right;position:relative;z-index:2}
+.s-light .ic{display:block;margin:0 0 10px auto;width:54px;height:54px;color:var(--navy)}
+.s-navy{background:radial-gradient(circle at 75% 30%,#1D5FA0 0%,#0E2F5A 60%)}
+.s-navy .in{color:#fff}
+.s-navy h2{font-size:clamp(28px,3.6vw,48px);font-weight:700;margin:0 0 6px;line-height:1.12}
+.s-navy .lead{color:#C9DBEE;margin:0 0 26px;font-size:17px}
+.s-navy .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1040px}
+.s-navy .cards div{background:rgba(255,255,255,.95);color:var(--navy);border-radius:10px;padding:18px 18px 16px}
+.s-navy .cards b{display:block;font-size:17px;margin-bottom:4px}
+.s-navy .cards span{font-size:13.5px;color:#4A5866}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:58px;height:58px;border:0;background:rgba(255,255,255,.25);cursor:pointer;display:grid;place-items:center}
+.arrow:hover{background:rgba(255,255,255,.45)}
+.arrow svg{width:26px;height:26px;stroke:#fff;stroke-width:2.5;fill:none}
+.arrow.prev{left:30px}.arrow.next{right:30px}
+.dots{position:absolute;left:0;right:0;bottom:96px;display:flex;justify-content:center;gap:8px;z-index:5}
+.dots button{width:26px;height:4px;border:0;background:rgba(255,255,255,.55);cursor:pointer;padding:0}
+.dots button[aria-current="true"]{background:var(--cta)}
+@media (max-width:900px){
+  .s-light .in{grid-template-columns:1fr}
+  .s-light h2,.s-light .sub,.s-light .r{text-align:left}
+  .s-light .ic{margin-left:0}
+  .s-light::after{display:none}
+  .stage{display:none}
+  .s-navy .cards{grid-template-columns:1fr 1fr;gap:10px}
+  .s-navy .cards div{padding:12px}
+  .s-navy .cards span{display:none}
+  .s-photo .badges{gap:18px}
+  .badge i{width:50px;height:50px}
+  .arrow{display:none}
+  .slide{height:auto;min-height:440px;padding:48px 0 110px}
+  .dots{bottom:76px}
+}
+
+/* stats bar overlapping hero */
+.stats{position:relative;z-index:6;margin-top:-70px}
+.stats .box{background:linear-gradient(100deg,#ECEEF0 0%,#F4F5F6 50%,#E9EBEE 100%);display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:24px 10px;box-shadow:0 8px 24px rgba(0,0,0,.08);position:relative;overflow:hidden}
+.stats .box::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:90px;background:rgba(0,0,0,.04);transform:skewX(-20deg)}
+.stats b{display:block;font-weight:300;font-size:clamp(28px,3.4vw,44px);color:#3A434D;line-height:1.1}
+.stats span{font-size:14px;color:#7A838D}
+@media (max-width:700px){.stats{margin-top:-60px}.stats .box{grid-template-columns:1fr 1fr;row-gap:16px}}
+
+/* ---------- sections ---------- */
+section{padding:70px 0}
+.grey{background:var(--grey)}
+.title{text-align:center;margin:0 0 40px}
+.title h2{margin:0;font-weight:400;font-size:clamp(26px,3vw,34px);letter-spacing:.02em;text-transform:uppercase;color:#2A333C}
+.title h2::after{content:"";display:block;width:40px;height:2px;background:#C6CCD2;margin:12px auto 0}
+.title p{margin:10px auto 0;color:var(--muted);max-width:62ch}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.about figure{margin:0;position:relative}
+.about figure img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 40%}
+.about figure figcaption{position:absolute;left:14px;bottom:14px;background:rgba(14,47,90,.82);color:#fff;font-size:13px;padding:6px 12px}
+.about h2{font-weight:400;font-size:clamp(26px,3vw,34px);text-transform:uppercase;margin:0 0 14px;color:#2A333C}
+.about p{color:#4A545E;margin:0 0 12px}
+.about .legal{font-size:13px;color:var(--muted);border-left:3px solid var(--blue);padding-left:12px;margin:16px 0 22px}
+@media (max-width:860px){.about .wrap{grid-template-columns:1fr;gap:24px}}
+
+/* product carousel */
+.pc{position:relative}
+.pc .track-wrap{background:#fff;overflow:hidden}
+.pc .track{display:flex;transition:transform .5s ease}
+.pitem{flex:0 0 25%;padding:26px 22px 22px;border-right:1px solid var(--grey-2);display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;background:#fff}
+.pitem:hover .pimg{transform:scale(1.05)}
+.pimg{width:100%;aspect-ratio:1/1;max-width:220px;display:grid;place-items:center;transition:transform .3s}
+.pimg svg{width:70%;height:auto;color:var(--navy)}
+.pitem h3{margin:14px 0 4px;font-size:16px;font-weight:600;color:#26313C}
+.pitem span{font-size:13px;color:var(--muted)}
+.pc .side{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;background:#E2E5E9;cursor:pointer;display:grid;place-items:center;z-index:2}
+.pc .side:hover{background:var(--navy)}
+.pc .side svg{width:20px;height:20px;stroke:#fff;stroke-width:2.2;fill:none}
+.pc .side.l{left:-22px}.pc .side.r{right:-22px}
+@media (max-width:900px){.pitem{flex-basis:50%}.pc .side.l{left:0}.pc .side.r{right:0}}
+
+/* catalogue */
+.catalog{display:grid;grid-template-columns:270px minmax(0,1fr);gap:28px;align-items:start}
+.side-box{background:#fff;border:1px solid var(--line)}
+.side-box h3{margin:0;background:var(--navy);color:#fff;font-size:15px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:13px 18px}
+.tree{list-style:none;margin:0;padding:6px 0}
+.tree>li{display:grid;grid-template-columns:30px minmax(0,1fr);border-bottom:1px solid var(--grey)}
+.tree>li:last-child{border-bottom:0}
+.tree button{background:none;border:0;cursor:pointer;font:inherit;text-align:left;color:inherit}
+.tree .tg{display:grid;place-items:center;color:var(--muted);font-size:16px}
+.tree .cat{display:flex;justify-content:space-between;gap:8px;padding:10px 16px 10px 2px;font-weight:600;font-size:14px}
+.tree .cat:hover,.tree .cat[aria-pressed="true"]{color:var(--blue)}
+.tree .count{font-weight:400;font-size:12px;color:var(--muted)}
+.tree ul{grid-column:2;list-style:none;margin:0;padding:0 0 8px}
+.tree ul button{display:block;padding:4px 12px 4px 0;font-size:13.5px;color:var(--muted)}
+.tree ul button::before{content:"› ";color:#AEB6BE}
+.tree ul button:hover,.tree ul button[aria-pressed="true"]{color:var(--blue)}
+.cat-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin-bottom:16px}
+.cat-head h3{margin:0;font-size:22px;font-weight:600;color:#26313C}
+.cat-head p{margin:0;color:var(--muted);font-size:14px}
+.cat-head form{display:flex;gap:6px;flex:1 1 300px;max-width:420px}
+.cat-head input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);font:14px var(--font)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
+.card:hover{border-color:var(--blue);box-shadow:0 10px 24px rgba(14,47,90,.1)}
+.card .thumb{aspect-ratio:4/3;background:linear-gradient(180deg,#F7F9FB,#ECF0F4);display:grid;place-items:center}
+.card .thumb svg{width:44%;color:var(--navy)}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.card h4{margin:0;font-size:16px;font-weight:600}
+.card p{margin:0;font-size:13.5px;color:var(--muted)}
+.card .foot{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;font-size:13px}
+.card .foot a{color:var(--cta);font-weight:600}
+.code{color:var(--muted);font-variant-numeric:tabular-nums}
+.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line)}
+.pager{display:flex;gap:6px;margin-top:22px;flex-wrap:wrap;align-items:center}
+.pager button{min-width:36px;height:36px;border:1px solid var(--line);background:#fff;cursor:pointer;font:600 14px var(--font)}
+.pager button[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.pager button:disabled{opacity:.4;cursor:default}
+.note{font-size:12.5px;color:var(--muted);margin-top:14px}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.catalog{grid-template-columns:1fr}}
+@media (max-width:520px){.grid{gap:10px}.card p{display:none}.card .body{padding:10px}.card h4{font-size:14.5px}}
+
+/* fields of activity */
+.fields{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);background:#fff}
+.field{padding:26px 22px;border-right:1px solid var(--line);min-width:0}
+.field:last-child{border-right:0}
+.field i{display:block;width:46px;height:46px;color:var(--blue);margin-bottom:12px}
+.field h3{margin:0 0 8px;font-size:17px;font-weight:600;color:var(--navy);line-height:1.3}
+.field ul{margin:0;padding-left:18px;color:#4A545E;font-size:14px}
+@media (max-width:1000px){.fields{grid-template-columns:1fr 1fr}.field{border-bottom:1px solid var(--line)}.field:nth-child(2n){border-right:0}.field:last-child{grid-column:1/-1}}
+@media (max-width:560px){.fields{grid-template-columns:1fr}.field{border-right:0}}
+
+/* news */
+.news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.news article{min-width:0}
+.news article{border:1px solid var(--line);background:#fff;display:flex;flex-direction:column}
+.news h3{margin:0;padding:16px 18px;font-size:15px;font-weight:500;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.news .img{aspect-ratio:16/10;display:grid;place-items:center;color:#fff;text-align:center;padding:20px;position:relative;overflow:hidden}
+.news .img b{font-size:clamp(20px,2.2vw,28px);font-weight:800;line-height:1.15;position:relative}
+.news .img small{display:block;font-size:13px;opacity:.85;margin-top:6px;font-weight:500}
+.news .img.photo{padding:0}
+.news .img.photo img{width:100%;height:100%;object-fit:cover}
+.news .meta{display:flex;justify-content:space-between;padding:12px 18px;font-size:13px;color:var(--muted)}
+.n1{background:linear-gradient(135deg,#1580BF,#0E2F5A)}
+.n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
+@media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
+
+/* certificates band */
+.certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
+.certs-band .title h2{color:#fff}
+.certs-band .title h2::after{background:#fff}
+.certs-band .title p{color:#C9DBEE}
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.cert{background:#fff;color:var(--fg);display:flex;flex-direction:column}
+.cert .doc{aspect-ratio:3/4;margin:12px;border:1px solid var(--line);background:repeating-linear-gradient(180deg,#fff 0 14px,#F2F4F6 14px 15px);display:grid;place-items:center;text-align:center;padding:16px;position:relative}
+.cert .doc::before{content:"";position:absolute;inset:8px;border:2px solid #D7DEE6}
+.cert .doc span{position:relative;background:#fff;padding:8px 10px;font-size:12.5px;color:var(--muted)}
+.cert b{display:block;background:#36414D;color:#fff;font-size:14px;font-weight:500;padding:11px 14px;text-align:center}
+.cert small{display:block;padding:0 14px 12px;background:#36414D;color:#C9CED6;text-align:center;font-size:12px;margin-top:-4px}
+@media (max-width:860px){.certs{grid-template-columns:1fr 1fr;gap:12px}}
+
+/* quick links */
+.qlinks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 22px}
+.qlinks button{background:#fff;border:1px solid var(--line);padding:12px 10px;font:500 14px var(--font);color:#3A434D;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.qlinks button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media (max-width:900px){.qlinks{grid-template-columns:1fr 1fr;gap:10px}}
+
+/* footer */
+footer{background:var(--foot);color:var(--foot-fg);font-size:14px}
+footer .wrap{padding-block:46px 0}
+.fgrid{display:grid;grid-template-columns:1.5fr 1.2fr 1fr;gap:36px}
+footer h4{margin:0 0 14px;color:#fff;font-size:20px;font-weight:500;text-transform:uppercase}
+footer dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}
+footer dt{color:#9AA3AD}
+footer dd{margin:0}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+footer a:hover{color:#fff}
+footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-bottom:14px}
+.copy{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding:16px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:#9AA3AD}
+@media (max-width:860px){.fgrid{grid-template-columns:1fr;gap:26px}}
+
+/* floating */
+.float-chat{position:fixed;right:0;top:58%;z-index:40;background:var(--navy);color:#fff;width:46px;padding:12px 0;display:grid;justify-items:center;gap:6px;font-size:11px;writing-mode:vertical-rl;letter-spacing:.06em}
+.float-chat svg{width:18px;height:18px;fill:#fff;writing-mode:horizontal-tb}
+.float-call{position:fixed;right:20px;bottom:20px;z-index:40;background:var(--cta);color:#fff;border-radius:30px;padding:10px 18px 10px 12px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;box-shadow:0 6px 18px rgba(240,124,27,.4)}
+.float-call i{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.float-call i svg{width:15px;height:15px;fill:var(--cta)}
+.to-top{position:fixed;right:30px;bottom:76px;z-index:40;width:40px;height:40px;background:#2F6FB7;border:0;cursor:pointer;display:none;place-items:center}
+.to-top.show{display:grid}
+.to-top svg{width:18px;height:18px;fill:#fff}
+@media (max-width:700px){.float-chat{display:none}.float-call{right:12px;bottom:12px}.to-top{right:16px;bottom:66px}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="ct">
+    <span><i class="ico"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zM4 7v.5l8 5 8-5V7z"/></svg></i>info@vanphongtechco.com.vn</span>
+    <a href="tel:0899990683"><span><i class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: 0899 990 683</span></a>
+  </div>
+  <span class="addr">Số 34, ngõ 36A, phố Trần Điền, phường Phương Liệt, TP. Hà Nội</span>
+</div></div>
+
+<header><div class="wrap">
+  <a class="brand" href="#top" aria-label="Vân Phong – trang chủ"><img src="logo.png" alt="Vân Phong" width="600" height="107"><small>Công ty TNHH<br>Kỹ thuật &amp; Thương mại</small></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  <nav class="main" id="mainNav">
+    <a href="#top" class="on">Trang chủ</a>
+    <div class="dd" id="ddProd"><button type="button" aria-expanded="false">Sản phẩm <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
+    <div class="dd"><button type="button" aria-expanded="false">Chứng nhận <span class="caret"></span></button><div class="panel">
+      <a href="#chung-nhan">Đăng ký doanh nghiệp</a><a href="#chung-nhan">Chứng chỉ năng lực</a><a href="#chung-nhan">Hồ sơ năng lực</a></div></div>
+    <a href="#gioi-thieu">Giới thiệu</a>
+    <a href="#tin-tuc">Tin tức</a>
+    <div class="dd"><button type="button" aria-expanded="false">Dịch vụ <span class="caret"></span></button><div class="panel">
+      <a href="#linh-vuc">Nghiên cứu KH&amp;CN</a><a href="#linh-vuc">Tư vấn xây dựng</a><a href="#linh-vuc">Thí nghiệm</a><a href="#linh-vuc">Chế tạo, sửa chữa thiết bị</a><a href="#linh-vuc">Thương mại, xuất nhập khẩu</a></div></div>
+    <a href="#lien-he">Liên hệ</a>
+  </nav>
+  <button class="search-btn" id="searchBtn" aria-label="Tìm sản phẩm" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+</div>
+<div class="searchbar" id="searchbar"><div class="wrap"><form id="topSearch" role="search"><input id="topQ" type="search" placeholder="Nhập tên hoặc mã sản phẩm…" aria-label="Tìm sản phẩm"><button class="btn" type="submit">Tìm kiếm</button></form></div></div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero" id="hero" aria-roledescription="carousel">
+  <div class="slides" id="slides">
+    <div class="slide s-photo" aria-label="1 / 4">
+      <img src="tru-so.jpg" alt="" width="1000" height="988">
+      <div class="wrap in">
+        <div class="badges">
+          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></i>Thành lập<br>2019</div>
+          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></i>5 lĩnh vực<br>hoạt động</div>
+          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i>Trụ sở<br>Hà Nội</div>
+        </div>
+        <p>Công ty TNHH Kỹ thuật và Thương mại Vân Phong — thiết bị, vật tư và dịch vụ kỹ thuật cho Công nghiệp, Y tế, Thí nghiệm.</p>
+        <a class="btn cta" href="#gioi-thieu">Tìm hiểu thêm</a>
+      </div>
+    </div>
+    <div class="slide s-light" aria-label="2 / 4">
+      <div class="wrap in">
+        <div class="stage" aria-hidden="true">
+          <div class="dev" style="width:17%;aspect-ratio:3/5" data-i="cabinet"></div>
+          <div class="dev" style="width:21%;aspect-ratio:4/5" data-i="cabinet"></div>
+          <div class="dev" style="width:15%;aspect-ratio:1/1" data-i="autoclave"></div>
+          <div class="dev" style="width:14%;aspect-ratio:5/4" data-i="centrifuge"></div>
+          <div class="dev" style="width:15%;aspect-ratio:4/5" data-i="oven"></div>
+        </div>
+        <div class="r">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6h12M20 6v12L9 38a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L28 18V6"/><path d="M14 30h20"/></svg>
+          <h2>Thiết bị<br>Thí nghiệm</h2>
+          <p class="sub">Tủ an toàn, tủ hút, tủ sấy, máy ly tâm, cân phân tích</p>
+          <a class="btn" href="#san-pham" data-cat="tn">Xem thêm</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide s-light" aria-label="3 / 4">
+      <div class="wrap in">
+        <div class="stage" aria-hidden="true">
+          <div class="dev" style="width:18%;aspect-ratio:4/5" data-i="plc"></div>
+          <div class="dev" style="width:13%;aspect-ratio:3/5" data-i="drive"></div>
+          <div class="dev" style="width:20%;aspect-ratio:1/1" data-i="server"></div>
+          <div class="dev" style="width:20%;aspect-ratio:5/4" data-i="pc"></div>
+          <div class="dev" style="width:13%;aspect-ratio:3/4" data-i="sensor"></div>
+        </div>
+        <div class="r">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M8 18h32M14 26h6M14 32h6M26 26h8v6h-8z"/></svg>
+          <h2>Điện – Tự động hóa<br>&amp; Tin học</h2>
+          <p class="sub">PLC, biến tần, cảm biến, máy tính, máy chủ, phần mềm</p>
+          <a class="btn" href="#san-pham" data-cat="dt">Xem thêm</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide s-navy" aria-label="4 / 4">
+      <div class="wrap in">
+        <h2>Kỹ thuật – Thương mại</h2>
+        <p class="lead">Đồng hành từ tư vấn, thiết kế đến cung cấp, lắp đặt và bảo trì.</p>
+        <div class="cards">
+          <div><b>Nghiên cứu KH&amp;CN</b><span>Phát triển, chuyển giao công nghệ</span></div>
+          <div><b>Tư vấn xây dựng</b><span>Thiết kế · Thẩm tra · Giám sát</span></div>
+          <div><b>Thí nghiệm</b><span>Thử nghiệm vật liệu, thiết bị</span></div>
+          <div><b>Chế tạo, sửa chữa</b><span>Thiết bị Công nghiệp, Y tế, Thí nghiệm</span></div>
+        </div>
+        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">Lĩnh vực hoạt động</a></p>
+      </div>
+    </div>
+  </div>
+  <button class="arrow prev" id="prev" aria-label="Ảnh trước"><svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg></button>
+  <button class="arrow next" id="next" aria-label="Ảnh sau"><svg viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg></button>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="stats"><div class="wrap"><div class="box">
+  <div><b>2019</b><span>Năm thành lập</span></div>
+  <div><b>5</b><span>Lĩnh vực hoạt động</span></div>
+  <div><b>91</b><span>Ngành nghề đăng ký</span></div>
+  <div><b>3</b><span>Ngành phục vụ</span></div>
+</div></div></div>
+
+<!-- ABOUT -->
+<section class="about" id="gioi-thieu"><div class="wrap">
+  <figure><img src="tru-so.jpg" alt="Phối cảnh trụ sở Công ty Vân Phong, số 34 ngõ 36A phố Trần Điền, Hà Nội" width="1000" height="988"><figcaption>Trụ sở: Số 34, ngõ 36A, phố Trần Điền, Hà Nội</figcaption></figure>
+  <div>
+    <h2>Giới thiệu</h2>
+    <p>Công ty TNHH Kỹ thuật và Thương mại Vân Phong được thành lập ngày 25/06/2019 tại Hà Nội, hoạt động trong các lĩnh vực nghiên cứu khoa học công nghệ, tư vấn xây dựng, thí nghiệm, chế tạo – sửa chữa thiết bị và thương mại, xuất nhập khẩu vật tư, thiết bị, phần mềm.</p>
+    <p>Ngành nghề kinh doanh chính: bán buôn máy móc, thiết bị và phụ tùng máy (mã ngành 4659). Phạm vi đa lĩnh vực giúp chúng tôi đồng hành cùng khách hàng từ khâu ý tưởng, thiết kế đến cung cấp, lắp đặt và bảo trì.</p>
+    <p><b>Sứ mệnh:</b> Giải pháp kỹ thuật tin cậy cho mọi khách hàng. <b>Tầm nhìn:</b> Đối tác kỹ thuật hàng đầu về công nghiệp, y tế và thí nghiệm. <b>Giá trị cốt lõi:</b> Chính xác – Tận tâm – Hiệu quả.</p>
+    <div class="legal">VAN PHONG TECHNICAL AND TRADING COMPANY LIMITED<br>VAN PHONG TECH CO., LTD. · MSDN 0108797479</div>
+    <a class="btn line" href="#linh-vuc">Xem thêm &gt;&gt;</a>
+  </div>
+</div></section>
+
+<!-- HOT PRODUCTS -->
+<section class="grey" id="noi-bat"><div class="wrap">
+  <div class="title"><h2>Sản phẩm nổi bật</h2></div>
+  <div class="pc" id="hot">
+    <button class="side l" aria-label="Trước"><svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg></button>
+    <div class="track-wrap"><div class="track"></div></div>
+    <button class="side r" aria-label="Sau"><svg viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg></button>
+  </div>
+</div></section>
+
+<!-- CATALOGUE -->
+<section id="san-pham"><div class="wrap">
+  <div class="title"><h2>Danh mục sản phẩm</h2></div>
+  <div class="catalog">
+    <aside class="side-box"><h3>Danh mục</h3><ul class="tree" id="tree"></ul></aside>
+    <div>
+      <div class="cat-head">
+        <div><h3 id="catTitle">Tất cả sản phẩm</h3><p id="catCount"></p></div>
+        <form id="searchForm" role="search"><input id="q" type="search" placeholder="Tìm theo tên, mã…" aria-label="Tìm sản phẩm"><button class="btn" type="submit">Tìm</button></form>
+      </div>
+      <div class="grid" id="grid"></div>
+      <nav class="pager" id="pager" aria-label="Phân trang"></nav>
+      <p class="note">Danh mục và hình sản phẩm đang là bản minh họa. Sẽ cập nhật theo danh sách sản phẩm thật (tên, mã, ảnh, mô tả).</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- FIELDS -->
+<section class="grey" id="linh-vuc"><div class="wrap">
+  <div class="title"><h2>Lĩnh vực hoạt động</h2></div>
+  <div class="fields">
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="24" cy="24" r="6"/><ellipse cx="24" cy="24" rx="20" ry="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)"/></svg></i><h3>Nghiên cứu Khoa học và Công nghệ</h3><ul><li>Nghiên cứu, phát triển sản phẩm</li><li>Chuyển giao công nghệ</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 42h36M10 42V18l14-10 14 10v24"/><path d="M18 42V28h12v14M18 20h12"/></svg></i><h3>Tư vấn xây dựng</h3><ul><li>Tư vấn thiết kế</li><li>Tư vấn thẩm tra</li><li>Tư vấn giám sát</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6h12M20 6v12L9 38a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L28 18V6"/><path d="M14 30h20"/></svg></i><h3>Thí nghiệm</h3><ul><li>Thử nghiệm vật liệu, thiết bị</li><li>Phục vụ thiết kế, thi công, nghiệm thu</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="24" cy="24" r="7"/><path d="M24 4v7M24 37v7M4 24h7M37 24h7M10 10l5 5M33 33l5 5M10 38l5-5M33 15l5-5"/></svg></i><h3>Chế tạo, sửa chữa thiết bị</h3><ul><li>Công nghiệp</li><li>Y tế</li><li>Thí nghiệm</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 14h26v20H4zM30 20h8l6 7v7H30z"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></svg></i><h3>Thương mại, xuất nhập khẩu vật tư, thiết bị, phần mềm</h3><ul><li>Công nghiệp, Y tế, Thí nghiệm</li><li>Điện – điện tử, tự động hóa</li><li>Tin học: máy tính, thiết bị tin học</li></ul></div>
+  </div>
+</div></section>
+
+<!-- NEWS -->
+<section id="tin-tuc"><div class="wrap">
+  <div class="title"><h2>Tin tức</h2></div>
+  <div class="news">
+    <article><h3>Ra mắt website mới www.vanphongtechco.com.vn</h3><div class="img n1"><b>WEBSITE MỚI<small>www.vanphongtechco.com.vn</small></b></div><div class="meta"><span>Thông báo</span><span>01/11/2026</span></div></article>
+    <article><h3>Vân Phong chuyển trụ sở về số 34, ngõ 36A, phố Trần Điền</h3><div class="img photo"><img src="tru-so.jpg" alt="Trụ sở mới của Vân Phong" width="1000" height="988" loading="lazy"></div><div class="meta"><span>Thông báo</span><span>29/09/2026</span></div></article>
+    <article><h3>Đường dây nóng tư vấn, báo giá: 0899 990 683</h3><div class="img n3"><b>HOTLINE<small>0899 990 683</small></b></div><div class="meta"><span>Thông báo</span><span>01/11/2026</span></div></article>
+  </div>
+</div></section>
+
+<!-- CERTIFICATES -->
+<section class="certs-band" id="chung-nhan"><div class="wrap">
+  <div class="title"><h2>Chứng nhận</h2><p>Ảnh chụp bản gốc các giấy tờ sẽ được cập nhật.</p></div>
+  <div class="certs">
+    <div class="cert"><div class="doc"><span>Giấy chứng nhận đăng ký doanh nghiệp</span></div><b>Đăng ký doanh nghiệp</b><small>MSDN 0108797479 · thay đổi lần 4: 29/09/2026</small></div>
+    <div class="cert"><div class="doc"><span>Chứng chỉ năng lực hoạt động xây dựng</span></div><b>Chứng chỉ năng lực</b><small>Tư vấn thiết kế, thẩm tra, giám sát</small></div>
+    <div class="cert"><div class="doc"><span>Chứng nhận chất lượng</span></div><b>Chứng nhận chất lượng</b><small>Cập nhật khi có</small></div>
+    <div class="cert"><div class="doc"><span>Hồ sơ năng lực (PDF)</span></div><b>Hồ sơ năng lực</b><small>Liên hệ để nhận bản đầy đủ</small></div>
+  </div>
+</div></section>
+
+<!-- QUICK LINKS -->
+<section id="lien-ket"><div class="wrap">
+  <div class="title"><h2>Liên kết nhanh</h2></div>
+  <div class="qlinks" id="qlinks"></div>
+</div></section>
+</main>
+
+<footer id="lien-he"><div class="wrap">
+  <div class="fgrid">
+    <div>
+      <h4>Liên hệ</h4>
+      <dl>
+        <dt>Địa chỉ:</dt><dd>Số 34, ngõ 36A, phố Trần Điền, phường Phương Liệt, TP. Hà Nội</dd>
+        <dt>Hotline:</dt><dd><a href="tel:0899990683">0899 990 683</a></dd>
+        <dt>Email:</dt><dd><a href="mailto:info@vanphongtechco.com.vn">info@vanphongtechco.com.vn</a></dd>
+        <dt>Website:</dt><dd>www.vanphongtechco.com.vn</dd>
+      </dl>
+    </div>
+    <div>
+      <h4>Về Vân Phong</h4>
+      <img class="flogo" src="logo.png" alt="Vân Phong" width="600" height="107">
+      <p style="margin:0">Công ty TNHH Kỹ thuật và Thương mại Vân Phong — Kỹ thuật – Thương mại. Thiết bị, vật tư và dịch vụ kỹ thuật cho Công nghiệp, Y tế, Thí nghiệm.</p>
+    </div>
+    <div>
+      <h4>Danh mục</h4>
+      <ul id="footCats"></ul>
+    </div>
+  </div>
+  <div class="copy"><span>© 2026 Công ty TNHH Kỹ thuật và Thương mại Vân Phong</span><span>MSDN 0108797479</span></div>
+</div></footer>
+
+<a class="float-chat" href="#lien-he"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/></svg>Liên hệ</a>
+<a class="float-call" href="tel:0899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>0899 990 683</a>
+<button class="to-top" id="toTop" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button>
+
+<script>
+const ICONS = {
+  cabinet:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="12" y="6" width="40" height="52" rx="2"/><path d="M12 22h40M18 14h18M16 30h32v20H16z"/><circle cx="46" cy="14" r="2"/></svg>',
+  autoclave:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="10" y="12" width="44" height="44" rx="3"/><circle cx="32" cy="34" r="13"/><circle cx="32" cy="34" r="5"/><path d="M16 18h10"/></svg>',
+  centrifuge:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 40h48v14H8z"/><path d="M14 40c0-12 8-20 18-20s18 8 18 20"/><path d="M18 47h8"/><circle cx="44" cy="47" r="2"/></svg>',
+  balance:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 50h44v6H10zM16 50V30h32v20"/><path d="M22 30V16h20v14"/><path d="M26 42h12"/></svg>',
+  oven:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="10" width="48" height="44" rx="2"/><rect x="14" y="16" width="28" height="32"/><path d="M48 18v4M48 28v4"/><path d="M18 26h20M18 34h20"/></svg>',
+  monitor:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="10" width="48" height="34" rx="2"/><path d="M14 30h8l4-10 6 18 4-8h14"/><path d="M26 54h12M32 44v10"/></svg>',
+  bed:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 40h52M10 40V24M54 40v-8H22v8"/><circle cx="16" cy="32" r="4"/><path d="M12 40v10M52 40v10"/></svg>',
+  plc:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="14" width="48" height="36" rx="2"/><path d="M8 24h48M16 32h6M16 40h6M28 32h6M28 40h6M42 32h8v8h-8z"/></svg>',
+  drive:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="16" y="6" width="32" height="52" rx="2"/><rect x="22" y="12" width="20" height="10"/><circle cx="32" cy="36" r="6"/><path d="M22 50h20"/></svg>',
+  sensor:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M24 8h16v14H24zM28 22v26l4 8 4-8V22"/><path d="M14 18c-4 4-4 12 0 16M50 18c4 4 4 12 0 16"/></svg>',
+  gear:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="32" cy="32" r="8"/><path d="M32 8v8M32 48v8M8 32h8M48 32h8M15 15l6 6M43 43l6 6M15 49l6-6M43 21l6-6"/><circle cx="32" cy="32" r="16"/></svg>',
+  pump:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="26" cy="34" r="14"/><path d="M40 34h16M48 26v16M26 20V8h16"/><circle cx="26" cy="34" r="4"/><path d="M12 54h28"/></svg>',
+  pc:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="10" width="38" height="28" rx="2"/><path d="M18 46h14M25 38v8"/><rect x="48" y="10" width="10" height="36" rx="1"/><path d="M51 16h4M51 22h4"/></svg>',
+  server:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="12" y="8" width="40" height="14" rx="2"/><rect x="12" y="25" width="40" height="14" rx="2"/><rect x="12" y="42" width="40" height="14" rx="2"/><path d="M18 15h10M18 32h10M18 49h10"/><circle cx="45" cy="15" r="1.5"/><circle cx="45" cy="32" r="1.5"/><circle cx="45" cy="49" r="1.5"/></svg>',
+  camera:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 20h34l8 6v8l-8 6H8z"/><circle cx="24" cy="30" r="5"/><path d="M28 40v10h-14"/></svg>',
+  software:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="10" width="48" height="40" rx="2"/><path d="M8 20h48M24 30l-6 6 6 6M40 30l6 6-6 6M35 28l-6 16"/></svg>'
+};
+const CATS = [
+  {id:'cn', name:'Thiết bị công nghiệp', subs:['Máy và thiết bị cơ khí','Bơm, quạt, hộp giảm tốc','Vật tư, phụ tùng thay thế']},
+  {id:'yt', name:'Thiết bị y tế', subs:['Thiết bị theo dõi bệnh nhân','Giường, xe đẩy y tế','Thiết bị tiệt trùng']},
+  {id:'tn', name:'Thiết bị thí nghiệm', subs:['Tủ an toàn, tủ hút','Tủ sấy, tủ ấm, lò nung','Cân, máy ly tâm']},
+  {id:'dt', name:'Điện – Điện tử, Tự động hóa', subs:['PLC, bộ điều khiển','Biến tần, khởi động mềm','Cảm biến, thiết bị đo']},
+  {id:'th', name:'Máy tính – Tin học', subs:['Máy tính, máy chủ','Thiết bị mạng, camera','Phần mềm bản quyền']}
+];
+const PRODUCTS = [
+  {c:'tn', s:0, n:'Tủ an toàn sinh học cấp II', code:'VP-TN-01', d:'Bảo vệ người thao tác, mẫu và môi trường phòng thí nghiệm.', i:'cabinet', hot:1},
+  {c:'tn', s:0, n:'Tủ hút khí độc', code:'VP-TN-02', d:'Hút và xử lý hơi hóa chất khi thao tác mẫu.', i:'cabinet'},
+  {c:'tn', s:1, n:'Tủ sấy, tủ ấm', code:'VP-TN-03', d:'Sấy, ủ mẫu với nhiệt độ điều khiển ổn định.', i:'oven', hot:1},
+  {c:'tn', s:2, n:'Máy ly tâm', code:'VP-TN-04', d:'Tách mẫu theo tốc độ và thời gian cài đặt.', i:'centrifuge', hot:1},
+  {c:'tn', s:2, n:'Cân phân tích', code:'VP-TN-05', d:'Cân chính xác cho phòng thí nghiệm, kiểm định.', i:'balance'},
+  {c:'yt', s:2, n:'Nồi hấp tiệt trùng', code:'VP-YT-01', d:'Tiệt trùng dụng cụ y tế bằng hơi nước bão hòa.', i:'autoclave', hot:1},
+  {c:'yt', s:0, n:'Monitor theo dõi bệnh nhân', code:'VP-YT-02', d:'Theo dõi các thông số sinh tồn liên tục.', i:'monitor', hot:1},
+  {c:'yt', s:1, n:'Giường bệnh đa năng', code:'VP-YT-03', d:'Điều chỉnh tư thế, phục vụ chăm sóc người bệnh.', i:'bed'},
+  {c:'cn', s:1, n:'Hộp giảm tốc công nghiệp', code:'VP-CN-01', d:'Chế tạo, sửa chữa, thay thế theo yêu cầu kỹ thuật.', i:'gear', hot:1},
+  {c:'cn', s:1, n:'Bơm và quạt công nghiệp', code:'VP-CN-02', d:'Cung cấp, lắp đặt, bảo dưỡng cho nhà máy, công trường.', i:'pump'},
+  {c:'dt', s:0, n:'Bộ điều khiển PLC', code:'VP-DT-01', d:'Tủ điều khiển, lập trình tự động hóa dây chuyền.', i:'plc', hot:1},
+  {c:'dt', s:1, n:'Biến tần, khởi động mềm', code:'VP-DT-02', d:'Điều khiển tốc độ động cơ, tiết kiệm điện năng.', i:'drive'},
+  {c:'dt', s:2, n:'Cảm biến và thiết bị đo', code:'VP-DT-03', d:'Đo nhiệt độ, áp suất, mức, lưu lượng.', i:'sensor'},
+  {c:'th', s:0, n:'Máy tính trạm, máy chủ', code:'VP-TH-01', d:'Cấu hình theo nhu cầu văn phòng, kỹ thuật.', i:'server', hot:1},
+  {c:'th', s:0, n:'Máy tính để bàn, xách tay', code:'VP-TH-02', d:'Cung cấp, cài đặt, bảo hành tận nơi.', i:'pc'},
+  {c:'th', s:1, n:'Camera và thiết bị mạng', code:'VP-TH-03', d:'Lắp đặt mạng LAN, camera cho văn phòng, nhà xưởng.', i:'camera'},
+  {c:'th', s:2, n:'Phần mềm bản quyền', code:'VP-TH-04', d:'Phần mềm văn phòng và chuyên ngành kỹ thuật.', i:'software'}
+];
+const $ = id => document.getElementById(id);
+const esc = t => String(t).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+const norm = t => t.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase();
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* hero devices */
+document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dataset.i]);
+
+/* hero carousel */
+(function(){
+  const track = $('slides'), n = track.children.length, dots = $('dots');
+  let i = 0, timer;
+  dots.innerHTML = Array.from({length:n},(_,k)=>'<button type="button" aria-label="Ảnh '+(k+1)+'"></button>').join('');
+  function go(k){ i=(k+n)%n; track.style.transform='translateX(-'+(i*100)+'%)'; [...dots.children].forEach((b,j)=>b.setAttribute('aria-current', j===i)); }
+  function auto(){ clearInterval(timer); if(!reduce) timer=setInterval(()=>go(i+1),6000); }
+  $('prev').onclick=()=>{go(i-1);auto()}; $('next').onclick=()=>{go(i+1);auto()};
+  dots.onclick=e=>{const b=e.target.closest('button'); if(b){go([...dots.children].indexOf(b)); auto();}};
+  let x0=null; track.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+  track.addEventListener('touchend',e=>{ if(x0===null)return; const dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40){go(i+(dx<0?1:-1));auto();} x0=null; });
+  go(0); auto();
+})();
+
+/* hot products carousel */
+(function(){
+  const box=$('hot'), track=box.querySelector('.track');
+  const hot=PRODUCTS.filter(p=>p.hot);
+  track.innerHTML=hot.map(p=>'<div class="pitem" data-code="'+p.code+'" role="button" tabindex="0"><div class="pimg">'+ICONS[p.i]+'</div><h3>'+esc(p.n)+'</h3><span>'+esc(p.code)+'</span></div>').join('');
+  let i=0;
+  const per=()=>innerWidth<=900?2:4;
+  function go(k){ const max=Math.max(0,hot.length-per()); i=k<0?max:(k>max?0:k); track.style.transform='translateX(-'+(i*100/per())+'%)'; }
+  box.querySelector('.l').onclick=()=>go(i-1); box.querySelector('.r').onclick=()=>go(i+1);
+  addEventListener('resize',()=>go(i));
+  track.addEventListener('click',e=>{const it=e.target.closest('.pitem'); if(it){$('q').value=it.dataset.code; query=it.dataset.code; cur='all'; sub=null; page=1; renderTree(); renderGrid(); scrollToCat();}});
+})();
+
+/* catalogue */
+let cur='all', sub=null, query='', page=1; const PER=9; const opened=new Set();
+function scrollToCat(){ $('san-pham').scrollIntoView({behavior:reduce?'auto':'smooth'}); }
+function renderMenus(){
+  $('mega').innerHTML=CATS.map(c=>'<div><h4><button type="button" data-cat="'+c.id+'">'+c.name+'</button></h4><ul>'+c.subs.map((x,k)=>'<li><button type="button" data-cat="'+c.id+'" data-sub="'+k+'">'+x+'</button></li>').join('')+'</ul></div>').join('');
+  $('footCats').innerHTML=CATS.map(c=>'<li><a href="#san-pham" data-cat="'+c.id+'">'+c.name+'</a></li>').join('');
+  $('qlinks').innerHTML=CATS.flatMap(c=>[ '<button type="button" data-cat="'+c.id+'" title="'+c.name+'">'+c.name+'</button>' ].concat(c.subs.map((x,k)=>'<button type="button" data-cat="'+c.id+'" data-sub="'+k+'" title="'+x+'">'+x+'</button>'))).join('');
+}
+function renderTree(){
+  const all=[{id:'all',name:'Tất cả sản phẩm',subs:[]}].concat(CATS);
+  $('tree').innerHTML=all.map(c=>{
+    const cnt=c.id==='all'?PRODUCTS.length:PRODUCTS.filter(p=>p.c===c.id).length, op=opened.has(c.id);
+    const tg=c.subs.length?'<button type="button" class="tg" data-toggle="'+c.id+'" aria-expanded="'+op+'" aria-label="Mở danh mục con">'+(op?'−':'+')+'</button>':'<span></span>';
+    const subs=(c.subs.length&&op)?'<ul>'+c.subs.map((x,k)=>'<li><button type="button" data-cat="'+c.id+'" data-sub="'+k+'" aria-pressed="'+(cur===c.id&&sub===k)+'">'+x+'</button></li>').join('')+'</ul>':'';
+    return '<li>'+tg+'<button type="button" class="cat" data-cat="'+c.id+'" aria-pressed="'+(cur===c.id&&sub===null)+'">'+c.name+'<span class="count">'+cnt+'</span></button>'+subs+'</li>';
+  }).join('');
+}
+function renderGrid(){
+  const q=norm(query.trim());
+  const list=PRODUCTS.filter(p=>(cur==='all'||p.c===cur)&&(sub===null||p.s===sub)&&(!q||norm(p.n+' '+p.code+' '+p.d).includes(q)));
+  const pages=Math.max(1,Math.ceil(list.length/PER)); if(page>pages)page=pages;
+  const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
+  $('catTitle').textContent=sn||(cat?cat.name:'Tất cả sản phẩm');
+  $('catCount').textContent=list.length+' sản phẩm'+(query.trim()?' khớp với “'+query.trim()+'”':'');
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb">'+ICONS[p.i]+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span><a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 0899 990 683 để được tư vấn.</div>';
+  const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
+  let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Trang trước">‹</button>';
+  for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';
+  pg.innerHTML=h+'<button type="button" data-page="'+(page+1)+'" '+(page===pages?'disabled':'')+' aria-label="Trang sau">›</button>';
+}
+function closeDD(){document.querySelectorAll('.dd.open').forEach(d=>{d.classList.remove('open');d.querySelector('button').setAttribute('aria-expanded','false')})}
+const nav=$('mainNav'), mb=$('menuBtn');
+function closeNav(){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}
+function setCat(id,s){cur=id;sub=(s===undefined||s===null)?null:Number(s);page=1;query='';$('q').value='';if(id!=='all')opened.add(id);renderTree();renderGrid();closeDD();closeNav();scrollToCat();}
+document.addEventListener('click',e=>{
+  const ddb=e.target.closest('.dd>button');
+  if(ddb){const d=ddb.parentElement,was=d.classList.contains('open');closeDD();if(!was){d.classList.add('open');ddb.setAttribute('aria-expanded','true')}return}
+  if(!e.target.closest('.dd'))closeDD();
+  const tg=e.target.closest('[data-toggle]'); if(tg){const id=tg.dataset.toggle;opened.has(id)?opened.delete(id):opened.add(id);renderTree();return}
+  const b=e.target.closest('[data-cat]'); if(b){e.preventDefault();setCat(b.dataset.cat,b.dataset.sub);return}
+  const pb=e.target.closest('[data-page]'); if(pb&&!pb.disabled){page=Number(pb.dataset.page);renderGrid();$('catTitle').scrollIntoView({block:'center'});return}
+  if(e.target.closest('nav.main a, .panel a')){closeNav();closeDD()}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDD(); if(e.key==='Enter'&&e.target.classList.contains('pitem'))e.target.click();});
+mb.onclick=()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
+$('searchBtn').onclick=()=>{const o=$('searchbar').classList.toggle('open');$('searchBtn').setAttribute('aria-expanded',o);if(o)$('topQ').focus()};
+$('topSearch').onsubmit=e=>{e.preventDefault();query=$('topQ').value;$('q').value=query;cur='all';sub=null;page=1;renderTree();renderGrid();$('searchbar').classList.remove('open');scrollToCat()};
+$('searchForm').onsubmit=e=>{e.preventDefault();query=$('q').value;page=1;renderGrid()};
+$('q').oninput=e=>{query=e.target.value;page=1;if(query.trim()&&(cur!=='all'||sub!==null)){cur='all';sub=null;renderTree()}renderGrid()};
+const tt=$('toTop'); addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>600),{passive:true}); tt.onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+renderMenus();renderTree();renderGrid();
+</script>
+</body>
+</html>
