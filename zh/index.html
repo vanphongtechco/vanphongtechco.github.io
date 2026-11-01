@@ -321,13 +321,19 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 /* floating */
 .float-chat{position:fixed;right:0;top:58%;z-index:40;background:var(--navy);color:#fff;width:46px;padding:12px 0;display:grid;justify-items:center;gap:6px;font-size:11px;writing-mode:vertical-rl;letter-spacing:.06em}
 .float-chat svg{width:18px;height:18px;fill:#fff;writing-mode:horizontal-tb}
-.float-call{position:fixed;right:20px;bottom:20px;z-index:40;background:var(--cta);color:#fff;border-radius:30px;padding:10px 18px 10px 12px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;box-shadow:0 6px 18px rgba(240,124,27,.4)}
+.float-stack{position:fixed;right:20px;bottom:20px;z-index:40;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fs{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,.18);transition:transform .15s}
+.fs:hover{transform:scale(1.08)}
+.fs svg{width:26px;height:26px}
+.fs.zalo{background:#0068FF}.fs.zalo svg{width:40px;height:40px}
+.fs.wa{background:#25D366}.fs.vb{background:#7360F2}.fs.tg{background:#2AABEE}
+.float-call{background:var(--cta);color:#fff;border-radius:30px;padding:10px 18px 10px 12px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;box-shadow:0 6px 18px rgba(240,124,27,.4)}
 .float-call i{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center}
 .float-call i svg{width:15px;height:15px;fill:var(--cta)}
-.to-top{position:fixed;right:30px;bottom:76px;z-index:40;width:40px;height:40px;background:#2F6FB7;border:0;cursor:pointer;display:none;place-items:center}
+.to-top{position:fixed;left:20px;bottom:20px;z-index:40;width:40px;height:40px;background:#2F6FB7;border:0;cursor:pointer;display:none;place-items:center}
 .to-top.show{display:grid}
 .to-top svg{width:18px;height:18px;fill:#fff}
-@media (max-width:700px){.float-chat{display:none}.float-call{right:12px;bottom:12px}.to-top{right:16px;bottom:66px}}
+@media (max-width:700px){.float-chat{display:none}.float-stack{right:12px;bottom:12px;gap:8px}.fs{width:40px;height:40px}.fs svg{width:22px;height:22px}.fs.zalo svg{width:36px;height:36px}}
 </style>
 </head>
 <body>
@@ -350,7 +356,6 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <div class="dd"><button type="button" aria-expanded="false">证书 <span class="caret"></span></button><div class="panel">
       <a href="#chung-nhan">企业登记证书</a><a href="#chung-nhan">公司简介</a></div></div>
     <a href="#gioi-thieu">关于我们</a>
-    <a href="#tin-tuc">新闻</a>
     <div class="dd"><button type="button" aria-expanded="false">服务 <span class="caret"></span></button><div class="panel">
       <a href="#linh-vuc">科学技术研究</a><a href="#linh-vuc">建设咨询</a><a href="#linh-vuc">试验 – 检定</a><a href="#linh-vuc">设备设计 – 制造 – 维修</a><a href="#linh-vuc">贸易及进出口</a></div></div>
     <a href="#lien-he">联系我们</a>
@@ -502,15 +507,6 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   </div>
 </div></section>
 
-<!-- NEWS -->
-<section id="tin-tuc"><div class="wrap">
-  <div class="title"><h2>新闻</h2></div>
-  <div class="news">
-    <article><h3>新网站上线：www.vanphongtechco.com.vn</h3><div class="img n1"><b>新网站上线<small>www.vanphongtechco.com.vn</small></b></div><div class="meta"><span>公告</span><span>2026-11-01</span></div></article>
-    <article><h3>Van Phong 总部迁至陈田街36A巷34号</h3><div class="img photo"><img src="/tru-so.jpg" alt="Van Phong 新总部" width="1000" height="988" loading="lazy"></div><div class="meta"><span>公告</span><span>2026-09-29</span></div></article>
-    <article><h3>咨询及报价热线：+84 899 990 683</h3><div class="img n3"><b>热线<small>+84 899 990 683</small></b></div><div class="meta"><span>公告</span><span>2026-11-01</span></div></article>
-  </div>
-</div></section>
 
 <!-- CERTIFICATES -->
 <section class="certs-band" id="chung-nhan"><div class="wrap">
@@ -554,7 +550,13 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></footer>
 
 <a class="float-chat" href="#lien-he"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/></svg>联系</a>
-<a class="float-call" href="tel:+84899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>+84 899 990 683</a>
+<div class="float-stack" aria-label="快速联系">
+  <a class="fs zalo" href="https://zalo.me/0899990683" target="_blank" rel="noopener" title="Zalo" aria-label="Zalo"><svg viewBox="0 0 48 48"><text x="24" y="29.5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#fff">Zalo</text></svg></a>
+  <a class="fs wa" href="https://wa.me/84899990683" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.8 4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.1 1.7 2.6 4.1 3.7 1.5.7 2.1.7 2.9.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.3z"/></svg></a>
+  <a class="fs vb" href="viber://chat?number=%2B84899990683" title="Viber" aria-label="Viber"><svg viewBox="0 0 24 24"><path fill="#fff" d="M11.4 2C7 2.1 3.3 3.6 3 8.9c-.2 2.9-.1 5.5 1.9 7.4v3.4c0 .5.6.7.9.4l2.3-2.5c1.2.2 2.4.3 3.7.2 4.4-.1 8.1-1.6 8.4-6.9.2-3.5-.4-6.3-2.4-7.6C16.4 2.4 14 2 11.4 2zm.2 1.6c2.1 0 4.1.3 5.3 1.1 1.5 1 1.9 3.3 1.7 6.3-.2 4.2-3 5.4-6.8 5.5-1.2 0-2.3 0-3.4-.3l-1.9 2v-2.9c-1.8-1.5-1.8-3.8-1.7-6.3.3-4.2 3.3-5.3 6.8-5.4zm-2.9 3.2c-.3 0-.6.1-.8.3-.6.6-1 1.4-.7 2.2.9 2.4 2.6 4.5 4.9 5.7.9.5 1.8.1 2.3-.7.3-.4.2-.9-.2-1.2l-1.3-.9c-.4-.3-.9-.2-1.1.2l-.3.5c-1-.4-1.9-1.3-2.3-2.3l.5-.4c.4-.3.4-.8.1-1.1l-.9-1.3c-.1-.3-.4-.4-.7-.4zm3.6.3a.4.4 0 0 0 0 .8 2.9 2.9 0 0 1 2.8 2.8.4.4 0 0 0 .8 0 3.7 3.7 0 0 0-3.6-3.6z"/></svg></a>
+  <a class="fs tg" href="https://t.me/+84899990683" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="#fff" d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14c.3-1.2-.5-1.8-1.5-1.3zM9 14.2l9.4-5.9c.4-.3.8-.1.5.2l-7.7 7-.3 3.3z"/></svg></a>
+  <a class="float-call" href="tel:+84899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>+84 899 990 683</a>
+</div>
 <button class="to-top" id="toTop" aria-label="返回顶部"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="文件查看"><button class="lb-close" id="lbClose" aria-label="关闭">×</button><p class="lb-note">越文原件，部分个人信息已隐去。</p><div id="lbImgs"></div></div>
 
 <script>
