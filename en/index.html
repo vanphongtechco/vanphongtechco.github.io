@@ -195,6 +195,7 @@ section{padding:70px 0}
 .pitem:hover .pimg{transform:scale(1.05)}
 .pimg{width:100%;aspect-ratio:1/1;max-width:220px;display:grid;place-items:center;transition:transform .3s}
 .pimg svg{width:70%;height:auto;color:var(--navy)}
+.pimg img{display:block;width:100%;aspect-ratio:1/1;height:auto;object-fit:contain}
 .pitem h3{margin:14px 0 4px;font-size:16px;font-weight:600;color:#26313C}
 .pitem span{font-size:13px;color:var(--muted)}
 .pc .side{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;background:#E2E5E9;cursor:pointer;display:grid;place-items:center;z-index:2}
@@ -229,6 +230,7 @@ section{padding:70px 0}
 .card:hover{border-color:var(--blue);box-shadow:0 10px 24px rgba(14,47,90,.1)}
 .card .thumb{aspect-ratio:4/3;background:linear-gradient(180deg,#F7F9FB,#ECF0F4);display:grid;place-items:center}
 .card .thumb svg{width:44%;color:var(--navy)}
+.card .thumb.ph{background:#fff}.card .thumb{overflow:hidden;min-height:0}.card .thumb img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:contain;padding:8px}
 .card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
 .card .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
 .card h4{margin:0;font-size:16px;font-weight:600}
@@ -604,6 +606,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Document viewer"><button class="lb-close" id="lbClose" aria-label="Close">×</button><p class="lb-note" id="lbNote">Vietnamese original. Some personal data has been hidden.</p><div id="lbImgs"></div></div>
 
 <script>
+const pic=p=>p.img?'<img src="/anh-san-pham/'+p.img+'.jpg" alt="'+esc(p.n)+'" loading="lazy">':ICONS[p.i];
 const ICONS = {
   cabinet:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="12" y="6" width="40" height="52" rx="2"/><path d="M12 22h40M18 14h18M16 30h32v20H16z"/><circle cx="46" cy="14" r="2"/></svg>',
   autoclave:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="10" y="12" width="44" height="44" rx="3"/><circle cx="32" cy="34" r="13"/><circle cx="32" cy="34" r="5"/><path d="M16 18h10"/></svg>',
@@ -636,9 +639,9 @@ const CATS = [
 const PRODUCTS = [
   {c:'cn', s:0, n:'CRS350-15 interlaced disc screen (350 t/h)', code:'CRS350-15', pdf:'crs350-15', d:'Coal screen: feed size 150 mm, undersize 15 mm, capacity 350 t/h, motors 3 × 7.5 kW. Van Phong provided sizing calculations and equipment selection for the project owner, Vang Danh Coal JSC – Vinacomin. Manufacturer: Gongbei (China).', i:'screen', hot:3},
   {c:'cn', s:0, n:'CRS1414 interlaced disc screen (150 t/h)', code:'CRS1414', pdf:'crs1414', d:'Coal screen: capacity 150 t/h, 14 shafts, screen width 1400 mm, undersize ≤ 8 mm, motors 14 × 3.0 kW, dimensions 3740 × 2587 × 1555 mm, approx. 10 t. Used in the coal screening system of the Thermal Power Workshop, Lam Dong Alumina Plant; Van Phong provided sizing calculations and equipment selection for the project owner. Manufacturer: Gongbei (China).', i:'screen', hot:3},
-  {c:'tn', s:3, n:'BIOBASE BK-FD10P freeze dryer (-60°C)', code:'BK-FD10P', pdf:'bk-fd10p', d:'Laboratory freeze dryer with cold trap down to -60°C. Brand: BIOBASE.', i:'freeze', hot:2},
-  {c:'tn', s:0, n:'BIOBASE BBS-H1500 clean bench', code:'BBS-H1500', pdf:'bbs-h1500', d:'Laboratory clean bench, supplied with installation, commissioning and user training. Brand: BIOBASE.', i:'bench', hot:2},
-  {c:'tn', s:0, n:'BIOBASE BKCB-V900 clean bench', code:'BKCB-V900', pdf:'bkcb-v900', d:'Vertical laminar flow clean bench. Brand: BIOBASE.', i:'bench', hot:2},
+  {c:'tn', s:3, n:'BIOBASE BK-FD10P freeze dryer (-60°C)', code:'BK-FD10P', pdf:'bk-fd10p', img:'bk-fd10p', d:'Laboratory freeze dryer with cold trap down to -60°C. Brand: BIOBASE.', i:'freeze', hot:2},
+  {c:'tn', s:0, n:'BIOBASE BBS-H1500 clean bench', code:'BBS-H1500', pdf:'bbs-h1500', img:'bbs-h1500', d:'Laboratory clean bench, supplied with installation, commissioning and user training. Brand: BIOBASE.', i:'bench', hot:2},
+  {c:'tn', s:0, n:'BIOBASE BKCB-V900 clean bench', code:'BKCB-V900', pdf:'bkcb-v900', img:'bkcb-v900', d:'Vertical laminar flow clean bench. Brand: BIOBASE.', i:'bench', hot:2},
   {c:'tn', s:3, n:'Drawell OS20-Pro overhead stirrer', code:'OS20-Pro', pdf:'os20-pro', d:'Overhead mechanical stirrer for chemistry laboratories. Brand: Drawell.', i:'stirrer', hot:2},
   {c:'tn', s:0, n:'Class II biosafety cabinet', code:'VP-TN-01', d:'Protects the operator, samples and the laboratory environment.', i:'cabinet', hot:1},
   {c:'tn', s:0, n:'Fume hood', code:'VP-TN-02', d:'Extracts and treats chemical vapours during sample handling.', i:'cabinet'},
@@ -684,7 +687,7 @@ document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dat
 (function(){
   const box=$('hot'), track=box.querySelector('.track');
   const hot=PRODUCTS.filter(p=>p.hot).sort((a,b)=>b.hot-a.hot);
-  track.innerHTML=hot.map(p=>'<div class="pitem" data-code="'+p.code+'" role="button" tabindex="0"><div class="pimg">'+ICONS[p.i]+'</div><h3>'+esc(p.n)+'</h3><span>'+esc(p.code)+'</span></div>').join('');
+  track.innerHTML=hot.map(p=>'<div class="pitem" data-code="'+p.code+'" role="button" tabindex="0"><div class="pimg">'+pic(p)+'</div><h3>'+esc(p.n)+'</h3><span>'+esc(p.code)+'</span></div>').join('');
   let i=0;
   const per=()=>innerWidth<=900?2:4;
   function go(k){ const max=Math.max(0,hot.length-per()); i=k<0?max:(k>max?0:k); track.style.transform='translateX(-'+(i*100/per())+'%)'; }
@@ -717,7 +720,7 @@ function renderGrid(){
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'All products');
   $('catCount').textContent=list.length+' products'+(query.trim()?' matching “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb">'+ICONS[p.i]+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 for advice.</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 for advice.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Previous page">‹</button>';
   for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';
