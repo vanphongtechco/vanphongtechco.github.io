@@ -271,14 +271,14 @@ section{padding:70px 0}
 .n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
 @media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
 
-.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.pt{background:#fff;border:1px solid var(--line);padding:22px 18px;display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center}
-.pt .lg{grid-row:1/3;width:72px;height:72px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:.02em;background:#fff}
-.pt .lg img{width:60px;height:60px;object-fit:contain}
-.pt b{font-size:15px;color:#26313C;line-height:1.35;align-self:end}
-.pt span{font-size:13px;color:var(--muted);align-self:start}
-@media (max-width:900px){.partners{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.partners{grid-template-columns:minmax(0,1fr)}}
+.partners{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.pt{background:#fff;border:1px solid var(--line);padding:24px 14px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;transition:box-shadow .2s}
+.pt:hover{box-shadow:0 8px 20px rgba(14,47,90,.1)}
+.pt .lg{width:84px;height:84px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:18px;letter-spacing:.02em;background:#fff;flex:none}
+.pt .lg img{width:72px;height:72px;object-fit:contain}
+.pt b{font-size:14px;font-weight:600;color:#26313C;line-height:1.4}
+@media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
@@ -524,15 +524,18 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 
 <!-- PARTNERS -->
 <section class="grey" id="doi-tac"><div class="wrap">
-  <div class="title"><h2>Đối tác – Khách hàng</h2><p>Các đơn vị Vân Phong đã hợp tác, cung cấp vật tư, thiết bị và dịch vụ.</p></div>
+  <div class="title"><h2>Đối tác – Khách hàng</h2><p>Các đơn vị đã hợp tác cùng Vân Phong.</p></div>
   <div class="partners">
-    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Công ty CP Than Vàng Danh – Vinacomin</b><span>Dịch vụ lắp đặt; tư vấn sàng đĩa đan xen</span></div>
-    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>Viện Cơ khí Năng lượng và Mỏ – Vinacomin</b><span>Dịch vụ kỹ thuật; mua bán vật tư, thiết bị</span></div>
-    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Cơ điện Đại Dương</b><span>Mua bán thiết bị</span></div>
-    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>Ban QLDA Bauxit – Nhôm Lâm Đồng</b><span>Hợp tác</span></div>
-    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>Công ty Nhôm Lâm Đồng – Vinacomin</b><span>Hợp tác</span></div>
-    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>Gongbei Heavy Machinery (Thạch Gia Trang, Trung Quốc)</b><span>Hợp tác sàng đĩa đan xen</span></div>
-    <div class="pt"><div class="lg" style="--c:#0F7C8C">TL</div><b>Tramina – Tư vấn Thủy điện Thủy lợi Thăng Long</b><span>Hợp tác</span></div>
+    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Công ty CP Than Vàng Danh – Vinacomin</b></div>
+    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>Viện Cơ khí Năng lượng và Mỏ – Vinacomin</b></div>
+    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Công ty TNHH Cơ điện Đại Dương</b></div>
+    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>Ban QLDA Tổ hợp Bauxit – Nhôm Lâm Đồng</b></div>
+    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>Công ty Nhôm Lâm Đồng – TKV</b></div>
+    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>Gongbei Heavy Machinery (Thạch Gia Trang, Trung Quốc)</b></div>
+    <div class="pt"><div class="lg" style="--c:#0F7C8C">TT</div><b>Công ty Tư vấn Thủy điện Thủy lợi Thăng Long</b></div>
+    <div class="pt"><div class="lg" style="--c:#5B4BA0">TRA</div><b>Tramina</b></div>
+    <div class="pt"><div class="lg" style="--c:#D35400">CFT</div><b>Công ty CP Công nghiệp CFTSHOP</b></div>
+    <div class="pt"><div class="lg" style="--c:#7A1F3D">ĐHH</div><b>Trường Đại học Sư phạm – Đại học Huế</b></div>
   </div>
 </div></section>
 
@@ -628,7 +631,7 @@ const CATS = [
 ];
 const PRODUCTS = [
   {c:'cn', s:0, n:'Sàng đĩa đan xen CRS350-15 (350 t/h)', code:'CRS350-15', d:'Sàng than: cỡ hạt cấp liệu 150 mm, cỡ hạt dưới sàng 15 mm, năng suất 350 t/h, động cơ 3 × 7,5 kW. Phương án tư vấn cho Công ty CP Than Vàng Danh – Vinacomin, hợp tác cùng Gongbei Heavy Machinery (Trung Quốc).', i:'screen', hot:3},
-  {c:'cn', s:0, n:'Sàng đĩa đan xen CRS-1414', code:'CRS-1414', d:'Sàng đĩa đan xen phân loại vật liệu rời (than, khoáng sản). Hợp tác cung cấp cùng đối tác Trung Quốc.', i:'screen', hot:3},
+  {c:'cn', s:0, n:'Sàng đĩa đan xen CRS1414 (150 t/h)', code:'CRS1414', d:'Sàng than: năng suất 150 t/h, 14 trục, mặt sàng rộng 1400 mm, cỡ hạt dưới sàng ≤ 8 mm, động cơ 14 × 3,0 kW, kích thước 3740 × 2587 × 1555 mm, khoảng 10 tấn. Hãng Gongbei (Trung Quốc). Dùng cho hệ thống sàng than PX Nhiệt điện – Nhà máy alumin Lâm Đồng.', i:'screen', hot:3},
   {c:'tn', s:3, n:'Máy đông khô BIOBASE BK-FD10P (-60°C)', code:'BK-FD10P', d:'Máy sấy đông khô phòng thí nghiệm, nhiệt độ bẫy lạnh đến -60°C. Hãng BIOBASE.', i:'freeze', hot:2},
   {c:'tn', s:0, n:'Tủ cấy vi sinh BIOBASE BBS-H1500', code:'BBS-H1500', d:'Tủ cấy vi sinh cho phòng thí nghiệm; cung cấp kèm lắp đặt, chạy thử, hướng dẫn sử dụng. Hãng BIOBASE.', i:'bench', hot:2},
   {c:'tn', s:0, n:'Tủ cấy vi sinh BIOBASE BKCB-V900', code:'BKCB-V900', d:'Tủ cấy vi sinh dòng khí thổi đứng. Hãng BIOBASE.', i:'bench', hot:2},

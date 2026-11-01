@@ -271,14 +271,14 @@ section{padding:70px 0}
 .n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
 @media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
 
-.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.pt{background:#fff;border:1px solid var(--line);padding:22px 18px;display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center}
-.pt .lg{grid-row:1/3;width:72px;height:72px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:.02em;background:#fff}
-.pt .lg img{width:60px;height:60px;object-fit:contain}
-.pt b{font-size:15px;color:#26313C;line-height:1.35;align-self:end}
-.pt span{font-size:13px;color:var(--muted);align-self:start}
-@media (max-width:900px){.partners{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.partners{grid-template-columns:minmax(0,1fr)}}
+.partners{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.pt{background:#fff;border:1px solid var(--line);padding:24px 14px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;transition:box-shadow .2s}
+.pt:hover{box-shadow:0 8px 20px rgba(14,47,90,.1)}
+.pt .lg{width:84px;height:84px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:18px;letter-spacing:.02em;background:#fff;flex:none}
+.pt .lg img{width:72px;height:72px;object-fit:contain}
+.pt b{font-size:14px;font-weight:600;color:#26313C;line-height:1.4}
+@media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
@@ -524,15 +524,18 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 
 <!-- PARTNERS -->
 <section class="grey" id="doi-tac"><div class="wrap">
-  <div class="title"><h2>合作伙伴与客户</h2><p>Van Phong 曾合作并提供物资、设备及服务的单位。</p></div>
+  <div class="title"><h2>合作伙伴与客户</h2><p>与 Van Phong 合作过的单位。</p></div>
   <div class="partners">
-    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Vang Danh 煤炭股份公司 – Vinacomin</b><span>安装服务；交叉筛方案咨询</span></div>
-    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>能源与矿山机械研究院 – Vinacomin（IEMM）</b><span>技术服务；物资、设备供应</span></div>
-    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Dai Duong 机电</b><span>设备供应</span></div>
-    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>林同铝土矿 – 氧化铝项目管理委员会</b><span>合作</span></div>
-    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>林同铝业公司 – Vinacomin</b><span>合作</span></div>
-    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>石家庄功倍重型机械有限公司</b><span>交叉筛合作</span></div>
-    <div class="pt"><div class="lg" style="--c:#0F7C8C">TL</div><b>Tramina – Thang Long 水电水利咨询</b><span>合作</span></div>
+    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Vang Danh 煤炭股份公司 – Vinacomin</b></div>
+    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>能源与矿山机械研究院 – Vinacomin（IEMM）</b></div>
+    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Dai Duong 机电有限责任公司</b></div>
+    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>林同铝土矿 – 氧化铝联合体项目管理委员会</b></div>
+    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>林同铝业公司 – Vinacomin</b></div>
+    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>石家庄功倍重型机械有限公司</b></div>
+    <div class="pt"><div class="lg" style="--c:#0F7C8C">TT</div><b>Thang Long 水电水利咨询公司</b></div>
+    <div class="pt"><div class="lg" style="--c:#5B4BA0">TRA</div><b>Tramina</b></div>
+    <div class="pt"><div class="lg" style="--c:#D35400">CFT</div><b>CFTSHOP 工业股份公司</b></div>
+    <div class="pt"><div class="lg" style="--c:#7A1F3D">ĐHH</div><b>顺化大学师范大学</b></div>
   </div>
 </div></section>
 
@@ -628,7 +631,7 @@ const CATS = [
 ];
 const PRODUCTS = [
   {c:'cn', s:0, n:'CRS350-15 交叉筛（350 t/h）', code:'CRS350-15', d:'筛分物料：煤；入料粒度 150 mm，筛下粒度 15 mm，处理量 350 t/h，电机功率 3×7.5 kW。为 Vang Danh 煤炭股份公司 – Vinacomin 提供的方案，与石家庄功倍重型机械有限公司合作。', i:'screen', hot:3},
-  {c:'cn', s:0, n:'CRS-1414 交叉筛', code:'CRS-1414', d:'用于煤炭、矿产等散料分级的交叉筛，与中国合作伙伴合作供货。', i:'screen', hot:3},
+  {c:'cn', s:0, n:'CRS1414 交叉筛（150 t/h）', code:'CRS1414', d:'筛分物料：煤；处理量 150 t/h，14 根筛轴，筛面宽度 1400 mm，筛下粒度 ≤ 8 mm，电机 14×3.0 kW，外形尺寸 3740×2587×1555 mm，重约 10 吨。制造商：石家庄功倍（中国）。用于林同氧化铝厂热电车间煤炭筛分系统。', i:'screen', hot:3},
   {c:'tn', s:3, n:'BIOBASE BK-FD10P 冷冻干燥机（-60°C）', code:'BK-FD10P', d:'实验室冷冻干燥机，冷阱温度可达 -60°C。品牌：BIOBASE。', i:'freeze', hot:2},
   {c:'tn', s:0, n:'BIOBASE BBS-H1500 超净工作台', code:'BBS-H1500', d:'实验室超净工作台，含安装、调试及使用培训。品牌：BIOBASE。', i:'bench', hot:2},
   {c:'tn', s:0, n:'BIOBASE BKCB-V900 超净工作台', code:'BKCB-V900', d:'垂直层流超净工作台。品牌：BIOBASE。', i:'bench', hot:2},

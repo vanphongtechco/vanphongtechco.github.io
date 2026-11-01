@@ -271,14 +271,14 @@ section{padding:70px 0}
 .n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
 @media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
 
-.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.pt{background:#fff;border:1px solid var(--line);padding:22px 18px;display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center}
-.pt .lg{grid-row:1/3;width:72px;height:72px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:.02em;background:#fff}
-.pt .lg img{width:60px;height:60px;object-fit:contain}
-.pt b{font-size:15px;color:#26313C;line-height:1.35;align-self:end}
-.pt span{font-size:13px;color:var(--muted);align-self:start}
-@media (max-width:900px){.partners{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.partners{grid-template-columns:minmax(0,1fr)}}
+.partners{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.pt{background:#fff;border:1px solid var(--line);padding:24px 14px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;transition:box-shadow .2s}
+.pt:hover{box-shadow:0 8px 20px rgba(14,47,90,.1)}
+.pt .lg{width:84px;height:84px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:18px;letter-spacing:.02em;background:#fff;flex:none}
+.pt .lg img{width:72px;height:72px;object-fit:contain}
+.pt b{font-size:14px;font-weight:600;color:#26313C;line-height:1.4}
+@media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
@@ -524,15 +524,18 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 
 <!-- PARTNERS -->
 <section class="grey" id="doi-tac"><div class="wrap">
-  <div class="title"><h2>Partners &amp; Clients</h2><p>Organizations Van Phong has worked with, supplying materials, equipment and services.</p></div>
+  <div class="title"><h2>Partners &amp; Clients</h2><p>Organizations that have worked with Van Phong.</p></div>
   <div class="partners">
-    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Vang Danh Coal JSC – Vinacomin</b><span>Installation services; interlaced disc screen consulting</span></div>
-    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>Institute of Energy and Mining Mechanical Engineering – Vinacomin (IEMM)</b><span>Technical services; supply of materials and equipment</span></div>
-    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Dai Duong Electromechanical</b><span>Equipment supply</span></div>
-    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>Lam Dong Bauxite – Alumina Project Management Board</b><span>Cooperation</span></div>
-    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>Lam Dong Aluminium Company – Vinacomin</b><span>Cooperation</span></div>
-    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>Gongbei Heavy Machinery (Shijiazhuang, China)</b><span>Interlaced disc screen cooperation</span></div>
-    <div class="pt"><div class="lg" style="--c:#0F7C8C">TL</div><b>Tramina – Thang Long Hydropower &amp; Irrigation Consulting</b><span>Cooperation</span></div>
+    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Vang Danh Coal JSC – Vinacomin</b></div>
+    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>Institute of Energy and Mining Mechanical Engineering – Vinacomin (IEMM)</b></div>
+    <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Dai Duong Electromechanical Co., Ltd.</b></div>
+    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>Lam Dong Bauxite – Alumina Complex Project Management Board</b></div>
+    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>Lam Dong Aluminium Company – Vinacomin</b></div>
+    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>Shijiazhuang Gongbei Heavy Machinery (China)</b></div>
+    <div class="pt"><div class="lg" style="--c:#0F7C8C">TT</div><b>Thang Long Hydropower &amp; Irrigation Consulting</b></div>
+    <div class="pt"><div class="lg" style="--c:#5B4BA0">TRA</div><b>Tramina</b></div>
+    <div class="pt"><div class="lg" style="--c:#D35400">CFT</div><b>CFTSHOP Industrial JSC</b></div>
+    <div class="pt"><div class="lg" style="--c:#7A1F3D">ĐHH</div><b>University of Education – Hue University</b></div>
   </div>
 </div></section>
 
@@ -628,7 +631,7 @@ const CATS = [
 ];
 const PRODUCTS = [
   {c:'cn', s:0, n:'CRS350-15 interlaced disc screen (350 t/h)', code:'CRS350-15', d:'Coal screen: feed size 150 mm, undersize 15 mm, capacity 350 t/h, motors 3 × 7.5 kW. Solution proposed for Vang Danh Coal JSC – Vinacomin, in cooperation with Gongbei Heavy Machinery (China).', i:'screen', hot:3},
-  {c:'cn', s:0, n:'CRS-1414 interlaced disc screen', code:'CRS-1414', d:'Interlaced disc screen for sizing bulk materials (coal, minerals). Supplied in cooperation with a Chinese partner.', i:'screen', hot:3},
+  {c:'cn', s:0, n:'CRS1414 interlaced disc screen (150 t/h)', code:'CRS1414', d:'Coal screen: capacity 150 t/h, 14 shafts, screen width 1400 mm, undersize ≤ 8 mm, motors 14 × 3.0 kW, dimensions 3740 × 2587 × 1555 mm, approx. 10 t. Manufacturer: Gongbei (China). Used in the coal screening system of the Thermal Power Workshop, Lam Dong Alumina Plant.', i:'screen', hot:3},
   {c:'tn', s:3, n:'BIOBASE BK-FD10P freeze dryer (-60°C)', code:'BK-FD10P', d:'Laboratory freeze dryer with cold trap down to -60°C. Brand: BIOBASE.', i:'freeze', hot:2},
   {c:'tn', s:0, n:'BIOBASE BBS-H1500 clean bench', code:'BBS-H1500', d:'Laboratory clean bench, supplied with installation, commissioning and user training. Brand: BIOBASE.', i:'bench', hot:2},
   {c:'tn', s:0, n:'BIOBASE BKCB-V900 clean bench', code:'BKCB-V900', d:'Vertical laminar flow clean bench. Brand: BIOBASE.', i:'bench', hot:2},
