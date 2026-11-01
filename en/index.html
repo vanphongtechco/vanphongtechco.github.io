@@ -304,8 +304,10 @@ section{padding:70px 0}
 .leader h3{margin:0;font-size:24px;color:#0E2F5A}.leader .role{margin:4px 0 16px;color:var(--cta);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:14px}
 .leader p{color:#4A545E;margin:0 0 12px}.leader h4{margin:14px 0 6px;font-size:15px;color:#2A333C;text-transform:uppercase;letter-spacing:.03em}
 .leader ul{margin:0;padding-left:18px;color:#4A545E}.leader li{margin:3px 0}
+.leader.chair{grid-template-columns:200px 1fr;align-items:center;margin-bottom:36px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.leader.chair h3{font-size:22px}
 .lcols{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:8px;border-top:1px solid var(--line);padding-top:6px}
-@media (max-width:860px){.leader{grid-template-columns:1fr;gap:20px}.leader figure{max-width:280px}.lcols{grid-template-columns:1fr;gap:0}}
+@media (max-width:860px){.leader,.leader.chair{grid-template-columns:1fr;gap:20px}.leader figure{max-width:280px}.lcols{grid-template-columns:1fr;gap:0}}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
 .certs-band .title h2{color:#fff}
@@ -390,15 +392,14 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
   <nav class="main" id="mainNav">
     <a href="#top" class="on">Home</a>
-    <div class="dd" id="ddProd"><button type="button" aria-expanded="false">Products <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
-    <div class="dd"><button type="button" aria-expanded="false">Certificates <span class="caret"></span></button><div class="panel">
-      <a href="#chung-nhan">Enterprise registration</a><a href="#chung-nhan">Company profile</a></div></div>
     <div class="dd"><button type="button" aria-expanded="false">About us <span class="caret"></span></button><div class="panel">
-      <a href="#gioi-thieu">About Van Phong</a><a href="#ban-lanh-dao">Leadership</a><a href="#bai-bao">Publications</a><a href="#sang-che">Patents</a></div></div>
+      <a href="#gioi-thieu">About Van Phong</a><a href="#ban-lanh-dao">Leadership</a><a href="#chung-nhan">Certificates</a></div></div>
     <a href="#doi-tac">Partners</a>
-    <a href="#tin-tuc">News</a>
+    <div class="dd" id="ddProd"><button type="button" aria-expanded="false">Products <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
     <div class="dd"><button type="button" aria-expanded="false">Services <span class="caret"></span></button><div class="panel">
       <a href="#linh-vuc">Scientific &amp; technological research</a><a href="#linh-vuc">Construction consulting</a><a href="#linh-vuc">Testing – Inspection</a><a href="#linh-vuc">Equipment design – fabrication – repair</a><a href="#linh-vuc">Trading, import – export</a></div></div>
+    <div class="dd"><button type="button" aria-expanded="false">News <span class="caret"></span></button><div class="panel">
+      <a href="#tin-tuc">News</a><a href="#bai-bao">Publications</a><a href="#sang-che">Patents</a></div></div>
     <a href="#lien-he">Contact</a>
   </nav>
   <button class="search-btn" id="searchBtn" aria-label="Search products" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
@@ -512,6 +513,10 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <!-- HOT PRODUCTS -->
 <!--LEADERS--><section id="ban-lanh-dao"><div class="wrap">
   <div class="title"><h2>Leadership</h2></div>
+  <article class="leader chair">
+    <figure><img src="/lanh-dao/tran-hoang-phuong.jpg" alt="Ms. Tran Hoang Phuong" width="600" height="600" loading="lazy"></figure>
+    <div class="lbody"><h3>Ms. Tran Hoang Phuong</h3><p class="role">Chairperson</p></div>
+  </article>
   <article class="leader">
     <figure><img src="/lanh-dao/le-thanh-binh.jpg" alt="Dr. Le Thanh Binh" width="600" height="600" loading="lazy"></figure>
     <div class="lbody">
@@ -810,7 +815,7 @@ const CATS = [
 ];
 const PRODUCTS = [
   {c:'cn', s:0, n:'CRS350-15 interlaced disc screen (350 t/h)', code:'CRS350-15', pdf:'crs350-15', d:'Coal screen: feed size 150 mm, undersize 15 mm, capacity 350 t/h, motors 3 × 7.5 kW. Van Phong provided sizing calculations and equipment selection for the project owner, Vang Danh Coal JSC – Vinacomin. Manufacturer: Gongbei (China).', i:'screen', hot:3},
-  {c:'cn', s:0, n:'CRS1414 interlaced disc screen (150 t/h)', code:'CRS1414', pdf:'crs1414', d:'Coal screen: capacity 150 t/h, 14 shafts, screen width 1400 mm, undersize ≤ 8 mm, motors 14 × 3.0 kW, dimensions 3740 × 2587 × 1555 mm, approx. 10 t. Used in the coal screening system of the Thermal Power Workshop, Lam Dong Alumina Plant; Van Phong provided sizing calculations and equipment selection for the project owner. Manufacturer: Gongbei (China).', i:'screen', hot:3},
+  {c:'cn', s:0, n:'CRS1414 interlaced disc screen (150 t/h)', code:'CRS1414', pdf:'crs1414', img:'crs1414', d:'Coal screen: capacity 150 t/h, 14 shafts, screen width 1400 mm, undersize ≤ 8 mm, motors 14 × 3.0 kW, dimensions 3740 × 2587 × 1555 mm, approx. 10 t. Used in the coal screening system of the Thermal Power Workshop, Lam Dong Alumina Plant; Van Phong provided sizing calculations and equipment selection for the project owner. Manufacturer: Gongbei (China).', i:'screen', hot:3},
   {c:'tn', s:3, n:'BIOBASE BK-FD10P freeze dryer (-60°C)', code:'BK-FD10P', pdf:'bk-fd10p', img:'bk-fd10p', d:'Laboratory freeze dryer with cold trap down to -60°C. Brand: BIOBASE.', i:'freeze', hot:2},
   {c:'tn', s:0, n:'BIOBASE BBS-H1500 clean bench', code:'BBS-H1500', pdf:'bbs-h1500', img:'bbs-h1500', d:'Laboratory clean bench, supplied with installation, commissioning and user training. Brand: BIOBASE.', i:'bench', hot:2},
   {c:'tn', s:0, n:'BIOBASE BKCB-V900 clean bench', code:'BKCB-V900', pdf:'bkcb-v900', img:'bkcb-v900', d:'Vertical laminar flow clean bench. Brand: BIOBASE.', i:'bench', hot:2},
