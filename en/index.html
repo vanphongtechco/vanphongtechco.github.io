@@ -62,6 +62,8 @@ nav.main>a,nav.main>.dd>button{display:flex;align-items:center;gap:6px;padding:0
 nav.main>a:hover,nav.main>.dd>button:hover,nav.main>.dd.open>button{color:var(--blue)}
 nav.main>a.on{color:var(--navy)}
 .caret{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.7}
+[hidden]{display:none!important}
+section[id]{scroll-margin-top:84px}
 .dd{position:relative;display:flex}
 .panel{display:none;position:absolute;top:100%;left:0;min-width:240px;background:#fff;border-top:3px solid var(--blue);box-shadow:0 14px 30px rgba(14,47,90,.16);padding:10px 0;z-index:60}
 .dd.open .panel{display:block}
@@ -936,6 +938,12 @@ function renderGrid(){
   for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';
   pg.innerHTML=h+'<button type="button" data-page="'+(page+1)+'" '+(page===pages?'disabled':'')+' aria-label="Next page">›</button>';
 }
+// Sections shown only when opened from the menu
+const PAGES=['gioi-thieu','ban-lanh-dao','bai-bao','sang-che'];
+function syncPages(h){h=(h===undefined?location.hash:h).replace('#','');PAGES.forEach(id=>{const el=document.getElementById(id);if(el)el.hidden=(id!==h)})}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"],button[data-href]');if(!a)return;const h=(a.getAttribute('href')||a.dataset.href||'').replace('#','');if(PAGES.includes(h))syncPages(h)},true);
+window.addEventListener('hashchange',()=>{syncPages();const id=location.hash.slice(1);if(PAGES.includes(id)){const t=document.getElementById(id);if(t)t.scrollIntoView()}});
+syncPages();if(PAGES.includes(location.hash.slice(1)))setTimeout(()=>{const t=document.getElementById(location.hash.slice(1));if(t)t.scrollIntoView()},50);
 function closeDD(){document.querySelectorAll('.dd.open').forEach(d=>{d.classList.remove('open');d.querySelector('button').setAttribute('aria-expanded','false')})}
 const nav=$('mainNav'), mb=$('menuBtn');
 function closeNav(){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}
