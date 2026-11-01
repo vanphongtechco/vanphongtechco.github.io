@@ -290,6 +290,12 @@ section{padding:70px 0}
 @media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
+.news-item{display:grid;grid-template-columns:340px 1fr;gap:36px;align-items:start;max-width:1100px;margin:0 auto;background:#fff;border:1px solid var(--line);padding:24px}
+.news-item figure{margin:0}.news-item img{width:100%;height:auto;display:block}
+.news-item .nmeta{margin:0 0 6px;color:var(--muted);font-size:13px}.news-item .nmeta span{color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.news-item h3{margin:0 0 12px;font-size:22px;color:#0E2F5A;line-height:1.35}.news-item p{color:#4A545E;margin:0 0 10px}
+.news-item ol{margin:0 0 12px;padding-left:20px;color:#4A545E}.news-item li{margin:6px 0}.news-item li b{color:#1d2733}
+@media (max-width:860px){.news-item{grid-template-columns:1fr;gap:18px;padding:16px}.news-item figure{max-width:380px}}
 .title p{color:var(--muted);margin:10px 0 0;text-align:center}
 .pubh{max-width:1100px;margin:28px auto 10px;font-size:18px;color:#0E2F5A;font-weight:600}
 .pubs{list-style:none;margin:0 auto;padding:0;max-width:1100px;display:grid;gap:12px}
@@ -591,10 +597,20 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></section>
 
 <!-- NEWS -->
-<section id="tin-tuc"><div class="wrap">
+<!--NEWS--><section id="tin-tuc"><div class="wrap">
   <div class="title"><h2>Tin tức</h2></div>
-  <div class="news-empty">Chưa có tin tức.</div>
-</div></section>
+  <article class="news-item">
+    <figure><img src="/tin-tuc/vat-tu-phong-thi-nghiem.jpg" alt="Phòng lab của anh/chị đang cần thiết bị hay bổ sung vật tư?" width="512" height="559" loading="lazy"></figure>
+    <div class="nbody">
+      <p class="nmeta"><span>Vật tư phòng thí nghiệm</span> · 01/11/2026</p>
+      <h3>Phòng lab của anh/chị đang cần thiết bị hay bổ sung vật tư?</h3>
+      <p>Chọn thiết bị phù hợp ngay từ đầu giúp phòng thí nghiệm chủ động hơn khi tìm vật tư, thay thế linh kiện và duy trì công việc hằng ngày.</p><p>Giới thiệu 5 nhóm thiết bị BIOBASE dành cho phòng thí nghiệm, bộ phận QC/QA và nhà máy trong khu công nghiệp:</p>
+      <ol><li><b>Micropipette</b> – Thao tác hút, chia mẫu thể tích nhỏ. Kết hợp đầu côn thường hoặc đầu côn lọc phù hợp ứng dụng.</li><li><b>Máy đo pH</b> – Phục vụ kiểm tra pH mẫu nước, nguyên liệu và sản phẩm theo phương pháp của phòng lab. Lựa chọn kèm dung dịch chuẩn, dung dịch bảo quản và điện cực phù hợp.</li><li><b>Bộ lọc chân không</b> – Phục vụ lọc mẫu, chuẩn bị mẫu và quy trình kiểm nghiệm phù hợp. Lựa chọn màng lọc theo kích thước lỗ, vật liệu màng và tính chất mẫu.</li><li><b>Máy lọc nước phòng thí nghiệm</b> – Lựa chọn chất lượng nước và công suất theo nhu cầu sử dụng, đồng thời xác định đúng lõi lọc, màng RO và cột DI thay thế.</li><li><b>Máy ly tâm</b> – Phục vụ tách và chuẩn bị mẫu. Cần chọn đồng bộ rotor, adapter và ống ly tâm theo yêu cầu công việc.</li></ol>
+      <p>Anh/chị gửi tên thiết bị, model đang sử dụng hoặc nhu cầu kiểm nghiệm để trao đổi cấu hình và vật tư phù hợp.</p>
+      <p><a class="btn cta" href="#lien-he">Liên hệ tư vấn</a></p>
+    </div>
+  </article>
+</div></section><!--/NEWS-->
 
 <!--PUBS--><section class="grey" id="bai-bao"><div class="wrap">
   <div class="title"><h2>Bài báo khoa học</h2><p>Các công trình công bố của TS. Lê Thanh Bình và cộng sự trên tạp chí và hội nghị khoa học quốc tế.</p></div>

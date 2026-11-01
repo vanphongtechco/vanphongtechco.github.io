@@ -290,6 +290,12 @@ section{padding:70px 0}
 @media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
+.news-item{display:grid;grid-template-columns:340px 1fr;gap:36px;align-items:start;max-width:1100px;margin:0 auto;background:#fff;border:1px solid var(--line);padding:24px}
+.news-item figure{margin:0}.news-item img{width:100%;height:auto;display:block}
+.news-item .nmeta{margin:0 0 6px;color:var(--muted);font-size:13px}.news-item .nmeta span{color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.news-item h3{margin:0 0 12px;font-size:22px;color:#0E2F5A;line-height:1.35}.news-item p{color:#4A545E;margin:0 0 10px}
+.news-item ol{margin:0 0 12px;padding-left:20px;color:#4A545E}.news-item li{margin:6px 0}.news-item li b{color:#1d2733}
+@media (max-width:860px){.news-item{grid-template-columns:1fr;gap:18px;padding:16px}.news-item figure{max-width:380px}}
 .title p{color:var(--muted);margin:10px 0 0;text-align:center}
 .pubh{max-width:1100px;margin:28px auto 10px;font-size:18px;color:#0E2F5A;font-weight:600}
 .pubs{list-style:none;margin:0 auto;padding:0;max-width:1100px;display:grid;gap:12px}
@@ -591,10 +597,20 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></section>
 
 <!-- NEWS -->
-<section id="tin-tuc"><div class="wrap">
+<!--NEWS--><section id="tin-tuc"><div class="wrap">
   <div class="title"><h2>新闻</h2></div>
-  <div class="news-empty">暂无新闻。</div>
-</div></section>
+  <article class="news-item">
+    <figure><img src="/tin-tuc/vat-tu-phong-thi-nghiem.jpg" alt="您的实验室需要添置设备还是补充耗材？" width="512" height="559" loading="lazy"></figure>
+    <div class="nbody">
+      <p class="nmeta"><span>实验室耗材</span> · 2026年11月1日</p>
+      <h3>您的实验室需要添置设备还是补充耗材？</h3>
+      <p>从一开始就选对设备，实验室在采购耗材、更换配件和维持日常工作时会更加主动。</p><p>以下为适用于实验室、QC/QA 部门及工业园区工厂的 5 类 BIOBASE 设备：</p>
+      <ol><li><b>移液器</b> – 用于小体积样品的吸取和分配。可根据应用搭配普通吸头或滤芯吸头。</li><li><b>pH 计</b> – 按实验室方法检测水样、原料和产品的 pH 值。可配套选择标准缓冲液、保存液及合适的电极。</li><li><b>真空过滤装置</b> – 用于样品过滤、样品前处理及相关检测流程。滤膜按孔径、材质和样品性质选择。</li><li><b>实验室纯水机</b> – 根据用水需求选择水质和产水量，并确定匹配的替换滤芯、RO 膜和 DI 柱。</li><li><b>离心机</b> – 用于样品分离和前处理。转子、适配器和离心管需按工作要求配套选择。</li></ol>
+      <p>请告知您正在使用的设备名称、型号或检测需求，我们将为您推荐合适的配置和耗材。</p>
+      <p><a class="btn cta" href="#lien-he">联系咨询</a></p>
+    </div>
+  </article>
+</div></section><!--/NEWS-->
 
 <!--PUBS--><section class="grey" id="bai-bao"><div class="wrap">
   <div class="title"><h2>科技论文</h2><p>黎清平博士及合作者在国际期刊和学术会议上发表的论文。</p></div>

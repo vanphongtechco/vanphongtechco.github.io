@@ -290,6 +290,12 @@ section{padding:70px 0}
 @media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
+.news-item{display:grid;grid-template-columns:340px 1fr;gap:36px;align-items:start;max-width:1100px;margin:0 auto;background:#fff;border:1px solid var(--line);padding:24px}
+.news-item figure{margin:0}.news-item img{width:100%;height:auto;display:block}
+.news-item .nmeta{margin:0 0 6px;color:var(--muted);font-size:13px}.news-item .nmeta span{color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.news-item h3{margin:0 0 12px;font-size:22px;color:#0E2F5A;line-height:1.35}.news-item p{color:#4A545E;margin:0 0 10px}
+.news-item ol{margin:0 0 12px;padding-left:20px;color:#4A545E}.news-item li{margin:6px 0}.news-item li b{color:#1d2733}
+@media (max-width:860px){.news-item{grid-template-columns:1fr;gap:18px;padding:16px}.news-item figure{max-width:380px}}
 .title p{color:var(--muted);margin:10px 0 0;text-align:center}
 .pubh{max-width:1100px;margin:28px auto 10px;font-size:18px;color:#0E2F5A;font-weight:600}
 .pubs{list-style:none;margin:0 auto;padding:0;max-width:1100px;display:grid;gap:12px}
@@ -591,10 +597,20 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></section>
 
 <!-- NEWS -->
-<section id="tin-tuc"><div class="wrap">
+<!--NEWS--><section id="tin-tuc"><div class="wrap">
   <div class="title"><h2>News</h2></div>
-  <div class="news-empty">No news yet.</div>
-</div></section>
+  <article class="news-item">
+    <figure><img src="/tin-tuc/vat-tu-phong-thi-nghiem.jpg" alt="Does your lab need equipment or a consumables refill?" width="512" height="559" loading="lazy"></figure>
+    <div class="nbody">
+      <p class="nmeta"><span>Laboratory consumables</span> · 1 November 2026</p>
+      <h3>Does your lab need equipment or a consumables refill?</h3>
+      <p>Choosing the right equipment from the start makes it easier for a laboratory to source consumables, replace parts and keep daily work running.</p><p>Five groups of BIOBASE equipment for laboratories, QC/QA departments and factories in industrial parks:</p>
+      <ol><li><b>Micropipettes</b> – For aspirating and dispensing small sample volumes. Use standard or filter tips to suit the application.</li><li><b>pH meters</b> – For checking the pH of water samples, raw materials and products according to the lab's methods. Supplied with suitable buffer solutions, storage solution and electrodes.</li><li><b>Vacuum filtration sets</b> – For sample filtration, sample preparation and testing procedures. Membranes are chosen by pore size, membrane material and sample properties.</li><li><b>Laboratory water purifiers</b> – Water quality and output are chosen to match demand, together with the correct replacement filter cartridges, RO membranes and DI columns.</li><li><b>Centrifuges</b> – For sample separation and preparation. Rotors, adapters and centrifuge tubes should be selected as a matched set for the work.</li></ol>
+      <p>Send us the name and model of the equipment you use, or your testing needs, and we will advise on a suitable configuration and consumables.</p>
+      <p><a class="btn cta" href="#lien-he">Contact us</a></p>
+    </div>
+  </article>
+</div></section><!--/NEWS-->
 
 <!--PUBS--><section class="grey" id="bai-bao"><div class="wrap">
   <div class="title"><h2>Scientific publications</h2><p>Papers published by Dr. Le Thanh Binh and co-authors in international journals and conference proceedings.</p></div>
