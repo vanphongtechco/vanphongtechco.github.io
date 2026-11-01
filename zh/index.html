@@ -271,12 +271,13 @@ section{padding:70px 0}
 .n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
 @media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
 
+.news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
 .certs-band .title h2{color:#fff}
 .certs-band .title h2::after{background:#fff}
 .certs-band .title p{color:#C9DBEE}
-.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:660px;margin:0 auto}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,300px));justify-content:center;gap:28px;max-width:1000px;margin:0 auto}
 .cert-real{text-decoration:none;color:inherit}
 .tr-note{text-align:center;margin:26px 0 0;color:#C9DBEE;font-size:14px}
 .tr-note a{color:#fff;text-decoration:underline;margin:0 6px}
@@ -327,13 +328,15 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 .fs svg{width:26px;height:26px}
 .fs.zalo{background:#0068FF}.fs.zalo svg{width:40px;height:40px}
 .fs.wa{background:#25D366}.fs.vb{background:#7360F2}.fs.tg{background:#2AABEE}
-.float-call{background:var(--cta);color:#fff;border-radius:30px;padding:10px 18px 10px 12px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;box-shadow:0 6px 18px rgba(240,124,27,.4)}
-.float-call i{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center}
-.float-call i svg{width:15px;height:15px;fill:var(--cta)}
+.fs{position:relative}
+.fs.call{background:var(--cta);box-shadow:0 6px 18px rgba(240,124,27,.45)}
+.fs .tip{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;background:#1F2933;color:#fff;font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .15s}
+.fs.call .tip{background:var(--cta);font-size:15px;padding:8px 16px}
+.fs:hover .tip,.fs:focus-visible .tip{opacity:1}
 .to-top{position:fixed;left:20px;bottom:20px;z-index:40;width:40px;height:40px;background:#2F6FB7;border:0;cursor:pointer;display:none;place-items:center}
 .to-top.show{display:grid}
 .to-top svg{width:18px;height:18px;fill:#fff}
-@media (max-width:700px){.float-chat{display:none}.float-stack{right:12px;bottom:12px;gap:8px}.fs{width:40px;height:40px}.fs svg{width:22px;height:22px}.fs.zalo svg{width:36px;height:36px}}
+@media (max-width:700px){.float-chat{display:none}.float-stack{right:12px;bottom:12px;gap:8px}.fs{width:40px;height:40px}.fs svg{width:22px;height:22px}.fs.zalo svg{width:36px;height:36px}.to-top.show{display:none}}
 </style>
 </head>
 <body>
@@ -356,6 +359,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <div class="dd"><button type="button" aria-expanded="false">证书 <span class="caret"></span></button><div class="panel">
       <a href="#chung-nhan">企业登记证书</a><a href="#chung-nhan">公司简介</a></div></div>
     <a href="#gioi-thieu">关于我们</a>
+    <a href="#tin-tuc">新闻</a>
     <div class="dd"><button type="button" aria-expanded="false">服务 <span class="caret"></span></button><div class="panel">
       <a href="#linh-vuc">科学技术研究</a><a href="#linh-vuc">建设咨询</a><a href="#linh-vuc">试验 – 检定</a><a href="#linh-vuc">设备设计 – 制造 – 维修</a><a href="#linh-vuc">贸易及进出口</a></div></div>
     <a href="#lien-he">联系我们</a>
@@ -508,14 +512,21 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></section>
 
 
+<!-- NEWS -->
+<section id="tin-tuc"><div class="wrap">
+  <div class="title"><h2>新闻</h2></div>
+  <div class="news-empty">暂无新闻。</div>
+</div></section>
+
 <!-- CERTIFICATES -->
 <section class="certs-band" id="chung-nhan"><div class="wrap">
   <div class="title"><h2>证书</h2><p>点击文件即可查看。</p></div>
   <div class="certs">
     <button type="button" class="cert cert-real" data-gallery="/giay-to/dkdn-trang-1.jpg?v=2|/giay-to/dkdn-trang-2.jpg?v=2" aria-label="查看企业登记证书"><div class="doc real"><img src="/giay-to/dkdn-trang-1-nho.jpg?v=2" alt="企业登记证书 – 第1页" width="520" height="736" loading="lazy"></div><b>企业登记证书</b><small>企业代码 0108797479 · 第4次变更：2026-09-29 · 越文原件</small></button>
+    <button type="button" class="cert cert-real" data-gallery="/tai-lieu/dkdn-zh-1.jpg|/tai-lieu/dkdn-zh-2.jpg" data-note="中文参考译文，无签字盖章，以越文原件为准。" aria-label="查看企业登记证书中文译文"><div class="doc real"><img src="/tai-lieu/dkdn-zh-nho-1.jpg" alt="中文译文 – 第1页" width="397" height="562" loading="lazy"></div><b>企业登记证书 – 中文译文</b><small>参考译文 · 点击查看</small></button>
     <a class="cert cert-real" href="/tai-lieu/ho-so-nang-luc-zh.pdf" target="_blank" rel="noopener"><div class="doc real"><img src="/tai-lieu/bia-zh-1.jpg" alt="Van Phong 公司简介 – 封面" width="662" height="936" loading="lazy"></div><b>公司简介</b><small>PDF · 点击查看或下载</small></a>
   </div>
-  <p class="tr-note">企业登记证书中文参考译文：<a href="/tai-lieu/giay-chung-nhan-dkdn-zh.pdf" target="_blank" rel="noopener">下载 PDF</a></p>
+  <p class="tr-note">下载中文译文：<a href="/tai-lieu/giay-chung-nhan-dkdn-zh.pdf" target="_blank" rel="noopener">PDF</a></p>
 </div></section>
 
 <!-- QUICK LINKS -->
@@ -550,13 +561,13 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></footer>
 
 <div class="float-stack" aria-label="快速联系">
-  <a class="fs zalo" href="https://zalo.me/0899990683" target="_blank" rel="noopener" title="Zalo" aria-label="Zalo"><svg viewBox="0 0 48 48"><text x="24" y="29.5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#fff">Zalo</text></svg></a>
-  <a class="fs wa" href="https://wa.me/84899990683" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.8 4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.1 1.7 2.6 4.1 3.7 1.5.7 2.1.7 2.9.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.3z"/></svg></a>
-  <a class="fs vb" href="viber://chat?number=%2B84899990683" title="Viber" aria-label="Viber"><svg viewBox="0 0 24 24"><path fill="#fff" d="M11.4 2C7 2.1 3.3 3.6 3 8.9c-.2 2.9-.1 5.5 1.9 7.4v3.4c0 .5.6.7.9.4l2.3-2.5c1.2.2 2.4.3 3.7.2 4.4-.1 8.1-1.6 8.4-6.9.2-3.5-.4-6.3-2.4-7.6C16.4 2.4 14 2 11.4 2zm.2 1.6c2.1 0 4.1.3 5.3 1.1 1.5 1 1.9 3.3 1.7 6.3-.2 4.2-3 5.4-6.8 5.5-1.2 0-2.3 0-3.4-.3l-1.9 2v-2.9c-1.8-1.5-1.8-3.8-1.7-6.3.3-4.2 3.3-5.3 6.8-5.4zm-2.9 3.2c-.3 0-.6.1-.8.3-.6.6-1 1.4-.7 2.2.9 2.4 2.6 4.5 4.9 5.7.9.5 1.8.1 2.3-.7.3-.4.2-.9-.2-1.2l-1.3-.9c-.4-.3-.9-.2-1.1.2l-.3.5c-1-.4-1.9-1.3-2.3-2.3l.5-.4c.4-.3.4-.8.1-1.1l-.9-1.3c-.1-.3-.4-.4-.7-.4zm3.6.3a.4.4 0 0 0 0 .8 2.9 2.9 0 0 1 2.8 2.8.4.4 0 0 0 .8 0 3.7 3.7 0 0 0-3.6-3.6z"/></svg></a>
-  <a class="fs tg" href="https://t.me/+84899990683" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="#fff" d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14c.3-1.2-.5-1.8-1.5-1.3zM9 14.2l9.4-5.9c.4-.3.8-.1.5.2l-7.7 7-.3 3.3z"/></svg></a>
-  <a class="float-call" href="tel:+84899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>+84 899 990 683</a>
+  <a class="fs zalo" href="https://zalo.me/0899990683" target="_blank" rel="noopener" aria-label="Zalo"><svg viewBox="0 0 48 48"><text x="24" y="29.5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#fff">Zalo</text></svg><span class="tip">Zalo</span></a>
+  <a class="fs wa" href="https://wa.me/84899990683" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.8 4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.1 1.7 2.6 4.1 3.7 1.5.7 2.1.7 2.9.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.3z"/></svg><span class="tip">WhatsApp</span></a>
+  <a class="fs vb" href="viber://chat?number=%2B84899990683" aria-label="Viber"><svg viewBox="0 0 24 24"><path fill="#fff" d="M11.4 2C7 2.1 3.3 3.6 3 8.9c-.2 2.9-.1 5.5 1.9 7.4v3.4c0 .5.6.7.9.4l2.3-2.5c1.2.2 2.4.3 3.7.2 4.4-.1 8.1-1.6 8.4-6.9.2-3.5-.4-6.3-2.4-7.6C16.4 2.4 14 2 11.4 2zm.2 1.6c2.1 0 4.1.3 5.3 1.1 1.5 1 1.9 3.3 1.7 6.3-.2 4.2-3 5.4-6.8 5.5-1.2 0-2.3 0-3.4-.3l-1.9 2v-2.9c-1.8-1.5-1.8-3.8-1.7-6.3.3-4.2 3.3-5.3 6.8-5.4zm-2.9 3.2c-.3 0-.6.1-.8.3-.6.6-1 1.4-.7 2.2.9 2.4 2.6 4.5 4.9 5.7.9.5 1.8.1 2.3-.7.3-.4.2-.9-.2-1.2l-1.3-.9c-.4-.3-.9-.2-1.1.2l-.3.5c-1-.4-1.9-1.3-2.3-2.3l.5-.4c.4-.3.4-.8.1-1.1l-.9-1.3c-.1-.3-.4-.4-.7-.4zm3.6.3a.4.4 0 0 0 0 .8 2.9 2.9 0 0 1 2.8 2.8.4.4 0 0 0 .8 0 3.7 3.7 0 0 0-3.6-3.6z"/></svg><span class="tip">Viber</span></a>
+  <a class="fs tg" href="https://t.me/+84899990683" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="#fff" d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.4c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l3-14c.3-1.2-.5-1.8-1.5-1.3zM9 14.2l9.4-5.9c.4-.3.8-.1.5.2l-7.7 7-.3 3.3z"/></svg><span class="tip">Telegram</span></a>
+  <a class="fs call" href="tel:0899990683" aria-label="致电 +84 899 990 683"><svg viewBox="0 0 24 24"><path fill="#fff" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="tip">+84 899 990 683</span></a>
 </div>
-<button class="to-top" id="toTop" aria-label="返回顶部"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="文件查看"><button class="lb-close" id="lbClose" aria-label="关闭">×</button><p class="lb-note">越文原件，部分个人信息已隐去。</p><div id="lbImgs"></div></div>
+<button class="to-top" id="toTop" aria-label="返回顶部"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="文件查看"><button class="lb-close" id="lbClose" aria-label="关闭">×</button><p class="lb-note" id="lbNote">越文原件，部分个人信息已隐去。</p><div id="lbImgs"></div></div>
 
 <script>
 const ICONS = {
@@ -688,8 +699,8 @@ $('topSearch').onsubmit=e=>{e.preventDefault();query=$('topQ').value;$('q').valu
 $('searchForm').onsubmit=e=>{e.preventDefault();query=$('q').value;page=1;renderGrid()};
 $('q').oninput=e=>{query=e.target.value;page=1;if(query.trim()&&(cur!=='all'||sub!==null)){cur='all';sub=null;renderTree()}renderGrid()};
 const tt=$('toTop'); addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>600),{passive:true}); tt.onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
-const lb=$('lb');
-document.addEventListener('click',e=>{const g=e.target.closest('[data-gallery]'); if(g){$('lbImgs').innerHTML=g.dataset.gallery.split('|').map((s,k)=>'<img src="'+s+'" alt="第'+(k+1)+'页">').join(''); lb.classList.add('open'); document.body.style.overflow='hidden'; $('lbClose').focus();}});
+const lb=$('lb'); $('lbNote').dataset.def=$('lbNote').textContent;
+document.addEventListener('click',e=>{const g=e.target.closest('[data-gallery]'); if(g){$('lbNote').textContent=g.dataset.note||$('lbNote').dataset.def; $('lbImgs').innerHTML=g.dataset.gallery.split('|').map((s,k)=>'<img src="'+s+'" alt="第'+(k+1)+'页">').join(''); lb.classList.add('open'); document.body.style.overflow='hidden'; $('lbClose').focus();}});
 function closeLb(){lb.classList.remove('open'); document.body.style.overflow='';}
 $('lbClose').onclick=closeLb; lb.addEventListener('click',e=>{if(e.target===lb)closeLb()}); document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 renderMenus();renderTree();renderGrid();
