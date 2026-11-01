@@ -271,12 +271,16 @@ section{padding:70px 0}
 .n3{background:linear-gradient(135deg,#F07C1B,#C4580A)}
 @media (max-width:860px){.news{grid-template-columns:minmax(0,1fr)}}
 
-.partners{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.partners{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+@media (max-width:1240px){.partners{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .pt{background:#fff;border:1px solid var(--line);padding:24px 14px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;transition:box-shadow .2s}
 .pt:hover{box-shadow:0 8px 20px rgba(14,47,90,.1)}
 .pt .lg{width:84px;height:84px;border-radius:50%;border:2px solid var(--c);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:18px;letter-spacing:.02em;background:#fff;flex:none}
 .pt .lg img{width:72px;height:72px;object-fit:contain}
 .pt b{font-size:14px;font-weight:600;color:#26313C;line-height:1.4}
+.pt .lg.img{border:0;border-radius:0;width:150px;height:84px;background:none;display:flex;align-items:center;justify-content:center}
+.pt .lg.img img{max-width:150px;max-height:84px;width:auto;height:auto}
+@media (max-width:560px){.pt .lg.img{width:120px;height:68px}.pt .lg.img img{max-width:120px;max-height:68px}}
 @media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
@@ -526,16 +530,17 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <section class="grey" id="doi-tac"><div class="wrap">
   <div class="title"><h2>Partners &amp; Clients</h2><p>Organizations that have worked with Van Phong.</p></div>
   <div class="partners">
-    <div class="pt"><div class="lg" style="--c:#0E5C3A">VD</div><b>Vang Danh Coal JSC – Vinacomin</b></div>
-    <div class="pt"><div class="lg" style="--c:#0E2F5A">IEMM</div><b>Institute of Energy and Mining Mechanical Engineering – Vinacomin (IEMM)</b></div>
+    <div class="pt"><div class="lg img"><img src="/logo-doi-tac/vinacomin.png" alt="" loading="lazy"></div><b>Vang Danh Coal JSC – Vinacomin</b></div>
+    <div class="pt"><div class="lg img"><img src="/logo-doi-tac/iemm.png" alt="" loading="lazy"></div><b>Institute of Energy and Mining Mechanical Engineering – Vinacomin (IEMM)</b></div>
     <div class="pt"><div class="lg" style="--c:#1580BF">ĐD</div><b>Dai Duong Electromechanical Co., Ltd.</b></div>
-    <div class="pt"><div class="lg" style="--c:#8A4B12">BQL</div><b>Lam Dong Bauxite – Alumina Complex Project Management Board</b></div>
-    <div class="pt"><div class="lg" style="--c:#6B7785">NLĐ</div><b>Lam Dong Aluminium Company – Vinacomin</b></div>
-    <div class="pt"><div class="lg" style="--c:#B3261E">GB</div><b>Shijiazhuang Gongbei Heavy Machinery (China)</b></div>
+    <div class="pt"><div class="lg img"><img src="/logo-doi-tac/vinacomin.png" alt="" loading="lazy"></div><b>Lam Dong Bauxite – Alumina Complex Project Management Board</b></div>
+    <div class="pt"><div class="lg img"><img src="/logo-doi-tac/vinacomin.png" alt="" loading="lazy"></div><b>Lam Dong Aluminium Company – Vinacomin</b></div>
+    <div class="pt"><div class="lg img"><img src="/logo-doi-tac/gongbei.png" alt="" loading="lazy"></div><b>Shijiazhuang Gongbei Heavy Machinery (China)</b></div>
     <div class="pt"><div class="lg" style="--c:#0F7C8C">TT</div><b>Thang Long Hydropower &amp; Irrigation Consulting</b></div>
     <div class="pt"><div class="lg" style="--c:#5B4BA0">TRA</div><b>Tramina</b></div>
     <div class="pt"><div class="lg" style="--c:#D35400">CFT</div><b>CFTSHOP Industrial JSC</b></div>
-    <div class="pt"><div class="lg" style="--c:#7A1F3D">ĐHH</div><b>University of Education – Hue University</b></div>
+    <div class="pt"><div class="lg img"><img src="/logo-doi-tac/dhsp-hue.png" alt="" loading="lazy"></div><b>University of Education – Hue University</b></div>
+    <div class="pt"><div class="lg img"><img src="/logo-doi-tac/biobase.png" alt="" loading="lazy"></div><b>BIOBASE Group (China)</b></div>
   </div>
 </div></section>
 
