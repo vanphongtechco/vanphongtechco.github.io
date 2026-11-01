@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="alternate" hreflang="vi" href="https://www.vanphongtechco.com.vn/">
+<link rel="alternate" hreflang="en" href="https://www.vanphongtechco.com.vn/en/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.vanphongtechco.com.vn/zh/">
 <title>Vân Phong Tech</title>
 <meta name="description" content="Công ty TNHH Kỹ thuật và Thương mại Vân Phong – vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính. Hotline 08.9999.0683.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +44,11 @@ a{color:inherit;text-decoration:none}
 .top .ct span{display:inline-flex;align-items:center;gap:7px}
 .ico{width:22px;height:22px;border-radius:50%;background:#5A636D;display:inline-grid;place-items:center;flex:none}
 .ico svg{width:12px;height:12px;fill:#fff}
-.top .addr{color:#6A737D}
+.top .addr{color:#6A737D;margin-left:auto}
+.langs{display:flex;gap:2px}
+.langs a{padding:2px 9px;border-radius:3px;color:#4A545E;font-size:12.5px}
+.langs a:hover{color:var(--blue)}
+.langs a.on{background:#fff;color:var(--navy);font-weight:600;box-shadow:0 0 0 1px var(--line)}
 @media (max-width:700px){.top .addr,.top .ct>span:first-child{display:none}.top .wrap{justify-content:center}}
 
 /* ---------- header ---------- */
@@ -269,14 +276,17 @@ section{padding:70px 0}
 .certs-band .title h2{color:#fff}
 .certs-band .title h2::after{background:#fff}
 .certs-band .title p{color:#C9DBEE}
-.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:960px;margin:0 auto}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:660px;margin:0 auto}
+.cert-real{text-decoration:none;color:inherit}
+.tr-note{text-align:center;margin:26px 0 0;color:#C9DBEE;font-size:14px}
+.tr-note a{color:#fff;text-decoration:underline;margin:0 6px}
 .cert{background:#fff;color:var(--fg);display:flex;flex-direction:column}
 .cert .doc{aspect-ratio:3/4;margin:12px;border:1px solid var(--line);background:repeating-linear-gradient(180deg,#fff 0 14px,#F2F4F6 14px 15px);display:grid;place-items:center;text-align:center;padding:16px;position:relative}
 .cert .doc::before{content:"";position:absolute;inset:8px;border:2px solid #D7DEE6}
 .cert .doc span{position:relative;background:#fff;padding:8px 10px;font-size:12.5px;color:var(--muted)}
 .cert b{display:block;background:#36414D;color:#fff;font-size:14px;font-weight:500;padding:11px 14px;text-align:center}
 .cert small{display:block;padding:0 14px 12px;background:#36414D;color:#C9CED6;text-align:center;font-size:12px;margin-top:-4px;flex:1}
-@media (max-width:860px){.certs{grid-template-columns:1fr 1fr;gap:12px}.certs>:first-child{grid-column:1/-1;max-width:360px;justify-self:center;width:100%}}
+@media (max-width:860px){.certs{grid-template-columns:1fr 1fr;gap:12px}}
 .cert-real{border:0;padding:0;font:inherit;text-align:inherit;cursor:zoom-in}
 .cert .doc.real{padding:0;background:#fff}
 .cert .doc.real::before{display:none}
@@ -328,10 +338,11 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <a href="tel:0899990683"><span><i class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: 08.9999.0683</span></a>
   </div>
   <span class="addr">Số 34, ngõ 36A, phố Trần Điền, phường Phương Liệt, TP. Hà Nội</span>
+  <nav class="langs" aria-label="Ngôn ngữ"><a href="/" lang="vi" class="on">Tiếng Việt</a><a href="/en/" lang="en">English</a><a href="/zh/" lang="zh-CN">中文</a></nav>
 </div></div>
 
 <header><div class="wrap">
-  <a class="brand" href="#top" aria-label="Vân Phong – trang chủ"><img src="logo.png" alt="Vân Phong" width="600" height="107"><small>Công ty TNHH<br>Kỹ thuật &amp; Thương mại</small></a>
+  <a class="brand" href="#top" aria-label="Vân Phong – trang chủ"><img src="/logo.png" alt="Vân Phong" width="600" height="107"><small>Công ty TNHH<br>Kỹ thuật &amp; Thương mại</small></a>
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
   <nav class="main" id="mainNav">
     <a href="#top" class="on">Trang chủ</a>
@@ -355,7 +366,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <div class="hero" id="hero" aria-roledescription="carousel">
   <div class="slides" id="slides">
     <div class="slide s-photo" aria-label="1 / 4">
-      <img src="tru-so.jpg" alt="" width="1000" height="988">
+      <img src="/tru-so.jpg" alt="" width="1000" height="988">
       <div class="wrap in">
         <div class="badges">
           <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></i>Thành lập<br>2019</div>
@@ -429,7 +440,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 
 <!-- ABOUT -->
 <section class="about" id="gioi-thieu"><div class="wrap">
-  <figure><img src="tru-so.jpg" alt="Phối cảnh trụ sở Công ty Vân Phong, số 34 ngõ 36A phố Trần Điền, Hà Nội" width="1000" height="988"><figcaption>Trụ sở: Số 34, ngõ 36A, phố Trần Điền, Hà Nội</figcaption></figure>
+  <figure><img src="/tru-so.jpg" alt="Phối cảnh trụ sở Công ty Vân Phong, số 34 ngõ 36A phố Trần Điền, Hà Nội" width="1000" height="988"><figcaption>Trụ sở: Số 34, ngõ 36A, phố Trần Điền, Hà Nội</figcaption></figure>
   <div>
     <h2>Giới thiệu</h2>
     <p>Công ty TNHH Kỹ thuật và Thương mại Vân Phong được thành lập ngày 25/06/2019 tại Hà Nội, hoạt động trong các lĩnh vực:</p>
@@ -496,19 +507,19 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   <div class="title"><h2>Tin tức</h2></div>
   <div class="news">
     <article><h3>Ra mắt website mới www.vanphongtechco.com.vn</h3><div class="img n1"><b>WEBSITE MỚI<small>www.vanphongtechco.com.vn</small></b></div><div class="meta"><span>Thông báo</span><span>01/11/2026</span></div></article>
-    <article><h3>Vân Phong chuyển trụ sở về số 34, ngõ 36A, phố Trần Điền</h3><div class="img photo"><img src="tru-so.jpg" alt="Trụ sở mới của Vân Phong" width="1000" height="988" loading="lazy"></div><div class="meta"><span>Thông báo</span><span>29/09/2026</span></div></article>
+    <article><h3>Vân Phong chuyển trụ sở về số 34, ngõ 36A, phố Trần Điền</h3><div class="img photo"><img src="/tru-so.jpg" alt="Trụ sở mới của Vân Phong" width="1000" height="988" loading="lazy"></div><div class="meta"><span>Thông báo</span><span>29/09/2026</span></div></article>
     <article><h3>Đường dây nóng tư vấn, báo giá: 08.9999.0683</h3><div class="img n3"><b>HOTLINE<small>08.9999.0683</small></b></div><div class="meta"><span>Thông báo</span><span>01/11/2026</span></div></article>
   </div>
 </div></section>
 
 <!-- CERTIFICATES -->
 <section class="certs-band" id="chung-nhan"><div class="wrap">
-  <div class="title"><h2>Chứng nhận</h2><p>Bấm vào giấy tờ để xem. Các giấy tờ khác sẽ được cập nhật.</p></div>
+  <div class="title"><h2>Chứng nhận</h2><p>Bấm vào giấy tờ để xem.</p></div>
   <div class="certs">
-    <button type="button" class="cert cert-real" data-gallery="giay-to/dkdn-trang-1.jpg?v=2|giay-to/dkdn-trang-2.jpg?v=2" aria-label="Xem Giấy chứng nhận đăng ký doanh nghiệp"><div class="doc real"><img src="giay-to/dkdn-trang-1-nho.jpg?v=2" alt="Giấy chứng nhận đăng ký doanh nghiệp – trang 1" width="520" height="736" loading="lazy"></div><b>Giấy chứng nhận đăng ký doanh nghiệp</b><small>MSDN 0108797479 · thay đổi lần 4: 29/09/2026 · Bấm để xem</small></button>
-    <div class="cert"><div class="doc"><span>Chứng nhận chất lượng</span></div><b>Chứng nhận chất lượng</b><small>Cập nhật khi có</small></div>
-    <div class="cert"><div class="doc"><span>Hồ sơ năng lực (PDF)</span></div><b>Hồ sơ năng lực</b><small>Liên hệ để nhận bản đầy đủ</small></div>
+    <button type="button" class="cert cert-real" data-gallery="/giay-to/dkdn-trang-1.jpg?v=2|/giay-to/dkdn-trang-2.jpg?v=2" aria-label="Xem Giấy chứng nhận đăng ký doanh nghiệp"><div class="doc real"><img src="/giay-to/dkdn-trang-1-nho.jpg?v=2" alt="Giấy chứng nhận đăng ký doanh nghiệp – trang 1" width="520" height="736" loading="lazy"></div><b>Giấy chứng nhận đăng ký doanh nghiệp</b><small>MSDN 0108797479 · thay đổi lần 4: 29/09/2026 · Bấm để xem</small></button>
+    <a class="cert cert-real" href="/tai-lieu/ho-so-nang-luc-vi.pdf" target="_blank" rel="noopener"><div class="doc real"><img src="/tai-lieu/bia-vi-1.jpg" alt="Hồ sơ năng lực Vân Phong – trang bìa" width="662" height="936" loading="lazy"></div><b>Hồ sơ năng lực</b><small>Bản PDF · Bấm để xem, tải về</small></a>
   </div>
+  <!--TRNOTE-->
 </div></section>
 
 <!-- QUICK LINKS -->
@@ -531,7 +542,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     </div>
     <div>
       <h4>Về Vân Phong</h4>
-      <img class="flogo" src="logo.png" alt="Vân Phong" width="600" height="107">
+      <img class="flogo" src="/logo.png" alt="Vân Phong" width="600" height="107">
       <p style="margin:0">Công ty TNHH Kỹ thuật và Thương mại Vân Phong — Kỹ thuật – Thương mại. Vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính.</p>
     </div>
     <div>

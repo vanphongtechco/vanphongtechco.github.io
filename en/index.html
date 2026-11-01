@@ -1,10 +1,13 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vân Phong Tech</title>
-<meta name="description" content="Công ty TNHH Kỹ thuật và Thương mại Vân Phong – vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính. Hotline 08.9999.0683.">
+<link rel="alternate" hreflang="vi" href="https://www.vanphongtechco.com.vn/">
+<link rel="alternate" hreflang="en" href="https://www.vanphongtechco.com.vn/en/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.vanphongtechco.com.vn/zh/">
+<title>Van Phong Tech – Engineering & Trading</title>
+<meta name="description" content="Van Phong Technical and Trading Co., Ltd. – materials, equipment and software for industry, healthcare, education, laboratories and IT. Hotline +84 899 990 683.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap">
@@ -41,7 +44,11 @@ a{color:inherit;text-decoration:none}
 .top .ct span{display:inline-flex;align-items:center;gap:7px}
 .ico{width:22px;height:22px;border-radius:50%;background:#5A636D;display:inline-grid;place-items:center;flex:none}
 .ico svg{width:12px;height:12px;fill:#fff}
-.top .addr{color:#6A737D}
+.top .addr{color:#6A737D;margin-left:auto}
+.langs{display:flex;gap:2px}
+.langs a{padding:2px 9px;border-radius:3px;color:#4A545E;font-size:12.5px}
+.langs a:hover{color:var(--blue)}
+.langs a.on{background:#fff;color:var(--navy);font-weight:600;box-shadow:0 0 0 1px var(--line)}
 @media (max-width:700px){.top .addr,.top .ct>span:first-child{display:none}.top .wrap{justify-content:center}}
 
 /* ---------- header ---------- */
@@ -269,14 +276,17 @@ section{padding:70px 0}
 .certs-band .title h2{color:#fff}
 .certs-band .title h2::after{background:#fff}
 .certs-band .title p{color:#C9DBEE}
-.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:960px;margin:0 auto}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:660px;margin:0 auto}
+.cert-real{text-decoration:none;color:inherit}
+.tr-note{text-align:center;margin:26px 0 0;color:#C9DBEE;font-size:14px}
+.tr-note a{color:#fff;text-decoration:underline;margin:0 6px}
 .cert{background:#fff;color:var(--fg);display:flex;flex-direction:column}
 .cert .doc{aspect-ratio:3/4;margin:12px;border:1px solid var(--line);background:repeating-linear-gradient(180deg,#fff 0 14px,#F2F4F6 14px 15px);display:grid;place-items:center;text-align:center;padding:16px;position:relative}
 .cert .doc::before{content:"";position:absolute;inset:8px;border:2px solid #D7DEE6}
 .cert .doc span{position:relative;background:#fff;padding:8px 10px;font-size:12.5px;color:var(--muted)}
 .cert b{display:block;background:#36414D;color:#fff;font-size:14px;font-weight:500;padding:11px 14px;text-align:center}
 .cert small{display:block;padding:0 14px 12px;background:#36414D;color:#C9CED6;text-align:center;font-size:12px;margin-top:-4px;flex:1}
-@media (max-width:860px){.certs{grid-template-columns:1fr 1fr;gap:12px}.certs>:first-child{grid-column:1/-1;max-width:360px;justify-self:center;width:100%}}
+@media (max-width:860px){.certs{grid-template-columns:1fr 1fr;gap:12px}}
 .cert-real{border:0;padding:0;font:inherit;text-align:inherit;cursor:zoom-in}
 .cert .doc.real{padding:0;background:#fff}
 .cert .doc.real::before{display:none}
@@ -325,28 +335,29 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <div class="top"><div class="wrap">
   <div class="ct">
     <span><i class="ico"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zM4 7v.5l8 5 8-5V7z"/></svg></i>info@vanphongtechco.com.vn</span>
-    <a href="tel:0899990683"><span><i class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: 08.9999.0683</span></a>
+    <a href="tel:+84899990683"><span><i class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: +84 899 990 683</span></a>
   </div>
-  <span class="addr">Số 34, ngõ 36A, phố Trần Điền, phường Phương Liệt, TP. Hà Nội</span>
+  <span class="addr">No. 34, Lane 36A, Tran Dien Street, Phuong Liet Ward, Hanoi, Vietnam</span>
+  <nav class="langs" aria-label="Language"><a href="/" lang="vi">Tiếng Việt</a><a href="/en/" lang="en" class="on">English</a><a href="/zh/" lang="zh-CN">中文</a></nav>
 </div></div>
 
 <header><div class="wrap">
-  <a class="brand" href="#top" aria-label="Vân Phong – trang chủ"><img src="logo.png" alt="Vân Phong" width="600" height="107"><small>Công ty TNHH<br>Kỹ thuật &amp; Thương mại</small></a>
+  <a class="brand" href="#top" aria-label="Van Phong – home"><img src="/logo.png" alt="Vân Phong" width="600" height="107"><small>Technical &amp;<br>Trading Co., Ltd.</small></a>
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
   <nav class="main" id="mainNav">
-    <a href="#top" class="on">Trang chủ</a>
-    <div class="dd" id="ddProd"><button type="button" aria-expanded="false">Sản phẩm <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
-    <div class="dd"><button type="button" aria-expanded="false">Chứng nhận <span class="caret"></span></button><div class="panel">
-      <a href="#chung-nhan">Đăng ký doanh nghiệp</a><a href="#chung-nhan">Hồ sơ năng lực</a></div></div>
-    <a href="#gioi-thieu">Giới thiệu</a>
-    <a href="#tin-tuc">Tin tức</a>
-    <div class="dd"><button type="button" aria-expanded="false">Dịch vụ <span class="caret"></span></button><div class="panel">
-      <a href="#linh-vuc">Nghiên cứu khoa học công nghệ</a><a href="#linh-vuc">Tư vấn xây dựng</a><a href="#linh-vuc">Thí nghiệm – Kiểm định</a><a href="#linh-vuc">Thiết kế – Chế tạo – Sửa chữa thiết bị</a><a href="#linh-vuc">Thương mại, xuất – nhập khẩu</a></div></div>
-    <a href="#lien-he">Liên hệ</a>
+    <a href="#top" class="on">Home</a>
+    <div class="dd" id="ddProd"><button type="button" aria-expanded="false">Products <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
+    <div class="dd"><button type="button" aria-expanded="false">Certificates <span class="caret"></span></button><div class="panel">
+      <a href="#chung-nhan">Enterprise registration</a><a href="#chung-nhan">Company profile</a></div></div>
+    <a href="#gioi-thieu">About us</a>
+    <a href="#tin-tuc">News</a>
+    <div class="dd"><button type="button" aria-expanded="false">Services <span class="caret"></span></button><div class="panel">
+      <a href="#linh-vuc">Scientific &amp; technological research</a><a href="#linh-vuc">Construction consulting</a><a href="#linh-vuc">Testing – Inspection</a><a href="#linh-vuc">Equipment design – fabrication – repair</a><a href="#linh-vuc">Trading, import – export</a></div></div>
+    <a href="#lien-he">Contact</a>
   </nav>
-  <button class="search-btn" id="searchBtn" aria-label="Tìm sản phẩm" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+  <button class="search-btn" id="searchBtn" aria-label="Search products" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
 </div>
-<div class="searchbar" id="searchbar"><div class="wrap"><form id="topSearch" role="search"><input id="topQ" type="search" placeholder="Nhập tên hoặc mã sản phẩm…" aria-label="Tìm sản phẩm"><button class="btn" type="submit">Tìm kiếm</button></form></div></div>
+<div class="searchbar" id="searchbar"><div class="wrap"><form id="topSearch" role="search"><input id="topQ" type="search" placeholder="Enter product name or code…" aria-label="Search products"><button class="btn" type="submit">Search</button></form></div></div>
 </header>
 
 <main id="top">
@@ -355,15 +366,15 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <div class="hero" id="hero" aria-roledescription="carousel">
   <div class="slides" id="slides">
     <div class="slide s-photo" aria-label="1 / 4">
-      <img src="tru-so.jpg" alt="" width="1000" height="988">
+      <img src="/tru-so.jpg" alt="" width="1000" height="988">
       <div class="wrap in">
         <div class="badges">
-          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></i>Thành lập<br>2019</div>
-          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></i>5 lĩnh vực<br>hoạt động</div>
-          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i>Trụ sở<br>Hà Nội</div>
+          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></i>Founded<br>2019</div>
+          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></i>5 fields of<br>activity</div>
+          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i>Head office<br>Hanoi</div>
         </div>
-        <p>Công ty TNHH Kỹ thuật và Thương mại Vân Phong — thiết bị, vật tư và dịch vụ kỹ thuật cho Công nghiệp, Y tế, Thí nghiệm.</p>
-        <a class="btn cta" href="#gioi-thieu">Tìm hiểu thêm</a>
+        <p>Van Phong Technical and Trading Co., Ltd. — equipment, materials and engineering services for Industry, Healthcare and Laboratories.</p>
+        <a class="btn cta" href="#gioi-thieu">Learn more</a>
       </div>
     </div>
     <div class="slide s-light" aria-label="2 / 4">
@@ -377,9 +388,9 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
         </div>
         <div class="r">
           <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6h12M20 6v12L9 38a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L28 18V6"/><path d="M14 30h20"/></svg>
-          <h2>Thiết bị<br>Thí nghiệm</h2>
-          <p class="sub">Tủ an toàn, tủ hút, tủ sấy, máy ly tâm, cân phân tích</p>
-          <a class="btn" href="#san-pham" data-cat="tn">Xem thêm</a>
+          <h2>Laboratory<br>Equipment</h2>
+          <p class="sub">Biosafety cabinets, fume hoods, ovens, centrifuges, analytical balances</p>
+          <a class="btn" href="#san-pham" data-cat="tn">View more</a>
         </div>
       </div>
     </div>
@@ -394,126 +405,126 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
         </div>
         <div class="r">
           <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M8 18h32M14 26h6M14 32h6M26 26h8v6h-8z"/></svg>
-          <h2>Điện – Tự động hóa<br>&amp; Tin học</h2>
-          <p class="sub">PLC, biến tần, cảm biến, máy tính, máy chủ, phần mềm</p>
-          <a class="btn" href="#san-pham" data-cat="dt">Xem thêm</a>
+          <h2>Electrical – Automation<br>&amp; IT</h2>
+          <p class="sub">PLCs, inverters, sensors, computers, servers, software</p>
+          <a class="btn" href="#san-pham" data-cat="dt">View more</a>
         </div>
       </div>
     </div>
     <div class="slide s-navy" aria-label="4 / 4">
       <div class="wrap in">
-        <h2>Kỹ thuật – Thương mại</h2>
-        <p class="lead">Đồng hành từ tư vấn, thiết kế đến cung cấp, lắp đặt và bảo trì.</p>
+        <h2>Engineering – Trading</h2>
+        <p class="lead">With you from consulting and design to supply, installation and maintenance.</p>
         <div class="cards">
-          <div><b>Nghiên cứu khoa học công nghệ</b><span>Phát triển, chuyển giao công nghệ</span></div>
-          <div><b>Tư vấn xây dựng</b><span>Thiết kế · Thẩm tra · Giám sát</span></div>
-          <div><b>Thí nghiệm – Kiểm định</b><span>Vật liệu, thiết bị</span></div>
-          <div><b>Thiết kế – Chế tạo – Sửa chữa thiết bị</b><span>Công nghiệp, Y tế, Phòng thí nghiệm</span></div>
-          <div><b>Thương mại, xuất – nhập khẩu</b><span>Vật tư, thiết bị, phần mềm</span></div>
+          <div><b>Scientific &amp; technological research</b><span>Development, technology transfer</span></div>
+          <div><b>Construction consulting</b><span>Design · Verification · Supervision</span></div>
+          <div><b>Testing – Inspection</b><span>Materials, equipment</span></div>
+          <div><b>Equipment design – fabrication – repair</b><span>Industrial, medical, laboratory</span></div>
+          <div><b>Trading, import – export</b><span>Materials, equipment, software</span></div>
         </div>
-        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">Lĩnh vực hoạt động</a></p>
+        <p style="margin:26px 0 0"><a class="btn cta" href="#linh-vuc">Fields of activity</a></p>
       </div>
     </div>
   </div>
-  <button class="arrow prev" id="prev" aria-label="Ảnh trước"><svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg></button>
-  <button class="arrow next" id="next" aria-label="Ảnh sau"><svg viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg></button>
+  <button class="arrow prev" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg></button>
+  <button class="arrow next" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg></button>
   <div class="dots" id="dots"></div>
 </div>
 
 <div class="stats"><div class="wrap"><div class="box">
-  <div><b>2019</b><span>Năm thành lập</span></div>
-  <div><b>5</b><span>Lĩnh vực hoạt động</span></div>
-  <div><b>91</b><span>Ngành nghề đăng ký</span></div>
-  <div><b>5</b><span>Nhóm mặt hàng</span></div>
+  <div><b>2019</b><span>Year founded</span></div>
+  <div><b>5</b><span>Fields of activity</span></div>
+  <div><b>91</b><span>Registered business lines</span></div>
+  <div><b>5</b><span>Product groups</span></div>
 </div></div></div>
 
 <!-- ABOUT -->
 <section class="about" id="gioi-thieu"><div class="wrap">
-  <figure><img src="tru-so.jpg" alt="Phối cảnh trụ sở Công ty Vân Phong, số 34 ngõ 36A phố Trần Điền, Hà Nội" width="1000" height="988"><figcaption>Trụ sở: Số 34, ngõ 36A, phố Trần Điền, Hà Nội</figcaption></figure>
+  <figure><img src="/tru-so.jpg" alt="Rendering of Van Phong head office, No. 34 Lane 36A Tran Dien, Hanoi" width="1000" height="988"><figcaption>Head office: No. 34, Lane 36A, Tran Dien Street, Hanoi</figcaption></figure>
   <div>
-    <h2>Giới thiệu</h2>
-    <p>Công ty TNHH Kỹ thuật và Thương mại Vân Phong được thành lập ngày 25/06/2019 tại Hà Nội, hoạt động trong các lĩnh vực:</p>
+    <h2>About us</h2>
+    <p>Van Phong Technical and Trading Company Limited was established on 25 June 2019 in Hanoi and operates in the following fields:</p>
     <ul class="about-list">
-      <li>Nghiên cứu khoa học công nghệ.</li>
-      <li>Tư vấn xây dựng.</li>
-      <li>Thí nghiệm – Kiểm định.</li>
-      <li>Thiết kế – Chế tạo – Sửa chữa thiết bị.</li>
-      <li>Thương mại, xuất – nhập khẩu.</li>
+      <li>Scientific and technological research.</li>
+      <li>Construction consulting.</li>
+      <li>Testing – Inspection.</li>
+      <li>Design – Fabrication – Repair of equipment.</li>
+      <li>Trading, import – export.</li>
     </ul>
-    <p><b>Mặt hàng:</b> Vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính.</p>
-    <p>Ngành nghề kinh doanh chính: bán buôn máy móc, thiết bị và phụ tùng máy (mã ngành 4659). Phạm vi đa lĩnh vực giúp chúng tôi đồng hành cùng khách hàng từ khâu ý tưởng, thiết kế đến cung cấp, lắp đặt và bảo trì.</p>
+    <p><b>Products:</b> Materials, equipment and software for industry, healthcare, education, laboratories, computers and IT.</p>
+    <p>Main business line: wholesale of machinery, equipment and spare parts (VSIC 4659). Our multidisciplinary scope lets us support customers from concept and design to supply, installation and maintenance.</p>
     <ul class="about-list">
-      <li><b>Sứ mệnh:</b> Giải pháp kỹ thuật tin cậy cho mọi khách hàng.</li>
-      <li><b>Tầm nhìn:</b> Đối tác kỹ thuật hàng đầu về công nghiệp, y tế và thí nghiệm.</li>
-      <li><b>Giá trị cốt lõi:</b> Chính xác – Tận tâm – Hiệu quả.</li>
+      <li><b>Mission:</b> Reliable engineering solutions for every customer.</li>
+      <li><b>Vision:</b> A leading engineering partner in industry, healthcare and laboratories.</li>
+      <li><b>Core values:</b> Accuracy – Dedication – Efficiency.</li>
     </ul>
-    <div class="legal">VAN PHONG TECHNICAL AND TRADING COMPANY LIMITED<br>VAN PHONG TECH CO., LTD. · MSDN 0108797479</div>
-    <a class="btn line" href="#linh-vuc">Xem thêm &gt;&gt;</a>
+    <div class="legal">CÔNG TY TNHH KỸ THUẬT VÀ THƯƠNG MẠI VÂN PHONG<br>VAN PHONG TECH CO., LTD. · Enterprise code 0108797479</div>
+    <a class="btn line" href="#linh-vuc">Read more &gt;&gt;</a>
   </div>
 </div></section>
 
 <!-- HOT PRODUCTS -->
 <section class="grey" id="noi-bat"><div class="wrap">
-  <div class="title"><h2>Sản phẩm nổi bật</h2></div>
+  <div class="title"><h2>Featured products</h2></div>
   <div class="pc" id="hot">
-    <button class="side l" aria-label="Trước"><svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg></button>
+    <button class="side l" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 4 7 12l8 8"/></svg></button>
     <div class="track-wrap"><div class="track"></div></div>
-    <button class="side r" aria-label="Sau"><svg viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg></button>
+    <button class="side r" aria-label="Next"><svg viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg></button>
   </div>
 </div></section>
 
 <!-- CATALOGUE -->
 <section id="san-pham"><div class="wrap">
-  <div class="title"><h2>Danh mục sản phẩm</h2></div>
+  <div class="title"><h2>Product catalogue</h2></div>
   <div class="catalog">
-    <aside class="side-box"><h3>Danh mục</h3><ul class="tree" id="tree"></ul></aside>
+    <aside class="side-box"><h3>Categories</h3><ul class="tree" id="tree"></ul></aside>
     <div>
       <div class="cat-head">
-        <div><h3 id="catTitle">Tất cả sản phẩm</h3><p id="catCount"></p></div>
-        <form id="searchForm" role="search"><input id="q" type="search" placeholder="Tìm theo tên, mã…" aria-label="Tìm sản phẩm"><button class="btn" type="submit">Tìm</button></form>
+        <div><h3 id="catTitle">All products</h3><p id="catCount"></p></div>
+        <form id="searchForm" role="search"><input id="q" type="search" placeholder="Search by name, code…" aria-label="Search products"><button class="btn" type="submit">Search</button></form>
       </div>
       <div class="grid" id="grid"></div>
-      <nav class="pager" id="pager" aria-label="Phân trang"></nav>
-      <p class="note">Danh mục và hình sản phẩm đang là bản minh họa. Sẽ cập nhật theo danh sách sản phẩm thật (tên, mã, ảnh, mô tả).</p>
+      <nav class="pager" id="pager" aria-label="Pagination"></nav>
+      <p class="note">The catalogue and product images are illustrative and will be updated with our actual product list.</p>
     </div>
   </div>
 </div></section>
 
 <!-- FIELDS -->
 <section class="grey" id="linh-vuc"><div class="wrap">
-  <div class="title"><h2>Lĩnh vực hoạt động</h2></div>
+  <div class="title"><h2>Fields of activity</h2></div>
   <div class="fields">
-    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="24" cy="24" r="6"/><ellipse cx="24" cy="24" rx="20" ry="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)"/></svg></i><h3>Nghiên cứu khoa học công nghệ</h3><ul><li>Nghiên cứu, phát triển sản phẩm</li><li>Chuyển giao công nghệ</li></ul></div>
-    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 42h36M10 42V18l14-10 14 10v24"/><path d="M18 42V28h12v14M18 20h12"/></svg></i><h3>Tư vấn xây dựng</h3><ul><li>Tư vấn thiết kế</li><li>Tư vấn thẩm tra</li><li>Tư vấn giám sát</li></ul></div>
-    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6h12M20 6v12L9 38a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L28 18V6"/><path d="M14 30h20"/></svg></i><h3>Thí nghiệm – Kiểm định</h3><ul><li>Thí nghiệm vật liệu, thiết bị</li><li>Kiểm định thiết bị</li><li>Phục vụ thiết kế, thi công, nghiệm thu</li></ul></div>
-    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="24" cy="24" r="7"/><path d="M24 4v7M24 37v7M4 24h7M37 24h7M10 10l5 5M33 33l5 5M10 38l5-5M33 15l5-5"/></svg></i><h3>Thiết kế – Chế tạo – Sửa chữa thiết bị</h3><ul><li>Công nghiệp</li><li>Y tế</li><li>Phòng thí nghiệm</li></ul></div>
-    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 14h26v20H4zM30 20h8l6 7v7H30z"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></svg></i><h3>Thương mại, xuất – nhập khẩu</h3><p style="margin:0 0 4px;font-size:14px;color:#4A545E">Vật tư, thiết bị, phần mềm:</p><ul><li>Công nghiệp</li><li>Y tế</li><li>Giáo dục</li><li>Phòng thí nghiệm</li><li>Tin học máy tính</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="24" cy="24" r="6"/><ellipse cx="24" cy="24" rx="20" ry="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)"/></svg></i><h3>Scientific and technological research</h3><ul><li>Product research and development</li><li>Technology transfer</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 42h36M10 42V18l14-10 14 10v24"/><path d="M18 42V28h12v14M18 20h12"/></svg></i><h3>Construction consulting</h3><ul><li>Design consulting</li><li>Design verification</li><li>Construction supervision</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6h12M20 6v12L9 38a4 4 0 0 0 3.5 6h23a4 4 0 0 0 3.5-6L28 18V6"/><path d="M14 30h20"/></svg></i><h3>Testing – Inspection</h3><ul><li>Testing of materials and equipment</li><li>Equipment inspection</li><li>Support for design, construction and acceptance</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="24" cy="24" r="7"/><path d="M24 4v7M24 37v7M4 24h7M37 24h7M10 10l5 5M33 33l5 5M10 38l5-5M33 15l5-5"/></svg></i><h3>Design – Fabrication – Repair of equipment</h3><ul><li>Industrial</li><li>Medical</li><li>Laboratory</li></ul></div>
+    <div class="field"><i><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 14h26v20H4zM30 20h8l6 7v7H30z"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></svg></i><h3>Trading, import – export</h3><p style="margin:0 0 4px;font-size:14px;color:#4A545E">Materials, equipment, software:</p><ul><li>Industrial</li><li>Medical</li><li>Education</li><li>Laboratory</li><li>Computers &amp; IT</li></ul></div>
   </div>
 </div></section>
 
 <!-- NEWS -->
 <section id="tin-tuc"><div class="wrap">
-  <div class="title"><h2>Tin tức</h2></div>
+  <div class="title"><h2>News</h2></div>
   <div class="news">
-    <article><h3>Ra mắt website mới www.vanphongtechco.com.vn</h3><div class="img n1"><b>WEBSITE MỚI<small>www.vanphongtechco.com.vn</small></b></div><div class="meta"><span>Thông báo</span><span>01/11/2026</span></div></article>
-    <article><h3>Vân Phong chuyển trụ sở về số 34, ngõ 36A, phố Trần Điền</h3><div class="img photo"><img src="tru-so.jpg" alt="Trụ sở mới của Vân Phong" width="1000" height="988" loading="lazy"></div><div class="meta"><span>Thông báo</span><span>29/09/2026</span></div></article>
-    <article><h3>Đường dây nóng tư vấn, báo giá: 08.9999.0683</h3><div class="img n3"><b>HOTLINE<small>08.9999.0683</small></b></div><div class="meta"><span>Thông báo</span><span>01/11/2026</span></div></article>
+    <article><h3>New website launched: www.vanphongtechco.com.vn</h3><div class="img n1"><b>NEW WEBSITE<small>www.vanphongtechco.com.vn</small></b></div><div class="meta"><span>Announcement</span><span>01 Nov 2026</span></div></article>
+    <article><h3>Van Phong moves its head office to No. 34, Lane 36A, Tran Dien Street</h3><div class="img photo"><img src="/tru-so.jpg" alt="Van Phong new head office" width="1000" height="988" loading="lazy"></div><div class="meta"><span>Announcement</span><span>29 Sep 2026</span></div></article>
+    <article><h3>Hotline for consulting and quotations: +84 899 990 683</h3><div class="img n3"><b>HOTLINE<small>+84 899 990 683</small></b></div><div class="meta"><span>Announcement</span><span>01 Nov 2026</span></div></article>
   </div>
 </div></section>
 
 <!-- CERTIFICATES -->
 <section class="certs-band" id="chung-nhan"><div class="wrap">
-  <div class="title"><h2>Chứng nhận</h2><p>Bấm vào giấy tờ để xem. Các giấy tờ khác sẽ được cập nhật.</p></div>
+  <div class="title"><h2>Certificates</h2><p>Click a document to view it.</p></div>
   <div class="certs">
-    <button type="button" class="cert cert-real" data-gallery="../giay-to/dkdn-trang-1.jpg?v=2|../giay-to/dkdn-trang-2.jpg?v=2" aria-label="Xem Giấy chứng nhận đăng ký doanh nghiệp"><div class="doc real"><img src="../giay-to/dkdn-trang-1-nho.jpg?v=2" alt="Giấy chứng nhận đăng ký doanh nghiệp – trang 1" width="520" height="736" loading="lazy"></div><b>Giấy chứng nhận đăng ký doanh nghiệp</b><small>MSDN 0108797479 · thay đổi lần 4: 29/09/2026 · Bấm để xem</small></button>
-    <div class="cert"><div class="doc"><span>Chứng nhận chất lượng</span></div><b>Chứng nhận chất lượng</b><small>Cập nhật khi có</small></div>
-    <div class="cert"><div class="doc"><span>Hồ sơ năng lực (PDF)</span></div><b>Hồ sơ năng lực</b><small>Liên hệ để nhận bản đầy đủ</small></div>
+    <button type="button" class="cert cert-real" data-gallery="/giay-to/dkdn-trang-1.jpg?v=2|/giay-to/dkdn-trang-2.jpg?v=2" aria-label="View Enterprise Registration Certificate"><div class="doc real"><img src="/giay-to/dkdn-trang-1-nho.jpg?v=2" alt="Enterprise Registration Certificate – page 1" width="520" height="736" loading="lazy"></div><b>Enterprise Registration Certificate</b><small>Enterprise code 0108797479 · 4th amendment: 29 Sep 2026 · Vietnamese original</small></button>
+    <a class="cert cert-real" href="/tai-lieu/ho-so-nang-luc-en.pdf" target="_blank" rel="noopener"><div class="doc real"><img src="/tai-lieu/bia-en-1.jpg" alt="Van Phong company profile – cover" width="662" height="936" loading="lazy"></div><b>Company Profile</b><small>PDF · Click to view or download</small></a>
   </div>
+  <p class="tr-note">English reference translation of the certificate: <a href="/tai-lieu/giay-chung-nhan-dkdn-en.pdf" target="_blank" rel="noopener">Download PDF</a></p>
 </div></section>
 
 <!-- QUICK LINKS -->
 <section id="lien-ket"><div class="wrap">
-  <div class="title"><h2>Liên kết nhanh</h2></div>
+  <div class="title"><h2>Quick links</h2></div>
   <div class="qlinks" id="qlinks"></div>
 </div></section>
 </main>
@@ -521,30 +532,30 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <footer id="lien-he"><div class="wrap">
   <div class="fgrid">
     <div>
-      <h4>Liên hệ</h4>
+      <h4>Contact</h4>
       <dl>
-        <dt>Địa chỉ:</dt><dd>Số 34, ngõ 36A, phố Trần Điền, phường Phương Liệt, TP. Hà Nội</dd>
-        <dt>Hotline:</dt><dd><a href="tel:0899990683">08.9999.0683</a></dd>
+        <dt>Address:</dt><dd>No. 34, Lane 36A, Tran Dien Street, Phuong Liet Ward, Hanoi, Vietnam</dd>
+        <dt>Hotline:</dt><dd><a href="tel:+84899990683">+84 899 990 683</a></dd>
         <dt>Email:</dt><dd><a href="mailto:info@vanphongtechco.com.vn">info@vanphongtechco.com.vn</a></dd>
         <dt>Website:</dt><dd>www.vanphongtechco.com.vn</dd>
       </dl>
     </div>
     <div>
-      <h4>Về Vân Phong</h4>
-      <img class="flogo" src="logo.png" alt="Vân Phong" width="600" height="107">
-      <p style="margin:0">Công ty TNHH Kỹ thuật và Thương mại Vân Phong — Kỹ thuật – Thương mại. Vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính.</p>
+      <h4>About Van Phong</h4>
+      <img class="flogo" src="/logo.png" alt="Vân Phong" width="600" height="107">
+      <p style="margin:0">Van Phong Technical and Trading Co., Ltd. — Engineering – Trading. Materials, equipment and software for industry, healthcare, education, laboratories, computers and IT.</p>
     </div>
     <div>
-      <h4>Danh mục</h4>
+      <h4>Categories</h4>
       <ul id="footCats"></ul>
     </div>
   </div>
-  <div class="copy"><span>© 2026 Công ty TNHH Kỹ thuật và Thương mại Vân Phong</span><span>MSDN 0108797479</span></div>
+  <div class="copy"><span>© 2026 Van Phong Technical and Trading Co., Ltd.</span><span>Enterprise code 0108797479</span></div>
 </div></footer>
 
-<a class="float-chat" href="#lien-he"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/></svg>Liên hệ</a>
-<a class="float-call" href="tel:0899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>08.9999.0683</a>
-<button class="to-top" id="toTop" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem giấy tờ"><button class="lb-close" id="lbClose" aria-label="Đóng">×</button><p class="lb-note">Một số thông tin cá nhân đã được che.</p><div id="lbImgs"></div></div>
+<a class="float-chat" href="#lien-he"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/></svg>Contact</a>
+<a class="float-call" href="tel:+84899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>+84 899 990 683</a>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Document viewer"><button class="lb-close" id="lbClose" aria-label="Close">×</button><p class="lb-note">Vietnamese original. Some personal data has been hidden.</p><div id="lbImgs"></div></div>
 
 <script>
 const ICONS = {
@@ -566,30 +577,30 @@ const ICONS = {
   software:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="10" width="48" height="40" rx="2"/><path d="M8 20h48M24 30l-6 6 6 6M40 30l6 6-6 6M35 28l-6 16"/></svg>'
 };
 const CATS = [
-  {id:'cn', name:'Thiết bị công nghiệp', subs:['Máy và thiết bị cơ khí','Bơm, quạt, hộp giảm tốc','Vật tư, phụ tùng thay thế']},
-  {id:'yt', name:'Thiết bị y tế', subs:['Thiết bị theo dõi bệnh nhân','Giường, xe đẩy y tế','Thiết bị tiệt trùng']},
-  {id:'tn', name:'Thiết bị thí nghiệm', subs:['Tủ an toàn, tủ hút','Tủ sấy, tủ ấm, lò nung','Cân, máy ly tâm']},
-  {id:'dt', name:'Điện – Điện tử, Tự động hóa', subs:['PLC, bộ điều khiển','Biến tần, khởi động mềm','Cảm biến, thiết bị đo']},
-  {id:'th', name:'Máy tính – Tin học', subs:['Máy tính, máy chủ','Thiết bị mạng, camera','Phần mềm bản quyền']}
+  {id:'cn', name:'Industrial equipment', subs:['Mechanical machinery & equipment','Pumps, fans, gearboxes','Consumables & spare parts']},
+  {id:'yt', name:'Medical equipment', subs:['Patient monitoring','Hospital beds & trolleys','Sterilization equipment']},
+  {id:'tn', name:'Laboratory equipment', subs:['Biosafety cabinets, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges']},
+  {id:'dt', name:'Electrical, Electronics & Automation', subs:['PLCs, controllers','Inverters, soft starters','Sensors, measuring instruments']},
+  {id:'th', name:'Computers & IT', subs:['Computers, servers','Network equipment, cameras','Licensed software']}
 ];
 const PRODUCTS = [
-  {c:'tn', s:0, n:'Tủ an toàn sinh học cấp II', code:'VP-TN-01', d:'Bảo vệ người thao tác, mẫu và môi trường phòng thí nghiệm.', i:'cabinet', hot:1},
-  {c:'tn', s:0, n:'Tủ hút khí độc', code:'VP-TN-02', d:'Hút và xử lý hơi hóa chất khi thao tác mẫu.', i:'cabinet'},
-  {c:'tn', s:1, n:'Tủ sấy, tủ ấm', code:'VP-TN-03', d:'Sấy, ủ mẫu với nhiệt độ điều khiển ổn định.', i:'oven', hot:1},
-  {c:'tn', s:2, n:'Máy ly tâm', code:'VP-TN-04', d:'Tách mẫu theo tốc độ và thời gian cài đặt.', i:'centrifuge', hot:1},
-  {c:'tn', s:2, n:'Cân phân tích', code:'VP-TN-05', d:'Cân chính xác cho phòng thí nghiệm, kiểm định.', i:'balance'},
-  {c:'yt', s:2, n:'Nồi hấp tiệt trùng', code:'VP-YT-01', d:'Tiệt trùng dụng cụ y tế bằng hơi nước bão hòa.', i:'autoclave', hot:1},
-  {c:'yt', s:0, n:'Monitor theo dõi bệnh nhân', code:'VP-YT-02', d:'Theo dõi các thông số sinh tồn liên tục.', i:'monitor', hot:1},
-  {c:'yt', s:1, n:'Giường bệnh đa năng', code:'VP-YT-03', d:'Điều chỉnh tư thế, phục vụ chăm sóc người bệnh.', i:'bed'},
-  {c:'cn', s:1, n:'Hộp giảm tốc công nghiệp', code:'VP-CN-01', d:'Chế tạo, sửa chữa, thay thế theo yêu cầu kỹ thuật.', i:'gear', hot:1},
-  {c:'cn', s:1, n:'Bơm và quạt công nghiệp', code:'VP-CN-02', d:'Cung cấp, lắp đặt, bảo dưỡng cho nhà máy, công trường.', i:'pump'},
-  {c:'dt', s:0, n:'Bộ điều khiển PLC', code:'VP-DT-01', d:'Tủ điều khiển, lập trình tự động hóa dây chuyền.', i:'plc', hot:1},
-  {c:'dt', s:1, n:'Biến tần, khởi động mềm', code:'VP-DT-02', d:'Điều khiển tốc độ động cơ, tiết kiệm điện năng.', i:'drive'},
-  {c:'dt', s:2, n:'Cảm biến và thiết bị đo', code:'VP-DT-03', d:'Đo nhiệt độ, áp suất, mức, lưu lượng.', i:'sensor'},
-  {c:'th', s:0, n:'Máy tính trạm, máy chủ', code:'VP-TH-01', d:'Cấu hình theo nhu cầu văn phòng, kỹ thuật.', i:'server', hot:1},
-  {c:'th', s:0, n:'Máy tính để bàn, xách tay', code:'VP-TH-02', d:'Cung cấp, cài đặt, bảo hành tận nơi.', i:'pc'},
-  {c:'th', s:1, n:'Camera và thiết bị mạng', code:'VP-TH-03', d:'Lắp đặt mạng LAN, camera cho văn phòng, nhà xưởng.', i:'camera'},
-  {c:'th', s:2, n:'Phần mềm bản quyền', code:'VP-TH-04', d:'Phần mềm văn phòng và chuyên ngành kỹ thuật.', i:'software'}
+  {c:'tn', s:0, n:'Class II biosafety cabinet', code:'VP-TN-01', d:'Protects the operator, samples and the laboratory environment.', i:'cabinet', hot:1},
+  {c:'tn', s:0, n:'Fume hood', code:'VP-TN-02', d:'Extracts and treats chemical vapours during sample handling.', i:'cabinet'},
+  {c:'tn', s:1, n:'Drying oven, incubator', code:'VP-TN-03', d:'Drying and incubating samples at stable controlled temperature.', i:'oven', hot:1},
+  {c:'tn', s:2, n:'Centrifuge', code:'VP-TN-04', d:'Separates samples at set speed and time.', i:'centrifuge', hot:1},
+  {c:'tn', s:2, n:'Analytical balance', code:'VP-TN-05', d:'Precision weighing for laboratories and inspection.', i:'balance'},
+  {c:'yt', s:2, n:'Autoclave sterilizer', code:'VP-YT-01', d:'Sterilizes medical instruments with saturated steam.', i:'autoclave', hot:1},
+  {c:'yt', s:0, n:'Patient monitor', code:'VP-YT-02', d:'Continuous monitoring of vital signs.', i:'monitor', hot:1},
+  {c:'yt', s:1, n:'Multifunction hospital bed', code:'VP-YT-03', d:'Adjustable positions for patient care.', i:'bed'},
+  {c:'cn', s:1, n:'Industrial gearbox', code:'VP-CN-01', d:'Fabrication, repair and replacement to technical requirements.', i:'gear', hot:1},
+  {c:'cn', s:1, n:'Industrial pumps and fans', code:'VP-CN-02', d:'Supply, installation and maintenance for plants and sites.', i:'pump'},
+  {c:'dt', s:0, n:'PLC controller', code:'VP-DT-01', d:'Control panels and production-line automation programming.', i:'plc', hot:1},
+  {c:'dt', s:1, n:'Inverters, soft starters', code:'VP-DT-02', d:'Motor speed control and energy saving.', i:'drive'},
+  {c:'dt', s:2, n:'Sensors and instruments', code:'VP-DT-03', d:'Temperature, pressure, level and flow measurement.', i:'sensor'},
+  {c:'th', s:0, n:'Workstations, servers', code:'VP-TH-01', d:'Configured for office and engineering needs.', i:'server', hot:1},
+  {c:'th', s:0, n:'Desktops, laptops', code:'VP-TH-02', d:'Supply, setup and on-site warranty.', i:'pc'},
+  {c:'th', s:1, n:'Cameras and network equipment', code:'VP-TH-03', d:'LAN and camera installation for offices and factories.', i:'camera'},
+  {c:'th', s:2, n:'Licensed software', code:'VP-TH-04', d:'Office and engineering software.', i:'software'}
 ];
 const $ = id => document.getElementById(id);
 const esc = t => String(t).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
@@ -603,7 +614,7 @@ document.querySelectorAll('.dev[data-i]').forEach(d => d.innerHTML = ICONS[d.dat
 (function(){
   const track = $('slides'), n = track.children.length, dots = $('dots');
   let i = 0, timer;
-  dots.innerHTML = Array.from({length:n},(_,k)=>'<button type="button" aria-label="Ảnh '+(k+1)+'"></button>').join('');
+  dots.innerHTML = Array.from({length:n},(_,k)=>'<button type="button" aria-label="Slide '+(k+1)+'"></button>').join('');
   function go(k){ i=(k+n)%n; track.style.transform='translateX(-'+(i*100)+'%)'; [...dots.children].forEach((b,j)=>b.setAttribute('aria-current', j===i)); }
   function auto(){ clearInterval(timer); if(!reduce) timer=setInterval(()=>go(i+1),6000); }
   $('prev').onclick=()=>{go(i-1);auto()}; $('next').onclick=()=>{go(i+1);auto()};
@@ -635,10 +646,10 @@ function renderMenus(){
   $('qlinks').innerHTML=CATS.flatMap(c=>[ '<button type="button" data-cat="'+c.id+'" title="'+c.name+'">'+c.name+'</button>' ].concat(c.subs.map((x,k)=>'<button type="button" data-cat="'+c.id+'" data-sub="'+k+'" title="'+x+'">'+x+'</button>'))).join('');
 }
 function renderTree(){
-  const all=[{id:'all',name:'Tất cả sản phẩm',subs:[]}].concat(CATS);
+  const all=[{id:'all',name:'All products',subs:[]}].concat(CATS);
   $('tree').innerHTML=all.map(c=>{
     const cnt=c.id==='all'?PRODUCTS.length:PRODUCTS.filter(p=>p.c===c.id).length, op=opened.has(c.id);
-    const tg=c.subs.length?'<button type="button" class="tg" data-toggle="'+c.id+'" aria-expanded="'+op+'" aria-label="Mở danh mục con">'+(op?'−':'+')+'</button>':'<span></span>';
+    const tg=c.subs.length?'<button type="button" class="tg" data-toggle="'+c.id+'" aria-expanded="'+op+'" aria-label="Expand subcategories">'+(op?'−':'+')+'</button>':'<span></span>';
     const subs=(c.subs.length&&op)?'<ul>'+c.subs.map((x,k)=>'<li><button type="button" data-cat="'+c.id+'" data-sub="'+k+'" aria-pressed="'+(cur===c.id&&sub===k)+'">'+x+'</button></li>').join('')+'</ul>':'';
     return '<li>'+tg+'<button type="button" class="cat" data-cat="'+c.id+'" aria-pressed="'+(cur===c.id&&sub===null)+'">'+c.name+'<span class="count">'+cnt+'</span></button>'+subs+'</li>';
   }).join('');
@@ -648,13 +659,13 @@ function renderGrid(){
   const list=PRODUCTS.filter(p=>(cur==='all'||p.c===cur)&&(sub===null||p.s===sub)&&(!q||norm(p.n+' '+p.code+' '+p.d).includes(q)));
   const pages=Math.max(1,Math.ceil(list.length/PER)); if(page>pages)page=pages;
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
-  $('catTitle').textContent=sn||(cat?cat.name:'Tất cả sản phẩm');
-  $('catCount').textContent=list.length+' sản phẩm'+(query.trim()?' khớp với “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb">'+ICONS[p.i]+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span><a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 để được tư vấn.</div>';
+  $('catTitle').textContent=sn||(cat?cat.name:'All products');
+  $('catCount').textContent=list.length+' products'+(query.trim()?' matching “'+query.trim()+'”':'');
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb">'+ICONS[p.i]+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span><a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 for advice.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
-  let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Trang trước">‹</button>';
+  let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Previous page">‹</button>';
   for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';
-  pg.innerHTML=h+'<button type="button" data-page="'+(page+1)+'" '+(page===pages?'disabled':'')+' aria-label="Trang sau">›</button>';
+  pg.innerHTML=h+'<button type="button" data-page="'+(page+1)+'" '+(page===pages?'disabled':'')+' aria-label="Next page">›</button>';
 }
 function closeDD(){document.querySelectorAll('.dd.open').forEach(d=>{d.classList.remove('open');d.querySelector('button').setAttribute('aria-expanded','false')})}
 const nav=$('mainNav'), mb=$('menuBtn');
@@ -677,7 +688,7 @@ $('searchForm').onsubmit=e=>{e.preventDefault();query=$('q').value;page=1;render
 $('q').oninput=e=>{query=e.target.value;page=1;if(query.trim()&&(cur!=='all'||sub!==null)){cur='all';sub=null;renderTree()}renderGrid()};
 const tt=$('toTop'); addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>600),{passive:true}); tt.onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
 const lb=$('lb');
-document.addEventListener('click',e=>{const g=e.target.closest('[data-gallery]'); if(g){$('lbImgs').innerHTML=g.dataset.gallery.split('|').map((s,k)=>'<img src="'+s+'" alt="Trang '+(k+1)+'">').join(''); lb.classList.add('open'); document.body.style.overflow='hidden'; $('lbClose').focus();}});
+document.addEventListener('click',e=>{const g=e.target.closest('[data-gallery]'); if(g){$('lbImgs').innerHTML=g.dataset.gallery.split('|').map((s,k)=>'<img src="'+s+'" alt="Page '+(k+1)+'">').join(''); lb.classList.add('open'); document.body.style.overflow='hidden'; $('lbClose').focus();}});
 function closeLb(){lb.classList.remove('open'); document.body.style.overflow='';}
 $('lbClose').onclick=closeLb; lb.addEventListener('click',e=>{if(e.target===lb)closeLb()}); document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 renderMenus();renderTree();renderGrid();
