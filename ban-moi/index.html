@@ -174,6 +174,9 @@ section{padding:70px 0}
 .about figure figcaption{position:absolute;left:14px;bottom:14px;background:rgba(14,47,90,.82);color:#fff;font-size:13px;padding:6px 12px}
 .about h2{font-weight:400;font-size:clamp(26px,3vw,34px);text-transform:uppercase;margin:0 0 14px;color:#2A333C}
 .about p{color:#4A545E;margin:0 0 12px}
+.about-list{margin:0 0 12px;padding-left:20px;color:#4A545E}
+.about-list li{margin:2px 0}
+.about-list li::marker{color:var(--blue)}
 .about .legal{font-size:13px;color:var(--muted);border-left:3px solid var(--blue);padding-left:12px;margin:16px 0 22px}
 @media (max-width:860px){.about .wrap{grid-template-columns:1fr;gap:24px}}
 
@@ -418,9 +421,21 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   <figure><img src="tru-so.jpg" alt="Phối cảnh trụ sở Công ty Vân Phong, số 34 ngõ 36A phố Trần Điền, Hà Nội" width="1000" height="988"><figcaption>Trụ sở: Số 34, ngõ 36A, phố Trần Điền, Hà Nội</figcaption></figure>
   <div>
     <h2>Giới thiệu</h2>
-    <p>Công ty TNHH Kỹ thuật và Thương mại Vân Phong được thành lập ngày 25/06/2019 tại Hà Nội, hoạt động trong các lĩnh vực nghiên cứu khoa học công nghệ, tư vấn xây dựng, thí nghiệm, chế tạo – sửa chữa thiết bị và thương mại, xuất nhập khẩu vật tư, thiết bị, phần mềm.</p>
+    <p>Công ty TNHH Kỹ thuật và Thương mại Vân Phong được thành lập ngày 25/06/2019 tại Hà Nội, hoạt động trong các lĩnh vực:</p>
+    <ul class="about-list">
+      <li>Nghiên cứu khoa học công nghệ.</li>
+      <li>Tư vấn xây dựng.</li>
+      <li>Thí nghiệm – Kiểm định.</li>
+      <li>Thiết kế – Chế tạo – Sửa chữa thiết bị.</li>
+      <li>Thương mại, xuất – nhập khẩu.</li>
+    </ul>
+    <p><b>Mặt hàng:</b> Vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính.</p>
     <p>Ngành nghề kinh doanh chính: bán buôn máy móc, thiết bị và phụ tùng máy (mã ngành 4659). Phạm vi đa lĩnh vực giúp chúng tôi đồng hành cùng khách hàng từ khâu ý tưởng, thiết kế đến cung cấp, lắp đặt và bảo trì.</p>
-    <p><b>Sứ mệnh:</b> Giải pháp kỹ thuật tin cậy cho mọi khách hàng. <b>Tầm nhìn:</b> Đối tác kỹ thuật hàng đầu về công nghiệp, y tế và thí nghiệm. <b>Giá trị cốt lõi:</b> Chính xác – Tận tâm – Hiệu quả.</p>
+    <ul class="about-list">
+      <li><b>Sứ mệnh:</b> Giải pháp kỹ thuật tin cậy cho mọi khách hàng.</li>
+      <li><b>Tầm nhìn:</b> Đối tác kỹ thuật hàng đầu về công nghiệp, y tế và thí nghiệm.</li>
+      <li><b>Giá trị cốt lõi:</b> Chính xác – Tận tâm – Hiệu quả.</li>
+    </ul>
     <div class="legal">VAN PHONG TECHNICAL AND TRADING COMPANY LIMITED<br>VAN PHONG TECH CO., LTD. · MSDN 0108797479</div>
     <a class="btn line" href="#linh-vuc">Xem thêm &gt;&gt;</a>
   </div>
