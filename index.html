@@ -233,7 +233,9 @@ section{padding:70px 0}
 .card .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
 .card h4{margin:0;font-size:16px;font-weight:600}
 .card p{margin:0;font-size:13.5px;color:var(--muted)}
-.card .foot{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;font-size:13px}
+.card .foot{margin-top:auto;padding-top:10px;display:flex;flex-wrap:wrap;gap:6px 12px;justify-content:space-between;align-items:center;font-size:13px}
+.card .foot a.dl{color:var(--blue);border:1px solid var(--blue);padding:2px 8px;border-radius:3px;margin-left:auto}
+.card .foot a.dl:hover{background:var(--blue);color:#fff}
 .card .foot a{color:var(--cta);font-weight:600}
 .code{color:var(--muted);font-variant-numeric:tabular-nums}
 .empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line)}
@@ -632,12 +634,12 @@ const CATS = [
   {id:'th', name:'Máy tính – Tin học', subs:['Máy tính, máy chủ','Thiết bị mạng, camera','Phần mềm bản quyền']}
 ];
 const PRODUCTS = [
-  {c:'cn', s:0, n:'Sàng đĩa đan xen CRS350-15 (350 t/h)', code:'CRS350-15', d:'Sàng than: cỡ hạt cấp liệu 150 mm, cỡ hạt dưới sàng 15 mm, năng suất 350 t/h, động cơ 3 × 7,5 kW. Phương án tư vấn cho Công ty CP Than Vàng Danh – Vinacomin, hợp tác cùng Gongbei Heavy Machinery (Trung Quốc).', i:'screen', hot:3},
-  {c:'cn', s:0, n:'Sàng đĩa đan xen CRS1414 (150 t/h)', code:'CRS1414', d:'Sàng than: năng suất 150 t/h, 14 trục, mặt sàng rộng 1400 mm, cỡ hạt dưới sàng ≤ 8 mm, động cơ 14 × 3,0 kW, kích thước 3740 × 2587 × 1555 mm, khoảng 10 tấn. Hãng Gongbei (Trung Quốc). Dùng cho hệ thống sàng than PX Nhiệt điện – Nhà máy alumin Lâm Đồng.', i:'screen', hot:3},
-  {c:'tn', s:3, n:'Máy đông khô BIOBASE BK-FD10P (-60°C)', code:'BK-FD10P', d:'Máy sấy đông khô phòng thí nghiệm, nhiệt độ bẫy lạnh đến -60°C. Hãng BIOBASE.', i:'freeze', hot:2},
-  {c:'tn', s:0, n:'Tủ cấy vi sinh BIOBASE BBS-H1500', code:'BBS-H1500', d:'Tủ cấy vi sinh cho phòng thí nghiệm; cung cấp kèm lắp đặt, chạy thử, hướng dẫn sử dụng. Hãng BIOBASE.', i:'bench', hot:2},
-  {c:'tn', s:0, n:'Tủ cấy vi sinh BIOBASE BKCB-V900', code:'BKCB-V900', d:'Tủ cấy vi sinh dòng khí thổi đứng. Hãng BIOBASE.', i:'bench', hot:2},
-  {c:'tn', s:3, n:'Máy khuấy cơ học Drawell OS20-Pro', code:'OS20-Pro', d:'Máy khuấy đũa cơ học cho phòng thí nghiệm hóa học. Hãng Drawell.', i:'stirrer', hot:2},
+  {c:'cn', s:0, n:'Sàng đĩa đan xen CRS350-15 (350 t/h)', code:'CRS350-15', pdf:'crs350-15', d:'Sàng than: cỡ hạt cấp liệu 150 mm, cỡ hạt dưới sàng 15 mm, năng suất 350 t/h, động cơ 3 × 7,5 kW. Phương án tư vấn cho Công ty CP Than Vàng Danh – Vinacomin, hợp tác cùng Gongbei Heavy Machinery (Trung Quốc).', i:'screen', hot:3},
+  {c:'cn', s:0, n:'Sàng đĩa đan xen CRS1414 (150 t/h)', code:'CRS1414', pdf:'crs1414', d:'Sàng than: năng suất 150 t/h, 14 trục, mặt sàng rộng 1400 mm, cỡ hạt dưới sàng ≤ 8 mm, động cơ 14 × 3,0 kW, kích thước 3740 × 2587 × 1555 mm, khoảng 10 tấn. Hãng Gongbei (Trung Quốc). Dùng cho hệ thống sàng than PX Nhiệt điện – Nhà máy alumin Lâm Đồng.', i:'screen', hot:3},
+  {c:'tn', s:3, n:'Máy đông khô BIOBASE BK-FD10P (-60°C)', code:'BK-FD10P', pdf:'bk-fd10p', d:'Máy sấy đông khô phòng thí nghiệm, nhiệt độ bẫy lạnh đến -60°C. Hãng BIOBASE.', i:'freeze', hot:2},
+  {c:'tn', s:0, n:'Tủ cấy vi sinh BIOBASE BBS-H1500', code:'BBS-H1500', pdf:'bbs-h1500', d:'Tủ cấy vi sinh cho phòng thí nghiệm; cung cấp kèm lắp đặt, chạy thử, hướng dẫn sử dụng. Hãng BIOBASE.', i:'bench', hot:2},
+  {c:'tn', s:0, n:'Tủ cấy vi sinh BIOBASE BKCB-V900', code:'BKCB-V900', pdf:'bkcb-v900', d:'Tủ cấy vi sinh dòng khí thổi đứng. Hãng BIOBASE.', i:'bench', hot:2},
+  {c:'tn', s:3, n:'Máy khuấy cơ học Drawell OS20-Pro', code:'OS20-Pro', pdf:'os20-pro', d:'Máy khuấy đũa cơ học cho phòng thí nghiệm hóa học. Hãng Drawell.', i:'stirrer', hot:2},
   {c:'tn', s:0, n:'Tủ an toàn sinh học cấp II', code:'VP-TN-01', d:'Bảo vệ người thao tác, mẫu và môi trường phòng thí nghiệm.', i:'cabinet', hot:1},
   {c:'tn', s:0, n:'Tủ hút khí độc', code:'VP-TN-02', d:'Hút và xử lý hơi hóa chất khi thao tác mẫu.', i:'cabinet'},
   {c:'tn', s:1, n:'Tủ sấy, tủ ấm', code:'VP-TN-03', d:'Sấy, ủ mẫu với nhiệt độ điều khiển ổn định.', i:'oven', hot:1},
@@ -715,7 +717,7 @@ function renderGrid(){
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'Tất cả sản phẩm');
   $('catCount').textContent=list.length+' sản phẩm'+(query.trim()?' khớp với “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb">'+ICONS[p.i]+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span><a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 để được tư vấn.</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb">'+ICONS[p.i]+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/vi/'+p.pdf+'.pdf" target="_blank" rel="noopener">Tải catalog PDF</a>':'')+'<a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 để được tư vấn.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Trang trước">‹</button>';
   for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';
