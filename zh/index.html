@@ -69,6 +69,8 @@ nav.main>a.on{color:var(--navy)}
 .panel a:hover,.panel button:hover{background:var(--grey);color:var(--blue)}
 .mega{left:auto;right:-320px;width:min(860px,92vw);display:none;grid-template-columns:repeat(3,1fr);gap:4px 18px;padding:18px 20px}
 .dd.open .mega{display:grid}
+@media (hover:hover) and (min-width:901px){.dd:hover .panel{display:block}.dd:hover .mega{display:grid}.dd:hover>button{color:var(--blue)}}
+
 .mega h4{margin:6px 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy)}
 .mega h4 button{padding:0;font-weight:700;color:var(--navy);font-size:13px;text-transform:uppercase}
 .mega ul{list-style:none;margin:0 0 10px;padding:0}
@@ -392,13 +394,13 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
   <nav class="main" id="mainNav">
     <a href="#top" class="on">首页</a>
-    <div class="dd"><button type="button" aria-expanded="false">关于我们 <span class="caret"></span></button><div class="panel">
+    <div class="dd"><button type="button" aria-expanded="false" data-href="#gioi-thieu">关于我们 <span class="caret"></span></button><div class="panel">
       <a href="#gioi-thieu">公司简介</a><a href="#ban-lanh-dao">管理团队</a><a href="#chung-nhan">证书</a></div></div>
     <a href="#doi-tac">合作伙伴</a>
-    <div class="dd" id="ddProd"><button type="button" aria-expanded="false">产品 <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
-    <div class="dd"><button type="button" aria-expanded="false">服务 <span class="caret"></span></button><div class="panel">
+    <div class="dd" id="ddProd"><button type="button" aria-expanded="false" data-href="#san-pham">产品 <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
+    <div class="dd"><button type="button" aria-expanded="false" data-href="#linh-vuc">服务 <span class="caret"></span></button><div class="panel">
       <a href="#linh-vuc">科学技术研究</a><a href="#linh-vuc">建设咨询</a><a href="#linh-vuc">试验 – 检定</a><a href="#linh-vuc">设备设计 – 制造 – 维修</a><a href="#linh-vuc">贸易及进出口</a></div></div>
-    <div class="dd"><button type="button" aria-expanded="false">新闻 <span class="caret"></span></button><div class="panel">
+    <div class="dd"><button type="button" aria-expanded="false" data-href="#tin-tuc">新闻 <span class="caret"></span></button><div class="panel">
       <a href="#tin-tuc">新闻</a><a href="#bai-bao">科技论文</a><a href="#sang-che">专利</a></div></div>
     <a href="#lien-he">联系我们</a>
   </nav>
@@ -921,7 +923,8 @@ function closeNav(){nav.classList.remove('open');mb.setAttribute('aria-expanded'
 function setCat(id,s){cur=id;sub=(s===undefined||s===null)?null:Number(s);page=1;query='';$('q').value='';if(id!=='all')opened.add(id);renderTree();renderGrid();closeDD();closeNav();scrollToCat();}
 document.addEventListener('click',e=>{
   const ddb=e.target.closest('.dd>button');
-  if(ddb){const d=ddb.parentElement,was=d.classList.contains('open');closeDD();if(!was){d.classList.add('open');ddb.setAttribute('aria-expanded','true')}return}
+  if(ddb){if(ddb.dataset.href&&matchMedia('(hover:hover) and (min-width:901px)').matches){closeDD();const t=document.querySelector(ddb.dataset.href);if(t){t.scrollIntoView({behavior:'smooth'});history.replaceState(null,'',ddb.dataset.href)}ddb.blur();return}
+    const d=ddb.parentElement,was=d.classList.contains('open');closeDD();if(!was){d.classList.add('open');ddb.setAttribute('aria-expanded','true')}return}
   if(!e.target.closest('.dd'))closeDD();
   const tg=e.target.closest('[data-toggle]'); if(tg){const id=tg.dataset.toggle;opened.has(id)?opened.delete(id):opened.add(id);renderTree();return}
   const b=e.target.closest('[data-cat]'); if(b){e.preventDefault();setCat(b.dataset.cat,b.dataset.sub);return}
