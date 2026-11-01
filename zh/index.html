@@ -288,6 +288,13 @@ section{padding:70px 0}
 @media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
+.leader{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start;max-width:1100px;margin:0 auto}
+.leader figure{margin:0}.leader figure img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:4px}
+.leader h3{margin:0;font-size:24px;color:#0E2F5A}.leader .role{margin:4px 0 16px;color:var(--cta);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:14px}
+.leader p{color:#4A545E;margin:0 0 12px}.leader h4{margin:14px 0 6px;font-size:15px;color:#2A333C;text-transform:uppercase;letter-spacing:.03em}
+.leader ul{margin:0;padding-left:18px;color:#4A545E}.leader li{margin:3px 0}
+.lcols{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:8px;border-top:1px solid var(--line);padding-top:6px}
+@media (max-width:860px){.leader{grid-template-columns:1fr;gap:20px}.leader figure{max-width:280px}.lcols{grid-template-columns:1fr;gap:0}}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
 .certs-band .title h2{color:#fff}
@@ -375,7 +382,8 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <div class="dd" id="ddProd"><button type="button" aria-expanded="false">产品 <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
     <div class="dd"><button type="button" aria-expanded="false">证书 <span class="caret"></span></button><div class="panel">
       <a href="#chung-nhan">企业登记证书</a><a href="#chung-nhan">公司简介</a></div></div>
-    <a href="#gioi-thieu">关于我们</a>
+    <div class="dd"><button type="button" aria-expanded="false">关于我们 <span class="caret"></span></button><div class="panel">
+      <a href="#gioi-thieu">公司简介</a><a href="#ban-lanh-dao">管理团队</a><a href="#bai-bao">科技论文</a></div></div>
     <a href="#doi-tac">合作伙伴</a>
     <a href="#tin-tuc">新闻</a>
     <div class="dd"><button type="button" aria-expanded="false">服务 <span class="caret"></span></button><div class="panel">
@@ -491,6 +499,21 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></section>
 
 <!-- HOT PRODUCTS -->
+<!--LEADERS--><section id="ban-lanh-dao"><div class="wrap">
+  <div class="title"><h2>管理团队</h2></div>
+  <article class="leader">
+    <figure><img src="/lanh-dao/le-thanh-binh.jpg" alt="黎清平 博士（Le Thanh Binh）" width="600" height="600" loading="lazy"></figure>
+    <div class="lbody">
+      <h3>黎清平 博士（Le Thanh Binh）</h3><p class="role">总经理助理</p>
+      <p>黎清平博士现任 Van Phong 技术与贸易有限公司总经理助理，在科技研究、材料试验检测以及矿山与能源行业机械设备领域拥有近 20 年经验。</p><p>在 Van Phong，他协助总经理处理技术事务，为业主提供设备计算与选型咨询，并负责拓展与国内外合作伙伴的合作。</p>
+      <div class="lcols">
+        <div><h4>教育背景</h4><ul><li>矿山机械专业博士 – 俄罗斯圣彼得堡矿业大学</li><li>材料科学与工程硕士 – 河内百科大学（2013）</li><li>材料学与热处理工程学士 – 河内百科大学（2006）</li></ul></div>
+        <div><h4>专业领域</h4><ul><li>矿山机械与设备</li><li>金属材料与热处理</li><li>材料试验与检测</li><li>科技研发管理</li><li>工程产品市场开发</li></ul><h4>外语</h4><p>英语、俄语</p></div>
+      </div>
+    </div>
+  </article>
+</div></section><!--/LEADERS-->
+
 <section class="grey" id="noi-bat"><div class="wrap">
   <div class="title"><h2>热门产品</h2></div>
   <div class="pc" id="hot">
@@ -550,6 +573,11 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <section id="tin-tuc"><div class="wrap">
   <div class="title"><h2>新闻</h2></div>
   <div class="news-empty">暂无新闻。</div>
+</div></section>
+
+<section class="grey" id="bai-bao"><div class="wrap">
+  <div class="title"><h2>科技论文</h2></div>
+  <div class="news-empty">即将更新。</div>
 </div></section>
 
 <!-- CERTIFICATES -->

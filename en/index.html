@@ -288,6 +288,13 @@ section{padding:70px 0}
 @media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
+.leader{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start;max-width:1100px;margin:0 auto}
+.leader figure{margin:0}.leader figure img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:4px}
+.leader h3{margin:0;font-size:24px;color:#0E2F5A}.leader .role{margin:4px 0 16px;color:var(--cta);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:14px}
+.leader p{color:#4A545E;margin:0 0 12px}.leader h4{margin:14px 0 6px;font-size:15px;color:#2A333C;text-transform:uppercase;letter-spacing:.03em}
+.leader ul{margin:0;padding-left:18px;color:#4A545E}.leader li{margin:3px 0}
+.lcols{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:8px;border-top:1px solid var(--line);padding-top:6px}
+@media (max-width:860px){.leader{grid-template-columns:1fr;gap:20px}.leader figure{max-width:280px}.lcols{grid-template-columns:1fr;gap:0}}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
 .certs-band .title h2{color:#fff}
@@ -375,7 +382,8 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <div class="dd" id="ddProd"><button type="button" aria-expanded="false">Products <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
     <div class="dd"><button type="button" aria-expanded="false">Certificates <span class="caret"></span></button><div class="panel">
       <a href="#chung-nhan">Enterprise registration</a><a href="#chung-nhan">Company profile</a></div></div>
-    <a href="#gioi-thieu">About us</a>
+    <div class="dd"><button type="button" aria-expanded="false">About us <span class="caret"></span></button><div class="panel">
+      <a href="#gioi-thieu">About Van Phong</a><a href="#ban-lanh-dao">Leadership</a><a href="#bai-bao">Publications</a></div></div>
     <a href="#doi-tac">Partners</a>
     <a href="#tin-tuc">News</a>
     <div class="dd"><button type="button" aria-expanded="false">Services <span class="caret"></span></button><div class="panel">
@@ -491,6 +499,21 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></section>
 
 <!-- HOT PRODUCTS -->
+<!--LEADERS--><section id="ban-lanh-dao"><div class="wrap">
+  <div class="title"><h2>Leadership</h2></div>
+  <article class="leader">
+    <figure><img src="/lanh-dao/le-thanh-binh.jpg" alt="Dr. Le Thanh Binh" width="600" height="600" loading="lazy"></figure>
+    <div class="lbody">
+      <h3>Dr. Le Thanh Binh</h3><p class="role">Assistant to the General Director</p>
+      <p>Dr. Le Thanh Binh is Assistant to the General Director of Van Phong Technical and Trading Co., Ltd. He brings nearly 20 years of experience in science and technology research, materials testing and inspection, and mechanical equipment for the mining and energy sectors.</p><p>At Van Phong, he supports the General Director on technical matters, provides sizing calculations and equipment selection for project owners, and develops cooperation with domestic and international partners.</p>
+      <div class="lcols">
+        <div><h4>Education</h4><ul><li>PhD in Mining Machinery – Saint Petersburg Mining University, Russian Federation</li><li>MSc in Materials Science and Engineering – Hanoi University of Science and Technology (2013)</li><li>BEng in Materials Science and Heat Treatment – Hanoi University of Science and Technology (2006)</li></ul></div>
+        <div><h4>Areas of expertise</h4><ul><li>Mining machinery and equipment</li><li>Metallic materials and heat treatment</li><li>Materials testing and inspection</li><li>R&amp;D management</li><li>Market development for engineering products</li></ul><h4>Languages</h4><p>English, Russian</p></div>
+      </div>
+    </div>
+  </article>
+</div></section><!--/LEADERS-->
+
 <section class="grey" id="noi-bat"><div class="wrap">
   <div class="title"><h2>Featured products</h2></div>
   <div class="pc" id="hot">
@@ -550,6 +573,11 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <section id="tin-tuc"><div class="wrap">
   <div class="title"><h2>News</h2></div>
   <div class="news-empty">No news yet.</div>
+</div></section>
+
+<section class="grey" id="bai-bao"><div class="wrap">
+  <div class="title"><h2>Scientific publications</h2></div>
+  <div class="news-empty">Coming soon.</div>
 </div></section>
 
 <!-- CERTIFICATES -->

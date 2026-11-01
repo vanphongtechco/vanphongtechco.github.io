@@ -288,6 +288,13 @@ section{padding:70px 0}
 @media (max-width:1000px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.partners{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pt .lg{width:68px;height:68px;font-size:15px}}
 .news-empty{border:1px dashed var(--line);background:#fff;color:var(--muted);text-align:center;padding:40px 16px}
+.leader{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start;max-width:1100px;margin:0 auto}
+.leader figure{margin:0}.leader figure img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:4px}
+.leader h3{margin:0;font-size:24px;color:#0E2F5A}.leader .role{margin:4px 0 16px;color:var(--cta);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:14px}
+.leader p{color:#4A545E;margin:0 0 12px}.leader h4{margin:14px 0 6px;font-size:15px;color:#2A333C;text-transform:uppercase;letter-spacing:.03em}
+.leader ul{margin:0;padding-left:18px;color:#4A545E}.leader li{margin:3px 0}
+.lcols{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:8px;border-top:1px solid var(--line);padding-top:6px}
+@media (max-width:860px){.leader{grid-template-columns:1fr;gap:20px}.leader figure{max-width:280px}.lcols{grid-template-columns:1fr;gap:0}}
 /* certificates band */
 .certs-band{background:linear-gradient(rgba(14,47,90,.92),rgba(14,47,90,.92)),repeating-linear-gradient(90deg,#173F72 0 2px,transparent 2px 80px);color:#fff}
 .certs-band .title h2{color:#fff}
@@ -375,7 +382,8 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <div class="dd" id="ddProd"><button type="button" aria-expanded="false">Sản phẩm <span class="caret"></span></button><div class="panel mega" id="mega"></div></div>
     <div class="dd"><button type="button" aria-expanded="false">Chứng nhận <span class="caret"></span></button><div class="panel">
       <a href="#chung-nhan">Đăng ký doanh nghiệp</a><a href="#chung-nhan">Hồ sơ năng lực</a></div></div>
-    <a href="#gioi-thieu">Giới thiệu</a>
+    <div class="dd"><button type="button" aria-expanded="false">Giới thiệu <span class="caret"></span></button><div class="panel">
+      <a href="#gioi-thieu">Về Vân Phong</a><a href="#ban-lanh-dao">Ban lãnh đạo</a><a href="#bai-bao">Bài báo khoa học</a></div></div>
     <a href="#doi-tac">Đối tác</a>
     <a href="#tin-tuc">Tin tức</a>
     <div class="dd"><button type="button" aria-expanded="false">Dịch vụ <span class="caret"></span></button><div class="panel">
@@ -491,6 +499,21 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div></section>
 
 <!-- HOT PRODUCTS -->
+<!--LEADERS--><section id="ban-lanh-dao"><div class="wrap">
+  <div class="title"><h2>Ban lãnh đạo</h2></div>
+  <article class="leader">
+    <figure><img src="/lanh-dao/le-thanh-binh.jpg" alt="TS. Lê Thanh Bình" width="600" height="600" loading="lazy"></figure>
+    <div class="lbody">
+      <h3>TS. Lê Thanh Bình</h3><p class="role">Trợ lý Tổng Giám đốc</p>
+      <p>TS. Lê Thanh Bình là Trợ lý Tổng Giám đốc Công ty TNHH Kỹ thuật và Thương mại Vân Phong. Ông có gần 20 năm kinh nghiệm trong nghiên cứu khoa học công nghệ, thí nghiệm – kiểm định vật liệu và thiết bị cơ khí phục vụ ngành mỏ – năng lượng.</p><p>Tại Vân Phong, ông hỗ trợ Tổng Giám đốc về chuyên môn kỹ thuật, tư vấn tính toán, lựa chọn giải pháp thiết bị cho chủ đầu tư và phát triển hợp tác với các đối tác trong và ngoài nước.</p>
+      <div class="lcols">
+        <div><h4>Học vấn</h4><ul><li>Tiến sĩ chuyên ngành Máy mỏ – Trường Đại học Mỏ Saint Petersburg, Liên bang Nga</li><li>Thạc sĩ Khoa học và Kỹ thuật vật liệu – Đại học Bách khoa Hà Nội (2013)</li><li>Kỹ sư Vật liệu học và Nhiệt luyện – Đại học Bách khoa Hà Nội (2006)</li></ul></div>
+        <div><h4>Lĩnh vực chuyên môn</h4><ul><li>Máy và thiết bị mỏ</li><li>Vật liệu kim loại, nhiệt luyện</li><li>Thí nghiệm – kiểm định vật liệu</li><li>Quản lý nghiên cứu khoa học công nghệ</li><li>Phát triển thị trường sản phẩm kỹ thuật</li></ul><h4>Ngoại ngữ</h4><p>Tiếng Anh, tiếng Nga</p></div>
+      </div>
+    </div>
+  </article>
+</div></section><!--/LEADERS-->
+
 <section class="grey" id="noi-bat"><div class="wrap">
   <div class="title"><h2>Sản phẩm nổi bật</h2></div>
   <div class="pc" id="hot">
@@ -550,6 +573,11 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <section id="tin-tuc"><div class="wrap">
   <div class="title"><h2>Tin tức</h2></div>
   <div class="news-empty">Chưa có tin tức.</div>
+</div></section>
+
+<section class="grey" id="bai-bao"><div class="wrap">
+  <div class="title"><h2>Bài báo khoa học</h2></div>
+  <div class="news-empty">Đang cập nhật.</div>
 </div></section>
 
 <!-- CERTIFICATES -->
