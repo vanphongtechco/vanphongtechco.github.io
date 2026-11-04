@@ -40,11 +40,11 @@ L = {
 }
 
 CHAIR = {"vi": ("Bà Trần Hoàng Phương", "Chủ tịch Công ty",
-               ["Bà Trần Hoàng Phương là Chủ tịch Công ty TNHH Kỹ thuật và Thương mại Vân Phong. Bà có 19 năm kinh nghiệm trong lĩnh vực kiểm toán năng lượng; thí nghiệm – kiểm định – giám định – chứng nhận vật tư, thiết bị, công trình công nghiệp, y tế, phòng thí nghiệm và giáo dục."]),
+               ["Bà Trần Hoàng Phương, thạc sĩ Quản lý năng lượng, là Chủ tịch Công ty TNHH Kỹ thuật và Thương mại Vân Phong. Bà có 19 năm kinh nghiệm trong lĩnh vực kiểm toán năng lượng; thí nghiệm – kiểm định – giám định – chứng nhận vật tư, thiết bị, công trình công nghiệp, y tế, phòng thí nghiệm và giáo dục."]),
          "en": ("Ms. Tran Hoang Phuong", "Chairperson",
-               ["Ms. Tran Hoang Phuong is Chairperson of Van Phong Technical and Trading Co., Ltd. She has 19 years of experience in energy auditing and in the testing, inspection, assessment and certification of materials, equipment and facilities for industry, healthcare, laboratories and education."]),
+               ["Ms. Tran Hoang Phuong, MSc in Energy Management, is Chairperson of Van Phong Technical and Trading Co., Ltd. She has 19 years of experience in energy auditing and in the testing, inspection, assessment and certification of materials, equipment and facilities for industry, healthcare, laboratories and education."]),
          "zh": ("陈黄芳 女士（Tran Hoang Phuong）", "董事长",
-               ["陈黄芳女士现任 Van Phong 技术与贸易有限公司董事长，在能源审计，以及工业、医疗、实验室和教育领域物资、设备与工程的试验、检定、鉴定和认证方面拥有 19 年经验。"])}
+               ["陈黄芳女士，能源管理硕士，现任 Van Phong 技术与贸易有限公司董事长，在能源审计，以及工业、医疗、实验室和教育领域物资、设备与工程的试验、检定、鉴定和认证方面拥有 19 年经验。"])}
 
 GD = {"vi": ("Bà Nguyễn Thị Tám", "Tổng Giám đốc",
              ["Bà Nguyễn Thị Tám, kỹ sư Cơ khí, là Tổng Giám đốc Công ty TNHH Kỹ thuật và Thương mại Vân Phong. Bà có trên 50 năm kinh nghiệm trong lĩnh vực thiết kế, chế tạo, sửa chữa máy móc, thiết bị công nghiệp."]),
