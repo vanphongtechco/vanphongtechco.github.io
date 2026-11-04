@@ -55,6 +55,7 @@ P = [
 ('src="/banner-van-phong.jpg"', 'src="/banner-van-phong-en.jpg"', 'src="/banner-van-phong-zh.jpg"'),
 ('src="/banner-thiet-bi-ptn.jpg"', 'src="/banner-thiet-bi-ptn-en.jpg"', 'src="/banner-thiet-bi-ptn-zh.jpg"'),
 ('src="/banner-cong-nghiep.jpg"', 'src="/banner-cong-nghiep-en.jpg"', 'src="/banner-cong-nghiep-zh.jpg"'),
+('alt="Drawell Việt Nam – Thiết bị khoa học &amp; phòng thí nghiệm, phân phối bởi Công ty TNHH Kỹ thuật và Thương mại Vân Phong"', 'alt="Drawell Vietnam – scientific &amp; laboratory instruments, distributed by Van Phong Technical and Trading Co., Ltd."', 'alt="Drawell 越南 – 科学与实验室仪器，由 Van Phong 技术与贸易有限公司经销"'),
 ('alt="Vân Phong – Giải pháp kỹ thuật toàn diện: Thiết bị – Dịch vụ – Chuyển giao công nghệ cho Công nghiệp, Y tế, Phòng thí nghiệm, Giáo dục"', 'alt="Van Phong – Complete engineering solutions: equipment, services and technology transfer for industry, healthcare, laboratories and education"', 'alt="Van Phong – 全面技术解决方案：面向工业、医疗、实验室和教育的设备、服务与技术转让"'),
 ('<h2>Sản phẩm</h2>\n        <p class="lead">Thiết bị, vật tư cho Công nghiệp, Y tế, Phòng thí nghiệm, Giáo dục.</p>', '<h2>Products</h2>\n        <p class="lead">Equipment and supplies for industry, healthcare, laboratories and education.</p>', '<h2>产品</h2>\n        <p class="lead">面向工业、医疗、实验室和教育的设备与物资。</p>'),
 ('<b>Thiết bị công nghiệp</b><span>Máy cơ khí, bơm, quạt, hộp giảm tốc, phụ tùng</span>', '<b>Industrial equipment</b><span>Machinery, pumps, fans, gearboxes, spare parts</span>', '<b>工业设备</b><span>机械设备、泵、风机、减速机、备件</span>'),
