@@ -23,9 +23,10 @@ P = [
                    "en":("University of Education – Hue University","Laboratory equipment for the Faculty of Chemistry"),
                    "zh":("顺化大学师范大学","为化学系供应实验室设备")}),
  ("DW","#C8102E",{"vi":("Chongqing Drawell Instrument (Trung Quốc)","x"),"en":("Chongqing Drawell Instrument Co., Ltd. (China)","x"),"zh":("重庆德瑞沃仪器有限公司（Drawell）","x")}),
+ ("TL","#1BA1E2",{"vi":("Zhejiang Tailin Scitech Co., Ltd (Trung Quốc)","x"),"en":("Zhejiang Tailin Scitech Co., Ltd (China)","x"),"zh":("Zhejiang Tailin Scitech Co., Ltd（浙江，中国）","x")}),
  ("BIO","#1D2F6F",{"vi":("BIOBASE Group (Trung Quốc)","x"),"en":("BIOBASE Group (China)","x"),"zh":("博科集团（BIOBASE）","x")}),
 ]
-LOGO = {"VD":"than-vang-danh.png","IEMM":"iemm.png","BQL":"vinacomin.png","NLĐ":"vinacomin.png","GB":"gongbei.png?v=2","ĐD":"co-dien-dai-duong.png?v=2","ĐHH":"dhsp-hue.png","BIO":"biobase.png","DW":"drawell.png"}
+LOGO = {"VD":"than-vang-danh.png","IEMM":"iemm.png","BQL":"vinacomin.png","NLĐ":"vinacomin.png","GB":"gongbei.png?v=2","ĐD":"co-dien-dai-duong.png?v=2","ĐHH":"dhsp-hue.png","BIO":"biobase.png","DW":"drawell.png","TL":"tailin.png"}
 def block(lang):
     out=[]
     for m,c,d in P:
