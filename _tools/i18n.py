@@ -119,7 +119,7 @@ P = [
 ('type="submit">Tìm</button>', 'type="submit">Search</button>', 'type="submit">搜索</button>'),
 ('aria-label="Phân trang"', 'aria-label="Pagination"', 'aria-label="分页"'),
 # fields
-('<h2>Lĩnh vực hoạt động</h2>', '<h2>Fields of activity</h2>', '<h2>业务领域</h2>'),
+('<h2>Loại hình dịch vụ</h2>', '<h2>Types of services</h2>', '<h2>服务类型</h2>'),
 ('<h3>Nghiên cứu khoa học công nghệ</h3><ul><li>Nghiên cứu, phát triển sản phẩm</li><li>Chuyển giao công nghệ</li></ul>',
  '<h3>Scientific and technological research</h3><ul><li>Product research and development</li><li>Technology transfer</li></ul>',
  '<h3>科学技术研究</h3><ul><li>产品研究与开发</li><li>技术转让</li></ul>'),
