@@ -64,13 +64,13 @@ TRAM = {"vi": ("Bà Hoàng Ngọc Trâm", "Phó Tổng Giám đốc",
                "在 Van Phong，她负责销售、进出口业务以及客户和供应商关系。"])}
 
 TA = {"vi": ("Ông Phùng Đình Tá", "Trưởng phòng Kỹ thuật",
-              ["Ông Phùng Đình Tá là Trưởng phòng Kỹ thuật Công ty TNHH Kỹ thuật và Thương mại Vân Phong. Ông có 25 năm kinh nghiệm trong sửa chữa, lắp đặt thiết bị công nghiệp, y tế, phòng thí nghiệm và giáo dục.",
+              ["Ông Phùng Đình Tá là Trưởng phòng Kỹ thuật Công ty TNHH Kỹ thuật và Thương mại Vân Phong. Ông có 29 năm kinh nghiệm trong sửa chữa, lắp đặt thiết bị công nghiệp, y tế, phòng thí nghiệm và giáo dục.",
                "Tại Vân Phong, ông phụ trách lắp đặt, chạy thử, hướng dẫn sử dụng, bảo hành và sửa chữa thiết bị cho khách hàng."]),
       "en": ("Mr. Phung Dinh Ta", "Head of Technical Department",
-              ["Mr. Phung Dinh Ta is Head of the Technical Department of Van Phong Technical and Trading Co., Ltd. He has 25 years of experience in the repair and installation of equipment for industry, healthcare, laboratories and education.",
+              ["Mr. Phung Dinh Ta is Head of the Technical Department of Van Phong Technical and Trading Co., Ltd. He has 29 years of experience in the repair and installation of equipment for industry, healthcare, laboratories and education.",
                "At Van Phong, he is responsible for the installation, commissioning, user training, warranty service and repair of equipment for customers."]),
       "zh": ("Phung Dinh Ta 先生", "技术部经理",
-              ["Phung Dinh Ta 先生现任 Van Phong 技术与贸易有限公司技术部经理，在工业、医疗、实验室和教育设备的维修与安装方面拥有 25 年经验。",
+              ["Phung Dinh Ta 先生现任 Van Phong 技术与贸易有限公司技术部经理，在工业、医疗、实验室和教育设备的维修与安装方面拥有 29 年经验。",
                "在 Van Phong，他负责为客户提供设备安装、调试、使用培训、保修及维修服务。"])}
 
 def block(lang):
