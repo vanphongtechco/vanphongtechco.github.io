@@ -19,9 +19,9 @@ P = [
 # head
 ('<html lang="vi">', '<html lang="en">', '<html lang="zh-CN">'),
 ('<title>Vân Phong Tech</title>', '<title>Van Phong Tech – Engineering & Trading</title>', '<title>Van Phong Tech – 技术与贸易</title>'),
-('content="Công ty TNHH Kỹ thuật và Thương mại Vân Phong – vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính. Hotline 08.9999.0683."',
- 'content="Van Phong Technical and Trading Co., Ltd. – materials, equipment and software for industry, healthcare, education, laboratories and IT. Hotline +84 899 990 683."',
- 'content="Van Phong 技术与贸易有限公司 – 工业、医疗、教育、实验室及计算机信息技术领域的物资、设备与软件。热线 +84 899 990 683。"'),
+('content="Công ty TNHH Kỹ thuật và Thương mại Vân Phong – vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính. Hotline 08.9999.0683 / 0986.818.013."',
+ 'content="Van Phong Technical and Trading Co., Ltd. – materials, equipment and software for industry, healthcare, education, laboratories and IT. Hotline +84 899 990 683 / +84 986 818 013."',
+ 'content="Van Phong 技术与贸易有限公司 – 工业、医疗、教育、实验室及计算机信息技术领域的物资、设备与软件。热线 +84 899 990 683 / +84 986 818 013。"'),
 # language switcher
 ('<nav class="langs" aria-label="Ngôn ngữ"><a href="/" lang="vi" class="on">Tiếng Việt</a><a href="/en/" lang="en">English</a><a href="/zh/" lang="zh-CN">中文</a></nav>',
  '<nav class="langs" aria-label="Language"><a href="/" lang="vi">Tiếng Việt</a><a href="/en/" lang="en" class="on">English</a><a href="/zh/" lang="zh-CN">中文</a></nav>',
@@ -29,6 +29,7 @@ P = [
 # top strip / addresses
 ('Số 34, ngõ 36A, phố Trần Điền, phường Phương Liệt, TP. Hà Nội', ADDR_EN + ", Vietnam", "越南" + ADDR_ZH),
 ('Hotline: 08.9999.0683</span>', 'Hotline: +84 899 990 683</span>', '热线：+84 899 990 683</span>'),
+('<a href="tel:0986818013" class="tel2"><span>0986.818.013</span>', '<a href="tel:+84986818013" class="tel2"><span>+84 986 818 013</span>', '<a href="tel:+84986818013" class="tel2"><span>+84 986 818 013</span>'),
 # header
 ('aria-label="Vân Phong – trang chủ"', 'aria-label="Van Phong – home"', 'aria-label="Van Phong – 首页"'),
 ('<small>Công ty TNHH<br>Kỹ thuật &amp; Thương mại</small>', '<small>Technical &amp;<br>Trading Co., Ltd.</small>', '<small>技术与贸易<br>有限公司</small>'),
@@ -139,7 +140,7 @@ P = [
 ('<h2>Liên kết nhanh</h2>', '<h2>Quick links</h2>', '<h2>快速链接</h2>'),
 ('<h4>Liên hệ</h4>', '<h4>Contact</h4>', '<h4>联系方式</h4>'),
 ('<dt>Địa chỉ:</dt>', '<dt>Address:</dt>', '<dt>地址：</dt>'),
-('<dt>Hotline:</dt><dd><a href="tel:0899990683">08.9999.0683</a></dd>', '<dt>Hotline:</dt><dd><a href="tel:+84899990683">+84 899 990 683</a></dd>', '<dt>热线：</dt><dd><a href="tel:+84899990683">+84 899 990 683</a></dd>'),
+('<dt>Hotline:</dt><dd><a href="tel:0899990683">08.9999.0683</a> / <a href="tel:0986818013">0986.818.013</a></dd>', '<dt>Hotline:</dt><dd><a href="tel:+84899990683">+84 899 990 683</a> / <a href="tel:+84986818013">+84 986 818 013</a></dd>', '<dt>热线：</dt><dd><a href="tel:+84899990683">+84 899 990 683</a> / <a href="tel:+84986818013">+84 986 818 013</a></dd>'),
 ('<dt>Email:</dt>', '<dt>Email:</dt>', '<dt>邮箱：</dt>'),
 ('<dt>Website:</dt>', '<dt>Website:</dt>', '<dt>网站：</dt>'),
 ('<h4>Về Vân Phong</h4>', '<h4>About Van Phong</h4>', '<h4>关于 Van Phong</h4>'),
@@ -223,7 +224,7 @@ P = [
 ('"/catalog/vi/', '"/catalog/en/', '"/catalog/zh/'),
 ('>Tải catalog PDF<', '>Catalog PDF<', '>产品资料 PDF<'),
 ('<a href="#lien-he">Liên hệ báo giá →</a>', '<a href="#lien-he">Request a quote →</a>', '<a href="#lien-he">询价 →</a>'),
-("'<div class=\"empty\">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 để được tư vấn.</div>'", "'<div class=\"empty\">No matching products. Call +84 899 990 683 for advice.</div>'", "'<div class=\"empty\">未找到匹配的产品。请致电 +84 899 990 683 咨询。</div>'"),
+("'<div class=\"empty\">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 / 0986.818.013 để được tư vấn.</div>'", "'<div class=\"empty\">No matching products. Call +84 899 990 683 / +84 986 818 013 for advice.</div>'", "'<div class=\"empty\">未找到匹配的产品。请致电 +84 899 990 683 / +84 986 818 013 咨询。</div>'"),
 ("aria-label=\"Trang trước\"", "aria-label=\"Previous page\"", "aria-label=\"上一页\""),
 ("aria-label=\"Trang sau\"", "aria-label=\"Next page\"", "aria-label=\"下一页\""),
 ("alt=\"Trang '+(k+1)+'\"", "alt=\"Page '+(k+1)+'\"", "alt=\"第'+(k+1)+'页\""),

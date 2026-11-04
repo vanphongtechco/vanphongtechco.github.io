@@ -22,19 +22,19 @@ L = {
             svcs=["Tư vấn lựa chọn cấu hình phù hợp nhu cầu", "Cung cấp chính hãng, đủ chứng từ CO, CQ", "Vận chuyển, lắp đặt, chạy thử, hướng dẫn sử dụng", "Bảo hành, bảo trì, sửa chữa, cung cấp vật tư thay thế"],
             note="Thông số theo tài liệu của nhà sản xuất và hồ sơ cung cấp thực tế; có thể thay đổi theo phiên bản. Vui lòng liên hệ để nhận cấu hình và báo giá chính xác.",
             co="CÔNG TY TNHH KỸ THUẬT VÀ THƯƠNG MẠI VÂN PHONG", addr="Số 34, ngõ 36A Trần Điền, P. Phương Liệt, TP. Hà Nội",
-            hot="Hotline / Zalo: 08.9999.0683", font="Inter"),
+            hot="Hotline / Zalo: 08.9999.0683 / 0986.818.013", font="Inter"),
  "en": dict(lang="en", tag="Engineering – Trading", ds="PRODUCT DATASHEET", spec="Technical specifications", feat="Key features",
             app="Applications", sup="Scope of supply", svc="Van Phong services", mfr="Manufacturer", org="Origin",
             svcs=["Advice on the right configuration for your needs", "Genuine products with full CO/CQ documents", "Delivery, installation, commissioning and user training", "Warranty, maintenance, repair and spare parts"],
             note="Specifications are based on manufacturer documents and actual supply records and may change with the model version. Please contact us for the exact configuration and quotation.",
             co="VAN PHONG TECHNICAL AND TRADING CO., LTD.", addr="No. 34, Lane 36A Tran Dien, Phuong Liet Ward, Hanoi, Vietnam",
-            hot="Hotline / WhatsApp: +84 899 990 683", font="Inter"),
+            hot="Hotline / WhatsApp: +84 899 990 683 / +84 986 818 013", font="Inter"),
  "zh": dict(lang="zh-CN", tag="技术 – 贸易", ds="产品资料", spec="技术参数", feat="产品特点",
             app="应用领域", sup="供货范围", svc="Van Phong 服务", mfr="制造商", org="产地",
             svcs=["根据需求提供配置选型咨询", "原厂正品，提供完整 CO/CQ 文件", "运输、安装、调试及操作培训", "保修、维护、维修及备件供应"],
             note="参数依据制造商资料及实际供货文件，可能随型号版本变化。请联系我们获取准确配置及报价。",
             co="VAN PHONG 技术与贸易有限公司", addr="越南河内市方烈坊陈田36A巷34号",
-            hot="热线 / WhatsApp：+84 899 990 683", font="Noto Sans CJK SC"),
+            hot="热线 / WhatsApp：+84 899 990 683 / +84 986 818 013", font="Noto Sans CJK SC"),
 }
 
 # rows: (label_vi, label_en, label_zh, value) ; value str or (vi,en,zh)

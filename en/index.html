@@ -7,7 +7,7 @@
 <link rel="alternate" hreflang="en" href="https://www.vanphongtechco.com.vn/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://www.vanphongtechco.com.vn/zh/">
 <title>Van Phong Tech – Engineering & Trading</title>
-<meta name="description" content="Van Phong Technical and Trading Co., Ltd. – materials, equipment and software for industry, healthcare, education, laboratories and IT. Hotline +84 899 990 683.">
+<meta name="description" content="Van Phong Technical and Trading Co., Ltd. – materials, equipment and software for industry, healthcare, education, laboratories and IT. Hotline +84 899 990 683 / +84 986 818 013.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap">
@@ -42,6 +42,7 @@ a{color:inherit;text-decoration:none}
 .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:8px 24px;flex-wrap:wrap;padding-block:6px}
 .top .ct{display:flex;gap:22px;flex-wrap:wrap}
 .top .ct span{display:inline-flex;align-items:center;gap:7px}
+.top .ct .tel2{margin-left:-14px}.top .ct .tel2 span::before{content:"/";margin-right:1px}
 .ico{width:22px;height:22px;border-radius:50%;background:#5A636D;display:inline-grid;place-items:center;flex:none}
 .ico svg{width:12px;height:12px;fill:#fff}
 .top .addr{color:#6A737D;margin-left:auto}
@@ -408,7 +409,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <div class="top"><div class="wrap">
   <div class="ct">
     <span><i class="ico"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zM4 7v.5l8 5 8-5V7z"/></svg></i>info@vanphongtechco.com.vn</span>
-    <a href="tel:+84899990683"><span><i class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: +84 899 990 683</span></a>
+    <a href="tel:+84899990683"><span><i class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: +84 899 990 683</span></a><a href="tel:+84986818013" class="tel2"><span>+84 986 818 013</span></a>
   </div>
   <span class="addr">No. 34, Lane 36A, Tran Dien Street, Phuong Liet Ward, Hanoi, Vietnam</span>
   <nav class="langs" aria-label="Language"><a href="/" lang="vi">Tiếng Việt</a><a href="/en/" lang="en" class="on">English</a><a href="/zh/" lang="zh-CN">中文</a></nav>
@@ -818,7 +819,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
       <h4>Contact</h4>
       <dl>
         <dt>Address:</dt><dd>No. 34, Lane 36A, Tran Dien Street, Phuong Liet Ward, Hanoi, Vietnam</dd>
-        <dt>Hotline:</dt><dd><a href="tel:+84899990683">+84 899 990 683</a></dd>
+        <dt>Hotline:</dt><dd><a href="tel:+84899990683">+84 899 990 683</a> / <a href="tel:+84986818013">+84 986 818 013</a></dd>
         <dt>Email:</dt><dd><a href="mailto:info@vanphongtechco.com.vn">info@vanphongtechco.com.vn</a></dd>
         <dt>Website:</dt><dd>www.vanphongtechco.com.vn</dd>
       </dl>
@@ -969,7 +970,7 @@ function renderGrid(){
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'All products');
   $('catCount').textContent=list.length+' products'+(query.trim()?' matching “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-en.pdf" target="_blank" rel="noopener">Application paper (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Drawing (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 for advice.</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);return '<article class="card"><div class="thumb'+(p.img?' ph':'')+'">'+pic(p)+'</div><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4>'+esc(p.n)+'</h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-en.pdf" target="_blank" rel="noopener">Application paper (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Drawing (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 / +84 986 818 013 for advice.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Previous page">‹</button>';
   for(let k=1;k<=pages;k++)h+='<button type="button" data-page="'+k+'"'+(k===page?' aria-current="page"':'')+'>'+k+'</button>';
