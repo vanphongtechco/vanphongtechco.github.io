@@ -112,6 +112,11 @@ section[id]{scroll-margin-top:84px}
 .slides{display:flex;transition:transform .7s ease}
 .slide{flex:0 0 100%;position:relative;height:clamp(380px,46vw,600px);overflow:hidden;display:flex;align-items:center}
 .slide .in{position:relative;z-index:2;width:100%}
+.s-banner{background:#EAF4FC}
+.s-banner img{position:absolute;inset:0;width:100%;height:100%}
+.s-banner .bg{object-fit:cover;filter:blur(18px);transform:scale(1.15)}
+.s-banner .fg{object-fit:contain;object-position:50% 0;height:calc(100% - 64px)}
+@media (max-width:900px){.s-banner{background:linear-gradient(180deg,#F3F8FD,#DCEAF6)}.s-banner .bg{display:none}.s-banner .fg{height:100%;object-position:50% 38%}}
 .s-photo{background:#0E2F5A}
 .s-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.55}
 .s-photo .in{text-align:center;color:#fff}
@@ -434,17 +439,9 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <!-- HERO -->
 <div class="hero" id="hero" aria-roledescription="carousel">
   <div class="slides" id="slides">
-    <div class="slide s-photo" aria-label="1 / 3">
-      <img src="/tru-so.jpg" alt="" width="1000" height="988">
-      <div class="wrap in">
-        <div class="badges">
-          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg></i>成立于<br>2019年</div>
-          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></i>5大<br>业务领域</div>
-          <div class="badge"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i>总部<br>河内</div>
-        </div>
-        <p>Van Phong 技术与贸易有限公司 —— 设备、物资与技术服务<br>面向工业、医疗、实验室及教育领域</p>
-        <a class="btn cta" href="#gioi-thieu">了解更多</a>
-      </div>
+    <div class="slide s-banner" aria-label="1 / 3">
+      <img class="bg" src="/banner-van-phong-blur.jpg" alt="" aria-hidden="true">
+      <img class="fg" src="/banner-van-phong.jpg" alt="Van Phong – 全面技术解决方案：面向工业、医疗、实验室和教育的设备、服务与技术转让" width="1672" height="941">
     </div>
     <div class="slide s-navy" aria-label="2 / 3">
       <div class="wrap in">

@@ -47,11 +47,7 @@ P = [
 ('placeholder="Nhập tên hoặc mã sản phẩm…" aria-label="Tìm sản phẩm"', 'placeholder="Enter product name or code…" aria-label="Search products"', 'placeholder="输入产品名称或编号…" aria-label="搜索产品"'),
 ('type="submit">Tìm kiếm</button>', 'type="submit">Search</button>', 'type="submit">搜索</button>'),
 # hero
-('i>Thành lập<br>2019</div>', 'i>Founded<br>2019</div>', 'i>成立于<br>2019年</div>'),
-('i>5 lĩnh vực<br>hoạt động</div>', 'i>5 fields of<br>activity</div>', 'i>5大<br>业务领域</div>'),
-('i>Trụ sở<br>Hà Nội</div>', 'i>Head office<br>Hanoi</div>', 'i>总部<br>河内</div>'),
-('<p>Công ty TNHH Kỹ thuật và Thương mại Vân Phong — thiết bị, vật tư và dịch vụ kỹ thuật<br>cho Công nghiệp, Y tế, Phòng thí nghiệm, Giáo dục</p>', '<p>Van Phong Technical and Trading Co., Ltd. — equipment, materials and engineering services<br>for Industry, Healthcare, Laboratories and Education</p>', '<p>Van Phong 技术与贸易有限公司 —— 设备、物资与技术服务<br>面向工业、医疗、实验室及教育领域</p>'),
-('href="#gioi-thieu">Tìm hiểu thêm</a>', 'href="#gioi-thieu">Learn more</a>', 'href="#gioi-thieu">了解更多</a>'),
+('alt="Vân Phong – Giải pháp kỹ thuật toàn diện: Thiết bị – Dịch vụ – Chuyển giao công nghệ cho Công nghiệp, Y tế, Phòng thí nghiệm, Giáo dục"', 'alt="Van Phong – Complete engineering solutions: equipment, services and technology transfer for industry, healthcare, laboratories and education"', 'alt="Van Phong – 全面技术解决方案：面向工业、医疗、实验室和教育的设备、服务与技术转让"'),
 ('<h2>Sản phẩm</h2>\n        <p class="lead">Thiết bị, vật tư cho Công nghiệp, Y tế, Phòng thí nghiệm, Giáo dục.</p>', '<h2>Products</h2>\n        <p class="lead">Equipment and supplies for industry, healthcare, laboratories and education.</p>', '<h2>产品</h2>\n        <p class="lead">面向工业、医疗、实验室和教育的设备与物资。</p>'),
 ('<b>Thiết bị công nghiệp</b><span>Máy cơ khí, bơm, quạt, hộp giảm tốc, phụ tùng</span>', '<b>Industrial equipment</b><span>Machinery, pumps, fans, gearboxes, spare parts</span>', '<b>工业设备</b><span>机械设备、泵、风机、减速机、备件</span>'),
 ('<b>Thiết bị y tế</b><span>Xét nghiệm, giường bệnh, tiệt trùng</span>', '<b>Medical equipment</b><span>Clinical analyzers, hospital beds, sterilization</span>', '<b>医疗设备</b><span>检验分析、病床、灭菌</span>'),
