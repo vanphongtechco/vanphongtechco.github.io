@@ -73,13 +73,16 @@ TA = {"vi": ("Ông Phùng Đình Tá", "Trưởng phòng Kỹ thuật",
               ["Phung Dinh Ta 先生现任 Van Phong 技术与贸易有限公司技术部经理，在工业、医疗、实验室和教育设备的维修与安装方面拥有 29 年经验。",
                "在 Van Phong，他负责为客户提供设备安装、调试、使用培训、保修及维修服务。"])}
 
+# Ảnh tạm ẩn (bỏ tên khỏi danh sách để hiện lại ảnh)
+HIDE_IMG = {"tran-hoang-phuong", "hoang-ngoc-tram", "phung-dinh-ta"}
+
 def block(lang):
     t = L[lang]
     li = lambda xs: "".join(f"<li>{x}</li>" for x in xs)
     return f"""<section id="ban-lanh-dao"><div class="wrap">
   <div class="title"><h2>{t['h']}</h2></div>
-  <article class="leader">
-    <figure><img src="/lanh-dao/tran-hoang-phuong.jpg?v=2" alt="{CHAIR[lang][0]}" width="600" height="600" loading="lazy"></figure>
+  <article class="leader{' noimg' if 'tran-hoang-phuong' in HIDE_IMG else ''}">
+    {'<!--TAM AN ANH: ' if 'tran-hoang-phuong' in HIDE_IMG else ''}<figure><img src="/lanh-dao/tran-hoang-phuong.jpg?v=2" alt="{CHAIR[lang][0]}" width="600" height="600" loading="lazy"></figure>{'-->' if 'tran-hoang-phuong' in HIDE_IMG else ''}
     <div class="lbody">
       <h3>{CHAIR[lang][0]}</h3><p class="role">{CHAIR[lang][1]}</p>
       {''.join(f'<p>{x}</p>' for x in CHAIR[lang][2])}
@@ -92,8 +95,8 @@ def block(lang):
       {''.join(f'<p>{x}</p>' for x in GD[lang][2])}
     </div>
   </article>
-  <article class="leader">
-    <figure><img src="/lanh-dao/hoang-ngoc-tram.jpg" alt="{TRAM[lang][0]}" width="600" height="600" loading="lazy"></figure>
+  <article class="leader{' noimg' if 'hoang-ngoc-tram' in HIDE_IMG else ''}">
+    {'<!--TAM AN ANH: ' if 'hoang-ngoc-tram' in HIDE_IMG else ''}<figure><img src="/lanh-dao/hoang-ngoc-tram.jpg" alt="{TRAM[lang][0]}" width="600" height="600" loading="lazy"></figure>{'-->' if 'hoang-ngoc-tram' in HIDE_IMG else ''}
     <div class="lbody">
       <h3>{TRAM[lang][0]}</h3><p class="role">{TRAM[lang][1]}</p>
       {''.join(f'<p>{x}</p>' for x in TRAM[lang][2])}
@@ -110,8 +113,8 @@ def block(lang):
       </div>
     </div>
   </article>
-  <article class="leader">
-    <figure><img src="/lanh-dao/phung-dinh-ta.jpg?v=2" alt="{TA[lang][0]}" width="600" height="600" loading="lazy"></figure>
+  <article class="leader{' noimg' if 'phung-dinh-ta' in HIDE_IMG else ''}">
+    {'<!--TAM AN ANH: ' if 'phung-dinh-ta' in HIDE_IMG else ''}<figure><img src="/lanh-dao/phung-dinh-ta.jpg?v=2" alt="{TA[lang][0]}" width="600" height="600" loading="lazy"></figure>{'-->' if 'phung-dinh-ta' in HIDE_IMG else ''}
     <div class="lbody">
       <h3>{TA[lang][0]}</h3><p class="role">{TA[lang][1]}</p>
       {''.join(f'<p>{x}</p>' for x in TA[lang][2])}
