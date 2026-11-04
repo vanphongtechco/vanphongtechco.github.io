@@ -1,0 +1,123 @@
+<h1>考虑钎杆钝化程度的液压破碎锤冲击破岩建模</h1>
+<p class="authors">V. I. Bolobov, S. A. Chupin, B. Le-Thanh</p>
+<p class="src">Eurasian Mining（欧亚矿业），2022年，第1期，第72–75页 · DOI: 10.17580/em.2022.01.15</p>
+
+<h2>摘要</h2>
+<p>岩石和人工复合材料的破碎可采用多种方式进行，其中最常用的方法之一是冲击破碎。本研究以JCB HM380液压破碎锤的锥形钎杆作为冲击工具。岩石破碎的试验研究在一种人工复合材料——混凝土上进行，以钎杆冲入混凝土的深度作为试验参数。模型以V. B. Sokolinsky教授的模型为基础。本文建立的模型考虑了单次冲击和多次冲击中工具的钝化程度。由于钎杆–花岗岩接触刚度较高（相对于破碎锤活塞–钎杆接触刚度），系统被视为二元系统。由于钎杆长度较短，忽略了钎杆中的波动过程。利用所建立的数学模型，对钎杆每次冲击时侵入岩石的深度进行了理论计算，并与试验数据进行了比较。破碎试验同样采用JCB HM380破碎锤和混凝土，侵入深度通过对过程录像进行逐帧分析确定。研究发现，无论单次冲击还是多次冲击，钎杆钝化都会使岩石对钎杆侵入的阻力单调增加，而工具侵入深度和冲击时间则减小（与工具初始状态相比，分别减少28%和20%）。</p>
+<p class="kw"><b>关键词：</b>液压破碎锤，钎杆，钝化程度，侵入，花岗岩，数学模型，冲击参数</p>
+
+<h2>引言</h2>
+<p>矿产开采业是包括俄罗斯在内的许多国家经济中重要的财政收入来源部门[1]。没有先进的开采方法，就无法增加财政收入。矿产开采是一个复杂的过程，需要采用各种方法和机械来实现[2–6]。作为矿产开采中应用最广泛的方法，爆破的效率在很大程度上取决于钻孔设备和工具[4, 7]。另一方面，某些作业只能采用冲击方法（破碎大块、清除浮石等）。与岩石直接相互作用的冲击工具磨损很快。工具的这种劣化降低了生产率，并增加了购置新工具的费用。目前正在开展广泛的研究，以寻求通过改进设计、采用新材料或应用创新加工技术来延长冲击工具使用寿命的途径[8–17]。</p>
+<p>俄罗斯和国外学者已对冲击破岩的理论框架进行了描述[18–33]。冲击工具侵入岩石的过程已被数学建模，破岩能耗和冲击机械生产能力也得到了估算[34–36]。然而，冲击工具钝化对冲击效率的影响尚未得到应有的重视。本文试图填补这一空白。</p>
+<p>冲击工具侵入岩石及含岩复合材料的数学模型采用了Sokolinsky教授的研究成果[37]。</p>
+<p>建模以液压破碎锤冲击花岗岩（σ<sub>com</sub> ~200 MPa）为研究案例。液压破碎锤的破岩工具为钎杆。液压破碎锤的技术参数如下：</p>
+<table>
+<tbody>
+<tr><td>型号</td><td>JCB HM380</td></tr>
+<tr><td>规格</td><td>中型</td></tr>
+<tr><td>破岩工具</td><td>钎杆</td></tr>
+<tr><td>冲击能量A<sub>0</sub>，J</td><td>981</td></tr>
+<tr><td>冲击频率ν，s<sup>-1</sup></td><td>5–10</td></tr>
+<tr><td>冲击时钎杆速度v<sub>0</sub>，m/s</td><td>6.3</td></tr>
+</tbody>
+</table>
+<p>液压破碎锤的冲击组件由活塞（其端面为半径R<sub>p</sub> = 0.5 m的半球形）和刃部为钝化锥形的圆柱形钎杆组成（质量M<sub>pick</sub> = 25 kg；长度L<sub>pick</sub> = 800 mm；圆柱部分半径R<sub>cyl</sub> = 37.5 mm；锥高100 mm；锥角30°；锥体钝头为半球形）。</p>
+<p>对破碎花岗岩大块后的钎杆进行检查表明，钎杆的锥形刃部因磨损而变为半径r<sub>sp0</sub> = 13 mm的半球形（半球开始形成）。随着磨损增加，钎杆长度缩短，锥体钝化半径增大至r<sub>cr</sub> = 37.5 mm。工具钝化程度S<sub>tool</sub>由下式确定：</p>
+<div class="formula">S<sub>tool</sub> = r<sub>sp</sub>/R<sub>cyl</sub>, &nbsp; (1)</div>
+<p>式中r<sub>sp</sub>为测量时锥体球面半径，mm；R<sub>cyl</sub>为钎杆圆柱部分半径，mm。在半球开始形成时，S<sub>tool0</sub> = 0.35（r<sub>sp0</sub> = 13 mm时），在工具临界状态下，S<sub>toolcr</sub> = 1（r<sub>cr</sub> = 37.5 mm时）。</p>
+<p>基于文献[37]的接触刚度分析采用了能量经钎杆从破碎锤传递到岩石的传递系数：</p>
+<div class="formula">ε = 1/(1 + e<sub>1</sub>/e<sub>0</sub>),</div>
+<p>式中e<sub>1</sub>为钎杆–岩石接触刚度，N/m<sup>3/2</sup>；e<sub>0</sub>为活塞–钎杆接触刚度，N/m<sup>3/2</sup>：</p>
+<div class="formula">e<sub>1</sub> = 4√r<sub>c</sub> / [3((1 − μ<sup>2</sup><sub>tool</sub>)/E<sub>tool</sub> + (1 − μ<sup>2</sup><sub>tool</sub>)/E<sub>rock</sub>)], &nbsp; (3)</div>
+<div class="formula">e<sub>0</sub> = 2E<sub>p</sub>√R<sub>p</sub> / 3, &nbsp; (4)</div>
+<p>式中E<sub>rock</sub>为岩石弹性模量，GPa（50 GPa）；E<sub>tool</sub>为工具材料弹性模量，GPa（200 GPa）；E<sub>p</sub>为活塞材料弹性模量，GPa（50 GPa）；μ<sub>rock</sub>为岩石泊松比（0.2）；μ<sub>tool</sub>为工具材料泊松比（0.3）。</p>
+<p>在不同工具钝化程度（r<sub>sp</sub>）下，能量传递系数的计算值接近1（0.9–0.94）。这使得可以将活塞–锤体中间系统从计算中去除，仅分析钎杆–破碎岩石二元系统。</p>
+<p>根据Sokolinsky理论[37]，该二元系统的另一个条件是破碎锤中不存在波动过程。当碰撞持续时间大于或等于碰撞体自由振动周期的三倍时，该条件成立。对于JCB HM380破碎锤的短钎杆，碰撞持续时间为1 ms，而自由振动周期为0.3 ms。</p>
+<p>根据文献[37]，破岩工具侵入岩石分为三个阶段：</p>
+<ol>
+<li>在与工具接触处达到临界应力之前，岩石表现出弹性性质。随着应力增大，接触处岩石发生类似爆炸的破坏。</li>
+<li>工具进一步侵入，克服破坏核并将破碎岩屑挤出。其余破碎岩石在孔底被压实。</li>
+<li>在被压实的破碎岩屑残余弹性作用下，工具被反推回来。</li>
+</ol>
+<p>岩石阻力F取决于工具侵入深度h（岩石变形），根据文献[37]，在半球形接触面的情况下，该阻力是非线性的，由三种载荷组成：F<sub>1</sub>——接触处弹性变形；F<sub>2</sub>——工具侵入破碎岩石；F<sub>3</sub>——工具回弹。每种载荷都有其自身的刚度。</p>
+<p>由文献[37]可知，在这种加载条件下，最大阻力F<sub>max</sub>、侵入深度a<sub>pen</sub>、冲击时间t<sub>max</sub>以及接触处最大应力σ<sub>cr</sub>由下列各式给出：</p>
+<div class="formula">F<sub>max</sub> = F<sub>rock</sub> + e<sub>2</sub>(a<sub>max</sub> − a<sub>rock</sub>)<sup>3/2</sup>, &nbsp; (5)</div>
+<div class="formula">F<sub>rock</sub> = (9π<sup>3</sup>/2) · ((1 − μ<sup>2</sup><sub>tool</sub>)/E<sub>tool</sub> + (1 − μ<sup>2</sup><sub>rock</sub>)/E<sub>rock</sub>)<sup>2</sup> · r<sup>2</sup><sub>sph</sub> σ<sup>3</sup><sub>cr</sub>, &nbsp; (6)</div>
+<p>式中F<sub>rock</sub>为接触处破坏力；a<sub>rock</sub>为岩石弹性变形；</p>
+<div class="formula">a<sub>rock</sub> = (F<sub>rock</sub>/e<sub>1</sub>)<sup>2/3</sup>, &nbsp; (7)</div>
+<div class="formula">e<sub>1</sub> = 4√r<sub>sph</sub> / [3((1 − μ<sup>2</sup><sub>tool</sub>)/E<sub>tool</sub> + (1 − μ<sup>2</sup><sub>rock</sub>)/E<sub>rock</sub>)], &nbsp; (8)</div>
+<div class="formula">a<sub>pen</sub> = a<sub>max</sub> − (F<sub>max</sub>/e<sub>3</sub>)<sup>2/3</sup>, &nbsp; (9)</div>
+<p>式中a<sub>max</sub>由下列方程求得：</p>
+<div class="formula">(2/5)e<sub>1</sub>e<sup>5/2</sup><sub>rock</sub> + F<sub>rock</sub>(a<sub>max</sub> − a<sub>rock</sub>) + (2/5)e<sub>2</sub>(a<sub>max</sub> − a<sub>rock</sub>)<sup>5/2</sup> = A<sub>l</sub>, &nbsp; (10)</div>
+<div class="formula">t<sub>max</sub> = mv<sub>0</sub>/F<sub>max</sub>, &nbsp; (11)</div>
+<div class="formula">σ<sub>cr</sub> = F<sub>max</sub>/f<sub>h</sub>, &nbsp; (12)</div>
+<p>式中m为工具质量；f<sub>h</sub>为硬度系数。</p>
+<p>改变刚度e<sub>1</sub>和e<sub>2</sub>表达式中的r<sub>sp</sub>值，即可评估工具钝化程度对冲击效率的影响。</p>
+
+<h2>单次冲击计算</h2>
+<p>利用式（5）–（12），将工具钝化程度S<sub>tool</sub>与最大阻力F<sub>max</sub>、侵入深度a<sub>pen</sub>、冲击时间t<sub>max</sub>以及接触处最大应力σ<sub>cr</sub>联系起来。</p>
+<p>建模时取花岗岩的临界应力σ<sub>cr</sub>等于其动态硬度σ<sub>d</sub> = 1300 MPa[38]。选取该值是为了符合文献[39]的结论，即大多数岩石的强度特性在从静载转为动载时会增大。刚度值按文献[39]选取：e<sub>2</sub> = 0.15e<sub>1</sub>，e<sub>3</sub> = e<sub>1</sub>。</p>
+<p>约一半的动能E<sub>0</sub>用于破碎岩石（E<sub>rock</sub>），其余能量用于岩石发热和工具的弹性变形。</p>
+<p>求解（5）–（12）后绘制的关系曲线（图1）表明，在动量不变的情况下，岩石对工具侵入的最大阻力（曲线1）随工具钝化而单调增大。冲击时间（曲线3）亦是如此。与此同时，侵入深度值减小（曲线2）。花岗岩中的接触应力几乎保持不变（约686 MPa）。</p>
+<div class="fig">[图1 — 见原文PDF第2页] JCB HM380破碎锤冲击侵入花岗岩时a<sub>pen</sub>（1）、σ<sub>cr</sub>（2）、t<sub>max</sub>（3）、F<sub>max</sub>（4）与钎杆钝化程度的关系。</div>
+
+<h2>多次冲击计算</h2>
+<p>在露天矿使用JCB HM380液压破碎锤进行的破岩试验表明，在同一点连续冲击约30次后岩石才被破碎，且工具侵入深度随每次后续冲击而减小。模型中考虑了这一现象。</p>
+<p>摩擦增大使每次冲击时岩石对侵入的阻力F<sub>maxi</sub>与侵入深度a<sub>peni</sub>成比例增加，从而导致每次后续冲击的a<sub>peni</sub>减小。所得总加载特性如图2所示。</p>
+<div class="fig">[图2 — 见原文PDF第2页] 多次冲击计算中的加载特性形状。</div>
+<p>图3和图4给出了不同工具钝化程度下每个循环中最大阻力F<sub>maxi</sub>和最大冲击时间t<sub>maxi</sub>，以及每个循环的总侵入深度Σa<sub>peni</sub>和总时间Σt<sub>mi</sub>之间的关系。</p>
+<p>在循环中，岩石对钎杆侵入的阻力随每次冲击而增大（见图3），冲击时间则减小。到第30次冲击时，冲击时间比第一次冲击时缩短一半。工具钝化程度从0.35增至1.0（见图4）时，每个循环在岩石中的总侵入深度Σa<sub>peni</sub>减少28%，总最大时间Σt<sub>maxi</sub>缩短20%。</p>
+<div class="fig">[图3 — 见原文PDF第3页] 不同钝化程度下最大侵入时间（1）和花岗岩侵入阻力（2）与每循环冲击次数的关系：a — k<sub>b0</sub> = 0.35（初始状态）；b — k<sub>bcr</sub> = 1.0（完全磨损的工具）。</div>
+<div class="fig">[图4 — 见原文PDF第3页] 30次冲击循环中冲击总最大时间Σt<sub>maxi</sub>（1）和花岗岩中总侵入深度Σa<sub>peni</sub>（2）与工具钝化程度的关系。</div>
+
+<h2>计算结果的试验验证</h2>
+<p>将混凝土（σ<sub>com</sub> ~ 50 MPa）破碎试验数据与计算结果进行了比较。测量通过对液压破碎锤工作录像进行逐帧分析完成。侵入深度由工具上检查点（标记0，图5）相对于已记录标记（1、2和3，图5）的位移确定。通过这种方式，确定了循环中每次冲击后工具侵入岩石的深度a<sub>peni</sub>以及30次冲击后的总侵入深度（图6）。</p>
+<div class="fig">[图5 — 见原文PDF第3页] 工具侵入混凝土过程录像的逐帧分析（n — 冲击次数）。</div>
+<div class="fig">[图6 — 见原文PDF第3页] 工具侵入混凝土深度的计算值（线）和试验值（♦）与冲击次数的关系。</div>
+<p>分析数据与试验数据吻合，证明该数学模型可应用于进一步研究。</p>
+
+<h2>结论</h2>
+<p>通过本研究，建立了破岩工具侵入岩石的数学模型。研究发现，钎杆的临界钝化使岩石侵入阻力增加至2倍，同时侵入深度减小28%，最大冲击时间减小20%。试验数据与计算结果吻合。</p>
+
+<h2>参考文献</h2>
+<ol>
+<li>Nedosekin A. O., Rejshahrit E. I., Kozlovskiy A. N. Strategic approach to assessing economic sustainability objects of mineral resources sector of Russia. Journal of Mining Institute. 2019. Vol. 237. pp. 354–360.</li>
+<li>Gabov V. V., Zadkov D. A., Nguen Kh. L. Features of elementary burst formation during cutting coals and isotropic materials with reference cutting tool of mining machines. Journal of Mining Institute. 2019. Vol. 236. pp. 153–161.</li>
+<li>Fomin K. V. Method for estimating the spectrum density of the resistance moment on the working body of a peat milling unit. Journal of Mining Institute. 2020. Vol. 241. pp. 58–67.</li>
+<li>Yungmeister D. A., Lavrenko S. A., Yacheikin A. I., Urazbakhtin R. Y. Improving the shield machine cutter head for tunneling under the conditions of the Metrostroy Saint Petersburg mines. ARPN Journal of Engineering and Applied Sciences. 2020. Vol. 15, No. 11. pp 1282–1288.</li>
+<li>Lebedeva Y. A., Kotiukov P. V., Lange I. Y. Study of the geoecological state of groundwater of metropolitan areas under the conditions of intensive contamination thereof. Journal of Ecological Engineering. 2020. Vol. 21, No. 2. pp. 157–165.</li>
+<li>Mikhailov A. V., Rodionov E. A., Zvonarev I. E. Analysis of conditions for vertical cutting of peat. GIAB. 2019. No. 1. pp. 48–54.</li>
+<li>Yungmeister D. A. Reserch of modernized perforator-hammer for drifting special roadway the underground mines Metrostroy. Journal of Mining Institute. 2016. Vol. 218. pp. 281–288.</li>
+<li>Klishin V. I., Gerike B. L., Nikitenko S. M., Krestovozdvizhensky P. D. Types and causes of failure of tangential-rotary cutter bits. Gornyi Zhurnal. 2016. No. 7. pp. 92–95. DOI: 10.17580/gzh.2016.07.20</li>
+<li>Aleksandrov V. I., Kibirev V. I., Serzhan S. L. The effectiveness of polyurethane coatings on internal surfaces of slurry lines in tailings slurry hydrotransport systems. Obogashchenie Rud. 2020. No. 4. pp. 35–41. DOI: 10.17580/or.2020.04.06</li>
+<li>Sementsov V. V., Prokopenko S. A., Ludzish V. S., Abramov V. V. Design and industrial testing of innovative nonexpendable picks for cutter-loaders. Eurasian Mining. 2019. No. 2. pp. 59–63. DOI:10.17580/em.2019.02.13</li>
+<li>Fedorova L. V., Ivanova Yu. S., Voronina M. V. Improvement of threaded joint reliability by means of electromechanical processing. Journal of Mining Institute. 2017. Vol. 226. pp. 456–461.</li>
+<li>Fedorov S. K., Fedorova L. V., Ivanova Yu. S. et al. Increasing the wear resistance of adapters and drill pipes by electromechanical processing. Journal of Mining Institute. 2018. Vol. 233. pp. 539–546.</li>
+<li>Zhabin A. B., Polyakov A. V., Averin E. A. et al. Estimation of abrasiveness impact on the parameters of rock-cutting equipment. Journal of Mining Institute. 2019. Vol. 240. pp. 621–627.</li>
+<li>Korotkov V. A., Lipatov A. G., Vesnin A. M. Innovative technologies for repair-and-renewal maintenance and life extension for parts and units of mining and processing equipment. Gornyi Zhurnal. 2015. No. 8. pp. 83–87. DOI:10.17580/gzh.2015.08.17</li>
+<li>Korneev V. A., Korneev P. A., Krestovozdvozhensky P. D., Pugachev E. V. Improvement of drilling cutter design. Gornyi Zhurnal. 2020. No. 12. pp. 67–70. DOI:10.17580/gzh.2020.12.15</li>
+<li>Sinev S. V. Rock drillability and the most efficient drilling tool selection. Gornyi Zhurnal. 2018. No. 12. pp. 59–64. DOI: 10.17580/gzh.2018.12.12</li>
+<li>Kallel M., Zouch F., Antar Z. et al. Hammer premature wear in mineral crushing process. Tribology International. 2017. Vol. 115. pp. 493–505. DOI: 10.1016/j.triboint.2017.06.025</li>
+<li>Ushakov L. S., Kamanin Yu. N. Stress–strain analysis of rock mass in fracture by shearing percussion tool. Gornoe Oborudovanie i Elektromehanika. 2008. No. 4. pp. 40–42.</li>
+<li>Lagunova Yu. A. Working out the mathematical model of the process destroying mining rocks “In layer”. Gornoe Oborudovanie i Elektromehanika. 2008. No. 11. pp. 38–43.</li>
+<li>Zedgenizov V. G., Melnikov A. V. Modeling work process of impactor in fracture of rocks and strong building materials. Gornoe Oborudovanie i Elektromehanika. 2008. No. 2. pp. 39–43.</li>
+<li>Chupov I. V. Interrelation of specific energy of rock fracture and unit blow energy. Izvestie Vuzov. Gornyi Zhurnal. 2006. No. 5. pp. 66–69.</li>
+<li>Zedgenizov V. G., Al-Sakkaf Khaled Saed Taha. Some regularities of destruction of rocks at shock interaction of the wedgeshaped tool with not dimension. Gornoe Oborudovanie i Elektromehanika. 2012. No. 8. pp. 28–31.</li>
+<li>Grantmyre I., Hawkes I. High-energy impact rockbreaking. CIM Bulletin. 1975. pp. 63–70.</li>
+<li>Mahyera A., McDonald R. C., Koenning T. H. Predicting performance of joy Heftiimpactors for secondary breaking. Proceedings of the 14th Canadian Rock Mechanics Symposium, Vancouver, CIM special. 1982. No. 30. pp. 59–63.</li>
+<li>Afrouz A., Hassani F. P. An investigation into rock breaking by direct impact. Mining Science and Technology. 1987. Vol. 4, No. 2. pp. 167–176.</li>
+<li>Bilgin N., Yazici S., Eskikaya S. A. Model to predict the performance of roadheadersand impact hammers in tunnel drivages. Proceedings, Eurock 96, Torino. 1996. pp. 715–720.</li>
+<li>Bilgin N., Kuzu C., Eskikaya S. Cutting performance of jack hammers and roadheaders in Istanbul metro drivages. Proceedings, World Tunnel Congress, Wienna. 1997. pp. 455–460.</li>
+<li>Bilgin N., Dincer T., Copur H. The performance prediction of impact hammers from Schmidt hammer rebound values in Istanbul metro tunnel drivages. Tunneling and Underground Space Technology. 2002. Vol. 17, No 3. pp. 237–247. DOI: 10.1016/S0886-7798(02)00009-3</li>
+<li>Khoreshok A., Mametiev L., Tsekhin A., Borisov A. Relationship between the power of the two-bit cutting body rotation drive of the roadheader and hardness of broken rock. 3rd International Innovative Mining Symposium : E3S Web of Conferences. 2018. Vol. 41(54). DOI: 10.1051/e3sconf/20184103017</li>
+<li>Prokopenko S. A., Vorobiev A. V. Recovery of worn-out picks in rock breaking. Eurasian Mining. 2018. No 1. pр. 27–30. DOI 10.17580/em.2018.01.06</li>
+<li>Wayment W. R., Grantmyre I. P. Development of a high blow energy hydraulic impactor. Proceedings of the Rapid Excavation and Tunneling Conference. 1976. pp. 611–626.</li>
+<li>Aksoy C. O. Performance prediction of impact hammers by block punch index for weak rock masses. International Journal of Rock Mechanics and Mining Sciences. 2009. Vol. 46, No 8. pp. 1383–1388.</li>
+<li>Aksoy C. O. An Updated Formula and Method to Predict the Performance of Impact Hammers. International Journal of Rock Mechanics and Mining Sciences. 2013. Vol. 61. pp. 289-295.</li>
+<li>Aksoy C. O. Proposed chart for the selection of impact hammer. International Journal of Rock Mechanics and Mining Sciences. 2014. No. 68. pp. 120–127.</li>
+<li>Bolobov V. I., Le Than Bin., Plaschinski V. V Crack propagation in rock upon impact. Obogashchenie Rud. 2019. No. 6. pp. 3–9. DOI: 10.17580/or.2019.06.01</li>
+<li>Dvornikov L. T., Klishin V. I., Nikitenko S. M., Korneev V. A. Experimental designs of a combined tool using superhard composite materials for effective destruction of mine rocks. Eurasian Mining. 2018. No. 1. pp. 22–26. DOI: 10.17580/em.2018.01.05</li>
+<li>Sokolinsky V. B. Percussion machines. Moscow : Mashinostroenie, 1982. 185 p.</li>
+<li>Shelkovnikov I. G. Utilization of blow energy in drilling. Moscow : Nedra, 1977. 160 p.</li>
+<li>Stavrigin A. N., Tarasov B. G. Experimental physics and mechanics of rocks. Saint Petersburg : Nauka, 2001. 343 p.</li>
+</ol>

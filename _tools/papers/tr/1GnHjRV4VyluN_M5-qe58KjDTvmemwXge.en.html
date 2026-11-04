@@ -1,0 +1,99 @@
+<h1>Influence of the Vane Winding Angle of the Shearer Auger Drum on the Efficiency of Coal Loading onto the Face Conveyor</h1>
+<p class="authors">Dinh Van Chien, Nguyen Khac Linh, Nguyen Van Xo, Le Thanh Binh</p>
+<p class="src">Ugol' – Russian Coal Journal, 2020, No. 1, pp. 46–50 · Original paper · UDC 622.232.72.054.53:622.647.1 · DOI: 10.18796/0041-5790-2020-1-46-50</p>
+
+<h2>Abstract</h2>
+<p>A method is proposed for evaluating the process of unloading coal by the trailing auger drum of a shearer from the breakage zone onto the face conveyor, together with a procedure for selecting the winding angle of the drum vanes. An analysis of coal flows is presented based on the results of simulating five variants of the loading process by auger drums 1800 mm in diameter with vane winding angles of 16°, 18°, 20°, 22° and 24° at identical rotation and haulage speeds. The paper presents the results of studies of coal transport in the inter-vane space of the drum and analyses the influence of the vane winding angle on the filling of the inter-vane space with coal and on the circulation of the broken mass. The influence of the way the vanes unload coal from the breakage zone on the output and on the torque of the drum is considered. The highest coal-loading output of the drum corresponds to a vane winding angle of 19.2°, and the highest torque to an angle of 22.6°.</p>
+<p class="kw"><b>Keywords:</b> coal, underground mining, shearer, shearer auger drum, conveyor, loading, simulation, efficiency.</p>
+
+<h2>Introduction</h2>
+<p>It is known that auger-drum shearers have become predominant in coal extraction in fully mechanized longwall faces on flat-lying seams of medium thickness and on thick seams. Auger drums are distinguished by high manufacturability, simplicity of design and reliability. However, they have significant drawbacks: a yield of up to 40% of fine size classes in the mined mass, and high specific energy consumption and intensity of dust generation [1, 2, 3]. Research aimed at finding technical solutions to increase the efficiency of the extraction process has mainly focused on the cutting process. At the same time, insufficient attention has been paid to studies of the processes of loading coal onto the face conveyor [4, 5, 6], which comprise, taken together, the unloading of coal from the breakage zone, the transport of the coal mass by the drum and its loading onto the conveyor, as well as the separation of coal from the solid seam.</p>
+<p>The movement of bulk material in horizontal and slightly inclined auger loading and conveying mechanisms with a relatively low fill factor of the working space (up to 0.3–0.4) is accompanied by the formation of a drag body in front of each vane, inside which circulation processes take place, caused by the multidirectional forces of gravity, inertia and friction. This is the cause of the main drawback of screw conveyors: increased energy consumption for moving the material and its additional, secondary, often undesirable size reduction.</p>
+<p>The efficiency of the loading process is influenced by the geometric, design and operating parameters of the drum, the properties of the transported material and the loading conditions: the inclination angle of the drum axis to the horizontal, the dip angle of the seam, the web width, moisture content, etc. It is characteristic of mining machines that, during operation, the inclination angle of the drum axis, the properties of the material and the loading conditions may vary over wide ranges. This leads to an increase or decrease in the values of the process efficiency indicators: output (Q<sub>к</sub>), specific energy consumption (H<sub>w</sub>) and secondary size reduction (particle-size distribution, W<sub>d</sub>).</p>
+<p>On this basis, output and specific energy consumption can be considered as criteria for assessing the optimality of the loading process and used to select or adjust the winding angle of the drum vanes. One more useful property of output and specific energy consumption should be noted: it makes it possible to differentiate the operating modes of drums with different vane setting angles. This feature is of great importance when simulating the processes of loading a particulate mass by auger drums, which makes it possible to speed up experimental research and make it cheaper.</p>
+<p>The processes of forming the coal flow in the drum and transporting it in the inter-vane space of the drum have been studied most thoroughly. Methods for calculating the parameters of the unloading process and for selecting drum parameters have been substantiated. However, the influence of the vane winding angle and of coal moisture on the nature of movement of the particulate coal mass, on its circulation and on coal size reduction has not been sufficiently studied [7, 8].</p>
+<p>Taking into account the relevance of the research and the complexity and cost of experimental production and laboratory tests on real objects and machine samples, the studies of the processes of loading and transporting coal in the inter-vane space of the auger drum were carried out by simulating the processes with the EDEM 3D software.</p>
+<p>Simulating operating conditions close to real ones in all their diversity is not expedient. The overall complex simulation problem can be divided into particular problems that are solved separately. The simulation method is most convenient precisely for solving such multi-variant problems. However, it must be borne in mind that designers have to evaluate all possible situations, schemes and their combinations in order to select an acceptable generalized technical solution and embody it in a real design.</p>
+<p>While increasing the degree of correspondence between the geometric and operating parameters of the full-scale object and the model usually presents no problems, modelling the transported material in terms of density and friction coefficients is rather difficult and is not always achieved.</p>
+<p>According to the studies of Liu C.S. [9], the range of variation of the screw winding angle is 8–30°. In the practice of using drums 1800 mm in diameter, the range of variation of the drum screw winding angle is 16–24°.</p>
+<div class="fig">[Figure 1 — see original PDF, page 3] Parameters of the auger drum</div>
+<p>The winding angles of the helical line of the drum</p>
+<div class="formula">α = arctan [S / (πD<sub>ш</sub>)]</div>
+<p>depend on the diameter D<sub>ш</sub> and the screw pitch S, as is well illustrated in Fig. 1.</p>
+<p>The output of the drum depends on its geometric and speed parameters and is determined by the formula [11, 12]:</p>
+<div class="formula">Q<sub>ш</sub> = [ (π/4)·(D<sub>ш</sub><sup>2</sup> − d<sub>ст</sub><sup>2</sup>) − (D<sub>ш</sub> − d<sub>ст</sub>)·δ<sub>ш</sub>·N<sub>з</sub> / (2 sin α<sub>ш</sub>) ] · S · n<sub>об</sub> · K<sub>з</sub> · c, t/min, &nbsp;&nbsp;&nbsp;(1)</div>
+<p>where D<sub>ш</sub> is the drum diameter, m; d<sub>ст</sub> is the drum hub diameter, m; δ is the thickness of the drum vanes, m; N<sub>з</sub> is the number of drum vanes; α is the winding angle of the drum vanes, degrees; S is the drum screw pitch, m; n<sub>об</sub> is the drum rotation speed, min<sup>−1</sup>; K<sub>з</sub> is the fill factor of the drum cross-section; c is a coefficient accounting for the inclination of the conveyor.</p>
+<p>The output of coal loading onto the conveyor by the trailing drum, taking into account the flows formed and the way the vanes unload the coal, is determined by the formula:</p>
+<div class="formula">Q<sub>к</sub> = Q<sub>ш</sub> − Q<sub>п</sub> − Q<sub>ос</sub>, t/h, &nbsp;&nbsp;&nbsp;(2)</div>
+<p>where Q<sub>ш</sub> is the calculated drum output, t/h; Q<sub>ос</sub> is the rate of formation of the layer of unloaded coal, t/h; Q<sub>п</sub> is the rate of accumulation of coal under the conveyor, t/h.</p>
+<p>The specific energy consumption of the process of coal loading by extraction machines, in particular by shearers, is determined by the well-known relationship [13]:</p>
+<div class="formula">H<sub>W</sub> = P / Q<sub>к</sub> = M·n / (9550·Q<sub>к</sub>), kW·h/t, &nbsp;&nbsp;&nbsp;(3)</div>
+<p>where P is the power of the energy flow of the process of coal loading onto the face conveyor by the auger drum, kW; M is the torque on the drum, N·m; Q<sub>к</sub> is the coal-loading output of the drum onto the conveyor, t/h; n<sub>об</sub> is the drum rotation speed, min<sup>−1</sup>.</p>
+
+<h2>Simulation of Coal Movement in the Inter-Vane Space of the Drum</h2>
+<p>The influence of drum parameters on the parameters of the coal-loading process was studied by simulating the real process with the EDEM 3D software.</p>
+<p>The following parameter values were adopted in the simulation:</p>
+<ul>
+<li>drum diameter – 1800 mm; hub diameter – 600 mm; drum screw winding angles α: 16°, 18°, 20°, 22° and 24°; number of vanes – 3; vane thickness – 50 mm; web width – 800 mm; conveyor side height h<sub>к</sub> – 350 mm; conveyor pan trough width – 800 mm; gearbox wall height – 350 mm; rotation speed – 60 min<sup>−1</sup>; shearer haulage speed – 4 m/min;</li>
+<li>mean particle diameter – 30 mm; coefficient of friction between particles in the particulate mass – 0.8; coefficient of friction of particles on metal – 0.6; particle stiffness c<sub>ч</sub> = 1×10<sup>4</sup> N·m; angle of repose of the bulk material r = 35°.</li>
+</ul>
+<p>During loading, the trailing drum uses its vanes to push the broken coal mass out of the zone where coal is separated from the solid seam, moves the coal in the inter-vane space of the drum, pushes it through the transition zone between the conveyor and the drum and loads it onto the conveyor. The flow enters the conveyor under the pressure created by the rotating drum. Part of the coal remains on the floor in the gap between the drum and the conveyor. The results of simulating the process of coal loading onto the conveyor are given in the table, and a fragment of the simulation process at time t<sub>i</sub> is shown in Fig. 2.</p>
+<div class="fig">[Figure 2 — see original PDF, page 4] Simulation of the coal-loading process by the auger drum of a shearer</div>
+
+<h2>Results and Discussion</h2>
+<p>Fig. 3 shows the dependence of the drum torque on the winding angles of its vanes, varied in the range 16–24°. The maximum and minimum torque values correspond to drum screw winding angles of 22.6° and 16°, respectively.</p>
+<p>The dependence of torque on the drum vane winding angle is represented as a function of the screw winding angle α:</p>
+<div class="formula">M = −21.357α<sup>2</sup> + 967.19α − 6002.8, N·m, &nbsp;&nbsp;&nbsp;(4)</div>
+<p>where α is the drum screw winding angle.</p>
+<p>The correlation coefficient is R<sup>2</sup> = 0.8185; the maximum torque on the drum corresponds to a drum screw winding angle of 22.6°.</p>
+<div class="fig">[Figure 3 — see original PDF, page 4] Dependence of the torque on the drum on the screw winding angle (fitted curve: M = −21.357α<sup>2</sup> + 967.19α − 6002.8; R<sup>2</sup> = 0.8185; axes: torque, N·m vs. drum screw lead angle, degrees)</div>
+<p>Fig. 4 shows the dependence of the change in the rate of coal loading onto the conveyor on the change in the screw winding angle in the range from 16 to 24°. The dependences are parabolic functions, with output varying in the range from 145.2 to 158.8 t/h.</p>
+<p>Fig. 4 presents the dependence of the coal-loading output of the trailing drum onto the conveyor as a function of the screw winding angle α:</p>
+<div class="formula">Q<sub>к</sub> = −0.6536α<sup>2</sup> + 25.165α − 86.112, t/h. &nbsp;&nbsp;&nbsp;(5)</div>
+<div class="fig">[Figure 4 — see original PDF, page 4] Dependence of output on the drum screw winding angle (fitted curve shown in the figure: Q<sub>к</sub> = −0.6571α<sup>2</sup> + 25.306α − 87.44; R<sup>2</sup> = 0.8399; axes: output, t/h vs. drum screw lead angle, degrees)</div>
+<p>The correlation coefficient is R<sup>2</sup> = 0.8382. The maximum output of coal loading onto the conveyor corresponds to a drum screw winding angle of 19.2°.</p>
+<p>It follows from Figs. 3 and 4 that the process of loading coal onto the conveyor can be represented by a parabolic dependence of drum torque on the screw winding angle in the range 16–24°. The trends of change in the coal-loading rate and in torque with changing drum screw lead angle are basically the same, while their variations do not correspond to each other, showing that they have a nonlinear correlation. Therefore, when selecting the drum screw winding angle, output, torque and specific energy consumption should be taken into account.</p>
+<table>
+<thead>
+<tr><th colspan="4">Dependence of torque, output and specific energy consumption of the drum on the screw winding angle</th></tr>
+<tr><th>Drum screw winding angle, degrees</th><th>Mean torque, N·m</th><th>Rate of coal delivery onto the conveyor, t/h</th><th>Specific energy consumption H<sub>W</sub> = M·n / (9550·Q<sub>к</sub>), kW·h/t</th></tr>
+</thead>
+<tbody>
+<tr><td>16</td><td>4113</td><td>148.8</td><td>0.17</td></tr>
+<tr><td>18</td><td>4284</td><td>155.0</td><td>0.17</td></tr>
+<tr><td>20</td><td>4757</td><td>158.8</td><td>0.19</td></tr>
+<tr><td>22</td><td>5196</td><td>147.4</td><td>0.22</td></tr>
+<tr><td>24</td><td>4786</td><td>142.8</td><td>0.21</td></tr>
+</tbody>
+</table>
+<p>The energy intensity of coal transport by the screw drum is given in the table and in Fig. 5.</p>
+<p>The dependence of specific energy consumption on the angle α can be estimated by the relationship:</p>
+<div class="formula">H<sub>W</sub> = 0.0061α + 0.0719, kW·h/t &nbsp;&nbsp;&nbsp;(6)</div>
+<div class="fig">[Figure 5 — see original PDF, page 5] Dependence of specific energy consumption on the drum screw winding angle (H<sub>w</sub> = 0.0061α + 0.0719; R<sup>2</sup> = 0.783)</div>
+<p>Specific energy consumption (6) decreases linearly as the drum screw lead angle α decreases. Thus, the values of output, torque and specific energy consumption must be taken into account in the selection. The consequence is that a drum screw winding angle of 19.2° corresponds to the maximum rate of the process of coal loading onto the conveyor.</p>
+
+<h2>Conclusions</h2>
+<p>Based on the analysis of the results of simulating the process of coal loading by the auger drum of a shearer with the drum vane winding angle varied in the range 16–24°, it follows that:</p>
+<ul>
+<li>the maximum rate of loading onto the conveyor (158.8 t/h) corresponds to a drum screw winding angle of 19.2°, which is therefore the rational angle for the drum in terms of its output;</li>
+<li>the maximum torque corresponds to a drum screw winding angle of 22.6°, and the minimum torque corresponds to an angle of 16°;</li>
+<li>when selecting the setting angle of the drum screw, the values of the loading-process indicators – output, torque and specific energy consumption – must be considered jointly.</li>
+</ul>
+<p>Paper info: received August 6, 2019; reviewed November 21, 2019; accepted December 2, 2019.</p>
+
+<h2>References</h2>
+<ol>
+<li>Nguyen Khac Linh, Gabov V.V., Lykov Y.V. Substantiation of the parameters of coal unloading process onto the conveyor using shearer drums // IOP Conference Series: Earth and Environmental Science. 2018. Vol. 194. P. 1-5.</li>
+<li>Justification of process of loading coal onto face conveyors by auger heads of shearer-loader machines / K.L. Nguyen, V.V. Gabov, D.A. Zadkov, T.B. Le // IOP Conference Series: Materials Science and Engineering. 2018. Vol. 327. DOI: 10.1088/1757-899X/327/4/042132.</li>
+<li>Peng S.S. Longwall Mining. U.S.: 2nd edition, October 2006. 621 p.</li>
+<li>Обоснование геометрических и режимных параметров шнековых исполнительных органов, обеспечивающих эффективность погрузки угля на забойный конвейер / В.В. Габов, К.Л. Нгуен, В.С. Нгуен и др. // Уголь. 2018. № 2. С. 32-35. DOI: 10.18796/0041-5790-2018-2-32-35. URL: http://www.ugolinfo.ru/Free/022018.pdf (дата обращения: 15.12.2019).</li>
+<li>Nguyen Khac Linh, Gabov V.V., Zadkov D.A. Improvement of drum shearer coal loading performance // EURASIAN MINING. 2018. N 2. P. 22-25.</li>
+<li>Ayhan M., Eyyuboglu E.M. Comparison of globoid and cylindrical shearer drums’ loading performance // The Journal of The South African Institute of Mining and Metallurgy. 2006. Vol. 106. P. 51-56.</li>
+<li>Zagrivnyj E.A., Basin G.G. External dynamics formation in mining machines // Journal of Mining Institute. 2016. Vol. 217. P.140-149.</li>
+<li>Бойко Н.Г. Погрузка угля очистными комбайнами. Донецк: ДонНТУ, 2002. 157 с.</li>
+<li>Liu C.S. Theoretical design foundation of shearer. Xuzhou: China University of Mining &amp; Technology Press, 2003. P. 42-44.</li>
+<li>Солод В.И., Гетопанов В.Н., Рачек В.М. Проектирование и конструирование горных машин и комплексов. М.: Недра, 1982. 350 с.</li>
+<li>Сафохин М.С., Александров Б.А., Нестеров В.И. Горные машины и оборудование. М.: Недра, 1995. 463 с.</li>
+<li>Позин Е.З., Меламед В.З., Тон В.В. Разрушение угля выемочными машинами. М.: Недра, 1984. 288 с.</li>
+<li>Вернер В.Н. Исследование и обоснование рациональных параметров шнековых погрузочно-транспортирующих органов выемочных машин: дис. ...доктора. техн. наук. Кемерово, 1999. 319 c.</li>
+</ol>

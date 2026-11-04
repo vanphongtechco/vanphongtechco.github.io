@@ -1,0 +1,103 @@
+<h1>Potential application of an online coal analysis system for boiler combustion operation at Lam Dong Aluminum Company</h1>
+<p class="authors">Dr. Nguyen Thu Hien, Dr. Le Thanh Binh</p>
+<p class="src">Vinacomin – Institute of Energy and Mining Mechanical Engineering (IEMM) · E-mail: binhimeme@gmail.com</p>
+<p class="src">National Mining Science and Technology Conference 2026, Lam Dong, Vietnam, 7–10 October 2026</p>
+
+<h2>Abstract</h2>
+<p>This study evaluates the potential application of an online coal analysis system to support the optimization of circulating fluidized bed boiler operation at Lam Dong Aluminum Company – TKV. Based on actual coal quality data and operating conditions of the Company, the study analyzes variations in calorific value, moisture, ash content and sulfur content; compares different online analysis principles; and selects PGNAA technology. Based on the relationship between calorific value and coal feed rate, the study estimates a potential fuel saving of approximately 1.23%, corresponding to a potential coal saving of approximately 2,848 tonnes/year and a cost saving of approximately VND 10.061 billion/year. With a total investment of approximately VND 46.5 billion and annual operation and maintenance costs of approximately VND 1.234 billion, the estimated payback period is approximately 8 years. In addition to the economic benefits, the online coal analysis system has the potential to support combustion control, improve operational stability, reduce the workload of laboratory analysis and provide fuel quality data to the DCS, thereby contributing to improved fuel utilization efficiency and modernization of boiler operation at the Company.</p>
+<p class="kw"><b>Keywords:</b> online coal analysis; PGNAA; circulating fluidized bed boiler; coal calorific value; operation optimization; fuel saving.</p>
+
+<h2>1. Introduction</h2>
+<p>Circulating fluidized bed (CFB) boilers are able to use many types of fuel, but combustion efficiency, fuel consumption and operational stability depend significantly on the fuel properties and on the fuel feed – air supply regime [2]. For coal, variations in calorific value, moisture, ash content and sulfur affect the energy balance, the combustion process and the operating parameters of the boiler. Timely determination of fuel quality is therefore one of the bases for optimizing operation.</p>
+<p>Lam Dong Aluminum Company – TKV operates 2 CFB boilers, each with a rated steam capacity of 170 t/h and steam parameters of 5.29 MPa/450 °C, controlled and monitored by a DCS [1]. Coal quality is currently controlled by sampling and laboratory analysis. This method is highly reliable but involves a delay between the time of sampling and the time the results are received, so it does not provide continuous information on fuel variations during coal feeding.</p>
+<p>An online coal analysis system allows continuous acquisition of information on the quality of the coal stream, providing a basis for early adjustment of the fuel feed rate. When integrated with the DCS, coal quality data can be used as a supplementary feedforward signal to the existing feedback loops [3].</p>
+<p>This study evaluates the applicability of an online coal analysis system at Lam Dong Aluminum Company, selects a suitable measurement principle, quantifies the potential fuel saving arising from calorific value variations and makes a preliminary assessment of the economic efficiency of the investment option.</p>
+
+<h2>2. Current coal quality and fuel control</h2>
+<h3>2.1. Actual coal quality characteristics</h3>
+<p>The quality of the slack coal used at the Company varies. Actual data show that calorific value, moisture, ash content and sulfur vary within certain ranges, affecting fuel feed requirements and boiler operating conditions. The ranges of variation of the main indicators are summarized in Table 1.</p>
+<p><b>Table 1. Ranges of variation of selected actual coal quality indicators at the Company [7]</b></p>
+<table>
+<thead><tr><th>Indicator</th><th>Unit</th><th>Minimum value</th><th>Maximum value</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Gross calorific value</td><td>kcal/kg</td><td>5,700</td><td>6,100</td><td>Average: 5,945</td></tr>
+<tr><td>Total moisture</td><td>%</td><td>7.0</td><td>10.5</td><td></td></tr>
+<tr><td>Ash content</td><td>%</td><td>27</td><td>31</td><td></td></tr>
+<tr><td>Total sulfur</td><td>%</td><td>0.35</td><td>0.70</td><td></td></tr>
+</tbody>
+</table>
+<p>The results show that the coal quality indicators vary over a considerable range. This variation calls for continuous monitoring of fuel quality instead of relying only on analysis results at individual sampling times. In this study, the variation of calorific value is chosen to quantify the effect on coal feed demand and the potential fuel saving; the other indicators are considered from a technical and operational perspective.</p>
+<h3>2.2. Current coal sampling and analysis</h3>
+<p>At present, the quality of the coal fed to the boilers is controlled by manual sampling on the coal conveying line and laboratory analysis. Coal samples are taken once every hour. In each production shift, the increments are collected, mixed and reduced to form one sample representative of the operating shift. The representative sample is taken to the laboratory to determine the main indicators such as calorific value, moisture, ash content, sulfur and related parameters.</p>
+<div class="fig">[Figure 1 — see original PDF, page 2] Coal supply and fuel distribution system for the boilers at Lam Dong Aluminum Company</div>
+<p>The current method has the advantage of reliable analysis and is suitable for coal quality control. However, sampling, sample preparation and analysis introduce a delay; the time from sampling to obtaining results can be about 8–16 hours. The analysis results therefore mainly serve post-use evaluation and control, limiting the ability to make timely adjustments when coal quality changes.</p>
+<h3>2.3. Need for and requirements of an online coal analysis system</h3>
+<p>For CFB boilers, variations in coal quality can change the amount of fuel that must be fed to maintain the same energy input. Continuously updated coal quality information will allow operators to recognize changes in the fuel early and adjust the coal feed regime accordingly.</p>
+<p>An online coal analysis system allows continuous determination of coal properties on the feed stream, providing real-time data for operational monitoring and adjustment. When integrated with the existing DCS, coal quality data can act as a supplementary feedforward signal, supporting early correction of the fuel feed rate and the combustion regime, while the feedback control loops continue to keep the operating process stable.</p>
+<p>Therefore, the application of an online coal analysis system is not intended to completely replace laboratory analysis but to add continuous monitoring capability, shorten the response time of the control system and improve fuel utilization efficiency at Lam Dong Aluminum Company.</p>
+<h3>2.4. Selection of analysis technology</h3>
+<p>Technologies applicable to online coal analysis include XRF, NIR and PGNAA. XRF is able to determine elemental composition, but when measuring directly on a coal stream the effects of penetration depth and material heterogeneity must be considered. NIR offers fast measurement and uses no radioactive source, but its reliability depends significantly on the calibration model and the range of data used to build the model.</p>
+<p>PGNAA uses neutrons to activate the material and analyses the gamma radiation emitted. The neutron–gamma method is capable of deep-penetration measurement and is suitable for compositional analysis of large material streams on conveyor belts [5]. The limitations of PGNAA are its higher investment cost and higher radiation safety management requirements.</p>
+<div class="fig">[Figure 2 — see original PDF, page 3] Structure of a cross-belt coal analyzer</div>
+<p>Based on the requirements for continuous measurement on the coal stream, measurement representativeness and the ability to integrate data with the DCS, the study selects PGNAA as the technological principle for the option under study.</p>
+
+<h2>3. Methods and results</h2>
+<h3>3.1. Investment option and operating costs</h3>
+<p>The total investment for the online coal analysis system was determined to include construction costs, equipment costs, project management costs, construction investment consultancy costs, other costs and contingency costs, with an estimated total investment of VND 46.5 billion.</p>
+<p>During operation, the system incurs costs for replacing the Cf-252 source and for periodic maintenance. The source replacement cost is about VND 3 billion per replacement; converted on the basis of the 2.645-year half-life, the average cost is about VND 1.134 billion/year. The periodic maintenance cost is about VND 0.1 billion/year. The total operation and maintenance cost is about VND 1.234 billion/year.</p>
+<div class="fig">[Figure 3 — see original PDF, page 4] PGNAA analyzer installed at Vinh Tan 2 Thermal Power Plant</div>
+<h3>3.2. Estimation of potential fuel cost savings</h3>
+<p>Analysis data for the coal used at the Company show that the calorific value varies during operation. The characteristic values used in the study are: minimum value Q<sub>min</sub> = 5,700 kcal/kg, average value Q<sub>tb</sub> = 5,945 kcal/kg and maximum value Q<sub>max</sub> = 6,100 kcal/kg [7].</p>
+<p>Since the data set used in the study is characterized by its minimum, maximum and average values, a triangular distribution is used as an approximate model to describe the variation of calorific value. The parameters of the distribution are determined from the above characteristic values [4]. The mode of the distribution is determined by:</p>
+<div class="formula">Q<sub>m</sub> = 3Q<sub>tb</sub> − Q<sub>min</sub> − Q<sub>max</sub> = 3×5,945 − 5,700 − 6,100 = 6,035 kcal/kg &nbsp;&nbsp;&nbsp;(1)</div>
+<p>The probability density function of the calorific value is:</p>
+<div class="formula">f(Q) = 2(Q − Q<sub>min</sub>) / [(Q<sub>max</sub> − Q<sub>min</sub>)(Q<sub>m</sub> − Q<sub>min</sub>)], &nbsp;Q<sub>min</sub> ≤ Q ≤ Q<sub>m</sub>;<br>f(Q) = 2(Q<sub>max</sub> − Q) / [(Q<sub>max</sub> − Q<sub>min</sub>)(Q<sub>max</sub> − Q<sub>m</sub>)], &nbsp;Q<sub>m</sub> ≤ Q ≤ Q<sub>max</sub> &nbsp;&nbsp;&nbsp;(2)</div>
+<p>where f(Q) is the probability density function of the calorific value according to the triangular distribution; Q is the coal calorific value varying according to the constructed distribution.</p>
+<p>Assuming that the boiler heat load and efficiency are constant, the amount of coal to be fed is inversely proportional to the calorific value of the coal:</p>
+<div class="formula">B(Q) × Q = const</div>
+<p>Therefore, the relative change in the amount of coal compared with the case of using coal with the average calorific value Q<sub>tb</sub> is determined by:</p>
+<div class="formula">R(Q) = ∫<sub>Q<sub>min</sub></sub><sup>Q<sub>max</sub></sup> |Q<sub>tb</sub>/Q − 1| f(Q) dQ × 100 &nbsp;&nbsp;&nbsp;(3)</div>
+<p>Substituting Q<sub>min</sub> = 5,700 kcal/kg, Q<sub>m</sub> = 6,035 kcal/kg, Q<sub>max</sub> = 6,100 kcal/kg and Q<sub>tb</sub> = 5,945 kcal/kg into equation (3), the calculation gives:</p>
+<div class="formula">R<sub>Q</sub> ≈ 1.23%</div>
+<p>The value R<sub>Q</sub> reflects the mean relative deviation of the coal feed compared with the case where the coal calorific value is stable at the average level. This value is used as the potential fuel saving in the economic evaluation. It is a potential level (upper bound), calculated on the assumption that, in the absence of instantaneous coal quality information, the coal feed is not corrected in time according to calorific value variations; the actual saving needs to be determined through trial operation and comparison after the system is installed.</p>
+<p>According to the operating data of Lam Dong Aluminum Company, the average slack coal consumption in the period 2022–2025 was 231,508 tonnes/year. On the basis of a saving of 1.23%, the amount of slack coal that could be saved is estimated at about 2,848 tonnes/year. With a weighted average coal price of VND 3,533,305/tonne, the corresponding fuel cost saving is:</p>
+<div class="formula">S<sub>than</sub> = 231,508 × 1.23% × 3,533,305 ≈ VND 10.061 billion/year &nbsp;&nbsp;&nbsp;(4)</div>
+<h3>3.3. Labour efficiency</h3>
+<p>In the initial phase, sampling and laboratory analysis are still maintained for comparison. Once the online system is stable, the comparison frequency can be reduced to 1 sample per shift. Under the current practice, each shift requires 1 man-day for sampling, sample preparation and analysis; with 3 shifts/day this is equivalent to 3 man-days/day. When switching to the comparison mode, the workload is estimated to be equivalent to only 1 man-day/day, thereby freeing about 2 man-days/day from coal sampling and analysis.</p>
+<p>With an average labour cost of the current unit of VND 15,773,487/person/month, the equivalent labour cost saved is:</p>
+<div class="formula">S<sub>NC</sub> = 2 × 15,773,487 × 12 = VND 378,563,688/year &nbsp;&nbsp;&nbsp;(5)</div>
+<h3>3.4. Technical, operational and environmental benefits</h3>
+<p>Besides the potential to save fuel and labour, the online coal analysis system continuously provides information on the calorific value, moisture, ash content and sulfur of the boiler feed coal. These data can be used to support adjustment of the coal feed rate and combustion regime in line with fuel variations, thereby helping to keep boiler operation stable.</p>
+<p>Information on the sulfur content also provides a basis for adjusting the amount of limestone fed to the boiler according to the fuel properties, supporting the control of SO<sub>2</sub> emissions. At the same time, reducing coal consumption by the amount estimated in the study may help reduce the amount of ash and slag and the CO<sub>2</sub> emissions arising from coal combustion.</p>
+<p>Fuel quality data from the online system can be integrated into the DCS for operational monitoring and adjustment. In the initial phase, the online data need to be compared with laboratory analysis results to evaluate accuracy and stability before being used routinely in operational adjustment.</p>
+<p>The benefits from reduced limestone, ash and slag, CO<sub>2</sub>, chemicals and analytical consumables have not been quantified in the study because there are not yet sufficient operating data after the system is deployed. These benefits are therefore not included in the economic efficiency calculation.</p>
+<div class="fig">[Figure 4 — see original PDF, page 5] Proposed installation location of the PGNAA online coal analysis system at Lam Dong Aluminum Company</div>
+<h3>3.5. Investment efficiency evaluation</h3>
+<p>Investment efficiency is evaluated on the basis of the total savings, operation and maintenance costs, loan capital costs and corporate income tax.</p>
+<p>The total quantifiable average annual savings include a coal cost saving of about VND 10.061 billion and an equivalent labour value of about VND 0.379 billion, totalling:</p>
+<div class="formula">S<sub>TK</sub> = 10.061 + 0.379 = VND 10.440 billion/year &nbsp;&nbsp;&nbsp;(6)</div>
+<p>The operation and maintenance cost is about VND 1.234 billion/year. Under the option of borrowing the full VND 46.5 billion over 8 years at an interest rate of 8.5%/year, with equal principal repayments and interest charged on the actual outstanding balance, the total interest cost over the 8 years is about VND 15.975 billion, equivalent to an average of VND 1.997 billion/year.</p>
+<p>The pre-tax difference between the savings and the operation and maintenance and interest costs is:</p>
+<div class="formula">S<sub>pre-tax</sub> = 10.440 − 1.234 − 1.997 = VND 7.209 billion/year &nbsp;&nbsp;&nbsp;(7)</div>
+<p>Corporate income tax is calculated at 20% of the above difference:</p>
+<div class="formula">C<sub>TNDN</sub> = 7.209 × 20% = VND 1.442 billion/year &nbsp;&nbsp;&nbsp;(8)</div>
+<p>Net benefit after tax:</p>
+<div class="formula">S<sub>net</sub> = 7.209 − 1.442 = VND 5.767 billion/year &nbsp;&nbsp;&nbsp;(9)</div>
+<p>The payback period is:</p>
+<div class="formula">T<sub>HV</sub> = 46.5 / 5.767 ≈ 8 years &nbsp;&nbsp;&nbsp;(10)</div>
+
+<h2>4. Conclusions and recommendations</h2>
+<p>The study shows that an online coal analysis system using PGNAA technology has potential for application in boiler combustion operation at Lam Dong Aluminum Company – TKV. Continuous provision of coal quality information, especially calorific value, can support adjustment of the fuel feed rate, improve operational stability and enhance control of the combustion process.</p>
+<p>With a potential fuel saving of about 1.23%, the amount of coal that could be saved is about 2,848 tonnes/year, corresponding to a value of about VND 10.061 billion/year. The estimated total investment is about VND 46.5 billion, the operation and maintenance cost is about VND 1.234 billion/year, and the estimated payback period is about 8 years. In addition to the economic benefits, the online coal analysis system can support combustion control, improve operational stability, reduce the laboratory analysis workload and provide fuel quality data to the DCS, thereby contributing to improved fuel utilization efficiency and modernization of boiler operation at the Company.</p>
+<p>Recommendations: The Company should consider deploying an online coal analysis system on the coal feed line to the boilers according to the following roadmap: (i) in the initial phase, operate it in parallel with laboratory analysis to evaluate the accuracy and stability of the equipment in accordance with the ASTM D6543 guide [6]; (ii) on the basis of actual operating data, re-determine the fuel saving and quantify the benefits not yet accounted for (limestone, ash and slag, CO<sub>2</sub> emissions, analytical consumables); (iii) once the data have been verified, integrate the coal quality signal into the DCS to support adjustment of the coal feed rate and combustion regime.</p>
+
+<h2>References</h2>
+<ol>
+<li>China Aluminum International Engineering Corporation Limited (CHALIECO), “Lam Dong Bauxite-Aluminum Complex Project – Technical Design, Heat and Power Plant &amp; Coal Gas Station (Final Edition),” Project No. CAS0826JS4(F), Beijing, China, July 2010.</li>
+<li>P. Basu, Circulating Fluidized Bed Boilers: Design, Operation and Maintenance, Cham, Switzerland: Springer International Publishing, 2015, doi: 10.1007/978-3-319-06173-3.</li>
+<li>D. E. Seborg, T. F. Edgar, D. A. Mellichamp, and F. J. Doyle III, Process Dynamics and Control, 4th ed., Hoboken, NJ, USA: John Wiley &amp; Sons, 2016.</li>
+<li>Y. Wang and E. Pinsky, “Geometry of deviation measures for triangular distributions,” Frontiers in Applied Mathematics and Statistics, vol. 9, Art. no. 1274787, 2023, doi: 10.3389/fams.2023.1274787.</li>
+<li>C. S. Lim and D. A. Abernethy, “On-line coal analysis using fast neutron-induced gamma-rays,” Applied Radiation and Isotopes, vol. 63, nos. 5–6, pp. 697–704, 2005, doi: 10.1016/j.apradiso.2005.05.021.</li>
+<li>ASTM International, ASTM D6543-20e1, Standard Guide for the Evaluation of Measurements Made by Online Coal Analyzers, West Conshohocken, PA, USA: ASTM International, 2020, doi: 10.1520/D6543-20E01.</li>
+<li>Tài liệu nội bộ về thông số kỹ thuật và đặc tính than sử dụng cho hệ thống lò hơi. Công ty Nhôm Lâm Đồng - TKV, Lâm Đồng, 2025.</li>
+</ol>
