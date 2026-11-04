@@ -347,7 +347,7 @@ section{padding:70px 0}
 .certs-band .title h2{color:#fff}
 .certs-band .title h2::after{background:#fff}
 .certs-band .title p{color:#C9DBEE}
-.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,300px));justify-content:center;gap:28px;max-width:1000px;margin:0 auto}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,300px));justify-content:center;gap:28px;max-width:1300px;margin:0 auto}
 .cert-real{text-decoration:none;color:inherit}
 .tr-note{text-align:center;margin:26px 0 0;color:#C9DBEE;font-size:14px}
 .tr-note a{color:#fff;text-decoration:underline;margin:0 6px}
@@ -362,6 +362,7 @@ section{padding:70px 0}
 .cert .doc.real{padding:0;background:#fff}
 .cert .doc.real::before{display:none}
 .cert .doc.real img{width:100%;height:100%;object-fit:cover;object-position:top}
+.cert .doc.sq img{position:absolute;inset:0;object-fit:contain;object-position:center}
 .cert-real:hover .doc.real{outline:3px solid var(--sky)}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(10,20,35,.88);display:none;overflow:auto;padding:56px 16px 24px}
 .lb.open{display:block}
@@ -446,23 +447,27 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <!-- HERO -->
 <div class="hero" id="hero" aria-roledescription="carousel">
   <div class="slides" id="slides">
-    <div class="slide s-banner" aria-label="1 / 6">
+    <div class="slide s-banner" aria-label="1 / 7">
       <img class="bg" src="/banner-van-phong-blur.jpg" alt="" aria-hidden="true">
       <div class="fr"><img src="/banner-van-phong.jpg" alt="Vân Phong – Giải pháp kỹ thuật toàn diện: Thiết bị – Dịch vụ – Chuyển giao công nghệ cho Công nghiệp, Y tế, Phòng thí nghiệm, Giáo dục" width="1672" height="941"><a class="hot" href="tel:0986818013"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: 0986.818.013</a></div>
     </div>
-    <div class="slide s-banner" aria-label="2 / 6">
+    <div class="slide s-banner" aria-label="2 / 7">
       <img class="bg" src="/banner-thiet-bi-ptn-blur.jpg" alt="" aria-hidden="true">
       <div class="fr"><img src="/banner-thiet-bi-ptn.jpg" alt="Vân Phong – Thiết bị phòng thí nghiệm: Phân tích – An toàn sinh học – Bảo quản mẫu" width="1672" height="941" loading="lazy"><a class="hot" href="tel:0986818013"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: 0986.818.013</a></div>
     </div>
-    <div class="slide s-banner" aria-label="3 / 6">
+    <div class="slide s-banner" aria-label="3 / 7">
       <img class="bg" src="/banner-cong-nghiep-blur.jpg" alt="" aria-hidden="true">
       <div class="fr"><img src="/banner-cong-nghiep.jpg" alt="Vân Phong – Giải pháp công nghiệp &amp; tự động hóa: Máy móc – Điều khiển – Thiết bị đo" width="1672" height="941" loading="lazy"><a class="hot" href="tel:0899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: 08.9999.0683</a></div>
     </div>
-    <div class="slide s-banner" aria-label="4 / 6" style="--ar:2">
+    <div class="slide s-banner" aria-label="4 / 7" style="--ar:2">
       <img class="bg" src="/banner-drawell-blur.jpg" alt="" aria-hidden="true">
       <div class="fr"><img src="/banner-drawell.jpg" alt="Drawell Việt Nam – Thiết bị khoa học &amp; phòng thí nghiệm, phân phối bởi Công ty TNHH Kỹ thuật và Thương mại Vân Phong" width="1774" height="887" loading="lazy"></div>
     </div>
-    <div class="slide s-navy" aria-label="5 / 6">
+    <div class="slide s-banner" aria-label="5 / 7" style="--ar:1">
+      <img class="bg" src="/banner-biobase-blur.jpg" alt="" aria-hidden="true">
+      <div class="fr"><img src="/banner-biobase.jpg" alt="Giải pháp thiết bị phòng thí nghiệm BIOBASE – An toàn, chính xác, đồng bộ" width="1254" height="1254" loading="lazy"></div>
+    </div>
+    <div class="slide s-navy" aria-label="6 / 7">
       <div class="wrap in">
         <h2>Sản phẩm</h2>
         <p class="lead">Thiết bị, vật tư cho Công nghiệp, Y tế, Phòng thí nghiệm, Giáo dục.</p>
@@ -476,7 +481,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
         <p style="margin:26px 0 0"><a class="btn cta" href="#san-pham">Xem sản phẩm</a></p>
       </div>
     </div>
-    <div class="slide s-navy" aria-label="6 / 6">
+    <div class="slide s-navy" aria-label="7 / 7">
       <div class="wrap in">
         <h2>Dịch vụ</h2>
         <p class="lead">Đồng hành từ tư vấn, thiết kế đến cung cấp, lắp đặt và bảo trì.</p>
@@ -821,6 +826,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <button type="button" class="cert cert-real" data-gallery="/giay-to/dkdn-trang-1.jpg?v=2|/giay-to/dkdn-trang-2.jpg?v=2" aria-label="Xem Giấy chứng nhận đăng ký doanh nghiệp"><div class="doc real"><img src="/giay-to/dkdn-trang-1-nho.jpg?v=2" alt="Giấy chứng nhận đăng ký doanh nghiệp – trang 1" width="520" height="736" loading="lazy"></div><b>Giấy chứng nhận đăng ký doanh nghiệp</b><small>MSDN 0108797479 · thay đổi lần 4: 29/09/2026 · Bấm để xem</small></button>
     <!--TRCARD-->
     <a class="cert cert-real" href="/tai-lieu/ho-so-nang-luc-vi.pdf" target="_blank" rel="noopener"><div class="doc real"><img src="/tai-lieu/bia-vi-1.jpg" alt="Hồ sơ năng lực Vân Phong – trang bìa" width="662" height="936" loading="lazy"></div><b>Hồ sơ năng lực</b><small>Bản PDF · Bấm để xem, tải về</small></a>
+    <a class="cert cert-real" href="/giay-to/drawell-uy-quyen.jpg" target="_blank" rel="noopener"><div class="doc real sq"><img src="/giay-to/drawell-uy-quyen.jpg" alt="Drawell Scientific Instruments Việt Nam – Ủy quyền chính hãng cho Công ty TNHH Kỹ thuật và Thương mại Vân Phong" width="1254" height="1254" loading="lazy"></div><b>Ủy quyền chính hãng Drawell</b><small>Drawell Scientific Instruments · Bấm để xem</small></a>
   </div>
   <!--TRNOTE-->
 </div></section>

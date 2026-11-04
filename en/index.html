@@ -347,7 +347,7 @@ section{padding:70px 0}
 .certs-band .title h2{color:#fff}
 .certs-band .title h2::after{background:#fff}
 .certs-band .title p{color:#C9DBEE}
-.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,300px));justify-content:center;gap:28px;max-width:1000px;margin:0 auto}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,300px));justify-content:center;gap:28px;max-width:1300px;margin:0 auto}
 .cert-real{text-decoration:none;color:inherit}
 .tr-note{text-align:center;margin:26px 0 0;color:#C9DBEE;font-size:14px}
 .tr-note a{color:#fff;text-decoration:underline;margin:0 6px}
@@ -362,6 +362,7 @@ section{padding:70px 0}
 .cert .doc.real{padding:0;background:#fff}
 .cert .doc.real::before{display:none}
 .cert .doc.real img{width:100%;height:100%;object-fit:cover;object-position:top}
+.cert .doc.sq img{position:absolute;inset:0;object-fit:contain;object-position:center}
 .cert-real:hover .doc.real{outline:3px solid var(--sky)}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(10,20,35,.88);display:none;overflow:auto;padding:56px 16px 24px}
 .lb.open{display:block}
@@ -446,23 +447,27 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <!-- HERO -->
 <div class="hero" id="hero" aria-roledescription="carousel">
   <div class="slides" id="slides">
-    <div class="slide s-banner" aria-label="1 / 6">
+    <div class="slide s-banner" aria-label="1 / 7">
       <img class="bg" src="/banner-van-phong-blur.jpg" alt="" aria-hidden="true">
       <div class="fr"><img src="/banner-van-phong-en.jpg" alt="Van Phong – Complete engineering solutions: equipment, services and technology transfer for industry, healthcare, laboratories and education" width="1672" height="941"><a class="hot" href="tel:+84986818013"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: +84 986 818 013</a></div>
     </div>
-    <div class="slide s-banner" aria-label="2 / 6">
+    <div class="slide s-banner" aria-label="2 / 7">
       <img class="bg" src="/banner-thiet-bi-ptn-blur.jpg" alt="" aria-hidden="true">
       <div class="fr"><img src="/banner-thiet-bi-ptn-en.jpg" alt="Van Phong – Laboratory equipment: analysis, biosafety, sample storage" width="1672" height="941" loading="lazy"><a class="hot" href="tel:+84986818013"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: +84 986 818 013</a></div>
     </div>
-    <div class="slide s-banner" aria-label="3 / 6">
+    <div class="slide s-banner" aria-label="3 / 7">
       <img class="bg" src="/banner-cong-nghiep-blur.jpg" alt="" aria-hidden="true">
       <div class="fr"><img src="/banner-cong-nghiep-en.jpg" alt="Van Phong – Industrial &amp; automation solutions: machinery, controls, instrumentation" width="1672" height="941" loading="lazy"><a class="hot" href="tel:+84899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: +84 899 990 683</a></div>
     </div>
-    <div class="slide s-banner" aria-label="4 / 6" style="--ar:2">
+    <div class="slide s-banner" aria-label="4 / 7" style="--ar:2">
       <img class="bg" src="/banner-drawell-blur.jpg" alt="" aria-hidden="true">
       <div class="fr"><img src="/banner-drawell-en.jpg" alt="Drawell Vietnam – scientific &amp; laboratory instruments, distributed by Van Phong Technical and Trading Co., Ltd." width="1774" height="887" loading="lazy"></div>
     </div>
-    <div class="slide s-navy" aria-label="5 / 6">
+    <div class="slide s-banner" aria-label="5 / 7" style="--ar:1">
+      <img class="bg" src="/banner-biobase-blur.jpg" alt="" aria-hidden="true">
+      <div class="fr"><img src="/banner-biobase-en.jpg" alt="BIOBASE laboratory equipment solutions – safe, accurate, integrated" width="1254" height="1254" loading="lazy"></div>
+    </div>
+    <div class="slide s-navy" aria-label="6 / 7">
       <div class="wrap in">
         <h2>Products</h2>
         <p class="lead">Equipment and supplies for industry, healthcare, laboratories and education.</p>
@@ -476,7 +481,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
         <p style="margin:26px 0 0"><a class="btn cta" href="#san-pham">View products</a></p>
       </div>
     </div>
-    <div class="slide s-navy" aria-label="6 / 6">
+    <div class="slide s-navy" aria-label="7 / 7">
       <div class="wrap in">
         <h2>Services</h2>
         <p class="lead">With you from consulting and design to supply, installation and maintenance.</p>
@@ -821,6 +826,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
     <button type="button" class="cert cert-real" data-gallery="/giay-to/dkdn-trang-1.jpg?v=2|/giay-to/dkdn-trang-2.jpg?v=2" aria-label="View Enterprise Registration Certificate"><div class="doc real"><img src="/giay-to/dkdn-trang-1-nho.jpg?v=2" alt="Enterprise Registration Certificate – page 1" width="520" height="736" loading="lazy"></div><b>Enterprise Registration Certificate</b><small>Enterprise code 0108797479 · 4th amendment: 29 Sep 2026 · Vietnamese original</small></button>
     <button type="button" class="cert cert-real" data-gallery="/tai-lieu/dkdn-en-1.jpg|/tai-lieu/dkdn-en-2.jpg" data-note="English reference translation – no signature or seal. The Vietnamese original prevails." aria-label="View English translation of the Enterprise Registration Certificate"><div class="doc real"><img src="/tai-lieu/dkdn-en-nho-1.jpg" alt="English translation – page 1" width="397" height="562" loading="lazy"></div><b>Enterprise Registration Certificate – English translation</b><small>Reference translation · Click to view</small></button>
     <a class="cert cert-real" href="/tai-lieu/ho-so-nang-luc-en.pdf" target="_blank" rel="noopener"><div class="doc real"><img src="/tai-lieu/bia-en-1.jpg" alt="Van Phong company profile – cover" width="662" height="936" loading="lazy"></div><b>Company Profile</b><small>PDF · Click to view or download</small></a>
+    <a class="cert cert-real" href="/giay-to/drawell-uy-quyen-en.jpg" target="_blank" rel="noopener"><div class="doc real sq"><img src="/giay-to/drawell-uy-quyen-en.jpg" alt="Drawell Scientific Instruments Vietnam – authorized distributor: Van Phong Technical and Trading Co., Ltd." width="1254" height="1254" loading="lazy"></div><b>Drawell authorized distributor</b><small>Drawell Scientific Instruments · Click to view</small></a>
   </div>
   <p class="tr-note">Download the English translation: <a href="/tai-lieu/giay-chung-nhan-dkdn-en.pdf" target="_blank" rel="noopener">PDF</a></p>
 </div></section>
