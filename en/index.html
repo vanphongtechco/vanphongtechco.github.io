@@ -876,7 +876,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Document viewer"><button class="lb-close" id="lbClose" aria-label="Close">×</button><p class="lb-note" id="lbNote">Vietnamese original. Some personal data has been hidden.</p><div id="lbImgs"></div></div>
 
 <script>
-const pic=p=>p.img?'<img src="/anh-san-pham/'+p.img+'.jpg" alt="'+esc(p.n)+'" loading="lazy">':ICONS[p.i];
+const pic=p=>p.img?'<img src="'+(/^https?:/.test(p.img)?p.img:'/anh-san-pham/'+p.img+'.jpg')+'" alt="'+esc(p.n)+'" loading="lazy">':ICONS[p.i];
 const ICONS = {
   cabinet:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="12" y="6" width="40" height="52" rx="2"/><path d="M12 22h40M18 14h18M16 30h32v20H16z"/><circle cx="46" cy="14" r="2"/></svg>',
   autoclave:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="10" y="12" width="44" height="44" rx="3"/><circle cx="32" cy="34" r="13"/><circle cx="32" cy="34" r="5"/><path d="M16 18h10"/></svg>',
@@ -902,7 +902,7 @@ const ICONS = {
 const CATS = [
   {id:'cn', name:'Industrial equipment', subs:['Mechanical machinery & equipment','Pumps, fans, gearboxes','Consumables & spare parts']},
   {id:'yt', name:'Medical equipment', subs:['Clinical analyzers','Hospital beds & trolleys','Sterilization equipment']},
-  {id:'tn', name:'Laboratory equipment', subs:['Biosafety cabinets, clean benches, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges','Freeze dryers, stirrers','Lab instruments, meters & consumables']},
+  {id:'tn', name:'Laboratory equipment', subs:['Biosafety cabinets, clean benches, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges','Freeze dryers, stirrers','Lab instruments, meters & consumables','Cold storage & sample preservation','Laboratory analyzers','Optical instruments','Molecular biology & reagents','Pathology equipment']},
   {id:'dt', name:'Electrical, Electronics & Automation', subs:['PLCs, controllers','Inverters, soft starters','Sensors, measuring instruments']},
   {id:'th', name:'Computers & IT', subs:['Computers, servers','Network equipment, cameras','Licensed software']}
 ];
@@ -927,6 +927,9 @@ const PRODUCTS = [
   {c:'tn', s:4, n:'BIOBASE vacuum filtration sets', code:'BIOBASE', img:'bo-loc-chan-khong', d:'For sample filtration, sample preparation and testing procedures. Membranes are chosen by pore size, membrane material and sample properties.', i:'pump'},
   {c:'tn', s:4, n:'BIOBASE laboratory water purifiers', code:'BIOBASE', img:'may-loc-nuoc', d:'Water quality and output are chosen to match demand, together with the correct replacement filter cartridges, RO membranes and DI columns.', i:'pump'},
   {c:'tn', s:2, n:'BIOBASE centrifuges and centrifuge tubes', code:'BIOBASE', img:'ong-ly-tam', d:'For sample separation and preparation. Rotors, adapters and centrifuge tubes should be selected as a matched set for the work.', i:'centrifuge'},
+  /*BB*/
+
+  /*/BB*/
   {c:'cn', s:1, n:'Industrial gearbox', code:'VP-CN-01', d:'Fabrication, repair and replacement to technical requirements.', i:'gear', hot:1},
   {c:'cn', s:1, n:'Industrial pumps and fans', code:'VP-CN-02', d:'Supply, installation and maintenance for plants and sites.', i:'pump'},
   {c:'dt', s:0, n:'PLC controller', code:'VP-DT-01', d:'Control panels and production-line automation programming.', i:'plc', hot:1},

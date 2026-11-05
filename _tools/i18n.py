@@ -10,12 +10,14 @@ sys.path.insert(0, str(Path(__file__).parent)); from partners import block as _p
 from leaders import block as _lb
 from pubs import block as _ub, patent_block as _pt
 from news import block as _nb
+from biobase import block as _bb
 
 ADDR_EN = "No. 34, Lane 36A, Tran Dien Street, Phuong Liet Ward, Hanoi"
 ADDR_ZH = "河内市方烈坊陈田街36A巷34号"
 
 # (vi, en, zh) — exact substrings of the Vietnamese page
 P = [
+('__BB__', '', ''),
 # head
 ('<html lang="vi">', '<html lang="en">', '<html lang="zh-CN">'),
 ('<title>Vân Phong Tech</title>', '<title>Van Phong Tech – Engineering & Trading</title>', '<title>Van Phong Tech – 技术与贸易</title>'),
@@ -202,9 +204,9 @@ P = [
 ("name:'Thiết bị y tế', subs:['Thiết bị xét nghiệm','Giường, xe đẩy y tế','Thiết bị tiệt trùng']",
  "name:'Medical equipment', subs:['Clinical analyzers','Hospital beds & trolleys','Sterilization equipment']",
  "name:'医疗设备', subs:['检验分析设备','病床、医用推车','灭菌设备']"),
-("name:'Thiết bị thí nghiệm', subs:['Tủ an toàn, tủ cấy, tủ hút','Tủ sấy, tủ ấm, lò nung','Cân, máy ly tâm','Máy đông khô, máy khuấy','Dụng cụ, máy đo, vật tư phòng thí nghiệm']",
- "name:'Laboratory equipment', subs:['Biosafety cabinets, clean benches, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges','Freeze dryers, stirrers','Lab instruments, meters & consumables']",
- "name:'实验室设备', subs:['生物安全柜、超净工作台、通风橱','干燥箱、培养箱、马弗炉','天平、离心机','冷冻干燥机、搅拌器','实验室器具、仪表及耗材']"),
+("name:'Thiết bị thí nghiệm', subs:['Tủ an toàn, tủ cấy, tủ hút','Tủ sấy, tủ ấm, lò nung','Cân, máy ly tâm','Máy đông khô, máy khuấy','Dụng cụ, máy đo, vật tư phòng thí nghiệm','Thiết bị đông lạnh, bảo quản mẫu','Thiết bị phân tích phòng thí nghiệm','Thiết bị quang học','Sinh học phân tử, thuốc thử','Thiết bị giải phẫu bệnh']",
+ "name:'Laboratory equipment', subs:['Biosafety cabinets, clean benches, fume hoods','Ovens, incubators, furnaces','Balances, centrifuges','Freeze dryers, stirrers','Lab instruments, meters & consumables','Cold storage & sample preservation','Laboratory analyzers','Optical instruments','Molecular biology & reagents','Pathology equipment']",
+ "name:'实验室设备', subs:['生物安全柜、超净工作台、通风橱','干燥箱、培养箱、马弗炉','天平、离心机','冷冻干燥机、搅拌器','实验室器具、仪表及耗材','低温冷藏与样品保存设备','实验室分析仪器','光学仪器','分子生物学与试剂','病理设备']"),
 ("name:'Điện – Điện tử, Tự động hóa', subs:['PLC, bộ điều khiển','Biến tần, khởi động mềm','Cảm biến, thiết bị đo']",
  "name:'Electrical, Electronics & Automation', subs:['PLCs, controllers','Inverters, soft starters','Sensors, measuring instruments']",
  "name:'电气电子与自动化', subs:['PLC、控制器','变频器、软启动器','传感器、测量仪器']"),
@@ -255,6 +257,7 @@ def build(idx):
         if vi == '__LEADERS__': vi, tr = _lb('vi'), _lb('en' if idx == 1 else 'zh')
         if vi == '__NEWS__': vi, tr = _nb('vi'), _nb('en' if idx == 1 else 'zh')
         if vi == '__PUBS__': vi, tr = _ub('vi'), _ub('en' if idx == 1 else 'zh')
+        if vi == '__BB__': vi, tr = _bb('vi'), _bb('en' if idx == 1 else 'zh')
         if vi == '__PATENT__': vi, tr = _pt('vi'), _pt('en' if idx == 1 else 'zh')
         n = s.count(vi)
         if n == 0: sys.exit(f"MISSING: {vi[:70]}")
