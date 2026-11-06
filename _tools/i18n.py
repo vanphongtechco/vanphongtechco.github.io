@@ -57,7 +57,7 @@ P = [
 ('src="/banner-van-phong.jpg"', 'src="/banner-van-phong-en.jpg"', 'src="/banner-van-phong-zh.jpg"'),
 ('src="/banner-thiet-bi-ptn.jpg"', 'src="/banner-thiet-bi-ptn-en.jpg"', 'src="/banner-thiet-bi-ptn-zh.jpg"'),
 ('src="/banner-cong-nghiep.jpg"', 'src="/banner-cong-nghiep-en.jpg"', 'src="/banner-cong-nghiep-zh.jpg"'),
-('alt="Drawell Việt Nam – Thiết bị khoa học &amp; phòng thí nghiệm, phân phối bởi Công ty TNHH Kỹ thuật và Thương mại Vân Phong"', 'alt="Drawell Vietnam – scientific &amp; laboratory instruments, distributed by Van Phong Technical and Trading Co., Ltd."', 'alt="Drawell 越南 – 科学与实验室仪器，由 Van Phong 技术与贸易有限公司经销"'),
+('alt="Drawell – Thiết bị phòng thí nghiệm. Vân Phong – đại lý phân phối chính hãng"', 'alt="Drawell – laboratory equipment. Van Phong – authorized distributor"', 'alt="Drawell – 实验室设备。Van Phong – 官方授权经销商"'),
 ('src="/banner-drawell.jpg"', 'src="/banner-drawell-en.jpg"', 'src="/banner-drawell-zh.jpg"'),
 ('src="/banner-biobase.jpg"', 'src="/banner-biobase-en.jpg"', 'src="/banner-biobase-zh.jpg"'),
 ('alt="Giải pháp thiết bị phòng thí nghiệm BIOBASE – An toàn, chính xác, đồng bộ"', 'alt="BIOBASE laboratory equipment solutions – safe, accurate, integrated"', 'alt="BIOBASE 实验室设备解决方案 – 安全、精准、配套"'),
