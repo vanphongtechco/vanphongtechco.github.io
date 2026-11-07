@@ -594,6 +594,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 
 <!-- CATALOGUE -->
 <section id="san-pham"><div class="wrap">
+  <div class="title"><h2>Sản phẩm</h2></div>
   <div class="catalog">
     <aside class="side-box"><h3>Danh mục</h3><ul class="tree" id="tree"></ul></aside>
     <div>
@@ -1334,7 +1335,7 @@ function renderGrid(){
   const list=PRODUCTS.filter(p=>(cur==='all'||p.c===cur)&&(sub===null||p.s===sub)&&(!q||norm(p.n+' '+p.code+' '+p.d).includes(q)));
   const pages=Math.max(1,Math.ceil(list.length/PER)); if(page>pages)page=pages;
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
-  $('catTitle').textContent=sn||(cat?cat.name:'Sản phẩm');
+  $('catTitle').textContent=sn||(cat?cat.name:'Sản phẩm');$('catTitle').hidden=!sn&&!cat;
   $('catCount').textContent=list.length+' sản phẩm'+(query.trim()?' khớp với “'+query.trim()+'”':'');
   $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);const u='san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/';return '<article class="card"><a class="thumb'+(p.img?' ph':'')+'" href="'+u+'">'+pic(p)+'</a><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4><a href="'+u+'">'+esc(p.n)+'</a></h4><a class="dsc" href="'+u+'"><p>'+esc(p.d)+'</p></a><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/vi/'+p.pdf+'.pdf" target="_blank" rel="noopener">Tải catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'.pdf" target="_blank" rel="noopener">Bài báo ứng dụng (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Bản vẽ (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video giới thiệu</a>':'')+'<a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 / 0986.818.013 để được tư vấn.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
