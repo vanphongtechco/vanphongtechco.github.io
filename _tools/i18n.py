@@ -237,7 +237,7 @@ P = [
 ("list.length+' sản phẩm'+(query.trim()?' khớp với “'+query.trim()+'”':'')", "list.length+' products'+(query.trim()?' matching “'+query.trim()+'”':'')", "'共 '+list.length+' 个产品'+(query.trim()?'，匹配“'+query.trim()+'”':'')"),
 ('"/catalog/vi/', '"/catalog/en/', '"/catalog/zh/'),
 ('>Tải catalog PDF<', '>Catalog PDF<', '>产品资料 PDF<'),
-('<a class="more" href="\'+u+\'">Xem chi tiết →</a>', '<a class="more" href="\'+u+\'">View details →</a>', '<a class="more" href="\'+u+\'">查看详情 →</a>'),
+('<a href="#lien-he">Liên hệ báo giá →</a>', '<a href="#lien-he">Request a quote →</a>', '<a href="#lien-he">询价 →</a>'),
 ("'<div class=\"empty\">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 / 0986.818.013 để được tư vấn.</div>'", "'<div class=\"empty\">No matching products. Call +84 899 990 683 / +84 986 818 013 for advice.</div>'", "'<div class=\"empty\">未找到匹配的产品。请致电 +84 899 990 683 / +84 986 818 013 咨询。</div>'"),
 ("aria-label=\"Trang trước\"", "aria-label=\"Previous page\"", "aria-label=\"上一页\""),
 ("aria-label=\"Trang sau\"", "aria-label=\"Next page\"", "aria-label=\"下一页\""),
