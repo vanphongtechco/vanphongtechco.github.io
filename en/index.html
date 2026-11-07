@@ -217,7 +217,7 @@ section{padding:70px 0}
 .pc{position:relative}
 .pc .track-wrap{background:#fff;overflow:hidden}
 .pc .track{display:flex;transition:transform .5s ease}
-.pitem{flex:0 0 25%;padding:26px 22px 22px;border-right:1px solid var(--grey-2);display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;background:#fff}
+.pitem{display:block;color:inherit;flex:0 0 25%;padding:26px 22px 22px;border-right:1px solid var(--grey-2);display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;background:#fff}
 .pitem:hover .pimg{transform:scale(1.05)}
 .pimg{width:100%;aspect-ratio:1/1;max-width:220px;display:grid;place-items:center;transition:transform .3s}
 .pimg svg{width:70%;height:auto;color:var(--navy)}
@@ -1305,13 +1305,12 @@ document.querySelectorAll('.dev[data-i],.th[data-i]').forEach(d => d.innerHTML =
 (function(){
   const box=$('hot'), track=box.querySelector('.track');
   const hot=PRODUCTS.filter(p=>p.hot).sort((a,b)=>b.hot-a.hot);
-  track.innerHTML=hot.map(p=>'<div class="pitem" data-code="'+p.code+'" role="button" tabindex="0"><div class="pimg">'+pic(p)+'</div><h3>'+esc(p.n)+'</h3><span>'+esc(p.code)+'</span></div>').join('');
+  track.innerHTML=hot.map(p=>'<a class="pitem" href="san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/"><div class="pimg">'+pic(p)+'</div><h3>'+esc(p.n)+'</h3><span>'+esc(p.code)+'</span></a>').join('');
   let i=0;
   const per=()=>innerWidth<=900?2:4;
   function go(k){ const max=Math.max(0,hot.length-per()); i=k<0?max:(k>max?0:k); track.style.transform='translateX(-'+(i*100/per())+'%)'; }
   box.querySelector('.l').onclick=()=>go(i-1); box.querySelector('.r').onclick=()=>go(i+1);
   addEventListener('resize',()=>go(i));
-  track.addEventListener('click',e=>{const it=e.target.closest('.pitem'); if(it){$('q').value=it.dataset.code; query=it.dataset.code; cur='all'; sub=null; page=1; renderTree(); renderGrid(); scrollToCat();}});
 })();
 
 /* catalogue */
