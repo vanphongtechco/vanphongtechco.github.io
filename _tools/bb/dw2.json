@@ -1,0 +1,2871 @@
+[
+{
+"i": 152,
+"code": "BXT-DSC100L",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DSC-100L-2.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích nhiệt quét vi sai (DSC) nhiệt độ thấp Drawell BXT-DSC100L",
+"d": "Dải DSC 0~±500 mW; nhiệt độ -130~600°C; tốc độ gia nhiệt 0,1~80°C/phút; độ phân giải 0,01°C; lưu lượng khí 0-200 mL/phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell BXT-DSC100L Low-Temperature Differential Scanning Calorimeter",
+"d": "DSC range 0~±500 mW; temperature -130~600°C; heating rate 0.1~80°C/min; resolution 0.01°C; gas flow 0-200 mL/min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell BXT-DSC100L 低温差示扫描量热仪",
+"d": "DSC量程0~±500 mW；温度-130~600°C；升温速率0.1~80°C/min；分辨率0.01°C；气体流量0-200 mL/min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 153,
+"code": "BXT-DSC100",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DSC-100-08.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích nhiệt quét vi sai (DSC) Drawell BXT-DSC100",
+"d": "Dải DSC 0~±500 mW; nhiệt độ phòng ~600°C; tốc độ gia nhiệt 0,1~80°C/phút; độ lặp lại ±0,1°C; lưu lượng khí 0-200 mL/phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell BXT-DSC100 Differential Scanning Calorimeter",
+"d": "DSC range 0~±500 mW; temperature RT~600°C; heating rate 0.1~80°C/min; repeatability ±0.1°C; gas flow 0-200 mL/min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell BXT-DSC100 差示扫描量热仪",
+"d": "DSC量程0~±500 mW；温度室温~600°C；升温速率0.1~80°C/min；重复性±0.1°C；气体流量0-200 mL/min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 154,
+"code": "BXT-DRS",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/Thermal-Conductivity-Meter-BXT-DRS-3.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo hệ số dẫn nhiệt phương pháp nguồn nhiệt mặt phẳng tức thời Drawell BXT-DRS",
+"d": "Dải đo 0,005-300 W/(m·K); nhiệt độ đo phòng ~130°C; đầu dò 7,5 mm và 15 mm; độ chính xác ±3%; thời gian đo 5~160 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell BXT-DRS Transient Plane Source Thermal Conductivity Meter",
+"d": "Range 0.005-300 W/(m·K); measuring temperature RT~130°C; probes 7.5 mm and 15 mm; accuracy ±3%; measuring time 5~160 s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell BXT-DRS 瞬态平面热源法导热系数测定仪",
+"d": "测试范围0.005-300 W/(m·K)；测量温度室温~130°C；探头直径7.5 mm和15 mm；精度±3%；测量时间5~160 s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 155,
+"code": "DW-W4",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-W4-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ phát xạ quang học (Arc/Spark-OES) phân tích kim loại Drawell DW-W4",
+"d": "Phân tích nhiều nguyên tố trong các nền kim loại Fe, Cu, Al, Ni, Co, Mg; kích thích hồ quang/tia lửa điện; điện cực vonfram; kèm máy tính và máy in. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-W4 Arc/Spark Optical Emission Spectrometer for Metal Analysis",
+"d": "Determines multiple elements in Fe, Cu, Al, Ni, Co, Mg and other metal matrices; arc/spark excitation; tungsten electrode; supplied with computer and printer. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-W4 电弧/火花直读光谱仪（金属分析）",
+"d": "可测定Fe、Cu、Al、Ni、Co、Mg等不同基体中多种元素；电弧/火花激发；钨电极；配电脑及打印机。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 156,
+"code": "DW-CS-8820T",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/CS-8820t-5.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích Cacbon và Lưu huỳnh Drawell DW-CS-8820T",
+"d": "Dải đo C và S 0,0001%-95%; C thấp 1 ppm~0,2%, C cao 0,2%~99,99999%; hấp thụ hồng ngoại; thời gian phân tích 25-60 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-CS-8820T Carbon and Sulfur Analyzer",
+"d": "C and S range 0.0001%-95%; low C 1 ppm~0.2%, high C 0.2%~99.99999%; infrared detection; analysis time adjustable 25-60 s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-CS-8820T 碳硫分析仪",
+"d": "碳、硫测量范围0.0001%-95%；低碳1 ppm~0.2%，高碳0.2%~99.99999%；红外检测；分析时间25-60 s可调。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 157,
+"code": "DW-CS-8800S",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/CS-8800S-2.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích Cacbon và Lưu huỳnh hồng ngoại Drawell DW-CS-8800S",
+"d": "Dải đo C và S 0,000001%~99,999999%; C thấp 1 ppm~0,2%; S thấp 1 ppm~0,3%; thời gian phân tích 30~40 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-CS-8800S Infrared Carbon and Sulfur Analyzer",
+"d": "C and S range 0.000001%~99.999999%; low C 1 ppm~0.2%; low S 1 ppm~0.3%; analysis time 30~40 s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-CS-8800S 红外碳硫分析仪",
+"d": "碳、硫测量范围0.000001%~99.999999%；低碳1 ppm~0.2%；低硫1 ppm~0.3%；分析时间30~40 s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 158,
+"code": "DW-KDN-D",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2023/07/DW-KDN-D-Series-Digester1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bếp phá mẫu Kjeldahl điều khiển nhiệt độ theo chương trình hiển thị số Drawell DW-KDN-D",
+"d": "Phá mẫu đồng thời 4/8/12/20 mẫu, ống 300 mL; nhiệt độ phòng ~550°C; độ chính xác ±1°C; tốc độ gia nhiệt 50°C/phút; công suất 1500 W. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-KDN-D Series Digital Programmable Digestion Furnace",
+"d": "Digests 4/8/12/20 samples at once, 300 mL tubes; RT~550°C; accuracy ±1°C; heating rate 50°C/min; power 1500 W. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-KDN-D 系列数显程序控温消化炉",
+"d": "可同时消化4/8/12/20个样品，消化管300 mL；室温~550°C；控温精度±1°C；升温速率50°C/min；功率1500 W。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 159,
+"code": "LB-N",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/LB-N-Light-ChamberFluorine-free-Refrigeration.png",
+"c": "tn",
+"s": 1,
+"vi": {
+"n": "Tủ chiếu sáng nuôi cấy làm lạnh không flo Drawell LB-N",
+"d": "Dung tích 175/275/375/475/1075 L; có đèn 10~55°C, không đèn 0~55°C; dao động ±1°C; cường độ sáng tới 30000 lx; chương trình 30 đoạn. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell LB-N Light Chamber (Fluorine-free Refrigeration)",
+"d": "Capacity 175/275/375/475/1075 L; 10~55°C with light, 0~55°C without; fluctuation ±1°C; light up to 30000 lx; 30-segment program. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell LB-N 光照培养箱（无氟制冷）",
+"d": "容积175/275/375/475/1075 L；有光照10~55°C，无光照0~55°C；波动度±1°C；光照强度最高30000 lx；30段程序。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 160,
+"code": "DW-LAS-A",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-LAS-A-Series-Hot-Air-Sterilizer-2.jpg",
+"c": "yt",
+"s": 2,
+"vi": {
+"n": "Tủ tiệt trùng khí nóng Drawell DW-LAS-A",
+"d": "Dung tích 25/54/81/138/252 L; nhiệt độ RT+10~250°C; độ phân giải 0,1°C; độ ổn định ±1°C; hẹn giờ 1~9999 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-LAS-A Series Hot Air Sterilizer",
+"d": "Volume 25/54/81/138/252 L; temperature RT+10~250°C; resolution 0.1°C; stability ±1°C; timer 1~9999 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-LAS-A 系列热空气灭菌器",
+"d": "容积25/54/81/138/252 L；温度RT+10~250°C；分辨率0.1°C；稳定度±1°C；定时1~9999 min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 161,
+"code": "DW-LVO",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-LVO-6050-Vacuum-Drying-Oven-2-副本.jpg",
+"c": "tn",
+"s": 1,
+"vi": {
+"n": "Tủ sấy chân không Drawell DW-LVO",
+"d": "Dung tích 25/54/91/215 L; nhiệt độ RT+10~250°C hoặc RT+10~200°C; dao động ±1°C; độ chân không <133 Pa; độ phân giải 0,1°C. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-LVO Vacuum Drying Oven",
+"d": "Volume 25/54/91/215 L; temperature RT+10~250°C or RT+10~200°C; fluctuation ±1°C; vacuum <133 Pa; resolution 0.1°C. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-LVO 真空干燥箱",
+"d": "容积25/54/91/215 L；温度RT+10~250°C或RT+10~200°C；波动度±1°C；真空度<133 Pa；分辨率0.1°C。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 162,
+"code": "DW300/DW600",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW300DW600-Basic-Power-Supply1.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bộ nguồn điện di cơ bản Drawell DW300/DW600",
+"d": "Ổn áp hoặc ổn dòng; DW300: 5~300 V, 1~300 mA, 90 W; DW600: 5~600 V, 1~200 mA, 120 W; hẹn giờ 1 phút~9 giờ 59 phút; màn LED. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW300/DW600 Basic Electrophoresis Power Supply",
+"d": "Constant voltage or current; DW300 5~300 V, 1~300 mA, 90 W; DW600 5~600 V, 1~200 mA, 120 W; timer 1 min~9 h 59 min; LED display. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW300/DW600 基础型电泳仪电源",
+"d": "恒压或恒流；DW300：5~300 V，1~300 mA，90 W；DW600：5~600 V，1~200 mA，120 W；定时1 min~9 h 59 min；LED显示。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 163,
+"code": "DW-C",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-C-Series-Universal-Power-Supply-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bộ nguồn điện di đa năng Drawell DW-C",
+"d": "Các model DW-200C/300C/600C; điện áp tới 600 V; dòng tới 2000 mA; công suất tới 300 W; ổn áp, ổn dòng, ổn công suất; lưu 10 phương pháp. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-C Series Universal Electrophoresis Power Supply",
+"d": "Models DW-200C/300C/600C; up to 600 V; up to 2000 mA; up to 300 W; constant V, I and P; LCD; stores 10 methods. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-C 系列通用电泳仪电源",
+"d": "型号DW-200C/300C/600C；电压最高600 V；电流最高2000 mA；功率最高300 W；恒压、恒流、恒功率；存储10种方法。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 164,
+"code": "DW-E",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-E-Series-Universal-Power-Supply-1.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bộ nguồn điện di đa năng cao áp Drawell DW-E",
+"d": "Các model DW300E/600E/1000E; điện áp tới 1000 V; dòng tới 500 mA; công suất tới 300 W; ổn áp, ổn dòng, ổn công suất; lưu 100 phương pháp. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-E Series Universal Electrophoresis Power Supply",
+"d": "Models DW300E/600E/1000E; up to 1000 V; up to 500 mA; up to 300 W; constant V, I and P; LCD; stores 100 methods. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-E 系列通用电泳仪电源",
+"d": "型号DW300E/600E/1000E；电压最高1000 V；电流最高500 mA；功率最高300 W；恒压、恒流、恒功率；存储100种方法。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 165,
+"code": "DW04S-3C/DW04S-3E",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/Gel-Documentation-System-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Hệ thống chụp ảnh gel điện di Drawell DW04S-3C/DW04S-3E",
+"d": "Camera CCD độ nhạy cao 1,4 MP (1280×1024) hoặc 5,0 MP (2560×1920); 10 bit; SNR ≥56 dB; phát hiện DNA nhuộm EB dưới 20 pg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW04S-3C/DW04S-3E Gel Documentation System",
+"d": "High-sensitivity CCD camera, 1.4 MP (1280×1024) or 5.0 MP (2560×1920); 10 bit; SNR ≥56 dB; detects EB-stained dsDNA below 20 pg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW04S-3C/DW04S-3E 凝胶成像系统",
+"d": "低照度高分辨率CCD相机，1.4 MP（1280×1024）或5.0 MP（2560×1920）；10 bit；信噪比≥56 dB；可检测20 pg以下EB染色双链DNA。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 166,
+"code": "DW-CX2B",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-CX2B-Nucleic-Acid-Sequencing-System-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di giải trình tự axit nucleic Drawell DW-CX2B",
+"d": "Tấm kính 350×350 mm; gel 330×320 mm, dày 0,4 mm; 50/62/74/100 mẫu; thể tích đệm 750 mL; khối lượng 13,2 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-CX2B Nucleic Acid Sequencing Electrophoresis System",
+"d": "Glass plate 350×350 mm; gel 330×320 mm, 0.4 mm thick; 50/62/74/100 samples; buffer volume 750 mL; weight 13.2 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-CX2B 核酸测序电泳槽",
+"d": "玻璃板350×350 mm；凝胶330×320 mm，厚0.4 mm；样品数50/62/74/100；缓冲液750 mL；重量13.2 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 167,
+"code": "DW-SCZ4+",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SCZ4-Vertical-Electrophoresis-Tank-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di đứng 4 gel Drawell DW-SCZ4+",
+"d": "Tấm kính 100×100 mm; gel 82×88 mm, dày 1,0/1,5 mm; 1~4 gel; 11~60 mẫu; thể tích đệm 1000 mL. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SCZ4+ Vertical Electrophoresis Tank (4 Gels)",
+"d": "Glass plate 100×100 mm; gel 82×88 mm, 1.0/1.5 mm thick; 1~4 gels; 11~60 samples; buffer volume 1000 mL. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SCZ4+ 垂直电泳槽（4胶）",
+"d": "玻璃板100×100 mm；凝胶82×88 mm，厚1.0/1.5 mm；1~4块胶；样品数11~60；缓冲液1000 mL。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 168,
+"code": "DW-SCZ2+",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SCZ2-Vertical-Electrophoresis-Tank.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di đứng 2 gel Drawell DW-SCZ2+",
+"d": "Tấm kính 100×100 mm; gel 82×88 mm, dày 0,75/1,0/1,5 mm; 1~2 gel; 11~30 mẫu; thể tích đệm 750 mL. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SCZ2+ Vertical Electrophoresis Tank (2 Gels)",
+"d": "Glass plate 100×100 mm; gel 82×88 mm, 0.75/1.0/1.5 mm thick; 1~2 gels; 11~30 samples; buffer volume 750 mL. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SCZ2+ 垂直电泳槽（2胶）",
+"d": "玻璃板100×100 mm；凝胶82×88 mm，厚0.75/1.0/1.5 mm；1~2块胶；样品数11~30；缓冲液750 mL。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 169,
+"code": "DW-CZ-BL",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-CZ-BL-series-Vertical-Electrophoresis-Tank-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di đứng cỡ lớn Drawell DW-CZ-BL",
+"d": "Tấm kính 216×220 mm; gel 186×205 mm, dày 1,0 mm; 1~2 gel; 25~104 mẫu; thể tích đệm 3500 mL. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-CZ-BL Series Large Vertical Electrophoresis Tank",
+"d": "Glass plate 216×220 mm; gel 186×205 mm, 1.0 mm thick; 1~2 gels; 25~104 samples; buffer volume 3500 mL. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-CZ-BL 系列大型垂直电泳槽",
+"d": "玻璃板216×220 mm；凝胶186×205 mm，厚1.0 mm；1~2块胶；样品数25~104；缓冲液3500 mL。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 170,
+"code": "DW-SPHT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SPHT-Horizontal-Electrophoresis-Tank-1.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di ngang cỡ lớn Drawell DW-SPHT",
+"d": "Kích thước gel 245×250 mm; 1~6 hàng lược; 19~364 mẫu; thể tích đệm 2000 mL; khối lượng 3,8 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SPHT Large Horizontal Electrophoresis Tank",
+"d": "Gel size 245×250 mm; 1~6 comb rows; 19~364 samples; buffer volume 2000 mL; weight 3.8 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SPHT 大型水平电泳槽",
+"d": "凝胶尺寸245×250 mm；1~6排梳子；样品数19~364；缓冲液2000 mL；重量3.8 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 171,
+"code": "DW-SPGT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SPGT-Horizontal-Electrophoresis-Tank-1.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di ngang Drawell DW-SPGT",
+"d": "Gel 200×200/200×150/200×100 mm; 1~6 hàng lược; 17~104 mẫu; thể tích đệm 1800 mL; khối lượng 3,3 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SPGT Horizontal Electrophoresis Tank",
+"d": "Gel 200×200/200×150/200×100 mm; 1~6 comb rows; 17~104 samples; buffer volume 1800 mL; weight 3.3 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SPGT 水平电泳槽",
+"d": "凝胶200×200/200×150/200×100 mm；1~6排梳子；样品数17~104；缓冲液1800 mL；重量3.3 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 172,
+"code": "DW-SPFT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SPFT-Horizontal-Electrophoresis-Tank-1.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di ngang Drawell DW-SPFT",
+"d": "Gel 130×130/78×100/48×75 mm; 1~4 hàng lược; 3~104 mẫu; thể tích đệm 600 mL; đổ gel trực tiếp; khối lượng 1,7 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SPFT Horizontal Electrophoresis Tank",
+"d": "Gel 130×130/78×100/48×75 mm; 1~4 comb rows; 3~104 samples; buffer volume 600 mL; gel casting; weight 1.7 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SPFT 水平电泳槽",
+"d": "凝胶130×130/78×100/48×75 mm；1~4排梳子；样品数3~104；缓冲液600 mL；灌胶制胶；重量1.7 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 173,
+"code": "DW-SPCT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SPCT-Horizontal-Electrophoresis-Tank-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di ngang Drawell DW-SPCT",
+"d": "Gel 120×120/120×60/60×120/60×60 mm; 1~4 hàng lược; 1~100 mẫu; thể tích đệm 550 mL; khay đúc gel; khối lượng 1,1 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SPCT Horizontal Electrophoresis Tank",
+"d": "Gel 120×120/120×60/60×120/60×60 mm; 1~4 comb rows; 1~100 samples; buffer volume 550 mL; gel box casting; weight 1.1 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SPCT 水平电泳槽",
+"d": "凝胶120×120/120×60/60×120/60×60 mm；1~4排梳子；样品数1~100；缓冲液550 mL；制胶盒制胶；重量1.1 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 174,
+"code": "DW-SPBT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SPBT-Horizontal-Electrophoresis-Tank-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di ngang cỡ nhỏ Drawell DW-SPBT",
+"d": "Gel 78×100 mm; 1~2 hàng lược; 10~30 mẫu; thể tích đệm 400 mL; khay đúc gel; khối lượng 0,6 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SPBT Small Horizontal Electrophoresis Tank",
+"d": "Gel 78×100 mm; 1~2 comb rows; 10~30 samples; buffer volume 400 mL; gel box casting; weight 0.6 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SPBT 小型水平电泳槽",
+"d": "凝胶78×100 mm；1~2排梳子；样品数10~30；缓冲液400 mL；制胶盒制胶；重量0.6 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 175,
+"code": "DW-SPAT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SPAT-Horizontal-Electrophoresis-Tank-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di ngang mini Drawell DW-SPAT",
+"d": "Gel 48×75 mm; 1~2 hàng lược; 3~18 mẫu; thể tích đệm 150 mL; khay đúc gel; khối lượng 0,4 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SPAT Mini Horizontal Electrophoresis Tank",
+"d": "Gel 48×75 mm; 1~2 comb rows; 3~18 samples; buffer volume 150 mL; gel box casting; weight 0.4 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SPAT 迷你水平电泳槽",
+"d": "凝胶48×75 mm；1~2排梳子；样品数3~18；缓冲液150 mL；制胶盒制胶；重量0.4 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 176,
+"code": "DW-SP7A",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SP7A-Electrophoresis-Tank-2.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di màng cellulose acetate Drawell DW-SP7A",
+"d": "Kích thước màng 66×250 và 82×250 mm; thể tích đệm 560 mL; kích thước 318×175×65 mm; khối lượng 1,0 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SP7A Cellulose Acetate Membrane Electrophoresis Tank",
+"d": "Membrane size 66×250 and 82×250 mm; buffer volume 560 mL; dimensions 318×175×65 mm; weight 1.0 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SP7A 醋酸纤维薄膜电泳槽",
+"d": "薄膜尺寸66×250及82×250 mm；缓冲液560 mL；外形尺寸318×175×65 mm；重量1.0 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 177,
+"code": "DW-SP7",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/DW-SP7-Electrophoresis-Tank-1.jpg",
+"c": "tn",
+"s": 8,
+"vi": {
+"n": "Bể điện di màng cellulose acetate cỡ lớn Drawell DW-SP7",
+"d": "Kích thước màng 70×250 mm ×2 và 90×250 mm ×2; thể tích đệm 1000 mL; kích thước 350×260×65 mm; khối lượng 1,6 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-SP7 Large Cellulose Acetate Membrane Electrophoresis Tank",
+"d": "Membrane size 70×250 mm ×2 and 90×250 mm ×2; buffer volume 1000 mL; dimensions 350×260×65 mm; weight 1.6 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-SP7 大型醋酸纤维薄膜电泳槽",
+"d": "薄膜尺寸70×250 mm×2及90×250 mm×2；缓冲液1000 mL；外形尺寸350×260×65 mm；重量1.6 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 178,
+"code": "DW-FH1200/1500/1800",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/Integrated-All-Steel-Fume-Hood.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ hút khí độc toàn thép nguyên khối Drawell DW-FH1200/1500/1800",
+"d": "Vùng làm việc rộng 1030/1300/1600 mm, sâu 660 mm; tốc độ hút 0,25-0,45 m/s điều chỉnh được; đèn LED 28/30/40 W; nguồn 220 V/50 Hz. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-FH1200/1500/1800 Integrated All-Steel Fume Hood",
+"d": "Work area width 1030/1300/1600 mm, depth 660 mm; exhaust speed 0.25-0.45 m/s adjustable; LED lamp 28/30/40 W; power 220 V/50 Hz. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-FH1200/1500/1800 一体式全钢通风橱",
+"d": "工作区宽1030/1300/1600 mm，深660 mm；排风速度0.25-0.45 m/s可调；LED灯28/30/40 W；电源220 V/50 Hz。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 179,
+"code": "ZJ-TFG-12/15/18",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/all-steel-fume-hood-1-1.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ hút khí độc toàn thép Drawell ZJ-TFG-12/15/18",
+"d": "Vùng làm việc 985/1285/1585×595×1185 mm; vận tốc mặt 0,4-0,6 m/s; lưu lượng 1080-1700 m³/h; kính cường lực chống nổ 5 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell ZJ-TFG-12/15/18 All-Steel Fume Hood",
+"d": "Work area 985/1285/1585×595×1185 mm; face velocity 0.4-0.6 m/s; airflow 1080-1700 m³/h; 5 mm explosion-proof tempered glass sash. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell ZJ-TFG-12/15/18 全钢通风橱",
+"d": "工作区985/1285/1585×595×1185 mm；面风速0.4-0.6 m/s；风量1080-1700 m³/h；5 mm防爆钢化玻璃视窗。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 180,
+"code": "SW-TFG-12/15/18",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/Fume-Hood-2.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ hút khí độc Drawell SW-TFG-12/15/18",
+"d": "Vùng làm việc 1030/1300/1600×695×580 mm; tốc độ gió 0,25-0,45 m/s; áp suất đầu vào >0,5 Pa; công suất 300 W. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell SW-TFG-12/15/18 Fume Hood",
+"d": "Work area 1030/1300/1600×695×580 mm; air speed 0.25-0.45 m/s; inlet pressure >0.5 Pa; power 300 W. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell SW-TFG-12/15/18 通风橱",
+"d": "工作区1030/1300/1600×695×580 mm；风速0.25-0.45 m/s；进风压力>0.5 Pa；功率300 W。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 181,
+"code": "PH400F",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/PH400F-pH-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy đo pH để bàn Drawell PH400F",
+"d": "Dải pH -2,000~20,000; độ chính xác ±0,002 pH; mV -2000~2000; nhiệt độ -10~135°C; hiệu chuẩn tới 5 điểm; chống nước IP54. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell PH400F Benchtop pH Meter",
+"d": "pH -2.000~20.000; accuracy ±0.002 pH; mV -2000~2000; temperature -10~135°C; up to 5 calibration points; IP54. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell PH400F 台式pH计",
+"d": "pH范围-2.000~20.000；精度±0.002 pH；mV -2000~2000；温度-10~135°C；最多5点校准；IP54防水。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 182,
+"code": "PH110B",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/PH110B-pH-Meter-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy đo pH cầm tay Drawell PH110B",
+"d": "Dải pH 0,00~14,00; độ chính xác ±0,03 pH; mV -1400~1400; hiệu chuẩn tới 2 điểm; bù nhiệt thủ công; chống nước IP65. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell PH110B Portable pH Meter",
+"d": "pH 0.00~14.00; accuracy ±0.03 pH; mV -1400~1400; up to 2 calibration points; manual temperature compensation; IP65. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell PH110B 便携式pH计",
+"d": "pH范围0.00~14.00；精度±0.03 pH；mV -1400~1400；最多2点校准；手动温度补偿；IP65防水。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 183,
+"code": "M510T-A",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/M510T-A-Multi-parameter-Analyzer-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy đo đa chỉ tiêu Drawell M510T-A",
+"d": "pH -2,000~20,000; mV/ORP ±2000 mV; độ dẫn 0,000 μS/cm~3000 mS/cm; TDS tới 1000 ppt; độ mặn 0~80 ppt; nhiệt độ -10~135°C. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell M510T-A Multi-parameter Analyzer",
+"d": "pH -2.000~20.000; mV/ORP ±2000 mV; conductivity 0.000 μS/cm~3000 mS/cm; TDS up to 1000 ppt; salinity 0~80 ppt; -10~135°C. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell M510T-A 多参数分析仪",
+"d": "pH -2.000~20.000；mV/ORP ±2000 mV；电导率0.000 μS/cm~3000 mS/cm；TDS最高1000 ppt；盐度0~80 ppt；温度-10~135°C。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 184,
+"code": "M600L",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/04/M600L-Multi-parameter-Analyzer-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy đo đa chỉ tiêu có oxy hòa tan Drawell M600L",
+"d": "pH -2,000~20,000; mV ±2000 mV; độ dẫn 0,000 μS/cm~3000 mS/cm; TDS tới 1000 g/L; DO 0,00~99,99 mg/L; độ mặn 0~8%. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell M600L Multi-parameter Analyzer with Dissolved Oxygen",
+"d": "pH -2.000~20.000; mV ±2000 mV; conductivity 0.000 μS/cm~3000 mS/cm; TDS up to 1000 g/L; DO 0.00~99.99 mg/L; salinity 0~8%. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell M600L 多参数分析仪（含溶解氧）",
+"d": "pH -2.000~20.000；mV ±2000 mV；电导率0.000 μS/cm~3000 mS/cm；TDS最高1000 g/L；溶解氧0.00~99.99 mg/L；盐度0~8%。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 185,
+"code": "BSC-700IIA2-EP",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/desktop-cabinet白底.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ an toàn sinh học cấp II A2 để bàn Drawell BSC-700IIA2-EP",
+"d": "Độ sạch Class 100 @ ≥0,5 μm; lọc HEPA H14 ≥99,995% @ 0,3 μm; tốc độ gió vào ≥0,55 m/s; vùng làm việc 600×500×520 mm; đèn LED 8 W/UV 20 W. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell BSC-700IIA2-EP Desktop Class II A2 Biosafety Cabinet",
+"d": "Class 100 @ ≥0.5 μm; HEPA H14 ≥99.995% @ 0.3 μm; inflow ≥0.55 m/s; work area 600×500×520 mm; LED 8 W/UV 20 W. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell BSC-700IIA2-EP 台式II级A2型生物安全柜",
+"d": "洁净度100级@≥0.5 μm；H14 HEPA过滤效率≥99.995% @0.3 μm；吸入风速≥0.55 m/s；工作区600×500×520 mm；LED灯8 W/紫外灯20 W。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 186,
+"code": "BSC-1000/1300/1600IIB2",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/Class-II-B2-Biological-Safety-Cabinet-3.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ an toàn sinh học cấp II B2 Drawell BSC-1000/1300/1600IIB2",
+"d": "Độ sạch Class 100 (US 209E); vùng làm việc rộng 1040/1340/1640 mm; tốc độ gió vào 0,55 m/s; độ ồn ≤65 dB(A); độ sáng ≥650 lx. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell BSC-1000/1300/1600IIB2 Class II B2 Biological Safety Cabinet",
+"d": "Class 100 (US 209E); work area width 1040/1340/1640 mm; inflow velocity 0.55 m/s; noise ≤65 dB(A); illumination ≥650 lx. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell BSC-1000/1300/1600IIB2 II级B2型生物安全柜",
+"d": "洁净度100级（美联邦209E）；工作区宽1040/1340/1640 mm；吸入风速0.55 m/s；噪音≤65 dB(A)；照度≥650 lx。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 187,
+"code": "BSC-1000/1300/1600IIA2",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/Class-II-A2-Biological-Safety-Cabinet-5.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ an toàn sinh học cấp II A2 Drawell BSC-1000/1300/1600IIA2",
+"d": "Độ sạch Class 100 (US 209E); tốc độ gió xuống ≥0,35 m/s, gió vào ≥0,55 m/s; độ ồn ≤58 dB(A); vùng làm việc rộng 1000/1300/1600 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell BSC-1000/1300/1600IIA2 Class II A2 Biological Safety Cabinet",
+"d": "Class 100 (US 209E); downflow ≥0.35 m/s, inflow ≥0.55 m/s; noise ≤58 dB(A); work area width 1000/1300/1600 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell BSC-1000/1300/1600IIA2 II级A2型生物安全柜",
+"d": "洁净度100级（美联邦209E）；下降风速≥0.35 m/s，吸入风速≥0.55 m/s；噪音≤58 dB(A)；工作区宽1000/1300/1600 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 188,
+"code": "BSC-1000/1300/1600IIB2",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/All-Steel-Class-II-A2-1.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ an toàn sinh học cấp II B2 toàn thép Drawell BSC-1000/1300/1600IIB2",
+"d": "Thải khí 100%; HEPA ISO 5 (Class 100) ≥99,995% @ 0,3 μm; gió vào ≥0,55 m/s, gió xuống ≥0,3 m/s; vùng làm việc rộng 1040/1340/1640 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell BSC-1000/1300/1600IIB2 All-Steel Class II B2 Biological Safety Cabinet",
+"d": "100% air exhaust; HEPA ISO 5 (Class 100) ≥99.995% @ 0.3 μm; inflow ≥0.55 m/s, downflow ≥0.3 m/s; work area width 1040/1340/1640 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell BSC-1000/1300/1600IIB2 全钢II级B2型生物安全柜",
+"d": "100%外排；HEPA ISO 5（100级）≥99.995% @0.3 μm；吸入风速≥0.55 m/s，下降风速≥0.3 m/s；工作区宽1040/1340/1640 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 189,
+"code": "BSC-1000/1300/1600IIA2",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/Class-II-A2-Biosafety-Cabinet-1.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ an toàn sinh học cấp II A2 toàn thép Drawell BSC-1000/1300/1600IIA2",
+"d": "Tuần hoàn 70%, thải 30%; HEPA ISO 5 (Class 100) ≥99,995% @ 0,3 μm; gió vào ≥0,55 m/s, gió xuống ≥0,3 m/s; vùng làm việc rộng 1040/1340/1640 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell BSC-1000/1300/1600IIA2 All-Steel Class II A2 Biological Safety Cabinet",
+"d": "70% recirculation, 30% exhaust; HEPA ISO 5 (Class 100) ≥99.995% @ 0.3 μm; inflow ≥0.55 m/s, downflow ≥0.3 m/s; width 1040/1340/1640 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell BSC-1000/1300/1600IIA2 全钢II级A2型生物安全柜",
+"d": "70%内循环、30%外排；HEPA ISO 5（100级）≥99.995% @0.3 μm；吸入风速≥0.55 m/s，下降风速≥0.3 m/s；工作区宽1040/1340/1640 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 190,
+"code": "SW-CJ-1FD",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/Vertical-Laminar-Flow-Cabinet-SW-CJ-1FD.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ cấy vô trùng thổi đứng Drawell SW-CJ-1FD",
+"d": "Độ sạch Class 100 (US 209E); tốc độ gió 0,25-0,45 m/s (2 cấp); độ ồn ≤62 dB; độ sáng ≥300 lx; vùng làm việc 870×580×515 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell SW-CJ-1FD Vertical Laminar Flow Cabinet",
+"d": "Class 100 (US 209E); air speed 0.25-0.45 m/s (2 speeds); noise ≤62 dB; illumination ≥300 lx; work area 870×580×515 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell SW-CJ-1FD 垂直流超净工作台",
+"d": "洁净度100级（美联邦209E）；风速0.25-0.45 m/s（两档）；噪音≤62 dB；照度≥300 lx；工作区870×580×515 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 191,
+"code": "SW-CJ-1FB/SW-CJ-2FB",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/Vertical-and-Horizontal-Laminar-Flow-Cabinet-SW-CJ-1FB-1.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ cấy vô trùng thổi đứng và thổi ngang Drawell SW-CJ-1FB/SW-CJ-2FB",
+"d": "Độ sạch Class 100 (US 209E); tốc độ gió 0,25-0,45 m/s (3 cấp); độ ồn ≤62 dB(A); vùng làm việc 870×520×620 hoặc 1325×520×620 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell SW-CJ-1FB/SW-CJ-2FB Vertical and Horizontal Laminar Flow Cabinet",
+"d": "Class 100 (US 209E); air speed 0.25-0.45 m/s (3 speeds); noise ≤62 dB(A); work area 870×520×620 or 1325×520×620 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell SW-CJ-1FB/SW-CJ-2FB 垂直/水平流超净工作台",
+"d": "洁净度100级（美联邦209E）；风速0.25-0.45 m/s（三档可调）；噪音≤62 dB(A)；工作区870×520×620或1325×520×620 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 192,
+"code": "HS-1300U",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/Horizontal-Laminar-Flow-Cabinet-HS-1300U.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ cấy vô trùng thổi ngang Drawell HS-1300U",
+"d": "Độ sạch Class 100 (US 209E); tốc độ gió 0,25-0,45 m/s (3 cấp); độ ồn ≤62 dB(A); độ sáng ≥300 lx; vùng làm việc 1140×570×700 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell HS-1300U Horizontal Laminar Flow Cabinet",
+"d": "Class 100 (US 209E); air speed 0.25-0.45 m/s (3 speeds); noise ≤62 dB(A); illumination ≥300 lx; work area 1140×570×700 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell HS-1300U 水平流超净工作台",
+"d": "洁净度100级（美联邦209E）；风速0.25-0.45 m/s（三档可调）；噪音≤62 dB(A)；照度≥300 lx；工作区1140×570×700 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 193,
+"code": "HS-840U",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/Horizontal-Laminar-Flow-Cabinet-HS-840U-2.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ cấy vô trùng thổi ngang Drawell HS-840U",
+"d": "Độ sạch Class 100 (US 209E); tốc độ gió 0,25-0,45 m/s (3 cấp); độ ồn ≤62 dB(A); công suất 490 W; vùng làm việc 700×570×700 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell HS-840U Horizontal Laminar Flow Cabinet",
+"d": "Class 100 (US 209E); air speed 0.25-0.45 m/s (3 speeds); noise ≤62 dB(A); power 490 W; work area 700×570×700 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell HS-840U 水平流超净工作台",
+"d": "洁净度100级（美联邦209E）；风速0.25-0.45 m/s（三档可调）；噪音≤62 dB(A)；功率490 W；工作区700×570×700 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 194,
+"code": "DO400F",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/DO400F-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy đo oxy hòa tan để bàn Drawell DO400F",
+"d": "Cảm biến cực phổ; DO 0,00~99,99 ppm, độ chính xác ±0,1 ppm; độ bão hòa 0~600%; nhiệt độ -10~135°C; bù áp suất khí quyển; IP54. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DO400F Benchtop Dissolved Oxygen Meter",
+"d": "Polarographic sensor; DO 0.00~99.99 ppm, accuracy ±0.1 ppm; saturation 0~600%; temperature -10~135°C; barometric compensation; IP54. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DO400F 台式溶解氧仪",
+"d": "极谱式传感器；溶解氧0.00~99.99 ppm，精度±0.1 ppm；饱和度0~600%；温度-10~135°C；气压补偿；IP54防水。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 195,
+"code": "DO210E",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/DO210E-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy đo oxy hòa tan cầm tay Drawell DO210E",
+"d": "Cảm biến cực phổ; DO 0,00~20,00 mg/L, độ chính xác ±0,1 mg/L; độ bão hòa 0~200%; nhiệt độ -5~110°C; chống nước IP65. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DO210E Portable Dissolved Oxygen Meter",
+"d": "Polarographic sensor; DO 0.00~20.00 mg/L, accuracy ±0.1 mg/L; saturation 0~200%; temperature -5~110°C; IP65. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DO210E 便携式溶解氧仪",
+"d": "极谱式传感器；溶解氧0.00~20.00 mg/L，精度±0.1 mg/L；饱和度0~200%；温度-5~110°C；IP65防水。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 196,
+"code": "EC110B",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/EC110B-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy đo độ dẫn điện cầm tay Drawell EC110B",
+"d": "Dải đo 0,00 μS/cm~100 mS/cm; độ phân giải tối thiểu 0,01 μS/cm; độ chính xác ±1,5% FS; nhiệt độ tham chiếu 25°C; chống nước IP65. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell EC110B Portable Conductivity Meter",
+"d": "Range 0.00 μS/cm~100 mS/cm; resolution down to 0.01 μS/cm; accuracy ±1.5% FS; reference temperature 25°C; IP65. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell EC110B 便携式电导率仪",
+"d": "量程0.00 μS/cm~100 mS/cm；最小分辨率0.01 μS/cm；精度±1.5% FS；参比温度25°C；IP65防水。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 197,
+"code": "EC100B",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/EC100B-Conductivity-Meter-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy đo độ dẫn điện để bàn Drawell EC100B",
+"d": "Dải đo 0,00 μS/cm~100 mS/cm; độ phân giải tối thiểu 0,01 μS/cm; độ chính xác ±1,5% FS; nhiệt độ tham chiếu 25°C; chống nước IP54. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell EC100B Benchtop Conductivity Meter",
+"d": "Range 0.00 μS/cm~100 mS/cm; resolution down to 0.01 μS/cm; accuracy ±1.5% FS; reference temperature 25°C; IP54. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell EC100B 台式电导率仪",
+"d": "量程0.00 μS/cm~100 mS/cm；最小分辨率0.01 μS/cm；精度±1.5% FS；参比温度25°C；IP54防水。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 198,
+"code": "dPette 8-channel",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/dPette-8-channel-Pipette-8-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Micropipet điện tử đa năng 8 kênh Drawell dPette",
+"d": "8 kênh; dải thể tích 0,5-10 μL, 10-100 μL, 30-300 μL; bước chỉnh 0,01/0,1/1 μL; sai số tại thể tích lớn nhất ≤2%. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell dPette Multifunctional 8-Channel Electronic Pipette",
+"d": "8 channels; volume ranges 0.5-10 μL, 10-100 μL, 30-300 μL; increments 0.01/0.1/1 μL; accuracy error at max volume ≤2%. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell dPette 多功能8道电动移液器",
+"d": "8通道；量程0.5-10 μL、10-100 μL、30-300 μL；增量0.01/0.1/1 μL；最大量程准确度误差≤2%。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 199,
+"code": "ESP",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/DW-ESP-Electronic-Single-Pipette-8.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Micropipet điện tử đơn kênh Drawell ESP",
+"d": "Đơn kênh; các model ESP10/ESP100/ESP300 với dải 0,5-10 μL, 5-100 μL, 20-300 μL; có thêm dải 50-1200 μL. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell ESP Electronic Single-Channel Pipette",
+"d": "Single channel; models ESP10/ESP100/ESP300 covering 0.5-10 μL, 5-100 μL, 20-300 μL; 50-1200 μL range also available. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell ESP 电动单道移液器",
+"d": "单通道；型号ESP10/ESP100/ESP300，量程0.5-10 μL、5-100 μL、20-300 μL；另有50-1200 μL量程。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 200,
+"code": "EPP12",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/EPP12-MultiChannel-Pipette-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Micropipet cơ 12 kênh Drawell EPP12",
+"d": "12 kênh; dải 1-10, 2-20, 5-50, 20-200, 30-300 μL; hấp tiệt trùng toàn bộ ở 121°C trong 20 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell EPP12 12-Channel Pipette",
+"d": "12 channels; volume ranges 1-10, 2-20, 5-50, 20-200, 30-300 μL; fully autoclavable at 121°C for 20 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell EPP12 12道移液器",
+"d": "12通道；量程1-10、2-20、5-50、20-200、30-300 μL；整支可121°C高压灭菌20分钟。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 201,
+"code": "EPP8",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/白底1000阿里-8.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Micropipet cơ 8 kênh Drawell EPP8",
+"d": "8 kênh; dải 1-10, 2-20, 5-50, 20-200, 30-300 μL; hấp tiệt trùng toàn bộ ở 121°C trong 20 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell EPP8 8-Channel Pipette",
+"d": "8 channels; volume ranges 1-10, 2-20, 5-50, 20-200, 30-300 μL; fully autoclavable at 121°C for 20 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell EPP8 8道移液器",
+"d": "8通道；量程1-10、2-20、5-50、20-200、30-300 μL；整支可121°C高压灭菌20分钟。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 202,
+"code": "IP/IPP",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/IP-IPP-Pipette（5）.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Micropipet đơn kênh điều chỉnh thể tích hấp tiệt trùng được Drawell IP/IPP",
+"d": "Đơn kênh; 10 dải từ 0,1-2 μL đến 1000-10000 μL; dòng IPP hấp tiệt trùng toàn bộ ở 121°C trong 20 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell IP/IPP Adjustable Autoclavable Pipette",
+"d": "Single channel; 10 ranges from 0.1-2 μL to 1000-10000 μL; IPP series fully autoclavable at 121°C for 20 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell IP/IPP 可调可高压灭菌移液器",
+"d": "单通道；10种量程，0.1-2 μL至1000-10000 μL；IPP系列整支可121°C高压灭菌20分钟。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 203,
+"code": "EP/EPP",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/EP-Pipette-11.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Micropipet đơn kênh điều chỉnh thể tích Drawell EP/EPP",
+"d": "Đơn kênh; 9 dải từ 0,1-2 μL đến 1000-5000 μL; dòng EP không hấp, dòng EPP hấp tiệt trùng toàn bộ ở 121°C trong 20 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell EP/EPP Adjustable Single-Channel Pipette",
+"d": "Single channel; 9 ranges from 0.1-2 μL to 1000-5000 μL; EP non-autoclavable, EPP fully autoclavable at 121°C for 20 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell EP/EPP 可调单道移液器",
+"d": "单通道；9种量程，0.1-2 μL至1000-5000 μL；EP不可灭菌，EPP整支可121°C高压灭菌20分钟。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 204,
+"code": "dTrite",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/dTrite-Electronic-Titrator-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Buret điện tử Drawell dTrite",
+"d": "Thể tích 0,01-99,99 mL, hành trình piston tối đa 10 mL, độ phân giải 10 μL; độ đúng 0,2%, CV 0,07%; 16 cấp tốc độ; đạt DIN EN ISO 8655. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell dTrite Electronic Burette",
+"d": "Volume 0.01-99.99 mL, max piston stroke 10 mL, resolution 10 μL; accuracy 0.2%, CV 0.07%; 16 speed levels; DIN EN ISO 8655. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell dTrite 电子滴定器",
+"d": "体积0.01-99.99 mL，最大活塞行程10 mL，分辨率10 μL；准确度0.2%，CV 0.07%；16档速度；符合DIN EN ISO 8655。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 205,
+"code": "dFlow",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/dFlow-Electronic-Bottle-top-Dispenser-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bộ pha chế gắn đầu chai điện tử Drawell dFlow",
+"d": "Thể tích 0,1-99,9 mL, hành trình piston tối đa 10 mL, độ phân giải 100 μL; 16 cấp tốc độ; nhiệt độ làm việc 10-30°C; đạt DIN EN ISO 8655. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell dFlow Electronic Bottle-top Dispenser",
+"d": "Volume 0.1-99.9 mL, max piston stroke 10 mL, resolution 100 μL; 16 speed levels; operating temperature 10-30°C; DIN EN ISO 8655. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell dFlow 电子瓶口分液器",
+"d": "体积0.1-99.9 mL，最大活塞行程10 mL，分辨率100 μL；16档速度；工作温度10-30°C；符合DIN EN ISO 8655。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 206,
+"code": "DispensMate-Pro",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/DispensMate-Pro-Premium-Bottle-top-Dispenser-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bộ pha chế gắn đầu chai cao cấp Drawell DispensMate-Pro",
+"d": "Dải 0,5-5, 1-10, 2,5-25, 5-50, 10-100 mL; sai số độ đúng ±0,5%, độ chụm ±0,2%; hấp tiệt trùng 121°C; adapter S40, GL25/28/32/38. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DispensMate-Pro Premium Bottle-top Dispenser",
+"d": "Ranges 0.5-5, 1-10, 2.5-25, 5-50, 10-100 mL; accuracy ±0.5%, precision ±0.2%; autoclavable at 121°C; adapters S40, GL25/28/32/38. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DispensMate-Pro 高端瓶口分液器",
+"d": "量程0.5-5、1-10、2.5-25、5-50、10-100 mL；准确度±0.5%，精密度±0.2%；可121°C灭菌；适配器S40、GL25/28/32/38。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 207,
+"code": "DispensMate",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/03/DispensMate-3-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bộ pha chế gắn đầu chai Drawell DispensMate",
+"d": "Dải 0,5-5, 1-10, 2,5-25, 5-50 mL; sai số độ đúng ±0,5%, độ chụm ±0,2%; hấp tiệt trùng 121°C; adapter S40, GL25/28/32/38. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DispensMate Bottle-top Dispenser",
+"d": "Ranges 0.5-5, 1-10, 2.5-25, 5-50 mL; accuracy ±0.5%, precision ±0.2%; autoclavable at 121°C; adapters S40, GL25/28/32/38. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DispensMate 瓶口分液器",
+"d": "量程0.5-5、1-10、2.5-25、5-50 mL；准确度±0.5%，精密度±0.2%；可121°C灭菌；适配器S40、GL25/28/32/38。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 208,
+"code": "DW-FTIR-530Pro",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2025/01/DW-FTIR-530A-8.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ hồng ngoại biến đổi Fourier (FTIR) Drawell DW-FTIR-530Pro",
+"d": "Dải phổ 7800~350 cm-1; độ phân giải 0,85 cm-1; tỷ lệ S/N >40000:1; đầu dò DLATGS; tùy chọn đầu dò MCT và kính hiển vi hồng ngoại. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-FTIR-530Pro FT-IR Spectrometer",
+"d": "Spectral range 7800~350 cm-1; resolution 0.85 cm-1; S/N >40000:1; DLATGS detector; optional MCT detector and IR microscope. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-FTIR-530Pro 傅里叶变换红外光谱仪",
+"d": "光谱范围7800~350 cm-1；分辨率0.85 cm-1；信噪比>40000:1；DLATGS检测器；可选MCT检测器及红外显微镜。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 209,
+"code": "EDX2000A",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/12/Desktop-XRF-EDX-2000A-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ huỳnh quang tia X (XRF) để bàn đo độ dày lớp phủ vùng vi mô tự động Drawell EDX2000A",
+"d": "Lớp phủ đo được 3Li~92U; nguyên tố 13Al~92U; phân tích đồng thời 24 nguyên tố và trên 5 lớp phủ; lớp mỏng nhất 0,005 μm; hàm lượng 0,1-99,99%. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell EDX2000A Desktop XRF Automatic Micro-area Coating Thickness Analyzer",
+"d": "Coatings 3Li~92U; elements 13Al~92U; up to 24 elements and 5+ coatings simultaneously; thinnest coating 0.005 μm; content 0.1-99.99%. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell EDX2000A 台式XRF自动微区镀层测厚仪",
+"d": "可测镀层3Li~92U；元素13Al~92U；同时分析24种元素及5层以上镀层；最薄镀层0.005 μm；含量0.1%-99.99%。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 210,
+"code": "SNB-RH",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/11/SNB-RH-Digital-Viscometer3.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ nhớt kỹ thuật số nhiệt độ cao Drawell SNB-RH",
+"d": "Nhiệt độ RT+10~300°C; dải đo 50~200000 mPa·s; tốc độ 5/10/20/50/100 rpm; mẫu 10-20 mL; spindle 21/27/28/29. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell SNB-RH High-Temperature Digital Viscometer",
+"d": "Temperature RT+10~300°C; range 50~200000 mPa·s; speeds 5/10/20/50/100 rpm; sample 10-20 mL; spindles 21/27/28/29. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell SNB-RH 高温数显粘度计",
+"d": "温度RT+10~300°C；测量范围50~200000 mPa·s；转速5/10/20/50/100 rpm；样品量10-20 mL；转子21/27/28/29。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 211,
+"code": "RVDV-2H",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/11/RVDV-2H-Digital-Viscometer-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ nhớt kỹ thuật số nhiệt độ cao Drawell RVDV-2H",
+"d": "Nhiệt độ RT+10~300°C; dải đo 50~10000000 mPa·s; tốc độ 0,1~200 rpm vô cấp; spindle 21/27/28/29; hiển thị tốc độ cắt/ứng suất cắt. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell RVDV-2H High-Temperature Digital Viscometer",
+"d": "Temperature RT+10~300°C; range 50~10000000 mPa·s; stepless speed 0.1~200 rpm; spindles 21/27/28/29; shear rate/stress display. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell RVDV-2H 高温数显粘度计",
+"d": "温度RT+10~300°C；测量范围50~10000000 mPa·s；转速0.1~200 rpm无级调速；转子21/27/28/29；显示剪切速率/剪切应力。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 212,
+"code": "RVDV-1H",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/11/RVDV-1H-Digital-Viscometer1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ nhớt kỹ thuật số nhiệt độ cao Drawell RVDV-1H",
+"d": "Nhiệt độ RT+10~300°C; dải đo 100~10000000 mPa·s; tốc độ 0,1~99,9 rpm vô cấp; spindle 21/27/28/29. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell RVDV-1H High-Temperature Digital Viscometer",
+"d": "Temperature RT+10~300°C; range 100~10000000 mPa·s; stepless speed 0.1~99.9 rpm; spindles 21/27/28/29. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell RVDV-1H 高温数显粘度计",
+"d": "温度RT+10~300°C；测量范围100~10000000 mPa·s；转速0.1~99.9 rpm无级调速；转子21/27/28/29。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 213,
+"code": "LVDV-2H",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/11/LVDV-2H-Digital-Viscometer-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ nhớt kỹ thuật số nhiệt độ cao Drawell LVDV-2H",
+"d": "Nhiệt độ RT+10~300°C; dải đo 5~1000000 mPa·s; tốc độ 0,1~200 rpm vô cấp; spindle 21/27/28/29. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell LVDV-2H High-Temperature Digital Viscometer",
+"d": "Temperature RT+10~300°C; range 5~1000000 mPa·s; stepless speed 0.1~200 rpm; spindles 21/27/28/29. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell LVDV-2H 高温数显粘度计",
+"d": "温度RT+10~300°C；测量范围5~1000000 mPa·s；转速0.1~200 rpm无级调速；转子21/27/28/29。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 214,
+"code": "LVDV-1H",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/11/LVDV-1H-Digital-Viscometer1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ nhớt kỹ thuật số nhiệt độ cao Drawell LVDV-1H",
+"d": "Nhiệt độ RT+10~300°C; dải đo 10~1000000 mPa·s; tốc độ 0,1~99,9 rpm vô cấp; spindle 21/27/28/29. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell LVDV-1H High-Temperature Digital Viscometer",
+"d": "Temperature RT+10~300°C; range 10~1000000 mPa·s; stepless speed 0.1~99.9 rpm; spindles 21/27/28/29. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell LVDV-1H 高温数显粘度计",
+"d": "温度RT+10~300°C；测量范围10~1000000 mPa·s；转速0.1~99.9 rpm无级调速；转子21/27/28/29。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 215,
+"code": "HBDV-2H",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/11/HBDV-2H-Digital-Viscometer-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ nhớt kỹ thuật số nhiệt độ cao Drawell HBDV-2H",
+"d": "Nhiệt độ RT+10~300°C; dải đo 400~80000000 mPa·s; tốc độ 0,1~200 rpm vô cấp; spindle 21/27/28/29. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell HBDV-2H High-Temperature Digital Viscometer",
+"d": "Temperature RT+10~300°C; range 400~80000000 mPa·s; stepless speed 0.1~200 rpm; spindles 21/27/28/29. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell HBDV-2H 高温数显粘度计",
+"d": "温度RT+10~300°C；测量范围400~80000000 mPa·s；转速0.1~200 rpm无级调速；转子21/27/28/29。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 216,
+"code": "HBDV-1H",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/11/HBDV-1H-Digital-Viscometer1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ nhớt kỹ thuật số nhiệt độ cao Drawell HBDV-1H",
+"d": "Nhiệt độ RT+10~300°C; dải đo 800~80000000 mPa·s; tốc độ 0,1~99,9 rpm vô cấp; spindle 21/27/28/29. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell HBDV-1H High-Temperature Digital Viscometer",
+"d": "Temperature RT+10~300°C; range 800~80000000 mPa·s; stepless speed 0.1~99.9 rpm; spindles 21/27/28/29. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell HBDV-1H 高温数显粘度计",
+"d": "温度RT+10~300°C；测量范围800~80000000 mPa·s；转速0.1~99.9 rpm无级调速；转子21/27/28/29。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 217,
+"code": "DW-AFS310",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/AFS310-5.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ huỳnh quang nguyên tử (AFS) Drawell DW-AFS310",
+"d": "Đo 11 nguyên tố Hg, As, Sb, Bi, Se, Te, Cd, Ge, Pb, Sn, Zn; giới hạn phát hiện Hg, As, Se ≤0,01 μg/L, Cd ≤0,001 μg/L; RSD ≤1%; giá 2 đèn. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-AFS310 Atomic Fluorescence Spectrometer",
+"d": "Determines 11 elements incl. Hg, As, Sb, Bi, Se, Te, Cd, Ge, Pb, Sn, Zn; DL Hg, As, Se ≤0.01 μg/L, Cd ≤0.001 μg/L; RSD ≤1%; 2-lamp holder. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-AFS310 原子荧光光谱仪",
+"d": "可测Hg、As、Sb、Bi、Se、Te、Cd、Ge、Pb、Sn、Zn等11种元素；检出限Hg、As、Se≤0.01 μg/L，Cd≤0.001 μg/L；RSD≤1%；双灯位。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 218,
+"code": "N2S",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-N2S-VIS-Spectrophotometer-右斜-1024x683.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ khả kiến (VIS) có chức năng quét Drawell N2S",
+"d": "Bước sóng 325-1100 nm; băng thông 2 nm; độ chính xác bước sóng ±1 nm; ánh sáng lạc ≤0,1%T; quét 3 tốc độ; màn hình cảm ứng 7 inch. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell N2S Scanning VIS Spectrophotometer",
+"d": "Wavelength 325-1100 nm; bandwidth 2 nm; wavelength accuracy ±1 nm; stray light ≤0.1%T; 3 scanning speeds; 7-inch touchscreen. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell N2S 扫描型可见分光光度计",
+"d": "波长范围325-1100 nm；带宽2 nm；波长准确度±1 nm；杂散光≤0.1%T；三档扫描速度；7英寸触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 219,
+"code": "N2",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-N2-VIS-Spectrophotometer-左斜.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ khả kiến (VIS) Drawell N2",
+"d": "Bước sóng 325-1100 nm; băng thông 2 nm; độ chính xác bước sóng ±1 nm; dải trắc quang -0,301~4,000 A; màn hình cảm ứng 7 inch. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell N2 VIS Spectrophotometer",
+"d": "Wavelength 325-1100 nm; bandwidth 2 nm; wavelength accuracy ±1 nm; photometric range -0.301~4.000 A; 7-inch touchscreen. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell N2 可见分光光度计",
+"d": "波长范围325-1100 nm；带宽2 nm；波长准确度±1 nm；光度范围-0.301~4.000 A；7英寸触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 220,
+"code": "L3S",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-L3S-Split-Beam-VIS-Spectrophotometer-右斜.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ khả kiến (VIS) chùm tia tách có chức năng quét Drawell L3S",
+"d": "Bước sóng 325-1100 nm; băng thông 1,8 nm; độ chính xác ±0,5 nm; quét toàn phổ 3 tốc độ; giá cuvet tự động 8 vị trí; màn hình cảm ứng 8 inch. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell L3S Split Beam Scanning VIS Spectrophotometer",
+"d": "Wavelength 325-1100 nm; bandwidth 1.8 nm; accuracy ±0.5 nm; full-spectrum scanning at 3 speeds; automatic 8-cell holder; 8-inch touchscreen. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell L3S 扫描型比例双光束可见分光光度计",
+"d": "波长范围325-1100 nm；带宽1.8 nm；准确度±0.5 nm；三档速度全波长扫描；8位自动样品架；8英寸触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 221,
+"code": "L3",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-L3-Split-Beam-VIS-Spectrophotometer-左斜.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ khả kiến (VIS) chùm tia tách Drawell L3",
+"d": "Bước sóng 325-1100 nm; băng thông 1,8 nm; độ chính xác ±0,5 nm; độ lặp lại ≤0,2 nm; giá cuvet tự động 8 vị trí; màn hình cảm ứng 8 inch. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell L3 Split Beam VIS Spectrophotometer",
+"d": "Wavelength 325-1100 nm; bandwidth 1.8 nm; accuracy ±0.5 nm; repeatability ≤0.2 nm; automatic 8-cell holder; 8-inch touchscreen. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell L3 比例双光束可见分光光度计",
+"d": "波长范围325-1100 nm；带宽1.8 nm；准确度±0.5 nm；重复性≤0.2 nm；8位自动样品架；8英寸触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 222,
+"code": "752N",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-752N-UV-VIS-Spectrophotometer.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ tử ngoại khả kiến (UV-Vis) Drawell 752N",
+"d": "Bước sóng 200-1000 nm; băng thông 2 nm; độ chính xác ±2 nm; ánh sáng lạc ≤0,1%T; dải trắc quang -0,097~4,000 A; cổng USB. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell 752N UV-Vis Spectrophotometer",
+"d": "Wavelength 200-1000 nm; bandwidth 2 nm; accuracy ±2 nm; stray light ≤0.1%T; photometric range -0.097~4.000 A; USB interface. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell 752N 紫外可见分光光度计",
+"d": "波长范围200-1000 nm；带宽2 nm；准确度±2 nm；杂散光≤0.1%T；光度范围-0.097~4.000 A；USB接口。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 223,
+"code": "752G",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-752G-UV-VIS-Spectrophotometer-left-.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ tử ngoại khả kiến (UV-Vis) Drawell 752G",
+"d": "Bước sóng 200-1000 nm; băng thông 4 nm; độ chính xác ±2 nm; ánh sáng lạc ≤0,3%T; dải trắc quang 0~1,999 A; cổng RS232. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell 752G UV-Vis Spectrophotometer",
+"d": "Wavelength 200-1000 nm; bandwidth 4 nm; accuracy ±2 nm; stray light ≤0.3%T; photometric range 0~1.999 A; RS232 interface. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell 752G 紫外可见分光光度计",
+"d": "波长范围200-1000 nm；带宽4 nm；准确度±2 nm；杂散光≤0.3%T；光度范围0~1.999 A；RS232接口。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 224,
+"code": "722N",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-722N-VIS-Spectrophotometer-right-.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ khả kiến (VIS) Drawell 722N",
+"d": "Bước sóng 325-1100 nm; băng thông 2 nm; độ chính xác ±2 nm; ánh sáng lạc ≤0,1%T; dải trắc quang -0,097~4,000 A; chỉnh bước sóng bằng núm xoay. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell 722N VIS Spectrophotometer",
+"d": "Wavelength 325-1100 nm; bandwidth 2 nm; accuracy ±2 nm; stray light ≤0.1%T; photometric range -0.097~4.000 A; manual wavelength knob. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell 722N 可见分光光度计",
+"d": "波长范围325-1100 nm；带宽2 nm；准确度±2 nm；杂散光≤0.1%T；光度范围-0.097~4.000 A；手动旋钮设定波长。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 225,
+"code": "721N",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-721N-VIS-Spectrophotometer-right-.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ khả kiến (VIS) Drawell 721N",
+"d": "Bước sóng 340-1100 nm; băng thông 2 nm; độ chính xác ±2 nm; ánh sáng lạc ≤0,1%T; dải trắc quang 0~1,999 A; chỉnh bước sóng bằng núm xoay. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell 721N VIS Spectrophotometer",
+"d": "Wavelength 340-1100 nm; bandwidth 2 nm; accuracy ±2 nm; stray light ≤0.1%T; photometric range 0~1.999 A; manual wavelength knob. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell 721N 可见分光光度计",
+"d": "波长范围340-1100 nm；带宽2 nm；准确度±2 nm；杂散光≤0.1%T；光度范围0~1.999 A；手动旋钮设定波长。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 226,
+"code": "DU-8800RS",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/白底DU-8800R-series阿里1000.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ tử ngoại khả kiến (UV-Vis) chùm tia tách Drawell DU-8800RS",
+"d": "Bước sóng 190-1100 nm; băng thông thay đổi 0,5/1/1,5/2/4/5 nm; độ chính xác ±0,3 nm; độ lặp lại ≤0,2 nm; dải trắc quang -0,3~3 A. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DU-8800RS Split Beam UV-Vis Spectrophotometer",
+"d": "Wavelength 190-1100 nm; variable bandwidth 0.5/1/1.5/2/4/5 nm; accuracy ±0.3 nm; repeatability ≤0.2 nm; photometric range -0.3~3 A. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DU-8800RS 比例双光束紫外可见分光光度计",
+"d": "波长范围190-1100 nm；可变带宽0.5/1/1.5/2/4/5 nm；准确度±0.3 nm；重复性≤0.2 nm；光度范围-0.3~3 A。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 227,
+"code": "DW-150A",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/DW-150A-2.jpg",
+"c": "tn",
+"s": 3,
+"vi": {
+"n": "Máy đồng hóa áp suất cao cỡ trung Drawell DW-150A",
+"d": "Áp suất làm việc tối đa 1500 bar; lưu lượng tối đa 12-25 L/giờ; công suất động cơ 3,0 kW. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-150A Medium-sized High Pressure Homogenizer",
+"d": "Max working pressure 1500 bar; max flow 12-25 L/h; motor power 3.0 kW. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-150A 中型高压均质机",
+"d": "最大工作压力1500 bar；最大流量12-25 L/h；电机功率3.0 kW。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 228,
+"code": "MS-H-S10",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/10/MS-H-S10-Magnetic-Hotplate-Stirrer.jpg",
+"c": "tn",
+"s": 3,
+"vi": {
+"n": "Máy khuấy từ gia nhiệt 10 vị trí Drawell MS-H-S10",
+"d": "10 vị trí khuấy, 0,4 L ×10; tốc độ 0-1100 rpm; gia nhiệt RT~120°C; mặt thép không gỉ phủ silicone 180×450 mm; động cơ DC không chổi than. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MS-H-S10 10-Channel Classic Magnetic Hotplate Stirrer",
+"d": "10 stirring positions, 0.4 L ×10; speed 0-1100 rpm; heating RT~120°C; silicone-coated stainless plate 180×450 mm; brushless DC motor. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MS-H-S10 10联经典加热磁力搅拌器",
+"d": "10个搅拌位，每位0.4 L；转速0-1100 rpm；加热室温~120°C；硅胶包覆不锈钢工作盘180×450 mm；无刷直流电机。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 229,
+"code": "ICP-OES MICS",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/09/ICP-OES-MICS全谱CCD版-8.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ phát xạ plasma cảm ứng (ICP-OES) đọc trực tiếp toàn phổ Drawell MICS",
+"d": "Nguồn RF thể rắn 27,12 MHz; công suất 800~1500 W, ổn định ≤0,01%; khí plasma 1~20 L/phút; khí phụ trợ và khí mang 0,05~1,0 L/phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell ICP-OES MICS Full Spectrum Direct Reading ICP Emission Spectrometer",
+"d": "Solid-state RF 27.12 MHz; output 800~1500 W, stability ≤0.01%; plasma gas 1~20 L/min; auxiliary and carrier gas 0.05~1.0 L/min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell ICP-OES MICS 全谱直读电感耦合等离子体发射光谱仪",
+"d": "全固态射频电源27.12 MHz；输出功率800~1500 W，稳定性≤0.01%；等离子气1~20 L/min；辅助气及载气0.05~1.0 L/min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 230,
+"code": "ICP900T",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/09/ICP900T（全谱CID版）2.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ phát xạ plasma cảm ứng (ICP-OES) đọc trực tiếp toàn phổ Drawell ICP900T",
+"d": "Công suất 700-1500 W, tần số 27,12 MHz; quan sát dọc trục; giới hạn phát hiện đa số nguyên tố 1-10 ppb; RSD <0,5%; đọc 1 vạch phổ 2 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell ICP900T Full Spectrum Direct Reading ICP Emission Spectrometer",
+"d": "RF power 700-1500 W at 27.12 MHz; vertical observation; detection limits 1-10 ppb for most elements; RSD <0.5%; 2 s per spectral line. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell ICP900T 全谱直读电感耦合等离子体发射光谱仪",
+"d": "功率700-1500 W，频率27.12 MHz；垂直观测；多数元素检出限1-10 ppb；RSD<0.5%；单谱线读数2 s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 231,
+"code": "ICP700T PRO",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/09/ICP700T-PRO-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ phát xạ plasma cảm ứng (ICP-OES) Drawell ICP700T PRO",
+"d": "Phân tích tới 70 nguyên tố; quang học Czerny-Turner tiêu cự 1000 mm; độ phân giải <0,005 nm (cách tử 4320 vạch); bước sóng 190-800 nm tùy cách tử. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell ICP700T PRO Inductively Coupled Plasma Emission Spectrometer",
+"d": "Up to 70 elements; Czerny-Turner optics, 1000 mm focal length; resolution <0.005 nm (4320 lines grating); 190-800 nm depending on grating. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell ICP700T PRO 电感耦合等离子体发射光谱仪",
+"d": "可测70种元素；Czerny-Turner光路，焦距1000 mm；分辨率<0.005 nm（4320线光栅）；波长190-800 nm（视光栅而定）。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 232,
+"code": "ICP700T",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/09/ICP700T石化版-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ phát xạ plasma cảm ứng (ICP-OES) phiên bản hóa dầu Drawell ICP700T",
+"d": "Đo đồng thời trên 70 nguyên tố, cấp ppb; bơm trực tiếp mẫu dầu hữu cơ; nguồn 27,12 MHz, 800~1600 W; tự động phối hợp trở kháng. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell ICP700T Petrochemical Version ICP Emission Spectrometer",
+"d": "Over 70 elements at ppb level; direct injection of organic oil samples; 27.12 MHz RF, 800~1600 W; automatic impedance matching. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell ICP700T 石化版电感耦合等离子体发射光谱仪",
+"d": "可测70余种元素，ppb级检出；有机油样可直接进样；射频27.12 MHz，800~1600 W；自动匹配。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 233,
+"code": "DW-TY-9000",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2022/06/1412246938046361602.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ phát xạ đọc trực tiếp toàn phổ Drawell DW-TY-9000",
+"d": "Nền Fe, Al, Cu, Ni, Ti, Co, Zn, Sn, Mg, Pb; quang học Paschen-Runge chân không; bước sóng 130~800 nm; đầu dò CCD; thời gian đo khoảng 25 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-TY-9000 Full Spectrum Direct Reading Spectrometer",
+"d": "Fe, Al, Cu, Ni, Ti, Co, Zn, Sn, Mg, Pb bases; vacuum Paschen-Runge optics; wavelength 130~800 nm; CCD detector; test time about 25 s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-TY-9000 全谱直读光谱仪",
+"d": "可测Fe、Al、Cu、Ni、Ti、Co、Zn、Sn、Mg、Pb等基体；真空Paschen-Runge光学系统；波长130~800 nm；CCD检测器；测试约25 s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 234,
+"code": "DW-RE-52AA",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/DW-RE-52AA-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy cô quay chân không bể cách thủy Drawell DW-RE-52AA",
+"d": "Bể nước RT~99°C ±1°C; tốc độ bay hơi tối đa 21 mL/phút; tốc độ quay 0-150 rpm; độ chân không tới 399,9 Pa; bình cầu 25-2000 mL. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-RE-52AA Water Bath Rotary Evaporator",
+"d": "Water bath RT~99°C ±1°C; evaporation rate max 21 mL/min; rotation 0-150 rpm; vacuum to 399.9 Pa; flask 25-2000 mL. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-RE-52AA 水浴旋转蒸发仪",
+"d": "水浴室温~99°C ±1°C；最大蒸发速率21 mL/min；转速0-150 rpm；真空度可达399.9 Pa；烧瓶25-2000 mL。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 235,
+"code": "TrueX 760",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/7.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích đất huỳnh quang tia X (XRF) cầm tay Drawell TrueX 760",
+"d": "Thiết bị XRF cầm tay phân tích đất; cấu hình chuẩn đo 47 nguyên tố từ Mg đến U gồm As, Cd, Hg, Pb, Cr; phục vụ quan trắc ô nhiễm môi trường. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TrueX 760 Handheld XRF Soil Analyzer",
+"d": "Handheld XRF for soil analysis; standard mode covers 47 elements from Mg to U incl. As, Cd, Hg, Pb, Cr; for environmental pollution monitoring. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TrueX 760 手持式XRF土壤分析仪",
+"d": "手持式XRF土壤分析；标准模式可测Mg至U共47种元素，含As、Cd、Hg、Pb、Cr；用于环境污染监测。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 236,
+"code": "TrueX 700",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/4-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích đất huỳnh quang tia X (XRF) cầm tay Drawell TrueX 700",
+"d": "Thiết bị XRF cầm tay phân tích đất; cấu hình chuẩn đo 34 nguyên tố từ K đến U gồm As, Cd, Hg, Pb, Cr; có thể bổ sung nguyên tố đặc biệt. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TrueX 700 Handheld XRF Soil Analyzer",
+"d": "Handheld XRF for soil analysis; standard mode covers 34 elements from K to U incl. As, Cd, Hg, Pb, Cr; special elements can be added. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TrueX 700 手持式XRF土壤分析仪",
+"d": "手持式XRF土壤分析；标准模式可测K至U共34种元素，含As、Cd、Hg、Pb、Cr；可增加特殊元素。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 237,
+"code": "TrueX 660",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/5-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích RoHS huỳnh quang tia X (XRF) cầm tay Drawell TrueX 660",
+"d": "Thiết bị XRF cầm tay sàng lọc RoHS; cấu hình chuẩn đo Cr, Cd, Pb, Hg, Br, Cl; có thể bổ sung nguyên tố đặc biệt. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TrueX 660 Handheld XRF RoHS Analyzer",
+"d": "Handheld XRF for RoHS screening; standard mode measures Cr, Cd, Pb, Hg, Br, Cl; special elements can be added. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TrueX 660 手持式XRF RoHS分析仪",
+"d": "手持式XRF RoHS筛查；标准模式可测Cr、Cd、Pb、Hg、Br、Cl；可增加特殊元素。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 238,
+"code": "TrueX 600",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/handheld-XRF-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích RoHS huỳnh quang tia X (XRF) cầm tay Drawell TrueX 600",
+"d": "Thiết bị XRF cầm tay sàng lọc RoHS; cấu hình chuẩn đo Cr, Cd, Pb, Hg, Br, Cl; có thể bổ sung nguyên tố đặc biệt. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TrueX 600 Handheld XRF RoHS Analyzer",
+"d": "Handheld XRF for RoHS screening; standard mode measures Cr, Cd, Pb, Hg, Br, Cl; special elements can be added. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TrueX 600 手持式XRF RoHS分析仪",
+"d": "手持式XRF RoHS筛查；标准模式可测Cr、Cd、Pb、Hg、Br、Cl；可增加特殊元素。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 239,
+"code": "TD4Z",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/Tabletop-Low-Speed-Centrifuge-TD4Z-small-size-2.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm tốc độ thấp để bàn Drawell TD4Z",
+"d": "Tốc độ tối đa 4000 rpm; RCF tối đa 3200 xg; rotor góc 8×15 mL hoặc 12×10 mL; động cơ DC không chổi than; hẹn giờ 0~99 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TD4Z Tabletop Low Speed Centrifuge",
+"d": "Max speed 4000 rpm; max RCF 3200 xg; angle rotors 8×15 mL or 12×10 mL; brushless DC motor; timer 0~99 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TD4Z 台式低速离心机",
+"d": "最高转速4000 rpm；最大相对离心力3200 xg；角转子8×15 mL或12×10 mL；无刷直流电机；定时0~99 min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 240,
+"code": "TD6/iTD6",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/iTD6-Tabletop-Low-Speed-Large-Capacity-Centrifuge-2.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm tốc độ thấp dung tích lớn để bàn Drawell TD6/iTD6",
+"d": "Tốc độ tối đa 6000 rpm; RCF tối đa 5600 xg; dung tích tối đa 4×500 mL; nhiều rotor góc và rotor văng; màn hình LCD hoặc cảm ứng. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TD6/iTD6 Tabletop Low Speed Large Capacity Centrifuge",
+"d": "Max speed 6000 rpm; max RCF 5600 xg; max capacity 4×500 mL; multiple angle and swing rotors; LCD or touchscreen. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TD6/iTD6 台式低速大容量离心机",
+"d": "最高转速6000 rpm；最大相对离心力5600 xg；最大容量4×500 mL；多种角转子及水平转子；LCD或触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 241,
+"code": "DD5-XK/DD6-XK",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/Benchtop-Blood-Bank-Centrifuge-DD5-XK-1.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm ngân hàng máu để bàn Drawell DD5-XK/DD6-XK",
+"d": "Tốc độ tối đa 5000/6000 rpm; RCF tối đa 3500/5040 xg; dung tích tới 12×15 mL; động cơ DC không chổi than; độ ồn ≤60 dB. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DD5-XK/DD6-XK Benchtop Blood Bank Centrifuge",
+"d": "Max speed 5000/6000 rpm; max RCF 3500/5040 xg; capacity up to 12×15 mL; brushless DC motor; noise ≤60 dB. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DD5-XK/DD6-XK 台式血库离心机",
+"d": "最高转速5000/6000 rpm；最大相对离心力3500/5040 xg；容量最高12×15 mL；无刷直流电机；噪音≤60 dB。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 242,
+"code": "GL-10MC/iGL-10MC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/iGL-22MC-10-1.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm lạnh tốc độ cao dạng đứng Drawell GL-10MC/iGL-10MC",
+"d": "Tốc độ tối đa 10000 rpm; RCF tối đa 18300 xg; dung tích tối đa 6×1000 mL; nhiệt độ -20~+40°C ±1°C; hệ lạnh không CFC. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell GL-10MC/iGL-10MC Floor-standing High Speed Refrigerated Centrifuge",
+"d": "Max speed 10000 rpm; max RCF 18300 xg; max capacity 6×1000 mL; temperature -20~+40°C ±1°C; CFC-free refrigeration. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell GL-10MC/iGL-10MC 落地式高速冷冻离心机",
+"d": "最高转速10000 rpm；最大相对离心力18300 xg；最大容量6×1000 mL；温度-20~+40°C ±1°C；无氟制冷。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 243,
+"code": "DD5-MC/DD6-MC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/Floortype-Low-Speed-Centrifuge-iDD5-MC-4-1.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm tốc độ thấp dạng đứng Drawell DD5-MC/DD6-MC",
+"d": "Tốc độ tối đa 5500/6000 rpm; RCF tối đa 5220/5600 xg; dung tích tối đa 6×500 mL; động cơ biến tần; màn hình LCD hoặc cảm ứng. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DD5-MC/DD6-MC Floor-standing Low Speed Centrifuge",
+"d": "Max speed 5500/6000 rpm; max RCF 5220/5600 xg; max capacity 6×500 mL; inverter motor; LCD or touchscreen. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DD5-MC/DD6-MC 落地式低速离心机",
+"d": "最高转速5500/6000 rpm；最大相对离心力5220/5600 xg；最大容量6×500 mL；变频电机；LCD或触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 244,
+"code": "GL-24MC/iGL-24MC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/Floortype-High-Speed-Refrigerated-centrifuge-GL-24MC1.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm lạnh tốc độ cao dạng đứng Drawell GL-24MC/iGL-24MC",
+"d": "Tốc độ tối đa 24000 rpm; RCF tối đa 63070 xg; dung tích tối đa 3000 mL; nhiệt độ -20~+40°C ±1°C; hệ lạnh không CFC. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell GL-24MC/iGL-24MC Floor-standing High Speed Refrigerated Centrifuge",
+"d": "Max speed 24000 rpm; max RCF 63070 xg; max capacity 3000 mL; temperature -20~+40°C ±1°C; CFC-free refrigeration. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell GL-24MC/iGL-24MC 落地式高速冷冻离心机",
+"d": "最高转速24000 rpm；最大相对离心力63070 xg；最大容量3000 mL；温度-20~+40°C ±1°C；无氟制冷。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 245,
+"code": "TGL-18/iTGL-18",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/Micro-High-Speed-Refrigerated-Centrifuge-TGL-18iTGL-18-2-1.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm lạnh tốc độ cao loại micro Drawell TGL-18/iTGL-18",
+"d": "Tốc độ tối đa 18500 rpm; RCF tối đa 19920 xg; dung tích 36×1,5/2 mL; nhiệt độ -20~+40°C ±1°C; màn hình LCD hoặc cảm ứng. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TGL-18/iTGL-18 Micro High Speed Refrigerated Centrifuge",
+"d": "Max speed 18500 rpm; max RCF 19920 xg; capacity 36×1.5/2 mL; temperature -20~+40°C ±1°C; LCD or touchscreen. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TGL-18/iTGL-18 微量高速冷冻离心机",
+"d": "最高转速18500 rpm；最大相对离心力19920 xg；容量36×1.5/2 mL；温度-20~+40°C ±1°C；LCD或触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 246,
+"code": "TDL-MC/iTDL-MC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/iTDL-6MX-ITD4-CXC-iTDL-5-6MC-Low-Speed-Refrigerated-centrifuge-9.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm lạnh tốc độ thấp để bàn Drawell TDL-MC/iTDL-MC",
+"d": "Tốc độ tối đa 5500/6000 rpm; RCF tối đa 5220/5600 xg; dung tích tối đa 6×500 mL; nhiệt độ -20~+40°C; độ ồn ≤60 dB(A). Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TDL-MC/iTDL-MC Benchtop Low Speed Refrigerated Centrifuge",
+"d": "Max speed 5500/6000 rpm; max RCF 5220/5600 xg; max capacity 6×500 mL; temperature -20~+40°C; noise ≤60 dB(A). Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TDL-MC/iTDL-MC 台式低速冷冻离心机",
+"d": "最高转速5500/6000 rpm；最大相对离心力5220/5600 xg；最大容量6×500 mL；温度-20~+40°C；噪音≤60 dB(A)。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 247,
+"code": "TD4-CXC/iTD4-CXC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/03/iTDL-6MX-ITD4-CXC-iTDL-5-6MC-7.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm lạnh tốc độ thấp để bàn Drawell TD4-CXC/iTD4-CXC",
+"d": "Tốc độ tối đa 5500 rpm; RCF tối đa 5220 xg; dung tích tối đa 4×250 mL; nhiệt độ -20~+40°C; độ ồn ≤60 dB(A). Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TD4-CXC/iTD4-CXC Benchtop Low Speed Refrigerated Centrifuge",
+"d": "Max speed 5500 rpm; max RCF 5220 xg; max capacity 4×250 mL; temperature -20~+40°C; noise ≤60 dB(A). Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TD4-CXC/iTD4-CXC 台式低速冷冻离心机",
+"d": "最高转速5500 rpm；最大相对离心力5220 xg；最大容量4×250 mL；温度-20~+40°C；噪音≤60 dB(A)。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 248,
+"code": "PCR-1S/PCR-2S",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/PCR-1S-14.jpg",
+"c": "tn",
+"s": 0,
+"vi": {
+"n": "Tủ thao tác PCR thổi đứng Drawell PCR-1S/PCR-2S",
+"d": "Độ sạch Class 100 @ ≥0,5 μm (US 209E); tốc độ gió 0,25~0,45 m/s; độ ồn ≤62 dB(A); độ sáng ≥300 lx; vùng làm việc 700 hoặc 1150×510×580 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell PCR-1S/PCR-2S PCR Laminar Flow Cabinet",
+"d": "Class 100 @ ≥0.5 μm (US 209E); air speed 0.25~0.45 m/s; noise ≤62 dB(A); illumination ≥300 lx; work area 700 or 1150×510×580 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell PCR-1S/PCR-2S PCR超净工作台",
+"d": "洁净度100级@≥0.5 μm（美联邦209E）；风速0.25~0.45 m/s；噪音≤62 dB(A)；照度≥300 lx；工作区700或1150×510×580 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 249,
+"code": "GC1290/MS8100",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/GC1290-MS8100-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Hệ thống sắc ký khí khối phổ (GC-MS) Drawell GC1290/MS8100",
+"d": "Thu nhận đồng thời SIM/Scan; phần mềm Clarity; tùy chọn thư viện NIST; phần mềm hỗ trợ GLP/FDA 21 CFR Part 11; phụ kiện tùy chọn. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell GC1290/MS8100 Gas Chromatography Mass Spectrometer",
+"d": "Synchronous SIM/Scan acquisition; Clarity software; optional NIST library; software supports GLP/FDA 21 CFR Part 11; optional accessories. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell GC1290/MS8100 气相色谱质谱联用仪",
+"d": "SIM/Scan同步采集；Clarity软件；可选NIST谱库；软件支持GLP/FDA 21 CFR Part 11；配件可选。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 250,
+"code": "DW-W",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/W2L-1W2L-2（1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể điều nhiệt cách thủy Drawell DW-W",
+"d": "Nhiệt độ RT+5~100°C; dung tích 1×2 L, 2×2 L, 3×2 L, 1×5 L; độ chính xác ≤±0,3°C @ 37°C; hẹn giờ 1 phút~99 giờ 59 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-W Series Thermostatic Water Bath",
+"d": "Temperature RT+5~100°C; capacity 1×2 L, 2×2 L, 3×2 L, 1×5 L; accuracy ≤±0.3°C at 37°C; timer 1 min~99 h 59 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-W 系列恒温水浴",
+"d": "温度RT+5~100°C；容量1×2 L、2×2 L、3×2 L、1×5 L；精度≤±0.3°C @37°C；定时1 min~99 h 59 min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 251,
+"code": "DTF-8D",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/阿里1000.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể cách thủy 3 bể độc lập Drawell DTF-8D",
+"d": "3 bể nước độc lập; dung tích 8 L; nhiệt độ RT+5~99°C; dao động ±0,5°C; công suất 800 W; màn hình LCD. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DTF-8D Water Bath with 3 Independent Tanks",
+"d": "3 independent water tanks; capacity 8 L; temperature RT+5~99°C; fluctuation ±0.5°C; power 800 W; LCD display. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DTF-8D 三独立槽水浴锅",
+"d": "3个独立水槽；容量8 L；温度RT+5~99°C；波动度±0.5°C；功率800 W；LCD显示。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 252,
+"code": "DTT/DWT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DTT-420-4.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ổn nhiệt cách thủy Drawell DTT/DWT",
+"d": "Dòng DWT RT+5~100°C; dòng DTT 3 công dụng RT+5~99°C; dung tích 8 L/27 L; dao động và độ đồng đều ±0,5°C; nguồn 220 V/50 Hz. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DTT/DWT Thermostatic Water Tank",
+"d": "DWT series RT+5~100°C; DTT series 3-in-1 use RT+5~99°C; capacity 8 L/27 L; fluctuation and uniformity ±0.5°C; 220 V/50 Hz. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DTT/DWT 恒温水槽",
+"d": "DWT系列RT+5~100°C；DTT系列三用RT+5~99°C；容量8 L/27 L；波动度及均匀度±0.5°C；220 V/50 Hz。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 253,
+"code": "HH",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/HH-Series4.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể cách thủy điều nhiệt điện Drawell HH",
+"d": "1/2/4/6/8 lỗ tùy chọn; dung tích 3~18,5 L; nhiệt độ RT+5~100°C; độ chính xác ±0,5°C; độ phân giải 0,1°C. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell HH Series Electric Thermostatic Water Bath",
+"d": "1/2/4/6/8 holes optional; capacity 3~18.5 L; temperature RT+5~100°C; accuracy ±0.5°C; resolution 0.1°C. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell HH 系列电热恒温水浴锅",
+"d": "可选1/2/4/6/8孔；容量3~18.5 L；温度RT+5~100°C；精度±0.5°C；分辨率0.1°C。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 254,
+"code": "GDH/GH",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/GDHGH-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể điều nhiệt lạnh độ chính xác cao Drawell GDH/GH",
+"d": "Độ phân giải 0,001°C; độ ổn định ±0,01°C; nhiệt độ tối thiểu -5/-20/-40°C, tối đa 100°C; dung tích 6~30 L; lưu lượng bơm 15 L/phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell GDH/GH High-Precision Refrigerated Thermostatic Bath",
+"d": "Resolution 0.001°C; stability ±0.01°C; min -5/-20/-40°C, max 100°C; volume 6~30 L; pump flow 15 L/min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell GDH/GH 高精度低温恒温槽",
+"d": "分辨率0.001°C；稳定度±0.01°C；最低温度-5/-20/-40°C，最高100°C；容积6~30 L；泵流量15 L/min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 255,
+"code": "CK",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/CK-Series-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể tuần hoàn làm lạnh nhanh nhiệt độ thấp Drawell CK",
+"d": "Nhiệt độ -20/-40~200°C; độ chính xác ±0,1°C; dung tích 3/5/7/10 L; lưu lượng bơm 15 L/phút; công suất lạnh 0,35~1,65 kW. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell CK Series Rapid Low-Temperature Cooling Circulating Bath",
+"d": "Temperature -20/-40~200°C; accuracy ±0.1°C; capacity 3/5/7/10 L; pump flow 15 L/min; cooling capacity 0.35~1.65 kW. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell CK 系列快速低温冷却循环槽",
+"d": "温度-20/-40~200°C；精度±0.1°C；容量3/5/7/10 L；泵流量15 L/min；制冷量0.35~1.65 kW。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 256,
+"code": "DLK",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DLK-Series-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Máy làm lạnh tuần hoàn nhiệt độ thấp Drawell DLK",
+"d": "Nhiệt độ tối thiểu -5/-20°C, tối đa 45°C; độ chính xác ±2°C; dung tích 3/7/10/20/30 L; lưu lượng bơm 20 L/phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DLK Series Low Temperature Chiller",
+"d": "Min temperature -5/-20°C, max 45°C; accuracy ±2°C; capacity 3/7/10/20/30 L; pump flow 20 L/min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DLK 系列低温冷却液循环机",
+"d": "最低温度-5/-20°C，最高45°C；精度±2°C；容量3/7/10/20/30 L；泵流量20 L/min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 257,
+"code": "DC/DCW",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DC-and-DCW-Series.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể điều nhiệt lạnh và bộ tuần hoàn gia nhiệt Drawell DC/DCW",
+"d": "Độ ổn định ±0,1°C; nhiệt độ tối đa 100°C, tối thiểu -5~-40°C tùy model; dung tích 6~30 L; lưu lượng bơm 0-15 L/phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DC/DCW Series Refrigerated Thermostatic Bath and Heating Circulator",
+"d": "Stability ±0.1°C; max 100°C, min -5~-40°C by model; volume 6~30 L; pump flow 0-15 L/min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DC/DCW 系列低温恒温槽及加热循环器",
+"d": "稳定度±0.1°C；最高100°C，最低-5~-40°C（视型号）；容积6~30 L；泵流量0-15 L/min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 258,
+"code": "SC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/SC-Series-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ổn nhiệt nước (dầu) điều khiển số Drawell SC",
+"d": "Độ ổn định ±0,1°C; nhiệt độ RT+8~100°C hoặc RT+8~200°C; dung tích 5/15/20/25/30 L; bơm tuần hoàn 0-15 L/phút; có van xả. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell SC Series Digital Constant Temperature Water (Oil) Bath",
+"d": "Stability ±0.1°C; temperature RT+8~100°C or RT+8~200°C; volume 5/15/20/25/30 L; circulation pump 0-15 L/min; drain valve. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell SC 系列数显恒温水（油）槽",
+"d": "稳定度±0.1°C；温度RT+8~100°C或RT+8~200°C；容积5/15/20/25/30 L；循环泵0-15 L/min；带排水阀。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 259,
+"code": "DW-TS100",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DW-TS100-1.jpg",
+"c": "tn",
+"s": 3,
+"vi": {
+"n": "Máy lắc ổn nhiệt Drawell DW-TS100",
+"d": "Nhiệt độ RT+5~100°C; độ chính xác ≤±0,3°C; tốc độ lắc 200~1800 rpm, biên độ 3 mm; gia nhiệt 25→100°C ≤12 phút; chạy đa điểm tới 5 bước. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-TS100 Thermo Shaker",
+"d": "Temperature RT+5~100°C; accuracy ≤±0.3°C; shaking 200~1800 rpm, 3 mm orbit; heating 25 to 100°C ≤12 min; up to 5-step programs. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-TS100 恒温混匀仪",
+"d": "温度RT+5~100°C；精度≤±0.3°C；振荡转速200~1800 rpm，振幅3 mm；25°C升至100°C≤12 min；最多5段程序。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 260,
+"code": "DW-TCS10",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DW-TCS10-Thermo-Shaker.jpg",
+"c": "tn",
+"s": 3,
+"vi": {
+"n": "Máy lắc ổn nhiệt có làm lạnh Drawell DW-TCS10",
+"d": "Nhiệt độ RT-20~100°C; độ chính xác ≤±0,3°C; tốc độ lắc 200~1500 rpm, biên độ 3 mm; làm lạnh 100→25°C ≤10 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-TCS10 Cooling Thermo Shaker",
+"d": "Temperature RT-20~100°C; accuracy ≤±0.3°C; shaking 200~1500 rpm, 3 mm orbit; cooling 100 to 25°C ≤10 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-TCS10 制冷型恒温混匀仪",
+"d": "温度RT-20~100°C；精度≤±0.3°C；振荡转速200~1500 rpm，振幅3 mm；100°C降至25°C≤10 min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 261,
+"code": "DW-MiniBox-C",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DW-MiniBox-C-Mini-Dry-Bath-Incubator-1024x683.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ủ nhiệt khô mini có làm lạnh Drawell DW-MiniBox-C",
+"d": "Nhiệt độ RT-15~100°C; độ chính xác ≤±0,3°C; độ đồng đều ≤±0,3°C; hẹn giờ 1 s~5999 phút; điều khiển vi xử lý. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-MiniBox-C Mini Cooling Dry Bath Incubator",
+"d": "Temperature RT-15~100°C; accuracy ≤±0.3°C; uniformity ≤±0.3°C; timer 1 s~5999 min; microprocessor control. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-MiniBox-C 迷你制冷型干式恒温器",
+"d": "温度RT-15~100°C；精度≤±0.3°C；均匀度≤±0.3°C；定时1 s~5999 min；微处理器控制。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 262,
+"code": "DW-MiniBox",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DW-MiniBox-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ủ nhiệt khô mini Drawell DW-MiniBox",
+"d": "Nhiệt độ RT+5~100°C; độ chính xác ≤±0,3°C; hẹn giờ 1 phút~99 giờ; nguồn DC 24 V; khối lượng 0,5 kg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-MiniBox Mini Dry Bath Incubator",
+"d": "Temperature RT+5~100°C; accuracy ≤±0.3°C; timer 1 min~99 h; DC 24 V supply; weight 0.5 kg. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-MiniBox 迷你干式恒温器",
+"d": "温度RT+5~100°C；精度≤±0.3°C；定时1 min~99 h；DC 24 V供电；重量0.5 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 263,
+"code": "DW-Mini50",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DW-Mini50-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ủ nhiệt khô mini Drawell DW-Mini50",
+"d": "Nhiệt độ RT+5~100°C; độ chính xác ≤±0,5°C @ 37°C; gia nhiệt 37→100°C ≤15 phút; công suất 24 W; nguồn DC 12 V. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-Mini50 Mini Dry Bath Incubator",
+"d": "Temperature RT+5~100°C; accuracy ≤±0.5°C at 37°C; heating 37 to 100°C ≤15 min; power 24 W; DC 12 V supply. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-Mini50 迷你干式恒温器",
+"d": "温度RT+5~100°C；精度≤±0.5°C @37°C；37°C升至100°C≤15 min；功率24 W；DC 12 V供电。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 264,
+"code": "DW-ES1000",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/ES1000-picture1-2.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ủ nhiệt khô có nắp gia nhiệt Drawell DW-ES1000",
+"d": "Dòng ES RT+5~100°C, dòng ESC RT-25~100°C; độ chính xác ≤±0,3°C @ 37°C; hẹn giờ 1 s~99 giờ 59 phút; gia nhiệt và làm lạnh bán dẫn. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-ES1000 Dry Bath Incubator with Heated Lid",
+"d": "ES blocks RT+5~100°C, ESC blocks RT-25~100°C; accuracy ≤±0.3°C at 37°C; timer 1 s~99 h 59 min; semiconductor heating and cooling. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-ES1000 干式恒温器（带热盖）",
+"d": "ES模块RT+5~100°C，ESC模块RT-25~100°C；精度≤±0.3°C @37°C；定时1 s~99 h 59 min；半导体加热制冷。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 265,
+"code": "DW-DH300",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DH300-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ủ nhiệt khô Drawell DW-DH300",
+"d": "Nhiệt độ RT+5~100°C; độ chính xác ≤±0,3°C; khối nhôm tinh khiết cao; gia nhiệt 25→100°C ≤12 phút; chạy đa điểm tới 5 bước, lặp 99 lần. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-DH300 Dry Bath Incubator",
+"d": "Temperature RT+5~100°C; accuracy ≤±0.3°C; high-purity aluminium block; heating 25 to 100°C ≤12 min; up to 5 steps, 99 cycles. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-DH300 干式恒温器",
+"d": "温度RT+5~100°C；精度≤±0.3°C；高纯铝模块；25°C升至100°C≤12 min；最多5段程序，循环99次。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 266,
+"code": "DW-DH200",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DW-DH200-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ủ nhiệt khô Drawell DW-DH200",
+"d": "Nhiệt độ RT+5~110°C; độ chính xác ≤±0,3°C @ 37°C; gia nhiệt 25→110°C ≤20 phút; hẹn giờ độc lập từng nhóm; tự khôi phục khi mất điện. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-DH200 Dry Bath Incubator",
+"d": "Temperature RT+5~110°C; accuracy ≤±0.3°C at 37°C; heating 25 to 110°C ≤20 min; independent timing per group; auto resume. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-DH200 干式恒温器",
+"d": "温度RT+5~110°C；精度≤±0.3°C @37°C；25°C升至110°C≤20 min；各组独立定时；自动恢复运行。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 267,
+"code": "DW-DH100",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DH100-4-3.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ủ nhiệt khô nhiệt độ cao Drawell DW-DH100",
+"d": "Nhiệt độ RT+5~160°C (DH100-4: tới 130°C); độ chính xác ±0,5°C @ 40°C; độ đồng đều ±0,5°C; hẹn giờ 1 phút~99 giờ 59 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-DH100 Series High Temperature Dry Bath Incubator",
+"d": "Temperature RT+5~160°C (DH100-4 up to 130°C); accuracy ±0.5°C at 40°C; uniformity ±0.5°C; timer 1 min~99 h 59 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-DH100 系列高温干式恒温器",
+"d": "温度RT+5~160°C（DH100-4最高130°C）；精度±0.5°C @40°C；均匀度±0.5°C；定时1 min~99 h 59 min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 268,
+"code": "DW-DC10",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/07/DW-DC10-Dry-Bath-Incubator-1.jpg",
+"c": "tn",
+"s": 4,
+"vi": {
+"n": "Bể ủ nhiệt khô gia nhiệt và làm lạnh Drawell DW-DC10",
+"d": "Nhiệt độ RT-30~100°C; độ chính xác ≤±0,3°C; tấm Peltier; gia nhiệt 25→100°C ≤12 phút; làm lạnh 100→25°C ≤10 phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-DC10 Chilling and Heating Dry Bath Incubator",
+"d": "Temperature RT-30~100°C; accuracy ≤±0.3°C; Peltier plate; heating 25 to 100°C ≤12 min; cooling 100 to 25°C ≤10 min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-DC10 制冷加热干式恒温器",
+"d": "温度RT-30~100°C；精度≤±0.3°C；半导体帕尔贴；25°C升至100°C≤12 min；100°C降至25°C≤10 min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 269,
+"code": "DW-GCMS-II",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/06/白底阿里1000-背景图-源文件.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy sắc ký khí khối phổ (GC-MS) Drawell DW-GCMS-II",
+"d": "Buồng tiêm tối đa 450°C; điều khiển áp suất điện tử EPC 0~100 psi; chia dòng/không chia dòng, tỷ lệ tới 1000:1; lò cột RT+4~450°C, tốc độ tới 120°C/phút. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-GCMS-II Gas Chromatograph Mass Spectrometer",
+"d": "Inlet up to 450°C; EPC 0~100 psi; split/splitless, split ratio up to 1000:1; column oven RT+4~450°C, ramp up to 120°C/min. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-GCMS-II 气相色谱质谱联用仪",
+"d": "进样口最高450°C；电子压力控制EPC 0~100 psi；分流/不分流，最大分流比1000:1；柱温箱RT+4~450°C，升温速率最高120°C/min。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 270,
+"code": "LC-MS-2000",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/06/LCMS2000-2.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy sắc ký lỏng khối phổ (LC-MS) Drawell LC-MS-2000",
+"d": "Dải khối m/z 10-2000; độ phân giải đơn vị khối 0,7 amu; độ chính xác khối ≤±0,2 amu; tốc độ quét 1000 amu/s, chế độ nhanh 10000 amu/s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell LC-MS-2000 Liquid Chromatography Mass Spectrometer",
+"d": "Mass range m/z 10-2000; unit mass resolution 0.7 amu; mass accuracy ≤±0.2 amu; scan rate 1000 amu/s, fast mode 10000 amu/s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell LC-MS-2000 液相色谱质谱联用仪",
+"d": "质量范围m/z 10-2000；单位质量分辨率0.7 amu；质量准确度≤±0.2 amu；扫描速度1000 amu/s，快速模式10000 amu/s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 271,
+"code": "DW-LBI",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/06/LBI-150-白底logo.jpg",
+"c": "tn",
+"s": 1,
+"vi": {
+"n": "Tủ ấm sinh hóa (BOD) Drawell DW-LBI",
+"d": "Dung tích 80/150/200/250/300/400 L; nhiệt độ 0~60°C; độ phân giải 0,1°C; độ đồng đều ±1°C; hẹn giờ 1~9999 phút; môi chất lạnh R134a. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-LBI Biochemical (BOD) Incubator",
+"d": "Volume 80/150/200/250/300/400 L; temperature 0~60°C; resolution 0.1°C; uniformity ±1°C; timer 1~9999 min; refrigerant R134a. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-LBI 生化（BOD）培养箱",
+"d": "容积80/150/200/250/300/400 L；温度0~60°C；分辨率0.1°C；均匀度±1°C；定时1~9999 min；制冷剂R134a。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 272,
+"code": "DW-OES 8000S",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/06/DW-ICP-OES-8000S-Direct-reading-ICP-Optical-Emission-Spectrometer-1-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ phát xạ quang học đọc trực tiếp cho hợp kim và thép không gỉ Drawell DW-OES 8000S",
+"d": "Đầu dò CMOS toàn phổ; cấu trúc Paschen-Runge, vòng Rowland 400 mm; bước sóng 134-680 nm; cách tử lõm 2400 vạch/mm; buồng quang ổn nhiệt 32,5±0,5°C. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-OES 8000S Direct-reading Optical Emission Spectrometer for Metal Alloy and Stainless Steel",
+"d": "Full-spectrum CMOS detector; Paschen-Runge, 400 mm Rowland circle; 134-680 nm; 2400 lines/mm concave grating; optics held at 32.5±0.5°C. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-OES 8000S 直读光谱仪（金属合金/不锈钢）",
+"d": "全谱CMOS检测器；帕邢-龙格结构，罗兰圆直径400 mm；波长134-680 nm；2400线/mm凹面光栅；光室恒温32.5±0.5°C。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 273,
+"code": "DW-EDX6000C",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/06/DW-EDX6000C-Energy-Dispersive-Spectrometer-2.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy quang phổ huỳnh quang tia X tán sắc năng lượng (EDXRF) Drawell DW-EDX6000C",
+"d": "Nguyên tố 9F~92U; giới hạn phát hiện tới 0,2 ppm; dải phân tích ppm~99,99%; RSD <0,05% với nguyên tố chính; 9/12/20 vị trí mẫu có quay. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-EDX6000C Energy-Dispersive XRF Spectrometer",
+"d": "Elements 9F~92U; detection limit down to 0.2 ppm; range ppm to 99.99%; RSD <0.05% for main elements; 9/12/20 spinning sample positions. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-EDX6000C 能量色散X射线荧光光谱仪",
+"d": "元素9F~92U；检出限低至0.2 ppm；分析范围ppm~99.99%；主元素RSD<0.05%；9/12/20位旋转样品台。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 274,
+"code": "DW-CS-8820S",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/06/CS-8820S-Carbon-Sulfur-Analyzer.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích Cacbon và Lưu huỳnh hồng ngoại Drawell DW-CS-8820S",
+"d": "Dải đo C 0,0001%-15%; S 0,0001%-10%; độ nhạy 0,1 ppm; thời gian phân tích 25-60 s; kèm cân phân tích 0,1 mg. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-CS-8820S Infrared Carbon and Sulfur Analyzer",
+"d": "C range 0.0001%-15%; S range 0.0001%-10%; sensitivity 0.1 ppm; analysis time 25-60 s; supplied with 0.1 mg balance. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-CS-8820S 红外碳硫分析仪",
+"d": "碳测量范围0.0001%-15%；硫0.0001%-10%；灵敏度0.1 ppm；分析时间25-60 s；配万分之一天平。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 275,
+"code": "MHVS-1000V",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHVS-1000V.png",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers vi mô hiển thị hình ảnh Drawell MHVS-1000V",
+"d": "Lực thử 10 gf~1 kgf (0,098~9,8 N); gia tải và đổi lực tự động; đổi mũi đâm và vật kính tự động; thời gian giữ 0-60 s; vật kính 10X, 40X. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHVS-1000V Visual Micro Vickers Hardness Tester",
+"d": "Test force 10 gf~1 kgf (0.098~9.8 N); automatic loading and force switching; automatic indenter/objective turret; dwell 0-60 s; 10X and 40X objectives. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHVS-1000V 视像显微维氏硬度计",
+"d": "试验力10 gf~1 kgf（0.098~9.8 N）；自动加卸载及换力；压头与物镜自动切换；保荷0-60 s；物镜10X、40X。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 276,
+"code": "MHVS-1000/1000AT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHVS-1000AT.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers vi mô hiển thị số màn hình cảm ứng tháp xoay tay/tự động Drawell MHVS-1000/1000AT",
+"d": "Lực thử 10 gf~1 kgf (0,098~9,8 N); dải đo 5-4000 HV; theo GB/T 4340, ISO 6507, ASTM E384; chuyển đổi thang Rockwell, Brinell. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHVS-1000/1000AT Touch Screen Manual/Automatic Turret Digital Micro Vickers Hardness Tester",
+"d": "Test force 10 gf~1 kgf (0.098~9.8 N); range 5-4000 HV; GB/T 4340, ISO 6507, ASTM E384; Rockwell and Brinell conversion. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHVS-1000/1000AT 触摸屏手动/自动转塔数显显微维氏硬度计",
+"d": "试验力10 gf~1 kgf（0.098~9.8 N）；测量范围5-4000 HV；执行GB/T 4340、ISO 6507、ASTM E384；可换算洛氏、布氏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 277,
+"code": "JMHVS-1000-XYZ",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/JMHVS-1000-XYZ-Full-Automatic-Micro-Vickers-Hardness-Tester.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers vi mô tự động hoàn toàn Drawell JMHVS-1000-XYZ",
+"d": "Lực thử 10 gf~1 kgf (0,098~9,8 N); bàn nâng dẫn hướng trượt tuyến tính độ chính xác cao; đơn vị đo nhỏ nhất 0,01 μm; theo GB/T 4340, ISO 6507, ASTM E92. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell JMHVS-1000-XYZ Fully Automatic Micro Vickers Hardness Tester",
+"d": "Test force 10 gf~1 kgf (0.098~9.8 N); precision linear-guide lifting stage; minimum measuring unit 0.01 μm; GB/T 4340, ISO 6507, ASTM E92. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell JMHVS-1000-XYZ 全自动显微维氏硬度计",
+"d": "试验力10 gf~1 kgf（0.098~9.8 N）；高精度直线导轨升降平台；最小测量单位0.01 μm；执行GB/T 4340、ISO 6507、ASTM E92。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 278,
+"code": "JMHVS-1000AT PLUS",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/JMHVS-1000AT-1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers vi mô hiển thị số chính xác Drawell JMHVS-1000AT PLUS",
+"d": "Lực thử 0,098~9,8 N; gia tải tự động; thị kính 100X (quan sát), 400X (đo); thời gian giữ 0~60 s; độ phân giải vết lõm 0,02 μm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell JMHVS-1000AT PLUS Precision Digital Micro Vickers Hardness Tester",
+"d": "Test force 0.098~9.8 N; automatic loading; 100X (observe) and 400X (measure) magnification; dwell 0~60 s; indentation resolution 0.02 μm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell JMHVS-1000AT PLUS 精密数显显微维氏硬度计",
+"d": "试验力0.098~9.8 N；自动加卸载；放大倍数100X（观察）、400X（测量）；保荷0~60 s；压痕最小分辨率0.02 μm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 279,
+"code": "MHVS-5/10/30/50V plus",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHVS-Plus-Series.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers hiển thị hình ảnh Drawell MHVS-5/10/30/50V plus",
+"d": "Lực thử từ 0,2 kgf đến 50 kgf tùy model; gia tải và đổi lực tự động; đổi mũi đâm và vật kính tự động; thời gian giữ 5-60 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHVS-5/10/30/50V plus Visual Vickers Hardness Tester",
+"d": "Test force from 0.2 kgf to 50 kgf by model; automatic loading and force switching; automatic indenter/objective switching; dwell 5-60 s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHVS-5/10/30/50V plus 视像维氏硬度计",
+"d": "试验力0.2 kgf至50 kgf（视型号）；自动加卸载及换力；压头与物镜自动切换；保荷5-60 s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 280,
+"code": "MHVS-5/10/30/50V",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHVS-V-Series.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers hiển thị hình ảnh Drawell MHVS-5/10/30/50V",
+"d": "Lực thử từ 0,2 kgf đến 50 kgf tùy model; gia tải tự động; đổi mũi đâm và vật kính tự động; thời gian giữ 5-60 s; giao diện Trung-Anh. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHVS-5/10/30/50V Visual Vickers Hardness Tester",
+"d": "Test force from 0.2 kgf to 50 kgf by model; automatic loading; automatic indenter/objective switching; dwell 5-60 s; Chinese-English UI. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHVS-5/10/30/50V 视像维氏硬度计",
+"d": "试验力0.2 kgf至50 kgf（视型号）；自动加卸载；压头与物镜自动切换；保荷5-60 s；中英文界面。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 281,
+"code": "MHVS-5/10/30/50AT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHVS-AT-Series.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers hiển thị số Drawell MHVS-5/10/30/50AT",
+"d": "Lực thử từ 0,2 kgf đến 50 kgf tùy model; gia tải điện điều khiển bước chính xác; gia và tháo tải tự động; đổi lực tự động; thời gian giữ 5-60 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHVS-5/10/30/50AT Digital Vickers Hardness Tester",
+"d": "Test force from 0.2 kgf to 50 kgf by model; precision step-controlled electric loading; automatic loading/unloading; automatic force switching; dwell 5-60 s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHVS-5/10/30/50AT 数显维氏硬度计",
+"d": "试验力0.2 kgf至50 kgf（视型号）；高精度步进电动加荷；自动加卸载；自动换力；保荷5-60 s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 282,
+"code": "JMHVS-5/10/30/50-XYZ",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/JMHVS-5103050-XYZ-Automatic-Precision-Vickers-Hardness-Tester.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers chính xác tự động Drawell JMHVS-5/10/30/50-XYZ",
+"d": "Lực thử từ 0,2 kgf đến 50 kgf tùy model; bàn XYZ tự động; gia tải và đổi lực tự động; đổi mũi đâm và vật kính tự động; thời gian giữ 5-60 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell JMHVS-5/10/30/50-XYZ Automatic Precision Vickers Hardness Tester",
+"d": "Test force from 0.2 kgf to 50 kgf by model; automatic XYZ stage; automatic loading and force switching; automatic indenter/objective switching; dwell 5-60 s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell JMHVS-5/10/30/50-XYZ 全自动精密维氏硬度计",
+"d": "试验力0.2 kgf至50 kgf（视型号）；XYZ自动平台；自动加卸载及换力；压头与物镜自动切换；保荷5-60 s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 283,
+"code": "JMHVS-5/10/30/50AT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/JMHVS-5-50AT_副本.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Vickers chính xác Drawell JMHVS-5/10/30/50AT",
+"d": "Lực thử từ 0,2 kgf đến 50 kgf tùy model; gia tải và đổi lực tự động; đổi mũi đâm và vật kính tự động; thời gian giữ 5-60 s; giao diện Trung-Anh. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell JMHVS-5/10/30/50AT Precision Vickers Hardness Tester",
+"d": "Test force from 0.2 kgf to 50 kgf by model; automatic loading and force switching; automatic indenter/objective switching; dwell 5-60 s; Chinese-English UI. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell JMHVS-5/10/30/50AT 精密维氏硬度计",
+"d": "试验力0.2 kgf至50 kgf（视型号）；自动加卸载及换力；压头与物镜自动切换；保荷5-60 s；中英文界面。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 284,
+"code": "MHRS-150/MHRS-45/MHRS-150/45",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHRS-PLUS-Series（1）.png",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Rockwell, Rockwell bề mặt và Rockwell kép hiển thị số màn hình cảm ứng Drawell MHRS-150/MHRS-45/MHRS-150/45",
+"d": "Lực thử ban đầu 3/10 kgf; tổng lực 15/30/45 kgf (bề mặt) và 60/100/150 kgf (Rockwell); thang HRA, HRB, HRC và các thang bề mặt; màn hình cảm ứng. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHRS-150/MHRS-45/MHRS-150/45 Touch Screen Digital Rockwell, Superficial and Double Rockwell Hardness Tester",
+"d": "Preliminary force 3/10 kgf; total force 15/30/45 kgf (superficial) and 60/100/150 kgf (Rockwell); HRA, HRB, HRC and superficial scales; touchscreen. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHRS-150/MHRS-45/MHRS-150/45 触摸屏数显洛氏/表面洛氏/双洛氏硬度计",
+"d": "初试验力3/10 kgf；总试验力15/30/45 kgf（表面洛氏）及60/100/150 kgf（洛氏）；HRA、HRB、HRC及表面洛氏标尺；触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 285,
+"code": "JMHRS-150-XYZ",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/JMHRS-150-XYZ.png",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Rockwell chính xác tự động hoàn toàn Drawell JMHRS-150-XYZ",
+"d": "Thử độ thấm tôi đầu mút tự động; tự bù biến dạng mẫu và rung động; lấy nét tự động; điều khiển bước chính xác; theo GB/T 225, ISO 642, JIS G0561, ASTM A255. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell JMHRS-150-XYZ Fully Automatic Precision Rockwell Hardness Tester",
+"d": "Automatic end-quench (Jominy) testing; compensates sample deformation and vibration; auto focusing; precision step control; GB/T 225, ISO 642, JIS G0561, ASTM A255. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell JMHRS-150-XYZ 全自动精密洛氏硬度计",
+"d": "全自动末端淬透性测试；自动补偿试样变形及环境振动；自动聚焦；高精度步进控制；执行GB/T 225、ISO 642、JIS G0561、ASTM A255。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 286,
+"code": "MHRS-150/45-Z",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHRS-Z-Series1.png",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Rockwell kép tự động hoàn toàn Drawell MHRS-150/45-Z",
+"d": "Điều khiển cảm biến vòng kín; lực ban đầu 3/10 kgf; lực chính 15~150 kgf (147,1~1471 N); đầy đủ thang Rockwell HRA~HRV và Rockwell bề mặt N, T, W, X, Y. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHRS-150/45-Z Fully Automatic Double Rockwell Hardness Tester",
+"d": "Closed-loop sensor control; preliminary force 3/10 kgf; main force 15~150 kgf (147.1~1471 N); full Rockwell HRA~HRV and superficial N, T, W, X, Y scales. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHRS-150/45-Z 全自动双洛氏硬度计",
+"d": "闭环传感器控制；初试验力3/10 kgf；主试验力15~150 kgf（147.1~1471 N）；全部洛氏标尺HRA~HRV及表面洛氏N、T、W、X、Y标尺。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 287,
+"code": "JMHRS-150",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/JMHRS-150.png",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Rockwell tự động Drawell JMHRS-150",
+"d": "Mũi đâm đẩy xuống kiểu mới; điều khiển cảm biến vòng kín; lực ban đầu 3/10 kgf; lực chính 15~150 kgf; đo Rockwell và Rockwell bề mặt; màn hình LCD. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell JMHRS-150 Automatic Rockwell Hardness Tester",
+"d": "Push-down indenter design; closed-loop sensor control; preliminary force 3/10 kgf; main force 15~150 kgf; Rockwell and superficial Rockwell scales; LCD. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell JMHRS-150 自动洛氏硬度计",
+"d": "新型下压式压头；闭环传感器控制；初试验力3/10 kgf；主试验力15~150 kgf；洛氏及表面洛氏标尺；LCD显示。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 288,
+"code": "HRS-150X-Z/HRS-45X-Z/HRS-150/45X-Z",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/HRS-X-Z-Series（1）.png",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Rockwell, Rockwell bề mặt và Rockwell kép đầu mũi lồi tự động Drawell HRS-150X-Z/HRS-45X-Z/HRS-150/45X-Z",
+"d": "Bàn đo cỡ lớn, mũi đâm kiểu đầu lồi; lực ban đầu 3/10 kgf; tổng lực 15/30/45 kgf và 60/100/150 kgf; thang HRA, HRB, HRC và thang bề mặt. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell HRS-150X-Z/HRS-45X-Z/HRS-150/45X-Z Nose-type Fully Automatic Rockwell, Superficial and Double Rockwell Hardness Tester",
+"d": "Large platform, convex nose indenter; preliminary force 3/10 kgf; total force 15/30/45 kgf and 60/100/150 kgf; HRA, HRB, HRC and superficial scales. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell HRS-150X-Z/HRS-45X-Z/HRS-150/45X-Z 凸鼻式全自动洛氏/表面洛氏/双洛氏硬度计",
+"d": "大平台，凸鼻式压头；初试验力3/10 kgf；总试验力15/30/45 kgf及60/100/150 kgf；HRA、HRB、HRC及表面洛氏标尺。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 289,
+"code": "MHRS-150/45-Z",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHRS-Z-Series1.png",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Rockwell và Rockwell bề mặt tự động hoàn toàn Drawell MHRS-150/45-Z",
+"d": "Điều khiển cảm biến vòng kín; lực ban đầu 3/10 kgf (29,4/98 N); lực chính 15/30/45/60/100/150 kgf; thang Rockwell HRA~HRV và Rockwell bề mặt. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHRS-150/45-Z Fully Automatic Rockwell and Superficial Rockwell Hardness Tester",
+"d": "Closed-loop sensor control; preliminary force 3/10 kgf (29.4/98 N); main force 15/30/45/60/100/150 kgf; Rockwell HRA~HRV and superficial scales. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHRS-150/45-Z 全自动洛氏及表面洛氏硬度计",
+"d": "闭环传感器控制；初试验力3/10 kgf（29.4/98 N）；主试验力15/30/45/60/100/150 kgf；洛氏HRA~HRV及表面洛氏标尺。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 290,
+"code": "MHBS-3000-AZF",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/MHBS-3000-AZF.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Brinell tự động hoàn toàn Drawell MHBS-3000-AZF",
+"d": "Theo GB/T 231.1 (ISO 6506); điều khiển bước chính xác; thời gian gia tải 2-8 s; bàn nâng dẫn hướng trượt tuyến tính; thang HBW2.5/62.5 đến HBW10/3000. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHBS-3000-AZF Fully Automatic Brinell Hardness Tester",
+"d": "Per GB/T 231.1 (ISO 6506); precision step control; loading time 2-8 s; linear-guide lifting table; scales HBW2.5/62.5 to HBW10/3000. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHBS-3000-AZF 全自动布氏硬度计",
+"d": "执行GB/T 231.1（ISO 6506）；高精度步进控制；加荷时间2-8 s；直线导轨升降工作台；标尺HBW2.5/62.5至HBW10/3000。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 291,
+"code": "MHBS-3000AT",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/HBS-3000AT1.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Brinell hiển thị số màn hình cảm ứng Drawell MHBS-3000AT",
+"d": "Lực thử 62,5~3000 kgf (612,9~29420 N); thang HBW2.5/62.5 đến HBW10/3000; dùng cho vật đúc, vật rèn có cấu trúc tinh thể thô. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell MHBS-3000AT Touch Screen Digital Brinell Hardness Tester",
+"d": "Test force 62.5~3000 kgf (612.9~29420 N); scales HBW2.5/62.5 to HBW10/3000; for castings and forgings with coarse grain structure. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell MHBS-3000AT 触摸屏数显布氏硬度计",
+"d": "试验力62.5~3000 kgf（612.9~29420 N）；标尺HBW2.5/62.5至HBW10/3000；适用于粗晶组织铸件、锻件。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 292,
+"code": "HBS-3000V-Z PLUS",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/HBS-3000V-Z-PLUS.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Brinell hiển thị hình ảnh lấy nét tự động Drawell HBS-3000V-Z PLUS",
+"d": "Lấy nét tự động; lực thử 62,5~3000 kgf; 13 thang từ HBW2.5/62.5 đến HBW10/3000; khung máy kiểu mới độ cứng vững cao. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell HBS-3000V-Z PLUS Auto-focusing Visual Brinell Hardness Tester",
+"d": "Automatic focusing; test force 62.5~3000 kgf; 13 scales from HBW2.5/62.5 to HBW10/3000; rigid new frame design. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell HBS-3000V-Z PLUS 自动聚焦视像布氏硬度计",
+"d": "自动聚焦；试验力62.5~3000 kgf；13种标尺，HBW2.5/62.5至HBW10/3000；新型高刚性机架。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 293,
+"code": "HBS-3000V-F",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/HBS-3000V-F1-1024x1024.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy đo độ cứng Brinell hiển thị hình ảnh không cần lấy nét Drawell HBS-3000V-F",
+"d": "Không cần lấy nét; lực thử 62,5~3000 kgf (612,9~29420 N); 13 thang từ HBW2.5/62.5 đến HBW10/3000; khung máy kiểu mới. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell HBS-3000V-F Focus-free Visual Brinell Hardness Tester",
+"d": "No focusing required; test force 62.5~3000 kgf (612.9~29420 N); 13 scales from HBW2.5/62.5 to HBW10/3000; new frame design. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell HBS-3000V-F 免聚焦视像布氏硬度计",
+"d": "无需聚焦；试验力62.5~3000 kgf（612.9~29420 N）；13种标尺，HBW2.5/62.5至HBW10/3000；新型机架。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 294,
+"code": "DW-K2025",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/DW-K2025-hplc13.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy sắc ký lỏng hiệu năng cao (HPLC) Drawell DW-K2025",
+"d": "Lưu lượng 0,001~10,000 mL/phút; bơm đẳng dòng (P1), hai kênh (P2) hoặc bốn kênh (P4); áp suất tối đa 62 MPa; rửa piston. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-K2025 High Performance Liquid Chromatograph",
+"d": "Flow rate 0.001~10.000 mL/min; isocratic (P1), binary (P2) or quaternary (P4) pump; max pressure 62 MPa; plunger seal wash. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-K2025 高效液相色谱仪",
+"d": "流速0.001~10.000 mL/min；等度（P1）、二元（P2）或四元（P4）泵；最高压力62 MPa；柱塞清洗。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 295,
+"code": "K-500/K-5000",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/Handheld-XRF-Soil-Heavy-Metal-Analyzer-K-500-K-5000-2.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích kim loại nặng trong đất huỳnh quang tia X (XRF) cầm tay Drawell K-500/K-5000",
+"d": "Ống tia X micro công suất cao; 5 loại bia Au, Ag, W, Ta, Pd; điện áp 35-50 kV; khối lượng 1,65 kg kèm pin; kích thước 250×75×270 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell K-500/K-5000 Handheld XRF Soil Heavy Metal Analyzer",
+"d": "High-power X-ray microtube; 5 target options Au, Ag, W, Ta, Pd; voltage 35-50 kV; weight 1.65 kg with battery; 250×75×270 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell K-500/K-5000 手持式XRF土壤重金属分析仪",
+"d": "高功率X射线微型管；靶材可选Au、Ag、W、Ta、Pd；电压35-50 kV；含电池重1.65 kg；尺寸250×75×270 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 296,
+"code": "K-600/K-7000",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/Handheld-XRF-Mineral-Analyzer-K-600-K-7000-2.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích khoáng sản huỳnh quang tia X (XRF) cầm tay Drawell K-600/K-7000",
+"d": "Phân tích quặng tại hiện trường; chế độ quặng; tự chẩn đoán phần cứng, phần mềm, pin; hệ điều hành Windows CE 6.0; kèm mẫu chuẩn và 2 pin lithium. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell K-600/K-7000 Handheld XRF Mineral Analyzer",
+"d": "On-site ore analysis; ore mode; self-diagnosis of hardware, software and battery; Windows CE 6.0; supplied with standard sample and 2 lithium batteries. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell K-600/K-7000 手持式XRF矿石分析仪",
+"d": "现场矿石分析；矿石模式；硬件、软件、电池自诊断；Windows CE 6.0系统；配标样及2块锂电池。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 297,
+"code": "K-8000",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/K-8000-Handheld-XRF-Gold-Analyzer-5.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích vàng huỳnh quang tia X (XRF) cầm tay Drawell K-8000",
+"d": "Ống tia X micro công suất cao; đầu dò Si-PIN hoặc SDD; 5 loại bia Au, Ag, W, Ta, Pd; điện áp 35-50 kV; khối lượng 1,65 kg kèm pin. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell K-8000 Handheld XRF Gold Analyzer",
+"d": "High-power X-ray microtube; Si-PIN or SDD detector; 5 target options Au, Ag, W, Ta, Pd; voltage 35-50 kV; weight 1.65 kg with battery. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell K-8000 手持式XRF黄金分析仪",
+"d": "高功率X射线微型管；Si-PIN或SDD探测器；靶材可选Au、Ag、W、Ta、Pd；电压35-50 kV；含电池重1.65 kg。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 298,
+"code": "DW-980/DW-980S",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/DW-980-2-Handheld-XRF.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích bộ xúc tác ba thành phần huỳnh quang tia X (XRF) cầm tay Drawell DW-980/DW-980S",
+"d": "Đo Pt, Rh, Pd trong bộ chuyển đổi xúc tác 3 thành phần; đầu dò SDD KETEK độ phân giải dưới 129 eV; ống tia X bia W 4 W, 50 kV, 200 μA. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DW-980/DW-980S Handheld XRF 3-Way Catalyst Analyzer",
+"d": "Measures Pt, Rh, Pd in 3-way catalytic converters; KETEK SDD detector, resolution below 129 eV; 4 W W-target X-ray tube, 50 kV, 200 μA. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DW-980/DW-980S 手持式XRF三元催化分析仪",
+"d": "测定三元催化器中铂、铑、钯含量；KETEK SDD探测器，分辨率低于129 eV；4 W钨靶X射线管，50 kV，200 μA。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 299,
+"code": "K-1688/K-8000 Plus",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/04/Handheld-XRF-Alloy-Analyzer-K-1688-K-8000-plus-8.jpg",
+"c": "tn",
+"s": 6,
+"vi": {
+"n": "Máy phân tích hợp kim huỳnh quang tia X (XRF) cầm tay Drawell K-1688/K-8000 Plus",
+"d": "Ống tia X micro công suất cao; 5 loại bia Au, Ag, W, Ta, Pd; điện áp 35-50 kV thay đổi được; khối lượng 1,65 kg kèm pin; kích thước 250×75×270 mm. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell K-1688/K-8000 Plus Handheld XRF Alloy Analyzer",
+"d": "High-power X-ray microtube; 5 target options Au, Ag, W, Ta, Pd; variable 35-50 kV; weight 1.65 kg with battery; 250×75×270 mm. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell K-1688/K-8000 Plus 手持式XRF合金分析仪",
+"d": "高功率X射线微型管；靶材可选Au、Ag、W、Ta、Pd；电压35-50 kV可调；含电池重1.65 kg；尺寸250×75×270 mm。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 300,
+"code": "DL-4MC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/03/DL-4MC-2.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm CGF thay đổi tốc độ Drawell DL-4MC",
+"d": "Rotor văng 8×10 mL; RCF tối đa 3250 xg; chương trình PRP, PRF, CGF; động cơ DC không chổi than; nhiệt độ -20~+40°C; màn hình cảm ứng. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell DL-4MC CGF Variable Speed Centrifuge",
+"d": "Swing rotor 8×10 mL; max RCF 3250 xg; PRP, PRF, CGF programs; brushless DC motor; temperature -20~+40°C; touch LCD. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell DL-4MC CGF变速离心机",
+"d": "水平转子8×10 mL；最大相对离心力3250 xg；PRP、PRF、CGF程序；无刷直流电机；温度-20~+40°C；触摸屏。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 301,
+"code": "TGD-22MC/iTGD-22MC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2022/07/TGD-22MC-白底logo.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm lạnh tốc độ cao và thấp Drawell TGD-22MC/iTGD-22MC",
+"d": "Tốc độ tối đa 22000 rpm; RCF tối đa 34700 xg; dung tích tối đa 4×750 mL; nhiệt độ -20~+40°C; tăng tốc nhanh nhất 20 s, giảm tốc 18 s. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell TGD-22MC/iTGD-22MC High and Low Speed Refrigerated Centrifuge",
+"d": "Max speed 22000 rpm; max RCF 34700 xg; max capacity 4×750 mL; temperature -20~+40°C; fastest acceleration 20 s, deceleration 18 s. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell TGD-22MC/iTGD-22MC 高低速冷冻离心机",
+"d": "最高转速22000 rpm；最大相对离心力34700 xg；最大容量4×750 mL；温度-20~+40°C；最快升速20 s，降速18 s。制造商：Drawell。产地：中国。"
+}
+},
+{
+"i": 302,
+"code": "iTGD-16MC/iTGD-18MC/iTGD-20MC",
+"img": "https://www.drawellanalytical.com/wp-content/uploads/2024/08/TGD-16MC-4.jpg",
+"c": "tn",
+"s": 2,
+"vi": {
+"n": "Máy ly tâm lạnh tốc độ cao và thấp thông minh Drawell iTGD-16MC/iTGD-18MC/iTGD-20MC",
+"d": "Tốc độ tối đa 16500/18500/20500 rpm; RCF tối đa 21800/23500/28200 xg; dung tích tối đa 4×250 mL; nhiệt độ -20~+40°C; màn hình cảm ứng. Hãng: Drawell. Xuất xứ: Trung Quốc."
+},
+"en": {
+"n": "Drawell iTGD-16MC/iTGD-18MC/iTGD-20MC Intelligent High and Low Speed Refrigerated Centrifuge",
+"d": "Max speed 16500/18500/20500 rpm; max RCF 21800/23500/28200 xg; max capacity 4×250 mL; temperature -20~+40°C; touch LCD. Manufacturer: Drawell. Origin: China."
+},
+"zh": {
+"n": "Drawell iTGD-16MC/iTGD-18MC/iTGD-20MC 智能高低速冷冻离心机",
+"d": "最高转速16500/18500/20500 rpm；最大相对离心力21800/23500/28200 xg；最大容量4×250 mL；温度-20~+40°C；触摸屏。制造商：Drawell。产地：中国。"
+}
+}
+]
