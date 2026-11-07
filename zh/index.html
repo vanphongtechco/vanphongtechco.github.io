@@ -231,7 +231,7 @@ section{padding:70px 0}
 @media (max-width:900px){.pitem{flex-basis:50%}.pc .side.l{left:0}.pc .side.r{right:0}}
 
 /* catalogue */
-.catalog{display:grid;grid-template-columns:270px minmax(0,1fr);gap:28px;align-items:start}
+.catalog{display:block}
 .side-box{background:#fff;border:1px solid var(--line)}
 .side-box h3{margin:0;background:var(--navy);color:#fff;font-size:15px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:13px 18px}
 .tree{list-style:none;margin:0;padding:6px 0}
@@ -251,7 +251,8 @@ section{padding:70px 0}
 .cat-head p{margin:0;color:var(--muted);font-size:14px}
 .cat-head form{display:flex;gap:6px;flex:1 1 300px;max-width:420px}
 .cat-head input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);font:14px var(--font)}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .card{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
 .card:hover{border-color:var(--blue);box-shadow:0 10px 24px rgba(14,47,90,.1)}
 .card .thumb{aspect-ratio:4/3;background:linear-gradient(180deg,#F7F9FB,#ECF0F4);display:grid;place-items:center}
@@ -596,7 +597,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 <section id="san-pham"><div class="wrap">
   <div class="title"><h2>产品</h2></div>
   <div class="catalog">
-    <aside class="side-box"><h3>产品分类</h3><ul class="tree" id="tree"></ul></aside>
+    <ul class="tree" id="tree" hidden></ul>
     <div>
       <div class="cat-head">
         <div><h3 id="catTitle">产品</h3><p id="catCount"></p></div>
