@@ -594,12 +594,11 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 
 <!-- CATALOGUE -->
 <section id="san-pham"><div class="wrap">
-  <div class="title"><h2>Product catalogue</h2></div>
   <div class="catalog">
     <aside class="side-box"><h3>Categories</h3><ul class="tree" id="tree"></ul></aside>
     <div>
       <div class="cat-head">
-        <div><h3 id="catTitle">All products</h3><p id="catCount"></p></div>
+        <div><h3 id="catTitle">Products</h3><p id="catCount"></p></div>
         <form id="searchForm" role="search"><input id="q" type="search" placeholder="Search by name, code…" aria-label="Search products"><button class="btn" type="submit">Search</button></form>
       </div>
       <div class="grid" id="grid"></div>
@@ -1322,7 +1321,7 @@ function renderMenus(){
   $('qlinks').innerHTML=CATS.flatMap(c=>[ '<button type="button" data-cat="'+c.id+'" title="'+c.name+'">'+c.name+'</button>' ].concat(c.subs.map((x,k)=>'<button type="button" data-cat="'+c.id+'" data-sub="'+k+'" title="'+x+'">'+x+'</button>'))).join('');
 }
 function renderTree(){
-  const all=[{id:'all',name:'All products',subs:[]}].concat(CATS);
+  const all=[{id:'all',name:'Products',subs:[]}].concat(CATS);
   $('tree').innerHTML=all.map(c=>{
     const cnt=c.id==='all'?PRODUCTS.length:PRODUCTS.filter(p=>p.c===c.id).length, op=opened.has(c.id);
     const tg=c.subs.length?'<button type="button" class="tg" data-toggle="'+c.id+'" aria-expanded="'+op+'" aria-label="Expand subcategories">'+(op?'−':'+')+'</button>':'<span></span>';
@@ -1335,7 +1334,7 @@ function renderGrid(){
   const list=PRODUCTS.filter(p=>(cur==='all'||p.c===cur)&&(sub===null||p.s===sub)&&(!q||norm(p.n+' '+p.code+' '+p.d).includes(q)));
   const pages=Math.max(1,Math.ceil(list.length/PER)); if(page>pages)page=pages;
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
-  $('catTitle').textContent=sn||(cat?cat.name:'All products');
+  $('catTitle').textContent=sn||(cat?cat.name:'Products');
   $('catCount').textContent=list.length+' products'+(query.trim()?' matching “'+query.trim()+'”':'');
   $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);const u='san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/';return '<article class="card"><a class="thumb'+(p.img?' ph':'')+'" href="'+u+'">'+pic(p)+'</a><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4><a href="'+u+'">'+esc(p.n)+'</a></h4><a class="dsc" href="'+u+'"><p>'+esc(p.d)+'</p></a><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-en.pdf" target="_blank" rel="noopener">Application paper (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Drawing (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 / +84 986 818 013 for advice.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
