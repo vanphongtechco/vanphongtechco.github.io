@@ -260,6 +260,7 @@ section{padding:70px 0}
 .card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
 .card .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
 .card h4 a:hover{color:var(--blue)}
+.card a.dsc{display:block;color:inherit}.card a.dsc:hover p{color:var(--fg)}
 .card .foot a.more{color:var(--cta);font-weight:700}
 .card a.thumb{display:block}
 .card h4{margin:0;font-size:16px;font-weight:600}
@@ -1337,7 +1338,7 @@ function renderGrid(){
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'Tất cả sản phẩm');
   $('catCount').textContent=list.length+' sản phẩm'+(query.trim()?' khớp với “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);const u='san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/';return '<article class="card"><a class="thumb'+(p.img?' ph':'')+'" href="'+u+'">'+pic(p)+'</a><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4><a href="'+u+'">'+esc(p.n)+'</a></h4><p>'+esc(p.d)+'</p><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/vi/'+p.pdf+'.pdf" target="_blank" rel="noopener">Tải catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'.pdf" target="_blank" rel="noopener">Bài báo ứng dụng (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Bản vẽ (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video giới thiệu</a>':'')+'<a class="more" href="'+u+'">Xem chi tiết →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 / 0986.818.013 để được tư vấn.</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);const u='san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/';return '<article class="card"><a class="thumb'+(p.img?' ph':'')+'" href="'+u+'">'+pic(p)+'</a><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4><a href="'+u+'">'+esc(p.n)+'</a></h4><a class="dsc" href="'+u+'"><p>'+esc(p.d)+'</p></a><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/vi/'+p.pdf+'.pdf" target="_blank" rel="noopener">Tải catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'.pdf" target="_blank" rel="noopener">Bài báo ứng dụng (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Bản vẽ (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video giới thiệu</a>':'')+'<a class="more" href="'+u+'">Xem chi tiết →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 / 0986.818.013 để được tư vấn.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Trang trước">‹</button>';
   const ks=[];for(let k=1;k<=pages;k++)if(k===1||k===pages||Math.abs(k-page)<=2)ks.push(k);
