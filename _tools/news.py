@@ -78,7 +78,7 @@ def block(lang):
     <figure>{fig}</figure>
     <div class="nbody">
       <p class="nmeta"><span>{n['tag'][lang]}</span> · {n['date'][lang]}</p>
-      <h3>{n['title'][lang]}</h3>
+      <h3>{(lambda L: f'<a href="{L[0][1]}" target="_blank" rel="noopener">' + n['title'][lang] + '</a>' if L else n['title'][lang])(n.get('links', {}).get(lang, []))}</h3>
       {''.join(f'<p>{p}</p>' for p in n['intro'][lang])}
       {f'<ol>{items}</ol>' if items else ''}
       <p>{n['outro'][lang]}</p>

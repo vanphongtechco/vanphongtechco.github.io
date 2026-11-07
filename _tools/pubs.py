@@ -93,8 +93,9 @@ def block(lang):
         meta = ' · '.join(x for x in [e(m['venue_en'] if lang != 'vi' or m['lang_orig'] != 'vi' else m['venue_orig']), e(m.get('index', '').replace('ВАК', 'VAK'))] if x)
         doi = f' · DOI: <a href="https://doi.org/{e(m["doi"])}" target="_blank" rel="noopener">{e(m["doi"])}</a>' if m.get('doi') else ''
         ot = f'<p class="ot">{e(orig)}</p>' if orig.strip() != title.strip() else ''
+        main = f"/bai-bao/{m['slug']}-{lang}.pdf" if (OUT / f"{m['slug']}-{lang}.pdf").exists() else f"/bai-bao/{m['slug']}.pdf"
         return f"""    <li class="pub"><span class="yr">{m['year']}</span><div>
-      <h4>{e(title)}</h4>{ot}
+      <h4><a href="{main}" target="_blank" rel="noopener">{e(title)}</a></h4>{ot}
       <p class="au">{e(m['authors_en'] if lang != 'vi' or m['lang_orig'] != 'vi' else m['authors_orig'])}</p>
       <p class="ve">{meta}{doi}</p>
       <details><summary>{e(t['abs'])}</summary><p>{e(m[f'abstract_{lang}'])}</p></details>
@@ -138,7 +139,7 @@ def patent_block(lang):
   <div class="title"><h2>{e(t['h'])}</h2><p>{e(t['sub'])}</p></div>
   <ol class="pubs">
     <li class="pub"><span class="yr">{e(P['publication_date'][-4:] if P['publication_date'][-4:].isdigit() else '2017')}</span><div>
-      <h4>{e(title)}</h4><p class="ot">{e(P['title_orig'])}</p>
+      <h4><a href="{'/bai-bao/patent-ru-167383-'+lang+'.pdf' if (OUT / f'patent-ru-167383-{lang}.pdf').exists() else '/bai-bao/patent-ru-167383.pdf'}" target="_blank" rel="noopener">{e(title)}</a></h4><p class="ot">{e(P['title_orig'])}</p>
       <p class="au">{e(P[f'type_{lang}'])} · {e(t['no'])}: <b>{e(P['number'])}</b></p>
       <p class="au">{e(t['inv'])}: {e(P['authors_en'].replace('Le Thanh Binh', 'Lê Thanh Bình') if lang == 'vi' else P['authors_en'])}</p>
       <p class="ve">{e(t['hold'])}: {e(P['holder_en'] if lang != 'vi' else P['holder_en'])} · {e(t['app'])}: {e(P['application'])} · {e(t['pub'])}: {e(P['publication_date'])} · {e(t['ipc'])}: {e(P['ipc'])}</p>
