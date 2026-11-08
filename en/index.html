@@ -110,7 +110,8 @@ section[id]{scroll-margin-top:84px}
 
 /* ---------- hero carousel ---------- */
 .hero{position:relative;overflow:hidden;background:#DCEAF5}
-.slides{display:flex;transition:transform .7s ease}
+.slides{display:flex;transition:transform .7s ease,height .4s ease}
+@media (max-width:900px){.slides{align-items:flex-start}}
 .slide{flex:0 0 100%;position:relative;height:clamp(380px,46vw,600px);overflow:hidden;display:flex;align-items:center}
 .slide .in{position:relative;z-index:2;width:100%}
 .s-banner{background:#EAF4FC;container-type:size}
@@ -124,7 +125,7 @@ section[id]{scroll-margin-top:84px}
 .s-bio .hot{top:31.6%;right:2.6%;font-size:clamp(10px,2.1cqw,20px)}
 @keyframes hotpulse{0%,100%{box-shadow:0 6px 18px rgba(232,85,26,.38),0 0 0 3px rgba(255,255,255,.75)}50%{box-shadow:0 6px 22px rgba(232,85,26,.55),0 0 0 6px rgba(255,255,255,.55)}}
 @media (prefers-reduced-motion:reduce){.s-banner .hot{animation:none}}
-@media (max-width:900px){.s-banner{background:linear-gradient(180deg,#F3F8FD,#DCEAF6)}.s-banner .bg{display:none}.s-banner .fr{top:50%;transform:translate(-50%,-62%);width:100cqw}.s-banner .hot{top:calc(100% + 18px);right:50%;transform:translateX(50%);font-size:16px;white-space:nowrap}}
+@media (max-width:900px){.s-banner{background:linear-gradient(180deg,#F3F8FD,#DCEAF6)}.s-banner .bg{display:none}.slide.s-banner{height:calc(56vw + 150px);min-height:0;padding:0}.s-banner .fr{top:12px;transform:translateX(-50%);width:min(100cqw,calc((100cqh - 150px) * var(--ar,1.7768)))}.s-banner .hot{top:calc(100% + 18px);right:50%;transform:translateX(50%);font-size:16px;white-space:nowrap}}
 .s-photo{background:#0E2F5A}
 .s-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.55}
 .s-photo .in{text-align:center;color:#fff}
@@ -468,7 +469,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   <div class="slides" id="slides">
     <div class="slide s-banner" aria-label="1 / 7">
       <img class="bg" src="/banner-van-phong-blur.jpg" alt="" aria-hidden="true">
-      <div class="fr"><img src="/banner-van-phong-en.jpg" alt="Van Phong – Complete engineering solutions: equipment, services and technology transfer for industry, healthcare, laboratories and education" width="1672" height="941"><a class="hot" href="tel:+84986818013"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: +84 986 818 013</a></div>
+      <div class="fr"><img src="/banner-van-phong-en.jpg" alt="Van Phong – Complete engineering solutions: equipment, services and technology transfer for industry, healthcare, laboratories and education" width="1672" height="941"><a class="hot" href="tel:+84899990683"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i>Hotline: +84 899 990 683</a></div>
     </div>
     <div class="slide s-banner" aria-label="2 / 7">
       <img class="bg" src="/banner-thiet-bi-ptn-blur.jpg" alt="" aria-hidden="true">
@@ -939,7 +940,9 @@ document.querySelectorAll('.dev[data-i],.th[data-i]').forEach(d => d.innerHTML =
   const track = $('slides'), n = track.children.length, dots = $('dots');
   let i = 0, timer;
   dots.innerHTML = Array.from({length:n},(_,k)=>'<button type="button" aria-label="Slide '+(k+1)+'"></button>').join('');
-  function go(k){ i=(k+n)%n; track.style.transform='translateX(-'+(i*100)+'%)'; [...dots.children].forEach((b,j)=>b.setAttribute('aria-current', j===i)); }
+  function go(k){ i=(k+n)%n; track.style.transform='translateX(-'+(i*100)+'%)'; [...dots.children].forEach((b,j)=>b.setAttribute('aria-current', j===i)); fit(); }
+  function fit(){ track.style.height = innerWidth<=900 ? track.children[i].offsetHeight+'px' : ''; }
+  addEventListener('resize',fit);
   function auto(){ clearInterval(timer); if(!reduce) timer=setInterval(()=>go(i+1),6000); }
   $('prev').onclick=()=>{go(i-1);auto()}; $('next').onclick=()=>{go(i+1);auto()};
   dots.onclick=e=>{const b=e.target.closest('button'); if(b){go([...dots.children].indexOf(b)); auto();}};
