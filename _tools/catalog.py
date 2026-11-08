@@ -10,7 +10,7 @@ REPO = Path(__file__).resolve().parent.parent
 import tempfile
 CAT = Path(tempfile.gettempdir()) / "vp-cat"
 OUT = REPO / "catalog"
-SRC = (REPO / "index.html").read_text(encoding="utf-8")
+SRC = (REPO / "_tools" / "src" / "index.vi.html").read_text(encoding="utf-8")
 def icon(k): return re.search(r"\b" + k + r":'(<svg.*?</svg>)'", SRC).group(1)
 
 def S(*a):  # same value in all languages

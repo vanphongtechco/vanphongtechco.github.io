@@ -9,8 +9,7 @@ Mỗi lần đẩy thay đổi lên nhánh `main`, web tự cập nhật sau kho
 
 ## 1. Nguyên tắc quan trọng nhất
 
-**Chỉ sửa bản tiếng Việt. Không sửa trực tiếp `en/index.html` và `zh/index.html`.**
-Hai file này được sinh tự động từ `index.html` (tiếng Việt). Sửa tay vào đó thì lần cập nhật sau sẽ bị ghi đè.
+**Chỉ sửa bản gốc tiếng Việt `_tools/src/index.vi.html`.** Không sửa trực tiếp `index.html`, `en/index.html`, `zh/index.html`, các thư mục `san-pham/`, `danh-muc/`, `biobase/`, `drawell/`, `data/`: tất cả được sinh tự động khi chạy `build.py`, sửa tay sẽ bị ghi đè.
 
 Luôn **lấy bản mới nhất trước khi sửa** (`git pull`), vì nhiều người cùng sửa web.
 
@@ -20,15 +19,17 @@ Luôn **lấy bản mới nhất trước khi sửa** (`git pull`), vì nhiều 
 
 | Muốn sửa | Sửa ở đâu |
 |---|---|
-| Chữ, menu, giới thiệu, dịch vụ, liên hệ (tiếng Việt) | `index.html` |
-| Danh sách sản phẩm | `index.html` → mảng `PRODUCTS` (mỗi dòng 1 sản phẩm) |
-| Nhóm / mục con sản phẩm | `index.html` → mảng `CATS` |
+| Chữ, menu, giới thiệu, dịch vụ, liên hệ (tiếng Việt) | `_tools/src/index.vi.html` |
+| Danh sách sản phẩm | `_tools/src/index.vi.html` → mảng `PRODUCTS` (mỗi dòng 1 sản phẩm) |
+| Nhóm / mục con sản phẩm | `_tools/src/index.vi.html` → mảng `CATS` |
 | Bản dịch tiếng Anh, tiếng Trung | `_tools/i18n.py` → bảng `P` |
 | Tin tức | `_tools/news.py` (đủ 3 thứ tiếng trong 1 chỗ) |
 | Ban lãnh đạo | `_tools/leaders.py` |
 | Đối tác – khách hàng | `_tools/partners.py` |
 | Bài báo khoa học, sáng chế | `_tools/papers/meta.json`, `_tools/papers/patent.json` |
 | Catalog PDF sản phẩm | `_tools/catalog.py` |
+| Sản phẩm chép từ BIOBASE, Drawell (3 thứ tiếng) | `_tools/bb/products.json` |
+| Trang chi tiết, trang hãng, danh mục | `_tools/pages.py` (tự sinh) |
 | Ảnh sản phẩm | thư mục `anh-san-pham/` (tên file = trường `img` của sản phẩm, `.jpg`, nên vuông nền trắng ~640×640) |
 | Ảnh tin tức, lãnh đạo, logo đối tác | `tin-tuc/`, `lanh-dao/`, `logo-doi-tac/` |
 | PDF bài báo, bản vẽ, catalog, video | `bai-bao/`, `ban-ve/`, `catalog/`, `video/` |
@@ -74,7 +75,7 @@ Dòng `leftover` (chữ tiếng Việt còn sót trên trang EN/ZH) liệt kê r
 
 ## 4. Thêm một sản phẩm
 
-Trong `index.html`, mảng `PRODUCTS`, thêm 1 dòng, ví dụ:
+Trong `_tools/src/index.vi.html`, mảng `PRODUCTS`, thêm 1 dòng, ví dụ:
 ```js
 {c:'tn', s:2, n:'Tên sản phẩm', code:'MÃ-MODEL', img:'ma-model', d:'Mô tả ngắn, thông số chính. Hãng ...', i:'balance'},
 ```

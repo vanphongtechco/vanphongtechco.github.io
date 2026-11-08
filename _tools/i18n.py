@@ -5,7 +5,7 @@ try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
-VI = (REPO / "index.html").read_text(encoding="utf-8")
+VI = (REPO / "_tools" / "src" / "index.vi.html").read_text(encoding="utf-8")
 sys.path.insert(0, str(Path(__file__).parent)); from partners import block as _pb
 from leaders import block as _lb
 from pubs import block as _ub, patent_block as _pt
@@ -17,13 +17,17 @@ ADDR_ZH = "河内市方烈坊陈田街36A巷34号"
 
 # (vi, en, zh) — exact substrings of the Vietnamese page
 P = [
+('<label for="fq">Tìm thiết bị</label>', '<label for="fq">Find equipment</label>', '<label for="fq">查找设备</label>'),
+('placeholder="Nhập tên máy hoặc model, ví dụ: tủ an toàn sinh học, BKC-TL5C, OS20-Pro…"', 'placeholder="Equipment name or model, e.g. biosafety cabinet, BKC-TL5C, OS20-Pro…"', 'placeholder="输入设备名称或型号，例如：生物安全柜、BKC-TL5C、OS20-Pro…"'),
+('<button class="btn cta" type="submit">Tìm</button>', '<button class="btn cta" type="submit">Search</button>', '<button class="btn cta" type="submit">搜索</button>'),
+('<a href="/biobase/"><img', '<a href="/en/biobase/"><img', '<a href="/zh/biobase/"><img'),
+('<a href="/drawell/"><img', '<a href="/en/drawell/"><img', '<a href="/zh/drawell/"><img'),
+('<a class="fall" href="/san-pham/">Tất cả danh mục →</a>', '<a class="fall" href="/en/san-pham/">All categories →</a>', '<a class="fall" href="/zh/san-pham/">全部类别 →</a>'),
 ('__BB__', '', ''),
 # head
 ('<html lang="vi">', '<html lang="en">', '<html lang="zh-CN">'),
-('<title>Vân Phong Tech</title>', '<title>Van Phong Tech – Engineering & Trading</title>', '<title>Van Phong Tech – 技术与贸易</title>'),
-('content="Công ty TNHH Kỹ thuật và Thương mại Vân Phong – vật tư, thiết bị, phần mềm công nghiệp, y tế, giáo dục, phòng thí nghiệm, tin học máy tính. Hotline 08.9999.0683 / 0986.818.013."',
- 'content="Van Phong Technical and Trading Co., Ltd. – materials, equipment and software for industry, healthcare, education, laboratories and IT. Hotline +84 899 990 683 / +84 986 818 013."',
- 'content="Van Phong 技术与贸易有限公司 – 工业、医疗、教育、实验室及计算机信息技术领域的物资、设备与软件。热线 +84 899 990 683 / +84 986 818 013。"'),
+('<title>Vân Phong – Thiết bị phòng thí nghiệm BIOBASE, Drawell chính hãng tại Hà Nội</title>', '<title>Van Phong – BIOBASE and Drawell laboratory equipment distributor in Vietnam</title>', '<title>Van Phong – 越南 BIOBASE、Drawell 实验室设备经销商</title>'),
+('content="Vân Phong cung cấp thiết bị phòng thí nghiệm, y tế BIOBASE, Drawell chính hãng: tủ an toàn sinh học, máy ly tâm, tủ sấy, nồi hấp, máy quang phổ… Tư vấn chọn cấu hình, lắp đặt, bảo hành. Hotline 08.9999.0683 / 0986.818.013."', 'content="Van Phong supplies BIOBASE and Drawell laboratory and medical equipment in Vietnam: biosafety cabinets, centrifuges, ovens, autoclaves, spectrophotometers. Configuration advice, installation and warranty. Hotline +84 899 990 683 / +84 986 818 013."', 'content="Van Phong 在越南供应 BIOBASE、Drawell 实验室与医疗设备：生物安全柜、离心机、干燥箱、灭菌器、分光光度计等，提供选型、安装与保修服务。热线 +84 899 990 683 / +84 986 818 013。"'),
 # language switcher
 ('<nav class="langs" aria-label="Ngôn ngữ"><a href="/" lang="vi" class="on">Tiếng Việt</a><a href="/en/" lang="en">English</a><a href="/zh/" lang="zh-CN">中文</a></nav>',
  '<nav class="langs" aria-label="Language"><a href="/" lang="vi">Tiếng Việt</a><a href="/en/" lang="en" class="on">English</a><a href="/zh/" lang="zh-CN">中文</a></nav>',
@@ -81,10 +85,6 @@ P = [
 ('aria-label="Ảnh trước"', 'aria-label="Previous slide"', 'aria-label="上一张"'),
 ('aria-label="Ảnh sau"', 'aria-label="Next slide"', 'aria-label="下一张"'),
 # stats
-('<span>Năm thành lập</span>', '<span>Year founded</span>', '<span>成立年份</span>'),
-('<span>Lĩnh vực hoạt động</span>', '<span>Fields of activity</span>', '<span>业务领域</span>'),
-('<span>Ngành nghề đăng ký</span>', '<span>Registered business lines</span>', '<span>登记经营行业</span>'),
-('<span>Nhóm mặt hàng</span>', '<span>Product groups</span>', '<span>产品类别</span>'),
 # about
 ('alt="Phối cảnh trụ sở Công ty Vân Phong, số 34 ngõ 36A phố Trần Điền, Hà Nội"', 'alt="Rendering of Van Phong head office, No. 34 Lane 36A Tran Dien, Hanoi"', 'alt="Van Phong 公司总部效果图，河内陈田街36A巷34号"'),
 ('<figcaption>Trụ sở: Số 34, ngõ 36A, phố Trần Điền, Hà Nội</figcaption>', '<figcaption>Head office: No. 34, Lane 36A, Tran Dien Street, Hanoi</figcaption>', '<figcaption>总部：河内陈田街36A巷34号</figcaption>'),

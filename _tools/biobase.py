@@ -9,5 +9,5 @@ def block(lang):
     out = []
     for p in DATA:
         t = p[lang]
-        out.append(f"  {{c:'{p['c']}', s:{int(p['s'])}, n:'{_q(t['n'])}', code:'{_q(p.get('code',''))}', img:'{_q(p['img'])}', d:'{_q(t['d'])}', i:'sensor'}},")
+        out.append(f"  {{c:'{p['c']}', s:{int(p['s'])}, n:'{_q(t['n'])}', code:'{_q(p.get('code',''))}', img:'{_q(p['img'])}', d:'{_q(t['d'])}', i:'sensor', k:'{p.get('src','vn')}:{p['i']}'}},")
     return "/*BB*/\n" + "\n".join(out) + "\n  /*/BB*/"
