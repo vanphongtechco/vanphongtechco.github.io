@@ -115,6 +115,7 @@ h2.h{font-size:19px;color:var(--navy);margin:26px 0 10px}.desc{font-size:16px;ma
 table.spec{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 8px}table.spec td{border:1px solid var(--line);padding:7px 10px;vertical-align:top}
 table.spec tr:nth-child(odd) td{background:#F7F9FB}table.spec td:first-child{font-weight:600;color:var(--navy);width:32%}
 .spec-wrap{overflow-x:auto}
+video.pv{width:100%;max-height:640px;background:#000;border-radius:8px;display:block}
 .two{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start;margin-bottom:34px}
 .qbox{border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;background:#fff;box-shadow:0 6px 18px rgba(14,47,90,.06)}
 .qbox h2{margin:0 0 10px;font-size:19px;color:var(--navy)}.qbox label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin:8px 0 4px}
@@ -191,11 +192,15 @@ def page(lang, p, cat, slug, related, spec, cats):
     if p.get("pdf"): btns.append(f'<a class="btn" href="/catalog/{lang}/{e(p["pdf"])}.pdf" target="_blank" rel="noopener">{t["catalog"]}</a>')
     if p.get("art"): btns.append(f'<a class="btn" href="/bai-bao/{e(p["art"])}{ART_SUF[lang]}.pdf" target="_blank" rel="noopener">{t["paper"]}</a>')
     if p.get("dwg"): btns.append(f'<a class="btn" href="{e(p["dwg"])}" target="_blank" rel="noopener">{t["dwg"]}</a>')
-    if p.get("vid"): btns.append(f'<a class="btn" href="{e(p["vid"])}" target="_blank" rel="noopener">{t["video"]}</a>')
+    if p.get("vid"): btns.append(f'<a class="btn" href="#video">▶ {t["video"]}</a>')
     h = PH[lang][adv]; model = p.get("code") or ""
     who = t["tram"] if adv == "tram" else t["sales"]
     advbox = f'<div class="adv">{t["advisor"]}: <b>{who}</b><br><a href="tel:{h[1]}"><b>{t["call"]} {h[0]}</b></a> · Zalo {h[0]}</div>'
     spec_html = ""
+    vid_html = ""
+    if p.get("vid"):
+        poster = p["vid"][:-4] + ".jpg"
+        vid_html = f'<h2 class="h">{t["video"]}</h2><video id="video" class="pv" src="{e(p["vid"])}" poster="{e(poster)}" controls playsinline preload="none"></video>'
     if spec:
         rows = "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in r) + "</tr>" for r in spec)
         spec_html = f'<h2 class="h">{t["spec"]}</h2><div class="spec-wrap"><table class="spec">{rows}</table></div><p class="note">{t["spec_note"]}</p>'
@@ -221,7 +226,7 @@ def page(lang, p, cat, slug, related, spec, cats):
 {advbox}
 </div></div>
 <div class="two">
-<div>{spec_html}
+<div>{vid_html}{spec_html}
 <h2 class="h">{t['need_h']}</h2><ul class="chk">{''.join(f'<li>{x}</li>' for x in t['needs'])}</ul>
 <h2 class="h">{t['svc_h']}</h2><p>{t['svc']}</p></div>
 {quote_box(lang, p, adv)}
@@ -332,9 +337,10 @@ def main():
                 urls.append(f"{SITE}/{pre}{b}/{cs}/")
                 secs.append(f'<h2 class="h">{e(sn)} <span class="note">({len(g)})</span></h2><div class="cards">' + "".join(card(lang, prods[j], slugs[j], cats) for j in g[:8]) + f'</div><p><a href="{P}{b}/{cs}/" style="color:var(--blue);font-weight:600">{t["viewall"]} →</a></p>')
             h = PH[lang]["tram"]
+            bv = ('<video class="pv" src="/video/biobase-giai-phap-ptn.mp4" poster="/video/biobase-giai-phap-ptn.jpg" controls playsinline preload="none" style="max-width:420px;margin:6px 0 18px"></video>' if b == "biobase" else "")
             top = (f'<div class="brandhead"><img src="{info["logo"]}" alt="{info["key"]}"></div><p>{e(info[lang])}</p>'
                    f'<div class="adv">{t["advisor"]}: <b>{t["tram"]}</b><br><a href="tel:{h[1]}"><b>{t["call"]} {h[0]}</b></a> · Zalo {h[0]} · info@vanphongtechco.com.vn</div>'
-                   f'<div class="tiles">{"".join(tiles)}</div>')
+                   f'{bv}<div class="tiles">{"".join(tiles)}</div>')
             name = "Drawell" if b == "drawell" else "BIOBASE"
             dd = REPO / pre / b; dd.mkdir(parents=True, exist_ok=True)
             (dd / "index.html").write_text(listing(lang, name, f"{len(ids)} {t['items']} · {t['origin']}", f"{b}/", [name], top + "".join(secs)), encoding="utf-8")
