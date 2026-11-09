@@ -1,6 +1,37 @@
 # -*- coding: utf-8 -*-
 # News items (Tin tức), newest first.
 N = [dict(
+  img="https://img.waimaoniu.net/2587/2587-202210151359498707.jpg", date={"vi": "09/11/2026", "en": "9 November 2026", "zh": "2026年11月9日"},
+  tag={"vi": "Thiết bị phòng thí nghiệm", "en": "Laboratory equipment", "zh": "实验室设备"},
+  title={"vi": "Máy rửa siêu âm BIOBASE dòng UC-VAD — Làm sạch sâu đến từng chi tiết",
+         "en": "BIOBASE UC-VAD series ultrasonic cleaners — deep cleaning down to every detail",
+         "zh": "BIOBASE UC-VAD 系列超声波清洗机 —— 深层清洁，细致入微"},
+  intro={"vi": ["Trong phòng thí nghiệm, làm sạch dụng cụ bám bẩn ở khe hẹp và bề mặt có hình dạng phức tạp luôn là công đoạn tốn nhiều thời gian nhất. Máy rửa siêu âm BIOBASE dòng UC-VAD làm sạch bằng sóng siêu âm, không gây ô nhiễm, không làm hư hại vật rửa, đồng thời tăng tốc quá trình hòa tan và nhũ hóa, giúp rút ngắn đáng kể thời gian làm sạch mỗi ngày.",
+                "Model tiêu biểu UC-48VAD: dung tích 22,5 lít, công suất siêu âm 480 W, công suất gia nhiệt 500 W. Thông số kỹ thuật chính:"],
+         "en": ["In the laboratory, cleaning labware soiled in narrow gaps and on complex surfaces is often the most time-consuming task. BIOBASE UC-VAD series ultrasonic cleaners clean with ultrasonic waves, without contamination or damage to the items, while speeding up dissolution and emulsification, considerably shortening daily cleaning time.",
+                "Typical model UC-48VAD: 22.5 L capacity, 480 W ultrasonic power, 500 W heating power. Main specifications:"],
+         "zh": ["在实验室中，清洗窄缝和复杂形状表面上的污垢往往是最耗时的环节。BIOBASE UC-VAD 系列超声波清洗机利用超声波清洗，无污染、不损伤被清洗物，同时加速溶解和乳化过程，显著缩短每日清洗时间。",
+                "典型型号 UC-48VAD：容量 22.5 L，超声功率 480 W，加热功率 500 W。主要技术参数："]},
+  bullets=True, yt="WvV5iL2Hupg",
+  ytcap={"vi": "Video: máy rửa siêu âm BIOBASE UC-48AD (dòng UC-AD, tần số 40 kHz)", "en": "Video: BIOBASE UC-48AD ultrasonic cleaner (UC-AD series, 40 kHz)", "zh": "视频：BIOBASE UC-48AD 超声波清洗机（UC-AD 系列，40 kHz）"},
+  items={"vi": [("Tần số", "tần số kép 28/40 kHz"), ("Thời gian rửa", "1–99 phút; gia nhiệt từ nhiệt độ phòng tới 80 °C"),
+                ("Vật liệu", "vỏ và khoang rửa bằng thép không gỉ 304, chống ăn mòn"), ("Hiển thị", "màn hình LED rõ ràng"),
+                ("Nguồn điện", "220 V, 50 Hz"), ("Phụ kiện tiêu chuẩn", "nắp cách âm, giỏ rửa, ống PVC"),
+                ("5 mức dung tích", "6,5 / 10 / 15 / 22,5 / 30 lít (UC-18VAD, UC-24VAD, UC-36VAD, UC-48VAD, UC-60VAD), công suất siêu âm từ 180 W đến 600 W, đáp ứng linh hoạt quy mô của từng phòng thí nghiệm")],
+         "en": [("Frequency", "dual frequency 28/40 kHz"), ("Cleaning time", "1–99 min; heating from room temperature to 80 °C"),
+                ("Material", "SUS 304 stainless steel housing and tank, corrosion resistant"), ("Display", "clear LED display"),
+                ("Power supply", "220 V, 50 Hz"), ("Standard accessories", "sound-insulating lid, basket, PVC hose"),
+                ("5 capacities", "6.5 / 10 / 15 / 22.5 / 30 L (UC-18VAD, UC-24VAD, UC-36VAD, UC-48VAD, UC-60VAD), ultrasonic power from 180 W to 600 W, to suit laboratories of every size")],
+         "zh": [("频率", "双频 28/40 kHz"), ("清洗时间", "1–99 分钟；加热范围室温至 80 °C"),
+                ("材质", "外壳和清洗槽采用 304 不锈钢，耐腐蚀"), ("显示", "清晰的 LED 显示屏"),
+                ("电源", "220 V，50 Hz"), ("标准配件", "隔音盖、清洗篮、PVC 软管"),
+                ("5 种容量", "6.5 / 10 / 15 / 22.5 / 30 L（UC-18VAD、UC-24VAD、UC-36VAD、UC-48VAD、UC-60VAD），超声功率 180–600 W，灵活满足不同规模实验室的需求")]},
+  outro={"vi": "Ứng dụng: phòng thí nghiệm, trường đại học, viện nghiên cứu, ngành điện tử, cơ khí, hóa chất và các đơn vị dịch vụ. Tư vấn, báo giá: Ms Ngọc Trâm – 0986.818.013 (Zalo).",
+         "en": "Applications: laboratories, universities, research institutes, electronics, mechanical engineering, chemical industry and service providers. Advice and quotations: Ms Ngoc Tram – +84 986 818 013 (Zalo).",
+         "zh": "应用：实验室、高校、科研院所，以及电子、机械、化工行业和服务机构。咨询与报价：Ngọc Trâm 女士 – +84 986 818 013（Zalo）。"},
+  links={"vi": [("Xem sản phẩm", "/san-pham/may-rua-sieu-am-hai-tan-so-biobase-uc-vad-uc-18vad-uc-24vad-uc-36vad-uc-48vad-uc/")], "en": [("View product", "/en/san-pham/may-rua-sieu-am-hai-tan-so-biobase-uc-vad-uc-18vad-uc-24vad-uc-36vad-uc-48vad-uc/")], "zh": [("查看产品", "/zh/san-pham/may-rua-sieu-am-hai-tan-so-biobase-uc-vad-uc-18vad-uc-24vad-uc-36vad-uc-48vad-uc/")]},
+  cta={"vi": "Liên hệ tư vấn", "en": "Contact us", "zh": "联系咨询"},
+), dict(
   img="/anh-san-pham/crs1414.jpg", date={"vi": "01/11/2026", "en": "1 November 2026", "zh": "2026年11月1日"},
   tag={"vi": "Ứng dụng thực tế", "en": "Field application", "zh": "应用案例"},
   title={"vi": "Sàng đĩa quay đan xen CRS1414 vận hành hiệu quả tại Công ty Nhôm Lâm Đồng – TKV",
@@ -80,8 +111,9 @@ def block(lang):
       <p class="nmeta"><span>{n['tag'][lang]}</span> · {n['date'][lang]}</p>
       <h3>{(lambda L: f'<a href="{L[0][1]}" target="_blank" rel="noopener">' + n['title'][lang] + '</a>' if L else n['title'][lang])(n.get('links', {}).get(lang, []))}</h3>
       {''.join(f'<p>{p}</p>' for p in n['intro'][lang])}
-      {f'<ol>{items}</ol>' if items else ''}
+      {(f'<ul>{items}</ul>' if n.get('bullets') else f'<ol>{items}</ol>') if items else ''}
       <p>{n['outro'][lang]}</p>
+      {(f'<div style="position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;background:#000;margin:6px 0 4px"><iframe src="https://www.youtube-nocookie.com/embed/{n["yt"]}" title="{n["ytcap"][lang]}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><p style="font-size:13.5px;color:#64748b">{n["ytcap"][lang]}</p>') if n.get('yt') else ''}
       <p>{''.join(f'<a class="btn" href="{h}" target="_blank" rel="noopener" style="margin:0 10px 10px 0">{t}</a>' for t, h in n.get('links', {}).get(lang, []))}<a class="btn cta" href="#lien-he">{n['cta'][lang]}</a></p>
     </div>
   </article>""")

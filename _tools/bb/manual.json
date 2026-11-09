@@ -1,0 +1,179 @@
+{
+ "bbg:611": {
+  "about": {
+   "vi": [
+    "Trong phòng thí nghiệm, làm sạch dụng cụ bám bẩn ở khe hẹp và bề mặt có hình dạng phức tạp luôn là công đoạn tốn nhiều thời gian nhất. Máy rửa siêu âm BIOBASE dòng UC-VAD làm sạch bằng sóng siêu âm, không gây ô nhiễm, không làm hư hại vật rửa, đồng thời tăng tốc quá trình hòa tan và nhũ hóa, giúp rút ngắn đáng kể thời gian làm sạch mỗi ngày.",
+    "Model tiêu biểu UC-48VAD: dung tích 22,5 lít, công suất siêu âm 480 W, công suất gia nhiệt 500 W.",
+    "Ứng dụng: phòng thí nghiệm, trường đại học, viện nghiên cứu, ngành điện tử, cơ khí, hóa chất và các đơn vị dịch vụ."
+   ],
+   "en": [
+    "In the laboratory, cleaning labware soiled in narrow gaps and on complex surfaces is often the most time-consuming task. BIOBASE UC-VAD series ultrasonic cleaners clean with ultrasonic waves, without contamination or damage to the items, while speeding up dissolution and emulsification, considerably shortening daily cleaning time.",
+    "Typical model UC-48VAD: 22.5 L capacity, 480 W ultrasonic power, 500 W heating power.",
+    "Applications: laboratories, universities, research institutes, electronics, mechanical engineering, chemical industry and service providers."
+   ],
+   "zh": [
+    "在实验室中，清洗窄缝和复杂形状表面上的污垢往往是最耗时的环节。BIOBASE UC-VAD 系列超声波清洗机利用超声波清洗，无污染、不损伤被清洗物，同时加速溶解和乳化过程，显著缩短每日清洗时间。",
+    "典型型号 UC-48VAD：容量 22.5 L，超声功率 480 W，加热功率 500 W。",
+    "应用：实验室、高校、科研院所，以及电子、机械、化工行业和服务机构。"
+   ]
+  },
+  "spec": {
+   "vi": [
+    [
+     "Model",
+     "UC-18VAD / UC-24VAD / UC-36VAD / UC-48VAD / UC-60VAD"
+    ],
+    [
+     "Dung tích",
+     "6,5 / 10 / 15 / 22,5 / 30 L"
+    ],
+    [
+     "Công suất siêu âm",
+     "180–600 W (UC-48VAD: 480 W)"
+    ],
+    [
+     "Công suất gia nhiệt (UC-48VAD)",
+     "500 W"
+    ],
+    [
+     "Tần số",
+     "Tần số kép 28/40 kHz"
+    ],
+    [
+     "Thời gian rửa",
+     "1–99 phút"
+    ],
+    [
+     "Gia nhiệt",
+     "Nhiệt độ phòng – 80 °C"
+    ],
+    [
+     "Vật liệu",
+     "Vỏ và khoang rửa thép không gỉ 304, chống ăn mòn"
+    ],
+    [
+     "Hiển thị",
+     "Màn hình LED"
+    ],
+    [
+     "Nguồn điện",
+     "220 V, 50 Hz"
+    ],
+    [
+     "Phụ kiện tiêu chuẩn",
+     "Nắp cách âm, giỏ rửa, ống PVC"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "UC-18VAD / UC-24VAD / UC-36VAD / UC-48VAD / UC-60VAD"
+    ],
+    [
+     "Capacity",
+     "6.5 / 10 / 15 / 22.5 / 30 L"
+    ],
+    [
+     "Ultrasonic power",
+     "180–600 W (UC-48VAD: 480 W)"
+    ],
+    [
+     "Heating power (UC-48VAD)",
+     "500 W"
+    ],
+    [
+     "Frequency",
+     "Dual frequency 28/40 kHz"
+    ],
+    [
+     "Cleaning time",
+     "1–99 min"
+    ],
+    [
+     "Heating",
+     "Room temperature – 80 °C"
+    ],
+    [
+     "Material",
+     "SUS 304 stainless steel housing and tank, corrosion resistant"
+    ],
+    [
+     "Display",
+     "LED display"
+    ],
+    [
+     "Power supply",
+     "220 V, 50 Hz"
+    ],
+    [
+     "Standard accessories",
+     "Sound-insulating lid, basket, PVC hose"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "UC-18VAD / UC-24VAD / UC-36VAD / UC-48VAD / UC-60VAD"
+    ],
+    [
+     "容量",
+     "6.5 / 10 / 15 / 22.5 / 30 L"
+    ],
+    [
+     "超声功率",
+     "180–600 W（UC-48VAD：480 W）"
+    ],
+    [
+     "加热功率（UC-48VAD）",
+     "500 W"
+    ],
+    [
+     "频率",
+     "双频 28/40 kHz"
+    ],
+    [
+     "清洗时间",
+     "1–99 分钟"
+    ],
+    [
+     "加热",
+     "室温 – 80 °C"
+    ],
+    [
+     "材质",
+     "外壳和清洗槽采用 304 不锈钢，耐腐蚀"
+    ],
+    [
+     "显示",
+     "LED 显示屏"
+    ],
+    [
+     "电源",
+     "220 V，50 Hz"
+    ],
+    [
+     "标准配件",
+     "隔音盖、清洗篮、PVC 软管"
+    ]
+   ]
+  },
+  "yt": {
+   "id": "WvV5iL2Hupg",
+   "cap": {
+    "vi": "Video: máy rửa siêu âm BIOBASE UC-48AD (dòng UC-AD, tần số 40 kHz)",
+    "en": "Video: BIOBASE UC-48AD ultrasonic cleaner (UC-AD series, 40 kHz)",
+    "zh": "视频：BIOBASE UC-48AD 超声波清洗机（UC-AD 系列，40 kHz）"
+   }
+  }
+ },
+ "bbg:608": {
+  "yt": {
+   "id": "WvV5iL2Hupg",
+   "cap": {
+    "vi": "Video: máy rửa siêu âm BIOBASE UC-48AD (dòng UC-AD, tần số 40 kHz)",
+    "en": "Video: BIOBASE UC-48AD ultrasonic cleaner (UC-AD series, 40 kHz)",
+    "zh": "视频：BIOBASE UC-48AD 超声波清洗机（UC-AD 系列，40 kHz）"
+   }
+  }
+ }
+}

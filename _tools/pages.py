@@ -108,7 +108,7 @@ h1.pt{font-size:clamp(24px,3vw,32px);color:var(--navy);margin:8px 0 6px}.lead{co
 .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue)}
 .pd h1{font-size:clamp(24px,3vw,32px);line-height:1.25;color:var(--navy);margin:6px 0 14px}
 .pd dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0 0 16px;font-size:14px}.pd dt{color:var(--muted)}.pd dd{margin:0;font-weight:600}
-h2.h{font-size:19px;color:var(--navy);margin:26px 0 10px}.desc{font-size:16px;margin:0 0 12px}.note{color:var(--muted);font-size:13.5px}
+h2.h{font-size:19px;color:var(--navy);margin:26px 0 10px}.desc{font-size:16px;margin:0 0 12px}.yt{position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;background:#000}.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.note{color:var(--muted);font-size:13.5px}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:6px;font-weight:700;font-size:14px;border:1px solid var(--line);color:var(--navy);background:#fff;cursor:pointer;font-family:inherit}
 .btn.cta{background:var(--cta);border-color:var(--cta);color:#fff}.btn.blue{background:var(--blue);border-color:var(--blue);color:#fff}.btn:hover{filter:brightness(1.05)}
 .adv{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:8px;padding:12px 16px;margin:14px 0;background:#F7FAFD;font-size:14px}.adv b{color:var(--navy)}
@@ -185,6 +185,9 @@ def quote_box(lang, p, adv):
 <div class="btns"><button class="btn cta" type="submit">{t['f_send']}</button><a class="btn" href="https://zalo.me/{h[1].lstrip('+').replace('84','0',1) if h[1].startswith('+84') else h[1]}" target="_blank" rel="noopener">{t['zalo']} {h[0]}</a></div>
 <p class="note">{t['f_note']}</p></form></div>"""
 
+_MP = T / "bb" / "manual.json"
+MANUAL = json.loads(_MP.read_text(encoding="utf-8")) if _MP.exists() else {}
+
 def page(lang, p, cat, slug, related, spec, cats):
     t = L[lang]; pre = "/" + LANGS[lang]; sub = cat["subs"][p["s"]] if cat else ""
     src = img_src(p); b = brand(p); adv = "tram" if b in ("BIOBASE", "DRAWELL", "DAIHAN", "BOXUN") or p["c"] in ("tn", "yt") else "hot"
@@ -201,6 +204,13 @@ def page(lang, p, cat, slug, related, spec, cats):
     if p.get("vid"):
         poster = p["vid"][:-4] + ".jpg"
         vid_html = f'<h2 class="h">{t["video"]}</h2><video id="video" class="pv" src="{e(p["vid"])}" poster="{e(poster)}" controls playsinline preload="none"></video>'
+    man = MANUAL.get(p.get("k") or "", {})
+    about_html = "".join(f"<p>{e(x)}</p>" for x in man.get("about", {}).get(lang, []))
+    if about_html: about_html = f'<h2 class="h">{t["intro"]}</h2>' + about_html
+    if man.get("spec", {}).get(lang): spec = man["spec"][lang]
+    if man.get("yt"):
+        Y = man["yt"]["id"]; C = e(man["yt"]["cap"][lang])
+        vid_html += f'<h2 class="h">{t["video"]}</h2>' + f'<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/{Y}" title="{C}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="note">{C}</p>'
     if spec:
         rows = "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in r) + "</tr>" for r in spec)
         spec_html = f'<h2 class="h">{t["spec"]}</h2><div class="spec-wrap"><table class="spec">{rows}</table></div><p class="note">{t["spec_note"]}</p>'
@@ -226,7 +236,7 @@ def page(lang, p, cat, slug, related, spec, cats):
 {advbox}
 </div></div>
 <div class="two">
-<div>{vid_html}{spec_html}
+<div>{about_html}{vid_html}{spec_html}
 <h2 class="h">{t['need_h']}</h2><ul class="chk">{''.join(f'<li>{x}</li>' for x in t['needs'])}</ul>
 <h2 class="h">{t['svc_h']}</h2><p>{t['svc']}</p></div>
 {quote_box(lang, p, adv)}
