@@ -205,7 +205,8 @@ def page(lang, p, cat, slug, related, spec, cats):
         poster = p["vid"][:-4] + ".jpg"
         vid_html = f'<h2 class="h">{t["video"]}</h2><video id="video" class="pv" src="{e(p["vid"])}" poster="{e(poster)}" controls playsinline preload="none"></video>'
     man = MANUAL.get(p.get("k") or "", {})
-    about_html = "".join(f"<p>{e(x)}</p>" for x in man.get("about", {}).get(lang, []))
+    about_html = "".join(f"<li>{e(x[2:])}</li>" if x.startswith("• ") else f"<p>{e(x)}</p>" for x in man.get("about", {}).get(lang, []))
+    about_html = re.sub(r"((?:<li>.*?</li>)+)", r'<ul class="chk">\1</ul>', about_html)
     if about_html: about_html = f'<h2 class="h">{t["intro"]}</h2>' + about_html
     if man.get("spec", {}).get(lang): spec = man["spec"][lang]
     if man.get("yt"):

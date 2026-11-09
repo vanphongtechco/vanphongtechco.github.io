@@ -1,6 +1,25 @@
 # -*- coding: utf-8 -*-
 # News items (Tin tức), newest first.
 N = [dict(
+  video="/video/drawell-dw-ftir-530a.mp4", img="/video/drawell-dw-ftir-530a.jpg", vw=1280, vh=720, date={"vi": "10/11/2026", "en": "10 November 2026", "zh": "2026年11月10日"},
+  tag={"vi": "Thiết bị phân tích", "en": "Analytical instruments", "zh": "分析仪器"},
+  title={"vi": "Máy quang phổ hồng ngoại FT-IR Drawell DW-FTIR-530A — Nhận diện vật liệu chính xác, nhanh chóng",
+         "en": "Drawell DW-FTIR-530A FT-IR spectrometer — accurate, fast material identification",
+         "zh": "Drawell DW-FTIR-530A 傅里叶红外光谱仪 —— 准确、快速识别材料"},
+  intro={"vi": ["Trong kiểm soát chất lượng và phân tích phòng thí nghiệm, nhận diện đúng thành phần vật liệu ngay từ đầu vào có ý nghĩa quyết định đối với độ tin cậy của toàn bộ kết quả. Máy quang phổ hồng ngoại FT-IR Drawell DW-FTIR-530A được thiết kế cho nhu cầu nhận diện vật liệu thường quy, kiểm soát chất lượng và phân tích mẫu bột, polymer, màng mỏng, chất lỏng, dầu và khí, với chi phí bảo trì thường quy thấp.",
+                "Thông số chính: tỷ số tín hiệu trên nhiễu cao hơn 20.000:1; dải phổ 7800–350 cm⁻¹; độ phân giải 0,85 cm⁻¹; độ chính xác số sóng ±0,01 cm⁻¹; đầu dò tiêu chuẩn LiTaO3, tùy chọn đầu dò nhiệt điện ổn định nhiệt và đầu dò MCT làm lạnh bán dẫn. Đặc điểm nổi bật:"],
+         "en": ["In quality control and laboratory analysis, correctly identifying material composition at incoming inspection is decisive for the reliability of every result that follows. The Drawell DW-FTIR-530A FT-IR spectrometer is designed for routine material identification, quality control and analysis of powders, polymers, thin films, liquids, oils and gases, with low routine maintenance costs.",
+                "Key specifications: signal-to-noise ratio better than 20,000:1; spectral range 7800–350 cm⁻¹; resolution 0.85 cm⁻¹; wavenumber accuracy ±0.01 cm⁻¹; standard LiTaO3 detector, with optional temperature-stabilized pyroelectric and thermoelectrically cooled MCT detectors. Highlights:"],
+         "zh": ["在质量控制和实验室分析中，从来料环节准确识别材料成分，对整个结果的可靠性至关重要。Drawell DW-FTIR-530A 傅里叶变换红外光谱仪专为常规材料识别、质量控制以及粉末、聚合物、薄膜、液体、油品和气体样品分析而设计，日常维护成本低。",
+                "主要参数：信噪比优于 20000:1；光谱范围 7800–350 cm⁻¹；分辨率 0.85 cm⁻¹；波数精度 ±0.01 cm⁻¹；标配 LiTaO3 检测器，可选温控热释电检测器和半导体制冷 MCT 检测器。产品特点："]},
+  bullets=True,
+  items={'vi': [('', 'Giao thoa kế Michelson góc khối với công nghệ căn chỉnh gương cố định đã được cấp bằng sáng chế; gương mạ vàng cho độ ổn định quang học lâu dài và độ nhạy cao.'), ('', 'Kết cấu mô-đun chắc chắn trên đế nhôm đúc, tản nhiệt tốt, chống rung; chống nhiễu điện từ theo tiêu chuẩn CE.'), ('', 'Hệ quang học chống ẩm với giao thoa kế kín nhiều lớp: hộp hút ẩm dung lượng lớn, cửa sổ quan sát chất hút ẩm, giám sát nhiệt độ và độ ẩm theo thời gian thực.'), ('', 'Khoang mẫu rộng, linh hoạt phụ kiện: đo truyền qua, ATR, ô mẫu lỏng, ô mẫu khí và phản xạ khuếch tán.'), ('', 'Chẩn đoán trạng thái thiết bị theo thời gian thực; kết nối Ethernet và Wi-Fi phục vụ vận hành, truyền dữ liệu từ xa.'), ('', 'Phần mềm trạm làm việc FTOS Suite mạnh mẽ, thân thiện với người sử dụng.')], 'en': [('', 'Cube-corner Michelson interferometer with patented fixed-mirror alignment technology; gold-coated mirrors for long-term optical stability and high sensitivity.'), ('', 'Robust modular design on a cast aluminium base with good heat dissipation and vibration resistance; electromagnetic interference protection to CE standards.'), ('', 'Moisture-proof optics with a multi-layer sealed interferometer: large-capacity desiccant box, desiccant inspection window, real-time temperature and humidity monitoring.'), ('', 'Large sample compartment for flexible accessories: transmission, ATR, liquid cell, gas cell and diffuse reflectance.'), ('', 'Real-time instrument status diagnostics; Ethernet and Wi-Fi connectivity for remote operation and data transfer.'), ('', 'Powerful, user-friendly FTOS Suite workstation software.')], 'zh': [('', '角锥迈克尔逊干涉仪，采用专利动镜固定准直技术；镀金反射镜，光学性能长期稳定，灵敏度高。'), ('', '铸铝底座模块化结构，坚固耐用，散热好，抗振动；电磁抗干扰符合 CE 标准。'), ('', '防潮光学系统，多层密封干涉仪：大容量干燥剂盒、干燥剂观察窗、温湿度实时监控。'), ('', '大样品仓，附件灵活：透射、ATR、液体池、气体池和漫反射。'), ('', '实时诊断仪器状态；支持以太网和 Wi-Fi，便于远程操作和数据传输。'), ('', '功能强大、操作友好的 FTOS Suite 工作站软件。')]},
+  outro={"vi": "Ứng dụng: nhận diện và so sánh polymer, cao su, màng và lớp phủ; kiểm tra nguyên liệu dược phẩm, hóa chất; phân tích dầu bôi trơn, dung môi và chất lỏng; phân tích bột và nguyên liệu dạng rắn tại trường đại học, viện nghiên cứu, phòng thí nghiệm kiểm soát chất lượng và doanh nghiệp sản xuất. Tư vấn, nhận catalogue, báo giá: Ms Ngọc Trâm – 0986.818.013 (Zalo).",
+         "en": "Applications: identification and comparison of polymers, rubber, films and coatings; inspection of pharmaceutical raw materials and chemicals; analysis of lubricants, solvents and liquids; analysis of powders and solid materials at universities, research institutes, QC laboratories and manufacturers. Advice, catalogue and quotations: Ms Ngoc Tram – +84 986 818 013 (Zalo).",
+         "zh": "应用：聚合物、橡胶、薄膜和涂层的识别与比对；药品原料、化学品检验；润滑油、溶剂及液体分析；粉末和固体原料分析，适用于高校、科研院所、质控实验室和生产企业。咨询、索取样本与报价：Ngọc Trâm 女士 – +84 986 818 013（Zalo）。"},
+  links={"vi": [("Xem sản phẩm", "/san-pham/may-quang-pho-hong-ngoai-ft-ir-drawell-dw-ftir-530a/")], "en": [("View product", "/en/san-pham/may-quang-pho-hong-ngoai-ft-ir-drawell-dw-ftir-530a/")], "zh": [("查看产品", "/zh/san-pham/may-quang-pho-hong-ngoai-ft-ir-drawell-dw-ftir-530a/")]},
+  cta={"vi": "Liên hệ tư vấn", "en": "Contact us", "zh": "联系咨询"},
+), dict(
   img="https://img.waimaoniu.net/2587/2587-202210151359498707.jpg", date={"vi": "09/11/2026", "en": "9 November 2026", "zh": "2026年11月9日"},
   tag={"vi": "Thiết bị phòng thí nghiệm", "en": "Laboratory equipment", "zh": "实验室设备"},
   title={"vi": "Máy rửa siêu âm BIOBASE dòng UC-VAD — Làm sạch sâu đến từng chi tiết",
@@ -102,8 +121,8 @@ H = {"vi": "Tin tức", "en": "News", "zh": "新闻"}
 def block(lang):
     out = []
     for n in N:
-        items = "".join(f"<li><b>{a}</b> – {b}</li>" for a, b in n["items"][lang]) if "items" in n else ""
-        fig = (f'<video src="{n["video"]}" poster="{n["img"]}" controls playsinline preload="none" width="540" height="960"></video>' if "video" in n
+        items = "".join((f"<li><b>{a}</b> – {b}</li>" if a else f"<li>{b}</li>") for a, b in n["items"][lang]) if "items" in n else ""
+        fig = (f'<video src="{n["video"]}" poster="{n["img"]}" controls playsinline preload="none" width="{n.get('vw',540)}" height="{n.get('vh',960)}"></video>' if "video" in n
                else f'<img src="{n["img"]}" alt="{n["title"][lang]}" width="512" height="559" loading="lazy">')
         out.append(f"""  <article class="news-item">
     <figure>{fig}</figure>

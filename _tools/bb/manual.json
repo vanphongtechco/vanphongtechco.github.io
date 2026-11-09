@@ -175,5 +175,143 @@
     "zh": "视频：BIOBASE UC-48AD 超声波清洗机（UC-AD 系列，40 kHz）"
    }
   }
+ },
+ "dw:455": {
+  "about": {
+   "vi": [
+    "Trong kiểm soát chất lượng và phân tích phòng thí nghiệm, nhận diện đúng thành phần vật liệu ngay từ đầu vào có ý nghĩa quyết định đối với độ tin cậy của toàn bộ kết quả. Máy quang phổ hồng ngoại FT-IR Drawell DW-FTIR-530A được thiết kế cho nhu cầu nhận diện vật liệu thường quy, kiểm soát chất lượng và phân tích mẫu bột, polymer, màng mỏng, chất lỏng, dầu và khí, với chi phí bảo trì thường quy thấp.",
+    "• Giao thoa kế Michelson góc khối với công nghệ căn chỉnh gương cố định đã được cấp bằng sáng chế; gương mạ vàng cho độ ổn định quang học lâu dài và độ nhạy cao.",
+    "• Kết cấu mô-đun chắc chắn trên đế nhôm đúc, tản nhiệt tốt, chống rung; chống nhiễu điện từ theo tiêu chuẩn CE.",
+    "• Hệ quang học chống ẩm với giao thoa kế kín nhiều lớp: hộp hút ẩm dung lượng lớn, cửa sổ quan sát chất hút ẩm, giám sát nhiệt độ và độ ẩm theo thời gian thực.",
+    "• Khoang mẫu rộng, linh hoạt phụ kiện: đo truyền qua, ATR, ô mẫu lỏng, ô mẫu khí và phản xạ khuếch tán.",
+    "• Chẩn đoán trạng thái thiết bị theo thời gian thực; kết nối Ethernet và Wi-Fi phục vụ vận hành, truyền dữ liệu từ xa.",
+    "• Phần mềm trạm làm việc FTOS Suite mạnh mẽ, thân thiện với người sử dụng.",
+    "Ứng dụng: nhận diện và so sánh polymer, cao su, màng và lớp phủ; kiểm tra nguyên liệu dược phẩm, hóa chất; phân tích dầu bôi trơn, dung môi và chất lỏng; phân tích bột và nguyên liệu dạng rắn tại trường đại học, viện nghiên cứu, phòng thí nghiệm kiểm soát chất lượng và doanh nghiệp sản xuất."
+   ],
+   "en": [
+    "In quality control and laboratory analysis, correctly identifying material composition at incoming inspection is decisive for the reliability of every result that follows. The Drawell DW-FTIR-530A FT-IR spectrometer is designed for routine material identification, quality control and analysis of powders, polymers, thin films, liquids, oils and gases, with low routine maintenance costs.",
+    "• Cube-corner Michelson interferometer with patented fixed-mirror alignment technology; gold-coated mirrors for long-term optical stability and high sensitivity.",
+    "• Robust modular design on a cast aluminium base with good heat dissipation and vibration resistance; electromagnetic interference protection to CE standards.",
+    "• Moisture-proof optics with a multi-layer sealed interferometer: large-capacity desiccant box, desiccant inspection window, real-time temperature and humidity monitoring.",
+    "• Large sample compartment for flexible accessories: transmission, ATR, liquid cell, gas cell and diffuse reflectance.",
+    "• Real-time instrument status diagnostics; Ethernet and Wi-Fi connectivity for remote operation and data transfer.",
+    "• Powerful, user-friendly FTOS Suite workstation software.",
+    "Applications: identification and comparison of polymers, rubber, films and coatings; inspection of pharmaceutical raw materials and chemicals; analysis of lubricants, solvents and liquids; analysis of powders and solid materials at universities, research institutes, QC laboratories and manufacturers."
+   ],
+   "zh": [
+    "在质量控制和实验室分析中，从来料环节准确识别材料成分，对整个结果的可靠性至关重要。Drawell DW-FTIR-530A 傅里叶变换红外光谱仪专为常规材料识别、质量控制以及粉末、聚合物、薄膜、液体、油品和气体样品分析而设计，日常维护成本低。",
+    "• 角锥迈克尔逊干涉仪，采用专利动镜固定准直技术；镀金反射镜，光学性能长期稳定，灵敏度高。",
+    "• 铸铝底座模块化结构，坚固耐用，散热好，抗振动；电磁抗干扰符合 CE 标准。",
+    "• 防潮光学系统，多层密封干涉仪：大容量干燥剂盒、干燥剂观察窗、温湿度实时监控。",
+    "• 大样品仓，附件灵活：透射、ATR、液体池、气体池和漫反射。",
+    "• 实时诊断仪器状态；支持以太网和 Wi-Fi，便于远程操作和数据传输。",
+    "• 功能强大、操作友好的 FTOS Suite 工作站软件。",
+    "应用：聚合物、橡胶、薄膜和涂层的识别与比对；药品原料、化学品检验；润滑油、溶剂及液体分析；粉末和固体原料分析，适用于高校、科研院所、质控实验室和生产企业。"
+   ]
+  },
+  "spec": {
+   "vi": [
+    [
+     "Tỷ số tín hiệu trên nhiễu (S/N)",
+     "Cao hơn 20.000:1"
+    ],
+    [
+     "Dải phổ",
+     "7800–350 cm⁻¹"
+    ],
+    [
+     "Độ phân giải",
+     "0,85 cm⁻¹"
+    ],
+    [
+     "Độ chính xác số sóng",
+     "±0,01 cm⁻¹"
+    ],
+    [
+     "Đầu dò",
+     "LiTaO3 (tiêu chuẩn); tùy chọn đầu dò nhiệt điện ổn định nhiệt, đầu dò MCT làm lạnh bán dẫn"
+    ],
+    [
+     "Phương pháp đo",
+     "Truyền qua, ATR, ô mẫu lỏng, ô mẫu khí, phản xạ khuếch tán"
+    ],
+    [
+     "Kết nối",
+     "Ethernet, Wi-Fi"
+    ],
+    [
+     "Phần mềm",
+     "FTOS Suite"
+    ]
+   ],
+   "en": [
+    [
+     "Signal-to-noise ratio (S/N)",
+     "Better than 20,000:1"
+    ],
+    [
+     "Spectral range",
+     "7800–350 cm⁻¹"
+    ],
+    [
+     "Resolution",
+     "0.85 cm⁻¹"
+    ],
+    [
+     "Wavenumber accuracy",
+     "±0.01 cm⁻¹"
+    ],
+    [
+     "Detector",
+     "LiTaO3 (standard); optional temperature-stabilized pyroelectric detector, thermoelectrically cooled MCT detector"
+    ],
+    [
+     "Measurement modes",
+     "Transmission, ATR, liquid cell, gas cell, diffuse reflectance"
+    ],
+    [
+     "Connectivity",
+     "Ethernet, Wi-Fi"
+    ],
+    [
+     "Software",
+     "FTOS Suite"
+    ]
+   ],
+   "zh": [
+    [
+     "信噪比（S/N）",
+     "优于 20000:1"
+    ],
+    [
+     "光谱范围",
+     "7800–350 cm⁻¹"
+    ],
+    [
+     "分辨率",
+     "0.85 cm⁻¹"
+    ],
+    [
+     "波数精度",
+     "±0.01 cm⁻¹"
+    ],
+    [
+     "检测器",
+     "LiTaO3（标准）；可选温控热释电检测器、半导体制冷 MCT 检测器"
+    ],
+    [
+     "测量方式",
+     "透射、ATR、液体池、气体池、漫反射"
+    ],
+    [
+     "连接",
+     "以太网、Wi-Fi"
+    ],
+    [
+     "软件",
+     "FTOS Suite"
+    ]
+   ]
+  }
  }
 }
