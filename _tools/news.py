@@ -2,6 +2,16 @@
 import re, unicodedata
 # News items (Tin tức), newest first.
 N = [dict(
+  video="/video/biobase-bjpx-h30l.mp4", img="/video/biobase-bjpx-h30l.jpg", vw=1280, vh=720, date={"vi": "10/11/2026", "en": "10 November 2026", "zh": "2026年11月10日"},
+  tag={"vi": "Thiết bị phòng thí nghiệm", "en": "Laboratory equipment", "zh": "实验室设备"},
+  title={"vi": "Tủ ấm giữ nhiệt BIOBASE BJPX-H30L — Nhiệt độ ổn định cho từng mẻ nuôi cấy", "en": "BIOBASE BJPX-H30L incubator — stable temperature for every culture batch", "zh": "BIOBASE BJPX-H30L 恒温培养箱 —— 每一批培养都温度稳定"},
+  intro={"vi": ["Trong nuôi cấy và thí nghiệm, nhiệt độ dao động dù chỉ vài phần mười độ cũng có thể ảnh hưởng trực tiếp tới kết quả. Tủ ấm giữ nhiệt BIOBASE BJPX-H30L kiểm soát nhiệt độ ổn định, điều chỉnh chính xác trong dải nhiệt rộng, đáp ứng các nhu cầu thí nghiệm khác nhau tại phòng thí nghiệm.", "Thông số chính: dung tích 30 lít; dải nhiệt độ từ nhiệt độ phòng +5 °C đến 85 °C; độ dao động nhiệt ±0,2 °C và độ đồng đều ±0,5 °C tại 37 °C; độ chính xác 0,1 °C, cảm biến PT100, màn hình LCD; hẹn giờ 0–9999 phút; công suất 150 W, nguồn AC 220 V, 50/60 Hz; khoang trong 310 × 310 × 310 mm, 2 khay. Ưu điểm nổi bật:"], "en": ["In culture work and experiments, a temperature fluctuation of even a few tenths of a degree can directly affect the results. The BIOBASE BJPX-H30L incubator provides stable temperature control with precise adjustment over a wide range, meeting a variety of laboratory needs.", "Key specifications: 30 L capacity; temperature range from room temperature +5 °C to 85 °C; fluctuation ±0.2 °C and uniformity ±0.5 °C at 37 °C; accuracy 0.1 °C, PT100 sensor, LCD display; timer 0–9999 min; 150 W, AC 220 V, 50/60 Hz; interior 310 × 310 × 310 mm, 2 trays. Highlights:"], "zh": ["在培养和实验中，即使零点几度的温度波动也可能直接影响结果。BIOBASE BJPX-H30L 恒温培养箱温控稳定，可在较宽温度范围内精确调节，满足实验室的多种实验需求。", "主要参数：容积 30 L；温度范围室温 +5 °C 至 85 °C；37 °C 时波动度 ±0.2 °C、均匀度 ±0.5 °C；精度 0.1 °C，PT100 传感器，LCD 显示；定时 0–9999 分钟；功率 150 W，电源 AC 220 V，50/60 Hz；内胆 310 × 310 × 310 mm，2 层托盘。产品优势："]},
+  bullets=True,
+  items={'vi': [('', 'Khoang trong bằng thép không gỉ chải cao cấp, bốn góc bo tròn bán nguyệt, dễ vệ sinh.'), ('', 'Mặt trong bọc lá nhôm, lớp cách nhiệt chất lượng cao, giữ nhiệt tốt và phân bố nhiệt đồng đều.'), ('', 'Bảo vệ rò điện và quá áp, báo động quá nhiệt, công tắc kiểm soát nhiệt tự ngắt điện khi quá nhiệt, bảo vệ an toàn cho thiết bị và mẫu.')], 'en': [('', 'Premium brushed stainless steel chamber with semi-circular rounded corners for easy cleaning.'), ('', 'Aluminium-foil lined interior and high-quality insulation for good heat retention and uniform heat distribution.'), ('', 'Leakage and overvoltage protection, over-temperature alarm and a thermal cut-off switch that disconnects power on overheating, keeping the unit and samples safe.')], 'zh': [('', '优质拉丝不锈钢内胆，四角半圆弧过渡，易于清洁。'), ('', '内表面覆铝箔，优质保温层，保温性能好，温度分布均匀。'), ('', '漏电及过压保护、超温报警，超温时温控开关自动断电，保护设备和样品安全。')]},
+  outro={"vi": "Ứng dụng: nuôi cấy vi sinh, bảo quản và xử lý mẫu tại trường đại học, viện nghiên cứu, bệnh viện, phòng thí nghiệm và khu công nghiệp. Tư vấn, nhận catalogue, báo giá: Ms Ngọc Trâm – 0986.818.013 (Zalo).", "en": "Applications: microbial culture, sample storage and processing at universities, research institutes, hospitals, laboratories and industrial parks. Advice, catalogue and quotations: Ms Ngoc Tram – +84 986 818 013 (Zalo).", "zh": "应用：微生物培养、样品保存与处理，适用于高校、科研院所、医院、实验室和工业园区。 咨询、索取样本与报价：Ngọc Trâm 女士 – +84 986 818 013（Zalo）。"},
+  links={"vi": [("Xem sản phẩm", "/san-pham/tu-am-giu-nhiet-biobase-bjpx-h30l/")], "en": [("View product", "/en/san-pham/tu-am-giu-nhiet-biobase-bjpx-h30l/")], "zh": [("查看产品", "/zh/san-pham/tu-am-giu-nhiet-biobase-bjpx-h30l/")]},
+  cta={"vi": "Liên hệ tư vấn", "en": "Contact us", "zh": "联系咨询"},
+), dict(
   video="/video/drawell-dw-ftir-530a.mp4", img="/video/drawell-dw-ftir-530a.jpg", vw=1280, vh=720, date={"vi": "10/11/2026", "en": "10 November 2026", "zh": "2026年11月10日"},
   tag={"vi": "Thiết bị phân tích", "en": "Analytical instruments", "zh": "分析仪器"},
   title={"vi": "Máy quang phổ hồng ngoại FT-IR Drawell DW-FTIR-530A — Nhận diện vật liệu chính xác, nhanh chóng",
@@ -132,6 +142,8 @@ CSS = """.ncards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:
 .ncard h3{margin:0 0 8px;font-size:17px;line-height:1.4;color:#0E2F5A}.ncard p{margin:0 0 12px;color:#4A545E;font-size:14.5px;line-height:1.6}
 .ncard .more{margin-top:auto;color:#F07C1B;font-weight:700;font-size:14px}
 .nall{text-align:center;margin-top:26px}
+.ncards.home{display:flex;flex-wrap:wrap;justify-content:center}.ncards.home .ncard{flex:0 1 calc((100% - 44px)/3)}
+@media (max-width:900px){.ncards.home .ncard{flex-basis:calc((100% - 22px)/2)}}@media (max-width:600px){.ncards.home .ncard{flex-basis:100%}}
 .art{max-width:860px;margin:0 auto 40px}.art h1{font-size:clamp(24px,3vw,32px);line-height:1.3;color:#0E2F5A;margin:6px 0 14px}
 .art figure{margin:0 0 20px}.art figure img,.art figure video{width:100%;height:auto;display:block;border-radius:8px}.art figure video{background:#000}.art figure img{max-width:560px}
 .art figure video.port{max-width:420px}.art p,.art li{color:#33404C;font-size:16px}.art ol,.art ul{padding-left:22px}
@@ -179,6 +191,6 @@ def block(lang):
     return f"""<section id="tin-tuc"><div class="wrap">
   <style>{CSS}</style>
   <div class="title"><h2>{H[lang]}</h2></div>
-  {cards(lang, N[:3])}
+  {cards(lang, N[:5]).replace('class="ncards"', 'class="ncards home"', 1)}
   <p class="nall"><a class="btn cta" href="{PRE[lang]}tin-tuc/">{UI[lang]["all"]}</a></p>
 </div></section>"""
