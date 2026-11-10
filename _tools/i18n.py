@@ -111,7 +111,7 @@ P = [
  '<div class="legal">VAN PHONG TECHNICAL AND TRADING COMPANY LIMITED<br>VAN PHONG TECH CO., LTD. · 企业代码 0108797479</div>'),
 ('href="#linh-vuc">Xem thêm &gt;&gt;</a>', 'href="#linh-vuc">Read more &gt;&gt;</a>', 'href="#linh-vuc">了解更多 &gt;&gt;</a>'),
 # products sections
-('<h2>Sản phẩm nổi bật</h2>', '<h2>Featured products</h2>', '<h2>热门产品</h2>'),
+('<h2>Sản phẩm – Dịch vụ nổi bật</h2>', '<h2>Featured products &amp; services</h2>', '<h2>精选产品与服务</h2>'),
 ('aria-label="Trước"', 'aria-label="Previous"', 'aria-label="上一个"'),
 ('aria-label="Sau"', 'aria-label="Next"', 'aria-label="下一个"'),
 ('<div class="title"><h2>Sản phẩm</h2></div>\n  <div class="catalog">', '<div class="title"><h2>Products</h2></div>\n  <div class="catalog">', '<div class="title"><h2>产品</h2></div>\n  <div class="catalog">'),

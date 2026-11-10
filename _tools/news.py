@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re, unicodedata
 # News items (Tin tức), newest first.
 N = [dict(
   video="/video/drawell-dw-ftir-530a.mp4", img="/video/drawell-dw-ftir-530a.jpg", vw=1280, vh=720, date={"vi": "10/11/2026", "en": "10 November 2026", "zh": "2026年11月10日"},
@@ -117,26 +118,67 @@ N = [dict(
   cta={"vi": "Liên hệ tư vấn", "en": "Contact us", "zh": "联系咨询"},
 )]
 H = {"vi": "Tin tức", "en": "News", "zh": "新闻"}
+PRE = {"vi": "/", "en": "/en/", "zh": "/zh/"}
+UI = {"vi": dict(all="Xem tất cả tin tức", more="Xem tiếp →", lead="Tin tức, ứng dụng thực tế và giới thiệu thiết bị của Vân Phong.", back="← Tất cả tin tức", other="Tin khác"),
+      "en": dict(all="View all news", more="Read more →", lead="News, field applications and equipment introductions from Van Phong.", back="← All news", other="More news"),
+      "zh": dict(all="查看全部新闻", more="阅读全文 →", lead="Vân Phong 新闻、应用案例及设备介绍。", back="← 全部新闻", other="其他新闻")}
+CSS = """.ncards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1180px;margin:0 auto}
+.ncard{background:#fff;border:1px solid #DCE1E6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;color:inherit;text-decoration:none}
+.ncard:hover{box-shadow:0 10px 24px rgba(14,47,90,.12);transform:translateY(-2px)}
+.ncard .nm{position:relative;aspect-ratio:16/10;background:#F0F2F4;overflow:hidden}.ncard .nm img{width:100%;height:100%;object-fit:cover;display:block}
+.ncard .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(14,47,90,.78);color:#fff;display:grid;place-items:center;font-size:22px;padding-left:4px}
+.ncard .nb{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.ncard .nmeta{margin:0 0 6px;color:#5F6B77;font-size:12.5px}.ncard .nmeta span{color:#1580BF;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.ncard h3{margin:0 0 8px;font-size:17px;line-height:1.4;color:#0E2F5A}.ncard p{margin:0 0 12px;color:#4A545E;font-size:14.5px;line-height:1.6}
+.ncard .more{margin-top:auto;color:#F07C1B;font-weight:700;font-size:14px}
+.nall{text-align:center;margin-top:26px}
+.art{max-width:860px;margin:0 auto 40px}.art h1{font-size:clamp(24px,3vw,32px);line-height:1.3;color:#0E2F5A;margin:6px 0 14px}
+.art figure{margin:0 0 20px}.art figure img,.art figure video{width:100%;height:auto;display:block;border-radius:8px}.art figure video{background:#000}.art figure img{max-width:560px}
+.art figure video.port{max-width:420px}.art p,.art li{color:#33404C;font-size:16px}.art ol,.art ul{padding-left:22px}
+@media (max-width:900px){.ncards{grid-template-columns:1fr 1fr}}@media (max-width:600px){.ncards{grid-template-columns:1fr}}"""
+
+def _slugify(t, n=80):
+    t = unicodedata.normalize("NFD", t.replace("đ", "d").replace("Đ", "D"))
+    t = "".join(c for c in t if unicodedata.category(c) != "Mn").lower()
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:n].strip("-")
+
+def slug(n): return _slugify(n["title"]["vi"])
+def url(n, lang): return f"{PRE[lang]}tin-tuc/{slug(n)}/"
+def thumb(n): return n.get("thumb") or n["img"]
+
+def summary(n, lang, k=190):
+    t = re.sub(r"<[^>]+>", "", n["intro"][lang][0])
+    if len(t) <= k: return t
+    cut = t[:k]; sp = cut.rfind(" ")
+    return (cut[:sp] if sp > 60 and lang != "zh" else cut).rstrip(" ,;:") + "…"
+
+def card(n, lang):
+    play = '<span class="play">▶</span>' if ("video" in n or "yt" in n) else ""
+    return (f'<a class="ncard" href="{url(n, lang)}"><div class="nm"><img src="{thumb(n)}" alt="{n["title"][lang]}" loading="lazy">{play}</div>'
+            f'<div class="nb"><p class="nmeta"><span>{n["tag"][lang]}</span> · {n["date"][lang]}</p><h3>{n["title"][lang]}</h3>'
+            f'<p>{summary(n, lang)}</p><span class="more">{UI[lang]["more"]}</span></div></a>')
+
+def cards(lang, items=None):
+    return '<div class="ncards">' + "".join(card(n, lang) for n in (N if items is None else items)) + "</div>"
+
+def article(n, lang):
+    items = "".join((f"<li><b>{a}</b> – {b}</li>" if a else f"<li>{b}</li>") for a, b in n["items"][lang]) if "items" in n else ""
+    if "video" in n:
+        port = n.get("vh", 960) > n.get("vw", 540)
+        fig = f'<video{" class=port" if port else ""} src="{n["video"]}" poster="{n["img"]}" controls playsinline preload="metadata" width="{n.get("vw",540)}" height="{n.get("vh",960)}"></video>'
+    else:
+        fig = f'<img src="{n["img"]}" alt="{n["title"][lang]}">'
+    yt = (f'<div style="position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;background:#000;margin:6px 0 4px"><iframe src="https://www.youtube-nocookie.com/embed/{n["yt"]}" title="{n["ytcap"][lang]}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><p style="font-size:13.5px;color:#64748b">{n["ytcap"][lang]}</p>' if n.get("yt") else "")
+    lst = (f'<ul>{items}</ul>' if n.get("bullets") else f'<ol>{items}</ol>') if items else ""
+    btns = "".join(f'<a class="btn" href="{h}"' + (' target="_blank" rel="noopener"' if h.endswith(".pdf") else "") + f'>{t}</a>' for t, h in n.get("links", {}).get(lang, []))
+    return (f'<article class="art"><p class="tag">{n["tag"][lang]} · {n["date"][lang]}</p><h1>{n["title"][lang]}</h1><figure>{fig}</figure>'
+            + "".join(f"<p>{x}</p>" for x in n["intro"][lang]) + lst + f'<p>{n["outro"][lang]}</p>{yt}'
+            + f'<div class="btns">{btns}<a class="btn cta" href="{PRE[lang]}#lien-he">{n["cta"][lang]}</a></div></article>')
 
 def block(lang):
-    out = []
-    for n in N:
-        items = "".join((f"<li><b>{a}</b> – {b}</li>" if a else f"<li>{b}</li>") for a, b in n["items"][lang]) if "items" in n else ""
-        fig = (f'<video src="{n["video"]}" poster="{n["img"]}" controls playsinline preload="none" width="{n.get('vw',540)}" height="{n.get('vh',960)}"></video>' if "video" in n
-               else f'<img src="{n["img"]}" alt="{n["title"][lang]}" width="512" height="559" loading="lazy">')
-        out.append(f"""  <article class="news-item">
-    <figure>{fig}</figure>
-    <div class="nbody">
-      <p class="nmeta"><span>{n['tag'][lang]}</span> · {n['date'][lang]}</p>
-      <h3>{(lambda L: f'<a href="{L[0][1]}" target="_blank" rel="noopener">' + n['title'][lang] + '</a>' if L else n['title'][lang])(n.get('links', {}).get(lang, []))}</h3>
-      {''.join(f'<p>{p}</p>' for p in n['intro'][lang])}
-      {(f'<ul>{items}</ul>' if n.get('bullets') else f'<ol>{items}</ol>') if items else ''}
-      <p>{n['outro'][lang]}</p>
-      {(f'<div style="position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;background:#000;margin:6px 0 4px"><iframe src="https://www.youtube-nocookie.com/embed/{n["yt"]}" title="{n["ytcap"][lang]}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><p style="font-size:13.5px;color:#64748b">{n["ytcap"][lang]}</p>') if n.get('yt') else ''}
-      <p>{''.join(f'<a class="btn" href="{h}" target="_blank" rel="noopener" style="margin:0 10px 10px 0">{t}</a>' for t, h in n.get('links', {}).get(lang, []))}<a class="btn cta" href="#lien-he">{n['cta'][lang]}</a></p>
-    </div>
-  </article>""")
     return f"""<section id="tin-tuc"><div class="wrap">
+  <style>{CSS}</style>
   <div class="title"><h2>{H[lang]}</h2></div>
-{chr(10).join(out)}
+  {cards(lang, N[:3])}
+  <p class="nall"><a class="btn cta" href="{PRE[lang]}tin-tuc/">{UI[lang]["all"]}</a></p>
 </div></section>"""

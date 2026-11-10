@@ -154,7 +154,7 @@ def head(lang, title, desc, path, extra=""):
 </head>
 <body>
 <header><div class="wrap"><a class="logo" href="/{LANGS[lang]}"><img src="/logo.png" alt="Vân Phong" width="600" height="107"></a>
-<nav><a class="hide" href="/{LANGS[lang]}">{t['home']}</a><a href="/{LANGS[lang]}san-pham/">{t['prod']}</a><a class="hide" href="/{LANGS[lang]}biobase/">BIOBASE</a><a class="hide" href="/{LANGS[lang]}drawell/">Drawell</a>
+<nav><a class="hide" href="/{LANGS[lang]}">{t['home']}</a><a href="/{LANGS[lang]}san-pham/">{t['prod']}</a><a class="hide" href="/{LANGS[lang]}biobase/">BIOBASE</a><a class="hide" href="/{LANGS[lang]}drawell/">Drawell</a><a class="hide" href="/{LANGS[lang]}tin-tuc/">{ {"vi":"Tin tức","en":"News","zh":"新闻"}[lang] }</a>
 <span class="langs">{"".join(f'<a href="/{LANGS[k]}{path}"{" class=on" if k == lang else ""}>{ {"vi":"VI","en":"EN","zh":"中文"}[k] }</a>' for k in LANGS)}</span></nav></div></header>
 """
 
@@ -370,6 +370,28 @@ def main():
         m = hh.rfind("<script>", 0, hh.index("const SLUGS = window.__S"))
         hh = hh[:m] + f'<script src="/data/products-{lang}.js?v={ver}"></script>\n' + hh[m:]
         f.write_text(hh, encoding="utf-8")
+    # news pages: /tin-tuc/ and /tin-tuc/<slug>/ (images in /tin-tuc/*.jpg are kept)
+    import news as NW
+    for lang, pre in LANGS.items():
+        base = REPO / pre / "tin-tuc"
+        if base.exists():
+            for d in base.iterdir():
+                if d.is_dir(): shutil.rmtree(d)
+        base.mkdir(parents=True, exist_ok=True)
+        ex = f"<style>{NW.CSS}</style>"; P = "/" + pre
+        (base / "index.html").write_text(listing(lang, NW.H[lang], NW.UI[lang]["lead"], "tin-tuc/", [e(NW.H[lang])], '<section class="blk">' + NW.cards(lang) + "</section>").replace("</head>", ex + "</head>", 1), encoding="utf-8")
+        urls.append(f"{SITE}/{pre}tin-tuc/")
+        for nw in NW.N:
+            s = NW.slug(nw); d = base / s; d.mkdir(parents=True, exist_ok=True)
+            img = nw["img"] if nw["img"].startswith("http") else SITE + nw["img"]
+            meta = f'<meta property="og:type" content="article"><meta property="og:image" content="{e(img)}">' + ex
+            others = [m for m in NW.N if m is not nw][:3]
+            body = (f'<div class="crumbs"><a href="{P}">{L[lang]["home"]}</a> › <a href="{P}tin-tuc/">{NW.H[lang]}</a></div>' + NW.article(nw, lang)
+                    + f'<section class="rel" style="background:#F0F2F4"><div class="wrap"><h2>{NW.UI[lang]["other"]}</h2>{NW.cards(lang, others)}<p class="nall"><a class="btn" href="{P}tin-tuc/">{NW.UI[lang]["back"]}</a></p></div></section>')
+            html_ = head(lang, f'{re.sub("<[^>]+>", "", nw["title"][lang])} – Vân Phong', NW.summary(nw, lang, 280), f"tin-tuc/{s}/", meta)
+            html_ += '<main class="wrap">' + body.replace('<section class="rel"', '</main><section class="rel"', 1) + foot(lang)
+            (d / "index.html").write_text(html_, encoding="utf-8")
+            urls.append(f"{SITE}/{pre}tin-tuc/{s}/")
     home = [f"{SITE}/{p}" for p in LANGS.values()]
     (REPO / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{u}</loc></url>\n" for u in home + urls) + "</urlset>\n", encoding="utf-8")
     (REPO / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /_tools/\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
