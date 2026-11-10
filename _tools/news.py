@@ -201,6 +201,6 @@ def block(lang):
     return f"""<section id="tin-tuc"><div class="wrap">
   <style>{CSS}</style>
   <div class="title"><h2>{H[lang]}</h2></div>
-  {cards(lang, N[:5]).replace('class="ncards"', 'class="ncards home"', 1)}
+  {cards(lang, N[:3]).replace('class="ncards"', 'class="ncards home"', 1)}
   <p class="nall"><a class="btn cta" href="{PRE[lang]}tin-tuc/">{UI[lang]["all"]}</a></p>
 </div></section>"""
