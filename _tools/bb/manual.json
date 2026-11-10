@@ -490,5 +490,194 @@
     ]
    ]
   }
+ },
+ "dw:423": {
+  "about": {
+   "vi": [
+    "Máy quang phổ hấp thụ nguyên tử là thiết bị phòng thí nghiệm hiệu năng cao, được thiết kế để phân tích chính xác nhiều nguyên tố. DW-180B là dòng máy quang phổ hấp thụ nguyên tử sử dụng hệ ngọn lửa thế hệ mới, giá thành hợp lý, hiệu năng cao, với nhiều cải tiến đáng kể về độ tin cậy và tính thuận tiện khi sử dụng.",
+    "Theo công bố của hãng, doanh số đạt hơn 100 máy trong năm đầu tiên sau khi ra mắt, không ghi nhận vấn đề chất lượng cần xử lý sau bán hàng và nhận được mức độ hài lòng cao từ khách hàng.",
+    "• Điều khiển hoàn toàn tự động bằng máy tính.",
+    "• Bộ gá xoay 8 vị trí đèn, hỗ trợ làm nóng đồng thời 4 đèn.",
+    "• Sử dụng đèn catốt rỗng tiêu chuẩn 1,5 inch; dòng điện đèn điều chỉnh trong khoảng 0–15 mA.",
+    "• Bộ đơn sắc Czerny–Turner, cách tử nhiễu xạ phẳng 1.800 vạch/mm.",
+    "• Độ rộng khe phổ 0,1; 0,2; 0,4; 0,8; 1,6 và 2,4 nm, chuyển đổi tự động.",
+    "• Hệ thống báo động an toàn toàn diện, bảo vệ kép bằng phần mềm và phần cứng; hỗ trợ đọc kết quả bằng bàn đạp chân khi đo ngọn lửa.",
+    "Ứng dụng: phân tích nguyên tố trong địa chất và khoáng sản, phân tích đất, năng lượng mới, giám sát môi trường, phân tích chất lượng nước, an toàn thực phẩm và dược phẩm."
+   ],
+   "en": [
+    "The atomic absorption spectrophotometer is a high-performance laboratory instrument designed for accurate analysis of many elements. The DW-180B is a new-generation flame atomic absorption spectrophotometer offering reasonable cost, high performance and significant improvements in reliability and ease of use.",
+    "According to the manufacturer, more than 100 units were sold in the first year after launch, with no after-sales quality issues reported and high customer satisfaction.",
+    "• Fully automatic computer control.",
+    "• 8-position lamp turret with simultaneous preheating of 4 lamps.",
+    "• Standard 1.5-inch hollow cathode lamps; lamp current adjustable from 0 to 15 mA.",
+    "• Czerny–Turner monochromator with a 1800 lines/mm plane diffraction grating.",
+    "• Spectral bandwidth 0.1, 0.2, 0.4, 0.8, 1.6 and 2.4 nm, switched automatically.",
+    "• Comprehensive safety alarm system with dual software and hardware protection; foot-pedal reading in flame mode.",
+    "Applications: elemental analysis in geology and mining, soil analysis, new energy, environmental monitoring, water quality analysis, food and pharmaceutical safety."
+   ],
+   "zh": [
+    "原子吸收分光光度计是高性能实验室仪器，可准确分析多种元素。DW-180B 是新一代火焰原子吸收分光光度计，价格合理、性能优异，在可靠性和易用性方面均有显著改进。",
+    "据厂家公布，该机型上市第一年销量超过 100 台，未出现需售后处理的质量问题，客户满意度高。",
+    "• 全自动计算机控制。",
+    "• 8 灯位转塔，可同时预热 4 只灯。",
+    "• 采用标准 1.5 英寸空心阴极灯；灯电流 0–15 mA 可调。",
+    "• Czerny–Turner 单色器，1800 线/mm 平面衍射光栅。",
+    "• 光谱带宽 0.1、0.2、0.4、0.8、1.6 和 2.4 nm，自动切换。",
+    "• 完善的安全报警系统，软硬件双重保护；火焰模式支持脚踏读数。",
+    "应用：地质与矿产、土壤分析、新能源、环境监测、水质分析、食品及药品安全等领域的元素分析。"
+   ]
+  },
+  "spec": {
+   "vi": [
+    [
+     "Loại",
+     "Hấp thụ nguyên tử ngọn lửa"
+    ],
+    [
+     "Dải bước sóng",
+     "170–900 nm"
+    ],
+    [
+     "Sai số bước sóng",
+     "≤ ±0,10 nm"
+    ],
+    [
+     "Độ lặp lại bước sóng",
+     "≤ 0,05 nm"
+    ],
+    [
+     "Độ ổn định đường nền",
+     "Độ trôi trong 30 phút ≤ 0,002 Abs; nhiễu ≤ 0,001 Abs"
+    ],
+    [
+     "Bộ đơn sắc",
+     "Czerny–Turner, cách tử phẳng 1.800 vạch/mm"
+    ],
+    [
+     "Độ rộng khe phổ",
+     "0,1 / 0,2 / 0,4 / 0,8 / 1,6 / 2,4 nm, chuyển tự động"
+    ],
+    [
+     "Đèn",
+     "Bộ gá xoay 8 đèn, làm nóng đồng thời 4 đèn; đèn catốt rỗng 1,5 inch; dòng đèn 0–15 mA"
+    ],
+    [
+     "Đầu đốt",
+     "Titan 10 cm"
+    ],
+    [
+     "Buồng phun",
+     "PPS chống ăn mòn"
+    ],
+    [
+     "Điều khiển",
+     "Hoàn toàn tự động bằng máy tính"
+    ],
+    [
+     "An toàn",
+     "Báo động toàn diện, bảo vệ kép phần mềm và phần cứng"
+    ]
+   ],
+   "en": [
+    [
+     "Type",
+     "Flame atomic absorption"
+    ],
+    [
+     "Wavelength range",
+     "170–900 nm"
+    ],
+    [
+     "Wavelength accuracy",
+     "≤ ±0.10 nm"
+    ],
+    [
+     "Wavelength repeatability",
+     "≤ 0.05 nm"
+    ],
+    [
+     "Baseline stability",
+     "30-min drift ≤ 0.002 Abs; noise ≤ 0.001 Abs"
+    ],
+    [
+     "Monochromator",
+     "Czerny–Turner, 1800 lines/mm plane grating"
+    ],
+    [
+     "Spectral bandwidth",
+     "0.1 / 0.2 / 0.4 / 0.8 / 1.6 / 2.4 nm, automatic switching"
+    ],
+    [
+     "Lamps",
+     "8-lamp turret, 4 preheated simultaneously; 1.5-inch hollow cathode lamps; lamp current 0–15 mA"
+    ],
+    [
+     "Burner",
+     "10 cm titanium"
+    ],
+    [
+     "Spray chamber",
+     "Corrosion-resistant PPS"
+    ],
+    [
+     "Control",
+     "Fully automatic, computer-controlled"
+    ],
+    [
+     "Safety",
+     "Comprehensive alarms, dual software and hardware protection"
+    ]
+   ],
+   "zh": [
+    [
+     "类型",
+     "火焰原子吸收"
+    ],
+    [
+     "波长范围",
+     "170–900 nm"
+    ],
+    [
+     "波长误差",
+     "≤ ±0.10 nm"
+    ],
+    [
+     "波长重复性",
+     "≤ 0.05 nm"
+    ],
+    [
+     "基线稳定性",
+     "30 分钟漂移 ≤ 0.002 Abs；噪声 ≤ 0.001 Abs"
+    ],
+    [
+     "单色器",
+     "Czerny–Turner，1800 线/mm 平面光栅"
+    ],
+    [
+     "光谱带宽",
+     "0.1 / 0.2 / 0.4 / 0.8 / 1.6 / 2.4 nm，自动切换"
+    ],
+    [
+     "灯",
+     "8 灯转塔，同时预热 4 灯；1.5 英寸空心阴极灯；灯电流 0–15 mA"
+    ],
+    [
+     "燃烧头",
+     "10 cm 钛燃烧头"
+    ],
+    [
+     "雾化室",
+     "耐腐蚀 PPS"
+    ],
+    [
+     "控制",
+     "全自动计算机控制"
+    ],
+    [
+     "安全",
+     "完善报警，软硬件双重保护"
+    ]
+   ]
+  }
  }
 }
