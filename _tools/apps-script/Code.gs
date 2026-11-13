@@ -2,9 +2,9 @@
  * Vân Phong – backend cho giỏ yêu cầu báo giá và tài khoản khách hàng trên vanphongtechco.com.vn
  *
  * CÀI ĐẶT (một lần):
- *  1. Đăng nhập Google bằng tài khoản info@vanphongtechco.com.vn → tạo Google Sheet mới, đặt tên "Web – Yêu cầu báo giá".
- *  2. Trong Sheet: Tiện ích mở rộng → Apps Script. Xóa hết nội dung Code.gs, dán toàn bộ file này vào, bấm Lưu.
- *  3. Chọn hàm "setup" trên thanh công cụ → Chạy → cấp quyền (Advanced → Go to … → Allow).
+ *  1. Đăng nhập Google bằng info@vanphongtechco.com.vn → script.google.com → Dự án mới (hoặc Apps Script gắn với một Sheet).
+ *  2. Dán toàn bộ file này vào Code.gs, bấm Lưu.
+ *  3. Chọn hàm "setup" → Chạy → cấp quyền. Hàm tự tạo Google Sheet "Web – Yêu cầu báo giá và khách hàng" (link ở Nhật ký thực thi).
  *  4. Triển khai → Tùy chọn triển khai mới → loại "Ứng dụng web":
  *       Thực thi với tư cách: Tôi (info@…) · Người có quyền truy cập: Bất kỳ ai → Triển khai.
  *  5. Sao chép "URL ứng dụng web" (…/exec) gửi cho người quản trị web để dán vào assets/bao-gia.js (biến API).
@@ -26,8 +26,18 @@ var H_Q = ['Mã', 'Thời gian', 'Email', 'Họ tên', 'Công ty', 'Điện tho�
 var H_C = ['Email', 'Họ tên', 'Công ty', 'Điện thoại', 'Ngày tạo', 'Lần cuối', 'Số yêu cầu'];
 var SESSION_DAYS = 180;
 
+function SS() {
+  var id = PropertiesService.getScriptProperties().getProperty('SHEET_ID');
+  return id ? SpreadsheetApp.openById(id) : SpreadsheetApp.getActiveSpreadsheet();
+}
+
 function setup() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var p0 = PropertiesService.getScriptProperties();
+  var ss = null;
+  try { ss = SpreadsheetApp.getActiveSpreadsheet(); } catch (e) {}
+  if (!ss && p0.getProperty('SHEET_ID')) ss = SpreadsheetApp.openById(p0.getProperty('SHEET_ID'));
+  if (!ss) { ss = SpreadsheetApp.create('Web – Yêu cầu báo giá và khách hàng'); }
+  p0.setProperty('SHEET_ID', ss.getId());
   var q = ss.getSheetByName('BaoGia') || ss.insertSheet('BaoGia');
   q.getRange(1, 1, 1, H_Q.length).setValues([H_Q]).setFontWeight('bold').setBackground('#0E2F5A').setFontColor('#fff');
   q.setFrozenRows(1);
@@ -41,6 +51,7 @@ function setup() {
   var p = PropertiesService.getScriptProperties();
   if (!p.getProperty('SECRET')) p.setProperty('SECRET', Utilities.getUuid() + Utilities.getUuid());
   MailApp.getRemainingDailyQuota(); // xin quyền gửi mail ngay khi setup
+  console.log('SHEET: ' + ss.getUrl());
 }
 
 function doGet() { return out({ ok: true, service: 'vanphong-quote' }); }
@@ -50,6 +61,7 @@ function doPost(e) {
     var d = JSON.parse(e.postData.contents || '{}');
     if (d.hp) return out({ ok: true, code: '—' });          // bẫy bot
     switch (d.action) {
+      case 'register': return out(register(d));
       case 'requestCode': return out(requestCode(d));
       case 'verify': return out(verify(d));
       case 'submitQuote': return out(submitQuote(d));
@@ -88,6 +100,27 @@ function verify(d) {
   return { ok: true, token: makeToken(em), profile: prof };
 }
 
+/* ---------- đăng ký: họ tên + SĐT + email ---------- */
+function register(d) {
+  var em = cleanEmail(d.email), name = str(d.name, 120), phone = str(d.phone, 40), company = str(d.company, 200);
+  if (!em || !name || phone.replace(/\D/g, '').length < 8) return { ok: false, err: 'input' };
+  if (!limit('rg:' + em, 5, 3600) || !limit('rg:all', 200, 3600)) return { ok: false, err: 'rate' };
+  var sh = SS().getSheetByName('KhachHang'), last = sh.getLastRow();
+  var exists = last > 1 && sh.getRange(2, 1, last - 1, 1).getValues().some(function (r) { return String(r[0]).toLowerCase() === em; });
+  if (exists) {               // email đã có: xác thực bằng mã để bảo vệ lịch sử báo giá của khách
+    var r = requestCode({ email: em, lang: d.lang });
+    return r.ok ? { ok: true, need: 'code' } : r;
+  }
+  var prof = upsertCustomer(em, { name: name, company: company, phone: phone }, false);
+  try {
+    MailApp.sendEmail({ to: INFO, cc: CC || undefined, replyTo: em, name: 'Website Vân Phong',
+      subject: '[Web] Khách hàng mới đăng ký – ' + name + (company ? ' – ' + company : ''),
+      htmlBody: wrap('<p>Khách hàng mới đăng ký tài khoản trên website:</p><p><b>' + h(name) + '</b>' + (company ? ' – ' + h(company) : '')
+        + '<br>ĐT: ' + h(phone) + '<br>Email: ' + h(em) + '</p><p style="color:#6B7684">Danh sách đầy đủ trong Sheet "KhachHang".</p>') });
+  } catch (e) { console.error(e); }
+  return { ok: true, token: makeToken(em), profile: prof };
+}
+
 /* ---------- yêu cầu báo giá ---------- */
 function submitQuote(d) {
   var tokEmail = d.token ? checkToken(d.token) : null;
@@ -102,7 +135,7 @@ function submitQuote(d) {
 
   var lock = LockService.getScriptLock(); lock.waitLock(20000);
   try {
-    var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('BaoGia');
+    var sh = SS().getSheetByName('BaoGia');
     var now = new Date(), day = Utilities.formatDate(now, TZ, 'yyMMdd');
     var n = 1, last = sh.getLastRow();
     if (last > 1) {
@@ -142,7 +175,7 @@ function submitQuote(d) {
 
 function myQuotes(d) {
   var em = checkToken(d.token); if (!em) return { ok: false, err: 'auth' };
-  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('BaoGia'), last = sh.getLastRow(), res = [];
+  var sh = SS().getSheetByName('BaoGia'), last = sh.getLastRow(), res = [];
   if (last > 1) {
     var v = sh.getRange(2, 1, last - 1, H_Q.length).getDisplayValues();
     for (var i = v.length - 1; i >= 0 && res.length < 50; i--) {
@@ -156,7 +189,7 @@ function myQuotes(d) {
 
 /* ---------- tiện ích ---------- */
 function upsertCustomer(em, p, isQuote) {
-  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('KhachHang'), last = sh.getLastRow();
+  var sh = SS().getSheetByName('KhachHang'), last = sh.getLastRow();
   var now = Utilities.formatDate(new Date(), TZ, 'dd/MM/yyyy HH:mm');
   var emails = last > 1 ? sh.getRange(2, 1, last - 1, 1).getValues().map(function (r) { return String(r[0]).toLowerCase(); }) : [];
   var i = emails.indexOf(em);

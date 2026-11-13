@@ -227,12 +227,36 @@
   }
 
   /* ---------- account ---------- */
-  var pend = null; // email awaiting code
+  var pend = null, useCode = 0; // email awaiting code; show code login instead of sign-up
   function renderAcc() {
     if (!API) return renderLocal();
     var tok = ld(K_TOK, null);
     if (!tok) {
-      if (!pend) {
+      if (!pend && !useCode) {
+        var p0 = ld(K_PROF, {});
+        bd.innerHTML = msg() + '<p class="vq-mute">' + esc(S.regIntro) + '</p><form class="vq-r">'
+          + '<label>' + esc(S.name) + ' *</label><input name="name" required autocomplete="name" value="' + esc(p0.name) + '">'
+          + '<label>' + esc(S.phone) + ' *</label><input name="phone" type="tel" required autocomplete="tel" value="' + esc(p0.phone) + '">'
+          + '<label>' + esc(S.email) + ' *</label><input name="email" type="email" required autocomplete="email" value="' + esc(p0.email) + '">'
+          + '<label>' + esc(S.company) + '</label><input name="company" autocomplete="organization" value="' + esc(p0.company) + '">'
+          + '<input class="vq-hp" name="hp" tabindex="-1" autocomplete="off"><button class="vq-btn" type="submit">' + esc(S.reg) + '</button>'
+          + '<button class="vq-btn sec" type="button" data-code>' + esc(S.getCode) + '</button></form>';
+        $('[data-code]', bd).onclick = function () { useCode = 1; note = ''; renderAcc(); };
+        $('.vq-r', bd).onsubmit = function (e) {
+          e.preventDefault(); var f = e.target, g = function (n) { return f.elements[n].value.trim(); };
+          var d = { action: 'register', name: g('name'), phone: g('phone'), email: g('email').toLowerCase(), company: g('company'), hp: g('hp'), lang: LG };
+          if (!d.name || d.phone.replace(/\D/g, '').length < 8 || !okEmail(d.email)) { say(esc(S.need), 1); return renderAcc(); }
+          sv(K_PROF, { name: d.name, phone: d.phone, email: d.email, company: d.company });
+          var bt = $('button[type=submit]', f); bt.disabled = true; bt.textContent = S.sending;
+          api(d).then(function (r) {
+            if (!r.ok) throw r;
+            if (r.need === 'code') { pend = d.email; say(fmt(S.codeSent, { e: d.email })); return renderAcc(); }
+            sv(K_TOK, { t: r.token, e: d.email });
+            if (r.profile) sv(K_PROF, Object.assign(ld(K_PROF, {}), r.profile, { email: d.email }));
+            say(esc(S.regOk)); hbar(); renderAcc();
+          }).catch(function (r) { say(esc(r && r.err === 'rate' ? S.errRate : S.err), 1); renderAcc(); });
+        };
+      } else if (!pend) {
         bd.innerHTML = msg() + '<p class="vq-mute">' + esc(S.accIntro) + '</p><form class="vq-l"><label>' + esc(S.email) + '</label><input name="email" type="email" required autocomplete="email" value="' + esc(ld(K_PROF, {}).email) + '"><input class="vq-hp" name="hp" tabindex="-1" autocomplete="off"><button class="vq-btn" type="submit">' + esc(S.getCode) + '</button></form>';
         $('.vq-l', bd).onsubmit = function (e) {
           e.preventDefault(); var em = e.target.email.value.trim().toLowerCase(); if (!okEmail(em)) return;
@@ -243,7 +267,7 @@
         };
       } else {
         bd.innerHTML = msg() + '<form class="vq-v"><label>' + esc(S.code) + '</label><input name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" required><button class="vq-btn" type="submit">' + esc(S.login) + '</button><button class="vq-btn sec" type="button" data-other>' + esc(S.otherEmail) + '</button></form>';
-        $('[data-other]', bd).onclick = function () { pend = null; note = ''; renderAcc(); };
+        $('[data-other]', bd).onclick = function () { pend = null; useCode = 0; note = ''; renderAcc(); };
         var ci = $('input', bd); ci.focus();
         $('.vq-v', bd).onsubmit = function (e) {
           e.preventDefault(); var b = $('button', e.target); b.disabled = true;
@@ -257,7 +281,7 @@
       }
       return;
     }
-    bd.innerHTML = '<p class="vq-mute">' + fmt(S.hello, { e: tok.e }) + ' · <a href="#" data-out>' + esc(S.logout) + '</a></p><div class="vq-list"><p class="vq-mute">…</p></div>';
+    var pf = ld(K_PROF, {}); bd.innerHTML = msg() + '<p class="vq-mute">' + fmt(S.helloN, { n: pf.name || tok.e }) + ' · ' + esc(tok.e) + ' · <a href="#" data-out>' + esc(S.logout) + '</a></p><div class="vq-list"><p class="vq-mute">…</p></div>';
     $('[data-out]', bd).onclick = function (e) { e.preventDefault(); sv(K_TOK, null); note = ''; hbar(); renderAcc(); };
     api({ action: 'myQuotes', token: tok.t }).then(function (r) {
       if (!r.ok) { if (r.err === 'auth') { sv(K_TOK, null); say(esc(S.expired), 1); return renderAcc(); } throw r; }
