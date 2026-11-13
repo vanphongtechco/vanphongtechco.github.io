@@ -23,7 +23,7 @@ var TZ = 'Asia/Ho_Chi_Minh';
 var STATUSES = ['Mới', 'Đang xử lý', 'Đã gửi báo giá', 'Hoàn tất', 'Hủy'];
 var H_Q = ['Mã', 'Thời gian', 'Email', 'Họ tên', 'Công ty', 'Điện thoại', 'Ghi chú', 'Sản phẩm – số lượng', 'Số dòng',
   'Trạng thái', 'Phản hồi cho khách', 'Link file báo giá', 'Email đã xác thực', 'Ngôn ngữ', 'Trang gửi', 'Dữ liệu (JSON)'];
-var H_C = ['Email', 'Họ tên', 'Công ty', 'Điện thoại', 'Ngày tạo', 'Lần cuối', 'Số yêu cầu'];
+var H_C = ['Email', 'Họ tên', 'Công ty', 'Điện thoại', 'Ngày tạo', 'Lần cuối', 'Số yêu cầu', 'Mật khẩu (mã hóa)'];
 var SESSION_DAYS = 180;
 
 function SS() {
@@ -62,6 +62,9 @@ function doPost(e) {
     if (d.hp) return out({ ok: true, code: '—' });          // bẫy bot
     switch (d.action) {
       case 'register': return out(register(d));
+      case 'login': return out(login(d));
+      case 'forgot': return out(forgot(d));
+      case 'changePw': return out(changePw(d));
       case 'requestCode': return out(requestCode(d));
       case 'verify': return out(verify(d));
       case 'submitQuote': return out(submitQuote(d));
@@ -100,25 +103,84 @@ function verify(d) {
   return { ok: true, token: makeToken(em), profile: prof };
 }
 
-/* ---------- đăng ký: họ tên + SĐT + email ---------- */
-function register(d) {
-  var em = cleanEmail(d.email), name = str(d.name, 120), phone = str(d.phone, 40), company = str(d.company, 200);
-  if (!em || !name || phone.replace(/\D/g, '').length < 8) return { ok: false, err: 'input' };
-  if (!limit('rg:' + em, 5, 3600) || !limit('rg:all', 200, 3600)) return { ok: false, err: 'rate' };
-  var sh = SS().getSheetByName('KhachHang'), last = sh.getLastRow();
-  var exists = last > 1 && sh.getRange(2, 1, last - 1, 1).getValues().some(function (r) { return String(r[0]).toLowerCase() === em; });
-  if (exists) {               // email đã có: xác thực bằng mã để bảo vệ lịch sử báo giá của khách
-    var r = requestCode({ email: em, lang: d.lang });
-    return r.ok ? { ok: true, need: 'code' } : r;
+/* ---------- tài khoản: đăng ký / đăng nhập bằng email hoặc SĐT + mật khẩu ---------- */
+function normPhone(x) { x = String(x || '').replace(/\D/g, ''); if (x.indexOf('84') === 0 && x.length >= 11) x = '0' + x.slice(2); return x; }
+function custSheet() {
+  var sh = SS().getSheetByName('KhachHang');
+  if (sh.getRange(1, 8).getValue() !== H_C[7]) {
+    sh.getRange(1, 1, 1, H_C.length).setValues([H_C]).setFontWeight('bold').setBackground('#0E2F5A').setFontColor('#fff');
+    sh.hideColumns(8);
   }
-  var prof = upsertCustomer(em, { name: name, company: company, phone: phone }, false);
+  return sh;
+}
+function findCust(id) {
+  var sh = custSheet(), last = sh.getLastRow(); if (last < 2) return null;
+  var em = cleanEmail(id), ph = em ? '' : normPhone(id); if (!em && ph.length < 8) return null;
+  var v = sh.getRange(2, 1, last - 1, H_C.length).getValues();
+  for (var i = 0; i < v.length; i++) {
+    if ((em && String(v[i][0]).toLowerCase() === em) || (ph && normPhone(v[i][3]) === ph)) return { sh: sh, row: i + 2, v: v[i] };
+  }
+  return null;
+}
+function hashPw(pw, salt) {
+  salt = salt || Utilities.getUuid().replace(/-/g, '');
+  var x = String(pw);
+  for (var i = 0; i < 300; i++) x = b64(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, salt + x, Utilities.Charset.UTF_8));
+  return salt + ':' + x;
+}
+function pwOk(pw, stored) { stored = String(stored || ''); var salt = stored.split(':')[0]; return !!salt && stored.indexOf(':') > 0 && hashPw(pw, salt) === stored; }
+function profOf(v) { return { name: String(v[1]), company: String(v[2]), phone: String(v[3]).replace(/^'/, ''), email: String(v[0]) }; }
+function tmpPw() { var a = 'abcdefghjkmnpqrstuvwxyz23456789', r = ''; for (var i = 0; i < 8; i++) r += a.charAt(Math.floor(Math.random() * a.length)); return r; }
+
+function register(d) {
+  var em = cleanEmail(d.email), name = str(d.name, 120), phone = str(d.phone, 40), company = str(d.company, 200), pw = String(d.pw || '');
+  if (!em || !name || normPhone(phone).length < 8) return { ok: false, err: 'input' };
+  if (pw.length < 6 || pw.length > 100) return { ok: false, err: 'pw' };
+  if (!limit('rg:' + em, 5, 3600) || !limit('rg:all', 200, 3600)) return { ok: false, err: 'rate' };
+  var lock = LockService.getScriptLock(); lock.waitLock(20000);
+  try {
+    if (findCust(em) || findCust(phone)) return { ok: false, err: 'exists' };
+    upsertCustomer(em, { name: name, company: company, phone: phone }, false);
+    var c = findCust(em); c.sh.getRange(c.row, 8).setValue(hashPw(pw));
+  } finally { lock.releaseLock(); }
   try {
     MailApp.sendEmail({ to: INFO, cc: CC || undefined, replyTo: em, name: 'Website Vân Phong',
       subject: '[Web] Khách hàng mới đăng ký – ' + name + (company ? ' – ' + company : ''),
       htmlBody: wrap('<p>Khách hàng mới đăng ký tài khoản trên website:</p><p><b>' + h(name) + '</b>' + (company ? ' – ' + h(company) : '')
         + '<br>ĐT: ' + h(phone) + '<br>Email: ' + h(em) + '</p><p style="color:#6B7684">Danh sách đầy đủ trong Sheet "KhachHang".</p>') });
   } catch (e) { console.error(e); }
-  return { ok: true, token: makeToken(em), profile: prof };
+  return { ok: true, token: makeToken(em), profile: { name: name, company: company, phone: phone, email: em } };
+}
+
+function login(d) {
+  var id = str(d.id, 120).toLowerCase();
+  if (!limit('lg:' + id, 10, 900) || !limit('lg:all', 600, 3600)) return { ok: false, err: 'rate' };
+  var c = findCust(id);
+  if (!c || !c.v[7] || !pwOk(String(d.pw || ''), c.v[7])) return { ok: false, err: 'login' };
+  c.sh.getRange(c.row, 6).setValue(Utilities.formatDate(new Date(), TZ, 'dd/MM/yyyy HH:mm'));
+  return { ok: true, token: makeToken(String(c.v[0]).toLowerCase()), profile: profOf(c.v) };
+}
+
+function forgot(d) {
+  var id = str(d.id, 120).toLowerCase();
+  if (!limit('fg:' + id, 3, 3600) || !limit('fg:all', 100, 3600)) return { ok: false, err: 'rate' };
+  var c = findCust(id);
+  if (c) {
+    var pw = tmpPw(), em = String(c.v[0]), t = TX[d.lang] || TX.vi;
+    c.sh.getRange(c.row, 8).setValue(hashPw(pw));
+    MailApp.sendEmail({ to: em, replyTo: INFO, name: 'Vân Phong', subject: t.pwSubj,
+      htmlBody: wrap('<p>' + t.pwBody + '</p><p style="font-size:24px;font-weight:700;letter-spacing:2px;color:#0E2F5A">' + pw + '</p><p>' + t.pwNote + '</p>') });
+  }
+  return { ok: true };                     // không tiết lộ email/SĐT có tồn tại hay không
+}
+
+function changePw(d) {
+  var em = checkToken(d.token); if (!em) return { ok: false, err: 'auth' };
+  var c = findCust(em), npw = String(d.npw || '');
+  if (!c || !pwOk(String(d.pw || ''), c.v[7])) return { ok: false, err: 'login' };
+  if (npw.length < 6 || npw.length > 100) return { ok: false, err: 'pw' };
+  c.sh.getRange(c.row, 8).setValue(hashPw(npw));
+  return { ok: true };
 }
 
 /* ---------- yêu cầu báo giá ---------- */
@@ -189,12 +251,12 @@ function myQuotes(d) {
 
 /* ---------- tiện ích ---------- */
 function upsertCustomer(em, p, isQuote) {
-  var sh = SS().getSheetByName('KhachHang'), last = sh.getLastRow();
+  var sh = custSheet(), last = sh.getLastRow();
   var now = Utilities.formatDate(new Date(), TZ, 'dd/MM/yyyy HH:mm');
   var emails = last > 1 ? sh.getRange(2, 1, last - 1, 1).getValues().map(function (r) { return String(r[0]).toLowerCase(); }) : [];
   var i = emails.indexOf(em);
   if (i < 0) {
-    sh.appendRow([em, p.name || '', p.company || '', p.phone ? "'" + p.phone : '', now, now, isQuote ? 1 : 0]);
+    sh.appendRow([em, p.name || '', p.company || '', p.phone ? "'" + p.phone : '', now, now, isQuote ? 1 : 0, '']);
     return { name: p.name || '', company: p.company || '', phone: p.phone || '' };
   }
   var r = sh.getRange(i + 2, 1, 1, H_C.length), v = r.getValues()[0];
@@ -234,18 +296,21 @@ var TX = {
     otpSubj: 'Mã đăng nhập Vân Phong:', otpBody: 'Mã đăng nhập tài khoản trên website Vân Phong của bạn là:',
     otpNote: 'Mã có hiệu lực 10 phút. Nếu bạn không yêu cầu, hãy bỏ qua email này.',
     qSubj: 'Vân Phong đã nhận yêu cầu báo giá', qBody: 'Cảm ơn Quý khách. Vân Phong đã nhận yêu cầu báo giá {c} gồm:',
-    qTrack: 'Chúng tôi sẽ phản hồi trong giờ làm việc. Quý khách theo dõi trạng thái tại mục Tài khoản trên {u} (đăng nhập bằng email này).'
+    qTrack: 'Chúng tôi sẽ phản hồi trong giờ làm việc. Quý khách theo dõi trạng thái tại mục Tài khoản trên {u}.',
+    pwSubj: 'Mật khẩu mới – tài khoản website Vân Phong', pwBody: 'Theo yêu cầu "Quên mật khẩu", mật khẩu mới cho tài khoản của Quý khách là:', pwNote: 'Đăng nhập bằng email hoặc số điện thoại cùng mật khẩu này, sau đó có thể đổi mật khẩu trong mục Tài khoản. Nếu Quý khách không yêu cầu, vui lòng liên hệ 08.9999.0683.'
   },
   en: {
     otpSubj: 'Van Phong sign-in code:', otpBody: 'Your sign-in code for the Van Phong website is:',
     otpNote: 'The code is valid for 10 minutes. If you did not request it, please ignore this email.',
     qSubj: 'Van Phong received your quote request', qBody: 'Thank you. Van Phong has received your quote request {c}:',
-    qTrack: 'We will reply during business hours. Track its status under Account on {u} (sign in with this email).'
+    qTrack: 'We will reply during business hours. Track its status under Account on {u}.',
+    pwSubj: 'New password – Van Phong website account', pwBody: 'As requested via "Forgot password", the new password for your account is:', pwNote: 'Sign in with your email or phone number and this password; you can change it under Account. If you did not request this, please call +84 899 990 683.'
   },
   zh: {
     otpSubj: 'Vân Phong 登录验证码：', otpBody: '您在 Vân Phong 网站的登录验证码是：',
     otpNote: '验证码 10 分钟内有效。如非本人操作，请忽略此邮件。',
     qSubj: 'Vân Phong 已收到您的询价', qBody: '感谢您的询价。Vân Phong 已收到询价单 {c}：',
-    qTrack: '我们将在工作时间回复。请在 {u} 的“账户”中查看进度（用此邮箱登录）。'
+    qTrack: '我们将在工作时间回复。请在 {u} 的“账户”中查看进度。',
+    pwSubj: '新密码 – Vân Phong 网站账户', pwBody: '根据您的“忘记密码”请求，您账户的新密码为：', pwNote: '请使用邮箱或手机号及此密码登录，登录后可在“账户”中修改密码。如非本人操作，请致电 +84 899 990 683。'
   }
 };
