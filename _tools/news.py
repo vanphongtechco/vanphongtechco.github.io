@@ -2,6 +2,16 @@
 import re, unicodedata
 # News items (Tin tức), newest first.
 N = [dict(
+  video="/video/biobase-kit-tach-chiet-dr1110.mp4", img="/video/biobase-kit-tach-chiet-dr1110.jpg", vw=720, vh=1280, date={"vi": "13/11/2026", "en": "13 November 2026", "zh": "2026年11月13日"},
+  tag={"vi": "Sinh học phân tử", "en": "Molecular biology", "zh": "分子生物学"},
+  title={"vi": "Kit tách chiết axit nucleic BIOBASE phương pháp hạt từ — DNA/RNA tinh sạch cho PCR, RT-PCR", "en": "BIOBASE magnetic-bead nucleic acid extraction kits — purified DNA/RNA for PCR and RT-PCR", "zh": "BIOBASE 磁珠法核酸提取试剂盒 —— 为 PCR、RT-PCR 提供纯化 DNA/RNA"},
+  intro={"vi": ["Làm PCR, bạn đã chọn đúng kit tách chiết DNA/RNA chưa? Vân Phong giới thiệu bộ kit tách chiết axit nucleic BIOBASE theo phương pháp hạt từ — hỗ trợ thu nhận DNA/RNA tinh sạch để sử dụng trong các bước phân tích tiếp theo như PCR và RT-PCR.", "Những điểm đáng chú ý:"], "en": ["Doing PCR — have you chosen the right DNA/RNA extraction kit? Van Phong introduces BIOBASE magnetic-bead nucleic acid extraction kits, which help obtain purified DNA/RNA for downstream analysis such as PCR and RT-PCR.", "Highlights:"], "zh": ["做 PCR，您选对 DNA/RNA 提取试剂盒了吗？Vân Phong 为您介绍 BIOBASE 磁珠法核酸提取试剂盒，可获得纯化的 DNA/RNA，用于 PCR、RT-PCR 等后续分析。", "产品亮点："]},
+  bullets=True,
+  items={'vi': [('', 'Kết hợp hạt từ và hệ dung dịch đệm để tách chiết, tinh sạch axit nucleic.'), ('', 'Nhiều quy cách đóng gói, phù hợp với nhu cầu xử lý mẫu.'), ('', 'Dòng DR1110 quy cách 32T/kit và 64T/kit, tương thích với máy tách chiết BIOBASE BK-HS32 và BK-AutoHS96.')], 'en': [('', 'Magnetic beads combined with a buffer system for nucleic acid extraction and purification.'), ('', 'Several pack sizes to suit different sample-processing needs.'), ('', 'DR1110 series in 32T/kit and 64T/kit packs, compatible with BIOBASE BK-HS32 and BK-AutoHS96 extractors.')], 'zh': [('', '磁珠与缓冲液体系结合，用于核酸提取与纯化。'), ('', '多种包装规格，满足不同样品处理需求。'), ('', 'DR1110 系列提供 32T/盒和 64T/盒规格，适配 BIOBASE BK-HS32 和 BK-AutoHS96 核酸提取仪。')]},
+  outro={"vi": "Tư vấn, nhận catalogue, báo giá: Ms Ngọc Trâm – 0986.818.013 (Zalo).", "en": "Advice, catalogue and quotations: Ms Ngoc Tram – +84 986 818 013 (Zalo).", "zh": "咨询、索取样本与报价：Ngọc Trâm 女士 – +84 986 818 013（Zalo）。"},
+  links={"vi": [("Xem sản phẩm", "/san-pham/bo-kit-tach-chiet-axit-nucleic-phuong-phap-hat-tu-biobase-dr1110-dr1127-dr1136/")], "en": [("View product", "/en/san-pham/bo-kit-tach-chiet-axit-nucleic-phuong-phap-hat-tu-biobase-dr1110-dr1127-dr1136/")], "zh": [("查看产品", "/zh/san-pham/bo-kit-tach-chiet-axit-nucleic-phuong-phap-hat-tu-biobase-dr1110-dr1127-dr1136/")]},
+  cta={"vi": "Liên hệ tư vấn", "en": "Contact us", "zh": "联系咨询"},
+), dict(
   video="/video/biobase-mx-rd.mp4", img="/video/biobase-mx-rd.jpg", vw=1280, vh=720, date={"vi": "13/11/2026", "en": "13 November 2026", "zh": "2026年11月13日"},
   tag={"vi": "Thiết bị phòng thí nghiệm", "en": "Laboratory equipment", "zh": "实验室设备"},
   title={"vi": "Máy lắc xoay BIOBASE dòng MX-RD — Trộn mẫu đồng đều, kết quả đáng tin cậy", "en": "BIOBASE MX-RD series rotator — uniform mixing, reliable results", "zh": "BIOBASE MX-RD 系列旋转混匀仪 —— 混匀均匀，结果可靠"},

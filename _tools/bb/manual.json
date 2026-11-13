@@ -826,5 +826,27 @@
     ]
    ]
   }
+ },
+ "bbg:1158": {
+  "about": {
+   "vi": [
+    "Bộ kit tách chiết axit nucleic BIOBASE theo phương pháp hạt từ hỗ trợ thu nhận DNA/RNA tinh sạch để dùng cho các bước phân tích tiếp theo như PCR và RT-PCR.",
+    "• Kết hợp hạt từ và hệ dung dịch đệm để tách chiết, tinh sạch axit nucleic.",
+    "• Nhiều quy cách đóng gói, phù hợp với nhu cầu xử lý mẫu.",
+    "• Dòng DR1110 quy cách 32T/kit và 64T/kit, tương thích với máy tách chiết BIOBASE BK-HS32 và BK-AutoHS96."
+   ],
+   "en": [
+    "BIOBASE magnetic-bead nucleic acid extraction kits help obtain purified DNA/RNA for downstream analysis such as PCR and RT-PCR.",
+    "• Magnetic beads combined with a buffer system for nucleic acid extraction and purification.",
+    "• Several pack sizes to suit different sample-processing needs.",
+    "• DR1110 series in 32T/kit and 64T/kit packs, compatible with BIOBASE BK-HS32 and BK-AutoHS96 extractors."
+   ],
+   "zh": [
+    "BIOBASE 磁珠法核酸提取试剂盒可获得纯化的 DNA/RNA，用于 PCR、RT-PCR 等后续分析。",
+    "• 磁珠与缓冲液体系结合，用于核酸提取与纯化。",
+    "• 多种包装规格，满足不同样品处理需求。",
+    "• DR1110 系列提供 32T/盒和 64T/盒规格，适配 BIOBASE BK-HS32 和 BK-AutoHS96 核酸提取仪。"
+   ]
+  }
  }
 }
