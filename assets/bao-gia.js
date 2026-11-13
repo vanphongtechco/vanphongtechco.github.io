@@ -3,7 +3,7 @@
    Khi API để trống: yêu cầu báo giá được gửi bằng email (mailto) tới info@, phần lịch sử tạm ẩn. */
 (function () {
   'use strict';
-  var API = 'https://script.google.com/macros/s/AKfycbxXMoSlPlR5wLHy2nE2AVqvdHZ1zvqgnT4FhU-KX93RYTHF7G-udDE8zsAm5Fh1oZQ_/exec';
+  var API = 'https://script.google.com/macros/s/AKfycbwCCPywMCCS0R01K6FAF3luI93BOHVzwc5vlfoPuXNgi0N5Qrr4M6J1N3n3SdR5tZo_/exec';
   var INFO = 'info@vanphongtechco.com.vn';
   var K_CART = 'vp_cart', K_TOK = 'vp_tok', K_PROF = 'vp_prof', K_HIST = 'vp_hist';
 
@@ -28,7 +28,11 @@
       code: 'Mã 6 số', login: 'Đăng nhập', otherEmail: 'Đổi email', logout: 'Đăng xuất',
       hello: 'Đang đăng nhập: {e}', none: 'Chưa có yêu cầu báo giá nào.',
       items: 'mặt hàng', reorder: 'Hỏi giá lại', file: 'Tải báo giá', reply: 'Phản hồi',
-      regIntro: 'Đăng ký chỉ cần họ tên, số điện thoại và email – dùng ngay, không cần chờ duyệt.', reg: 'Đăng ký / Đăng nhập', regOk: 'Đăng ký thành công. Chọn sản phẩm và gửi yêu cầu báo giá, lịch sử sẽ hiện ở đây.', helloN: 'Xin chào {n}',
+      regIntro: 'Đăng ký bằng họ tên, số điện thoại, email và mật khẩu tự đặt – dùng ngay, không cần chờ duyệt. Lần sau đăng nhập bằng email hoặc số điện thoại.', reg: 'Đăng ký / Đăng nhập', regOk: 'Đăng ký thành công. Chọn sản phẩm và gửi yêu cầu báo giá, lịch sử sẽ hiện ở đây.', helloN: 'Xin chào {n}',
+      tLogin: 'Đăng nhập', tReg: 'Đăng ký', idL: 'Email hoặc số điện thoại', pw: 'Mật khẩu', pw2: 'Nhập lại mật khẩu', pwNew: 'Mật khẩu mới', pwHint: 'Tối thiểu 6 ký tự',
+      forgot: 'Quên mật khẩu?', forgotIntro: 'Nhập email hoặc số điện thoại đã đăng ký. Hệ thống sẽ gửi mật khẩu mới vào email của Quý khách.', forgotBtn: 'Gửi mật khẩu mới', forgotOk: 'Nếu thông tin đã đăng ký, mật khẩu mới đã được gửi tới email của Quý khách (kiểm tra cả Spam).', back: '← Quay lại đăng nhập',
+      chg: 'Đổi mật khẩu', chgOk: 'Đã đổi mật khẩu.', noAcc: 'Chưa có tài khoản?', haveAcc: 'Đã có tài khoản?',
+      errLogin: 'Sai email/số điện thoại hoặc mật khẩu.', errExists: 'Email hoặc số điện thoại này đã đăng ký. Vui lòng đăng nhập, hoặc bấm “Quên mật khẩu?” để nhận mật khẩu mới qua email.', errPw: 'Mật khẩu tối thiểu 6 ký tự và hai lần nhập phải giống nhau.',
       err: 'Có lỗi kết nối, vui lòng thử lại hoặc gọi 08.9999.0683.',
       errCode: 'Mã không đúng hoặc đã hết hạn.', errRate: 'Bạn thao tác quá nhanh, vui lòng thử lại sau ít phút.',
       expired: 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.',
@@ -51,7 +55,11 @@
       code: '6-digit code', login: 'Sign in', otherEmail: 'Change email', logout: 'Sign out',
       hello: 'Signed in as {e}', none: 'No quote requests yet.',
       items: 'items', reorder: 'Request again', file: 'Download quotation', reply: 'Reply',
-      regIntro: 'Sign up with just your name, phone and email – ready to use immediately, no approval needed.', reg: 'Sign up / Sign in', regOk: 'You are signed up. Add products and send a quote request; your history will appear here.', helloN: 'Hello {n}',
+      regIntro: 'Sign up with your name, phone, email and a password of your choice – ready to use immediately. Next time, sign in with your email or phone number.', reg: 'Sign up / Sign in', regOk: 'You are signed up. Add products and send a quote request; your history will appear here.', helloN: 'Hello {n}',
+      tLogin: 'Sign in', tReg: 'Sign up', idL: 'Email or phone number', pw: 'Password', pw2: 'Repeat password', pwNew: 'New password', pwHint: 'At least 6 characters',
+      forgot: 'Forgot password?', forgotIntro: 'Enter the email or phone number you registered with. A new password will be sent to your email.', forgotBtn: 'Send new password', forgotOk: 'If the details are registered, a new password has been sent to your email (check Spam too).', back: '← Back to sign in',
+      chg: 'Change password', chgOk: 'Password changed.', noAcc: 'No account yet?', haveAcc: 'Already have an account?',
+      errLogin: 'Wrong email/phone number or password.', errExists: 'This email or phone number is already registered. Please sign in, or click “Forgot password?” to receive a new password by email.', errPw: 'Password must be at least 6 characters and both entries must match.',
       err: 'Connection error, please try again or call +84 899 990 683.',
       errCode: 'Wrong or expired code.', errRate: 'Too many attempts, please try again in a few minutes.',
       expired: 'Your session has expired, please sign in again.',
@@ -74,7 +82,11 @@
       code: '6 位验证码', login: '登录', otherEmail: '更换邮箱', logout: '退出',
       hello: '已登录：{e}', none: '暂无询价记录。',
       items: '项', reorder: '再次询价', file: '下载报价单', reply: '回复',
-      regIntro: '只需填写姓名、电话和邮箱即可注册，立即使用，无需审核。', reg: '注册 / 登录', regOk: '注册成功。选择产品并提交询价，历史记录将显示在这里。', helloN: '您好，{n}',
+      regIntro: '填写姓名、电话、邮箱并自设密码即可注册，立即使用。以后可用邮箱或手机号登录。', reg: '注册 / 登录', regOk: '注册成功。选择产品并提交询价，历史记录将显示在这里。', helloN: '您好，{n}',
+      tLogin: '登录', tReg: '注册', idL: '邮箱或手机号', pw: '密码', pw2: '再次输入密码', pwNew: '新密码', pwHint: '至少 6 位',
+      forgot: '忘记密码？', forgotIntro: '请输入注册时的邮箱或手机号，系统将把新密码发送到您的邮箱。', forgotBtn: '发送新密码', forgotOk: '如信息已注册，新密码已发送至您的邮箱（请同时查看垃圾邮件）。', back: '← 返回登录',
+      chg: '修改密码', chgOk: '密码已修改。', noAcc: '还没有账户？', haveAcc: '已有账户？',
+      errLogin: '邮箱/手机号或密码错误。', errExists: '该邮箱或手机号已注册。请直接登录，或点击“忘记密码？”通过邮箱获取新密码。', errPw: '密码至少 6 位，且两次输入须一致。',
       err: '连接错误，请重试或致电 +84 899 990 683。',
       errCode: '验证码错误或已过期。', errRate: '操作过于频繁，请稍后再试。',
       expired: '登录已过期，请重新登录。',
@@ -122,6 +134,9 @@
     + '.vq-idx{align-self:center;margin:0 -4px 0 0;gap:6px}.vq-idx .t{display:none}.vq-idx button{padding:8px 10px}.vq-top{display:none}'
     + '@media (max-width:1100px){.vq-idx{display:none}.vq-top{display:flex}}@media (max-width:900px){.vq-top{margin:0 auto}}'
     + '@media (max-width:760px){.vq-hb:not(.vq-top){margin-left:auto;gap:6px}.vq-hb:not(.vq-top) button{padding:7px 9px}.vq-hb:not(.vq-top) .t{display:none}}';
+  css += '.vq-av{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#1580BF;color:#fff;font:700 12px/1 inherit;font-family:inherit;font-style:normal;margin:-3px 0 -3px -4px}.vq-hb .vq-hu.in{border-color:#1580BF}'
+    + '.vq-tabs{display:flex;gap:6px;margin-bottom:6px}.vq-tabs button{flex:1;border:1px solid #D5DBE3;background:#fff;border-radius:6px;padding:9px;font:600 14px inherit;font-family:inherit;color:#6B7684;cursor:pointer}.vq-tabs button.on{background:#0E2F5A;border-color:#0E2F5A;color:#fff}'
+    + '.vq-lnk{background:none;border:0;padding:0;color:#2F6FB7;font:600 14px inherit;font-family:inherit;cursor:pointer;margin-top:12px}.vq-me{display:flex;align-items:center;gap:12px;margin-bottom:8px}.vq-me .vq-av{width:44px;height:44px;font-size:20px;margin:0}.vq-me b{display:block;color:#0E2F5A;font-size:16px}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   /* ---------- floating button + panel ---------- */
@@ -145,7 +160,17 @@
   } else { var hn = document.querySelector('header nav'); if (hn) hn.insertBefore(mkHb(), hn.querySelector('.langs')); }
   function hbar() {
     var t = ld(K_TOK, null);
-    HBS.forEach(function (hb) { hb.querySelector('.vq-hc b').textContent = count(); hb.querySelector('.vq-hu .t').textContent = t ? ((ld(K_PROF, {}).name || '').split(' ').pop() || t.e.split('@')[0]) : S.hLogin; });
+    var pf = ld(K_PROF, {}), nmF = (pf.name || '').trim(), first = t ? (nmF.split(/\s+/).pop() || t.e.split('@')[0]) : '';
+    HBS.forEach(function (hb) {
+      hb.querySelector('.vq-hc b').textContent = count();
+      var u = hb.querySelector('.vq-hu'), sv0 = u.querySelector('svg'), av = u.querySelector('.vq-av');
+      u.querySelector('.t').textContent = t ? first : S.hLogin;
+      if (t) {
+        if (!av) { av = document.createElement('i'); av.className = 'vq-av'; u.insertBefore(av, u.firstChild); }
+        av.textContent = (first || '?').charAt(0).toUpperCase(); sv0.style.display = 'none'; u.classList.add('in');
+        u.title = (nmF || t.e) + ' · ' + S.hAcc;
+      } else { if (av) av.remove(); sv0.style.display = ''; u.classList.remove('in'); u.title = S.hLogin; }
+    });
   }
   window.__vqhb = hbar; hbar();
   var stack = document.getElementById('fstack');
@@ -226,78 +251,89 @@
     });
   }
 
-  /* ---------- account ---------- */
-  var pend = null, useCode = 0; // email awaiting code; show code login instead of sign-up
+  /* ---------- account (email/SĐT + mật khẩu) ---------- */
+  var amode = 'login';
+  function pwField(n, l, ac) { return '<label>' + esc(l) + ' *</label><input name="' + n + '" type="password" required minlength="6" autocomplete="' + ac + '">'; }
+  function busy(f) { var b = $('button[type=submit]', f); b.disabled = true; b.textContent = S.sending; }
+  function errMsg(r) { var k = r && r.err; return esc(k === 'rate' ? S.errRate : k === 'login' ? S.errLogin : k === 'exists' ? S.errExists : k === 'pw' ? S.errPw : k === 'input' ? S.need : S.err); }
+  function signedIn(r, em) {
+    sv(K_TOK, { t: r.token, e: em });
+    sv(K_PROF, Object.assign(ld(K_PROF, {}), r.profile || {}, { email: em }));
+    hbar();
+  }
   function renderAcc() {
     if (!API) return renderLocal();
     var tok = ld(K_TOK, null);
+    if (tok && !tok.t) { sv(K_TOK, null); tok = null; }
     if (!tok) {
-      if (!pend && !useCode) {
-        var p0 = ld(K_PROF, {});
-        bd.innerHTML = msg() + '<p class="vq-mute">' + esc(S.regIntro) + '</p><form class="vq-r">'
+      var p0 = ld(K_PROF, {});
+      var tabs = '<div class="vq-tabs"><button type="button" data-m="login" class="' + (amode === 'login' ? 'on' : '') + '">' + esc(S.tLogin) + '</button><button type="button" data-m="reg" class="' + (amode === 'reg' ? 'on' : '') + '">' + esc(S.tReg) + '</button></div>';
+      if (amode === 'forgot') {
+        bd.innerHTML = msg() + '<p class="vq-mute">' + esc(S.forgotIntro) + '</p><form class="vq-fg"><label>' + esc(S.idL) + '</label><input name="id" required autocomplete="username" value="' + esc(p0.email || p0.phone) + '"><button class="vq-btn" type="submit">' + esc(S.forgotBtn) + '</button></form><button type="button" class="vq-lnk" data-m="login">' + esc(S.back) + '</button>';
+        $('.vq-fg', bd).onsubmit = function (e) {
+          e.preventDefault(); var f = e.target; busy(f);
+          api({ action: 'forgot', id: f.id.value.trim(), lang: LG }).then(function (r) {
+            if (!r.ok) throw r; amode = 'login'; say(esc(S.forgotOk)); renderAcc();
+          }).catch(function (r) { say(errMsg(r), 1); renderAcc(); });
+        };
+      } else if (amode === 'reg') {
+        bd.innerHTML = tabs + msg() + '<p class="vq-mute">' + esc(S.regIntro) + '</p><form class="vq-r">'
           + '<label>' + esc(S.name) + ' *</label><input name="name" required autocomplete="name" value="' + esc(p0.name) + '">'
           + '<label>' + esc(S.phone) + ' *</label><input name="phone" type="tel" required autocomplete="tel" value="' + esc(p0.phone) + '">'
           + '<label>' + esc(S.email) + ' *</label><input name="email" type="email" required autocomplete="email" value="' + esc(p0.email) + '">'
           + '<label>' + esc(S.company) + '</label><input name="company" autocomplete="organization" value="' + esc(p0.company) + '">'
-          + '<input class="vq-hp" name="hp" tabindex="-1" autocomplete="off"><button class="vq-btn" type="submit">' + esc(S.reg) + '</button>'
-          + '<button class="vq-btn sec" type="button" data-code>' + esc(S.getCode) + '</button></form>';
-        $('[data-code]', bd).onclick = function () { useCode = 1; note = ''; renderAcc(); };
+          + pwField('pw', S.pw + ' (' + S.pwHint + ')', 'new-password') + pwField('pw2', S.pw2, 'new-password')
+          + '<input class="vq-hp" name="hp" tabindex="-1" autocomplete="off"><button class="vq-btn" type="submit">' + esc(S.tReg) + '</button></form>'
+          + '<p class="vq-mute" style="margin-top:12px">' + esc(S.haveAcc) + ' <button type="button" class="vq-lnk" style="margin:0" data-m="login">' + esc(S.tLogin) + '</button></p>';
         $('.vq-r', bd).onsubmit = function (e) {
           e.preventDefault(); var f = e.target, g = function (n) { return f.elements[n].value.trim(); };
-          var d = { action: 'register', name: g('name'), phone: g('phone'), email: g('email').toLowerCase(), company: g('company'), hp: g('hp'), lang: LG };
+          var d = { action: 'register', name: g('name'), phone: g('phone'), email: g('email').toLowerCase(), company: g('company'), pw: f.pw.value, hp: g('hp'), lang: LG };
           if (!d.name || d.phone.replace(/\D/g, '').length < 8 || !okEmail(d.email)) { say(esc(S.need), 1); return renderAcc(); }
+          if (d.pw.length < 6 || d.pw !== f.pw2.value) { say(esc(S.errPw), 1); return renderAcc(); }
           sv(K_PROF, { name: d.name, phone: d.phone, email: d.email, company: d.company });
-          var bt = $('button[type=submit]', f); bt.disabled = true; bt.textContent = S.sending;
+          busy(f);
           api(d).then(function (r) {
-            if (!r.ok) throw r;
-            if (r.need === 'code') { pend = d.email; say(fmt(S.codeSent, { e: d.email })); return renderAcc(); }
-            sv(K_TOK, { t: r.token, e: d.email });
-            if (r.profile) sv(K_PROF, Object.assign(ld(K_PROF, {}), r.profile, { email: d.email }));
-            say(esc(S.regOk)); hbar(); renderAcc();
-          }).catch(function (r) { say(esc(r && r.err === 'rate' ? S.errRate : S.err), 1); renderAcc(); });
-        };
-      } else if (!pend) {
-        bd.innerHTML = msg() + '<p class="vq-mute">' + esc(S.accIntro) + '</p><form class="vq-l"><label>' + esc(S.email) + '</label><input name="email" type="email" required autocomplete="email" value="' + esc(ld(K_PROF, {}).email) + '"><input class="vq-hp" name="hp" tabindex="-1" autocomplete="off"><button class="vq-btn" type="submit">' + esc(S.getCode) + '</button></form>';
-        $('.vq-l', bd).onsubmit = function (e) {
-          e.preventDefault(); var em = e.target.email.value.trim().toLowerCase(); if (!okEmail(em)) return;
-          var b = $('button', e.target); b.disabled = true; b.textContent = S.sending;
-          api({ action: 'requestCode', email: em, lang: LG, hp: e.target.hp.value }).then(function (r) {
-            if (!r.ok) throw r; pend = em; say(fmt(S.codeSent, { e: em })); renderAcc();
-          }).catch(function (r) { say(esc(r && r.err === 'rate' ? S.errRate : S.err), 1); renderAcc(); });
+            if (!r.ok) throw r; signedIn(r, d.email); say(esc(S.regOk)); renderAcc();
+          }).catch(function (r) { if (r && r.err === 'exists') amode = 'login'; say(errMsg(r), 1); renderAcc(); });
         };
       } else {
-        bd.innerHTML = msg() + '<form class="vq-v"><label>' + esc(S.code) + '</label><input name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" required><button class="vq-btn" type="submit">' + esc(S.login) + '</button><button class="vq-btn sec" type="button" data-other>' + esc(S.otherEmail) + '</button></form>';
-        $('[data-other]', bd).onclick = function () { pend = null; useCode = 0; note = ''; renderAcc(); };
-        var ci = $('input', bd); ci.focus();
-        $('.vq-v', bd).onsubmit = function (e) {
-          e.preventDefault(); var b = $('button', e.target); b.disabled = true;
-          api({ action: 'verify', email: pend, code: ci.value.trim() }).then(function (r) {
-            if (!r.ok) throw r;
-            sv(K_TOK, { t: r.token, e: pend });
-            if (r.profile) sv(K_PROF, Object.assign(ld(K_PROF, {}), r.profile, { email: pend }));
-            pend = null; note = ''; hbar(); renderAcc();
-          }).catch(function (r) { say(esc(r && r.err === 'code' ? S.errCode : r && r.err === 'rate' ? S.errRate : S.err), 1); renderAcc(); });
+        bd.innerHTML = tabs + msg() + '<form class="vq-l"><label>' + esc(S.idL) + '</label><input name="id" required autocomplete="username" value="' + esc(p0.email || p0.phone) + '">'
+          + pwField('pw', S.pw, 'current-password') + '<button class="vq-btn" type="submit">' + esc(S.tLogin) + '</button></form>'
+          + '<button type="button" class="vq-lnk" data-m="forgot">' + esc(S.forgot) + '</button>'
+          + '<p class="vq-mute" style="margin-top:12px">' + esc(S.noAcc) + ' <button type="button" class="vq-lnk" style="margin:0" data-m="reg">' + esc(S.tReg) + '</button></p>';
+        $('.vq-l', bd).onsubmit = function (e) {
+          e.preventDefault(); var f = e.target, id = f.id.value.trim(); busy(f);
+          api({ action: 'login', id: id, pw: f.pw.value }).then(function (r) {
+            if (!r.ok) throw r; signedIn(r, (r.profile && r.profile.email || id).toLowerCase()); note = ''; renderAcc();
+          }).catch(function (r) { say(errMsg(r), 1); renderAcc(); });
         };
       }
+      [].forEach.call(bd.querySelectorAll('[data-m]'), function (b) { b.onclick = function () { amode = b.dataset.m; note = ''; renderAcc(); }; });
       return;
     }
-    var pf = ld(K_PROF, {}); bd.innerHTML = msg() + '<p class="vq-mute">' + fmt(S.helloN, { n: pf.name || tok.e }) + ' · ' + esc(tok.e) + ' · <a href="#" data-out>' + esc(S.logout) + '</a></p><div class="vq-list"><p class="vq-mute">…</p></div>';
-    $('[data-out]', bd).onclick = function (e) { e.preventDefault(); sv(K_TOK, null); note = ''; hbar(); renderAcc(); };
+    var pf = ld(K_PROF, {}), nmF = pf.name || tok.e, first = (pf.name || '').trim().split(/\s+/).pop() || tok.e;
+    if (amode === 'chg') {
+      bd.innerHTML = msg() + '<form class="vq-c">' + pwField('pw', S.pw, 'current-password') + pwField('npw', S.pwNew + ' (' + S.pwHint + ')', 'new-password') + pwField('npw2', S.pw2, 'new-password')
+        + '<button class="vq-btn" type="submit">' + esc(S.chg) + '</button></form><button type="button" class="vq-lnk" data-back>' + esc(S.back.replace(/đăng nhập|sign in|登录/i, S.hAcc)) + '</button>';
+      $('[data-back]', bd).onclick = function () { amode = 'login'; note = ''; renderAcc(); };
+      $('.vq-c', bd).onsubmit = function (e) {
+        e.preventDefault(); var f = e.target;
+        if (f.npw.value.length < 6 || f.npw.value !== f.npw2.value) { say(esc(S.errPw), 1); return renderAcc(); }
+        busy(f);
+        api({ action: 'changePw', token: tok.t, pw: f.pw.value, npw: f.npw.value }).then(function (r) {
+          if (!r.ok) { if (r.err === 'auth') { sv(K_TOK, null); hbar(); } throw r; } amode = 'login'; say(esc(S.chgOk)); renderAcc();
+        }).catch(function (r) { say(r && r.err === 'auth' ? esc(S.expired) : errMsg(r), 1); renderAcc(); });
+      };
+      return;
+    }
+    bd.innerHTML = msg() + '<div class="vq-me"><i class="vq-av">' + esc(first.charAt(0).toUpperCase()) + '</i><div><b>' + esc(nmF) + '</b><span class="vq-mute">' + esc(tok.e) + (pf.phone ? ' · ' + esc(pf.phone) : '') + '</span></div></div>'
+      + '<p class="vq-mute"><a href="#" data-chg>' + esc(S.chg) + '</a> · <a href="#" data-out>' + esc(S.logout) + '</a></p><div class="vq-list"><p class="vq-mute">…</p></div>';
+    $('[data-out]', bd).onclick = function (e) { e.preventDefault(); sv(K_TOK, null); amode = 'login'; note = ''; hbar(); renderAcc(); };
+    $('[data-chg]', bd).onclick = function (e) { e.preventDefault(); amode = 'chg'; note = ''; renderAcc(); };
     api({ action: 'myQuotes', token: tok.t }).then(function (r) {
-      if (!r.ok) { if (r.err === 'auth') { sv(K_TOK, null); say(esc(S.expired), 1); return renderAcc(); } throw r; }
+      if (!r.ok) { if (r.err === 'auth') { sv(K_TOK, null); hbar(); say(esc(S.expired), 1); return renderAcc(); } throw r; }
       var L = $('.vq-list', bd); if (!L) return;
-      L.innerHTML = r.quotes.length ? r.quotes.map(function (q, qi) {
-        var k = ['Mới', 'Đang xử lý', 'Đã gửi báo giá', 'Hoàn tất', 'Hủy'].indexOf(q.status);
-        return '<div class="vq-q"><h5><span>' + esc(q.code) + '</span><span class="vq-st s' + k + '">' + esc(S.st[q.status] || q.status || S.st['Mới']) + '</span></h5>'
-          + '<div class="vq-mute">' + esc(q.time) + ' · ' + q.items.length + ' ' + esc(S.items) + '</div>'
-          + '<ul>' + q.items.map(function (x) { return '<li>' + esc(x.n) + ' × ' + esc(x.q) + '</li>'; }).join('') + '</ul>'
-          + (q.reply ? '<div class="vq-msg"><b>' + esc(S.reply) + ':</b> ' + esc(q.reply) + '</div>' : '')
-          + '<div class="vq-a">' + (/^https:\/\//.test(q.file || '') ? '<a href="' + esc(q.file) + '" target="_blank" rel="noopener">' + esc(S.file) + '</a>' : '')
-          + '<button type="button" data-re="' + qi + '">' + esc(S.reorder) + '</button></div></div>';
-      }).join('') : '<p class="vq-mute">' + esc(S.none) + '</p>';
-      [].forEach.call(L.querySelectorAll('[data-re]'), function (b) {
-        b.onclick = function () { r.quotes[+b.dataset.re].items.forEach(function (x) { if (x.s) addItem(x, x.q); }); note = ''; open('cart'); };
-      });
+      L.innerHTML = quoteCards(r.quotes); bindReorder(L, r.quotes);
     }).catch(function () { var L = $('.vq-list', bd); if (L) L.innerHTML = '<div class="vq-msg bad">' + esc(S.err) + '</div>'; });
   }
 
