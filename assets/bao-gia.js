@@ -5,7 +5,7 @@
   'use strict';
   var API = '';
   var INFO = 'info@vanphongtechco.com.vn';
-  var K_CART = 'vp_cart', K_TOK = 'vp_tok', K_PROF = 'vp_prof';
+  var K_CART = 'vp_cart', K_TOK = 'vp_tok', K_PROF = 'vp_prof', K_HIST = 'vp_hist';
 
   var hl = (document.documentElement.lang || 'vi').toLowerCase();
   var LG = hl.indexOf('zh') === 0 ? 'zh' : hl.indexOf('en') === 0 ? 'en' : 'vi';
@@ -28,7 +28,7 @@
       code: 'Mã 6 số', login: 'Đăng nhập', otherEmail: 'Đổi email', logout: 'Đăng xuất',
       hello: 'Đang đăng nhập: {e}', none: 'Chưa có yêu cầu báo giá nào.',
       items: 'mặt hàng', reorder: 'Hỏi giá lại', file: 'Tải báo giá', reply: 'Phản hồi',
-      offline: 'Tính năng tài khoản đang được kích hoạt. Trong lúc chờ, vui lòng gọi 08.9999.0683 hoặc email ' + INFO + '.',
+      regIntro: 'Đăng ký chỉ cần họ tên, số điện thoại và email – dùng ngay, không cần chờ duyệt.', reg: 'Đăng ký / Đăng nhập', regOk: 'Đăng ký thành công. Chọn sản phẩm và gửi yêu cầu báo giá, lịch sử sẽ hiện ở đây.', helloN: 'Xin chào {n}',
       err: 'Có lỗi kết nối, vui lòng thử lại hoặc gọi 08.9999.0683.',
       errCode: 'Mã không đúng hoặc đã hết hạn.', errRate: 'Bạn thao tác quá nhanh, vui lòng thử lại sau ít phút.',
       expired: 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.',
@@ -51,7 +51,7 @@
       code: '6-digit code', login: 'Sign in', otherEmail: 'Change email', logout: 'Sign out',
       hello: 'Signed in as {e}', none: 'No quote requests yet.',
       items: 'items', reorder: 'Request again', file: 'Download quotation', reply: 'Reply',
-      offline: 'Accounts are being activated. Meanwhile please call +84 899 990 683 or email ' + INFO + '.',
+      regIntro: 'Sign up with just your name, phone and email – ready to use immediately, no approval needed.', reg: 'Sign up / Sign in', regOk: 'You are signed up. Add products and send a quote request; your history will appear here.', helloN: 'Hello {n}',
       err: 'Connection error, please try again or call +84 899 990 683.',
       errCode: 'Wrong or expired code.', errRate: 'Too many attempts, please try again in a few minutes.',
       expired: 'Your session has expired, please sign in again.',
@@ -74,7 +74,7 @@
       code: '6 位验证码', login: '登录', otherEmail: '更换邮箱', logout: '退出',
       hello: '已登录：{e}', none: '暂无询价记录。',
       items: '项', reorder: '再次询价', file: '下载报价单', reply: '回复',
-      offline: '账户功能正在开通。请致电 +84 899 990 683 或发邮件至 ' + INFO + '。',
+      regIntro: '只需填写姓名、电话和邮箱即可注册，立即使用，无需审核。', reg: '注册 / 登录', regOk: '注册成功。选择产品并提交询价，历史记录将显示在这里。', helloN: '您好，{n}',
       err: '连接错误，请重试或致电 +84 899 990 683。',
       errCode: '验证码错误或已过期。', errRate: '操作过于频繁，请稍后再试。',
       expired: '登录已过期，请重新登录。',
@@ -145,7 +145,7 @@
   } else { var hn = document.querySelector('header nav'); if (hn) hn.insertBefore(mkHb(), hn.querySelector('.langs')); }
   function hbar() {
     var t = ld(K_TOK, null);
-    HBS.forEach(function (hb) { hb.querySelector('.vq-hc b').textContent = count(); hb.querySelector('.vq-hu .t').textContent = t ? t.e.split('@')[0] : S.hLogin; });
+    HBS.forEach(function (hb) { hb.querySelector('.vq-hc b').textContent = count(); hb.querySelector('.vq-hu .t').textContent = t ? ((ld(K_PROF, {}).name || '').split(' ').pop() || t.e.split('@')[0]) : S.hLogin; });
   }
   window.__vqhb = hbar; hbar();
   var stack = document.getElementById('fstack');
@@ -205,8 +205,13 @@
     if (!API) {
       var body = S.tCart + ':\n' + items.map(function (x, i) { return (i + 1) + '. ' + x.n + (x.c && x.n.indexOf(x.c) < 0 ? ' (' + x.c + ')' : '') + ' – ' + S.qty + ': ' + x.q; }).join('\n')
         + '\n\n' + S.name + ': ' + d.name + (d.company ? '\n' + S.company + ': ' + d.company : '') + '\n' + S.phone + ': ' + d.phone + '\n' + S.email + ': ' + d.email + (d.note ? '\n\n' + d.note : '') + '\n\n' + location.href;
-      location.href = 'mailto:' + INFO + '?subject=' + encodeURIComponent(S.subj + ' – ' + d.name) + '&body=' + encodeURIComponent(body);
-      cart = []; saveCart(); say(esc(S.sentMail)); return renderCart();
+      var now = new Date(), p2 = function (n) { return ('0' + n).slice(-2); };
+      var code = 'YC' + String(now.getFullYear()).slice(2) + p2(now.getMonth() + 1) + p2(now.getDate()) + '-' + p2(now.getHours()) + p2(now.getMinutes());
+      var H = ld(K_HIST, {}); (H[d.email] = H[d.email] || []).unshift({ code: code, time: p2(now.getDate()) + '/' + p2(now.getMonth() + 1) + '/' + now.getFullYear() + ' ' + p2(now.getHours()) + ':' + p2(now.getMinutes()), status: 'Mới', items: items, note: d.note });
+      sv(K_HIST, H);
+      if (!ld(K_TOK, null)) sv(K_TOK, { t: '', e: d.email, local: 1 });
+      location.href = 'mailto:' + INFO + '?subject=' + encodeURIComponent(S.subj + ' ' + code + ' – ' + d.name) + '&body=' + encodeURIComponent(code + '\n' + body);
+      cart = []; saveCart(); hbar(); say(fmt(S.sentOk, { c: code }) + '<br>' + esc(S.sentMail)); return renderCart();
     }
     var btn = $('button[type=submit]', f); btn.disabled = true; btn.textContent = S.sending;
     var tok = ld(K_TOK, null);
@@ -224,7 +229,7 @@
   /* ---------- account ---------- */
   var pend = null; // email awaiting code
   function renderAcc() {
-    if (!API) { bd.innerHTML = '<div class="vq-msg">' + esc(S.offline) + '</div>'; return; }
+    if (!API) return renderLocal();
     var tok = ld(K_TOK, null);
     if (!tok) {
       if (!pend) {
@@ -270,6 +275,46 @@
         b.onclick = function () { r.quotes[+b.dataset.re].items.forEach(function (x) { if (x.s) addItem(x, x.q); }); note = ''; open('cart'); };
       });
     }).catch(function () { var L = $('.vq-list', bd); if (L) L.innerHTML = '<div class="vq-msg bad">' + esc(S.err) + '</div>'; });
+  }
+
+  function quoteCards(list) {
+    return list.length ? list.map(function (q, qi) {
+      var k = ['Mới', 'Đang xử lý', 'Đã gửi báo giá', 'Hoàn tất', 'Hủy'].indexOf(q.status);
+      return '<div class="vq-q"><h5><span>' + esc(q.code) + '</span><span class="vq-st s' + k + '">' + esc(S.st[q.status] || q.status || S.st['Mới']) + '</span></h5>'
+        + '<div class="vq-mute">' + esc(q.time) + ' · ' + q.items.length + ' ' + esc(S.items) + '</div>'
+        + '<ul>' + q.items.map(function (x) { return '<li>' + esc(x.n) + ' × ' + esc(x.q) + '</li>'; }).join('') + '</ul>'
+        + (q.reply ? '<div class="vq-msg"><b>' + esc(S.reply) + ':</b> ' + esc(q.reply) + '</div>' : '')
+        + '<div class="vq-a">' + (/^https:\/\//.test(q.file || '') ? '<a href="' + esc(q.file) + '" target="_blank" rel="noopener">' + esc(S.file) + '</a>' : '')
+        + '<button type="button" data-re="' + qi + '">' + esc(S.reorder) + '</button></div></div>';
+    }).join('') : '<p class="vq-mute">' + esc(S.none) + '</p>';
+  }
+  function bindReorder(root, list) {
+    [].forEach.call(root.querySelectorAll('[data-re]'), function (b) {
+      b.onclick = function () { list[+b.dataset.re].items.forEach(function (x) { if (x.s) addItem(x, x.q); }); note = ''; open('cart'); };
+    });
+  }
+  // Tài khoản đơn giản (chưa có backend): đăng ký họ tên + SĐT + email là dùng được ngay, lịch sử lưu trên trình duyệt này.
+  function renderLocal() {
+    var tok = ld(K_TOK, null), p = ld(K_PROF, {});
+    if (!tok) {
+      bd.innerHTML = msg() + '<p class="vq-mute">' + esc(S.regIntro) + '</p><form class="vq-r">'
+        + '<label>' + esc(S.name) + ' *</label><input name="name" required autocomplete="name" value="' + esc(p.name) + '">'
+        + '<label>' + esc(S.phone) + ' *</label><input name="phone" type="tel" required autocomplete="tel" value="' + esc(p.phone) + '">'
+        + '<label>' + esc(S.email) + ' *</label><input name="email" type="email" required autocomplete="email" value="' + esc(p.email) + '">'
+        + '<label>' + esc(S.company) + '</label><input name="company" autocomplete="organization" value="' + esc(p.company) + '">'
+        + '<button class="vq-btn" type="submit">' + esc(S.reg) + '</button></form>';
+      $('.vq-r', bd).onsubmit = function (e) {
+        e.preventDefault(); var f = e.target, g = function (n) { return f.elements[n].value.trim(); };
+        var d = { name: g('name'), phone: g('phone'), email: g('email').toLowerCase(), company: g('company') };
+        if (!d.name || d.phone.replace(/\D/g, '').length < 8 || !okEmail(d.email)) { say(esc(S.need), 1); return renderLocal(); }
+        sv(K_PROF, d); sv(K_TOK, { t: '', e: d.email, local: 1 }); say(esc(S.regOk)); hbar(); renderLocal();
+      };
+      return;
+    }
+    var list = ld(K_HIST, {})[tok.e] || [];
+    bd.innerHTML = msg() + '<p class="vq-mute">' + fmt(S.helloN, { n: p.name || tok.e }) + ' · ' + esc(tok.e) + (p.phone ? ' · ' + esc(p.phone) : '') + ' · <a href="#" data-out>' + esc(S.logout) + '</a></p><div class="vq-list">' + quoteCards(list) + '</div>';
+    $('[data-out]', bd).onclick = function (e) { e.preventDefault(); sv(K_TOK, null); note = ''; hbar(); renderLocal(); };
+    bindReorder(bd, list);
   }
 
   /* ---------- "Add to quote" buttons ---------- */
