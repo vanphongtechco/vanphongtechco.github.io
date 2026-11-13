@@ -107,3 +107,5 @@ Người sửa web được mời bằng tài khoản GitHub riêng (Settings �
 - Giao diện: `assets/bao-gia.js` (tự gắn nút “Thêm vào báo giá” vào lưới sản phẩm trang chủ và trang chi tiết sản phẩm, nút nổi “Báo giá”, bảng Tài khoản & lịch sử). Ba ngôn ngữ nằm sẵn trong file.
 - Backend: `_tools/apps-script/Code.gs` (Google Apps Script gắn với Google Sheet; hướng dẫn cài ở đầu file). Dán URL web app vào biến `API` trong `assets/bao-gia.js`.
 - Khi `API` để trống: yêu cầu được gửi bằng email (mailto) tới info@, mục Tài khoản hiện thông báo “đang kích hoạt”.
+- **Đang chạy (13/11/2026):** Apps Script dự án độc lập trong tài khoản info@ (https://script.google.com/home/projects/1SjXzIdSsTOYDGH4yPEslUVbWwl6b3FU-fZk95u70DtV8cT2z9tZESezu/edit), dữ liệu ở Google Sheet “Web – Yêu cầu báo giá và khách hàng” (https://docs.google.com/spreadsheets/d/1CP-kP2BKBlOJPGYlevOOj0dWZHnL7vNFtXJuIheqvd8/edit): trang `BaoGia` (yêu cầu báo giá), `KhachHang` (khách đăng ký). Mỗi yêu cầu/đăng ký mới gửi email về info@.
+- Sửa `Code.gs` xong: dán lại vào dự án Apps Script → Triển khai → Quản lý triển khai → ✎ → Phiên bản mới (URL giữ nguyên).
