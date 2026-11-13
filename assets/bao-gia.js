@@ -3,7 +3,7 @@
    Khi API để trống: yêu cầu báo giá được gửi bằng email (mailto) tới info@, phần lịch sử tạm ẩn. */
 (function () {
   'use strict';
-  var API = '';
+  var API = 'https://script.google.com/macros/s/AKfycbxXMoSlPlR5wLHy2nE2AVqvdHZ1zvqgnT4FhU-KX93RYTHF7G-udDE8zsAm5Fh1oZQ_/exec';
   var INFO = 'info@vanphongtechco.com.vn';
   var K_CART = 'vp_cart', K_TOK = 'vp_tok', K_PROF = 'vp_prof', K_HIST = 'vp_hist';
 
