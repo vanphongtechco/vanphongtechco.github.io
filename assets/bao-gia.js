@@ -13,8 +13,8 @@
 
   var S = {
     vi: {
-      fab: 'Báo giá', add: 'Thêm vào báo giá', added: 'Đã thêm ✓', qty: 'SL', qtyL: 'Số lượng',
-      tCart: 'Yêu cầu báo giá', tAcc: 'Tài khoản & lịch sử',
+      fab: 'Giỏ báo giá', hCart: 'Giỏ báo giá', hLogin: 'Đăng nhập', hAcc: 'Tài khoản', add: 'Thêm vào báo giá', added: 'Đã thêm ✓', qty: 'SL', qtyL: 'Số lượng',
+      tCart: 'Giỏ báo giá', tAcc: 'Đăng nhập / Lịch sử',
       empty: 'Chưa có sản phẩm nào. Bấm “Thêm vào báo giá” ở sản phẩm cần hỏi giá.',
       browse: 'Xem danh mục sản phẩm', remove: 'Xóa',
       name: 'Họ tên', company: 'Đơn vị / Công ty', phone: 'Số điện thoại', email: 'Email', note: 'Ghi chú (yêu cầu kỹ thuật, nơi giao, thời gian…)',
@@ -36,8 +36,8 @@
       subj: 'Yêu cầu báo giá từ website', close: 'Đóng'
     },
     en: {
-      fab: 'Quote', add: 'Add to quote', added: 'Added ✓', qty: 'Qty', qtyL: 'Quantity',
-      tCart: 'Quote request', tAcc: 'Account & history',
+      fab: 'Quote cart', hCart: 'Quote cart', hLogin: 'Sign in', hAcc: 'Account', add: 'Add to quote', added: 'Added ✓', qty: 'Qty', qtyL: 'Quantity',
+      tCart: 'Quote cart', tAcc: 'Sign in / History',
       empty: 'No products yet. Click “Add to quote” on the products you need prices for.',
       browse: 'Browse products', remove: 'Remove',
       name: 'Full name', company: 'Organisation / Company', phone: 'Phone', email: 'Email', note: 'Notes (technical requirements, delivery place, timing…)',
@@ -59,8 +59,8 @@
       subj: 'Quote request from website', close: 'Close'
     },
     zh: {
-      fab: '询价', add: '加入询价单', added: '已加入 ✓', qty: '数量', qtyL: '数量',
-      tCart: '询价单', tAcc: '账户与历史',
+      fab: '询价单', hCart: '询价单', hLogin: '登录', hAcc: '账户', add: '加入询价单', added: '已加入 ✓', qty: '数量', qtyL: '数量',
+      tCart: '询价单', tAcc: '登录 / 历史',
       empty: '询价单为空。请在需要报价的产品上点击“加入询价单”。',
       browse: '浏览产品', remove: '删除',
       name: '姓名', company: '单位 / 公司', phone: '电话', email: '邮箱', note: '备注（技术要求、交货地点、时间等）',
@@ -94,7 +94,7 @@
   }
 
   var cart = ld(K_CART, []);
-  function saveCart() { sv(K_CART, cart); badge(); }
+  function saveCart() { sv(K_CART, cart); badge(); if (window.__vqhb) window.__vqhb(); }
   function count() { return cart.length; }
   function addItem(it, q) {
     q = Math.max(1, Math.min(9999, parseInt(q, 10) || 1));
@@ -118,6 +118,10 @@
     + '.vq-msg{padding:10px 12px;border-radius:6px;background:#EEF5FF;color:#0E2F5A;margin:10px 0;font-size:14px}.vq-msg.bad{background:#FFF0F0;color:#A01818}.vq-mute{color:#6B7684;font-size:14px}.vq-hp{position:absolute;left:-9999px}'
     + '.vq-q{border:1px solid #E3E8EE;border-radius:8px;padding:12px;margin:10px 0}.vq-q h5{margin:0 0 4px;font-size:15px;display:flex;justify-content:space-between;gap:8px}.vq-q ul{margin:6px 0;padding-left:18px;font-size:14px}.vq-st{font-size:12px;font-weight:700;padding:3px 8px;border-radius:10px;background:#FFF4EA;color:#B85A0B;white-space:nowrap}.vq-st.s2,.vq-st.s3{background:#E9F7EF;color:#17733D}.vq-st.s4{background:#F1F2F4;color:#6B7684}'
     + '.vq-q .vq-a{display:flex;gap:12px;flex-wrap:wrap;font-size:14px}.vq-q .vq-a a,.vq-q .vq-a button{color:#2F6FB7;font-weight:600;background:none;border:0;padding:0;font:inherit;cursor:pointer}';
+  css += '.vq-hb{display:flex;gap:8px;align-items:center;margin-left:12px;flex-shrink:0}.vq-hb button{display:inline-flex;align-items:center;gap:6px;border:1px solid #D5DBE3;background:#fff;color:#0E2F5A;border-radius:20px;padding:7px 12px;font:600 13px/1 inherit;font-family:inherit;cursor:pointer;white-space:nowrap}.vq-hb button:hover{border-color:#F07C1B;color:#F07C1B}.vq-hb .vq-hc{background:#F07C1B;border-color:#F07C1B;color:#fff}.vq-hb .vq-hc:hover{color:#fff;background:#D96A0E}.vq-hb b{background:#fff;color:#F07C1B;border-radius:10px;padding:2px 6px;font-size:11px}.vq-hb svg{width:16px;height:16px;fill:currentColor}'
+    + '.vq-idx{align-self:center;margin:0 -4px 0 0;gap:6px}.vq-idx .t{display:none}.vq-idx button{padding:8px 10px}.vq-top{display:none}'
+    + '@media (max-width:1100px){.vq-idx{display:none}.vq-top{display:flex}}@media (max-width:900px){.vq-top{margin:0 auto}}'
+    + '@media (max-width:760px){.vq-hb:not(.vq-top){margin-left:auto;gap:6px}.vq-hb:not(.vq-top) button{padding:7px 9px}.vq-hb:not(.vq-top) .t{display:none}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   /* ---------- floating button + panel ---------- */
@@ -125,6 +129,25 @@
   fab.type = 'button'; fab.className = 'vq-fab'; fab.setAttribute('aria-haspopup', 'dialog');
   function badge() { fab.innerHTML = '🧾 ' + esc(S.fab) + ' <b>' + count() + '</b>'; }
   badge();
+  var HBS = [];
+  function mkHb(cls) {
+    var hb = document.createElement('div'); hb.className = 'vq-hb ' + (cls || '');
+    hb.innerHTML = '<button type="button" class="vq-hc" title="' + esc(S.hCart) + '"><svg viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM5.2 4H2V2h4.6l.9 2H22l-3.4 8.2a2 2 0 0 1-1.8 1.3H8.3l-1 1.8H20v2H4l2.6-4.6z"/></svg><span class="t">' + esc(S.hCart) + '</span> <b>0</b></button>'
+      + '<button type="button" class="vq-hu" title="' + esc(S.hLogin) + ' / ' + esc(S.hAcc) + '"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-9 2.2-9 5v3h18v-3c0-2.8-4.6-5-9-5z"/></svg><span class="t"></span></button>';
+    hb.querySelector('.vq-hc').onclick = function () { open('cart'); };
+    hb.querySelector('.vq-hu').onclick = function () { open('acc'); };
+    HBS.push(hb); return hb;
+  }
+  var nm = document.querySelector('header nav.main'), top = document.querySelector('.top .wrap');
+  if (nm) {                                   // trang chủ: nút trong thanh menu (desktop) + thanh xám trên cùng (mobile)
+    nm.parentNode.insertBefore(mkHb('vq-idx'), nm.nextSibling);
+    if (top) top.appendChild(mkHb('vq-top'));
+  } else { var hn = document.querySelector('header nav'); if (hn) hn.insertBefore(mkHb(), hn.querySelector('.langs')); }
+  function hbar() {
+    var t = ld(K_TOK, null);
+    HBS.forEach(function (hb) { hb.querySelector('.vq-hc b').textContent = count(); hb.querySelector('.vq-hu .t').textContent = t ? t.e.split('@')[0] : S.hLogin; });
+  }
+  window.__vqhb = hbar; hbar();
   var stack = document.getElementById('fstack');
   if (stack) stack.insertBefore(fab, stack.firstChild); else document.body.appendChild(fab);
 
@@ -134,7 +157,7 @@
   document.body.appendChild(ov);
   var bd = $('.vq-bd', ov), tab = 'cart', note = '';
   function open(t) { tab = t || 'cart'; ov.classList.add('open'); document.body.style.overflow = 'hidden'; render(); }
-  function close() { ov.classList.remove('open'); document.body.style.overflow = ''; note = ''; }
+  function close() { ov.classList.remove('open'); document.body.style.overflow = ''; note = ''; hbar(); }
   fab.onclick = function () { open('cart'); };
   ov.addEventListener('click', function (e) {
     if (e.target === ov || e.target.closest('.vq-x')) return close();
@@ -223,14 +246,14 @@
             if (!r.ok) throw r;
             sv(K_TOK, { t: r.token, e: pend });
             if (r.profile) sv(K_PROF, Object.assign(ld(K_PROF, {}), r.profile, { email: pend }));
-            pend = null; note = ''; renderAcc();
+            pend = null; note = ''; hbar(); renderAcc();
           }).catch(function (r) { say(esc(r && r.err === 'code' ? S.errCode : r && r.err === 'rate' ? S.errRate : S.err), 1); renderAcc(); });
         };
       }
       return;
     }
     bd.innerHTML = '<p class="vq-mute">' + fmt(S.hello, { e: tok.e }) + ' · <a href="#" data-out>' + esc(S.logout) + '</a></p><div class="vq-list"><p class="vq-mute">…</p></div>';
-    $('[data-out]', bd).onclick = function (e) { e.preventDefault(); sv(K_TOK, null); note = ''; renderAcc(); };
+    $('[data-out]', bd).onclick = function (e) { e.preventDefault(); sv(K_TOK, null); note = ''; hbar(); renderAcc(); };
     api({ action: 'myQuotes', token: tok.t }).then(function (r) {
       if (!r.ok) { if (r.err === 'auth') { sv(K_TOK, null); say(esc(S.expired), 1); return renderAcc(); } throw r; }
       var L = $('.vq-list', bd); if (!L) return;
@@ -287,5 +310,5 @@
   var grid = document.getElementById('grid');
   if (grid) { decorate(grid); new MutationObserver(function () { decorate(grid); }).observe(grid, { childList: true }); }
 
-  window.addEventListener('storage', function (e) { if (e.key === K_CART) { cart = ld(K_CART, []); badge(); } });
+  window.addEventListener('storage', function (e) { if (e.key === K_CART) { cart = ld(K_CART, []); badge(); } hbar(); });
 })();
