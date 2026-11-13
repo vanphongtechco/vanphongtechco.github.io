@@ -1,0 +1,218 @@
+/**
+ * Vân Phong – backend cho giỏ yêu cầu báo giá và tài khoản khách hàng trên vanphongtechco.com.vn
+ *
+ * CÀI ĐẶT (một lần):
+ *  1. Đăng nhập Google bằng tài khoản info@vanphongtechco.com.vn → tạo Google Sheet mới, đặt tên "Web – Yêu cầu báo giá".
+ *  2. Trong Sheet: Tiện ích mở rộng → Apps Script. Xóa hết nội dung Code.gs, dán toàn bộ file này vào, bấm Lưu.
+ *  3. Chọn hàm "setup" trên thanh công cụ → Chạy → cấp quyền (Advanced → Go to … → Allow).
+ *  4. Triển khai → Tùy chọn triển khai mới → loại "Ứng dụng web":
+ *       Thực thi với tư cách: Tôi (info@…) · Người có quyền truy cập: Bất kỳ ai → Triển khai.
+ *  5. Sao chép "URL ứng dụng web" (…/exec) gửi cho người quản trị web để dán vào assets/bao-gia.js (biến API).
+ *  Khi sửa file này: Triển khai → Quản lý triển khai → ✎ → Phiên bản: Phiên bản mới → Triển khai (URL giữ nguyên).
+ *
+ * SỬ DỤNG:
+ *  - Sheet "BaoGia": mỗi dòng là một yêu cầu. Nhân viên cập nhật cột "Trạng thái", "Phản hồi cho khách",
+ *    "Link file báo giá" (link Drive/PDF chia sẻ cho người có link) – khách thấy ngay trong mục Tài khoản trên web.
+ *  - Sheet "KhachHang": danh sách khách đã gửi yêu cầu / đăng nhập.
+ */
+
+var INFO = 'info@vanphongtechco.com.vn';
+var CC = '';                       // thêm email nhận bản sao, ví dụ 'binh@…' (để trống nếu không cần)
+var SITE = 'https://vanphongtechco.com.vn';
+var TZ = 'Asia/Ho_Chi_Minh';
+var STATUSES = ['Mới', 'Đang xử lý', 'Đã gửi báo giá', 'Hoàn tất', 'Hủy'];
+var H_Q = ['Mã', 'Thời gian', 'Email', 'Họ tên', 'Công ty', 'Điện thoại', 'Ghi chú', 'Sản phẩm – số lượng', 'Số dòng',
+  'Trạng thái', 'Phản hồi cho khách', 'Link file báo giá', 'Email đã xác thực', 'Ngôn ngữ', 'Trang gửi', 'Dữ liệu (JSON)'];
+var H_C = ['Email', 'Họ tên', 'Công ty', 'Điện thoại', 'Ngày tạo', 'Lần cuối', 'Số yêu cầu'];
+var SESSION_DAYS = 180;
+
+function setup() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var q = ss.getSheetByName('BaoGia') || ss.insertSheet('BaoGia');
+  q.getRange(1, 1, 1, H_Q.length).setValues([H_Q]).setFontWeight('bold').setBackground('#0E2F5A').setFontColor('#fff');
+  q.setFrozenRows(1);
+  q.getRange('J2:J').setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(STATUSES, true).build());
+  q.setColumnWidth(8, 420); q.setColumnWidth(7, 260); q.setColumnWidth(11, 260); q.hideColumns(16);
+  var c = ss.getSheetByName('KhachHang') || ss.insertSheet('KhachHang');
+  c.getRange(1, 1, 1, H_C.length).setValues([H_C]).setFontWeight('bold').setBackground('#0E2F5A').setFontColor('#fff');
+  c.setFrozenRows(1);
+  var s1 = ss.getSheetByName('Sheet1') || ss.getSheetByName('Trang tính1');
+  if (s1 && s1.getLastRow() === 0 && ss.getSheets().length > 2) ss.deleteSheet(s1);
+  var p = PropertiesService.getScriptProperties();
+  if (!p.getProperty('SECRET')) p.setProperty('SECRET', Utilities.getUuid() + Utilities.getUuid());
+  MailApp.getRemainingDailyQuota(); // xin quyền gửi mail ngay khi setup
+}
+
+function doGet() { return out({ ok: true, service: 'vanphong-quote' }); }
+
+function doPost(e) {
+  try {
+    var d = JSON.parse(e.postData.contents || '{}');
+    if (d.hp) return out({ ok: true, code: '—' });          // bẫy bot
+    switch (d.action) {
+      case 'requestCode': return out(requestCode(d));
+      case 'verify': return out(verify(d));
+      case 'submitQuote': return out(submitQuote(d));
+      case 'myQuotes': return out(myQuotes(d));
+    }
+    return out({ ok: false, err: 'action' });
+  } catch (err) {
+    console.error(err);
+    return out({ ok: false, err: 'server' });
+  }
+}
+
+/* ---------- đăng nhập bằng mã email ---------- */
+function requestCode(d) {
+  var em = cleanEmail(d.email); if (!em) return { ok: false, err: 'email' };
+  if (!limit('rc:' + em, 5, 3600) || !limit('rc:all', 300, 3600)) return { ok: false, err: 'rate' };
+  var code = ('00000' + (parseInt(Utilities.getUuid().replace(/\D/g, '').slice(0, 9), 10) % 1000000)).slice(-6);
+  CacheService.getScriptCache().put('otp:' + em, JSON.stringify({ c: code, n: 0 }), 600);
+  var t = TX[d.lang] || TX.vi;
+  MailApp.sendEmail({
+    to: em, name: 'Vân Phong', subject: t.otpSubj + ' ' + code,
+    htmlBody: wrap('<p>' + t.otpBody + '</p><p style="font-size:30px;font-weight:700;letter-spacing:6px;color:#0E2F5A">' + code + '</p><p style="color:#6B7684">' + t.otpNote + '</p>')
+  });
+  return { ok: true };
+}
+
+function verify(d) {
+  var em = cleanEmail(d.email); if (!em) return { ok: false, err: 'email' };
+  var cache = CacheService.getScriptCache(), key = 'otp:' + em, raw = cache.get(key);
+  if (!raw) return { ok: false, err: 'code' };
+  var o = JSON.parse(raw);
+  if (o.n >= 5) { cache.remove(key); return { ok: false, err: 'rate' }; }
+  if (String(d.code || '').trim() !== o.c) { o.n++; cache.put(key, JSON.stringify(o), 600); return { ok: false, err: 'code' }; }
+  cache.remove(key);
+  var prof = upsertCustomer(em, {}, false);
+  return { ok: true, token: makeToken(em), profile: prof };
+}
+
+/* ---------- yêu cầu báo giá ---------- */
+function submitQuote(d) {
+  var tokEmail = d.token ? checkToken(d.token) : null;
+  var em = tokEmail || cleanEmail(d.email);
+  var name = str(d.name, 120), phone = str(d.phone, 40), company = str(d.company, 200), note = str(d.note, 3000);
+  if (!em || !name || phone.replace(/\D/g, '').length < 8) return { ok: false, err: 'input' };
+  var items = (Array.isArray(d.items) ? d.items : []).slice(0, 100).map(function (x) {
+    return { s: str(x.s, 200), n: str(x.n, 300), c: str(x.c, 120), q: Math.max(1, Math.min(9999, parseInt(x.q, 10) || 1)) };
+  }).filter(function (x) { return x.n; });
+  if (!items.length) return { ok: false, err: 'input' };
+  if (!limit('sq:' + em, 10, 86400) || !limit('sq:all', 500, 86400)) return { ok: false, err: 'rate' };
+
+  var lock = LockService.getScriptLock(); lock.waitLock(20000);
+  try {
+    var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('BaoGia');
+    var now = new Date(), day = Utilities.formatDate(now, TZ, 'yyMMdd');
+    var n = 1, last = sh.getLastRow();
+    if (last > 1) {
+      var codes = sh.getRange(Math.max(2, last - 300), 1, Math.min(301, last - 1), 1).getValues();
+      codes.forEach(function (r) { var m = /^YC(\d{6})-(\d+)$/.exec(r[0]); if (m && m[1] === day) n = Math.max(n, +m[2] + 1); });
+    }
+    var code = 'YC' + day + '-' + ('00' + n).slice(-3);
+    var list = items.map(function (x, i) { return (i + 1) + '. ' + x.n + (x.c && x.n.indexOf(x.c) < 0 ? ' (' + x.c + ')' : '') + ' × ' + x.q; }).join('\n');
+    sh.appendRow([code, Utilities.formatDate(now, TZ, 'dd/MM/yyyy HH:mm'), em, name, company, "'" + phone, note, list, items.length,
+      'Mới', '', '', tokEmail ? 'Có' : 'Chưa', str(d.lang, 5), str(d.page, 500), JSON.stringify(items)]);
+  } finally { lock.releaseLock(); }
+  upsertCustomer(em, { name: name, company: company, phone: phone }, true);
+
+  var rows = items.map(function (x, i) {
+    return '<tr><td style="padding:6px;border:1px solid #ddd">' + (i + 1) + '</td><td style="padding:6px;border:1px solid #ddd">'
+      + (x.s ? '<a href="' + SITE + '/san-pham/' + encodeURIComponent(x.s) + '/">' + h(x.n) + '</a>' : h(x.n))
+      + '</td><td style="padding:6px;border:1px solid #ddd">' + h(x.c) + '</td><td style="padding:6px;border:1px solid #ddd;text-align:right">' + x.q + '</td></tr>';
+  }).join('');
+  var table = '<table style="border-collapse:collapse;font-size:14px"><tr style="background:#F3F5F8"><th style="padding:6px;border:1px solid #ddd">#</th><th style="padding:6px;border:1px solid #ddd">Sản phẩm</th><th style="padding:6px;border:1px solid #ddd">Model</th><th style="padding:6px;border:1px solid #ddd">SL</th></tr>' + rows + '</table>';
+
+  MailApp.sendEmail({
+    to: INFO, cc: CC || undefined, replyTo: em, name: 'Website Vân Phong',
+    subject: '[Web] Yêu cầu báo giá ' + code + ' – ' + name + (company ? ' – ' + company : ''),
+    htmlBody: wrap('<p><b>' + h(name) + '</b>' + (company ? ' – ' + h(company) : '') + '<br>ĐT: ' + h(phone) + ' · Email: ' + h(em)
+      + (tokEmail ? ' (đã xác thực)' : ' (chưa xác thực)') + '</p>' + table + (note ? '<p><b>Ghi chú:</b><br>' + h(note).replace(/\n/g, '<br>') + '</p>' : '')
+      + '<p style="color:#6B7684">Mã ' + code + ' · Cập nhật trạng thái/phản hồi trong Sheet "BaoGia" để khách xem trên web. Bấm Trả lời để email trực tiếp cho khách.</p>')
+  });
+  var t = TX[d.lang] || TX.vi;
+  MailApp.sendEmail({
+    to: em, replyTo: INFO, name: 'Vân Phong',
+    subject: t.qSubj + ' ' + code,
+    htmlBody: wrap('<p>' + t.qBody.replace('{c}', '<b>' + code + '</b>') + '</p>' + table
+      + '<p>' + t.qTrack.replace('{u}', '<a href="' + SITE + (d.lang && d.lang !== 'vi' ? '/' + d.lang : '') + '/#bao-gia-cua-toi">vanphongtechco.com.vn</a>') + '</p>')
+  });
+  return { ok: true, code: code };
+}
+
+function myQuotes(d) {
+  var em = checkToken(d.token); if (!em) return { ok: false, err: 'auth' };
+  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('BaoGia'), last = sh.getLastRow(), res = [];
+  if (last > 1) {
+    var v = sh.getRange(2, 1, last - 1, H_Q.length).getDisplayValues();
+    for (var i = v.length - 1; i >= 0 && res.length < 50; i--) {
+      if (String(v[i][2]).toLowerCase() !== em) continue;
+      var items; try { items = JSON.parse(v[i][15]); } catch (e) { items = [{ n: v[i][7], q: '' }]; }
+      res.push({ code: v[i][0], time: v[i][1], status: v[i][9] || 'Mới', reply: v[i][10], file: v[i][11], items: items });
+    }
+  }
+  return { ok: true, quotes: res };
+}
+
+/* ---------- tiện ích ---------- */
+function upsertCustomer(em, p, isQuote) {
+  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('KhachHang'), last = sh.getLastRow();
+  var now = Utilities.formatDate(new Date(), TZ, 'dd/MM/yyyy HH:mm');
+  var emails = last > 1 ? sh.getRange(2, 1, last - 1, 1).getValues().map(function (r) { return String(r[0]).toLowerCase(); }) : [];
+  var i = emails.indexOf(em);
+  if (i < 0) {
+    sh.appendRow([em, p.name || '', p.company || '', p.phone ? "'" + p.phone : '', now, now, isQuote ? 1 : 0]);
+    return { name: p.name || '', company: p.company || '', phone: p.phone || '' };
+  }
+  var r = sh.getRange(i + 2, 1, 1, H_C.length), v = r.getValues()[0];
+  if (p.name) v[1] = p.name; if (p.company) v[2] = p.company; if (p.phone) v[3] = "'" + p.phone;
+  v[5] = now; if (isQuote) v[6] = (+v[6] || 0) + 1;
+  r.setValues([v]);
+  return { name: String(v[1]), company: String(v[2]), phone: String(v[3]).replace(/^'/, '') };
+}
+
+function makeToken(em) {
+  var body = b64(em + '|' + (Date.now() + SESSION_DAYS * 864e5));
+  return body + '.' + sig(body);
+}
+function checkToken(t) {
+  var p = String(t || '').split('.'); if (p.length !== 2 || sig(p[0]) !== p[1]) return null;
+  var s = Utilities.newBlob(Utilities.base64DecodeWebSafe(p[0])).getDataAsString().split('|');
+  return +s[1] > Date.now() ? s[0] : null;
+}
+function sig(s) { return b64(Utilities.computeHmacSha256Signature(s, PropertiesService.getScriptProperties().getProperty('SECRET'))).slice(0, 43); }
+function b64(x) { return Utilities.base64EncodeWebSafe(x).replace(/=+$/, ''); }
+function limit(k, max, sec) {
+  var c = CacheService.getScriptCache(), n = +(c.get('rl:' + k) || 0);
+  if (n >= max) return false; c.put('rl:' + k, String(n + 1), sec); return true;
+}
+function cleanEmail(s) { s = String(s || '').trim().toLowerCase(); return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s) && s.length < 120 ? s : null; }
+function str(s, n) { return String(s == null ? '' : s).trim().slice(0, n); }
+function h(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function out(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
+function wrap(b) {
+  return '<div style="font-family:Arial,sans-serif;font-size:15px;color:#1B2430;max-width:640px">' + b
+    + '<hr style="border:0;border-top:1px solid #E3E8EE;margin:20px 0"><p style="font-size:13px;color:#6B7684">Công ty TNHH Kỹ thuật và Thương mại Vân Phong<br>'
+    + 'Số 34, ngõ 36A, phố Trần Điền, Phường Phương Liệt, TP. Hà Nội<br>Hotline 08.9999.0683 · ' + INFO + ' · vanphongtechco.com.vn</p></div>';
+}
+
+var TX = {
+  vi: {
+    otpSubj: 'Mã đăng nhập Vân Phong:', otpBody: 'Mã đăng nhập tài khoản trên website Vân Phong của bạn là:',
+    otpNote: 'Mã có hiệu lực 10 phút. Nếu bạn không yêu cầu, hãy bỏ qua email này.',
+    qSubj: 'Vân Phong đã nhận yêu cầu báo giá', qBody: 'Cảm ơn Quý khách. Vân Phong đã nhận yêu cầu báo giá {c} gồm:',
+    qTrack: 'Chúng tôi sẽ phản hồi trong giờ làm việc. Quý khách theo dõi trạng thái tại mục Tài khoản trên {u} (đăng nhập bằng email này).'
+  },
+  en: {
+    otpSubj: 'Van Phong sign-in code:', otpBody: 'Your sign-in code for the Van Phong website is:',
+    otpNote: 'The code is valid for 10 minutes. If you did not request it, please ignore this email.',
+    qSubj: 'Van Phong received your quote request', qBody: 'Thank you. Van Phong has received your quote request {c}:',
+    qTrack: 'We will reply during business hours. Track its status under Account on {u} (sign in with this email).'
+  },
+  zh: {
+    otpSubj: 'Vân Phong 登录验证码：', otpBody: '您在 Vân Phong 网站的登录验证码是：',
+    otpNote: '验证码 10 分钟内有效。如非本人操作，请忽略此邮件。',
+    qSubj: 'Vân Phong 已收到您的询价', qBody: '感谢您的询价。Vân Phong 已收到询价单 {c}：',
+    qTrack: '我们将在工作时间回复。请在 {u} 的“账户”中查看进度（用此邮箱登录）。'
+  }
+};

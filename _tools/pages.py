@@ -163,6 +163,7 @@ def foot(lang):
     return f"""<footer><div class="wrap"><b>{t['company']}</b><br>{t['addr']}<br>{t['hot']}: <a href="tel:{h['hot'][1]}">{h['hot'][0]}</a> / <a href="tel:{h['tram'][1]}">{h['tram'][0]}</a> · <a href="mailto:info@vanphongtechco.com.vn">info@vanphongtechco.com.vn</a></div></footer>
 <script>document.addEventListener('submit',function(ev){{var f=ev.target;if(!f.matches('form.qf'))return;ev.preventDefault();var g=function(n){{return (f.elements[n]&&f.elements[n].value||'').trim()}};
 var s=f.dataset.subject;var b=g('need')+'\\n\\n'+g('name')+' – '+g('phone')+'\\n'+location.href;location.href='mailto:info@vanphongtechco.com.vn?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);}});</script>
+<script src="/assets/bao-gia.js" defer></script>
 </body>
 </html>
 """

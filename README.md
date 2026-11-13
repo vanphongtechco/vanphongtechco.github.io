@@ -102,3 +102,8 @@ Có thể thêm `video="/video/ten.mp4"` (ảnh `img` dùng làm ảnh bìa vide
 ## 7. Phân quyền
 
 Người sửa web được mời bằng tài khoản GitHub riêng (Settings → Collaborators). Không chia sẻ mật khẩu tài khoản công ty.
+
+## Giỏ yêu cầu báo giá & tài khoản khách hàng
+- Giao diện: `assets/bao-gia.js` (tự gắn nút “Thêm vào báo giá” vào lưới sản phẩm trang chủ và trang chi tiết sản phẩm, nút nổi “Báo giá”, bảng Tài khoản & lịch sử). Ba ngôn ngữ nằm sẵn trong file.
+- Backend: `_tools/apps-script/Code.gs` (Google Apps Script gắn với Google Sheet; hướng dẫn cài ở đầu file). Dán URL web app vào biến `API` trong `assets/bao-gia.js`.
+- Khi `API` để trống: yêu cầu được gửi bằng email (mailto) tới info@, mục Tài khoản hiện thông báo “đang kích hoạt”.
