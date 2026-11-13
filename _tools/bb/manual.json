@@ -679,5 +679,152 @@
     ]
    ]
   }
+ },
+ "bbg:131": {
+  "about": {
+   "vi": [
+    "Trong các xét nghiệm hóa học, sinh học và môi trường, mẫu được trộn đồng đều là điều kiện tiên quyết để kết quả phân tích phản ánh đúng bản chất của mẫu. Máy lắc xoay BIOBASE dòng MX-RD là thiết bị phòng thí nghiệm đa năng, trộn đồng đều chất lỏng, bột và huyền phù bằng chuyển động xoay tròn nhẹ nhàng, ổn định.",
+    "• MX-RD-Pro: dải tốc độ 10–70 vòng/phút; góc trộn điều chỉnh 0–90°; hẹn giờ 1–1199 phút, vận hành liên tục hoặc theo thời gian hẹn; màn hình LCD hiển thị tốc độ và thời gian; đĩa trộn và kẹp giữ ống bằng thép không gỉ; công suất 40 W.",
+    "• MX-RD-E: dải tốc độ điều chỉnh 0–80 vòng/phút; vận hành liên tục; công suất 20 W; đĩa trộn thép không gỉ phủ oxy hóa; cấp bảo vệ IP21.",
+    "• Nguồn điện AC 100–240 V, 50/60 Hz, phù hợp nhiều điều kiện lưới điện.",
+    "• Phụ kiện đa dạng, tương thích nhiều cỡ ống nghiệm, đáp ứng linh hoạt từng quy trình trộn mẫu.",
+    "• Dùng cho xét nghiệm hóa học, sinh học, môi trường; trộn máu, nuôi cấy huyền phù tế bào và các quy trình chuẩn bị mẫu thường quy.",
+    "Ứng dụng: trường đại học, viện nghiên cứu, bệnh viện, phòng thí nghiệm và khu công nghiệp."
+   ],
+   "en": [
+    "In chemical, biological and environmental testing, thoroughly mixed samples are a prerequisite for results that truly reflect the sample. The BIOBASE MX-RD series rotator is a versatile laboratory instrument that mixes liquids, powders and suspensions uniformly through gentle, steady rotation.",
+    "• MX-RD-Pro: speed 10–70 rpm; adjustable mixing angle 0–90°; timer 1–1199 min, continuous or timed operation; LCD showing speed and time; stainless steel mixing disc and tube clamps; 40 W.",
+    "• MX-RD-E: adjustable speed 0–80 rpm; continuous operation; 20 W; oxidation-coated stainless steel mixing disc; IP21 protection.",
+    "• Power supply AC 100–240 V, 50/60 Hz, suitable for a wide range of mains conditions.",
+    "• A wide choice of accessories fitting many tube sizes, adaptable to each mixing procedure.",
+    "• For chemical, biological and environmental testing; blood mixing, cell suspension culture and routine sample preparation.",
+    "Applications: universities, research institutes, hospitals, laboratories and industrial parks."
+   ],
+   "zh": [
+    "在化学、生物和环境检测中，样品混合均匀是分析结果真实反映样品本质的前提。BIOBASE MX-RD 系列旋转混匀仪是一款多功能实验室设备，以轻柔、平稳的旋转运动均匀混合液体、粉末和悬浮液。",
+    "• MX-RD-Pro：转速 10–70 rpm；混匀角度 0–90° 可调；定时 1–1199 分钟，可连续或定时运行；LCD 显示转速和时间；不锈钢混匀盘及试管夹；功率 40 W。",
+    "• MX-RD-E：转速 0–80 rpm 可调；连续运行；功率 20 W；氧化涂层不锈钢混匀盘；防护等级 IP21。",
+    "• 电源 AC 100–240 V，50/60 Hz，适应多种电网条件。",
+    "• 配件丰富，兼容多种规格试管，灵活满足不同混匀流程。",
+    "• 适用于化学、生物、环境检测；血液混匀、细胞悬浮培养及常规样品前处理。",
+    "应用：高校、科研院所、医院、实验室和工业园区。"
+   ]
+  },
+  "spec": {
+   "vi": [
+    [
+     "Thông số",
+     "MX-RD-Pro / MX-RD-E"
+    ],
+    [
+     "Dải tốc độ",
+     "10–70 vòng/phút / 0–80 vòng/phút"
+    ],
+    [
+     "Góc trộn",
+     "0–90° điều chỉnh / –"
+    ],
+    [
+     "Hẹn giờ",
+     "1–1199 phút, liên tục hoặc hẹn giờ / chạy liên tục"
+    ],
+    [
+     "Hiển thị",
+     "LCD (tốc độ, thời gian) / –"
+    ],
+    [
+     "Đĩa trộn",
+     "Thép không gỉ, kẹp giữ ống thép không gỉ / thép không gỉ phủ oxy hóa"
+    ],
+    [
+     "Công suất",
+     "40 W / 20 W"
+    ],
+    [
+     "Cấp bảo vệ",
+     "– / IP21"
+    ],
+    [
+     "Nguồn điện",
+     "AC 100–240 V, 50/60 Hz"
+    ]
+   ],
+   "en": [
+    [
+     "Parameter",
+     "MX-RD-Pro / MX-RD-E"
+    ],
+    [
+     "Speed",
+     "10–70 rpm / 0–80 rpm"
+    ],
+    [
+     "Mixing angle",
+     "0–90° adjustable / –"
+    ],
+    [
+     "Timer",
+     "1–1199 min, continuous or timed / continuous"
+    ],
+    [
+     "Display",
+     "LCD (speed, time) / –"
+    ],
+    [
+     "Mixing disc",
+     "Stainless steel, stainless tube clamps / oxidation-coated stainless steel"
+    ],
+    [
+     "Power",
+     "40 W / 20 W"
+    ],
+    [
+     "Protection",
+     "– / IP21"
+    ],
+    [
+     "Power supply",
+     "AC 100–240 V, 50/60 Hz"
+    ]
+   ],
+   "zh": [
+    [
+     "参数",
+     "MX-RD-Pro / MX-RD-E"
+    ],
+    [
+     "转速",
+     "10–70 rpm / 0–80 rpm"
+    ],
+    [
+     "混匀角度",
+     "0–90° 可调 / –"
+    ],
+    [
+     "定时",
+     "1–1199 分钟，连续或定时 / 连续运行"
+    ],
+    [
+     "显示",
+     "LCD（转速、时间）/ –"
+    ],
+    [
+     "混匀盘",
+     "不锈钢，不锈钢试管夹 / 氧化涂层不锈钢"
+    ],
+    [
+     "功率",
+     "40 W / 20 W"
+    ],
+    [
+     "防护等级",
+     "– / IP21"
+    ],
+    [
+     "电源",
+     "AC 100–240 V，50/60 Hz"
+    ]
+   ]
+  }
  }
 }
