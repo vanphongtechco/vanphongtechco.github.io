@@ -5077,5 +5077,104 @@
     ]
    ]
   }
+ },
+ "code:VP-BN-01": {
+  "spec": {
+   "vi": [
+    [
+     "Vật liệu",
+     "Thép Mn13, gắn các thanh composite nền thép Mn13 cốt hạt cacbit TiC trên bề mặt làm việc"
+    ],
+    [
+     "Công nghệ",
+     "Luyện kim composite"
+    ],
+    [
+     "Độ cứng",
+     "186 – 229 HB"
+    ],
+    [
+     "Yêu cầu chất lượng",
+     "Không có khuyết tật đúc (rỗ, nứt)"
+    ],
+    [
+     "Lắp trên",
+     "Máy đập búa 50 tấn/h (bộ 32 búa trên 8 đĩa quay)"
+    ],
+    [
+     "Ứng dụng",
+     "Nghiền than, khoáng sản"
+    ],
+    [
+     "Xuất xứ",
+     "Việt Nam, chế tạo theo thiết kế"
+    ]
+   ],
+   "en": [
+    [
+     "Material",
+     "Mn13 steel with Mn13-matrix TiC-particle composite bars on the working face"
+    ],
+    [
+     "Technology",
+     "Composite metallurgy"
+    ],
+    [
+     "Hardness",
+     "186 – 229 HB"
+    ],
+    [
+     "Quality requirement",
+     "No casting defects (porosity, cracks)"
+    ],
+    [
+     "Fitted on",
+     "50 t/h hammer crusher (set of 32 hammers on 8 rotor discs)"
+    ],
+    [
+     "Application",
+     "Crushing coal and minerals"
+    ],
+    [
+     "Origin",
+     "Vietnam, made to design"
+    ]
+   ],
+   "zh": [
+    [
+     "材料",
+     "Mn13 钢，工作面镶嵌 Mn13 钢基 TiC 颗粒增强复合材料条"
+    ],
+    [
+     "工艺",
+     "复合冶金"
+    ],
+    [
+     "硬度",
+     "186 – 229 HB"
+    ],
+    [
+     "质量要求",
+     "无铸造缺陷（气孔、裂纹）"
+    ],
+    [
+     "适用设备",
+     "50 吨/小时锤式破碎机（8 个转盘共 32 个锤头）"
+    ],
+    [
+     "用途",
+     "破碎煤炭、矿石"
+    ],
+    [
+     "产地",
+     "越南，按设计制造"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số có thể thay đổi theo thiết kế và phiên bản.",
+   "en": "Specifications may vary by design and version.",
+   "zh": "参数可能因设计和版本而不同。"
+  }
  }
 }
