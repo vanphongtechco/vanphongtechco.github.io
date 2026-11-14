@@ -378,6 +378,7 @@ def main():
         f.write_text(hh, encoding="utf-8")
     # news pages: /tin-tuc/ and /tin-tuc/<slug>/ (images in /tin-tuc/*.jpg are kept)
     import news as NW
+    _TTSV = __import__("hashlib").md5((REPO / "assets" / "doc-bai.js").read_bytes()).hexdigest()[:8]
     for lang, pre in LANGS.items():
         base = REPO / pre / "tin-tuc"
         if base.exists():
@@ -391,6 +392,7 @@ def main():
             s = NW.slug(nw); d = base / s; d.mkdir(parents=True, exist_ok=True)
             img = nw["img"] if nw["img"].startswith("http") else SITE + nw["img"]
             meta = f'<meta property="og:type" content="article"><meta property="og:image" content="{e(img)}">' + ex
+            meta += f'<script src="/assets/doc-bai.js?v={_TTSV}" defer></script>'
             others = [m for m in NW.N if m is not nw][:3]
             qp, qs = None, ""
             for _t, _h in nw.get("links", {}).get(lang, []):
