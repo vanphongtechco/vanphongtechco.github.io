@@ -415,5 +415,14 @@
   var grid = document.getElementById('grid');
   if (grid) { decorate(grid); new MutationObserver(function () { decorate(grid); }).observe(grid, { childList: true }); }
 
+  // generic slots (news pages): <div class="vq-slot" data-s data-n data-c>
+  [].forEach.call(document.querySelectorAll('.vq-slot[data-s]'), function (el) {
+    if (!el.dataset.s) return;
+    var row = document.createElement('div'); row.className = 'vq-row';
+    var qi = document.createElement('input'); qi.type = 'number'; qi.min = 1; qi.max = 9999; qi.value = 1; qi.setAttribute('aria-label', S.qtyL);
+    row.appendChild(qi); row.appendChild(addBtn({ s: el.dataset.s, n: el.dataset.n, c: el.dataset.c || '' }, function () { return qi.value; }));
+    el.appendChild(row);
+  });
+  window.VQ_API = API; window.VQ_tok = function () { return ld(K_TOK, null); };
   window.addEventListener('storage', function (e) { if (e.key === K_CART) { cart = ld(K_CART, []); badge(); } hbar(); });
 })();

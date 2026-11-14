@@ -40,7 +40,7 @@ L = {
             catalog="Tải catalog PDF", paper="Bài báo ứng dụng (PDF)", dwg="Bản vẽ (PDF)", video="Video giới thiệu", related="Sản phẩm cùng danh mục",
             intro="Giới thiệu", spec="Thông số kỹ thuật", spec_note="Theo catalogue của hãng. Thông số có thể thay đổi theo model và phiên bản; Vân Phong xác nhận lại khi báo giá.",
             getq="Nhận báo giá", form_h="Yêu cầu báo giá", f_name="Họ tên", f_phone="Số điện thoại", f_need="Thiết bị hoặc nhu cầu cần tư vấn", f_send="Gửi yêu cầu",
-            f_note="Bấm Gửi sẽ mở email đã soạn sẵn. Hoặc gửi model, ảnh thiết bị qua Zalo.",
+            f_note="Yêu cầu được gửi thẳng tới Vân Phong (info@vanphongtechco.com.vn); bản xác nhận gửi về email của Quý khách. Hoặc gửi model, ảnh thiết bị qua Zalo.", f_email="Email", f_ok="Đã gửi yêu cầu {c}. Vân Phong sẽ liên hệ lại trong giờ làm việc.", f_err="Chưa gửi được, đang mở email để Quý khách gửi trực tiếp.", f_bad="Vui lòng nhập họ tên, số điện thoại và email hợp lệ.", qhead="Liên hệ báo giá",
             advisor="Người tư vấn", tram="Ms Ngọc Trâm – phụ trách BIOBASE, Drawell", sales="Phòng Kinh doanh Vân Phong",
             need_h="Để báo giá đúng cấu hình, anh/chị cho biết:",
             needs=["Model hoặc ảnh thiết bị (nếu đã có)", "Ứng dụng, loại mẫu và số lượng mẫu mỗi ngày", "Tiêu chuẩn, phương pháp thử cần đáp ứng", "Địa điểm lắp đặt và thời gian cần thiết bị"],
@@ -52,7 +52,7 @@ L = {
             catalog="Download catalog (PDF)", paper="Application paper (PDF)", dwg="Drawing (PDF)", video="Video", related="Related products",
             intro="Overview", spec="Specifications", spec_note="From the manufacturer catalogue. Specifications may vary by model and version; Van Phong confirms them in the quotation.",
             getq="Get a quote for", form_h="Request a quotation", f_name="Name", f_phone="Phone", f_need="Equipment or requirement", f_send="Send request",
-            f_note="Send opens a pre-filled email. You can also send the model or a photo via Zalo.",
+            f_note="Your request goes straight to Van Phong (info@vanphongtechco.com.vn) and a confirmation is emailed to you. You can also send the model or a photo via Zalo.", f_email="Email", f_ok="Request {c} sent. Van Phong will contact you during business hours.", f_err="Could not send; opening your email app instead.", f_bad="Please enter your name, phone number and a valid email.", qhead="Request a quotation",
             advisor="Your contact", tram="Ms Ngoc Tram – BIOBASE and Drawell specialist", sales="Van Phong sales team",
             need_h="For an accurate configuration and quotation, please tell us:",
             needs=["Model or a photo of the equipment (if known)", "Application, sample type and number of samples per day", "Standards or test methods to meet", "Installation site and required delivery date"],
@@ -64,7 +64,7 @@ L = {
             catalog="下载产品目录（PDF）", paper="应用论文（PDF）", dwg="图纸（PDF）", video="产品视频", related="同类产品",
             intro="产品介绍", spec="技术参数", spec_note="参数来自厂家样本，可能因型号和版本而不同，以 Van Phong 报价确认为准。",
             getq="获取报价：", form_h="询价", f_name="姓名", f_phone="电话", f_need="所需设备或需求", f_send="发送询价",
-            f_note="点击发送将打开已填写好的邮件。也可通过 Zalo 发送型号或设备照片。",
+            f_note="询价将直接发送至 Vân Phong（info@vanphongtechco.com.vn），确认邮件将发送到您的邮箱。也可通过 Zalo 发送型号或设备照片。", f_email="邮箱", f_ok="询价 {c} 已提交，Vân Phong 将在工作时间与您联系。", f_err="提交失败，正在打开邮件应用。", f_bad="请填写姓名、电话和有效邮箱。", qhead="询价",
             advisor="联系人", tram="Ngoc Tram 女士 – BIOBASE、Drawell 产品顾问", sales="Van Phong 销售部",
             need_h="为准确配置和报价，请告知：",
             needs=["型号或设备照片（如有）", "用途、样品类型及每日样品数量", "需满足的标准或检测方法", "安装地点及需要到货的时间"],
@@ -162,7 +162,11 @@ def foot(lang):
     t = L[lang]; h = PH[lang]
     return f"""<footer><div class="wrap"><b>{t['company']}</b><br>{t['addr']}<br>{t['hot']}: <a href="tel:{h['hot'][1]}">{h['hot'][0]}</a> / <a href="tel:{h['tram'][1]}">{h['tram'][0]}</a> · <a href="mailto:info@vanphongtechco.com.vn">info@vanphongtechco.com.vn</a></div></footer>
 <script>document.addEventListener('submit',function(ev){{var f=ev.target;if(!f.matches('form.qf'))return;ev.preventDefault();var g=function(n){{return (f.elements[n]&&f.elements[n].value||'').trim()}};
-var s=f.dataset.subject;var b=g('need')+'\\n\\n'+g('name')+' – '+g('phone')+'\\n'+location.href;location.href='mailto:info@vanphongtechco.com.vn?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);}});</script>
+var d=f.dataset,mail=function(){{var b=g('need')+'\\n\\n'+g('name')+' – '+g('phone')+' – '+g('email')+'\\n'+location.href;location.href='mailto:info@vanphongtechco.com.vn?subject='+encodeURIComponent(d.subject)+'&body='+encodeURIComponent(b);}};
+var m=f.querySelector('.qmsg')||f.insertBefore(Object.assign(document.createElement('p'),{{className:'qmsg'}}),f.firstChild),say=function(t,bad){{m.textContent=t;m.style.cssText='padding:9px 11px;border-radius:6px;font-size:14px;margin:0 0 6px;background:'+(bad?'#FFF0F0;color:#A01818':'#E9F7EF;color:#17733D');}};
+if(!g('name')||g('phone').replace(/\\D/g,'').length<8||!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{{2,}}$/.test(g('email'))){{say(d.bad,1);return;}}
+if(!window.VQ_API){{mail();return;}}var bt=f.querySelector('button[type=submit]');bt.disabled=true;var tk=window.VQ_tok&&window.VQ_tok();
+fetch(window.VQ_API,{{method:'POST',body:JSON.stringify({{action:'submitQuote',token:tk&&tk.t||'',name:g('name'),phone:g('phone'),email:g('email').toLowerCase(),note:g('need'),items:[{{s:d.s,n:d.n,c:d.c,q:1}}],lang:d.lang,page:location.href}})}}).then(function(r){{return r.json()}}).then(function(r){{if(!r.ok)throw r;say(d.ok.replace('{{c}}',r.code));f.elements.need.value='';}}).catch(function(){{say(d.err,1);setTimeout(mail,1200);}}).then(function(){{bt.disabled=false;}});}});</script>
 <script src="/assets/bao-gia.js" defer></script>
 </body>
 </html>
@@ -173,15 +177,16 @@ def card(lang, q, slug, cats):
     im = f'<img src="{e(src)}" alt="{e(q["n"])}" loading="lazy">' if src else ""
     return f'<a href="/{LANGS[lang]}san-pham/{slug}/"><span class="t">{im}</span><b>{e(q["n"])}</b><small>{e(q.get("code") or sub)}</small></a>'
 
-def quote_box(lang, p, adv):
+def quote_box(lang, p, adv, slug="", head_txt=None):
     t = L[lang]; model = p.get("code") or p["n"]
     subj = f'{t["form_h"]}: {model}'
     need = f'{t["form_h"]}: {p["n"]}' + (f' ({p["code"]})' if p.get("code") and p["code"] not in p["n"] else "")
     h = PH[lang][adv]
-    return f"""<div class="qbox" id="bao-gia"><h2>{t['getq']} {e(model)}</h2>
-<form class="qf" data-subject="{e(subj)}">
+    return f"""<div class="qbox" id="bao-gia"><h2>{head_txt or (t['getq'] + ' ' + e(model))}</h2>
+<form class="qf" data-subject="{e(subj)}" data-s="{e(slug)}" data-n="{e(p['n'])}" data-c="{e(p.get('code') or '')}" data-lang="{lang}" data-ok="{e(t['f_ok'])}" data-err="{e(t['f_err'])}" data-bad="{e(t['f_bad'])}">
 <label for="qn">{t['f_name']}</label><input id="qn" name="name" required autocomplete="name">
 <label for="qp">{t['f_phone']}</label><input id="qp" name="phone" type="tel" required autocomplete="tel">
+<label for="qe">{t['f_email']}</label><input id="qe" name="email" type="email" required autocomplete="email">
 <label for="qd">{t['f_need']}</label><textarea id="qd" name="need">{e(need)}</textarea>
 <div class="btns"><button class="btn cta" type="submit">{t['f_send']}</button><a class="btn" href="https://zalo.me/{h[1].lstrip('+').replace('84','0',1) if h[1].startswith('+84') else h[1]}" target="_blank" rel="noopener">{t['zalo']} {h[0]}</a></div>
 <p class="note">{t['f_note']}</p></form></div>"""
@@ -241,7 +246,7 @@ def page(lang, p, cat, slug, related, spec, cats):
 <div>{about_html}{vid_html}{spec_html}
 <h2 class="h">{t['need_h']}</h2><ul class="chk">{''.join(f'<li>{x}</li>' for x in t['needs'])}</ul>
 <h2 class="h">{t['svc_h']}</h2><p>{t['svc']}</p></div>
-{quote_box(lang, p, adv)}
+{quote_box(lang, p, adv, slug)}
 </div>
 </main>
 {f'<section class="rel"><div class="wrap"><h2>{t["related"]}</h2><div class="cards">{rel}</div></div></section>' if rel else ''}
@@ -387,7 +392,20 @@ def main():
             img = nw["img"] if nw["img"].startswith("http") else SITE + nw["img"]
             meta = f'<meta property="og:type" content="article"><meta property="og:image" content="{e(img)}">' + ex
             others = [m for m in NW.N if m is not nw][:3]
-            body = (f'<div class="crumbs"><a href="{P}">{L[lang]["home"]}</a> › <a href="{P}tin-tuc/">{NW.H[lang]}</a></div>' + NW.article(nw, lang)
+            qp, qs = None, ""
+            for _t, _h in nw.get("links", {}).get(lang, []):
+                _m = re.search(r"/san-pham/([^/]+)/", _h)
+                if _m and _m.group(1) in slugs: qs = _m.group(1); qp = data[lang]["products"][slugs.index(qs)]; break
+            tplain = re.sub("<[^>]+>", "", nw["title"][lang]).split(" — ")[0].split(" —— ")[0]
+            if qp:
+                adv = "tram" if brand(qp) in ("BIOBASE", "DRAWELL", "DAIHAN", "BOXUN") or qp["c"] in ("tn", "yt") else "hot"
+                qbox = quote_box(lang, qp, adv, qs)
+            else:
+                adv = "hot"; qbox = quote_box(lang, {"n": tplain, "code": ""}, adv, "", L[lang]["qhead"])
+            hh_ = PH[lang][adv]; who = L[lang]["tram"] if adv == "tram" else L[lang]["sales"]
+            slot = f'<div class="vq-slot" data-s="{e(qs)}" data-n="{e(qp["n"])}" data-c="{e(qp.get("code") or "")}"></div>' if qp else ""
+            nq = (f'<div class="art nq"><div class="adv">{L[lang]["advisor"]}: <b>{who}</b><br><a href="tel:{hh_[1]}"><b>{L[lang]["call"]} {hh_[0]}</b></a> · Zalo {hh_[0]} · info@vanphongtechco.com.vn</div>{slot}{qbox}</div>')
+            body = (f'<div class="crumbs"><a href="{P}">{L[lang]["home"]}</a> › <a href="{P}tin-tuc/">{NW.H[lang]}</a></div>' + NW.article(nw, lang) + nq
                     + f'<section class="rel" style="background:#F0F2F4"><div class="wrap"><h2>{NW.UI[lang]["other"]}</h2>{NW.cards(lang, others)}<p class="nall"><a class="btn" href="{P}tin-tuc/">{NW.UI[lang]["back"]}</a></p></div></section>')
             html_ = head(lang, f'{re.sub("<[^>]+>", "", nw["title"][lang])} – Vân Phong', NW.summary(nw, lang, 280), f"tin-tuc/{s}/", meta)
             html_ += '<main class="wrap">' + body.replace('<section class="rel"', '</main><section class="rel"', 1) + foot(lang)
