@@ -101,16 +101,11 @@ def block(lang):
       <details><summary>{e(t['abs'])}</summary><p>{e(m[f'abstract_{lang}'])}</p></details>
       <p class="dl">{' '.join(links)}</p></div></li>"""
     key = lambda m: str(m.get('date') or f"{m['year']}-00")
-    js = sorted([m for m in META if m['kind'] == 'journal'], key=key, reverse=True); cs = sorted([m for m in META if m['kind'] != 'journal'], key=key, reverse=True)
+    al = sorted(META, key=key, reverse=True)
     out = f"""<section class="grey" id="bai-bao"><div class="wrap">
   <div class="title"><h2>{e(t['h'])}</h2><p>{e(t['sub'])}</p></div>
-  <h3 class="pubh">{e(t['j'])} ({len(js)})</h3>
   <ol class="pubs">
-{chr(10).join(item(m) for m in js)}
-  </ol>
-  <h3 class="pubh">{e(t['c'])} ({len(cs)})</h3>
-  <ol class="pubs">
-{chr(10).join(item(m) for m in cs)}
+{chr(10).join(item(m) for m in al)}
   </ol>
 </div></section>"""
     return out
