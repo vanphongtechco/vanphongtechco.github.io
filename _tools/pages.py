@@ -212,7 +212,7 @@ def page(lang, p, cat, slug, related, spec, cats):
     src = img_src(p); b = brand(p); adv = "tram" if b in ("BIOBASE", "DRAWELL", "DAIHAN", "BOXUN") or p["c"] in ("tn", "yt") else "hot"
     btns = []
     if p.get("pdf"): btns.append(f'<a class="btn" href="/catalog/{lang}/{e(p["pdf"])}.pdf" target="_blank" rel="noopener">{t["catalog"]}</a>')
-    if p.get("art"): btns.append(f'<a class="btn" href="/bai-bao/{e(p["art"])}{ART_SUF[lang]}.pdf" target="_blank" rel="noopener">{t["paper"]}</a>')
+    if p.get("art"): btns.append(f'<a class="btn" href="/bai-bao/{e(p["art"])}{ART_SUF[lang] if (REPO / "bai-bao" / (p["art"] + ART_SUF[lang] + ".pdf")).exists() else ""}.pdf" target="_blank" rel="noopener">{t["paper"]}</a>')
     if p.get("dwg"): btns.append(f'<a class="btn" href="{e(p["dwg"])}" target="_blank" rel="noopener">{t["dwg"]}</a>')
     if p.get("vid"): btns.append(f'<a class="btn" href="#video">▶ {t["video"]}</a>')
     h = PH[lang][adv]; model = p.get("code") or ""

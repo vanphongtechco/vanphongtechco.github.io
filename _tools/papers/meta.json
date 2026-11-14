@@ -519,5 +519,25 @@
   "abstract_vi": "Cột chống thủy lực là một bộ phận quan trọng của giá chống sử dụng trong lò chợ mỏ than hầm lò. Cột chống mất tác dụng sẽ ảnh hưởng rất lớn đến giá chống, dẫn đến nguy cơ mất an toàn và gây nhiều thiệt hại về kinh tế cho các mỏ. Có nhiều nguyên nhân làm mất tác dụng của cột chống thủy lực, nhưng chủ yếu là do các vòng phớt làm kín bị hỏng, mất tác dụng làm việc. Các yếu tố chính dẫn đến hỏng phớt gồm tốc độ di chuyển của xy lanh, áp suất làm việc, môi chất làm việc, phụ tải chống giữ, va đập thủy lực và vật liệu chế tạo phớt. Bài báo giới thiệu về phớt làm kín và tính toán áp suất, lưu lượng rò rỉ thủy lực trên cột chống.",
   "abstract_en": "The hydraulic prop is a key component of the supports used at longwall faces in underground coal mines. Prop failure has a major impact on the support, creating safety risks and considerable economic losses for the mines. Hydraulic props fail for many reasons, but mainly because their seal rings are damaged and stop working. The main factors leading to seal failure are cylinder speed, working pressure, working fluid, support load, hydraulic shock and seal material. The paper introduces seals and calculates the pressure and hydraulic leakage flow in the prop.",
   "abstract_zh": "液压支柱是井工煤矿采煤工作面支架的重要部件。支柱失效会对支架造成很大影响，导致安全隐患并给矿井带来较大经济损失。液压支柱失效的原因很多，但主要是密封圈损坏而失去作用。导致密封件损坏的主要因素包括缸体运动速度、工作压力、工作介质、支护载荷、液压冲击以及密封材料。本文介绍了密封件，并计算了支柱内的压力和液压泄漏流量。"
+ },
+ {
+  "id": "camham2022",
+  "kind": "journal",
+  "year": 2022,
+  "date": "2022-10-13",
+  "lang_orig": "vi",
+  "title_orig": "Thiết kế hệ thống cam hãm điều khiển tự động sử dụng khí nén nhằm chống phương tiện vận tải vượt tốc trên các trục tải giếng nghiêng mỏ than hầm lò",
+  "authors_orig": "TS. Nguyễn Trọng Tài và cộng sự",
+  "authors_en": "Nguyen Trong Tai et al.",
+  "venue_orig": "Bản tin Khoa học Cơ khí Năng lượng – Mỏ, số 33 (tháng 9–10/2022), tr. 13–18",
+  "venue_en": "Mechanical Energy and Mining Science Bulletin, No. 33 (Sep.–Oct. 2022), pp. 13–18",
+  "doi": "",
+  "index": "",
+  "title_vi": "Thiết kế hệ thống cam hãm điều khiển tự động sử dụng khí nén nhằm chống phương tiện vận tải vượt tốc trên các trục tải giếng nghiêng mỏ than hầm lò",
+  "title_en": "Design of an automatically controlled pneumatic car stopper system to prevent runaway haulage vehicles on inclined-shaft hoists in underground coal mines",
+  "title_zh": "井工煤矿斜井提升系统防跑车气动自动控制挡车器系统设计",
+  "abstract_vi": "Trong các loại hình vận tải đất đá, thiết bị, vật liệu tại các giếng nghiêng mỏ hầm lò, hệ thống trục tải một đầu cáp kéo xe goòng trên nền lò (xe goòng – đường ray) đã có từ rất lâu và gắn liền với ngành khai thác mỏ. Đây là hình thức vận tải thông dụng, được sử dụng rộng rãi ở các mỏ hầm lò nhờ hiệu quả và những ưu điểm về công năng, chế độ vận hành, tính đồng bộ từ cửa giếng đến vận tải trong lò và hiệu quả kinh tế so với nhiều loại hình vận tải khác. Sự cố tuột móc, đứt cáp đối với các toa xe goòng khi đang chuyển động trên các đường lò nghiêng là đặc biệt nghiêm trọng và có thể xảy ra ở bất kỳ vị trí nào trên đường vận tải. Bài báo trình bày kết quả nghiên cứu thiết kế hệ thống cam hãm điều khiển tự động sử dụng khí nén nhằm chống phương tiện vận tải vượt tốc trên các trục tải giếng nghiêng mỏ than hầm lò thuộc Tập đoàn Công nghiệp Than – Khoáng sản Việt Nam (TKV).",
+  "abstract_en": "Among the systems used to haul rock, equipment and materials in the inclined shafts of underground mines, single-rope hoists pulling mine cars on rails have long been an integral part of mining. They are widely used because of their efficiency, functionality, operating mode, continuity from the shaft collar to in-mine haulage and cost advantages over many other haulage types. Coupling failures or rope breaks while cars are moving on inclined roadways are particularly serious and can occur anywhere along the haulage route. The paper presents the design of an automatically controlled pneumatic car stopper system to prevent runaway vehicles on inclined-shaft hoists in the underground coal mines of the Vietnam National Coal – Mineral Industries Holding (TKV).",
+  "abstract_zh": "在井工煤矿斜井运输岩石、设备和材料的各种方式中，单绳牵引矿车沿轨道运行的提升系统由来已久，是采矿业的重要组成部分。这种运输方式因效率高、功能完善、运行方式灵活、从井口到井下运输衔接顺畅以及相较其他运输方式更具经济性而在井工煤矿中广泛使用。矿车在倾斜巷道运行过程中发生脱钩、断绳事故后果尤为严重，且可能发生在运输线路的任何位置。本文介绍了用于越南煤炭矿产工业集团（TKV）井工煤矿斜井提升系统、防止运输车辆跑车的气动自动控制挡车器系统的设计研究成果。"
  }
 ]

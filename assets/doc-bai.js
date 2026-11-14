@@ -7,11 +7,24 @@
   var LG = (document.documentElement.lang || 'vi').slice(0, 2);
   var LC = { vi: 'vi-VN', en: 'en-US', zh: 'zh-CN' }[LG] || 'vi-VN';
   var T = {
-    vi: { prod: 'Nghe giới thiệu', play: 'Nghe bài viết', abs: 'Nghe tóm tắt', pause: 'Tạm dừng', resume: 'Đọc tiếp', stop: 'Dừng', nov: 'Thiết bị này chưa có giọng đọc tiếng Việt. Hãy thử Chrome/Edge hoặc điện thoại.' },
-    en: { prod: 'Listen to the introduction', play: 'Listen to this article', abs: 'Listen to abstract', pause: 'Pause', resume: 'Resume', stop: 'Stop', nov: 'No English voice is available on this device.' },
-    zh: { prod: '收听产品介绍', play: '收听本文', abs: '收听摘要', pause: '暂停', resume: '继续', stop: '停止', nov: '此设备没有中文语音。' }
+    vi: { prod: 'Nghe giới thiệu', play: 'Nghe bài viết', abs: 'Nghe tóm tắt', pause: 'Tạm dừng', resume: 'Đọc tiếp', stop: 'Dừng', speed: 'Tốc độ đọc', nov: 'Thiết bị này chưa có giọng đọc tiếng Việt. Hãy thử Chrome/Edge hoặc điện thoại.' },
+    en: { prod: 'Listen to the introduction', play: 'Listen to this article', abs: 'Listen to abstract', pause: 'Pause', resume: 'Resume', stop: 'Stop', speed: 'Reading speed', nov: 'No English voice is available on this device.' },
+    zh: { prod: '收听产品介绍', play: '收听本文', abs: '收听摘要', pause: '暂停', resume: '继续', stop: '停止', speed: '朗读速度', nov: '此设备没有中文语音。' }
   }[LG] || {};
   var ss = window.speechSynthesis || { getVoices: function () { return []; }, cancel: function () {}, speak: function () {} }, voice = null, audio = null;
+  var RK = 'vp_tts_rate_' + LG, RATE = LG === 'vi' ? 1.25 : 1; try { RATE = parseFloat(localStorage.getItem(RK)) || RATE; } catch (e) {}
+  var RATES = [1, 1.25, 1.5, 1.75, 2];
+  function mkRate() {
+    var sel = document.createElement('select'); sel.className = 'tts-rate'; sel.title = T.speed;
+    sel.innerHTML = RATES.map(function (r) { return '<option value="' + r + '"' + (r === RATE ? ' selected' : '') + '>' + String(r).replace('.', LG === 'vi' ? ',' : '.') + '×</option>'; }).join('');
+    sel.onchange = function () {
+      RATE = parseFloat(sel.value); try { localStorage.setItem(RK, RATE); } catch (e) {}
+      [].forEach.call(document.querySelectorAll('.tts-rate'), function (x) { x.value = sel.value; });
+      if (audio) audio.playbackRate = RATE;
+      if (cur && cur.state === 'play' && voice) { ss.cancel(); }  // câu hiện tại đọc lại với tốc độ mới
+    };
+    return sel;
+  }
   var TL = { vi: 'vi', en: 'en', zh: 'zh-CN' }[LG] || 'vi';
   function pickVoice() {
     var vs = ss.getVoices().filter(function (v) { return (v.lang || '').replace('_', '-').toLowerCase().indexOf(LC.slice(0, 2).toLowerCase()) === 0; });
@@ -36,7 +49,7 @@
   function online(text, done, fail) {
     if (!document.querySelector('meta[name=referrer]')) { var m = document.createElement('meta'); m.name = 'referrer'; m.content = 'no-referrer'; document.head.appendChild(m); }
     var a = new Audio('https://translate.googleapis.com/translate_tts?ie=UTF-8&client=gtx&tl=' + TL + '&q=' + encodeURIComponent(text));
-    a.onended = done; a.onerror = fail; audio = a;
+    a.onended = done; a.onerror = fail; audio = a; a.playbackRate = RATE; a.defaultPlaybackRate = RATE;
     var pr = a.play(); if (pr && pr.catch) pr.catch(fail);
   }
   function stopAudio() { if (audio) { audio.onended = audio.onerror = null; try { audio.pause(); } catch (e) {} audio = null; } }
@@ -51,9 +64,9 @@
       online(cur.q[cur.i], function () { if (cur === me) { me.i++; speakNext(); } }, function () { if (cur === me) { me.fail = (me.fail || 0) + 1; if (me.fail > 2) { me.nov = true; var c2 = cur; cur = null; c2.state = 'idle'; c2.ui(c2); } else { me.i++; speakNext(); } } });
       return;
     }
-    var u = new SpeechSynthesisUtterance(cur.q[cur.i]); u.lang = LC; u.voice = voice; u.rate = 1;
+    var u = new SpeechSynthesisUtterance(cur.q[cur.i]); u.lang = LC; u.voice = voice; u.rate = RATE;
     u.onend = function () { if (cur === me) { me.i++; speakNext(); } };
-    u.onerror = function (e) { if (cur === me && e.error !== 'interrupted' && e.error !== 'canceled') { me.i++; speakNext(); } };
+    u.onerror = function (e) { if (cur !== me) return; if (e.error !== 'interrupted' && e.error !== 'canceled') { me.i++; speakNext(); } else if (me.state === 'play') { setTimeout(speakNext, 30); } };
     ss.speak(u);
   }
   function makePlayer(getText, ui) {
@@ -71,7 +84,7 @@
   }
 
   var css = '.tts{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 16px}.tts button,.tts1{display:inline-flex;align-items:center;gap:6px;border:1px solid #1580BF;background:#fff;color:#0E2F5A;border-radius:20px;padding:8px 14px;font:600 14px/1 inherit;font-family:inherit;cursor:pointer}'
-    + '.tts button.on,.tts1.on{background:#1580BF;color:#fff}.tts button[hidden]{display:none}.tts small,.tts1+small{color:#6B7684;font-size:13px}.tts1{padding:5px 11px;font-size:13px;margin:0 8px 0 0;vertical-align:middle}';
+    + '.tts button.on,.tts1.on{background:#1580BF;color:#fff}.tts button[hidden]{display:none}.tts small,.tts1+small{color:#6B7684;font-size:13px}.tts1{padding:5px 11px;font-size:13px;margin:0 8px 0 0;vertical-align:middle}.tts-rate[hidden]{display:none}.tts-rate{border:1px solid #1580BF;border-radius:20px;padding:6px 8px;font:600 13px inherit;font-family:inherit;color:#0E2F5A;background:#fff;cursor:pointer;margin-right:8px;vertical-align:middle}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   /* bài tin tức, hoặc trang sản phẩm có phần Giới thiệu */
@@ -83,6 +96,7 @@
     bar.innerHTML = '<button type="button" data-a="play">🔊 <span>' + LBL + '</span></button><button type="button" data-a="stop" hidden>⏹ ' + T.stop + '</button><small></small>';
     if (art) h1.parentNode.insertBefore(bar, h1.nextSibling); else { var hh = about.querySelector('h2'); hh.parentNode.insertBefore(bar, hh.nextSibling); }
     var bP = bar.querySelector('[data-a=play]'), bS = bar.querySelector('[data-a=stop]'), note = bar.querySelector('small');
+    bar.insertBefore(mkRate(), note);
     var pa = makePlayer(function () {
       var c = box.cloneNode(true);
       [].forEach.call(c.querySelectorAll('.tts,figure,.btns,iframe,video,script,style,.tag,h2'), function (x) { x.remove(); });
@@ -103,9 +117,9 @@
     var abs = li.querySelector('details p'), dl = li.querySelector('.dl'); if (!abs || !dl) return;
     var b = document.createElement('button'); b.type = 'button'; b.className = 'tts1'; b.innerHTML = '🔊 <span>' + T.abs + '</span>';
     var nt = document.createElement('small');
-    dl.insertBefore(nt, dl.firstChild); dl.insertBefore(b, dl.firstChild);
+    var rs = mkRate(); rs.hidden = true; dl.insertBefore(nt, dl.firstChild); dl.insertBefore(rs, dl.firstChild); dl.insertBefore(b, dl.firstChild);
     var pl = makePlayer(function () { var h = li.querySelector('h4'); return [h ? h.textContent : '', abs.textContent]; }, function (p) {
-      b.classList.toggle('on', p.state === 'play');
+      b.classList.toggle('on', p.state === 'play'); rs.hidden = p.state === 'idle';
       b.querySelector('span').textContent = p.state === 'play' ? T.pause : p.state === 'pause' ? T.resume : T.abs;
       nt.textContent = p.nov ? ' ' + T.nov + ' ' : '';
       if (p.state === 'play') { var d = li.querySelector('details'); if (d) d.open = true; }
