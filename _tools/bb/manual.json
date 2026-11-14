@@ -4957,5 +4957,425 @@
    "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
    "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
   }
+ },
+ "code:VP-CH-01": {
+  "spec": {
+   "vi": [
+    [
+     "Hệ thống gồm",
+     "Cam hãm khí nén, bộ điều khiển trung tâm phòng nổ, bộ điều khiển điện – khí nén tại chỗ, cảm biến hồng ngoại phòng nổ, hộp đấu cáp tín hiệu phòng nổ"
+    ],
+    [
+     "Ngưỡng phát hiện vượt tốc",
+     "Cài đặt được; thử nghiệm ở 1,5 m/s (chế độ kiểm tra) và 3,75 m/s (chế độ vận hành)"
+    ],
+    [
+     "Khi vượt tốc",
+     "Tự động dựng guốc hãm, cắt điện động cơ tời, bật đèn cảnh báo"
+    ],
+    [
+     "Chế độ",
+     "Thủ công (nút NÂNG/HẠ GUỐC) và tự động"
+    ],
+    [
+     "Ứng dụng",
+     "Chống phương tiện vận tải vượt tốc trên trục tải giếng nghiêng mỏ than hầm lò"
+    ],
+    [
+     "Xuất xứ",
+     "Việt Nam, chế tạo theo thiết kế"
+    ]
+   ],
+   "en": [
+    [
+     "System",
+     "Pneumatic car stoppers, explosion-proof central controller, local electro-pneumatic controllers, explosion-proof infrared sensors, explosion-proof signal junction boxes"
+    ],
+    [
+     "Overspeed threshold",
+     "Adjustable; tested at 1.5 m/s (test mode) and 3.75 m/s (operating mode)"
+    ],
+    [
+     "On overspeed",
+     "Brake shoes rise automatically, winch motor power is cut, warning lamps switch on"
+    ],
+    [
+     "Modes",
+     "Manual (RAISE/LOWER buttons) and automatic"
+    ],
+    [
+     "Application",
+     "Preventing vehicle overspeed on inclined-shaft haulage in underground coal mines"
+    ],
+    [
+     "Origin",
+     "Vietnam, built to design"
+    ]
+   ],
+   "zh": [
+    [
+     "系统组成",
+     "气动挡车器、防爆中央控制箱、就地电-气控制箱、防爆红外传感器、防爆信号接线盒"
+    ],
+    [
+     "超速检测阈值",
+     "可设定；试验值 1.5 m/s（检测模式）和 3.75 m/s（运行模式）"
+    ],
+    [
+     "超速时",
+     "自动升起制动靴，切断绞车电机电源，点亮警示灯"
+    ],
+    [
+     "模式",
+     "手动（升/降按钮）及自动"
+    ],
+    [
+     "用途",
+     "防止井下煤矿斜井提升运输车辆超速跑车"
+    ],
+    [
+     "产地",
+     "越南，按设计制造"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo biên bản thử nghiệm công nghiệp hệ thống cam hãm (2024). Vân Phong xác nhận lại khi báo giá.",
+   "en": "Data from the 2024 industrial test record of the car stopper system. Van Phong confirms them in the quotation.",
+   "zh": "参数来自 2024 年挡车器系统工业试验记录，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-CH-02": {
+  "spec": {
+   "vi": [
+    [
+     "Hệ thống gồm",
+     "Cam hãm khí nén, bộ điều khiển trung tâm phòng nổ, bộ điều khiển điện – khí nén tại chỗ, cảm biến hồng ngoại phòng nổ, hộp đấu cáp tín hiệu phòng nổ"
+    ],
+    [
+     "Ngưỡng phát hiện vượt tốc",
+     "Cài đặt được; thử nghiệm ở 1,5 m/s (chế độ kiểm tra) và 3,75 m/s (chế độ vận hành)"
+    ],
+    [
+     "Khi vượt tốc",
+     "Tự động dựng guốc hãm, cắt điện động cơ tời, bật đèn cảnh báo"
+    ],
+    [
+     "Chế độ",
+     "Thủ công (nút NÂNG/HẠ GUỐC) và tự động"
+    ],
+    [
+     "Ứng dụng",
+     "Chống phương tiện vận tải vượt tốc trên trục tải giếng nghiêng mỏ than hầm lò"
+    ],
+    [
+     "Xuất xứ",
+     "Việt Nam, chế tạo theo thiết kế"
+    ]
+   ],
+   "en": [
+    [
+     "System",
+     "Pneumatic car stoppers, explosion-proof central controller, local electro-pneumatic controllers, explosion-proof infrared sensors, explosion-proof signal junction boxes"
+    ],
+    [
+     "Overspeed threshold",
+     "Adjustable; tested at 1.5 m/s (test mode) and 3.75 m/s (operating mode)"
+    ],
+    [
+     "On overspeed",
+     "Brake shoes rise automatically, winch motor power is cut, warning lamps switch on"
+    ],
+    [
+     "Modes",
+     "Manual (RAISE/LOWER buttons) and automatic"
+    ],
+    [
+     "Application",
+     "Preventing vehicle overspeed on inclined-shaft haulage in underground coal mines"
+    ],
+    [
+     "Origin",
+     "Vietnam, built to design"
+    ]
+   ],
+   "zh": [
+    [
+     "系统组成",
+     "气动挡车器、防爆中央控制箱、就地电-气控制箱、防爆红外传感器、防爆信号接线盒"
+    ],
+    [
+     "超速检测阈值",
+     "可设定；试验值 1.5 m/s（检测模式）和 3.75 m/s（运行模式）"
+    ],
+    [
+     "超速时",
+     "自动升起制动靴，切断绞车电机电源，点亮警示灯"
+    ],
+    [
+     "模式",
+     "手动（升/降按钮）及自动"
+    ],
+    [
+     "用途",
+     "防止井下煤矿斜井提升运输车辆超速跑车"
+    ],
+    [
+     "产地",
+     "越南，按设计制造"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo biên bản thử nghiệm công nghiệp hệ thống cam hãm (2024). Vân Phong xác nhận lại khi báo giá.",
+   "en": "Data from the 2024 industrial test record of the car stopper system. Van Phong confirms them in the quotation.",
+   "zh": "参数来自 2024 年挡车器系统工业试验记录，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-CH-03": {
+  "spec": {
+   "vi": [
+    [
+     "Hệ thống gồm",
+     "Cam hãm khí nén, bộ điều khiển trung tâm phòng nổ, bộ điều khiển điện – khí nén tại chỗ, cảm biến hồng ngoại phòng nổ, hộp đấu cáp tín hiệu phòng nổ"
+    ],
+    [
+     "Ngưỡng phát hiện vượt tốc",
+     "Cài đặt được; thử nghiệm ở 1,5 m/s (chế độ kiểm tra) và 3,75 m/s (chế độ vận hành)"
+    ],
+    [
+     "Khi vượt tốc",
+     "Tự động dựng guốc hãm, cắt điện động cơ tời, bật đèn cảnh báo"
+    ],
+    [
+     "Chế độ",
+     "Thủ công (nút NÂNG/HẠ GUỐC) và tự động"
+    ],
+    [
+     "Ứng dụng",
+     "Chống phương tiện vận tải vượt tốc trên trục tải giếng nghiêng mỏ than hầm lò"
+    ],
+    [
+     "Xuất xứ",
+     "Việt Nam, chế tạo theo thiết kế"
+    ]
+   ],
+   "en": [
+    [
+     "System",
+     "Pneumatic car stoppers, explosion-proof central controller, local electro-pneumatic controllers, explosion-proof infrared sensors, explosion-proof signal junction boxes"
+    ],
+    [
+     "Overspeed threshold",
+     "Adjustable; tested at 1.5 m/s (test mode) and 3.75 m/s (operating mode)"
+    ],
+    [
+     "On overspeed",
+     "Brake shoes rise automatically, winch motor power is cut, warning lamps switch on"
+    ],
+    [
+     "Modes",
+     "Manual (RAISE/LOWER buttons) and automatic"
+    ],
+    [
+     "Application",
+     "Preventing vehicle overspeed on inclined-shaft haulage in underground coal mines"
+    ],
+    [
+     "Origin",
+     "Vietnam, built to design"
+    ]
+   ],
+   "zh": [
+    [
+     "系统组成",
+     "气动挡车器、防爆中央控制箱、就地电-气控制箱、防爆红外传感器、防爆信号接线盒"
+    ],
+    [
+     "超速检测阈值",
+     "可设定；试验值 1.5 m/s（检测模式）和 3.75 m/s（运行模式）"
+    ],
+    [
+     "超速时",
+     "自动升起制动靴，切断绞车电机电源，点亮警示灯"
+    ],
+    [
+     "模式",
+     "手动（升/降按钮）及自动"
+    ],
+    [
+     "用途",
+     "防止井下煤矿斜井提升运输车辆超速跑车"
+    ],
+    [
+     "产地",
+     "越南，按设计制造"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo biên bản thử nghiệm công nghiệp hệ thống cam hãm (2024). Vân Phong xác nhận lại khi báo giá.",
+   "en": "Data from the 2024 industrial test record of the car stopper system. Van Phong confirms them in the quotation.",
+   "zh": "参数来自 2024 年挡车器系统工业试验记录，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:CMJ2-17": {
+  "spec": {
+   "vi": [
+    [
+     "Hãng sản xuất",
+     "Huatai (华泰矿冶), Trung Quốc"
+    ],
+    [
+     "Kiểu",
+     "Xe khoan đào lò bánh xích hai cần, toàn thủy lực"
+    ],
+    [
+     "Số cần khoan",
+     "2"
+    ],
+    [
+     "Diện tích gương tối đa",
+     "27 m²"
+    ],
+    [
+     "Vùng làm việc (rộng × cao)",
+     "5,7 × 5,2 m đến 2,8 × 2,8 m"
+    ],
+    [
+     "Chiều cao làm việc tối đa",
+     "5.700 mm"
+    ],
+    [
+     "Đường kính lỗ khoan",
+     "Φ43 mm"
+    ],
+    [
+     "Chiều sâu lỗ khoan",
+     "3.000 mm"
+    ],
+    [
+     "Bán kính quay vòng tối thiểu",
+     "6.000 mm"
+    ],
+    [
+     "Kích thước di chuyển (D×R×C)",
+     "9.750 × 1.650 × 2.370 mm"
+    ],
+    [
+     "Trọng lượng",
+     "13.100 kg"
+    ],
+    [
+     "Tính năng",
+     "Hai cần khoan đồng thời; tự động lùi và chống kẹt choòng"
+    ]
+   ],
+   "en": [
+    [
+     "Manufacturer",
+     "Huatai (华泰矿冶), China"
+    ],
+    [
+     "Type",
+     "Two-boom crawler drilling jumbo, full hydraulic"
+    ],
+    [
+     "Booms",
+     "2"
+    ],
+    [
+     "Max. face area",
+     "27 m²"
+    ],
+    [
+     "Working range (W × H)",
+     "5.7 × 5.2 m to 2.8 × 2.8 m"
+    ],
+    [
+     "Max. working height",
+     "5,700 mm"
+    ],
+    [
+     "Hole diameter",
+     "Φ43 mm"
+    ],
+    [
+     "Hole depth",
+     "3,000 mm"
+    ],
+    [
+     "Min. turning radius",
+     "6,000 mm"
+    ],
+    [
+     "Tramming size (L×W×H)",
+     "9,750 × 1,650 × 2,370 mm"
+    ],
+    [
+     "Weight",
+     "13,100 kg"
+    ],
+    [
+     "Features",
+     "Both booms drill simultaneously; automatic return and anti-jamming"
+    ]
+   ],
+   "zh": [
+    [
+     "制造商",
+     "华泰矿冶（中国）"
+    ],
+    [
+     "型式",
+     "全液压履带式双臂掘进钻车"
+    ],
+    [
+     "钻臂数量",
+     "2"
+    ],
+    [
+     "最大作业面积",
+     "27 m²"
+    ],
+    [
+     "作业范围（宽×高）",
+     "5.7 × 5.2 m 至 2.8 × 2.8 m"
+    ],
+    [
+     "最大作业高度",
+     "5700 mm"
+    ],
+    [
+     "钻孔直径",
+     "Φ43 mm"
+    ],
+    [
+     "钻孔深度",
+     "3000 mm"
+    ],
+    [
+     "最小转弯半径",
+     "6000 mm"
+    ],
+    [
+     "外形尺寸（长×宽×高）",
+     "9750 × 1650 × 2370 mm"
+    ],
+    [
+     "整机重量",
+     "13100 kg"
+    ],
+    [
+     "特点",
+     "双臂同时凿岩；自动返回及防卡钎"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo tài liệu công bố của hãng và nhà phân phối. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Data from manufacturer and distributor publications. Van Phong confirms them in the quotation.",
+   "zh": "参数来自厂家及经销商公开资料，以 Van Phong 报价确认为准。"
+  }
  }
 }
