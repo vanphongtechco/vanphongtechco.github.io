@@ -2122,7 +2122,7 @@
     ],
     [
      "Loại cáp",
-     "MYP (không phải loại MYQ 0,3/0,5 kV cùng tiết diện)"
+     "MYP, dùng cho mỏ hầm lò (loại MYQ 0,3/0,5 kV cùng tiết diện không dùng được trong hầm lò)"
     ]
    ],
    "en": [
@@ -2140,7 +2140,7 @@
     ],
     [
      "Cable type",
-     "MYP (not the MYQ 0.3/0.5 kV type of the same size)"
+     "MYP, for underground mines (the MYQ 0.3/0.5 kV type of the same size is not suitable underground)"
     ]
    ],
    "zh": [
@@ -2158,7 +2158,7 @@
     ],
     [
      "电缆型号",
-     "MYP 型（非同截面 MYQ 0.3/0.5 kV 型）"
+     "MYP 型，适用于井下煤矿（同截面 MYQ 0.3/0.5 kV 型不适用于井下）"
     ]
    ]
   },
