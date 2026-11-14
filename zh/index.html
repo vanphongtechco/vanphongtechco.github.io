@@ -504,7 +504,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
           <a href="#san-pham" data-cat="yt"><span class="th"><img src="/anh-san-pham/bk-6310.jpg" alt="" loading="lazy"></span><b>医疗设备</b><span>检验分析、病床、灭菌</span></a>
           <a href="#san-pham" data-cat="tn"><span class="th"><img src="/anh-san-pham/bsc-1300iia2-x.jpg" alt="" loading="lazy"></span><b>实验室设备</b><span>安全柜、干燥箱、马弗炉、天平、离心机、耗材</span></a>
           <a href="#san-pham" data-cat="dt"><span class="th" data-i="plc"></span><b>电气、电子与自动化</b><span>PLC、变频器、传感器、测量仪表</span></a>
-          <a href="#san-pham" data-cat="th"><span class="th" data-i="server"></span><b>计算机与信息技术</b><span>计算机、服务器、网络、软件</span></a>
+          <a href="#san-pham" data-cat="th"><span class="th" data-i="server"></span><b>信息技术</b><span>服务器、工作站、配件、网络、软件</span></a>
         </div>
         <p style="margin:26px 0 0"><a class="btn cta" href="#san-pham">查看产品</a></p>
       </div>
@@ -886,7 +886,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div>
 <button class="to-top" id="toTop" aria-label="返回顶部"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="文件查看"><button class="lb-close" id="lbClose" aria-label="关闭">×</button><p class="lb-note" id="lbNote">越文原件，部分个人信息已隐去。</p><div id="lbImgs"></div></div>
 
-<script src="/data/products-zh.js?v=ca85602b"></script>
+<script src="/data/products-zh.js?v=277c6083"></script>
 <script>
 const pic=p=>p.img?'<img src="'+(/^https?:/.test(p.img)?p.img:'/anh-san-pham/'+p.img+'.jpg')+'" alt="'+esc(p.n)+'" loading="lazy">':ICONS[p.i];
 const ICONS = {
@@ -916,7 +916,7 @@ const CATS = [
   {id:'yt', name:'医疗设备', subs:['检验分析设备','病床、医用推车','灭菌设备','其他医疗设备']},
   {id:'tn', name:'实验室设备', subs:['生物安全柜、超净工作台、通风橱','干燥箱、培养箱、马弗炉','天平、离心机','冷冻干燥机、搅拌器','实验室器具、仪表及耗材','低温冷藏与样品保存设备','实验室分析仪器','光学仪器','分子生物学与试剂','病理设备']},
   {id:'dt', name:'电气电子与自动化', subs:['PLC、控制器','变频器、软启动器','传感器、测量仪器']},
-  {id:'th', name:'计算机与信息技术', subs:['计算机、服务器','网络设备、摄像机','正版软件']}
+  {id:'th', name:'信息技术', subs:['计算机、服务器','网络设备、摄像机','正版软件','配件（内存、硬盘等）']}
 ];
 const GIA_L='参考价：', GIA_V='（不含增值税）', GIA_C='越南盾', GIA_LOC='en-US';
 const SLUGS = window.__S, PRODUCTS = window.__P;
@@ -958,7 +958,7 @@ document.querySelectorAll('.dev[data-i],.th[data-i]').forEach(d => d.innerHTML =
 
 /* catalogue */
 let cur='all', sub=null, query='', page=1; const PER=12; const opened=new Set();
-function scrollToCat(){ $('san-pham').scrollIntoView({behavior:reduce?'auto':'smooth'}); }
+function scrollToCat(){ requestAnimationFrame(()=>{const t=$('catTitle').hidden?$('san-pham'):$('catTitle'),hd=document.querySelector('header'),off=(hd&&getComputedStyle(hd).position!=='static'?hd.offsetHeight:0)+12;scrollTo({top:Math.max(0,t.getBoundingClientRect().top+scrollY-off),behavior:(reduce||innerWidth<=900)?'instant':'smooth'})}); }
 function renderMenus(){
   $('mega').innerHTML=CATS.map(c=>'<div><h4><button type="button" data-cat="'+c.id+'">'+c.name+'</button></h4><ul>'+c.subs.map((x,k)=>'<li><button type="button" data-cat="'+c.id+'" data-sub="'+k+'">'+x+'</button></li>').join('')+'</ul></div>').join('');
   $('footCats').innerHTML=CATS.map(c=>'<li><a href="#san-pham" data-cat="'+c.id+'">'+c.name+'</a></li>').join('');
