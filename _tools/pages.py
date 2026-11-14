@@ -31,7 +31,7 @@ toks = lambda c: {norm(x) for x in re.split(r"[/,]|\s+-\s+", c or "") if len(nor
 
 def brand(p):
     s = (p.get("n", "") + " " + p.get("d", "")).upper()
-    for b in ("DRAWELL", "BIOBASE", "DAIHAN", "BOXUN", "GONGBEI"):
+    for b in ("DRAWELL", "BIOBASE", "DAIHAN", "BOXUN", "GONGBEI", "TAILIN", "TRANSCEND", "KINGMAX"):
         if b in s: return b
     return ""
 
@@ -88,6 +88,16 @@ BRAND_INFO = {
    zh="重庆德瑞沃仪器（中国重庆）生产分析与实验室仪器：光谱、色谱、元素分析、XRF、旋转蒸发仪、离心机、培养箱、灭菌器等。Van Phong 是 Drawell 在越南的官方授权经销商。"),
 }
 
+BRAND_TW = {"TRANSCEND", "KINGMAX"}
+ORIG_TW = {"vi": "Thương hiệu Đài Loan", "en": "Taiwanese brand", "zh": "台湾品牌"}
+GIA_L = {"vi": ("Giá tham khảo", "đ", "chưa gồm VAT"), "en": ("Reference price", "VND", "excl. VAT"), "zh": ("参考价", "越南盾", "不含增值税")}
+def gia_html(p, lang, cls="gia"):
+    g = p.get("gia")
+    if not g: return ""
+    lab, cur, vat = GIA_L[lang]
+    num = f"{int(g):,}".replace(",", "." if lang == "vi" else ",")
+    return f'<p class="{cls}">{lab}: <b>{num} {cur}</b> <span>({vat})</span></p>'
+
 def img_src(p):
     im = p.get("img") or ""
     if not im: return ""
@@ -117,6 +127,7 @@ table.spec tr:nth-child(odd) td{background:#F7F9FB}table.spec td:first-child{fon
 .spec-wrap{overflow-x:auto}
 video.pv{width:100%;max-height:640px;background:#000;border-radius:8px;display:block}
 .two{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start;margin-bottom:34px}
+.gia{margin:6px 0 12px;font-size:15px;color:var(--navy)}.gia b{color:#D35400;font-size:19px}.gia span{color:var(--muted);font-size:13px}.cg{margin:4px 0 0;font-size:12.5px;color:var(--muted)}.cg b{color:#D35400}.cg span{display:none}
 .qbox{border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;background:#fff;box-shadow:0 6px 18px rgba(14,47,90,.06)}
 .qbox h2{margin:0 0 10px;font-size:19px;color:var(--navy)}.qbox label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin:8px 0 4px}
 .qbox input,.qbox textarea{width:100%;font:inherit;font-size:14px;padding:9px 11px;border:1px solid #C6D0DA;border-radius:6px}.qbox textarea{min-height:76px}
@@ -175,7 +186,7 @@ fetch(window.VQ_API,{{method:'POST',body:JSON.stringify({{action:'submitQuote',t
 def card(lang, q, slug, cats):
     t = L[lang]; src = img_src(q); c = cats.get(q["c"]); sub = c["subs"][q["s"]] if c else ""
     im = f'<img src="{e(src)}" alt="{e(q["n"])}" loading="lazy">' if src else ""
-    return f'<a href="/{LANGS[lang]}san-pham/{slug}/"><span class="t">{im}</span><b>{e(q["n"])}</b><small>{e(q.get("code") or sub)}</small></a>'
+    return f'<a href="/{LANGS[lang]}san-pham/{slug}/"><span class="t">{im}</span><b>{e(q["n"])}</b><small>{e(q.get("code") or sub)}</small>{gia_html(q, lang, "cg")}</a>'
 
 def quote_box(lang, p, adv, slug="", head_txt=None):
     t = L[lang]; model = p.get("code") or p["n"]
@@ -211,7 +222,7 @@ def page(lang, p, cat, slug, related, spec, cats):
     if p.get("vid"):
         poster = p["vid"][:-4] + ".jpg"
         vid_html = f'<h2 class="h">{t["video"]}</h2><video id="video" class="pv" src="{e(p["vid"])}" poster="{e(poster)}" controls playsinline preload="none"></video>'
-    man = MANUAL.get(p.get("k") or "", {})
+    man = MANUAL.get(p.get("k") or "") or MANUAL.get("code:" + (p.get("code") or ""), {})
     about_html = "".join(f"<li>{e(x[2:])}</li>" if x.startswith("• ") else f"<p>{e(x)}</p>" for x in man.get("about", {}).get(lang, []))
     about_html = re.sub(r"((?:<li>.*?</li>)+)", r'<ul class="chk">\1</ul>', about_html)
     if about_html: about_html = f'<div class="about"><h2 class="h">{t["intro"]}</h2>' + about_html + f'</div><script src="/assets/doc-bai.js?v={_TTSV}" defer></script>'
@@ -237,8 +248,8 @@ def page(lang, p, cat, slug, related, spec, cats):
 <div>
 <span class="tag">{e(sub)}</span>
 <h1>{e(p['n'])}</h1>
-<dl>{f"<dt>{t['code']}</dt><dd>{e(model)}</dd>" if model else ''}{f"<dt>{t['brand']}</dt><dd>{e(b.title() if b != 'BIOBASE' else b)} · {t['origin']}</dd>" if b and b != 'GONGBEI' else ''}<dt>{t['cat']}</dt><dd>{e(cat['name'] if cat else '')} – {e(sub)}</dd></dl>
-<p class="desc">{e(p.get('d'))}</p>
+<dl>{f"<dt>{t['code']}</dt><dd>{e(model)}</dd>" if model else ''}{f"<dt>{t['brand']}</dt><dd>{e(b.title() if b != 'BIOBASE' else b)} · {ORIG_TW[lang] if b in BRAND_TW else t['origin']}</dd>" if b and b != 'GONGBEI' else ''}<dt>{t['cat']}</dt><dd>{e(cat['name'] if cat else '')} – {e(sub)}</dd></dl>
+<p class="desc">{e(p.get('d'))}</p>{gia_html(p, lang)}
 {('<div class="btns">' + ''.join(btns) + '</div>') if btns else ''}
 <div class="btns"><a class="btn cta" href="#bao-gia">{t['getq']} {e(model or p['n'][:40])}</a><a class="btn blue" href="tel:{h[1]}">{t['call']} {h[0]}</a></div>
 {advbox}

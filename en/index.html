@@ -272,6 +272,7 @@ section{padding:70px 0}
 .card .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
 .card h4 a:hover{color:var(--blue)}
 .card a.dsc{display:block;color:inherit}.card a.dsc:hover p{color:var(--fg)}
+.card .gia{margin:0 0 8px;font-size:13px;color:#5F6B77}.card .gia b{color:#D35400;font-size:15px}.card .gia small{font-size:12px}
 .card .foot a.more{color:var(--cta);font-weight:700}
 .card a.thumb{display:block}
 .card h4{margin:0;font-size:16px;font-weight:600}
@@ -879,7 +880,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div>
 <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Document viewer"><button class="lb-close" id="lbClose" aria-label="Close">×</button><p class="lb-note" id="lbNote">Vietnamese original. Some personal data has been hidden.</p><div id="lbImgs"></div></div>
 
-<script src="/data/products-en.js?v=b33e8bec"></script>
+<script src="/data/products-en.js?v=32868609"></script>
 <script>
 const pic=p=>p.img?'<img src="'+(/^https?:/.test(p.img)?p.img:'/anh-san-pham/'+p.img+'.jpg')+'" alt="'+esc(p.n)+'" loading="lazy">':ICONS[p.i];
 const ICONS = {
@@ -911,6 +912,7 @@ const CATS = [
   {id:'dt', name:'Electrical, Electronics & Automation', subs:['PLCs, controllers','Inverters, soft starters','Sensors, measuring instruments']},
   {id:'th', name:'Computers & IT', subs:['Computers, servers','Network equipment, cameras','Licensed software']}
 ];
+const GIA_L='Reference price:', GIA_V='(excl. VAT)', GIA_C='VND', GIA_LOC='en-US';
 const SLUGS = window.__S, PRODUCTS = window.__P;
 const $ = id => document.getElementById(id);
 const esc = t => String(t).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
@@ -972,7 +974,7 @@ function renderGrid(){
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'Products');$('catTitle').hidden=!sn&&!cat;
   $('catCount').textContent=list.length+' products'+(query.trim()?' matching “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);const u='san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/';return '<article class="card"><a class="thumb'+(p.img?' ph':'')+'" href="'+u+'">'+pic(p)+'</a><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4><a href="'+u+'">'+esc(p.n)+'</a></h4><a class="dsc" href="'+u+'"><p>'+esc(p.d)+'</p></a><div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-en.pdf" target="_blank" rel="noopener">Application paper (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Drawing (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 / +84 986 818 013 for advice.</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);const u='san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/';return '<article class="card"><a class="thumb'+(p.img?' ph':'')+'" href="'+u+'">'+pic(p)+'</a><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4><a href="'+u+'">'+esc(p.n)+'</a></h4><a class="dsc" href="'+u+'"><p>'+esc(p.d)+'</p></a>'+(p.gia?'<p class="gia">'+GIA_L+' <b>'+p.gia.toLocaleString(GIA_LOC)+' '+GIA_C+'</b> <small>'+GIA_V+'</small></p>':'')+'<div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/en/'+p.pdf+'.pdf" target="_blank" rel="noopener">Catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'-en.pdf" target="_blank" rel="noopener">Application paper (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Drawing (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video</a>':'')+'<a href="#lien-he">Request a quote →</a></div></div></article>'}).join(''):'<div class="empty">No matching products. Call +84 899 990 683 / +84 986 818 013 for advice.</div>';
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Previous page">‹</button>';
   const ks=[];for(let k=1;k<=pages;k++)if(k===1||k===pages||Math.abs(k-page)<=2)ks.push(k);

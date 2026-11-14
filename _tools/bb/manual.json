@@ -848,5 +848,289 @@
     "• DR1110 系列提供 32T/盒和 64T/盒规格，适配 BIOBASE BK-HS32 和 BK-AutoHS96 核酸提取仪。"
    ]
   }
+ },
+ "code:JM3200HLE-16G": {
+  "spec": {
+   "vi": [
+    [
+     "Hãng sản xuất",
+     "Transcend (Đài Loan) – dòng JetRam"
+    ],
+    [
+     "Model",
+     "JM3200HLE-16G"
+    ],
+    [
+     "Loại RAM",
+     "DDR4 Unbuffered Long-DIMM (U-DIMM), cho máy tính để bàn"
+    ],
+    [
+     "Tốc độ",
+     "3200 MT/s (PC4-25600), băng thông tới 25,6 GB/s"
+    ],
+    [
+     "Dung lượng",
+     "16GB (1 × 16GB)"
+    ],
+    [
+     "CAS Latency",
+     "CL22"
+    ],
+    [
+     "Rank × Org.",
+     "1Rx8, chip 2Gx8"
+    ],
+    [
+     "Điện áp",
+     "1,2 V"
+    ],
+    [
+     "Số chân",
+     "288 chân"
+    ],
+    [
+     "Chiều cao PCB",
+     "1,23 inch"
+    ],
+    [
+     "Nhiệt độ làm việc",
+     "0 °C ~ 85 °C"
+    ]
+   ],
+   "en": [
+    [
+     "Manufacturer",
+     "Transcend (Taiwan) – JetRam series"
+    ],
+    [
+     "Model",
+     "JM3200HLE-16G"
+    ],
+    [
+     "RAM type",
+     "DDR4 Unbuffered Long-DIMM (U-DIMM), desktop"
+    ],
+    [
+     "Speed",
+     "3200 MT/s (PC4-25600), up to 25.6 GB/s"
+    ],
+    [
+     "Capacity",
+     "16GB (1 × 16GB)"
+    ],
+    [
+     "CAS latency",
+     "CL22"
+    ],
+    [
+     "Rank × Org.",
+     "1Rx8, 2Gx8 chips"
+    ],
+    [
+     "Voltage",
+     "1.2 V"
+    ],
+    [
+     "Pin count",
+     "288-pin"
+    ],
+    [
+     "PCB height",
+     "1.23 inch"
+    ],
+    [
+     "Operating temperature",
+     "0 °C ~ 85 °C"
+    ]
+   ],
+   "zh": [
+    [
+     "制造商",
+     "Transcend（台湾）– JetRam 系列"
+    ],
+    [
+     "型号",
+     "JM3200HLE-16G"
+    ],
+    [
+     "内存类型",
+     "DDR4 无缓冲长 DIMM（U-DIMM），台式机"
+    ],
+    [
+     "速度",
+     "3200 MT/s（PC4-25600），带宽最高 25.6 GB/s"
+    ],
+    [
+     "容量",
+     "16GB（1 × 16GB）"
+    ],
+    [
+     "CAS 延迟",
+     "CL22"
+    ],
+    [
+     "Rank × Org.",
+     "1Rx8，2Gx8 颗粒"
+    ],
+    [
+     "电压",
+     "1.2 V"
+    ],
+    [
+     "针脚",
+     "288 针"
+    ],
+    [
+     "PCB 高度",
+     "1.23 英寸"
+    ],
+    [
+     "工作温度",
+     "0 °C ~ 85 °C"
+    ]
+   ]
+  }
+ },
+ "code:KM-LD54-6000-16GSHZ38": {
+  "spec": {
+   "vi": [
+    [
+     "Hãng sản xuất",
+     "Kingmax (Đài Loan) – dòng Horizon"
+    ],
+    [
+     "Model",
+     "KM-LD54-6000-16GSHZ38"
+    ],
+    [
+     "Loại RAM",
+     "DDR5 U-DIMM, cho máy tính để bàn"
+    ],
+    [
+     "Tốc độ",
+     "6000 MHz (băng thông 48 GB/s)"
+    ],
+    [
+     "Dung lượng",
+     "16GB (1 × 16GB)"
+    ],
+    [
+     "Điện áp",
+     "1,25 V"
+    ],
+    [
+     "Số chân",
+     "288 chân"
+    ],
+    [
+     "Tản nhiệt",
+     "Có (nhôm), không LED"
+    ],
+    [
+     "Sửa lỗi",
+     "Non-ECC (On-Die ECC của chuẩn DDR5)"
+    ],
+    [
+     "Ép xung",
+     "Hỗ trợ Intel XMP 3.0, AMD EXPO"
+    ],
+    [
+     "Nhiệt độ làm việc",
+     "0 °C ~ 70 °C"
+    ]
+   ],
+   "en": [
+    [
+     "Manufacturer",
+     "Kingmax (Taiwan) – Horizon series"
+    ],
+    [
+     "Model",
+     "KM-LD54-6000-16GSHZ38"
+    ],
+    [
+     "RAM type",
+     "DDR5 U-DIMM, desktop"
+    ],
+    [
+     "Speed",
+     "6000 MHz (48 GB/s bandwidth)"
+    ],
+    [
+     "Capacity",
+     "16GB (1 × 16GB)"
+    ],
+    [
+     "Voltage",
+     "1.25 V"
+    ],
+    [
+     "Pin count",
+     "288-pin"
+    ],
+    [
+     "Heatsink",
+     "Yes (aluminium), no LED"
+    ],
+    [
+     "Error correction",
+     "Non-ECC (DDR5 on-die ECC)"
+    ],
+    [
+     "Overclocking",
+     "Intel XMP 3.0, AMD EXPO"
+    ],
+    [
+     "Operating temperature",
+     "0 °C ~ 70 °C"
+    ]
+   ],
+   "zh": [
+    [
+     "制造商",
+     "Kingmax（台湾）– Horizon 系列"
+    ],
+    [
+     "型号",
+     "KM-LD54-6000-16GSHZ38"
+    ],
+    [
+     "内存类型",
+     "DDR5 U-DIMM，台式机"
+    ],
+    [
+     "速度",
+     "6000 MHz（带宽 48 GB/s）"
+    ],
+    [
+     "容量",
+     "16GB（1 × 16GB）"
+    ],
+    [
+     "电压",
+     "1.25 V"
+    ],
+    [
+     "针脚",
+     "288 针"
+    ],
+    [
+     "散热片",
+     "有（铝制），无灯效"
+    ],
+    [
+     "纠错",
+     "非 ECC（DDR5 片上 ECC）"
+    ],
+    [
+     "超频",
+     "支持 Intel XMP 3.0、AMD EXPO"
+    ],
+    [
+     "工作温度",
+     "0 °C ~ 70 °C"
+    ]
+   ]
+  }
  }
 }
