@@ -27,10 +27,12 @@ if r.returncode: sys.exit("LỖI khi sinh trang sản phẩm")
 # cache-busting cho assets/bao-gia.js trên mọi trang
 import hashlib
 _v = hashlib.md5((REPO / "assets" / "bao-gia.js").read_bytes()).hexdigest()[:8]
+_v2 = hashlib.md5((REPO / "assets" / "doc-bai.js").read_bytes()).hexdigest()[:8]
 for _f in REPO.rglob("*.html"):
     if ".git" in _f.parts or "_tools" in _f.parts: continue
     _t = _f.read_text(encoding="utf-8")
     _n = re.sub(r'/assets/bao-gia\.js(\?v=[0-9a-f]+)?"', f'/assets/bao-gia.js?v={_v}"', _t)
+    _n = re.sub(r'/assets/doc-bai\.js(\?v=[0-9a-f]+)?"', f'/assets/doc-bai.js?v={_v2}"', _n)
     if _n != _t: _f.write_text(_n, encoding="utf-8")
 if "catalog" in sys.argv: subprocess.run([sys.executable, str(T / "catalog.py")], check=True)
 print("XONG – kiểm tra rồi commit/push.")

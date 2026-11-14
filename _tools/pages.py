@@ -191,6 +191,7 @@ def quote_box(lang, p, adv, slug="", head_txt=None):
 <div class="btns"><button class="btn cta" type="submit">{t['f_send']}</button><a class="btn" href="https://zalo.me/{h[1].lstrip('+').replace('84','0',1) if h[1].startswith('+84') else h[1]}" target="_blank" rel="noopener">{t['zalo']} {h[0]}</a></div>
 <p class="note">{t['f_note']}</p></form></div>"""
 
+_TTSV = __import__("hashlib").md5((REPO / "assets" / "doc-bai.js").read_bytes()).hexdigest()[:8]
 _MP = T / "bb" / "manual.json"
 MANUAL = json.loads(_MP.read_text(encoding="utf-8")) if _MP.exists() else {}
 
@@ -213,7 +214,7 @@ def page(lang, p, cat, slug, related, spec, cats):
     man = MANUAL.get(p.get("k") or "", {})
     about_html = "".join(f"<li>{e(x[2:])}</li>" if x.startswith("• ") else f"<p>{e(x)}</p>" for x in man.get("about", {}).get(lang, []))
     about_html = re.sub(r"((?:<li>.*?</li>)+)", r'<ul class="chk">\1</ul>', about_html)
-    if about_html: about_html = f'<h2 class="h">{t["intro"]}</h2>' + about_html
+    if about_html: about_html = f'<div class="about"><h2 class="h">{t["intro"]}</h2>' + about_html + f'</div><script src="/assets/doc-bai.js?v={_TTSV}" defer></script>'
     if man.get("spec", {}).get(lang): spec = man["spec"][lang]
     if man.get("yt"):
         Y = man["yt"]["id"]; C = e(man["yt"]["cap"][lang])
@@ -378,7 +379,6 @@ def main():
         f.write_text(hh, encoding="utf-8")
     # news pages: /tin-tuc/ and /tin-tuc/<slug>/ (images in /tin-tuc/*.jpg are kept)
     import news as NW
-    _TTSV = __import__("hashlib").md5((REPO / "assets" / "doc-bai.js").read_bytes()).hexdigest()[:8]
     for lang, pre in LANGS.items():
         base = REPO / pre / "tin-tuc"
         if base.exists():
