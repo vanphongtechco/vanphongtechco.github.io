@@ -391,10 +391,17 @@ section{padding:70px 0}
 .lb-note{color:#C9DBEE;text-align:center;font-size:13px;margin:0 0 14px}
 
 /* quick links */
-.qlinks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 22px}
-.qlinks button{background:#fff;border:1px solid var(--line);padding:12px 10px;font:500 14px var(--font);color:#3A434D;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-.qlinks button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
-@media (max-width:900px){.qlinks{grid-template-columns:1fr 1fr;gap:10px}}
+.qlinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+.qg{background:#fff;border:1px solid var(--line);box-shadow:0 1px 3px rgba(0,0,0,.05);padding:14px 16px}
+.qg h3{margin:0 0 8px;font-size:15px;font-weight:600}
+.qg button{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:8px;width:100%;box-sizing:border-box;padding:6px 0;font:14px/1.35 var(--font);color:#3A434D;border-bottom:1px dashed var(--line)}
+.qg h3 button{font-weight:600;color:var(--navy);border-bottom:2px solid var(--navy);padding-bottom:8px}
+.qg li:last-child button{border-bottom:0}
+.qg button:hover{color:var(--sky)}
+.qg small{color:#8A939D;font-size:12px;white-space:nowrap}
+.qg ul{list-style:none;margin:0;padding:0}
+@media (max-width:900px){.qlinks{grid-template-columns:1fr 1fr;gap:12px}.qg{padding:12px}}
+@media (max-width:560px){.qlinks{grid-template-columns:1fr}}
 
 /* footer */
 footer{background:var(--foot);color:var(--foot-fg);font-size:14px}
@@ -817,7 +824,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   <p class="tr-note">Download the English translation: <a href="/tai-lieu/giay-chung-nhan-dkdn-en.pdf" target="_blank" rel="noopener">PDF</a></p>
 </div></section>
 
-<!-- QUICK LINKS -->
+<!-- PARTNERS -->
 <section class="grey" id="doi-tac"><div class="wrap">
   <div class="title"><h2>Partners &amp; Clients</h2><p>Organizations that have worked with Van Phong.</p></div>
   <div class="partners">
@@ -834,8 +841,7 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
   </div>
 </div></section>
 
-<!-- NEWS -->
-
+<!-- QUICK LINKS -->
 <section id="lien-ket"><div class="wrap">
   <div class="title"><h2>Quick links</h2></div>
   <div class="qlinks" id="qlinks"></div>
@@ -956,7 +962,7 @@ function scrollToCat(){ $('san-pham').scrollIntoView({behavior:reduce?'auto':'sm
 function renderMenus(){
   $('mega').innerHTML=CATS.map(c=>'<div><h4><button type="button" data-cat="'+c.id+'">'+c.name+'</button></h4><ul>'+c.subs.map((x,k)=>'<li><button type="button" data-cat="'+c.id+'" data-sub="'+k+'">'+x+'</button></li>').join('')+'</ul></div>').join('');
   $('footCats').innerHTML=CATS.map(c=>'<li><a href="#san-pham" data-cat="'+c.id+'">'+c.name+'</a></li>').join('');
-  $('qlinks').innerHTML=CATS.flatMap(c=>[ '<button type="button" data-cat="'+c.id+'" title="'+c.name+'">'+c.name+'</button>' ].concat(c.subs.map((x,k)=>'<button type="button" data-cat="'+c.id+'" data-sub="'+k+'" title="'+x+'">'+x+'</button>'))).join('');
+  $('qlinks').innerHTML=CATS.map(c=>{const n=k=>PRODUCTS.filter(p=>p.c===c.id&&(k===undefined||p.s===k)).length;return '<div class="qg"><h3><button type="button" data-cat="'+c.id+'">'+c.name+'<small>'+n()+'</small></button></h3><ul>'+c.subs.map((x,k)=>n(k)?'<li><button type="button" data-cat="'+c.id+'" data-sub="'+k+'">'+x+'<small>'+n(k)+'</small></button></li>':'').join('')+'</ul></div>'}).join('');
 }
 function renderTree(){
   const all=[{id:'all',name:'Products',subs:[]}].concat(CATS);
