@@ -425,6 +425,30 @@ def main():
             html_ += '<main class="wrap">' + body.replace('<section class="rel"', '</main><section class="rel"', 1) + foot(lang)
             (d / "index.html").write_text(html_, encoding="utf-8")
             urls.append(f"{SITE}/{pre}tin-tuc/{s}/")
+    # Trang riêng: Chứng chỉ / Chứng nhận (lấy toàn bộ thẻ giấy tờ từ trang chủ đã dịch)
+    CC = {"vi": ("Chứng chỉ / Chứng nhận", "Giấy tờ pháp lý, ủy quyền và bằng cấp, chứng chỉ của Vân Phong và TS. Lê Thanh Bình. Bấm vào giấy tờ để xem."),
+          "en": ("Certificates", "Legal documents, authorizations, diplomas and certificates of Van Phong and Dr. Le Thanh Binh. Click a document to view it."),
+          "zh": ("证书 / 认证", "Van Phong 公司及黎清平博士的法律文件、授权书、学位及证书。点击文件即可查看。")}
+    CCSS = """<style>.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;margin:18px 0 34px}
+.cert{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;text-decoration:none;color:inherit;padding:0;font:inherit;text-align:inherit;cursor:zoom-in}
+.cert .doc{aspect-ratio:3/4;position:relative;overflow:hidden;background:#fff;margin:10px}.cert .doc img{width:100%;height:100%;object-fit:cover;object-position:top}.cert .doc.sq img{position:absolute;inset:0;object-fit:contain;object-position:center}
+.cert b{display:block;background:#36414D;color:#fff;font-size:14px;font-weight:500;padding:11px 14px;text-align:center}.cert small{display:block;padding:0 14px 12px;background:#36414D;color:#C9CED6;text-align:center;font-size:12px;margin-top:-4px;flex:1}
+.cert:hover{outline:3px solid var(--blue)}.tr-note{margin:-14px 0 30px;color:var(--muted)}
+.lbx{position:fixed;inset:0;z-index:300;background:rgba(10,20,35,.9);display:none;overflow:auto;padding:56px 16px 24px}.lbx.on{display:block}.lbx img{display:block;max-width:min(1000px,100%);margin:0 auto 16px;background:#fff}.lbx p{color:#fff;text-align:center;max-width:900px;margin:0 auto 14px}.lbx button{position:fixed;top:12px;right:16px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;font-size:24px;cursor:pointer}</style>"""
+    CJS = """<div class="lbx" id="lbx"><button type="button" aria-label="×">×</button><div></div></div>
+<script>(function(){var b=document.getElementById('lbx'),c=b.querySelector('div');document.querySelectorAll('[data-gallery]').forEach(function(x){x.addEventListener('click',function(){c.innerHTML=(x.dataset.note?'<p>'+x.dataset.note+'</p>':'')+x.dataset.gallery.split('|').map(function(u){return '<img src="'+u+'" alt="">'}).join('');b.classList.add('on');document.body.style.overflow='hidden';});});
+function cl(){b.classList.remove('on');document.body.style.overflow='';}b.querySelector('button').onclick=cl;b.addEventListener('click',function(ev){if(ev.target===b)cl();});document.addEventListener('keydown',function(ev){if(ev.key==='Escape')cl();});})();</script>"""
+    for lang, pre in LANGS.items():
+        hp = (REPO / pre / "index.html").read_text(encoding="utf-8")
+        m = re.search(r'<section class="certs-band" id="chung-nhan">.*?(<div class="certs">.*?\n  </div>)(.*?)</div></section>', hp, re.S)
+        if not m: sys.exit("Không tìm thấy khối chứng chỉ trên trang chủ " + lang)
+        grid = m.group(1).replace(' loading="lazy"', ' loading="lazy" decoding="async"')
+        note = re.search(r'<p class="tr-note">.*?</p>', m.group(2), re.S)
+        d = REPO / pre / "chung-chi"; d.mkdir(parents=True, exist_ok=True)
+        ttl, lead = CC[lang]
+        pg = listing(lang, ttl, lead, "chung-chi/", [e(ttl)], grid + (note.group(0) if note else "") + CJS).replace("</head>", CCSS + "</head>", 1)
+        (d / "index.html").write_text(pg, encoding="utf-8")
+        urls.append(f"{SITE}/{pre}chung-chi/")
     home = [f"{SITE}/{p}" for p in LANGS.values()]
     (REPO / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{u}</loc></url>\n" for u in home + urls) + "</urlset>\n", encoding="utf-8")
     (REPO / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /_tools/\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
