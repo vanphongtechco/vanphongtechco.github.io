@@ -449,6 +449,17 @@ function cl(){b.classList.remove('on');document.body.style.overflow='';}b.queryS
         pg = listing(lang, ttl, lead, "chung-chi/", [e(ttl)], grid + (note.group(0) if note else "") + CJS).replace("</head>", CCSS + "</head>", 1)
         (d / "index.html").write_text(pg, encoding="utf-8")
         urls.append(f"{SITE}/{pre}chung-chi/")
+    # Trang riêng: Đề tài nghiên cứu khoa học công nghệ (lấy khối #de-tai từ trang chủ đã dịch)
+    for lang, pre in LANGS.items():
+        hp = (REPO / pre / "index.html").read_text(encoding="utf-8")
+        m = re.search(r'<section id="de-tai"><div class="wrap">\s*<div class="title"><h2>(.*?)</h2></div>\s*(<ol class="detai">.*?</ol>)', hp, re.S)
+        if not m: sys.exit("Không tìm thấy khối đề tài " + lang)
+        css = re.search(r'#de-tai\{display:none\}(#de-tai \.detai\{.*?)(?=\n)', hp).group(1)
+        ttl = html.unescape(m.group(1)); d = REPO / pre / "de-tai"; d.mkdir(parents=True, exist_ok=True)
+        lead = {"vi": "Các đề tài nghiên cứu khoa học công nghệ đã thực hiện.", "en": "Completed research projects.", "zh": "已完成的科研项目。"}[lang]
+        pg = listing(lang, ttl, lead, "de-tai/", [e(ttl)], f'<section id="de-tai">{m.group(2)}</section>').replace("</head>", f"<style>{css}</style></head>", 1)
+        (d / "index.html").write_text(pg, encoding="utf-8")
+        urls.append(f"{SITE}/{pre}de-tai/")
     home = [f"{SITE}/{p}" for p in LANGS.values()]
     (REPO / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{u}</loc></url>\n" for u in home + urls) + "</urlset>\n", encoding="utf-8")
     (REPO / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /_tools/\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
