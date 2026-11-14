@@ -5176,5 +5176,116 @@
    "en": "Specifications may vary by design and version.",
    "zh": "参数可能因设计和版本而不同。"
   }
+ },
+ "code:GCVT-16/32": {
+  "spec": {
+   "vi": [
+    [
+     "Lực chống giữ 01 giá đơn",
+     "1.979,2 kN tại 31,5 MPa; 2.450 kN tại 39,0 MPa"
+    ],
+    [
+     "Áp suất trạm bơm cấp dịch",
+     "31,5 MPa"
+    ],
+    [
+     "Áp suất làm việc",
+     "39,0 MPa"
+    ],
+    [
+     "Chiều cao chống",
+     "1.600 – 3.200 mm"
+    ],
+    [
+     "Chiều dài chống tổng cộng",
+     "17.000 mm"
+    ],
+    [
+     "Bước dịch chuyển",
+     "0 – 800 mm"
+    ],
+    [
+     "Ứng dụng",
+     "Chống giữ khu vực ngã ba lò chợ cơ giới hóa mỏ than hầm lò"
+    ],
+    [
+     "Xuất xứ",
+     "Việt Nam, chế tạo theo thiết kế"
+    ]
+   ],
+   "en": [
+    [
+     "Support force per unit",
+     "1,979.2 kN at 31.5 MPa; 2,450 kN at 39.0 MPa"
+    ],
+    [
+     "Pump station pressure",
+     "31.5 MPa"
+    ],
+    [
+     "Working pressure",
+     "39.0 MPa"
+    ],
+    [
+     "Support height",
+     "1,600 – 3,200 mm"
+    ],
+    [
+     "Total support length",
+     "17,000 mm"
+    ],
+    [
+     "Advance step",
+     "0 – 800 mm"
+    ],
+    [
+     "Application",
+     "Support of the longwall–roadway junction in mechanized underground coal mines"
+    ],
+    [
+     "Origin",
+     "Vietnam, made to design"
+    ]
+   ],
+   "zh": [
+    [
+     "单架支护力",
+     "1979.2 kN（31.5 MPa）；2450 kN（39.0 MPa）"
+    ],
+    [
+     "泵站供液压力",
+     "31.5 MPa"
+    ],
+    [
+     "工作压力",
+     "39.0 MPa"
+    ],
+    [
+     "支护高度",
+     "1600 – 3200 mm"
+    ],
+    [
+     "支护总长度",
+     "17000 mm"
+    ],
+    [
+     "移架步距",
+     "0 – 800 mm"
+    ],
+    [
+     "用途",
+     "井工煤矿综采工作面端头交叉区支护"
+    ],
+    [
+     "产地",
+     "越南，按设计制造"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số có thể thay đổi theo thiết kế và phiên bản.",
+   "en": "Specifications may vary by design and version.",
+   "zh": "参数可能因设计和版本而不同。"
+  }
  }
 }
