@@ -385,7 +385,7 @@ section{padding:70px 0}
 .cert .doc.sq img{position:absolute;inset:0;object-fit:contain;object-position:center}
 .cert-real:hover .doc.real{outline:3px solid var(--sky)}
 #de-tai .detai{max-width:1000px;margin:0 auto;padding:0;list-style:none;display:grid;gap:12px;counter-reset:dt}#de-tai .detai li{background:#fff;border:1px solid #DCE1E6;border-left:4px solid #1580BF;padding:14px 18px 12px 52px;position:relative;counter-increment:dt}#de-tai .detai li::before{content:counter(dt);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;background:#0E2F5A;color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}#de-tai .detai b{display:block;color:#0E2F5A;font-size:16px;margin-bottom:3px}#de-tai .detai span{display:block;color:#36414D;line-height:1.55}#de-tai .detai small{display:block;color:#6B7684;margin-top:5px;font-size:13px}
-#chung-nhan .cert[data-gallery],#chung-nhan .cert[href*="ho-so-nang-luc"],#chung-nhan .cert[href*="bang-ths"],#chung-nhan .cert[href*="bang-ks"]{display:none}
+#chung-nhan .certs>.cert:not([href*="drawell"]){display:none}
 .certs-more{text-align:center;margin:26px 0 0}.certs-more a{display:inline-block;border:1px solid #fff;color:#fff;padding:10px 20px;font-weight:600;text-decoration:none}.certs-more a:hover{background:#fff;color:var(--navy)}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(10,20,35,.88);display:none;overflow:auto;padding:56px 16px 24px}
 .lb.open{display:block}
