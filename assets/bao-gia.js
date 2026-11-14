@@ -174,7 +174,7 @@
   }
   window.__vqhb = hbar; hbar();
   var stack = document.getElementById('fstack');
-  if (stack) stack.insertBefore(fab, stack.firstChild); else document.body.appendChild(fab);
+  if (!HBS.length) { if (stack) stack.insertBefore(fab, stack.firstChild); else document.body.appendChild(fab); }  // đã có nút giỏ trên thanh công cụ thì không hiện nút nổi
 
   var ov = document.createElement('div');
   ov.className = 'vq-ov'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true');
