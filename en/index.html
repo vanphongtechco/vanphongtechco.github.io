@@ -886,9 +886,9 @@ footer .flogo{height:34px;width:auto;filter:brightness(0) invert(1);margin-botto
 </div>
 <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 4 4 13h5v7h6v-7h5z"/></svg></button><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Document viewer"><button class="lb-close" id="lbClose" aria-label="Close">×</button><p class="lb-note" id="lbNote">Vietnamese original. Some personal data has been hidden.</p><div id="lbImgs"></div></div>
 
-<script src="/data/products-en.js?v=4964aeae"></script>
+<script src="/data/products-en.js?v=ef54907b"></script>
 <script>
-const pic=p=>p.img?'<img src="'+(/^https?:/.test(p.img)?p.img:'/anh-san-pham/'+p.img+'.jpg')+'" alt="'+esc(p.n)+'" loading="lazy">':ICONS[p.i];
+const pic=p=>p.img?'<img src="'+(/^https?:/.test(p.img)?p.img:'/anh-san-pham/'+p.img+'.jpg')+'" alt="'+esc(p.n)+'" loading="lazy" referrerpolicy="no-referrer">':ICONS[p.i];
 const ICONS = {
   motor:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="12" y="18" width="34" height="28" rx="3"/><path d="M18 18v28M24 18v28M30 18v28M46 32h12M8 50h44M18 46v4M40 46v4"/></svg>',
   cylinder:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="22" width="32" height="20" rx="2"/><path d="M38 32h20M58 26v12M14 22v-6M28 22v-6"/></svg>',

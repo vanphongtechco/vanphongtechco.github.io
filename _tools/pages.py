@@ -186,7 +186,7 @@ fetch(window.VQ_API,{{method:'POST',body:JSON.stringify({{action:'submitQuote',t
 
 def card(lang, q, slug, cats):
     t = L[lang]; src = img_src(q); c = cats.get(q["c"]); sub = c["subs"][q["s"]] if c else ""
-    im = f'<img src="{e(src)}" alt="{e(q["n"])}" loading="lazy">' if src else ""
+    im = f'<img src="{e(src)}" alt="{e(q["n"])}" loading="lazy" referrerpolicy="no-referrer">' if src else ""
     return f'<a href="/{LANGS[lang]}san-pham/{slug}/"><span class="t">{im}</span><b>{e(q["n"])}</b><small>{e(q.get("code") or sub)}</small>{gia_html(q, lang, "cg")}</a>'
 
 def quote_box(lang, p, adv, slug="", head_txt=None):
@@ -245,7 +245,7 @@ def page(lang, p, cat, slug, related, spec, cats):
     return head(lang, title, p.get("d", ""), f"san-pham/{slug}/", extra) + f"""<main class="wrap">
 <div class="crumbs"><a href="{pre}">{t['home']}</a> › <a href="{pre}san-pham/">{t['prod']}</a> › <a href="{pre}danh-muc/{catslug(cat, p['s'])}/">{e(sub)}</a></div>
 <div class="pd">
-<div class="ph">{f'<img src="{e(src)}" alt="{e(p["n"])}">' if src else ''}</div>
+<div class="ph">{f'<img src="{e(src)}" alt="{e(p["n"])}" referrerpolicy="no-referrer">' if src else ''}</div>{'<p class="note" style="margin:6px 0 0">' + {"vi":"Ảnh minh họa","en":"Illustrative image","zh":"示意图"}[lang] + '</p>' if p.get("ih") and src else ''}
 <div>
 <span class="tag">{e(sub)}</span>
 <h1>{e(p['n'])}</h1>

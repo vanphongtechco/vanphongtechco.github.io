@@ -1734,6 +1734,10 @@
     [
      "Kiểu",
      "Bơm tăng áp tự động"
+    ],
+    [
+     "Hãng sản xuất",
+     "Panasonic"
     ]
    ],
    "en": [
@@ -1744,6 +1748,10 @@
     [
      "Type",
      "Automatic booster pump"
+    ],
+    [
+     "Manufacturer",
+     "Panasonic"
     ]
    ],
    "zh": [
@@ -1754,6 +1762,10 @@
     [
      "型式",
      "自动增压泵"
+    ],
+    [
+     "制造商",
+     "Panasonic"
     ]
    ]
   },
@@ -4765,6 +4777,10 @@
     [
      "Độ chia",
      "0,02 mm"
+    ],
+    [
+     "Hãng sản xuất",
+     "Mitutoyo"
     ]
    ],
    "en": [
@@ -4779,6 +4795,10 @@
     [
      "Graduation",
      "0.02 mm"
+    ],
+    [
+     "Manufacturer",
+     "Mitutoyo"
     ]
    ],
    "zh": [
@@ -4793,6 +4813,10 @@
     [
      "分度值",
      "0.02 mm"
+    ],
+    [
+     "制造商",
+     "Mitutoyo"
     ]
    ]
   },
