@@ -2119,6 +2119,10 @@
     [
      "Điện áp",
      "0,38/0,66 kV"
+    ],
+    [
+     "Loại cáp",
+     "MYP (không phải loại MYQ 0,3/0,5 kV cùng tiết diện)"
     ]
    ],
    "en": [
@@ -2133,6 +2137,10 @@
     [
      "Voltage",
      "0.38/0.66 kV"
+    ],
+    [
+     "Cable type",
+     "MYP (not the MYQ 0.3/0.5 kV type of the same size)"
     ]
    ],
    "zh": [
@@ -2147,6 +2155,10 @@
     [
      "电压",
      "0.38/0.66 kV"
+    ],
+    [
+     "电缆型号",
+     "MYP 型（非同截面 MYQ 0.3/0.5 kV 型）"
     ]
    ]
   },
