@@ -41,7 +41,7 @@ P = [
 ('<small>Công ty TNHH<br>Kỹ thuật &amp; Thương mại</small>', '<small>Technical &amp;<br>Trading Co., Ltd.</small>', '<small>技术与贸易<br>有限公司</small>'),
 ('aria-controls="mainNav">Menu</button>', 'aria-controls="mainNav">Menu</button>', 'aria-controls="mainNav">菜单</button>'),
 ('<a href="#top" class="on">Trang chủ</a>', '<a href="#top" class="on">Home</a>', '<a href="#top" class="on">首页</a>'),
-('<a href="#gioi-thieu">Về Vân Phong</a><a href="#ban-lanh-dao">Ban lãnh đạo</a><a href="#chung-nhan">Chứng nhận</a>', '<a href="#gioi-thieu">About Van Phong</a><a href="#ban-lanh-dao">Leadership</a><a href="#chung-nhan">Certificates</a>', '<a href="#gioi-thieu">公司简介</a><a href="#ban-lanh-dao">管理团队</a><a href="#chung-nhan">证书</a>'),
+('<a href="#gioi-thieu">Về Vân Phong</a><a href="#ban-lanh-dao">Ban lãnh đạo</a><a href="#chung-nhan">Chứng chỉ / Chứng nhận</a>', '<a href="#gioi-thieu">About Van Phong</a><a href="#ban-lanh-dao">Leadership</a><a href="#chung-nhan">Certificates</a>', '<a href="#gioi-thieu">公司简介</a><a href="#ban-lanh-dao">管理团队</a><a href="#chung-nhan">证书</a>'),
 ('>Tin tức <span class="caret">', '>News <span class="caret">', '>新闻 <span class="caret">'),
 ('<a href="#tin-tuc">Tin tức</a><a href="#bai-bao">Bài báo khoa học</a><a href="#sang-che">Sáng chế</a>', '<a href="#tin-tuc">News</a><a href="#bai-bao">Publications</a><a href="#sang-che">Patents</a>', '<a href="#tin-tuc">新闻</a><a href="#bai-bao">科技论文</a><a href="#sang-che">专利</a>'),
 ('>Sản phẩm <span class="caret">', '>Products <span class="caret">', '>产品 <span class="caret">'),
@@ -138,7 +138,7 @@ P = [
  '<h3>贸易及进出口</h3><p style="margin:0 0 4px;font-size:14px;color:#4A545E">物资、设备、软件：</p><ul><li>工业</li><li>医疗</li><li>教育</li><li>实验室</li><li>计算机与信息技术</li></ul>'),
 # news
 # certificates
-('<h2>Chứng nhận</h2><p>Bấm vào giấy tờ để xem.</p>', '<h2>Certificates</h2><p>Click a document to view it.</p>', '<h2>证书</h2><p>点击文件即可查看。</p>'),
+('<h2>Chứng chỉ / Chứng nhận</h2><p>Bấm vào giấy tờ để xem.</p>', '<h2>Certificates</h2><p>Click a document to view it.</p>', '<h2>证书 / 认证</h2><p>点击文件即可查看。</p>'),
 ('aria-label="Xem Giấy chứng nhận đăng ký doanh nghiệp"', 'aria-label="View Enterprise Registration Certificate"', 'aria-label="查看企业登记证书"'),
 ('alt="Giấy chứng nhận đăng ký doanh nghiệp – trang 1"', 'alt="Enterprise Registration Certificate – page 1"', 'alt="企业登记证书 – 第1页"'),
 ('<b>Giấy chứng nhận đăng ký doanh nghiệp</b><small>MSDN 0108797479 · thay đổi lần 4: 29/09/2026 · Bấm để xem</small>',
