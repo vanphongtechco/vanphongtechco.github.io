@@ -233,7 +233,7 @@ def page(lang, p, cat, slug, related, spec, cats):
         vid_html += f'<h2 class="h">{t["video"]}</h2>' + f'<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/{Y}" title="{C}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="note">{C}</p>'
     if spec:
         rows = "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in r) + "</tr>" for r in spec)
-        spec_html = f'<h2 class="h">{t["spec"]}</h2><div class="spec-wrap"><table class="spec">{rows}</table></div><p class="note">{man.get("note", {}).get(lang) or t["spec_note"]}</p>'
+        spec_html = f'<h2 class="h">{t["spec"]}</h2><div class="spec-wrap"><table class="spec">{rows}</table></div>{(lambda n: f'<p class="note">{n}</p>' if n else '')(man["note"].get(lang, "") if "note" in man else t["spec_note"])}'
     rel = "".join(card(lang, q, s, cats) for q, s in related)
     ld = {"@context": "https://schema.org", "@type": "Product", "name": p["n"], "description": p.get("d", ""), "sku": model,
           "url": f"{SITE}{pre}san-pham/{slug}/"}
