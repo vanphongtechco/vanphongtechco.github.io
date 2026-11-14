@@ -96,7 +96,8 @@ def gia_html(p, lang, cls="gia"):
     if not g: return ""
     lab, cur, vat = GIA_L[lang]
     num = f"{int(g):,}".replace(",", "." if lang == "vi" else ",")
-    return f'<p class="{cls}">{lab}: <b>{num} {cur}</b> <span>({vat})</span></p>'
+    tu = ({"vi": "từ ", "en": "from ", "zh": "起 "}[lang] if p.get("tu") else "")
+    return f'<p class="{cls}">{lab}: {tu}<b>{num} {cur}</b> <span>({vat})</span></p>'
 
 def img_src(p):
     im = p.get("img") or ""
@@ -232,7 +233,7 @@ def page(lang, p, cat, slug, related, spec, cats):
         vid_html += f'<h2 class="h">{t["video"]}</h2>' + f'<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/{Y}" title="{C}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="note">{C}</p>'
     if spec:
         rows = "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in r) + "</tr>" for r in spec)
-        spec_html = f'<h2 class="h">{t["spec"]}</h2><div class="spec-wrap"><table class="spec">{rows}</table></div><p class="note">{t["spec_note"]}</p>'
+        spec_html = f'<h2 class="h">{t["spec"]}</h2><div class="spec-wrap"><table class="spec">{rows}</table></div><p class="note">{man.get("note", {}).get(lang) or t["spec_note"]}</p>'
     rel = "".join(card(lang, q, s, cats) for q, s in related)
     ld = {"@context": "https://schema.org", "@type": "Product", "name": p["n"], "description": p.get("d", ""), "sku": model,
           "url": f"{SITE}{pre}san-pham/{slug}/"}

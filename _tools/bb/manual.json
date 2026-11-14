@@ -1204,5 +1204,3659 @@
     ]
    ]
   }
+ },
+ "code:YBK-250M-4": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "YBK-250M-4"
+    ],
+    [
+     "Công suất",
+     "45 kW"
+    ],
+    [
+     "Điện áp",
+     "660/1140 V"
+    ],
+    [
+     "Dòng định mức",
+     "48,9/28,2 A"
+    ],
+    [
+     "Tốc độ",
+     "1480 v/ph"
+    ],
+    [
+     "Tần số",
+     "50 Hz"
+    ],
+    [
+     "Bảo vệ nổ",
+     "Exd I Mb"
+    ],
+    [
+     "Cấp bảo vệ",
+     "≥ IP55"
+    ],
+    [
+     "Cách điện",
+     "F"
+    ],
+    [
+     "Trục ra",
+     "Ø60 mm"
+    ],
+    [
+     "Xuất xứ",
+     "Trung Quốc, 2024"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "YBK-250M-4"
+    ],
+    [
+     "Power",
+     "45 kW"
+    ],
+    [
+     "Voltage",
+     "660/1140 V"
+    ],
+    [
+     "Rated current",
+     "48.9/28.2 A"
+    ],
+    [
+     "Speed",
+     "1480 rpm"
+    ],
+    [
+     "Frequency",
+     "50 Hz"
+    ],
+    [
+     "Explosion protection",
+     "Exd I Mb"
+    ],
+    [
+     "Ingress protection",
+     "≥ IP55"
+    ],
+    [
+     "Insulation class",
+     "F"
+    ],
+    [
+     "Output shaft",
+     "Ø60 mm"
+    ],
+    [
+     "Origin",
+     "China, 2024"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "YBK-250M-4"
+    ],
+    [
+     "功率",
+     "45 kW"
+    ],
+    [
+     "电压",
+     "660/1140 V"
+    ],
+    [
+     "额定电流",
+     "48.9/28.2 A"
+    ],
+    [
+     "转速",
+     "1480 转/分"
+    ],
+    [
+     "频率",
+     "50 Hz"
+    ],
+    [
+     "防爆标志",
+     "Exd I Mb"
+    ],
+    [
+     "防护等级",
+     "≥ IP55"
+    ],
+    [
+     "绝缘等级",
+     "F"
+    ],
+    [
+     "输出轴",
+     "Ø60 mm"
+    ],
+    [
+     "产地",
+     "中国, 2024"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:IKY34A-41": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "IKY34A-41"
+    ],
+    [
+     "Cấu tạo",
+     "Mô tơ thủy lực + hộp giảm tốc hành tinh + khối van có phanh"
+    ],
+    [
+     "Đầu ra",
+     "Vỏ quay, lắp bánh sao xích"
+    ],
+    [
+     "Áp suất làm việc",
+     "20 MPa"
+    ],
+    [
+     "Ứng dụng",
+     "Dẫn động di chuyển xích máy khoan, máy mỏ"
+    ],
+    [
+     "Xuất xứ",
+     "Trung Quốc"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "IKY34A-41"
+    ],
+    [
+     "Construction",
+     "Hydraulic motor + planetary gearbox + valve block with brake"
+    ],
+    [
+     "Output",
+     "Rotating housing for chain sprocket"
+    ],
+    [
+     "Working pressure",
+     "20 MPa"
+    ],
+    [
+     "Application",
+     "Crawler travel drive of drill rigs and mining machines"
+    ],
+    [
+     "Origin",
+     "China"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "IKY34A-41"
+    ],
+    [
+     "结构",
+     "液压马达 + 行星减速机 + 带制动阀块"
+    ],
+    [
+     "输出",
+     "壳体旋转，安装链轮"
+    ],
+    [
+     "工作压力",
+     "20 MPa"
+    ],
+    [
+     "用途",
+     "钻机、矿用设备履带行走驱动"
+    ],
+    [
+     "产地",
+     "中国"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:YBX3-90L-4": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "YBX3-90L-4"
+    ],
+    [
+     "Công suất",
+     "1,5 kW"
+    ],
+    [
+     "Điện áp",
+     "660 V, Y, 3 pha"
+    ],
+    [
+     "Dòng định mức",
+     "2,15 A"
+    ],
+    [
+     "Tốc độ",
+     "1400 v/ph"
+    ],
+    [
+     "cos φ",
+     "0,89"
+    ],
+    [
+     "Bảo vệ nổ",
+     "Ex d I Mb"
+    ],
+    [
+     "Cấp bảo vệ",
+     "IP55"
+    ],
+    [
+     "Cách điện, chế độ",
+     "F, chế độ S1"
+    ],
+    [
+     "Trục / lắp",
+     "Ø24 mm, mặt bích, vỏ gang"
+    ],
+    [
+     "Khối lượng",
+     "35 kg"
+    ],
+    [
+     "Tiêu chuẩn",
+     "JB/T 12628-2016"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "YBX3-90L-4"
+    ],
+    [
+     "Power",
+     "1.5 kW"
+    ],
+    [
+     "Voltage",
+     "660 V, Y, 3-phase"
+    ],
+    [
+     "Rated current",
+     "2.15 A"
+    ],
+    [
+     "Speed",
+     "1400 rpm"
+    ],
+    [
+     "Power factor",
+     "0.89"
+    ],
+    [
+     "Explosion protection",
+     "Ex d I Mb"
+    ],
+    [
+     "Ingress protection",
+     "IP55"
+    ],
+    [
+     "Insulation, duty",
+     "F, duty S1"
+    ],
+    [
+     "Shaft / mounting",
+     "Ø24 mm, flange mount, cast-iron frame"
+    ],
+    [
+     "Weight",
+     "35 kg"
+    ],
+    [
+     "Standard",
+     "JB/T 12628-2016"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "YBX3-90L-4"
+    ],
+    [
+     "功率",
+     "1.5 kW"
+    ],
+    [
+     "电压",
+     "660 V, Y, 三相"
+    ],
+    [
+     "额定电流",
+     "2.15 A"
+    ],
+    [
+     "转速",
+     "1400 转/分"
+    ],
+    [
+     "功率因数",
+     "0.89"
+    ],
+    [
+     "防爆标志",
+     "Ex d I Mb"
+    ],
+    [
+     "防护等级",
+     "IP55"
+    ],
+    [
+     "绝缘、工作制",
+     "F, S1 工作制"
+    ],
+    [
+     "轴 / 安装",
+     "Ø24 mm, 法兰安装，铸铁机座"
+    ],
+    [
+     "重量",
+     "35 kg"
+    ],
+    [
+     "标准",
+     "JB/T 12628-2016"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:CBZ2063/2050/2050": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "CBZ2063/2050/2050"
+    ],
+    [
+     "Lưu lượng",
+     "63 / 50 / 50 ml/vòng"
+    ],
+    [
+     "Tốc độ",
+     "2000 – 2500 v/ph"
+    ],
+    [
+     "Áp lực đầu ra",
+     "20 MPa"
+    ],
+    [
+     "Xuất xứ",
+     "Trung Quốc"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "CBZ2063/2050/2050"
+    ],
+    [
+     "Displacement",
+     "63 / 50 / 50 ml/rev"
+    ],
+    [
+     "Speed",
+     "2000 – 2500 rpm"
+    ],
+    [
+     "Outlet pressure",
+     "20 MPa"
+    ],
+    [
+     "Origin",
+     "China"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "CBZ2063/2050/2050"
+    ],
+    [
+     "排量",
+     "63 / 50 / 50 毫升/转"
+    ],
+    [
+     "转速",
+     "2000 – 2500 转/分"
+    ],
+    [
+     "出口压力",
+     "20 MPa"
+    ],
+    [
+     "产地",
+     "中国"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:G25-160 + YBX3-90L-4": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "G25-160 + YBX3-90L-4"
+    ],
+    [
+     "Ghép với",
+     "Động cơ 1,5 kW YBX3-90L-4"
+    ],
+    [
+     "Ứng dụng",
+     "Bơm nước dập bụi máy khoan"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "G25-160 + YBX3-90L-4"
+    ],
+    [
+     "Coupled with",
+     "1.5 kW motor YBX3-90L-4"
+    ],
+    [
+     "Application",
+     "Dust-suppression water pump for drill rigs"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "G25-160 + YBX3-90L-4"
+    ],
+    [
+     "配套",
+     "1.5 kW 电机 YBX3-90L-4"
+    ],
+    [
+     "用途",
+     "钻机降尘水泵"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:A-200JAK": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "A-200JAK"
+    ],
+    [
+     "Kiểu",
+     "Bơm tăng áp tự động"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "A-200JAK"
+    ],
+    [
+     "Type",
+     "Automatic booster pump"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "A-200JAK"
+    ],
+    [
+     "型式",
+     "自动增压泵"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:QJZ-200": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "QJZ-200"
+    ],
+    [
+     "Công suất điều khiển tối đa",
+     "250/170/100 kW"
+    ],
+    [
+     "Điện áp định mức",
+     "1140/660/380 V"
+    ],
+    [
+     "Cấp bảo vệ",
+     "IP54"
+    ],
+    [
+     "Bảo vệ nổ",
+     "Exd I Mb"
+    ],
+    [
+     "Xuất xứ",
+     "Trung Quốc"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "QJZ-200"
+    ],
+    [
+     "Max. controlled power",
+     "250/170/100 kW"
+    ],
+    [
+     "Rated voltage",
+     "1140/660/380 V"
+    ],
+    [
+     "Ingress protection",
+     "IP54"
+    ],
+    [
+     "Explosion protection",
+     "Exd I Mb"
+    ],
+    [
+     "Origin",
+     "China"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "QJZ-200"
+    ],
+    [
+     "最大控制功率",
+     "250/170/100 kW"
+    ],
+    [
+     "额定电压",
+     "1140/660/380 V"
+    ],
+    [
+     "防护等级",
+     "IP54"
+    ],
+    [
+     "防爆标志",
+     "Exd I Mb"
+    ],
+    [
+     "产地",
+     "中国"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:BZA1-5/36-1": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "BZA1-5/36-1"
+    ],
+    [
+     "Kiểu",
+     "Hộp nút bấm điều khiển phòng nổ"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "BZA1-5/36-1"
+    ],
+    [
+     "Type",
+     "Explosion-proof control push-button box"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "BZA1-5/36-1"
+    ],
+    [
+     "型式",
+     "防爆控制按钮盒"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:DLB-127(36)G": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "DLB-127(36)G"
+    ],
+    [
+     "Điện áp",
+     "36 V"
+    ],
+    [
+     "Bảo vệ nổ",
+     "Exd I Mb"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "DLB-127(36)G"
+    ],
+    [
+     "Voltage",
+     "36 V"
+    ],
+    [
+     "Explosion protection",
+     "Exd I Mb"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "DLB-127(36)G"
+    ],
+    [
+     "电压",
+     "36 V"
+    ],
+    [
+     "防爆标志",
+     "Exd I Mb"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:DGY12/55L(A)": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "DGY12/55L(A)"
+    ],
+    [
+     "Điện áp",
+     "18 – 55 V"
+    ],
+    [
+     "Công suất",
+     "12 W"
+    ],
+    [
+     "Bảo vệ nổ",
+     "Exd I Mb"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "DGY12/55L(A)"
+    ],
+    [
+     "Voltage",
+     "18 – 55 V"
+    ],
+    [
+     "Power",
+     "12 W"
+    ],
+    [
+     "Explosion protection",
+     "Exd I Mb"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "DGY12/55L(A)"
+    ],
+    [
+     "电压",
+     "18 – 55 V"
+    ],
+    [
+     "功率",
+     "12 W"
+    ],
+    [
+     "防爆标志",
+     "Exd I Mb"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:MYP 0,66/1,14 kV 3x25+1x16": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "MYP 0,66/1,14 kV 3x25+1x16"
+    ],
+    [
+     "Tiết diện",
+     "3×25 + 1×16 mm²"
+    ],
+    [
+     "Điện áp",
+     "0,66/1,14 kV"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "MYP 0.66/1.14 kV 3x25+1x16"
+    ],
+    [
+     "Cross-section",
+     "3×25 + 1×16 mm²"
+    ],
+    [
+     "Voltage",
+     "0.66/1.14 kV"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "MYP 0.66/1.14 kV 3x25+1x16"
+    ],
+    [
+     "截面",
+     "3×25 + 1×16 mm²"
+    ],
+    [
+     "电压",
+     "0.66/1.14 kV"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:MYP 0,38/0,66 kV 3x2,5+1x1,5": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "MYP 0,38/0,66 kV 3x2,5+1x1,5"
+    ],
+    [
+     "Tiết diện",
+     "3×2,5 + 1×1,5 mm²"
+    ],
+    [
+     "Điện áp",
+     "0,38/0,66 kV"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "MYP 0.38/0.66 kV 3x2.5+1x1.5"
+    ],
+    [
+     "Cross-section",
+     "3×2.5 + 1×1.5 mm²"
+    ],
+    [
+     "Voltage",
+     "0.38/0.66 kV"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "MYP 0.38/0.66 kV 3x2.5+1x1.5"
+    ],
+    [
+     "截面",
+     "3×2.5 + 1×1.5 mm²"
+    ],
+    [
+     "电压",
+     "0.38/0.66 kV"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:MYP 0,38/0,66 kV 4x2,5": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "MYP 0,38/0,66 kV 4x2,5"
+    ],
+    [
+     "Tiết diện",
+     "4×2,5 mm²"
+    ],
+    [
+     "Điện áp",
+     "0,38/0,66 kV"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "MYP 0.38/0.66 kV 4x2.5"
+    ],
+    [
+     "Cross-section",
+     "4×2.5 mm²"
+    ],
+    [
+     "Voltage",
+     "0.38/0.66 kV"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "MYP 0.38/0.66 kV 4x2.5"
+    ],
+    [
+     "截面",
+     "4×2.5 mm²"
+    ],
+    [
+     "电压",
+     "0.38/0.66 kV"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:HDY200": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "HDY200"
+    ],
+    [
+     "Áp lực làm việc búa",
+     "12 – 18 MPa"
+    ],
+    [
+     "Áp lực quay choòng",
+     "15 MPa"
+    ],
+    [
+     "Lưu lượng quay",
+     "50 l/ph"
+    ],
+    [
+     "Lưu lượng đập",
+     "27 – 47 l/ph"
+    ],
+    [
+     "Tần số đập",
+     "32 – 60 Hz"
+    ],
+    [
+     "Tốc độ quay",
+     "200 – 220 v/ph"
+    ],
+    [
+     "Mô-men quay",
+     "150 – 280 N.m"
+    ],
+    [
+     "Kích thước",
+     "587 × 140 × 255 mm"
+    ],
+    [
+     "Choòng lắp được",
+     "28 – 45 mm"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "HDY200"
+    ],
+    [
+     "Percussion working pressure",
+     "12 – 18 MPa"
+    ],
+    [
+     "Rotation pressure",
+     "15 MPa"
+    ],
+    [
+     "Rotation flow",
+     "50 L/min"
+    ],
+    [
+     "Percussion flow",
+     "27 – 47 L/min"
+    ],
+    [
+     "Impact frequency",
+     "32 – 60 Hz"
+    ],
+    [
+     "Rotation speed",
+     "200 – 220 rpm"
+    ],
+    [
+     "Rotation torque",
+     "150 – 280 N.m"
+    ],
+    [
+     "Dimensions",
+     "587 × 140 × 255 mm"
+    ],
+    [
+     "Rod size",
+     "28 – 45 mm"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "HDY200"
+    ],
+    [
+     "冲击工作压力",
+     "12 – 18 MPa"
+    ],
+    [
+     "回转压力",
+     "15 MPa"
+    ],
+    [
+     "回转流量",
+     "50 升/分"
+    ],
+    [
+     "冲击流量",
+     "27 – 47 升/分"
+    ],
+    [
+     "冲击频率",
+     "32 – 60 Hz"
+    ],
+    [
+     "回转速度",
+     "200 – 220 转/分"
+    ],
+    [
+     "回转扭矩",
+     "150 – 280 N.m"
+    ],
+    [
+     "尺寸",
+     "587 × 140 × 255 mm"
+    ],
+    [
+     "适用钎杆",
+     "28 – 45 mm"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-01": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Dùng cho",
+     "Búa khoan thủy lực HDY200"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "For",
+     "hydraulic drifter HDY200"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "适用于",
+     "液压凿岩机 HDY200"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-02": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Kiểu",
+     "Mũi chữ nhất, 2 lưỡi cắt"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Type",
+     "Chisel bit, 2 cutting edges"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "型式",
+     "一字型，2 刃"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:Φ200/Φ140": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "Φ200/Φ140"
+    ],
+    [
+     "Đường kính trong",
+     "200 – 140 mm"
+    ],
+    [
+     "Lực chống",
+     "1225 kN"
+    ],
+    [
+     "Chiều cao",
+     "1270 – 2870 mm"
+    ],
+    [
+     "Hành trình",
+     "1600 mm"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "Φ200/Φ140"
+    ],
+    [
+     "Bore",
+     "200 – 140 mm"
+    ],
+    [
+     "Support force",
+     "1225 kN"
+    ],
+    [
+     "Height",
+     "1270 – 2870 mm"
+    ],
+    [
+     "Stroke",
+     "1600 mm"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "Φ200/Φ140"
+    ],
+    [
+     "缸径",
+     "200 – 140 mm"
+    ],
+    [
+     "支撑力",
+     "1225 kN"
+    ],
+    [
+     "高度",
+     "1270 – 2870 mm"
+    ],
+    [
+     "行程",
+     "1600 mm"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-03": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Đ.kính ngoài/trong × đ.kính cần (mm)",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "165/140 × d80 – hành trình 800",
+     "12.960.000 đ"
+    ],
+    [
+     "165/140 × d80 – hành trình 550",
+     "10.800.000 đ"
+    ],
+    [
+     "135/120 × d60 – hành trình 800",
+     "9.360.000 đ"
+    ],
+    [
+     "135/120 × d50 – hành trình 750",
+     "7.920.000 đ"
+    ],
+    [
+     "110/90 × d60 – hành trình 350",
+     "7.488.000 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Outer/inner bore × rod diameter (mm)",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "165/140 × d80 – stroke 800",
+     "12,960,000 VND"
+    ],
+    [
+     "165/140 × d80 – stroke 550",
+     "10,800,000 VND"
+    ],
+    [
+     "135/120 × d60 – stroke 800",
+     "9,360,000 VND"
+    ],
+    [
+     "135/120 × d50 – stroke 750",
+     "7,920,000 VND"
+    ],
+    [
+     "110/90 × d60 – stroke 350",
+     "7,488,000 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "外/内缸径 × 活塞杆径 (mm)",
+     "参考价（不含增值税）"
+    ],
+    [
+     "165/140 × d80 – 行程 800",
+     "12,960,000 VND"
+    ],
+    [
+     "165/140 × d80 – 行程 550",
+     "10,800,000 VND"
+    ],
+    [
+     "135/120 × d60 – 行程 800",
+     "9,360,000 VND"
+    ],
+    [
+     "135/120 × d50 – 行程 750",
+     "7,920,000 VND"
+    ],
+    [
+     "110/90 × d60 – 行程 350",
+     "7,488,000 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-04": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Số tay điều khiển",
+     "9"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Number of levers",
+     "9"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "操纵手柄数",
+     "9"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-05": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-06": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-07": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-08": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "bộ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "set"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "套"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:FDYM200/50": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "FDYM200/50"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "FDYM200/50"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "FDYM200/50"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:DS10A": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "DS10A"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "DS10A"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "DS10A"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:FATA250/50": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "FATA250/50"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "FATA250/50"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "FATA250/50"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-09": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "DN12",
+     "550.000 đ"
+    ],
+    [
+     "DN10",
+     "366.667 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "DN12",
+     "550,000 VND"
+    ],
+    [
+     "DN10",
+     "366,667 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "DN12",
+     "550,000 VND"
+    ],
+    [
+     "DN10",
+     "366,667 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-10": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "8 tay",
+     "12.906.667 đ"
+    ],
+    [
+     "6 tay",
+     "9.680.000 đ"
+    ],
+    [
+     "5 tay",
+     "8.066.667 đ"
+    ],
+    [
+     "4 tay",
+     "6.453.333 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "8 levers",
+     "12,906,667 VND"
+    ],
+    [
+     "6 levers",
+     "9,680,000 VND"
+    ],
+    [
+     "5 levers",
+     "8,066,667 VND"
+    ],
+    [
+     "4 levers",
+     "6,453,333 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "8 联",
+     "12,906,667 VND"
+    ],
+    [
+     "6 联",
+     "9,680,000 VND"
+    ],
+    [
+     "5 联",
+     "8,066,667 VND"
+    ],
+    [
+     "4 联",
+     "6,453,333 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-11": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "1\" – 90° – L1150",
+     "1.200.000 đ"
+    ],
+    [
+     "1\" – 90° – L1200",
+     "1.800.000 đ"
+    ],
+    [
+     "3/4\" – 90° – L1000",
+     "1.000.000 đ"
+    ],
+    [
+     "3/4\" – 90° – L1700",
+     "1.700.000 đ"
+    ],
+    [
+     "3/4\" – 90° – L1800",
+     "1.800.000 đ"
+    ],
+    [
+     "3/4\" – 90° – L2000",
+     "2.000.000 đ"
+    ],
+    [
+     "3/4\" – 120° – L1200",
+     "1.100.000 đ"
+    ],
+    [
+     "3/4\" – 120° – L1900",
+     "1.900.000 đ"
+    ],
+    [
+     "3/4\" – 120° – L2100",
+     "2.100.000 đ"
+    ],
+    [
+     "3/4\" – 2×90° – L1650",
+     "1.700.000 đ"
+    ],
+    [
+     "3/4\" – 2×90° – L1680",
+     "1.700.000 đ"
+    ],
+    [
+     "5/8\" – 120° – L1100",
+     "600.000 đ"
+    ],
+    [
+     "5/8\" – 120° – L1750",
+     "900.000 đ"
+    ],
+    [
+     "5/8\" – 120° – L2230",
+     "1.150.000 đ"
+    ],
+    [
+     "5/8\" – 90°×120° – L1600",
+     "800.000 đ"
+    ],
+    [
+     "5/8\" – 90°×120° – L1650",
+     "900.000 đ"
+    ],
+    [
+     "1/2\" – L600",
+     "600.000 đ"
+    ],
+    [
+     "Khóa U 1/2\" – 90° – L1000",
+     "500.000 đ"
+    ],
+    [
+     "Khóa U 1/2\" – L1000",
+     "500.000 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "1\" – 90° – L1150",
+     "1,200,000 VND"
+    ],
+    [
+     "1\" – 90° – L1200",
+     "1,800,000 VND"
+    ],
+    [
+     "3/4\" – 90° – L1000",
+     "1,000,000 VND"
+    ],
+    [
+     "3/4\" – 90° – L1700",
+     "1,700,000 VND"
+    ],
+    [
+     "3/4\" – 90° – L1800",
+     "1,800,000 VND"
+    ],
+    [
+     "3/4\" – 90° – L2000",
+     "2,000,000 VND"
+    ],
+    [
+     "3/4\" – 120° – L1200",
+     "1,100,000 VND"
+    ],
+    [
+     "3/4\" – 120° – L1900",
+     "1,900,000 VND"
+    ],
+    [
+     "3/4\" – 120° – L2100",
+     "2,100,000 VND"
+    ],
+    [
+     "3/4\" – 2×90° – L1650",
+     "1,700,000 VND"
+    ],
+    [
+     "3/4\" – 2×90° – L1680",
+     "1,700,000 VND"
+    ],
+    [
+     "5/8\" – 120° – L1100",
+     "600,000 VND"
+    ],
+    [
+     "5/8\" – 120° – L1750",
+     "900,000 VND"
+    ],
+    [
+     "5/8\" – 120° – L2230",
+     "1,150,000 VND"
+    ],
+    [
+     "5/8\" – 90°×120° – L1600",
+     "800,000 VND"
+    ],
+    [
+     "5/8\" – 90°×120° – L1650",
+     "900,000 VND"
+    ],
+    [
+     "1/2\" – L600",
+     "600,000 VND"
+    ],
+    [
+     "U-lock 1/2\" – 90° – L1000",
+     "500,000 VND"
+    ],
+    [
+     "U-lock 1/2\" – L1000",
+     "500,000 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "1\" – 90° – L1150",
+     "1,200,000 VND"
+    ],
+    [
+     "1\" – 90° – L1200",
+     "1,800,000 VND"
+    ],
+    [
+     "3/4\" – 90° – L1000",
+     "1,000,000 VND"
+    ],
+    [
+     "3/4\" – 90° – L1700",
+     "1,700,000 VND"
+    ],
+    [
+     "3/4\" – 90° – L1800",
+     "1,800,000 VND"
+    ],
+    [
+     "3/4\" – 90° – L2000",
+     "2,000,000 VND"
+    ],
+    [
+     "3/4\" – 120° – L1200",
+     "1,100,000 VND"
+    ],
+    [
+     "3/4\" – 120° – L1900",
+     "1,900,000 VND"
+    ],
+    [
+     "3/4\" – 120° – L2100",
+     "2,100,000 VND"
+    ],
+    [
+     "3/4\" – 2×90° – L1650",
+     "1,700,000 VND"
+    ],
+    [
+     "3/4\" – 2×90° – L1680",
+     "1,700,000 VND"
+    ],
+    [
+     "5/8\" – 120° – L1100",
+     "600,000 VND"
+    ],
+    [
+     "5/8\" – 120° – L1750",
+     "900,000 VND"
+    ],
+    [
+     "5/8\" – 120° – L2230",
+     "1,150,000 VND"
+    ],
+    [
+     "5/8\" – 90°×120° – L1600",
+     "800,000 VND"
+    ],
+    [
+     "5/8\" – 90°×120° – L1650",
+     "900,000 VND"
+    ],
+    [
+     "1/2\" – L600",
+     "600,000 VND"
+    ],
+    [
+     "U 型锁 1/2\" – 90° – L1000",
+     "500,000 VND"
+    ],
+    [
+     "U 型锁 1/2\" – L1000",
+     "500,000 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-12": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "m"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "KJ10",
+     "70.000 đ"
+    ],
+    [
+     "KJ16",
+     "100.000 đ"
+    ],
+    [
+     "Ống cao su 4 lớp KJ13",
+     "95.000 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "m"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "KJ10",
+     "70,000 VND"
+    ],
+    [
+     "KJ16",
+     "100,000 VND"
+    ],
+    [
+     "4-ply rubber hose KJ13",
+     "95,000 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "米"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "KJ10",
+     "70,000 VND"
+    ],
+    [
+     "KJ16",
+     "100,000 VND"
+    ],
+    [
+     "4 层橡胶管 KJ13",
+     "95,000 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-13": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "ống"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "KJR 16/10000",
+     "950.000 đ"
+    ],
+    [
+     "KJR 10/10 m (2 đầu thẳng)",
+     "750.000 đ"
+    ],
+    [
+     "KJRB4-10/2400 C-T",
+     "330.000 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "hose"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "KJR 16/10000",
+     "950,000 VND"
+    ],
+    [
+     "KJR 10/10 m (2 straight ends)",
+     "750,000 VND"
+    ],
+    [
+     "KJRB4-10/2400 C-T",
+     "330,000 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "根"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "KJR 16/10000",
+     "950,000 VND"
+    ],
+    [
+     "KJR 10/10 m （两端直头）",
+     "750,000 VND"
+    ],
+    [
+     "KJRB4-10/2400 C-T",
+     "330,000 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-14": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "F80×f65 – L400",
+     "600.000 đ"
+    ],
+    [
+     "F80×f64,5 – L350",
+     "400.000 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "F80×f65 – L400",
+     "600,000 VND"
+    ],
+    [
+     "F80×f64.5 – L350",
+     "400,000 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "F80×f65 – L400",
+     "600,000 VND"
+    ],
+    [
+     "F80×f64.5 – L350",
+     "400,000 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-15": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "m"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "m"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "米"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-16": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "Khớp nối 3 đầu DN12",
+     "96.000 đ"
+    ],
+    [
+     "Khớp nối 3 đầu DN10",
+     "60.000 đ"
+    ],
+    [
+     "Khớp nối cong (cút vuông) DN12",
+     "84.000 đ"
+    ],
+    [
+     "Khớp nối cong (cút vuông) DN10",
+     "66.000 đ"
+    ],
+    [
+     "Đầu nối trung gian (cỡ lớn)",
+     "66.000 đ"
+    ],
+    [
+     "Đầu nối trung gian DN10",
+     "38.400 đ"
+    ],
+    [
+     "Nút bịt DN12",
+     "12.000 đ"
+    ],
+    [
+     "Nút bịt DN10",
+     "9.600 đ"
+    ],
+    [
+     "Kẹp chữ U",
+     "1.800 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "Tee coupling DN12",
+     "96,000 VND"
+    ],
+    [
+     "Tee coupling DN10",
+     "60,000 VND"
+    ],
+    [
+     "Elbow coupling (90°) DN12",
+     "84,000 VND"
+    ],
+    [
+     "Elbow coupling (90°) DN10",
+     "66,000 VND"
+    ],
+    [
+     "Intermediate connector (large)",
+     "66,000 VND"
+    ],
+    [
+     "Intermediate connector DN10",
+     "38,400 VND"
+    ],
+    [
+     "Plug DN12",
+     "12,000 VND"
+    ],
+    [
+     "Plug DN10",
+     "9,600 VND"
+    ],
+    [
+     "U-clip",
+     "1,800 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "三通接头 DN12",
+     "96,000 VND"
+    ],
+    [
+     "三通接头 DN10",
+     "60,000 VND"
+    ],
+    [
+     "弯头接头（90°） DN12",
+     "84,000 VND"
+    ],
+    [
+     "弯头接头（90°） DN10",
+     "66,000 VND"
+    ],
+    [
+     "中间接头（大号）",
+     "66,000 VND"
+    ],
+    [
+     "中间接头 DN10",
+     "38,400 VND"
+    ],
+    [
+     "堵头 DN12",
+     "12,000 VND"
+    ],
+    [
+     "堵头 DN10",
+     "9,600 VND"
+    ],
+    [
+     "U 型卡",
+     "1,800 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-17": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái/bộ"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "Đầu nối ren KJ-10",
+     "120.000 đ"
+    ],
+    [
+     "Khớp nối chữ T KJ3-16",
+     "80.000 đ"
+    ],
+    [
+     "Khớp nối thẳng KJ2-16",
+     "50.000 đ"
+    ],
+    [
+     "Bộ cút tóp thẳng KJ16",
+     "70.000 đ"
+    ],
+    [
+     "Bộ cút tóp thẳng KJ13",
+     "60.000 đ"
+    ],
+    [
+     "Bộ cút tóp thẳng KJ10",
+     "50.000 đ"
+    ],
+    [
+     "Bộ cút tóp cong KJ16",
+     "45.000 đ"
+    ],
+    [
+     "Nút bịt sắt 11-16",
+     "26.000 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc/set"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "Threaded connector KJ-10",
+     "120,000 VND"
+    ],
+    [
+     "T-coupling KJ3-16",
+     "80,000 VND"
+    ],
+    [
+     "Straight coupling KJ2-16",
+     "50,000 VND"
+    ],
+    [
+     "Crimp straight fitting set KJ16",
+     "70,000 VND"
+    ],
+    [
+     "Crimp straight fitting set KJ13",
+     "60,000 VND"
+    ],
+    [
+     "Crimp straight fitting set KJ10",
+     "50,000 VND"
+    ],
+    [
+     "Crimp elbow fitting set KJ16",
+     "45,000 VND"
+    ],
+    [
+     "Steel plug 11-16",
+     "26,000 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个/套"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "螺纹接头 KJ-10",
+     "120,000 VND"
+    ],
+    [
+     "T 型接头 KJ3-16",
+     "80,000 VND"
+    ],
+    [
+     "直通接头 KJ2-16",
+     "50,000 VND"
+    ],
+    [
+     "直通扣压接头套件 KJ16",
+     "70,000 VND"
+    ],
+    [
+     "直通扣压接头套件 KJ13",
+     "60,000 VND"
+    ],
+    [
+     "直通扣压接头套件 KJ10",
+     "50,000 VND"
+    ],
+    [
+     "弯头扣压接头套件 KJ16",
+     "45,000 VND"
+    ],
+    [
+     "钢堵头 11-16",
+     "26,000 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-18": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Cỡ ống / chiều dài (mm)",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "KJ10 / 22800",
+     "3.344.000 đ"
+    ],
+    [
+     "KJ10 / 21000",
+     "3.080.000 đ"
+    ],
+    [
+     "KJ10 / 18800",
+     "2.757.333 đ"
+    ],
+    [
+     "KJ10 / 16800",
+     "2.464.000 đ"
+    ],
+    [
+     "KJ10 / 11000",
+     "1.613.333 đ"
+    ],
+    [
+     "KJ10 / 9800 (1 thẳng 1 vuông)",
+     "1.543.666 đ"
+    ],
+    [
+     "KJ10 / 8800 (1 thẳng 1 vuông)",
+     "1.397.000 đ"
+    ],
+    [
+     "KJ10 / 7300 (1 thẳng 1 vuông)",
+     "1.177.000 đ"
+    ],
+    [
+     "KJ10 / 4600 (1 thẳng 1 vuông)",
+     "781.000 đ"
+    ],
+    [
+     "KJ10 / 4200",
+     "616.000 đ"
+    ],
+    [
+     "KJ13 / 11800",
+     "1.947.000 đ"
+    ],
+    [
+     "KJ13 / 10800",
+     "1.782.000 đ"
+    ],
+    [
+     "KJ13 / 7800",
+     "1.287.000 đ"
+    ],
+    [
+     "KJ13 / 4800",
+     "792.000 đ"
+    ],
+    [
+     "KJ13 / 7000 (1 thẳng 1 vuông)",
+     "1.289.444 đ"
+    ],
+    [
+     "KJ13 / 5000 (1 thẳng 1 vuông)",
+     "959.444 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Hose size / length (mm)",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "KJ10 / 22800",
+     "3,344,000 VND"
+    ],
+    [
+     "KJ10 / 21000",
+     "3,080,000 VND"
+    ],
+    [
+     "KJ10 / 18800",
+     "2,757,333 VND"
+    ],
+    [
+     "KJ10 / 16800",
+     "2,464,000 VND"
+    ],
+    [
+     "KJ10 / 11000",
+     "1,613,333 VND"
+    ],
+    [
+     "KJ10 / 9800 (1 straight, 1 elbow end)",
+     "1,543,666 VND"
+    ],
+    [
+     "KJ10 / 8800 (1 straight, 1 elbow end)",
+     "1,397,000 VND"
+    ],
+    [
+     "KJ10 / 7300 (1 straight, 1 elbow end)",
+     "1,177,000 VND"
+    ],
+    [
+     "KJ10 / 4600 (1 straight, 1 elbow end)",
+     "781,000 VND"
+    ],
+    [
+     "KJ10 / 4200",
+     "616,000 VND"
+    ],
+    [
+     "KJ13 / 11800",
+     "1,947,000 VND"
+    ],
+    [
+     "KJ13 / 10800",
+     "1,782,000 VND"
+    ],
+    [
+     "KJ13 / 7800",
+     "1,287,000 VND"
+    ],
+    [
+     "KJ13 / 4800",
+     "792,000 VND"
+    ],
+    [
+     "KJ13 / 7000 (1 straight, 1 elbow end)",
+     "1,289,444 VND"
+    ],
+    [
+     "KJ13 / 5000 (1 straight, 1 elbow end)",
+     "959,444 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "管径 / 长度 (mm)",
+     "参考价（不含增值税）"
+    ],
+    [
+     "KJ10 / 22800",
+     "3,344,000 VND"
+    ],
+    [
+     "KJ10 / 21000",
+     "3,080,000 VND"
+    ],
+    [
+     "KJ10 / 18800",
+     "2,757,333 VND"
+    ],
+    [
+     "KJ10 / 16800",
+     "2,464,000 VND"
+    ],
+    [
+     "KJ10 / 11000",
+     "1,613,333 VND"
+    ],
+    [
+     "KJ10 / 9800 （一直一弯）",
+     "1,543,666 VND"
+    ],
+    [
+     "KJ10 / 8800 （一直一弯）",
+     "1,397,000 VND"
+    ],
+    [
+     "KJ10 / 7300 （一直一弯）",
+     "1,177,000 VND"
+    ],
+    [
+     "KJ10 / 4600 （一直一弯）",
+     "781,000 VND"
+    ],
+    [
+     "KJ10 / 4200",
+     "616,000 VND"
+    ],
+    [
+     "KJ13 / 11800",
+     "1,947,000 VND"
+    ],
+    [
+     "KJ13 / 10800",
+     "1,782,000 VND"
+    ],
+    [
+     "KJ13 / 7800",
+     "1,287,000 VND"
+    ],
+    [
+     "KJ13 / 4800",
+     "792,000 VND"
+    ],
+    [
+     "KJ13 / 7000 （一直一弯）",
+     "1,289,444 VND"
+    ],
+    [
+     "KJ13 / 5000 （一直一弯）",
+     "959,444 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-19": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:TJBC.80-58": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "TJBC.80-58"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "TJBC.80-58"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "TJBC.80-58"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:KJ-KS18H14RD1": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "KJ-KS18H14RD1"
+    ],
+    [
+     "Lưu lượng giải nhiệt",
+     "200 l/ph"
+    ],
+    [
+     "Xuất xứ",
+     "Trung Quốc"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "KJ-KS18H14RD1"
+    ],
+    [
+     "Cooling flow",
+     "200 L/min"
+    ],
+    [
+     "Origin",
+     "China"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "KJ-KS18H14RD1"
+    ],
+    [
+     "冷却流量",
+     "200 升/分"
+    ],
+    [
+     "产地",
+     "中国"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-20": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-21": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "bộ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "set"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "套"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-22": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "bộ"
+    ],
+    [
+     "Đường kính ngoài",
+     "120 mm"
+    ],
+    [
+     "Đường kính trong",
+     "64 mm"
+    ],
+    [
+     "Chiều cao",
+     "550 mm"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "set"
+    ],
+    [
+     "Outer diameter",
+     "120 mm"
+    ],
+    [
+     "Bore",
+     "64 mm"
+    ],
+    [
+     "Height",
+     "550 mm"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "套"
+    ],
+    [
+     "外径",
+     "120 mm"
+    ],
+    [
+     "缸径",
+     "64 mm"
+    ],
+    [
+     "高度",
+     "550 mm"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-23": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-24": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "bộ"
+    ],
+    [
+     "Dùng cho",
+     "Động cơ 45 kW – bơm ba khoang"
+    ],
+    [
+     "Lỗ lắp trục động cơ",
+     "Ø60 mm"
+    ],
+    [
+     "Đầu lắp bơm",
+     "Then hoa D32×7×6"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "set"
+    ],
+    [
+     "For",
+     "45 kW motor – triple pump"
+    ],
+    [
+     "Motor shaft bore",
+     "Ø60 mm"
+    ],
+    [
+     "Pump end",
+     "Spline D32×7×6"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "套"
+    ],
+    [
+     "适用于",
+     "45 kW 电机 – 三联泵"
+    ],
+    [
+     "电机轴孔",
+     "Ø60 mm"
+    ],
+    [
+     "泵端",
+     "花键 D32×7×6"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-25": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Quy cách",
+     "Giá tham khảo (chưa VAT)"
+    ],
+    [
+     "Vòng bi kim hành tinh",
+     "3.250.000 đ"
+    ],
+    [
+     "NU206E",
+     "1.150.000 đ"
+    ],
+    [
+     "6313",
+     "1.050.000 đ"
+    ],
+    [
+     "6312",
+     "950.000 đ"
+    ],
+    [
+     "6204",
+     "450.000 đ"
+    ],
+    [
+     "6206",
+     "350.000 đ"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Size",
+     "Reference price (excl. VAT)"
+    ],
+    [
+     "Planetary needle bearing",
+     "3,250,000 VND"
+    ],
+    [
+     "NU206E",
+     "1,150,000 VND"
+    ],
+    [
+     "6313",
+     "1,050,000 VND"
+    ],
+    [
+     "6312",
+     "950,000 VND"
+    ],
+    [
+     "6204",
+     "450,000 VND"
+    ],
+    [
+     "6206",
+     "350,000 VND"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "规格",
+     "参考价（不含增值税）"
+    ],
+    [
+     "行星滚针轴承",
+     "3,250,000 VND"
+    ],
+    [
+     "NU206E",
+     "1,150,000 VND"
+    ],
+    [
+     "6313",
+     "1,050,000 VND"
+    ],
+    [
+     "6312",
+     "950,000 VND"
+    ],
+    [
+     "6204",
+     "450,000 VND"
+    ],
+    [
+     "6206",
+     "350,000 VND"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:D100 0-400 bar": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "D100 0-400 bar"
+    ],
+    [
+     "Mặt",
+     "Φ100"
+    ],
+    [
+     "Thang đo",
+     "0 – 400 bar"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "D100 0-400 bar"
+    ],
+    [
+     "Dial",
+     "Φ100"
+    ],
+    [
+     "Range",
+     "0 – 400 bar"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "D100 0-400 bar"
+    ],
+    [
+     "表盘",
+     "Φ100"
+    ],
+    [
+     "量程",
+     "0 – 400 bar"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:Φ60 0-60 MPa": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "Φ60 0-60 MPa"
+    ],
+    [
+     "Mặt",
+     "Φ60, chân cài"
+    ],
+    [
+     "Thang đo",
+     "0 – 60 MPa"
+    ],
+    [
+     "Kiểu",
+     "2 kim"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "Φ60 0-60 MPa"
+    ],
+    [
+     "Dial",
+     "Φ60, bottom connection"
+    ],
+    [
+     "Range",
+     "0 – 60 MPa"
+    ],
+    [
+     "Type",
+     "2 pointers"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "Φ60 0-60 MPa"
+    ],
+    [
+     "表盘",
+     "Φ60, 径向接口"
+    ],
+    [
+     "量程",
+     "0 – 60 MPa"
+    ],
+    [
+     "型式",
+     "双针"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:AW 46": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "AW 46"
+    ],
+    [
+     "Cấp độ nhớt",
+     "ISO VG 46"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "AW 46"
+    ],
+    [
+     "Viscosity grade",
+     "ISO VG 46"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "AW 46"
+    ],
+    [
+     "粘度等级",
+     "ISO VG 46"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VHLUB NH": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "VHLUB NH"
+    ],
+    [
+     "Quy cách",
+     "Can 18 lít"
+    ],
+    [
+     "Tính năng",
+     "Chống cháy, dùng cho hệ thủy lực hầm lò"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "VHLUB NH"
+    ],
+    [
+     "Specification",
+     "18 L can"
+    ],
+    [
+     "Feature",
+     "Fire-resistant, for underground hydraulic systems"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "VHLUB NH"
+    ],
+    [
+     "规格",
+     "18 升桶"
+    ],
+    [
+     "特点",
+     "阻燃，用于井下液压系统"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:ZCY60 / PC100 / PC120-5": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "ZCY60 / PC100 / PC120-5"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "ZCY60 / PC100 / PC120-5"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "ZCY60 / PC100 / PC120-5"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:ZCY60 / PC120-5/6": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "ZCY60 / PC120-5/6"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "ZCY60 / PC120-5/6"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "ZCY60 / PC120-5/6"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:ZCY60 / PC120-5 500 mm": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "ZCY60 / PC120-5 500 mm"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "ZCY60 / PC120-5 500 mm"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "ZCY60 / PC120-5 500 mm"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:M14×1,5×45": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "M14×1,5×45"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "M14×1.5×45"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "M14×1.5×45"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:530-119": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "530-119"
+    ],
+    [
+     "Phạm vi đo",
+     "0 – 300 mm"
+    ],
+    [
+     "Độ chia",
+     "0,02 mm"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "530-119"
+    ],
+    [
+     "Measuring range",
+     "0 – 300 mm"
+    ],
+    [
+     "Graduation",
+     "0.02 mm"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "530-119"
+    ],
+    [
+     "测量范围",
+     "0 – 300 mm"
+    ],
+    [
+     "分度值",
+     "0.02 mm"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:SV-600KD": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "SV-600KD"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "SV-600KD"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "SV-600KD"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:H6P30MW": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "H6P30MW"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "H6P30MW"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "H6P30MW"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:TNS-P42SS-NS-006": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "TNS-P42SS-NS-006"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "TNS-P42SS-NS-006"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "TNS-P42SS-NS-006"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
+ "code:VP-MO-26": {
+  "spec": {
+   "vi": [
+    [
+     "Đơn vị tính",
+     "cái"
+    ],
+    [
+     "Dung tích",
+     "2000 lít"
+    ],
+    [
+     "Kiểu",
+     "Đứng"
+    ]
+   ],
+   "en": [
+    [
+     "Unit",
+     "pc"
+    ],
+    [
+     "Capacity",
+     "2000 L"
+    ],
+    [
+     "Type",
+     "Vertical"
+    ]
+   ],
+   "zh": [
+    [
+     "单位",
+     "个"
+    ],
+    [
+     "容量",
+     "2000 升"
+    ],
+    [
+     "型式",
+     "立式"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
  }
 }
