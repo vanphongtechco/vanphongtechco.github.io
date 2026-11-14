@@ -862,23 +862,31 @@
     ],
     [
      "Loại RAM",
-     "DDR4 Unbuffered Long-DIMM (U-DIMM), cho máy tính để bàn"
+     "DDR4"
+    ],
+    [
+     "Kiểu DIMM",
+     "Unbuffered Long-DIMM (U-DIMM), cho máy tính để bàn"
     ],
     [
      "Tốc độ",
-     "3200 MT/s (PC4-25600), băng thông tới 25,6 GB/s"
-    ],
-    [
-     "Dung lượng",
-     "16GB (1 × 16GB)"
+     "3200 MT/s, băng thông tới 25,6 GB/s"
     ],
     [
      "CAS Latency",
      "CL22"
     ],
     [
+     "Dung lượng",
+     "16GB"
+    ],
+    [
      "Rank × Org.",
-     "1Rx8, chip 2Gx8"
+     "1Rx8"
+    ],
+    [
+     "Cấu hình chip",
+     "2Gx8"
     ],
     [
      "Điện áp",
@@ -895,6 +903,10 @@
     [
      "Nhiệt độ làm việc",
      "0 °C ~ 85 °C"
+    ],
+    [
+     "Bảo hành của hãng",
+     "Bảo hành trọn đời có giới hạn"
     ]
    ],
    "en": [
@@ -908,23 +920,31 @@
     ],
     [
      "RAM type",
-     "DDR4 Unbuffered Long-DIMM (U-DIMM), desktop"
+     "DDR4"
+    ],
+    [
+     "DIMM type",
+     "Unbuffered Long-DIMM (U-DIMM), desktop"
     ],
     [
      "Speed",
-     "3200 MT/s (PC4-25600), up to 25.6 GB/s"
-    ],
-    [
-     "Capacity",
-     "16GB (1 × 16GB)"
+     "3200 MT/s, up to 25.6 GB/s"
     ],
     [
      "CAS latency",
      "CL22"
     ],
     [
+     "Capacity",
+     "16GB"
+    ],
+    [
      "Rank × Org.",
-     "1Rx8, 2Gx8 chips"
+     "1Rx8"
+    ],
+    [
+     "Component composition",
+     "2Gx8"
     ],
     [
      "Voltage",
@@ -936,11 +956,15 @@
     ],
     [
      "PCB height",
-     "1.23 inch"
+     "1.23 inches"
     ],
     [
      "Operating temperature",
      "0 °C ~ 85 °C"
+    ],
+    [
+     "Manufacturer warranty",
+     "Limited lifetime warranty"
     ]
    ],
    "zh": [
@@ -954,23 +978,31 @@
     ],
     [
      "内存类型",
-     "DDR4 无缓冲长 DIMM（U-DIMM），台式机"
+     "DDR4"
+    ],
+    [
+     "DIMM 类型",
+     "无缓冲长 DIMM（U-DIMM），台式机"
     ],
     [
      "速度",
-     "3200 MT/s（PC4-25600），带宽最高 25.6 GB/s"
-    ],
-    [
-     "容量",
-     "16GB（1 × 16GB）"
+     "3200 MT/s，带宽最高 25.6 GB/s"
     ],
     [
      "CAS 延迟",
      "CL22"
     ],
     [
+     "容量",
+     "16GB"
+    ],
+    [
      "Rank × Org.",
-     "1Rx8，2Gx8 颗粒"
+     "1Rx8"
+    ],
+    [
+     "颗粒组成",
+     "2Gx8"
     ],
     [
      "电压",
@@ -987,6 +1019,10 @@
     [
      "工作温度",
      "0 °C ~ 85 °C"
+    ],
+    [
+     "原厂保修",
+     "有限终身保修"
     ]
    ]
   }
@@ -996,7 +1032,7 @@
    "vi": [
     [
      "Hãng sản xuất",
-     "Kingmax (Đài Loan) – dòng Horizon"
+     "Kingmax (Đài Loan) – dòng DDR5 Horizon"
     ],
     [
      "Model",
@@ -1008,27 +1044,35 @@
     ],
     [
      "Tốc độ",
-     "6000 MHz (băng thông 48 GB/s)"
+     "6000 MHz"
+    ],
+    [
+     "Băng thông",
+     "48,0 GB/s"
     ],
     [
      "Dung lượng",
      "16GB (1 × 16GB)"
     ],
     [
-     "Điện áp",
-     "1,25 V"
+     "CAS Latency",
+     "36 / 38"
+    ],
+    [
+     "Điện áp (VDD)",
+     "1,35 V"
     ],
     [
      "Số chân",
      "288 chân"
     ],
     [
-     "Tản nhiệt",
-     "Có (nhôm), không LED"
+     "Số bank nội",
+     "32"
     ],
     [
-     "Sửa lỗi",
-     "Non-ECC (On-Die ECC của chuẩn DDR5)"
+     "Tính năng",
+     "Tản nhiệt nhôm; On-Die ECC; PMIC tích hợp; 2 kênh độc lập trên mỗi DIMM"
     ],
     [
      "Ép xung",
@@ -1036,13 +1080,17 @@
     ],
     [
      "Nhiệt độ làm việc",
-     "0 °C ~ 70 °C"
+     "0 ~ 70 °C"
+    ],
+    [
+     "Bảo hành của hãng",
+     "5 năm"
     ]
    ],
    "en": [
     [
      "Manufacturer",
-     "Kingmax (Taiwan) – Horizon series"
+     "Kingmax (Taiwan) – DDR5 Horizon series"
     ],
     [
      "Model",
@@ -1053,28 +1101,36 @@
      "DDR5 U-DIMM, desktop"
     ],
     [
-     "Speed",
-     "6000 MHz (48 GB/s bandwidth)"
+     "Frequency",
+     "6000 MHz"
+    ],
+    [
+     "Bandwidth",
+     "48.0 GB/s"
     ],
     [
      "Capacity",
      "16GB (1 × 16GB)"
     ],
     [
-     "Voltage",
-     "1.25 V"
+     "CAS latency",
+     "36 / 38"
+    ],
+    [
+     "Voltage (VDD)",
+     "1.35 V"
     ],
     [
      "Pin count",
      "288-pin"
     ],
     [
-     "Heatsink",
-     "Yes (aluminium), no LED"
+     "Internal banks",
+     "32"
     ],
     [
-     "Error correction",
-     "Non-ECC (DDR5 on-die ECC)"
+     "Features",
+     "Aluminium heatsink; on-die ECC; built-in PMIC; two independent channels per DIMM"
     ],
     [
      "Overclocking",
@@ -1082,13 +1138,17 @@
     ],
     [
      "Operating temperature",
-     "0 °C ~ 70 °C"
+     "0 ~ 70 °C"
+    ],
+    [
+     "Manufacturer warranty",
+     "5 years"
     ]
    ],
    "zh": [
     [
      "制造商",
-     "Kingmax（台湾）– Horizon 系列"
+     "Kingmax（台湾）– DDR5 Horizon 系列"
     ],
     [
      "型号",
@@ -1099,28 +1159,36 @@
      "DDR5 U-DIMM，台式机"
     ],
     [
-     "速度",
-     "6000 MHz（带宽 48 GB/s）"
+     "频率",
+     "6000 MHz"
+    ],
+    [
+     "带宽",
+     "48.0 GB/s"
     ],
     [
      "容量",
      "16GB（1 × 16GB）"
     ],
     [
-     "电压",
-     "1.25 V"
+     "CAS 延迟",
+     "36 / 38"
+    ],
+    [
+     "电压（VDD）",
+     "1.35 V"
     ],
     [
      "针脚",
      "288 针"
     ],
     [
-     "散热片",
-     "有（铝制），无灯效"
+     "内部 Bank",
+     "32"
     ],
     [
-     "纠错",
-     "非 ECC（DDR5 片上 ECC）"
+     "特点",
+     "铝散热片；片上 ECC；内置 PMIC；每条 DIMM 两个独立通道"
     ],
     [
      "超频",
@@ -1128,7 +1196,11 @@
     ],
     [
      "工作温度",
-     "0 °C ~ 70 °C"
+     "0 ~ 70 °C"
+    ],
+    [
+     "原厂保修",
+     "5 年"
     ]
    ]
   }
