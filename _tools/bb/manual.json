@@ -4595,6 +4595,69 @@
    "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
   }
  },
+ "code:ZCY60/PC120 B260": {
+  "spec": {
+   "vi": [
+    [
+     "Mã hiệu",
+     "ZCY60/PC120 B260"
+    ],
+    [
+     "Số mắt xích",
+     "33"
+    ],
+    [
+     "Kiểu",
+     "B260"
+    ],
+    [
+     "Dùng cho",
+     "ZCY60 / PC120"
+    ]
+   ],
+   "en": [
+    [
+     "Model",
+     "ZCY60/PC120 B260"
+    ],
+    [
+     "Number of links",
+     "33"
+    ],
+    [
+     "Type",
+     "B260"
+    ],
+    [
+     "For",
+     "ZCY60 / PC120"
+    ]
+   ],
+   "zh": [
+    [
+     "型号",
+     "ZCY60/PC120 B260"
+    ],
+    [
+     "链节数",
+     "33"
+    ],
+    [
+     "型式",
+     "B260"
+    ],
+    [
+     "适用于",
+     "ZCY60 / PC120"
+    ]
+   ]
+  },
+  "note": {
+   "vi": "Thông số theo nhãn máy, hồ sơ CO/CQ, biên bản kiểm định và hợp đồng cung cấp. Vân Phong xác nhận lại khi báo giá.",
+   "en": "Specifications from nameplates, CO/CQ documents, inspection records and supply contracts. Van Phong confirms them in the quotation.",
+   "zh": "参数来自铭牌、原产地证/质量证书、检验记录及供货合同，以 Van Phong 报价确认为准。"
+  }
+ },
  "code:ZCY60 / PC120-5/6": {
   "spec": {
    "vi": [
