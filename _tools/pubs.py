@@ -100,7 +100,8 @@ def block(lang):
       <p class="ve">{meta}{doi}</p>
       <details><summary>{e(t['abs'])}</summary><p>{e(m[f'abstract_{lang}'])}</p></details>
       <p class="dl">{' '.join(links)}</p></div></li>"""
-    js = [m for m in META if m['kind'] == 'journal']; cs = [m for m in META if m['kind'] != 'journal']
+    key = lambda m: str(m.get('date') or f"{m['year']}-00")
+    js = sorted([m for m in META if m['kind'] == 'journal'], key=key, reverse=True); cs = sorted([m for m in META if m['kind'] != 'journal'], key=key, reverse=True)
     out = f"""<section class="grey" id="bai-bao"><div class="wrap">
   <div class="title"><h2>{e(t['h'])}</h2><p>{e(t['sub'])}</p></div>
   <h3 class="pubh">{e(t['j'])} ({len(js)})</h3>
