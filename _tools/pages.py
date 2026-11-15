@@ -456,7 +456,7 @@ function cl(){b.classList.remove('on');document.body.style.overflow='';}b.queryS
         if not m: sys.exit("Không tìm thấy khối đề tài " + lang)
         css = re.search(r'#de-tai\{display:none\}(#de-tai \.detai\{.*?)(?=\n)', hp).group(1)
         ttl = html.unescape(m.group(1)); d = REPO / pre / "de-tai"; d.mkdir(parents=True, exist_ok=True)
-        lead = {"vi": "Các đề tài nghiên cứu khoa học công nghệ đã thực hiện.", "en": "Completed research projects.", "zh": "已完成的科研项目。"}[lang]
+        lead = {"vi": "Các đề tài nghiên cứu, phát triển sản phẩm và công nghệ.", "en": "Research projects developing products and technologies.", "zh": "产品与技术研发项目。"}[lang]
         pg = listing(lang, ttl, lead, "de-tai/", [e(ttl)], f'<section id="de-tai">{m.group(2)}</section>').replace("</head>", f"<style>{css}</style></head>", 1)
         (d / "index.html").write_text(pg, encoding="utf-8")
         urls.append(f"{SITE}/{pre}de-tai/")
