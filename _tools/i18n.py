@@ -216,9 +216,9 @@ P = [
 ('aria-label="Đóng"', 'aria-label="Close"', 'aria-label="关闭"'),
 ('<p class="lb-note" id="lbNote">Một số thông tin cá nhân đã được che.</p>', '<p class="lb-note" id="lbNote">Vietnamese original. Some personal data has been hidden.</p>', '<p class="lb-note" id="lbNote">越文原件，部分个人信息已隐去。</p>'),
 # script data
-("name:'Thiết bị công nghiệp', subs:['Máy và thiết bị cơ khí','Bơm, quạt, hộp giảm tốc','Vật tư, phụ tùng thay thế','Động cơ điện, động cơ thủy lực','Thiết bị điện, cáp phòng nổ','Búa khoan, choòng, mũi khoan','Xy lanh, van thủy lực','Ống, phụ kiện thủy lực']",
- "name:'Industrial equipment', subs:['Mechanical machinery & equipment','Pumps, fans, gearboxes','Consumables & spare parts','Electric & hydraulic motors','Explosion-proof electrical equipment, cables','Rock drills, drill rods, bits','Hydraulic cylinders, valves','Hydraulic hoses, fittings']",
- "name:'工业设备', subs:['机械设备','泵、风机、减速机','耗材及备品备件','电动机、液压马达','防爆电气设备、电缆','凿岩机、钎杆、钻头','液压缸、液压阀','液压软管、管件']"),
+("name:'Thiết bị công nghiệp', subs:['Máy và thiết bị cơ khí','Bơm, quạt, hộp giảm tốc','Vật tư, phụ tùng thay thế','Động cơ điện, động cơ thủy lực','Thiết bị điện, cáp phòng nổ','Búa khoan, choòng, mũi khoan','Xy lanh, van thủy lực','Ống, phụ kiện thủy lực','Dụng cụ đo, đồng hồ đo']",
+ "name:'Industrial equipment', subs:['Mechanical machinery & equipment','Pumps, fans, gearboxes','Consumables & spare parts','Electric & hydraulic motors','Explosion-proof electrical equipment, cables','Rock drills, drill rods, bits','Hydraulic cylinders, valves','Hydraulic hoses, fittings','Measuring tools and gauges']",
+ "name:'工业设备', subs:['机械设备','泵、风机、减速机','耗材及备品备件','电动机、液压马达','防爆电气设备、电缆','凿岩机、钎杆、钻头','液压缸、液压阀','液压软管、管件','量具与仪表']"),
 ("name:'Thiết bị y tế', subs:['Thiết bị xét nghiệm','Giường, xe đẩy y tế','Thiết bị tiệt trùng','Thiết bị y tế khác']",
  "name:'Medical equipment', subs:['Clinical analyzers','Hospital beds & trolleys','Sterilization equipment','Other medical equipment']",
  "name:'医疗设备', subs:['检验分析设备','病床、医用推车','灭菌设备','其他医疗设备']"),
