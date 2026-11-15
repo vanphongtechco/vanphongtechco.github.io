@@ -262,6 +262,7 @@ section{padding:70px 0}
 .cat-head form{display:flex;gap:6px;flex:1 1 300px;max-width:420px}
 .cat-head input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);font:14px var(--font)}
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.grid .ghd{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:2px solid #1580BF;padding:6px 0 8px;margin-top:10px}.grid .ghd:first-child{margin-top:0}.grid .ghd h3{margin:0;font-size:19px;color:#0E2F5A}.grid .ghd button{background:none;border:0;padding:4px 0;color:#F07C1B;font:700 14.5px inherit;font-family:inherit;cursor:pointer}.grid .ghd button:hover{text-decoration:underline}
 @media (max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .card{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
 .card:hover{border-color:var(--blue);box-shadow:0 10px 24px rgba(14,47,90,.1)}
@@ -3364,7 +3365,7 @@ document.querySelectorAll('.dev[data-i],.th[data-i]').forEach(d => d.innerHTML =
 })();
 
 /* catalogue */
-let cur='all', sub=null, query='', page=1; const PER=12; const opened=new Set();
+let cur='all', sub=null, query='', page=1; const PER=12; const GRP_ALL='Xem tất cả {n} sản phẩm →', CNT_SP=' sản phẩm'; const opened=new Set();
 function scrollToCat(){ requestAnimationFrame(()=>{const t=$('catTitle').hidden?$('san-pham'):$('catTitle'),hd=document.querySelector('header'),off=(hd&&getComputedStyle(hd).position!=='static'?hd.offsetHeight:0)+12;scrollTo({top:Math.max(0,t.getBoundingClientRect().top+scrollY-off),behavior:(reduce||innerWidth<=900)?'instant':'smooth'})}); }
 function renderMenus(){
   $('mega').innerHTML=CATS.map(c=>'<div><h4><button type="button" data-cat="'+c.id+'">'+c.name+'</button></h4><ul>'+c.subs.map((x,k)=>'<li><button type="button" data-cat="'+c.id+'" data-sub="'+k+'">'+x+'</button></li>').join('')+'</ul></div>').join('');
@@ -3382,12 +3383,17 @@ function renderTree(){
 }
 function renderGrid(){
   const q=norm(query.trim());
-  const list=PRODUCTS.filter(p=>(cur==='all'||p.c===cur)&&(sub===null||p.s===sub)&&(!q||norm(p.n+' '+p.code+' '+p.d).includes(q)));
-  const pages=Math.max(1,Math.ceil(list.length/PER)); if(page>pages)page=pages;
+  let list=PRODUCTS.filter(p=>(cur==='all'||p.c===cur)&&(sub===null||p.s===sub)&&(!q||norm(p.n+' '+p.code+' '+p.d).includes(q)));
+  // Trang chủ (chưa chọn danh mục, chưa tìm): mỗi lĩnh vực hiện 4 sản phẩm, ưu tiên sản phẩm có ảnh
+  const GRP=cur==='all'&&!q, GN={};
+  if(GRP){list=[];CATS.forEach(c=>{const a=PRODUCTS.filter(p=>p.c===c.id);GN[c.id]=a.length;list=list.concat(a.filter(p=>p.img).concat(a.filter(p=>!p.img)).slice(0,4))});page=1}
+  const PP=GRP?Math.max(1,list.length):PER;
+  const pages=Math.max(1,Math.ceil(list.length/PP)); if(page>pages)page=pages;
   const cat=CATS.find(c=>c.id===cur), sn=(cat&&sub!==null)?cat.subs[sub]:null;
   $('catTitle').textContent=sn||(cat?cat.name:'Sản phẩm');$('catTitle').hidden=!sn&&!cat;
   $('catCount').textContent=list.length+' sản phẩm'+(query.trim()?' khớp với “'+query.trim()+'”':'');
-  $('grid').innerHTML=list.length?list.slice((page-1)*PER,page*PER).map(p=>{const c=CATS.find(x=>x.id===p.c);const u='san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/';return '<article class="card"><a class="thumb'+(p.img?' ph':'')+'" href="'+u+'">'+pic(p)+'</a><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4><a href="'+u+'">'+esc(p.n)+'</a></h4><a class="dsc" href="'+u+'"><p>'+esc(p.d)+'</p></a>'+(p.gia?'<p class="gia">'+GIA_L+' '+(p.tu?GIA_TU+' ':'')+'<b>'+p.gia.toLocaleString(GIA_LOC)+' '+GIA_C+'</b> <small>'+GIA_V+'</small></p>':'')+'<div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/vi/'+p.pdf+'.pdf" target="_blank" rel="noopener">Tải catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'.pdf" target="_blank" rel="noopener">Bài báo ứng dụng (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Bản vẽ (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video giới thiệu</a>':'')+'<a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 / 0986.818.013 để được tư vấn.</div>';
+  $('grid').innerHTML=list.length?list.slice((page-1)*PP,page*PP).map(p=>{const c=CATS.find(x=>x.id===p.c);const u='san-pham/'+SLUGS[PRODUCTS.indexOf(p)]+'/';return '<article class="card"><a class="thumb'+(p.img?' ph':'')+'" href="'+u+'">'+pic(p)+'</a><div class="body"><span class="tag">'+esc(c.subs[p.s])+'</span><h4><a href="'+u+'">'+esc(p.n)+'</a></h4><a class="dsc" href="'+u+'"><p>'+esc(p.d)+'</p></a>'+(p.gia?'<p class="gia">'+GIA_L+' '+(p.tu?GIA_TU+' ':'')+'<b>'+p.gia.toLocaleString(GIA_LOC)+' '+GIA_C+'</b> <small>'+GIA_V+'</small></p>':'')+'<div class="foot"><span class="code">'+esc(p.code)+'</span>'+(p.pdf?'<a class="dl" href="/catalog/vi/'+p.pdf+'.pdf" target="_blank" rel="noopener">Tải catalog PDF</a>':'')+(p.art?'<a class="dl" href="/bai-bao/'+p.art+'.pdf" target="_blank" rel="noopener">Bài báo ứng dụng (PDF)</a>':'')+(p.dwg?'<a class="dl" href="'+p.dwg+'" target="_blank" rel="noopener">Bản vẽ (PDF)</a>':'')+(p.vid?'<a class="dl" href="'+p.vid+'" target="_blank" rel="noopener">Video giới thiệu</a>':'')+'<a href="#lien-he">Liên hệ báo giá →</a></div></div></article>'}).join(''):'<div class="empty">Không tìm thấy sản phẩm phù hợp. Gọi 08.9999.0683 / 0986.818.013 để được tư vấn.</div>';
+  if(GRP){const g=$('grid'),cs=[...g.children];let prev=null;cs.forEach((el,i)=>{const c=list[i].c;if(c!==prev){const cat=CATS.find(x=>x.id===c);const h=document.createElement('div');h.className='ghd';h.innerHTML='<h3>'+esc(cat.name)+'</h3><button type="button" data-cat="'+c+'">'+GRP_ALL.replace('{n}',GN[c])+'</button>';g.insertBefore(h,el);prev=c}});$('catCount').textContent=PRODUCTS.length+CNT_SP;}
   const pg=$('pager'); if(pages<=1){pg.innerHTML='';return;}
   let h='<button type="button" data-page="'+(page-1)+'" '+(page===1?'disabled':'')+' aria-label="Trang trước">‹</button>';
   const ks=[];for(let k=1;k<=pages;k++)if(k===1||k===pages||Math.abs(k-page)<=2)ks.push(k);
