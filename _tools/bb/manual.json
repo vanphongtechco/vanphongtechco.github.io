@@ -5494,5 +5494,147 @@
    "en": "Specifications may vary by design and version.",
    "zh": "参数可能因设计和版本而不同。"
   }
+ },
+ "code:TD4A-WS": {
+  "spec": {
+   "vi": [
+    [
+     "Tốc độ quay",
+     "0 – 4.000 vòng/phút"
+    ],
+    [
+     "Lực ly tâm tương đối tối đa",
+     "2.680 ×g"
+    ],
+    [
+     "Độ chính xác tốc độ",
+     "±10 vòng/phút"
+    ],
+    [
+     "Hẹn giờ",
+     "0 – 99 phút"
+    ],
+    [
+     "Độ ồn",
+     "≤ 50 dB(A)"
+    ],
+    [
+     "Động cơ",
+     "DC không chổi than, điều khiển bằng bộ vi xử lý"
+    ],
+    [
+     "Hiển thị",
+     "Màn hình kỹ thuật số hoặc LCD"
+    ],
+    [
+     "Rô-to văng",
+     "4×50 ml; 8×10/15 ml; 12×10 ml"
+    ],
+    [
+     "Rô-to góc",
+     "18×10 ml; 24×10 ml; 4/6×50 ml; 12×15 ml; 12×20 ml"
+    ],
+    [
+     "Kích thước",
+     "450 × 340 × 270 mm"
+    ],
+    [
+     "Trọng lượng",
+     "18 kg"
+    ]
+   ],
+   "en": [
+    [
+     "Speed",
+     "0 – 4,000 rpm"
+    ],
+    [
+     "Max. RCF",
+     "2,680 ×g"
+    ],
+    [
+     "Speed accuracy",
+     "±10 rpm"
+    ],
+    [
+     "Timer",
+     "0 – 99 min"
+    ],
+    [
+     "Noise",
+     "≤ 50 dB(A)"
+    ],
+    [
+     "Motor",
+     "Brushless DC, microprocessor controlled"
+    ],
+    [
+     "Display",
+     "Digital or LCD"
+    ],
+    [
+     "Swing-out rotors",
+     "4×50 ml; 8×10/15 ml; 12×10 ml"
+    ],
+    [
+     "Angle rotors",
+     "18×10 ml; 24×10 ml; 4/6×50 ml; 12×15 ml; 12×20 ml"
+    ],
+    [
+     "Dimensions",
+     "450 × 340 × 270 mm"
+    ],
+    [
+     "Weight",
+     "18 kg"
+    ]
+   ],
+   "zh": [
+    [
+     "转速",
+     "0 – 4000 r/min"
+    ],
+    [
+     "最大相对离心力",
+     "2680 ×g"
+    ],
+    [
+     "转速精度",
+     "±10 r/min"
+    ],
+    [
+     "定时",
+     "0 – 99 分钟"
+    ],
+    [
+     "噪音",
+     "≤ 50 dB(A)"
+    ],
+    [
+     "电机",
+     "无刷直流电机，微处理器控制"
+    ],
+    [
+     "显示",
+     "数码或 LCD 显示屏"
+    ],
+    [
+     "水平转子",
+     "4×50 ml；8×10/15 ml；12×10 ml"
+    ],
+    [
+     "角转子",
+     "18×10 ml；24×10 ml；4/6×50 ml；12×15 ml；12×20 ml"
+    ],
+    [
+     "尺寸",
+     "450 × 340 × 270 mm"
+    ],
+    [
+     "重量",
+     "18 kg"
+    ]
+   ]
+  }
  }
 }
