@@ -2,6 +2,18 @@
 import re, unicodedata
 # News items (Tin tức), newest first.
 N = [dict(
+  img="/tin-tuc/biobase-mini-7.jpg", date={"vi": "16/11/2026", "en": "16 November 2026", "zh": "2026年11月16日"},
+  tag={"vi": "Thiết bị phòng thí nghiệm", "en": "Laboratory equipment", "zh": "实验室设备"},
+  title={"vi": "Máy ly tâm mini BIOBASE Mini-7 — Nhỏ gọn, tiện dụng cho phòng lab", "en": "BIOBASE Mini-7 mini centrifuge — compact and convenient for the lab", "zh": "BIOBASE Mini-7 迷你离心机 —— 小巧便捷，实验室好帮手"},
+  intro={"vi": ["Cần gom nhanh mẫu bám trên thành và nắp ống? BIOBASE Mini-7 hỗ trợ thao tác ly tâm mẫu thể tích nhỏ, thuận tiện bố trí ngay trên bàn thí nghiệm."], "en": ["Need to quickly collect sample droplets from tube walls and caps? The BIOBASE Mini-7 handles small-volume centrifugation and fits right on the lab bench."], "zh": ["需要快速收集附着在管壁和管盖上的样品？BIOBASE Mini-7 适用于小体积样品离心，可直接放置在实验台上。"]},
+  bullets=True,
+  items={"vi": [("Tốc độ", "7.000 vòng/phút"), ("Lực ly tâm tối đa", "2.650 ×g"), ("Rotor", "8 vị trí; dùng ống 0,2/0,5/1,5/2,0 ml với adapter phù hợp"), ("", "Có rotor dành cho dải ống PCR")],
+         "en": [("Speed", "7,000 rpm"), ("Max. RCF", "2,650 ×g"), ("Rotor", "8 positions; 0.2/0.5/1.5/2.0 ml tubes with suitable adapters"), ("", "Rotor for PCR strip tubes available")],
+         "zh": [("转速", "7000 r/min"), ("最大离心力", "2650 ×g"), ("转子", "8 孔位；配合适配器可用 0.2/0.5/1.5/2.0 ml 离心管"), ("", "可选 PCR 八联管转子")]},
+  outro={"vi": "Phù hợp cho phòng lab sinh học phân tử, trường học và viện nghiên cứu có nhu cầu xử lý mẫu lượng nhỏ. Tư vấn cấu hình, phụ kiện và báo giá: Ms Ngọc Trâm – 0986.818.013 (Zalo).", "en": "Suited to molecular biology labs, schools and research institutes handling small sample volumes. Configuration, accessories and quotations: Ms Ngoc Tram – +84 986 818 013 (Zalo).", "zh": "适用于分子生物学实验室、学校及科研院所的小量样品处理。 配置、配件咨询与报价：Ngọc Trâm 女士 – +84 986 818 013（Zalo）。"},
+  links={"vi": [("Xem sản phẩm", "/san-pham/may-ly-tam-mini-mot-toc-do-biobase-mini-5-mini-7-mini-12/")], "en": [("View product", "/en/san-pham/may-ly-tam-mini-mot-toc-do-biobase-mini-5-mini-7-mini-12/")], "zh": [("查看产品", "/zh/san-pham/may-ly-tam-mini-mot-toc-do-biobase-mini-5-mini-7-mini-12/")]},
+  cta={"vi": "Liên hệ tư vấn", "en": "Contact us", "zh": "联系咨询"},
+), dict(
   video="/video/drawell-td4a-ws.mp4", img="/video/drawell-td4a-ws.jpg", vw=960, vh=540, date={"vi": "15/11/2026", "en": "15 November 2026", "zh": "2026年11月15日"},
   tag={"vi": "Thiết bị phòng thí nghiệm", "en": "Laboratory equipment", "zh": "实验室设备"},
   title={"vi": "Máy ly tâm để bàn tốc độ thấp Drawell TD4A-WS — Ly tâm mẫu thường quy nhanh, êm và chính xác", "en": "Drawell TD4A-WS low-speed benchtop centrifuge — fast, quiet and accurate routine centrifugation", "zh": "Drawell TD4A-WS 台式低速离心机 —— 常规样品离心快速、安静、精准"},
