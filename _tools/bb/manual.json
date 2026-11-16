@@ -2335,6 +2335,18 @@
     [
      "Hành trình",
      "1600 mm"
+    ],
+    [
+     "Môi chất làm việc",
+     "Dầu nhũ tương 5%"
+    ],
+    [
+     "Phụ kiện đi kèm",
+     "Van an toàn FATA250/50; van một chiều điều khiển dịch FDYM200/50; đầu nối ren KJ-10"
+    ],
+    [
+     "Xuất xứ",
+     "Trung Quốc"
     ]
    ],
    "en": [
@@ -2357,6 +2369,18 @@
     [
      "Stroke",
      "1600 mm"
+    ],
+    [
+     "Working fluid",
+     "5% emulsion"
+    ],
+    [
+     "Accessories",
+     "FATA250/50 safety valve; FDYM200/50 pilot-operated check valve; KJ-10 threaded connector"
+    ],
+    [
+     "Origin",
+     "China"
     ]
    ],
    "zh": [
@@ -2379,6 +2403,18 @@
     [
      "行程",
      "1600 mm"
+    ],
+    [
+     "工作介质",
+     "5% 乳化液"
+    ],
+    [
+     "随附配件",
+     "FATA250/50 安全阀；FDYM200/50 液控单向阀；KJ-10 螺纹接头"
+    ],
+    [
+     "产地",
+     "中国"
     ]
    ]
   }
