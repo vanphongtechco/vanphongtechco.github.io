@@ -2,6 +2,31 @@
 import re, unicodedata
 # News items (Tin tức), newest first.
 N = [dict(
+  img="/tin-tuc/biobase-tu-atsh-class-ii-a2.jpg", more_img=["/tin-tuc/biobase-tu-atsh-3-muc-tieu.jpg"], date={"vi": "17/11/2026", "en": "17 November 2026", "zh": "2026年11月17日"},
+  tag={"vi": "Thiết bị phòng thí nghiệm", "en": "Laboratory equipment", "zh": "实验室设备"},
+  title={"vi": "Tủ an toàn sinh học Class II A2 — Giải pháp bảo vệ cho phòng thí nghiệm", "en": "Class II A2 biosafety cabinets — protection for your laboratory", "zh": "II级A2型生物安全柜 —— 实验室的防护方案"},
+  intro={"vi": ["Trong các phòng thí nghiệm vi sinh, công nghệ sinh học và nghiên cứu y sinh, việc kiểm soát nguy cơ phơi nhiễm với tác nhân sinh học đóng vai trò quan trọng trong quá trình nghiên cứu và xét nghiệm. Vậy tủ an toàn sinh học Class II A2 là gì? Khi nào phòng lab cần sử dụng?",
+                "<b>1. Tủ an toàn sinh học Class II A2 là gì?</b> Đây là thiết bị được thiết kế nhằm hỗ trợ bảo vệ đồng thời 3 yếu tố: <b>người thao tác</b> — giảm nguy cơ phơi nhiễm với aerosol chứa tác nhân sinh học trong điều kiện sử dụng phù hợp; <b>mẫu nghiên cứu</b> — hạn chế nguy cơ nhiễm bẩn nhờ hệ thống luồng khí được kiểm soát và lọc HEPA; <b>môi trường</b> — không khí thải được lọc HEPA theo thiết kế của tủ.",
+                "<b>2. Khi nào phòng lab cần sử dụng?</b> Tủ an toàn sinh học Class II A2 thường được cân nhắc trong các hoạt động: nuôi cấy và thao tác với vi sinh vật có nguy cơ tạo aerosol; nghiên cứu sinh học phân tử, tế bào và các quy trình có nguy cơ sinh học; xử lý mẫu sinh học cần kiểm soát nguy cơ phơi nhiễm; một số hoạt động xét nghiệm, nghiên cứu y sinh theo yêu cầu an toàn sinh học. Việc lựa chọn thiết bị cần dựa trên đánh giá rủi ro, loại mẫu và quy trình thao tác cụ thể.",
+                "<b>3. Những tiêu chí cần quan tâm khi lựa chọn tủ:</b>"],
+         "en": ["In microbiology, biotechnology and biomedical research laboratories, controlling the risk of exposure to biological agents plays an important role in research and testing. So what is a Class II A2 biosafety cabinet, and when does a lab need one?",
+                "<b>1. What is a Class II A2 biosafety cabinet?</b> It is designed to help protect three things at once: <b>the operator</b> — reducing the risk of exposure to aerosols containing biological agents under proper use; <b>the sample</b> — limiting contamination through controlled airflow and HEPA filtration; <b>the environment</b> — exhaust air is HEPA-filtered according to the cabinet design.",
+                "<b>2. When does a lab need one?</b> Class II A2 cabinets are typically considered for: culturing and handling microorganisms with a risk of aerosol generation; molecular and cell biology research and procedures involving biological hazards; processing biological samples that require exposure control; and certain testing and biomedical research activities subject to biosafety requirements. Equipment selection should be based on risk assessment, sample type and the specific procedures.",
+                "<b>3. Key criteria when choosing a cabinet:</b>"],
+         "zh": ["在微生物、生物技术和生物医学研究实验室中，控制生物因子暴露风险对研究和检测工作至关重要。那么，什么是II级A2型生物安全柜？实验室何时需要使用？",
+                "<b>1. 什么是II级A2型生物安全柜？</b>该设备旨在同时为三方面提供防护：<b>操作人员</b>——在正确使用条件下降低接触含生物因子气溶胶的风险；<b>样品</b>——通过受控气流和HEPA过滤减少污染风险；<b>环境</b>——排出的空气按设计经HEPA过滤。",
+                "<b>2. 实验室何时需要使用？</b>II级A2型生物安全柜通常用于：培养和操作可能产生气溶胶的微生物；分子生物学、细胞研究及涉及生物风险的流程；需要控制暴露风险的生物样品处理；以及部分有生物安全要求的检测和生物医学研究工作。设备选型应依据风险评估、样品类型和具体操作流程。",
+                "<b>3. 选购时需关注的指标：</b>"]},
+  bullets=True,
+  items={"vi": [("", "Mục đích sử dụng và loại mẫu thao tác."), ("", "Kích thước vùng làm việc."), ("", "Đặc tính luồng khí và hệ thống lọc."), ("", "Điều kiện lắp đặt và không gian phòng lab."), ("", "Tiêu chuẩn kỹ thuật, yêu cầu kiểm định và bảo trì.")],
+         "en": [("", "Intended use and sample types."), ("", "Work zone size."), ("", "Airflow characteristics and filtration system."), ("", "Installation conditions and lab space."), ("", "Technical standards, certification and maintenance requirements.")],
+         "zh": [("", "使用目的及操作样品类型。"), ("", "工作区尺寸。"), ("", "气流特性与过滤系统。"), ("", "安装条件与实验室空间。"), ("", "技术标准、检测认证及维护要求。")]},
+  outro={"vi": "Các dòng tủ an toàn sinh học BIOBASE có nhiều lựa chọn cấu hình, phục vụ nhu cầu nghiên cứu, xét nghiệm và giảng dạy. Anh/chị gửi loại mẫu, mục đích sử dụng và kích thước vùng làm việc mong muốn để được tư vấn thiết bị phù hợp, nhận báo giá: Ms Ngọc Trâm – 0986.818.013 (Zalo).",
+         "en": "BIOBASE biosafety cabinets come in many configurations for research, testing and teaching. Send us your sample type, intended use and desired work zone size for advice on the right model and a quotation: Ms Ngoc Tram – +84 986 818 013 (Zalo).",
+         "zh": "BIOBASE 生物安全柜提供多种配置，满足科研、检测和教学需求。请告知样品类型、使用目的及所需工作区尺寸，以获取选型建议和报价：Ngọc Trâm 女士 – +84 986 818 013（Zalo）。"},
+  links={"vi": [("Xem dòng AC", "/san-pham/tu-an-toan-sinh-hoc-cap-ii-a2-biobase-dong-ac-bsc-1100iia2-x-bsc-2000iia2-x-bsc/"), ("Xem dòng Pro", "/san-pham/tu-an-toan-sinh-hoc-cap-ii-a2-biobase-dong-pro-bsc-1100iia2-pro-bsc-1800iia2-pro/")], "en": [("View AC series", "/en/san-pham/tu-an-toan-sinh-hoc-cap-ii-a2-biobase-dong-ac-bsc-1100iia2-x-bsc-2000iia2-x-bsc/"), ("View Pro series", "/en/san-pham/tu-an-toan-sinh-hoc-cap-ii-a2-biobase-dong-pro-bsc-1100iia2-pro-bsc-1800iia2-pro/")], "zh": [("查看 AC 系列", "/zh/san-pham/tu-an-toan-sinh-hoc-cap-ii-a2-biobase-dong-ac-bsc-1100iia2-x-bsc-2000iia2-x-bsc/"), ("查看 Pro 系列", "/zh/san-pham/tu-an-toan-sinh-hoc-cap-ii-a2-biobase-dong-pro-bsc-1100iia2-pro-bsc-1800iia2-pro/")]},
+  cta={"vi": "Liên hệ tư vấn", "en": "Contact us", "zh": "联系咨询"},
+), dict(
   img="/tin-tuc/biobase-mini-7.jpg", date={"vi": "16/11/2026", "en": "16 November 2026", "zh": "2026年11月16日"},
   tag={"vi": "Thiết bị phòng thí nghiệm", "en": "Laboratory equipment", "zh": "实验室设备"},
   title={"vi": "Máy ly tâm mini BIOBASE Mini-7 — Nhỏ gọn, tiện dụng cho phòng lab", "en": "BIOBASE Mini-7 mini centrifuge — compact and convenient for the lab", "zh": "BIOBASE Mini-7 迷你离心机 —— 小巧便捷，实验室好帮手"},
@@ -234,6 +259,7 @@ def article(n, lang):
         fig = f'<video{" class=port" if port else ""} src="{n["video"]}" poster="{n["img"]}" controls playsinline preload="metadata" width="{n.get("vw",540)}" height="{n.get("vh",960)}"></video>'
     else:
         fig = f'<img src="{n["img"]}" alt="{n["title"][lang]}">'
+    fig += "".join(f'<img src="{x}" alt="{n["title"][lang]}" loading="lazy" style="margin-top:12px">' for x in n.get("more_img", []))
     yt = (f'<div style="position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;background:#000;margin:6px 0 4px"><iframe src="https://www.youtube-nocookie.com/embed/{n["yt"]}" title="{n["ytcap"][lang]}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><p style="font-size:13.5px;color:#64748b">{n["ytcap"][lang]}</p>' if n.get("yt") else "")
     lst = (f'<ul>{items}</ul>' if n.get("bullets") else f'<ol>{items}</ol>') if items else ""
     btns = "".join(f'<a class="btn" href="{h}"' + (' target="_blank" rel="noopener"' if h.endswith(".pdf") else "") + f'>{t}</a>' for t, h in n.get("links", {}).get(lang, []))
