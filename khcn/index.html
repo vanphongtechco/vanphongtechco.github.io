@@ -133,7 +133,7 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
 </style>
 </head>
 <body>
-<div class="draft">BẢN NHÁP – chưa đưa lên khcn.vcnm.com.vn. Dữ liệu chỉ lưu tạm trên máy đang xem, chưa gửi về Phòng KH&amp;CN.</div>
+<div class="draft">ĐANG CHẠY THỬ – Phiếu <b>Nghiệm thu hàng tháng</b> và Tra cứu nghiệm thu gửi/đọc dữ liệu thật của Phòng KH&amp;CN. Các phần khác là bản minh họa, dữ liệu chỉ lưu trên máy đang xem.</div>
 
 <!-- ================= PUBLIC ================= -->
 <div id="pub">
@@ -503,8 +503,7 @@ function signStep(i,j,ok){if(!can('kyDuyet'))return;const s=DB.sign[i].steps[j];
 function cvPrev(){const v=id=>esc(($(id)||{}).value||'');const d=($('cvNgay')||{}).value||'';const [y,m,dd]=d.split('-');
  const p=$('cvP');if(!p)return;p.innerHTML='<table style="width:100%;border:0;font-size:13px"><tr><td style="border:0;text-align:center;width:45%"><b>TẬP ĐOÀN CN THAN – KHOÁNG SẢN VN<br>VIỆN CƠ KHÍ NĂNG LƯỢNG VÀ MỎ</b><br>Số: '+(v('cvSo')||'…/VCNM-KHCN')+'<br><i>'+(v('cvTY')||'V/v …')+'</i></td><td style="border:0;text-align:center"><b>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</b><br><b><u>Độc lập – Tự do – Hạnh phúc</u></b><br><i>Hà Nội, ngày '+(dd||'…')+' tháng '+(m||'…')+' năm '+(y||'…')+'</i></td></tr></table>'
  +'<p style="text-align:center;margin-top:16px">Kính gửi: '+((($('cvKG')||{}).value||'…').split(';').map(s=>esc(s.trim())).join('<br>'))+'</p><div style="white-space:pre-wrap;text-align:justify">'+(v('cvND')||'Nội dung công văn…')+'</div><table style="width:100%;border:0;margin-top:20px"><tr><td style="border:0;font-size:12px;vertical-align:top"><b><i>Nơi nhận:</i></b><br>- Như trên;<br>- Lưu: VT, KHCN.</td><td style="border:0;text-align:center"><b>'+(v('cvKy')||'NGƯỜI KÝ')+'</b><br><br><br><br></td></tr></table>'}
-function cvDoc(){const html='<html><head>
-<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"></head><body style="font-family:Times New Roman;font-size:14pt">'+$('cvP').innerHTML+'</body></html>';try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+html],{type:'application/msword'}));a.download='cong-van.doc';document.body.appendChild(a);a.click();a.remove();addLog('Xuất công văn .doc')}catch(e){}}
+function cvDoc(){const html='<html><head><meta charset="utf-8"></head><body style="font-family:Times New Roman;font-size:14pt">'+$('cvP').innerHTML+'</body></html>';try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+html],{type:'application/msword'}));a.download='cong-van.doc';document.body.appendChild(a);a.click();a.remove();addLog('Xuất công văn .doc')}catch(e){}}
 function exportCSV(){if(!can('xuatSo'))return;const H=['Mã','Loại','Nguồn','Số ĐK','Tên nhiệm vụ','Chủ nhiệm','Đơn vị','Email','Tháng NT','Ngày gửi','Trạng thái','Tệp'];
  const rows=DB.hs.map(h=>[h.code,TY[h.type].s,h.src,h.sdk,h.ten,h.cn,h.donvi,h.email,h.data.thang||'',h.ngay,ST[h.st],(h.files||[]).join('; ')]);
  const csv=[H].concat(rows).map(r=>r.map(c=>'"'+String(c==null?'':c).replace(/"/g,'""')+'"').join(',')).join('\r\n');
