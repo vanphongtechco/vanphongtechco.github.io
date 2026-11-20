@@ -558,7 +558,7 @@ function openDT(sdk){const x=DB.dt.find(d=>d.sdk===sdk)||DT0.find(d=>d.sdk===sdk
  +(()=>{const qd=PCT_QD[sdk]||{};const ok=lanCuoi(hsDT(sdk)).filter(h=>h.st===3);const by={};
    ok.forEach(h=>{by[thangHS(h)]={h,p:(h.data&&h.data.ptd)||qd[thangHS(h)]}});Object.keys(qd).forEach(m=>{if(qd[m]>0&&!by[m])by[m]={p:qd[m]}});
    const ms=Object.keys(by).sort();
-   return '<h4 style="margin:14px 0 6px">Các lần nghiệm thu ('+ms.length+')</h4><table class="lt"><thead><tr><th>Lần nghiệm thu</th><th style="text-align:center">% được duyệt</th></tr></thead><tbody>'
+   return '<h4 style="margin:14px 0 6px">Các lần nghiệm thu ('+ms.length+')</h4><table class="lt"><thead><tr><th>Lần nghiệm thu</th><th style="text-align:center">% nghiệm thu</th></tr></thead><tbody>'
    +(ms.length?ms.map((m,i)=>{const z=by[m];const t='Lần '+(i+1)+' – tháng '+mmyy(m);return '<tr><td>'+(z.h?'<a href="#" onclick="openHS(\''+esc(z.h.code)+'\');return false">'+t+'</a>':t)+'</td><td style="text-align:center">'+esc(z.p!=null&&z.p!==''?z.p+'%':'—')+'</td></tr>'}).join(''):'<tr><td colspan="2">Chưa có</td></tr>')+'</tbody></table>'})()
  +(()=>{const mm=(x.tg||'').match(/(\d{2})\/(\d{4})/);if(!mm)return '';const tu=mm[2]+'-'+mm[1];const ktm=(x.tg||'').match(/(\d{2})\/(\d{4})\s*$/);const kt=ktm?ktm[2]+'-'+ktm[1]:thisMonth();const den=[thisMonth(),kt].sort()[0];const ms=cacThang(tu,den);
   const nt=ms.map(m=>{const h=lanCuoi(hsDT(sdk).filter(z=>thangHS(z)===m))[0];return (h&&h.st===3)||((PCT_QD[sdk]||{})[m]>0)?1:0});const kp=ms.map(m=>((g.thang||{})[m]||0));
