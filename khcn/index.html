@@ -388,7 +388,14 @@ async function napDT(){if(!NT_API)return;try{const r=await fetch(NT_API+'?dt=1')
 /* Nạp toàn bộ các lần nộp nghiệm thu của 4 đề tài từ Sheet nghiệm thu (qua script tra cứu ?ma=…), trạng thái lấy đúng cột "Trạng thái" */
 const stTu=t=>/duyệt|chấp nhận/i.test(t)?3:/từ chối/i.test(t)?4:/bổ sung/i.test(t)?2:/xem xét|tiếp nhận/i.test(t)?1:0;
 let NT_LUC='';
-async function napNT(){if(!NT_API)return;const cur=thisMonth();const job=[];
+async function napNT(){if(!NT_API)return;
+ try{const r=await fetch(NT_API+'?ds=1').then(r=>r.json());if(r&&r.ok&&Array.isArray(r.ds)){
+  const moi=r.ds.map(x=>{const d=DT0.find(y=>y.sdk===x.sdk)||{};const st=stTu(x.trangThai||'');const th=x.thang;const mm=th.slice(5);
+   return {code:x.sdk+'-T'+mm+(r.ds.filter(y=>y.sdk===x.sdk&&y.thang===th).length>1?'.'+(r.ds.filter(y=>y.sdk===x.sdk&&y.thang===th&&y.ngay<=x.ngay).length):''),type:'nt',src:'Bảng tổng hợp',row:x.row,sdk:x.sdk,ten:d.ten,cn:d.cn,donvi:'',ngay:x.ngay,st,files:[],data:{thang:th,pt:x.pct},
+    hist:[[x.ngay,0,'Nộp phiếu nghiệm thu tháng '+mm+'/'+th.slice(0,4)+(x.pct?' – đề nghị '+x.pct+'%':'')+' ('+x.nguon+')'],[x.ngay,st,'Trạng thái: '+x.trangThai+(x.ghiChu?' – '+x.ghiChu:'')]]}});
+  DB.hs=DB.hs.filter(h=>h.src!=='Bảng tổng hợp'&&h.src!=='Sheet NT'&&h.src!=='QĐ T10').concat(moi).sort((a,b)=>b.ngay.localeCompare(a.ngay));NT_LUC=now();save();
+  if(!$('app').classList.contains('hide'))nav(CUR);return}}catch(e){}
+ const cur=thisMonth();const job=[];
  DT0.forEach(d=>{const mm=(d.tg||'').match(/(\d{2})\/(\d{4})/);let y=mm?+mm[2]:+cur.slice(0,4),m=mm?+mm[1]:1;
   const seen=new Set();for(let i=0;i<24;i++){const key=y+'-'+String(m).padStart(2,'0');if(key>cur)break;if(!seen.has(m)){seen.add(m);job.push([d,m])}m++;if(m>12){m=1;y++}}});
  const rs=await Promise.all(job.map(([d,m])=>fetch(NT_API+'?ma='+encodeURIComponent(d.sdk+'-T'+m)).then(r=>r.json()).then(j=>j&&j.found?[d,m,j]:null).catch(()=>null)));
@@ -541,7 +548,21 @@ function openHS(code){const h=DB.hs.find(x=>x.code===code);if(!h)return;
 function setSt(code,st,fromModal){if(!can('duyet'))return;const h=DB.hs.find(x=>x.code===code);
  openM('<h3 style="margin-top:0">'+ST[st]+' – '+esc(code)+'</h3><label class="fl">Ý kiến / lý do'+(st===2||st===4?' (bắt buộc)':'')+'</label><textarea class="lin" id="stNote" rows="3"></textarea><div class="flex" style="margin-top:12px;justify-content:flex-end"><button class="btn sm lbtn" onclick="'+(fromModal?'openHS(\''+code+'\')':'closeM()')+'">Hủy</button><button class="btn sm pri" id="stOk">Xác nhận</button></div>',true);
  $('stOk').onclick=()=>{const n=$('stNote').value.trim();if((st===2||st===4)&&!n){$('stNote').style.borderColor='#e5534b';return}
+  if(h.src==='Bảng tổng hợp'&&h.row){const tk=tkQT();if(!tk){closeM();dangNhapQT(()=>setSt(code,st,fromModal));return}
+   $('stOk').disabled=true;$('stOk').textContent='Đang ghi…';
+   fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'setTT',token:tk,row:h.row,sdk:h.sdk,trangThai:TT_GHI[st],ghiChu:n})}).then(r=>r.json()).then(r=>{
+    if(!r.ok){if(/hết|đăng nhập/i.test(r.err||'')){try{localStorage.removeItem('khcn_tk')}catch(e){}}openM('<h3 style="margin-top:0">Chưa ghi được</h3><p>'+esc(r.err||'Lỗi máy chủ')+'</p><div class="flex" style="justify-content:flex-end"><button class="btn sm pri" onclick="closeM()">Đóng</button></div>',true);return}
+    h.st=st;h.hist.push([now(),st,'Ghi vào bảng tổng hợp: '+TT_GHI[st]+(n?' – '+n:'')]);addLog(ST[st]+' hồ sơ '+code+(n?': '+n:''));closeM();nav(CUR);if(fromModal)openHS(code)})
+   .catch(()=>{openM('<h3 style="margin-top:0">Không kết nối được máy chủ</h3><div class="flex" style="justify-content:flex-end"><button class="btn sm pri" onclick="closeM()">Đóng</button></div>',true)});return}
   h.st=st;h.hist.push([now(),st,n]);addLog(ST[st]+' hồ sơ '+code+(n?': '+n:''));closeM();nav(CUR);if(fromModal)openHS(code)}}
+/* Đăng nhập quản trị (mã gửi qua email) để ghi trạng thái về bảng tổng hợp */
+const TT_GHI={1:'Đang xem xét',0:'Đang xem xét',2:'Yêu cầu bổ sung',3:'Đã duyệt',4:'Từ chối'};
+function tkQT(){try{const x=JSON.parse(localStorage.getItem('khcn_tk')||'null');return x&&x.han>Date.now()?x.tk:null}catch(e){return null}}
+function dangNhapQT(sau){openM('<h3 style="margin-top:0">Xác thực quản trị</h3><p class="muted" style="color:var(--lmut)">Đổi trạng thái hồ sơ sẽ ghi thẳng vào bảng tổng hợp nghiệm thu. Nhập email quản trị để nhận mã.</p><label class="fl">Email quản trị</label><input class="lin" id="qtE" value="'+esc((ME()||{}).email||'')+'"><div class="flex" style="margin-top:8px"><button class="btn sm lbtn" id="qtG">Gửi mã</button></div><label class="fl">Mã 6 số</label><input class="lin" id="qtM"><div id="qtMsg" class="muted" style="margin-top:6px;color:var(--lmut)"></div><div class="flex" style="margin-top:12px;justify-content:flex-end"><button class="btn sm lbtn" onclick="closeM()">Hủy</button><button class="btn sm pri" id="qtOk">Xác nhận</button></div>',true);
+ const post=b=>fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(b)}).then(r=>r.json());
+ $('qtG').onclick=()=>post({action:'adminOtp',email:$('qtE').value.trim()}).then(r=>$('qtMsg').textContent=r.ok?'Đã gửi mã, kiểm tra email.':(r.err||'Lỗi')).catch(()=>$('qtMsg').textContent='Không kết nối được máy chủ (script chưa cập nhật?)');
+ $('qtOk').onclick=()=>post({action:'adminLogin',email:$('qtE').value.trim(),otp:$('qtM').value.trim()}).then(r=>{if(!r.ok){$('qtMsg').textContent=r.err||'Lỗi';return}
+  try{localStorage.setItem('khcn_tk',JSON.stringify({tk:r.token,han:Date.now()+(r.han||6)*3600e3}))}catch(e){}closeM();if(sau)sau()}).catch(()=>$('qtMsg').textContent='Không kết nối được máy chủ')}
 function newInternal(){if(!can('taoHS'))return;openM('<div class="flex" style="justify-content:space-between"><h3 style="margin:0">Tạo hồ sơ nội bộ</h3><div class="flex"><select class="lin" id="niT" style="width:auto" onchange="renderForm(this.value,$(\'niP\'))">'+Object.keys(TY).map(t=>'<option value="'+t+'">'+TY[t].t+'</option>').join('')+'</select><button class="btn sm lbtn" onclick="closeM()">Đóng</button><button class="btn sm pri" onclick="saveInternal()">Lưu hồ sơ</button></div></div><div id="niMsg"></div><form class="paper" id="niP" style="margin-top:12px" onsubmit="return false"></form>');renderForm('nt',$('niP'))}
 function saveInternal(){const r=makeHS($('niP'),$('niT').value,'Nội bộ');if(!r.err){const h=DB.hs.find(x=>x.code===r.code);if(h){h.by=USER;save()}}if(r.err){$('niMsg').innerHTML='<div class="note" style="margin-top:10px">'+r.err+'</div>';return}closeM();HSF.st=-1;nav('hs');openHS(r.code)}
 function editDT(i){if(!can('suaDT'))return;const x=i<0?{sdk:'',ten:'',cn:'',cap:'Tập đoàn TKV',kp:'',tg:'',tt:'Đang thực hiện'}:DB.dt[i];
