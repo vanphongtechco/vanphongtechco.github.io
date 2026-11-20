@@ -396,7 +396,7 @@ async function napNT(){if(!NT_API)return;const cur=thisMonth();const job=[];
  const moi=ok.map(([d,m,j])=>{const p=String(j.ngay).match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s*(\d{1,2}):(\d{2})/);const ny=p?+p[3]:+cur.slice(0,4),nm=p?+p[2]:m;const yy=m<=nm?ny:ny-1;
   const th=yy+'-'+String(m).padStart(2,'0');const ng=p?p[3]+'-'+p[2].padStart(2,'0')+'-'+p[1].padStart(2,'0')+' '+p[4].padStart(2,'0')+':'+p[5]:th+'-01 00:00';const st=stTu(j.trangThai||'');
   return {code:d.sdk+'-T'+String(m).padStart(2,'0'),type:'nt',src:'Bảng tổng hợp',sdk:d.sdk,ten:d.ten,cn:d.cn,donvi:'',ngay:ng,st,files:[],data:{thang:th},hist:[[ng,0,'Nộp phiếu nghiệm thu tháng '+String(m).padStart(2,'0')+'/'+yy],[ng,st,'Trạng thái trên bảng tổng hợp: '+(j.trangThai||'Chờ xử lý')]]}});
- DB.hs=DB.hs.filter(h=>h.src!=='Bảng tổng hợp'&&h.src!=='QĐ T10').concat(moi).sort((a,b)=>b.ngay.localeCompare(a.ngay));NT_LUC=now();save();
+ DB.hs=DB.hs.filter(h=>h.src!=='Bảng tổng hợp'&&h.src!=='Sheet NT'&&h.src!=='QĐ T10').concat(moi).sort((a,b)=>b.ngay.localeCompare(a.ngay));NT_LUC=now();save();
  if(!$('app').classList.contains('hide'))nav(CUR)}
 function dienDT(el){const x=(DT_SV.length?DT_SV:DT0).find(d=>d.sdk===el.value.trim().toUpperCase());if(!x)return;const f=el.form||$('paper');
  const set=(n,v)=>{const e=f.querySelector('[name='+n+']');if(e&&!e.value&&v)e.value=v};set('ten',x.ten);set('cn',x.cn);set('donvi',x.donvi);set('kp',x.kp);set('bd',x.bd);set('kt',x.kt)}
