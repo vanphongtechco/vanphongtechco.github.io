@@ -54,8 +54,11 @@ def doc(thu_muc):
             th = {k: round(x / 1e6, 2) for k, x in sorted(mo.items()) if k >= '2025-01'}
             d = round(da_chi / 1e6, 2)
             cr = round(d - sum(th.values()), 2)
-            if cr > 0.5: ghi_chu.append(f'{sdk}: {cr:,.1f} trđ chưa xác định được tháng chi')
-            kq[sdk] = {'daChi': d, 'pctChi': round(d / DE_TAI[sdk] * 100, 1), 'thang': th, 'chuaRo': cr}
+            cuoi = max(mo) if mo else None
+            if cr > 0.5 and cuoi:   # khoản không ghi ngày: tạm đưa vào tháng chi cuối cùng của đề tài
+                th[cuoi] = round(th.get(cuoi, 0) + cr, 2)
+                ghi_chu.append(f'{sdk}: {cr:,.1f} trđ không ghi ngày → tạm đưa vào tháng {cuoi}')
+            kq[sdk] = {'daChi': d, 'pctChi': round(d / DE_TAI[sdk] * 100, 1), 'thang': th, 'chuaRo': cr, 'chuaRoVao': cuoi}
     for s in DE_TAI:
         if s not in kq: ghi_chu.append(f'{s}: không có sheet trong file theo dõi chi phí')
     return kq, ghi_chu
