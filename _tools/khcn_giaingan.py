@@ -7,7 +7,7 @@ Dùng: python3 khcn_giaingan.py <thư mục chứa 'Đề tài năm 2025 đã r�
 import openpyxl, re, sys, json, datetime, os
 from collections import defaultdict
 
-DE_TAI = {'01NT/26': 500, '02NT/26': 4898.5, '03NT/26': 2280, '05NT/25': 4028}   # tổng KP (trđ)
+DE_TAI = {'01NT/26': 500, '02NT/26': 4898.5, '03NT/26': 2280, '05NT/25': 4028, '02NT/25': 2105, '03NT/25': 1965.867, '04NT/25': 3650.654}   # tổng KP (trđ)
 
 def thang(r):
     for c in (r[1], r[2], r[3]):
