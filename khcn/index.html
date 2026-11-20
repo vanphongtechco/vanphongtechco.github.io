@@ -537,9 +537,10 @@ function setPerm(r,p,v){if(ROLE()!==1)return;DB.perm[r]=DB.perm[r]||{};DB.perm[r
 /* Biểu đồ cột theo tháng; màu theo năm */
 const MAU_NAM={2024:'#8a6fd1',2025:'#e69b2e',2026:'#2f6fd6',2027:'#2e9d5e',2028:'#d14d6f'};
 function cacThang(tu,den){const o=[];let y=+tu.slice(0,4),m=+tu.slice(5,7);while(true){const k=y+'-'+String(m).padStart(2,'0');if(k>den||o.length>60)break;o.push(k);m++;if(m>12){m=1;y++}}return o}
-function bieuDo(ms,vals,dv){const mx=Math.max(1,...vals);const nams=[...new Set(ms.map(m=>m.slice(0,4)))];
- return '<div class="cols" style="overflow-x:auto">'+ms.map((m,i)=>'<div style="min-width:30px"><b style="color:var(--ltxt);font-size:11px">'+(dv==='nt'?vals[i]:Number(vals[i]).toLocaleString('vi-VN',{maximumFractionDigits:0}))+'</b><i style="height:'+(vals[i]/mx*100)+'px;background:'+(MAU_NAM[+m.slice(0,4)]||'#888')+'"></i>'+m.slice(5)+(nams.length>1?'/'+m.slice(2,4):'')+'</div>').join('')+'</div>'
- +(nams.length>1?'<div style="font-size:12px;margin-top:4px">'+nams.map(n=>'<span style="display:inline-block;width:10px;height:10px;background:'+(MAU_NAM[+n]||'#888')+';margin:0 4px 0 10px"></span>'+n).join('')+'</div>':'')}
+const MAU_KP={2024:'#a8d8b4',2025:'#6cc08a',2026:'#2e9d5e',2027:'#1d6e41',2028:'#0f4a2a'};
+function bieuDo(ms,vals,dv){const MAU=dv==='kp'?MAU_KP:MAU_NAM;const mx=Math.max(1,...vals);const nams=[...new Set(ms.map(m=>m.slice(0,4)))];
+ return '<div class="cols" style="overflow-x:auto">'+ms.map((m,i)=>'<div style="min-width:30px"><b style="color:var(--ltxt);font-size:11px">'+(dv==='nt'?vals[i]:Number(vals[i]).toLocaleString('vi-VN',{maximumFractionDigits:0}))+'</b><i style="height:'+(vals[i]/mx*100)+'px;background:'+(MAU[+m.slice(0,4)]||'#888')+'"></i>'+m.slice(5)+(nams.length>1?'/'+m.slice(2,4):'')+'</div>').join('')+'</div>'
+ +(nams.length>1?'<div style="font-size:12px;margin-top:4px">'+nams.map(n=>'<span style="display:inline-block;width:10px;height:10px;background:'+(MAU[+n]||'#888')+';margin:0 4px 0 10px"></span>'+n).join('')+'</div>':'')}
 /* Bảng danh mục đề tài ở Tổng quan; bấm Số ĐK mở toàn bộ thông tin đề tài */
 function hsDT(sdk){return DB.hs.filter(h=>h.type==='nt'&&h.sdk===sdk).sort((a,b)=>b.ngay.localeCompare(a.ngay))}
 function bangDT(){return '<table class="lt"><thead><tr><th>Mã ĐT</th><th>Tên nhiệm vụ</th><th>Chủ nhiệm</th><th>Thời gian thực hiện</th><th>Kinh phí (trđ)</th><th>Ngày đề nghị nghiệm thu gần nhất</th><th>Trạng thái</th></tr></thead><tbody>'
