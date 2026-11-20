@@ -383,6 +383,19 @@ async function napDT(){if(!NT_API)return;try{const r=await fetch(NT_API+'?dt=1')
  DB.dt=r.dt.map(x=>{const b=DT0.find(d=>d.sdk===x.sdk);return Object.assign({sdk:x.sdk,ten:x.ten||'',cn:x.cn||'',cap:/KK/.test(x.sdk)?'Bộ Công Thương':'Tập đoàn TKV',kp:x.kp||'',tg:(x.bd||'')+(x.kt?' – '+x.kt:''),tt:'Đang thực hiện'},b||{},{donvi:x.donvi||'',ntCuoi:x.ntCuoi||'',ttCuoi:x.ttCuoi||'',pct:x.pctDaNT||''})});save();
  const dl=$('dsSDK');if(dl)dl.innerHTML=r.dt.map(x=>'<option value="'+esc(x.sdk)+'">'+esc(x.ten||'')+'</option>').join('');
  if(!$('app').classList.contains('hide')&&(CUR==='dt'||CUR==='lich'||CUR==='dash'))nav(CUR)}catch(e){}}
+/* Nạp toàn bộ các lần nộp nghiệm thu của 4 đề tài từ Sheet nghiệm thu (qua script tra cứu ?ma=…), trạng thái lấy đúng cột "Trạng thái" */
+const stTu=t=>/duyệt|chấp nhận/i.test(t)?3:/từ chối/i.test(t)?4:/bổ sung/i.test(t)?2:/xem xét|tiếp nhận/i.test(t)?1:0;
+let NT_LUC='';
+async function napNT(){if(!NT_API)return;const cur=thisMonth();const job=[];
+ DT0.forEach(d=>{const mm=(d.tg||'').match(/(\d{2})\/(\d{4})/);let y=mm?+mm[2]:+cur.slice(0,4),m=mm?+mm[1]:1;
+  const seen=new Set();for(let i=0;i<24;i++){const key=y+'-'+String(m).padStart(2,'0');if(key>cur)break;if(!seen.has(m)){seen.add(m);job.push([d,m])}m++;if(m>12){m=1;y++}}});
+ const rs=await Promise.all(job.map(([d,m])=>fetch(NT_API+'?ma='+encodeURIComponent(d.sdk+'-T'+m)).then(r=>r.json()).then(j=>j&&j.found?[d,m,j]:null).catch(()=>null)));
+ const ok=rs.filter(Boolean);if(!ok.length&&rs.every(x=>x===null)&&!rs.length)return;
+ const moi=ok.map(([d,m,j])=>{const p=String(j.ngay).match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s*(\d{1,2}):(\d{2})/);const ny=p?+p[3]:+cur.slice(0,4),nm=p?+p[2]:m;const yy=m<=nm?ny:ny-1;
+  const th=yy+'-'+String(m).padStart(2,'0');const ng=p?p[3]+'-'+p[2].padStart(2,'0')+'-'+p[1].padStart(2,'0')+' '+p[4].padStart(2,'0')+':'+p[5]:th+'-01 00:00';const st=stTu(j.trangThai||'');
+  return {code:d.sdk+'-T'+String(m).padStart(2,'0'),type:'nt',src:'Sheet NT',sdk:d.sdk,ten:d.ten,cn:d.cn,donvi:'',ngay:ng,st,files:[],data:{thang:th},hist:[[ng,0,'Nộp phiếu nghiệm thu tháng '+String(m).padStart(2,'0')+'/'+yy],[ng,st,'Trạng thái trên bảng tổng hợp: '+(j.trangThai||'Chờ xử lý')]]}});
+ DB.hs=DB.hs.filter(h=>h.src!=='Sheet NT'&&h.src!=='QĐ T10').concat(moi).sort((a,b)=>b.ngay.localeCompare(a.ngay));NT_LUC=now();save();
+ if(!$('app').classList.contains('hide'))nav(CUR)}
 function dienDT(el){const x=(DT_SV.length?DT_SV:DT0).find(d=>d.sdk===el.value.trim().toUpperCase());if(!x)return;const f=el.form||$('paper');
  const set=(n,v)=>{const e=f.querySelector('[name='+n+']');if(e&&!e.value&&v)e.value=v};set('ten',x.ten);set('cn',x.cn);set('donvi',x.donvi);set('kp',x.kp);set('bd',x.bd);set('kt',x.kt)}
 function submitForm(){const t=$('ftype').value;if(t==='nt'&&NT_API){sendNT();return}const r=makeHS($('paper'),t,'Online');
@@ -458,7 +471,7 @@ dash(){const ky=kyNT(),cur=thisMonth();const hk=DB.hs.filter(h=>h.type==='nt'&&t
  const mc=ms.map(m=>DB.hs.filter(h=>h.ngay.slice(0,7)===m).length);const mx=Math.max(1,...mc);
  const tc=Object.keys(TY).map(t=>[TY[t].s,DB.hs.filter(h=>h.type===t).length]);const tm=Math.max(1,...tc.map(x=>x[1]));
  const dang=DB.dt.filter(x=>/đang/i.test(x.tt)).length;const m=ky;const chuaDK=DB.dt.filter(x=>/đang/i.test(x.tt)&&!hk.some(h=>h.sdk===x.sdk));
- return '<h2 class="pg">Thống kê &amp; chỉ số hoạt động</h2><div class="note">Kỳ nghiệm thu đang công bố: <b>tháng '+mmyy(ky)+'</b> (trạng thái của một tháng chỉ thông báo từ ngày 01 tháng sau). '+(som.length?'Nộp sớm kỳ tháng '+mmyy(cur)+': <b>'+som.map(h=>esc(h.sdk)+' – '+ST[h.st]).join('; ')+'</b>.':'Chưa có hồ sơ nộp sớm kỳ tháng '+mmyy(cur)+'.')+'</div><div class="flex" style="margin-bottom:14px"><button class="btn sm pri" onclick="newInternal()">＋ Tạo hồ sơ</button><button class="btn sm org" onclick="nav(\'duyet\')">Duyệt hồ sơ ('+DB.hs.filter(h=>h.st<=1).length+')</button><button class="btn sm lbtn" onclick="nav(\'hs\')">Mở danh sách hồ sơ</button></div>'
+ return '<h2 class="pg">Thống kê &amp; chỉ số hoạt động</h2><div class="note">Kỳ nghiệm thu đang công bố: <b>tháng '+mmyy(ky)+'</b> (trạng thái của một tháng chỉ thông báo từ ngày 01 tháng sau). '+(NT_LUC?'Số liệu nộp nghiệm thu đọc từ bảng tổng hợp lúc '+NT_LUC+'. ':'Đang đọc số liệu nộp nghiệm thu… ')+(som.length?'Nộp sớm kỳ tháng '+mmyy(cur)+': <b>'+som.map(h=>esc(h.sdk)+' – '+ST[h.st]).join('; ')+'</b>.':'Chưa có hồ sơ nộp sớm kỳ tháng '+mmyy(cur)+'.')+'</div><div class="flex" style="margin-bottom:14px"><button class="btn sm pri" onclick="newInternal()">＋ Tạo hồ sơ</button><button class="btn sm org" onclick="nav(\'duyet\')">Duyệt hồ sơ ('+DB.hs.filter(h=>h.st<=1).length+')</button><button class="btn sm lbtn" onclick="nav(\'hs\')">Mở danh sách hồ sơ</button></div>'
  +'<div class="kpis">'+k.map(x=>'<div class="kpi" onclick="HSF.st='+x[4]+';nav(\'hs\')"><div class="k" style="background:'+x[3]+'">'+x[2]+'</div><div><small>'+x[0]+'</small><b>'+x[1]+'</b></div></div>').join('')+'</div>'
  +'<div class="g2"><div class="lc"><h3>Hồ sơ nhận theo tháng</h3><div class="cols">'+ms.map((m,i)=>'<div><b style="color:var(--ltxt)">'+mc[i]+'</b><i style="height:'+(mc[i]/mx*100)+'px"></i>'+m.slice(5)+'/'+m.slice(2,4)+'</div>').join('')+'</div></div>'
  +'<div class="lc"><h3>Hồ sơ theo loại</h3><div class="bars">'+tc.map(x=>'<div class="b"><div>'+x[0]+'</div><div><span style="width:'+(x[1]/tm*100)+'%"></span></div><b>'+x[1]+'</b></div>').join('')+'</div><h3 style="margin-top:14px">Đề tài đang thực hiện: '+dang+'</h3><div class="muted" style="font-size:13px;color:var(--lmut)">Chưa đăng ký nghiệm thu tháng '+m.slice(5)+'/'+m.slice(0,4)+': '+(chuaDK.length?chuaDK.map(x=>'<b>'+esc(x.sdk)+'</b>').join(', '):'không có')+'</div></div></div>'
@@ -549,7 +562,7 @@ function confirmReset(){if(!can('quanTri'))return;openM('<h3 style="margin-top:0
 /* ---------- start ---------- */
 $('qHome').placeholder='VD: 01NT/26-T'+thisMonth().slice(5,7)+' (thử mẫu: 99NT/26-T'+thisMonth().slice(5,7)+')';
 const h0=(location.hash||'').slice(1);
-napDT();
+napDT();napNT();
 if(h0.startsWith('noibo')){CUR=h0.split('-')[1]||'dash';go('app')}else go(['phieu','tracuu','login'].includes(h0)?h0:'home');
 </script>
 </body>
