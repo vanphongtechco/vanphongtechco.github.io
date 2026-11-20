@@ -466,7 +466,7 @@ function lockUI(){document.querySelectorAll('#app [onclick]').forEach(el=>{const
 const cnt=st=>DB.hs.filter(h=>h.st===st).length;
 const VIEWS={
 dash(){const ky=kyNT(),cur=thisMonth();const hk=DB.hs.filter(h=>h.type==='nt'&&thangHS(h)===ky);const ck=st=>hk.filter(h=>h.st===st).length;const som=DB.hs.filter(h=>h.type==='nt'&&thangHS(h)===cur);const chuaNop=DB.dt.filter(x=>/đang/i.test(x.tt)&&!hk.some(h=>h.sdk===x.sdk));
- const k=[['Tổng hồ sơ NT T'+mmyy(ky),hk.length,'🗂','#eef0ff',-1],['Chưa nộp NT T'+mmyy(ky),chuaNop.length,'⚠️','#fde2e2','L'],['Đang xem xét',ck(1),'🔎','#e3eefc',1],['Yêu cầu bổ sung',ck(2),'↩','#fde9d7',2],['Đã chấp nhận',ck(3),'✔','#e2f6ec',3]];
+ const k=[['Tổng hồ sơ NT T'+mmyy(ky),hk.length,'🗂','#eef0ff',-1],['Chưa nộp NT T'+mmyy(ky),chuaNop.length,'⚠️','#fde2e2','L'],['Đang xem xét',ck(0)+ck(1),'🔎','#e3eefc',1],['Yêu cầu bổ sung',ck(2),'↩','#fde9d7',2],['Đã chấp nhận',ck(3),'✔','#e2f6ec',3]];
  const ms=[];const d=new Date();for(let i=5;i>=0;i--){const x=new Date(d.getFullYear(),d.getMonth()-i,1);ms.push(x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0'))}
  const mc=ms.map(m=>DB.hs.filter(h=>h.ngay.slice(0,7)===m).length);const mx=Math.max(1,...mc);
  const tc=Object.keys(TY).map(t=>[TY[t].s,DB.hs.filter(h=>h.type===t).length]);const tm=Math.max(1,...tc.map(x=>x[1]));
