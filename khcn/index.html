@@ -243,7 +243,7 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
  <div>
   <div id="topbar">
    <div class="flex"><button class="btn sm lbtn" onclick="go('home')">↩ Trang công khai</button><button class="btn sm pri" onclick="newInternal()">＋ Tạo hồ sơ</button></div>
-   <div class="flex"><div class="who"><b id="whoName"></b><br><span class="badge b-g" id="whoRole"></span></div><button class="btn sm lbtn" onclick="logout()">Đăng xuất</button></div>
+   <div class="flex"><div class="who"><b id="whoName"></b><br><span class="badge b-g" id="whoRole"></span></div><button class="btn sm lbtn" onclick="doiMK()">Đổi mật khẩu</button> <button class="btn sm lbtn" onclick="logout()">Đăng xuất</button></div>
   </div>
   <div id="content"></div>
  </div>
@@ -482,6 +482,14 @@ async function doLogin(){const u=$('lgU').value.trim().toLowerCase(),p=$('lgP').
  else if(m.pw!==h){$('lgMsg').textContent='Sai mật khẩu.';return}
  if(m.role===0){$('lgMsg').textContent='Tài khoản chưa được Quản trị duyệt và cấp quyền.';return}
  USER=u;try{localStorage.setItem('khcn_user',u)}catch(x){}$('lgP').value='';addLog('Đăng nhập');showApp()}
+function doiMK(){const u=USER;if(!u)return;
+ openM('<h3 style="margin-top:0">Đổi mật khẩu – '+esc(u)+'</h3><label class="fl">Mật khẩu hiện tại</label><input class="lin" type="password" id="mk0"><label class="fl">Mật khẩu mới</label><input class="lin" type="password" id="mk1"><label class="fl">Nhập lại mật khẩu mới</label><input class="lin" type="password" id="mk2"><div id="mkMsg" style="margin-top:8px;color:#c0392b"></div><div class="flex" style="margin-top:12px;justify-content:flex-end"><button class="btn sm lbtn" onclick="closeM()">Hủy</button><button class="btn sm pri" id="mkOk">Lưu</button></div>',true);
+ $('mkOk').onclick=async()=>{const p0=$('mk0').value,p1=$('mk1').value;if(!p1){$('mkMsg').textContent='Nhập mật khẩu mới.';return}if(p1!==$('mk2').value){$('mkMsg').textContent='Hai lần nhập mật khẩu mới không khớp.';return}
+  const h=await hpw(u,p0),h2=await hpw(u,p1);const m=DB.users.find(x=>x.u===u);$('mkOk').disabled=true;
+  if(NT_API){try{const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'tkDoiMK',u,h,h2})}).then(r=>r.json());
+   if(r&&r.tk){if(!r.ok){$('mkMsg').textContent=r.err||'Không đổi được';$('mkOk').disabled=false;return}if(m){m.pw=h2;save()}addLog('Đổi mật khẩu');closeM();openM('<h3 style="margin-top:0">Đã đổi mật khẩu</h3><p>Lần sau đăng nhập bằng mật khẩu mới (dùng được trên mọi máy).</p><div class="flex" style="justify-content:flex-end"><button class="btn sm pri" onclick="closeM()">Đóng</button></div>',true);return}}catch(e){}}
+  if(m&&m.pw&&m.pw!==h){$('mkMsg').textContent='Mật khẩu hiện tại không đúng.';$('mkOk').disabled=false;return}
+  if(m){m.pw=h2;save()}addLog('Đổi mật khẩu');closeM();openM('<h3 style="margin-top:0">Đã đổi mật khẩu</h3><p>Lần sau đăng nhập bằng mật khẩu mới.</p><div class="flex" style="justify-content:flex-end"><button class="btn sm pri" onclick="closeM()">Đóng</button></div>',true)}}
 function logout(){addLog('Đăng xuất');USER=null;try{localStorage.removeItem('khcn_user')}catch(x){}go('home')}
 /* ---------- app ---------- */
 const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅','Duyệt hồ sơ online'],['dt','📚','Danh mục đề tài'],['lich','📅','Lịch nghiệm thu'],['gn','💰','Nghiệm thu & giải ngân'],['cp','🧾','Theo dõi chi phí'],['tt','💳','Hỗ trợ thanh toán'],['so','📒','Sổ tổng hợp'],['grp','','Nghiệp vụ'],['ky','✍️','Trình ký'],['cv','📝','Công văn'],['tv','📖','Thư viện'],['nk','🕘','Nhật ký hệ thống'],['grp','','Quản trị'],['tk','👤','Tài khoản &amp; phân quyền']];
