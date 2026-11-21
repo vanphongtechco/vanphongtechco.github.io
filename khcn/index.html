@@ -728,11 +728,10 @@ async function cpXuat(ds){let EJ;try{EJ=await cpExcelJS()}catch(e){openM('<h3 st
    (rieng[m.id]||[]).forEach(c=>{const x=ws.getRow(n);x.getCell(2).value=c.nd||'';x.getCell(2).alignment={indent:Math.max(0,m.cap)};x.getCell(3).value=c.hd||'';
     if(c.ngay){const [y,mo,d]=c.ngay.split('-').map(Number);x.getCell(4).value=new Date(Date.UTC(y,mo-1,d));x.getCell(4).numFmt='dd/mm/yyyy'}else{x.getCell(4).value=c.thang?'T'+(+c.thang.slice(5))+'/'+c.thang.slice(0,4)+' (thiếu ngày)':'(thiếu ngày)';x.getCell(4).font={color:{argb:'FFB26B00'}}}
     const p=ns.indexOf(+c.nam);x.getCell(10+(p<0?0:p)).value=c.tien;x.getCell(9).value={formula:'SUM(J'+n+':L'+n+')'};x.getCell(13).value='K';if(c.ghiChu)x.getCell(2).note=c.ghiChu;n++})});
-  const den={};mu.forEach((m,i)=>{den[m.id]=i+1<mu.length?null:n-1});
   dongMuc.forEach(([m,r],i)=>{const tiep=dongMuc.slice(i+1).find(([z])=>z.cap<=m.cap);const cuoi=tiep?tiep[1]-1:n-1;
    ['J','K','L'].forEach(L=>ws.getCell(L+r).value={formula:cuoi>r?'SUMIFS('+L+(r+1)+':'+L+cuoi+',M'+(r+1)+':M'+cuoi+',"K")':'0'})});
   const tr=ws.getRow(n);tr.getCell(2).value='Tổng cộng';tr.font={bold:true};
-  ['E','F','G','H'].forEach(L=>tr.getCell(L).value={formula:'SUMPRODUCT(('+'M13:M'+(n-1)+'="M")*('+'0)) + '+dongMuc.filter(([m])=>m.cap===1).map(([,r])=>L+r).join('+')||'0'});
+  ['E','F','G','H'].forEach(L=>{const c1=dongMuc.filter(([m])=>m.cap===1).map(([,r])=>L+r);tr.getCell(L).value={formula:c1.length?c1.join('+'):'0'}});
   ['J','K','L'].forEach(L=>tr.getCell(L).value={formula:'SUMIFS('+L+'13:'+L+(n-1)+',M13:M'+(n-1)+',"K")'});tr.getCell('I').value={formula:'SUM(J'+n+':L'+n+')'};
   for(let k=13;k<=n;k++){const r=ws.getRow(k);for(let col=2;col<=12;col++){const c=r.getCell(col);c.border=bd;if(col>=5)c.numFmt=NF}}}
  const sr=th.addRow([]);th.getColumn(2).alignment={wrapText:true};
