@@ -873,7 +873,7 @@ function ttVe(){const el=$('ttBox');if(!el)return;if(!TT.sdk&&ROLE()!==1&&myDT()
  +(()=>{const nm=ttNguoiHD();const ro=(v,ghi)=>'<input class="in" value="'+esc(v)+'" readonly style="background:#f1f3f6;color:#333">'+(ghi?'<div class="muted" style="font-size:12px">'+ghi+'</div>':'');
    return '<div><label class="f">Người đề nghị</label>'+(nm?ro(nm,'Theo tên người mua trên hóa đơn'):inp('nguoi','Hóa đơn không ghi người mua – nhập họ tên'))+'</div>'
    +'<div><label class="f">Bộ phận công tác</label>'+(dt.bp?ro(dt.bp,'Theo đơn vị của chủ nhiệm đề tài'):(ROLE()===1?inp('boPhan','Chưa có trong danh mục – nhập tạm'):ro('','Chưa có – Phòng KH&CN bổ sung trong Danh mục đề tài')))+'</div>'
-   +'<div><label class="f">Chủ nhiệm đề tài</label>'+ro(dt.cn||'')+'</div><div><label class="f">Ngày lập</label><input class="in" type="date" value="'+esc(f.ngay||new Date().toISOString().slice(0,10))+'" onchange="TT.f.ngay=this.value"></div>'})()+'</div>'
+   +'<div><label class="f">Ngày lập</label><input class="in" type="date" value="'+esc(f.ngay||new Date().toISOString().slice(0,10))+'" onchange="TT.f.ngay=this.value"></div>'})()+'</div>'
  +(TT.sdk?'<label class="f">Tên đề tài ghi trên giấy</label><input class="in" value="'+esc(ttTenNgan(dt))+'" readonly style="background:#f1f3f6;color:#333">':'')
  +'<label class="f">Nội dung đề nghị</label><div class="flex" style="gap:6px;align-items:center"><span style="white-space:nowrap;font-weight:600">Thanh toán tiền</span>'+inp('ndSau','VD: công tác phí','flex:1')+'</div>'
  +(f.loaiChi==='hh'?'<label class="f">Nội dung nhập – xuất (tên hàng hóa)</label>'+inp('nx'):'')
