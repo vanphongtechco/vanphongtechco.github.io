@@ -785,6 +785,8 @@ const ttZip=()=>ttLib('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip
 /* số tiền dạng 1.234.567 / 1,234,567 / 1234567,5 */
 function ttSo(s){s=String(s||'').replace(/[^\d.,-]/g,'');if(!s)return 0;const m=s.match(/[.,](\d+)$/);if(m&&m[1].length!==3){s=s.slice(0,-m[0].length).replace(/[.,]/g,'')+'.'+m[1]}else s=s.replace(/[.,]/g,'');return Math.round(Number(s))||0}
 const ttNgay=(d,m,y)=>y+'-'+String(m).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+const ttHomNay=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const ttDocNgay=v=>{const m=String(v||'').trim().match(/^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})$/);if(!m)return '';const d=+m[1],mo=+m[2],y=+m[3];const t=new Date(y,mo-1,d);return t.getDate()===d&&t.getMonth()===mo-1?ttNgay(d,mo,y):''};
 const ttNgayVN=s=>/^\d{4}-\d{2}-\d{2}/.test(s||'')?s.slice(8,10)+'/'+s.slice(5,7)+'/'+s.slice(0,4):(s||'');
 /* đọc số thành chữ theo kiểu mẫu của Viện: "Ba mươi chín triệu sáu trăm ngàn đồng chẵn." */
 function ttChu(n){n=Math.round(Math.abs(Number(n)||0));if(!n)return 'Không đồng.';const cs=['không','một','hai','ba','bốn','năm','sáu','bảy','tám','chín'];
@@ -863,7 +865,7 @@ function ttVe(){const el=$('ttBox');if(!el)return;if(!TT.sdk&&ROLE()!==1&&myDT()
  +(TT.docs.length?'<div style="margin-top:6px;font-size:13px">'+TT.docs.map(d=>'<div>📄 '+esc(d.ten)+' – <b>'+esc(d.tt)+'</b>'+(d.cach?' <span class="muted">('+esc(d.cach)+')</span>':'')+'</div>').join('')+'</div>':'')
  +'<h4 style="margin:16px 0 6px">Hóa đơn ('+TT.hd.length+')</h4><div style="overflow:auto"><table class="lt" style="font-size:13px"><thead><tr><th>Ký hiệu</th><th>Số</th><th>Ngày</th><th>Bên bán</th><th>MST</th><th>Chưa VAT</th><th>VAT</th><th>Tổng thanh toán</th><th></th></tr></thead><tbody>'
  +TT.hd.map((h,i)=>{const c=(k,w,num)=>'<td><input class="in" style="min-width:'+w+'px;padding:4px 6px'+(num?';text-align:right':'')+'" value="'+esc(num?(h[k]?Number(h[k]).toLocaleString('vi-VN'):''):h[k]||'')+'" onchange="TT.hd['+i+'].'+k+'='+(num?'ttSo(this.value)':'this.value')+';ttVe()"></td>';
-  return '<tr>'+c('kyHieu',80)+c('so',70)+'<td><input class="in" type="date" style="padding:4px 6px" value="'+esc(h.ngay||'')+'" onchange="TT.hd['+i+'].ngay=this.value;ttVe()"></td>'+c('ten',200)+c('mst',110)+c('chuaVat',100,1)+c('vat',90,1)+c('tong',110,1)+'<td><button class="btn sm lbtn" onclick="TT.hd.splice('+i+',1);ttVe()">✕</button></td></tr>'}).join('')
+  return '<tr>'+c('kyHieu',80)+c('so',70)+'<td><input class="in" placeholder="dd/mm/yyyy" style="padding:4px 6px;width:110px" value="'+esc(ttNgayVN(h.ngay||''))+'" onchange="const v=ttDocNgay(this.value);if(v){TT.hd['+i+'].ngay=v;ttVe()}else this.style.borderColor=\'#c0392b\'"></td>'+c('ten',200)+c('mst',110)+c('chuaVat',100,1)+c('vat',90,1)+c('tong',110,1)+'<td><button class="btn sm lbtn" onclick="TT.hd.splice('+i+',1);ttVe()">✕</button></td></tr>'}).join('')
  +'<tr><td colspan="7" style="text-align:right"><b>Tổng</b></td><td style="text-align:right"><b>'+tong.toLocaleString('vi-VN')+'</b></td><td></td></tr></tbody></table></div>'
  +'<button class="btn sm lbtn" style="margin-top:6px" onclick="TT.hd.push({loai:\'hd\',hang:[]});ttVe()">＋ Thêm hóa đơn nhập tay</button>'
  +(tong?'<div class="muted" style="margin-top:4px">Bằng chữ: '+esc(ttChu(tong))+'</div>':'')
@@ -873,7 +875,7 @@ function ttVe(){const el=$('ttBox');if(!el)return;if(!TT.sdk&&ROLE()!==1&&myDT()
  +(()=>{const nm=ttNguoiHD();const ro=(v,ghi)=>'<input class="in" value="'+esc(v)+'" readonly style="background:#f1f3f6;color:#333">'+(ghi?'<div class="muted" style="font-size:12px">'+ghi+'</div>':'');
    return '<div><label class="f">Người đề nghị</label>'+(nm?ro(nm,'Theo tên người mua trên hóa đơn'):inp('nguoi','Hóa đơn không ghi người mua – nhập họ tên'))+'</div>'
    +'<div><label class="f">Bộ phận công tác</label>'+((dt.bp||(ME()||{}).bp)?ro(dt.bp||(ME()||{}).bp,'Theo đơn vị của chủ nhiệm đề tài'):(ROLE()===1?inp('boPhan','Chưa có trong danh mục – nhập tạm'):ro('','Chưa có – Phòng KH&CN bổ sung trong Danh mục đề tài')))+'</div>'
-   +'<div><label class="f">Ngày lập</label><input class="in" type="date" value="'+esc(f.ngay||new Date().toISOString().slice(0,10))+'" onchange="TT.f.ngay=this.value"></div>'})()+'</div>'
+   +'<div><label class="f">Ngày lập</label><input class="in" placeholder="dd/mm/yyyy" value="'+esc(ttNgayVN(f.ngay||ttHomNay()))+'" onchange="const v=ttDocNgay(this.value);if(v){TT.f.ngay=v;this.style.borderColor=\'\'}else this.style.borderColor=\'#c0392b\'"></div>'})()+'</div>'
  +(TT.sdk?'<label class="f">Tên đề tài ghi trên giấy</label><input class="in" value="'+esc(ttTenNgan(dt))+'" readonly style="background:#f1f3f6;color:#333">':'')
  +'<label class="f">Nội dung đề nghị</label><div class="flex" style="gap:6px;align-items:center"><span style="white-space:nowrap;font-weight:600">Thanh toán tiền</span>'+inp('ndSau','VD: công tác phí','flex:1')+'</div>'
  +(f.loaiChi==='hh'?'<label class="f">Nội dung nhập – xuất (tên hàng hóa)</label>'+inp('nx'):'')
@@ -900,7 +902,7 @@ async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg'
  if(!TT.sdk){msg.innerHTML='<span style="color:#c0392b">Chọn đề tài.</span>';return}if(!tong){msg.innerHTML='<span style="color:#c0392b">Chưa có số tiền hóa đơn.</span>';return}if(!(ttNguoiHD()||f.nguoi)){msg.innerHTML='<span style="color:#c0392b">Nhập người đề nghị.</span>';return}if(f.hinhThuc==='tm'&&tong>=5000000){msg.innerHTML='<span style="color:#c0392b">Tiền mặt chỉ dưới 5 triệu – chọn thanh toán qua tài khoản hoặc đề nghị chuyển tiền.</span>';return}
  msg.textContent='Đang tạo file…';
  try{const JZ=await ttZip();const buf=await fetch(TT_MAU).then(r=>{if(!r.ok)throw new Error('Không tải được mẫu');return r.arrayBuffer()});const z=await JZ.loadAsync(buf);
-  const d=new Date((f.ngay||new Date().toISOString().slice(0,10))+'T00:00:00');const ngayTxt='Hà Nội, ngày '+d.getDate()+' tháng '+(d.getMonth()+1)+' năm '+d.getFullYear();
+  const d=new Date((f.ngay||ttHomNay())+'T00:00:00');const ngayTxt='Hà Nội, ngày '+d.getDate()+' tháng '+(d.getMonth()+1)+' năm '+d.getFullYear();
   const chu=ttChu(tong),hds=ttHDStr(),nguoi=ttNguoiHD()||f.nguoi||'',cn=dt.cn||'',bp=dt.bp||(ME()||{}).bp||f.boPhan||'',nd=ttND()+(f.hinhThuc==='tk'?' (thanh toán qua TK'+(f.cnStk?' số '+f.cnStk+(f.cnNh?' tại '+f.cnNh:''):'')+')':''),ten=ttTenNgan(dt),nx=f.nx||(f.ndSau||'');
   const set=async(file,arr)=>{let x=await z.file(file).async('string');arr.forEach(([r,v])=>{x=ttCell(x,r,v)});z.file(file,x)};
   let dung=[];
@@ -918,7 +920,7 @@ async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg'
   z.file('xl/workbook.xml',wb);
   for(let i=1;i<=8;i++){const p='xl/worksheets/sheet'+i+'.xml';if(!z.file(p))continue;let x=await z.file(p).async('string');const on=dung.includes(names[i-1])&&names[i-1]===dung[0];x=x.replace(/\stabSelected="\d"/g,'');if(on)x=x.replace(/<sheetView /,'<sheetView tabSelected="1" ');z.file(p,x)}
   const out=await z.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6},mimeType:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(out);a.download=(f.ngay||new Date().toISOString().slice(0,10)).replace(/-/g,'.')+' '+(f.hinhThuc==='ck'?'ĐNCT':f.hinhThuc==='tk'?'ĐNTT qua TK':'ĐNTT')+' '+TT.sdk.replace('/','')+'.xlsx';
+  const a=document.createElement('a');a.href=URL.createObjectURL(out);a.download=(f.ngay||ttHomNay()).replace(/-/g,'.')+' '+(f.hinhThuc==='ck'?'ĐNCT':f.hinhThuc==='tk'?'ĐNTT qua TK':'ĐNTT')+' '+TT.sdk.replace('/','')+'.xlsx';
   document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);
   msg.innerHTML='Đã tạo <b>'+esc(a.download)+'</b> ('+dung.join(' + ')+'). Mở bằng Excel, kiểm tra rồi in, ký; nộp kèm hóa đơn và bộ chứng từ gốc.'}catch(e){msg.innerHTML='<span style="color:#c0392b">Không tạo được file: '+esc(e.message||e)+'</span>'}}
 /* gửi Phòng KH&CN duyệt (chủ nhiệm xác thực bằng email đã đăng ký) */
