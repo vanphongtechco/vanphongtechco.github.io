@@ -448,6 +448,8 @@ if(!DB.users)DB.users=[{u:'binhlt',ten:'Lê Thanh Bình',email:'',role:1,pw:'',d
  ['hoangnm','Nguyễn Mạnh Hoàng','Phòng KHCN',3],['khoett','Trịnh Tiến Khỏe','Phòng KHCN',3],
  ['hiennt','Nguyễn Thu Hiền','Viện trưởng',3],['thotd','Trần Đức Thọ','Phó Viện trưởng',3],['hieudt','Đỗ Trung Hiếu','Phó Viện trưởng',3],['hienht','Hà Thế Hiến','Phó Viện trưởng',3]
 ].forEach(([u,ten,cv,role])=>{const x=DB.users.find(y=>y.u===u);if(!x)DB.users.push({u,ten,cv,email:'',role,pw:'',dt:[],lock:false,ngay:now()});else x.cv=cv});
+/* 21/11/2026: đặt lại mật khẩu binhlt một lần (anh Bình quên) – lần đăng nhập tới gõ mật khẩu nào lưu mật khẩu đó */
+if(!DB.pwReset211){const b=DB.users.find(x=>x.u==='binhlt');if(b)b.pw='';DB.pwReset211=1;try{save()}catch(e){}}
 if(!DB.perm)DB.perm=JSON.parse(JSON.stringify(PDEF));
 const ME=()=>DB.users.find(x=>x.u===USER);
 const ROLE=()=>{const m=ME();return m?m.role:-1};
