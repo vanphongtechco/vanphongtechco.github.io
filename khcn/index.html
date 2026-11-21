@@ -777,7 +777,7 @@ function napGN(){if(!NT_API)return;fetch(NT_API+'?gn=1').then(r=>r.json()).then(
  if(doi){GN_NGUON=GN_NGUON.replace(/Đã chi:.*$/,'Đã chi: dữ liệu Theo dõi chi phí trên web'+(r.capNhat?' (cập nhật '+r.capNhat+')':'')+'.');if(USER&&['dash','gn'].includes(CUR))nav(CUR)}}).catch(()=>{})}
 
 /* ---------- Hỗ trợ chủ nhiệm: đọc hóa đơn, hợp đồng → Giấy đề nghị thanh toán / chuyển tiền (mẫu của Viện) ---------- */
-let TT={sdk:'',docs:[],hd:[],f:{hinhThuc:'',loaiChi:'dv'},sent:''};
+let TT={sdk:'',docs:[],hd:[],hh:[],f:{hinhThuc:'',loaiChi:'dv'},sent:''};
 const TT_MAU='mau/Mau-thanh-toan-web.xlsx';
 function ttLib(src,g){return window[g]?Promise.resolve(window[g]):new Promise((ok,ko)=>{const s=document.createElement('script');s.src=src;s.onload=()=>ok(window[g]);s.onerror=ko;document.head.appendChild(s)})}
 const ttPdf=()=>ttLib('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js','pdfjsLib').then(p=>{p.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';return p});
@@ -822,9 +822,14 @@ function ttVanBan(t){const T=t.replace(/\r/g,'');const m=(re)=>{const x=T.match(
  return {loai:'hd',kyHieu:m(/Ký\s*hiệu[^:\n]*[:：]\s*([0-9]?[A-Z0-9]{5,8})/i),so:m(/(?:Số hóa đơn|Số HĐ|Số\s*\(No\.?\)|\bSố|No\.)\s*[:：]\s*(\d{1,8})\b/i),ngay:nd?ttNgay(nd[1],nd[2],nd[3]):'',
   ten,mst:([...T.matchAll(/(?:Mã\s*số\s*thuế|\bMST\b)[^:\n]*[:：]\s*([\d\s\-]{10,16})/gi)].map(x=>x[1].replace(/\s/g,'').replace(/-$/,'')).find(x=>x!=='0100100632')||''),dchi:m(/Địa\s*chỉ[^:\n]*[:：]\s*([^\n]{5,150})/i),
   stk:m(/Số\s*tài\s*khoản[^:\n]*[:：]\s*([\d][\d\s.]{5,24})/i).replace(/[\s.]/g,''),nh:m(/Ngân\s*hàng\s*(?:\([^)]*\))?\s*[:：]\s*([^\n]{3,120})/i)||m(/Số\s*tài\s*khoản[^\n]*?\d\s*(?:tại|-)\s*((?:Ngân hàng|NH)[^\n]{2,100})/i),
-  chuaVat,vat,tong,hang:[],nguoiMua:m(/Họ\s*(?:và\s*)?tên\s*người\s*mua(?:\s*hàng)?[^:\n]*[:：]\s*([^\n]{2,60})/i).replace(/\s{2,}.*$/,'')}}
+  chuaVat,vat,tong,hang:ttHang(L),nguoiMua:m(/Họ\s*(?:và\s*)?tên\s*người\s*mua(?:\s*hàng)?[^:\n]*[:：]\s*([^\n]{2,60})/i).replace(/\s{2,}.*$/,'')}}
+function ttHang(L){const out=[];const re=/^(\d{1,3})\s+(.*?)\s{2,}([^\d\s][^\d]{0,14}?)\s{2,}([\d.,]+)\s{2,}([\d.,]+)\s{2,}([\d.,]+)/;
+ L.forEach((x,i)=>{const m=x.match(re);if(!m)return;let ten=m[2].trim();
+  if(!ten){const n=[L[i-1],L[i+1]].find(z=>z&&!/\d{3}/.test(z)&&!/^(STT|\d+\s+\d+)/i.test(z));ten=(n||'').trim()}
+  const sl=m[4].replace(/,00$/,'').replace(/\.0+$/,'');if(/^(STT|\(?1\)?)$/i.test(ten))return;
+  out.push({ten,dvt:m[3].trim(),sl,dg:ttSo(m[5]),tt:ttSo(m[6])})});return out}
 async function ttPdfText(buf){const p=await ttPdf();const doc=await p.getDocument({data:buf}).promise;let out='';
- for(let i=1;i<=Math.min(doc.numPages,12);i++){const pg=await doc.getPage(i);const c=await pg.getTextContent();let y=null;c.items.forEach(it=>{const yy=Math.round(it.transform[5]);if(y!==null&&Math.abs(yy-y)>3)out+='\n';else if(y!==null)out+=' ';out+=it.str;y=yy});out+='\n'}return out}
+ for(let i=1;i<=Math.min(doc.numPages,12);i++){const pg=await doc.getPage(i);const c=await pg.getTextContent();let y=null,xe=0;c.items.forEach(it=>{const yy=Math.round(it.transform[5]),x=it.transform[4];if(y!==null&&Math.abs(yy-y)>3)out+='\n';else if(y!==null)out+=(x-xe>6?'   ':' ');out+=it.str;y=yy;xe=x+(it.width||0)});out+='\n'}return out}
 const ttB64=buf=>{let s='';const b=new Uint8Array(buf);for(let i=0;i<b.length;i+=32768)s+=String.fromCharCode.apply(null,b.subarray(i,i+32768));return btoa(s)};
 async function ttOCR(f,buf){if(!NT_API)throw new Error('Chưa kết nối máy chủ');const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ocr',name:f.name,mime:f.type||'application/pdf',b64:ttB64(buf)})}).then(r=>r.json());
  if(!r.ok)throw new Error(r.err||'Không đọc được bản quét');return r.text}
@@ -835,7 +840,7 @@ async function ttDoc(files){for(const f of files){const d={ten:f.name,tt:'Đang 
    if(txt.replace(/\s/g,'').length<80){d.tt='Bản quét – đang nhận dạng chữ…';ttVe();txt=await ttOCR(f,buf);d.cach='Nhận dạng chữ (Google)'}
    kq=ttVanBan(txt)}
   if(!kq)throw new Error('Không nhận ra nội dung');d.kq=kq;d.tt=kq.loai==='hdkt'?'Hợp đồng':'Hóa đơn';
-  if(kq.loai==='hd'){if(!TT.hd.some(h=>h.so&&h.so===kq.so&&h.mst===kq.mst))TT.hd.push(Object.assign({nguon:f.name},kq))}
+  if(kq.loai==='hd'){if(!TT.hd.some(h=>h.so&&h.so===kq.so&&h.mst===kq.mst)){TT.hd.push(Object.assign({nguon:f.name},kq));(kq.hang||[]).forEach(x=>TT.hh.push({ten:x.ten,dvt:x.dvt||'',sl:String(x.sl||'').replace(/,0+$/,'')}))}}
   else{TT.f.hopDong=TT.f.hopDong||(kq.so?kq.so+(kq.ngay?' ngày '+ttNgayVN(kq.ngay):''):'');TT.f.ctTen=TT.f.ctTen||kq.ten;TT.f.ctMst=TT.f.ctMst||kq.mst;TT.f.ctStk=TT.f.ctStk||kq.stk;TT.f.ctNh=TT.f.ctNh||kq.nh}
   ttTuDien()}catch(e){d.tt='Lỗi: '+(e.message||e)}ttVe()}}
 /* tự điền từ hóa đơn */
@@ -844,10 +849,11 @@ function ttTuDien(){const h=TT.hd;if(!h.length)return;const tong=h.reduce((a,x)=
  const h0=h.find(x=>x.ten)||{};f.ctTen=f.ctTen||h0.ten||'';f.ctMst=f.ctMst||h0.mst||'';f.ctStk=f.ctStk||h0.stk||'';f.ctNh=f.ctNh||h0.nh||'';
  const hang=h.flatMap(x=>x.hang||[]).map(x=>x.ten).filter(Boolean);
  if(!f.ndSau&&hang.length)f.ndSau=hang.slice(0,3).join(', ').toLowerCase()+(hang.length>3?'…':'');
- if(!f.nx&&hang.length)f.nx=hang.slice(0,4).join(', ');
+ 
  if(hang.length&&h.some(x=>(x.hang||[]).some(i=>/^(cái|bộ|chiếc|kg|m|mét|tấm|cuộn|hộp|thanh|ống|lít|vòng|con)$/i.test(i.dvt||''))))f.loaiChi='hh'}
 const ttND=()=>('Thanh toán tiền '+(TT.f.ndSau||'').trim()).trim();
-const ttNguoiHD=()=>((TT.hd.find(x=>x.nguoiMua)||{}).nguoiMua||'').trim();
+const ttDSMua=()=>[...new Set(TT.hd.map(x=>(x.nguoiMua||'').trim()).filter(Boolean))];
+const ttNguoiHD=()=>{const d=ttDSMua();return d.length===1?d[0]:(d.includes(TT.f.nguoi)?TT.f.nguoi:'')};
 const ttTong=()=>TT.hd.reduce((a,x)=>a+(+x.tong||0),0);
 const ttHDStr=()=>TT.hd.map(x=>(x.so||'…')+' ngày '+ttNgayVN(x.ngay)).join('; ');
 function ttDT(){return DT0.find(x=>x.sdk===TT.sdk)||{}}
@@ -873,15 +879,17 @@ function ttVe(){const el=$('ttBox');if(!el)return;if(!TT.sdk&&ROLE()!==1&&myDT()
  +'<div><label class="f">Hình thức</label><select class="in" onchange="TT.f.hinhThuc=this.value;ttVe()"><option value="tm"'+(f.hinhThuc==='tm'?' selected':'')+'>Thanh toán tiền mặt</option><option value="tk"'+(f.hinhThuc==='tk'?' selected':'')+'>Thanh toán qua tài khoản</option><option value="ck"'+(f.hinhThuc==='ck'?' selected':'')+'>Đề nghị chuyển tiền</option></select>'+(f.hinhThuc==='tm'&&tong>=5000000?'<div style="color:#c0392b;font-size:13px">Tiền mặt chỉ dưới 5 triệu – chọn thanh toán qua tài khoản / đề nghị chuyển tiền, hoặc tách đề nghị.</div>':'')+(f.hinhThuc==='tk'&&tong&&tong<=5000000?'<div style="color:#b26b00;font-size:13px">Dưới 5 triệu thường thanh toán tiền mặt.</div>':'')+'</div>'
  +'<div><label class="f">Loại chi</label><select class="in" onchange="TT.f.loaiChi=this.value;ttVe()"><option value="dv"'+(f.loaiChi!=='hh'?' selected':'')+'>Dịch vụ</option><option value="hh"'+(f.loaiChi==='hh'?' selected':'')+'>Hàng hóa, vật tư (kèm Giấy đề nghị nhập – xuất)</option></select></div>'
  +(()=>{const nm=ttNguoiHD();const ro=(v,ghi)=>'<input class="in" value="'+esc(v)+'" readonly style="background:#f1f3f6;color:#333">'+(ghi?'<div class="muted" style="font-size:12px">'+ghi+'</div>':'');
-   return '<div><label class="f">Người đề nghị</label>'+(nm?ro(nm,'Theo tên người mua trên hóa đơn'):inp('nguoi','Hóa đơn không ghi người mua – nhập họ tên'))+'</div>'
+   return '<div><label class="f">Người đề nghị</label>'+(()=>{const ds=ttDSMua();if(ds.length===1)return ro(ds[0],'Theo tên người mua trên hóa đơn');if(ds.length>1)return '<select class="in" onchange="TT.f.nguoi=this.value"><option value="">– chọn người đề nghị –</option>'+ds.map(n=>'<option'+(n===f.nguoi?' selected':'')+'>'+esc(n)+'</option>').join('')+'</select><div class="muted" style="font-size:12px">Các hóa đơn ghi nhiều người mua khác nhau</div>';return inp('nguoi','')})()+'</div>'
    +'<div><label class="f">Bộ phận công tác</label>'+((dt.bp||(ME()||{}).bp)?ro(dt.bp||(ME()||{}).bp,'Theo đơn vị của chủ nhiệm đề tài'):(ROLE()===1?inp('boPhan','Chưa có trong danh mục – nhập tạm'):ro('','Chưa có – Phòng KH&CN bổ sung trong Danh mục đề tài')))+'</div>'
    +'<div><label class="f">Ngày lập</label><input class="in" placeholder="dd/mm/yyyy" value="'+esc(ttNgayVN(f.ngay||ttHomNay()))+'" onchange="const v=ttDocNgay(this.value);if(v){TT.f.ngay=v;this.style.borderColor=\'\'}else this.style.borderColor=\'#c0392b\'"></div>'})()+'</div>'
  +(TT.sdk?'<label class="f">Tên đề tài ghi trên giấy</label><input class="in" value="'+esc(ttTenNgan(dt))+'" readonly style="background:#f1f3f6;color:#333">':'')
  +'<label class="f">Nội dung đề nghị</label><div class="flex" style="gap:6px;align-items:center"><span style="white-space:nowrap;font-weight:600">Thanh toán tiền</span>'+inp('ndSau','VD: công tác phí','flex:1')+'</div>'
- +(f.loaiChi==='hh'?'<label class="f">Nội dung nhập – xuất (tên hàng hóa)</label>'+inp('nx'):'')
+ +(f.loaiChi==='hh'?'<h4 style="margin:14px 0 6px">Hàng hóa nhập – xuất (tất cả hóa đơn)</h4><table class="lt" style="font-size:13px"><thead><tr><th>Tên hàng hóa</th><th>ĐVT</th><th>Số lượng</th><th></th></tr></thead><tbody>'
+   +TT.hh.map((x,i)=>'<tr><td><input class="in" style="padding:4px 6px;min-width:260px" value="'+esc(x.ten)+'" onchange="TT.hh['+i+'].ten=this.value"></td><td><input class="in" style="padding:4px 6px;width:80px" value="'+esc(x.dvt)+'" onchange="TT.hh['+i+'].dvt=this.value"></td><td><input class="in" style="padding:4px 6px;width:80px;text-align:right" value="'+esc(x.sl)+'" onchange="TT.hh['+i+'].sl=this.value"></td><td><button class="btn sm lbtn" onclick="TT.hh.splice('+i+',1);ttVe()">✕</button></td></tr>').join('')
+   +'</tbody></table><button class="btn sm lbtn" style="margin-top:6px" onclick="TT.hh.push({ten:\'\',dvt:\'\',sl:\'\'});ttVe()">＋ Thêm hàng hóa</button>':'')
  +(f.hinhThuc==='tk'?'<div class="g2" style="gap:10px"><div><label class="f">Tài khoản nhận của người đề nghị</label>'+inp('cnStk','Số tài khoản')+'</div><div><label class="f">Mở tại</label>'+inp('cnNh','Ngân hàng …')+'</div></div>':'')
  +(f.hinhThuc==='ck'?'<label class="f">Hợp đồng số</label>'+inp('hopDong','Số … ngày …')+'<div class="g2" style="gap:10px"><div><label class="f">Chuyển trả: tổ chức/cá nhân</label>'+inp('ctTen')+'</div><div><label class="f">Mã số thuế</label>'+inp('ctMst')+'</div><div><label class="f">Số tài khoản</label>'+inp('ctStk')+'</div><div><label class="f">Mở tại</label>'+inp('ctNh','Ngân hàng …')+'</div></div>':'')
- +'<div class="flex" style="margin-top:16px;flex-wrap:wrap;gap:8px"><button class="btn pri" onclick="ttXuat()">⬇ Tải giấy đề nghị (Excel theo mẫu Viện)</button><button class="btn" onclick="ttGuiForm()">Gửi Phòng KH&amp;CN duyệt →</button><button class="btn sm lbtn" onclick="TT={sdk:TT.sdk,docs:[],hd:[],f:{hinhThuc:\'\',loaiChi:\'dv\',nguoi:TT.f.nguoi,boPhan:TT.f.boPhan},sent:\'\'};ttVe()">Làm đề nghị mới</button></div>'
+ +'<div class="flex" style="margin-top:16px;flex-wrap:wrap;gap:8px"><button class="btn pri" onclick="ttXuat()">⬇ Tải giấy đề nghị (Excel theo mẫu Viện)</button><button class="btn" onclick="ttGuiForm()">Gửi Phòng KH&amp;CN duyệt →</button><button class="btn sm lbtn" onclick="TT={sdk:TT.sdk,docs:[],hd:[],hh:[],f:{hinhThuc:\'\',loaiChi:\'dv\'},sent:\'\'};ttVe()">Làm đề nghị mới</button></div>'
  +'<div id="ttMsg" style="margin-top:10px">'+(TT.sent||'')+'</div>'}
 /* ghi ô vào sheet XML của mẫu */
 function ttCell(x,ref,val){const esc2=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -903,7 +911,7 @@ async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg'
  msg.textContent='Đang tạo file…';
  try{const JZ=await ttZip();const buf=await fetch(TT_MAU).then(r=>{if(!r.ok)throw new Error('Không tải được mẫu');return r.arrayBuffer()});const z=await JZ.loadAsync(buf);
   const d=new Date((f.ngay||ttHomNay())+'T00:00:00');const ngayTxt='Hà Nội, ngày '+d.getDate()+' tháng '+(d.getMonth()+1)+' năm '+d.getFullYear();
-  const chu=ttChu(tong),hds=ttHDStr(),nguoi=ttNguoiHD()||f.nguoi||'',cn=dt.cn||'',bp=dt.bp||(ME()||{}).bp||f.boPhan||'',nd=ttND()+(f.hinhThuc==='tk'?' (thanh toán qua TK'+(f.cnStk?' số '+f.cnStk+(f.cnNh?' tại '+f.cnNh:''):'')+')':''),ten=ttTenNgan(dt),nx=f.nx||(f.ndSau||'');
+  const chu=ttChu(tong),hds=ttHDStr(),nguoi=ttNguoiHD()||f.nguoi||'',cn=dt.cn||'',bp=dt.bp||(ME()||{}).bp||f.boPhan||'',nd=ttND()+(f.hinhThuc==='tk'?' (thanh toán qua TK'+(f.cnStk?' số '+f.cnStk+(f.cnNh?' tại '+f.cnNh:''):'')+')':''),ten=ttTenNgan(dt),nx=TT.hh.filter(x=>x.ten).map(x=>x.ten+(x.sl?' ('+x.sl+(x.dvt?' '+x.dvt:'')+')':'')).join('; ')||(f.ndSau||'');
   const set=async(file,arr)=>{let x=await z.file(file).async('string');arr.forEach(([r,v])=>{x=ttCell(x,r,v)});z.file(file,x)};
   let dung=[];
   if(f.hinhThuc==='ck'){dung=['ĐN chuyển tiền'];
