@@ -443,11 +443,11 @@ const PERMS=[['taoHS','Tạo hồ sơ nội bộ'],['duyet','Tiếp nhận / duy
 const PDEF={2:{taoHS:1,duyet:1,suaDT:0,trinhKy:1,kyDuyet:1,congVan:1,thuVien:1,xuatSo:1},3:{xuatSo:1},4:{taoHS:1}};
 if(!DB.users)DB.users=[{u:'binhlt',ten:'Lê Thanh Bình',email:'',role:1,pw:'',dt:[],lock:false,ngay:now()}];
 /* tài khoản đã định sẵn (anh Bình chốt 21/11/2026); mật khẩu đặt ở lần đăng nhập đầu */
-[['phuongnt','Nguyễn Trân Phương','Phó phòng KH&CN – quản trị cấp 2 kỹ thuật (nghiệm thu, báo cáo)',2],
- ['uyenhtt','Hoàng Thị Tố Uyên','Phòng KH&CN – quản trị cấp 2 tài chính (nhập chi phí đề tài)',2],
- ['hoangnm','Nguyễn Mạnh Hoàng','Phòng KH&CN',3],['khoett','Trịnh Tiến Khỏe','Phòng KH&CN',3],
+[['binhlt','Lê Thanh Bình','Quản trị',1],['phuongnt','Nguyễn Trân Phương','PTP KHCN',2],
+ ['uyenhtt','Hoàng Thị Tố Uyên','Phòng KHCN',2],
+ ['hoangnm','Nguyễn Mạnh Hoàng','Phòng KHCN',3],['khoett','Trịnh Tiến Khỏe','Phòng KHCN',3],
  ['hiennt','Nguyễn Thu Hiền','Viện trưởng',3],['thotd','Trần Đức Thọ','Phó Viện trưởng',3],['hieudt','Đỗ Trung Hiếu','Phó Viện trưởng',3],['hienht','Hà Thế Hiến','Phó Viện trưởng',3]
-].forEach(([u,ten,cv,role])=>{const x=DB.users.find(y=>y.u===u);if(!x)DB.users.push({u,ten,cv,email:'',role,pw:'',dt:[],lock:false,ngay:now()});else if(!x.cv)x.cv=cv});
+].forEach(([u,ten,cv,role])=>{const x=DB.users.find(y=>y.u===u);if(!x)DB.users.push({u,ten,cv,email:'',role,pw:'',dt:[],lock:false,ngay:now()});else x.cv=cv});
 if(!DB.perm)DB.perm=JSON.parse(JSON.stringify(PDEF));
 const ME=()=>DB.users.find(x=>x.u===USER);
 const ROLE=()=>{const m=ME();return m?m.role:-1};
@@ -486,7 +486,7 @@ function logout(){addLog('Đăng xuất');USER=null;try{localStorage.removeItem(
 /* ---------- app ---------- */
 const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅','Duyệt hồ sơ online'],['dt','📚','Danh mục đề tài'],['lich','📅','Lịch nghiệm thu'],['gn','💰','Nghiệm thu & giải ngân'],['cp','🧾','Theo dõi chi phí'],['tt','💳','Hỗ trợ thanh toán'],['so','📒','Sổ tổng hợp'],['grp','','Nghiệp vụ'],['ky','✍️','Trình ký'],['cv','📝','Công văn'],['tv','📖','Thư viện'],['nk','🕘','Nhật ký hệ thống'],['grp','','Quản trị'],['tk','👤','Tài khoản &amp; phân quyền']];
 let CUR='dash',HSF={st:-1,q:''},DF={st:'q',src:''};
-function showApp(){const m=ME();if(!m||m.role===0||m.lock){USER=null;go('login');return}$('pub').classList.add('hide');$('app').classList.remove('hide');$('whoName').textContent=m.ten+' ('+m.u+')';$('whoRole').textContent=ROLES[m.role].toUpperCase();nav(CUR)}
+function showApp(){const m=ME();if(!m||m.role===0||m.lock){USER=null;go('login');return}$('pub').classList.add('hide');$('app').classList.remove('hide');$('whoName').textContent=m.ten+' ('+m.u+')';$('whoRole').textContent=(m.cv||ROLES[m.role]).toUpperCase();nav(CUR)}
 const MENU_R={4:['dash','hs','dt','lich','gn','tt'],3:['dash','hs','duyet','dt','lich','gn','cp','tt','so','ky','cv','tv','nk']};
 function menuOK(k){const r=ROLE();if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
 function myDT(){const m=ME();return m?m.dt||[]:[]}
