@@ -835,7 +835,7 @@ async function ttDoc(files){for(const f of files){const d={ten:f.name,tt:'Đang 
   ttTuDien()}catch(e){d.tt='Lỗi: '+(e.message||e)}ttVe()}}
 /* tự điền từ hóa đơn */
 function ttTuDien(){const h=TT.hd;if(!h.length)return;const tong=h.reduce((a,x)=>a+(+x.tong||0),0);const f=TT.f;
- if(!f.hinhThuc)f.hinhThuc=tong>5000000||f.hopDong?'ck':'tm';
+ if(!f.hinhThuc)f.hinhThuc=tong<5000000?'tm':(f.hopDong?'ck':'tk');
  const h0=h.find(x=>x.ten)||{};f.ctTen=f.ctTen||h0.ten||'';f.ctMst=f.ctMst||h0.mst||'';f.ctStk=f.ctStk||h0.stk||'';f.ctNh=f.ctNh||h0.nh||'';
  const hang=h.flatMap(x=>x.hang||[]).map(x=>x.ten).filter(Boolean);
  if(!f.noiDung)f.noiDung='Thanh toán tiền '+(hang.length?hang.slice(0,3).join(', ').toLowerCase()+(hang.length>3?'…':''):'…');
@@ -862,13 +862,14 @@ function ttVe(){const el=$('ttBox');if(!el)return;const f=TT.f,dt=ttDT(),tong=tt
  +'<button class="btn sm lbtn" style="margin-top:6px" onclick="TT.hd.push({loai:\'hd\',hang:[]});ttVe()">＋ Thêm hóa đơn nhập tay</button>'
  +(tong?'<div class="muted" style="margin-top:4px">Bằng chữ: '+esc(ttChu(tong))+'</div>':'')
  +'<h4 style="margin:16px 0 6px">Giấy đề nghị</h4><div class="g2" style="gap:10px">'
- +'<div><label class="f">Hình thức</label><select class="in" onchange="TT.f.hinhThuc=this.value;ttVe()"><option value="ck"'+(f.hinhThuc==='ck'?' selected':'')+'>Chuyển khoản – Giấy đề nghị chuyển tiền</option><option value="tm"'+(f.hinhThuc==='tm'?' selected':'')+'>Tiền mặt – Giấy đề nghị thanh toán (≤ 5 triệu)</option></select>'+(f.hinhThuc==='tm'&&tong>5000000?'<div style="color:#c0392b;font-size:13px">Tiền mặt tối đa 5 triệu – nên chuyển khoản hoặc tách đề nghị.</div>':'')+'</div>'
+ +'<div><label class="f">Hình thức</label><select class="in" onchange="TT.f.hinhThuc=this.value;ttVe()"><option value="tm"'+(f.hinhThuc==='tm'?' selected':'')+'>Tiền mặt – Giấy đề nghị thanh toán (dưới 5 triệu)</option><option value="tk"'+(f.hinhThuc==='tk'?' selected':'')+'>Thanh toán qua tài khoản – chủ nhiệm đã chuyển khoản cho bên bán (trên 5 triệu)</option><option value="ck"'+(f.hinhThuc==='ck'?' selected':'')+'>Đề nghị chuyển tiền – Viện chuyển thẳng cho bên bán</option></select>'+(f.hinhThuc==='tm'&&tong>=5000000?'<div style="color:#c0392b;font-size:13px">Tiền mặt chỉ dưới 5 triệu – chọn thanh toán qua tài khoản / đề nghị chuyển tiền, hoặc tách đề nghị.</div>':'')+(f.hinhThuc==='tk'&&tong&&tong<=5000000?'<div style="color:#b26b00;font-size:13px">Dưới 5 triệu thường thanh toán tiền mặt.</div>':'')+'</div>'
  +'<div><label class="f">Loại chi</label><select class="in" onchange="TT.f.loaiChi=this.value;ttVe()"><option value="dv"'+(f.loaiChi!=='hh'?' selected':'')+'>Dịch vụ</option><option value="hh"'+(f.loaiChi==='hh'?' selected':'')+'>Hàng hóa, vật tư (kèm Giấy đề nghị nhập – xuất)</option></select></div>'
  +'<div><label class="f">Người đề nghị</label>'+inp('nguoi','Họ và tên')+'</div><div><label class="f">Bộ phận công tác</label>'+inp('boPhan','VD: Trung tâm …')+'</div>'
  +'<div><label class="f">Chủ nhiệm đề tài (ký)</label>'+inp('cn',dt.cn||'')+'</div><div><label class="f">Ngày lập</label><input class="in" type="date" value="'+esc(f.ngay||new Date().toISOString().slice(0,10))+'" onchange="TT.f.ngay=this.value"></div></div>'
  +'<label class="f">Tên đề tài ghi trên giấy (ngắn gọn, vừa 1 dòng)</label><input class="in" value="'+esc(f.tenDT!=null?f.tenDT:ttNgan(dt.ten))+'" oninput="TT.f.tenDT=this.value">'
  +'<label class="f">Nội dung đề nghị</label>'+inp('noiDung','Thanh toán tiền …')
  +(f.loaiChi==='hh'?'<label class="f">Nội dung nhập – xuất (tên hàng hóa)</label>'+inp('nx'):'')
+ +(f.hinhThuc==='tk'?'<div class="g2" style="gap:10px"><div><label class="f">Tài khoản nhận của người đề nghị</label>'+inp('cnStk','Số tài khoản')+'</div><div><label class="f">Mở tại</label>'+inp('cnNh','Ngân hàng …')+'</div></div>':'')
  +(f.hinhThuc==='ck'?'<label class="f">Hợp đồng số</label>'+inp('hopDong','Số … ngày …')+'<div class="g2" style="gap:10px"><div><label class="f">Chuyển trả: tổ chức/cá nhân</label>'+inp('ctTen')+'</div><div><label class="f">Mã số thuế</label>'+inp('ctMst')+'</div><div><label class="f">Số tài khoản</label>'+inp('ctStk')+'</div><div><label class="f">Mở tại</label>'+inp('ctNh','Ngân hàng …')+'</div></div>':'')
  +'<div class="flex" style="margin-top:16px;flex-wrap:wrap;gap:8px"><button class="btn pri" onclick="ttXuat()">⬇ Tải giấy đề nghị (Excel theo mẫu Viện)</button><button class="btn" onclick="ttGuiForm()">Gửi Phòng KH&amp;CN duyệt →</button><button class="btn sm lbtn" onclick="TT={sdk:TT.sdk,docs:[],hd:[],f:{hinhThuc:\'\',loaiChi:\'dv\',nguoi:TT.f.nguoi,boPhan:TT.f.boPhan},sent:\'\'};ttVe()">Làm đề nghị mới</button></div>'
  +'<div id="ttMsg" style="margin-top:10px">'+(TT.sent||'')+'</div>'}
@@ -888,11 +889,11 @@ function ttCell(x,ref,val){const esc2=s=>String(s).replace(/&/g,'&amp;').replace
  const cells=[...r[3].matchAll(/<c r="([A-Z]+)\d+"/g)];const after=cells.find(z=>cn(z[1])>cn(col));
  const body=after?r[3].slice(0,after.index)+nc+r[3].slice(after.index):r[3]+nc;return x.replace(rr,r[1]+'>'+body+'</row>')}
 async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg');
- if(!TT.sdk){msg.innerHTML='<span style="color:#c0392b">Chọn đề tài.</span>';return}if(!tong){msg.innerHTML='<span style="color:#c0392b">Chưa có số tiền hóa đơn.</span>';return}
+ if(!TT.sdk){msg.innerHTML='<span style="color:#c0392b">Chọn đề tài.</span>';return}if(!tong){msg.innerHTML='<span style="color:#c0392b">Chưa có số tiền hóa đơn.</span>';return}if(f.hinhThuc==='tm'&&tong>=5000000){msg.innerHTML='<span style="color:#c0392b">Tiền mặt chỉ dưới 5 triệu – chọn thanh toán qua tài khoản hoặc đề nghị chuyển tiền.</span>';return}
  msg.textContent='Đang tạo file…';
  try{const JZ=await ttZip();const buf=await fetch(TT_MAU).then(r=>{if(!r.ok)throw new Error('Không tải được mẫu');return r.arrayBuffer()});const z=await JZ.loadAsync(buf);
   const d=new Date((f.ngay||new Date().toISOString().slice(0,10))+'T00:00:00');const ngayTxt='Hà Nội, ngày '+d.getDate()+' tháng '+(d.getMonth()+1)+' năm '+d.getFullYear();
-  const chu=ttChu(tong),hds=ttHDStr(),nguoi=f.nguoi||dt.cn||'',cn=f.cn||dt.cn||'',bp=f.boPhan||'',nd=f.noiDung||'',ten=f.tenDT!=null?f.tenDT:ttNgan(dt.ten),nx=f.nx||nd.replace(/^Thanh toán tiền\s*/i,'');
+  const chu=ttChu(tong),hds=ttHDStr(),nguoi=f.nguoi||dt.cn||'',cn=f.cn||dt.cn||'',bp=f.boPhan||'',nd=(f.noiDung||'')+(f.hinhThuc==='tk'?' (thanh toán qua TK'+(f.cnStk?' số '+f.cnStk+(f.cnNh?' tại '+f.cnNh:''):'')+')':''),ten=f.tenDT!=null?f.tenDT:ttNgan(dt.ten),nx=f.nx||nd.replace(/^Thanh toán tiền\s*/i,'');
   const set=async(file,arr)=>{let x=await z.file(file).async('string');arr.forEach(([r,v])=>{x=ttCell(x,r,v)});z.file(file,x)};
   let dung=[];
   if(f.hinhThuc==='ck'){dung=['ĐN chuyển tiền'];
@@ -909,7 +910,7 @@ async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg'
   z.file('xl/workbook.xml',wb);
   for(let i=1;i<=8;i++){const p='xl/worksheets/sheet'+i+'.xml';if(!z.file(p))continue;let x=await z.file(p).async('string');const on=dung.includes(names[i-1])&&names[i-1]===dung[0];x=x.replace(/\stabSelected="\d"/g,'');if(on)x=x.replace(/<sheetView /,'<sheetView tabSelected="1" ');z.file(p,x)}
   const out=await z.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6},mimeType:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(out);a.download=(f.ngay||new Date().toISOString().slice(0,10)).replace(/-/g,'.')+' '+(f.hinhThuc==='ck'?'ĐNCT':'ĐNTT')+' '+TT.sdk.replace('/','')+'.xlsx';
+  const a=document.createElement('a');a.href=URL.createObjectURL(out);a.download=(f.ngay||new Date().toISOString().slice(0,10)).replace(/-/g,'.')+' '+(f.hinhThuc==='ck'?'ĐNCT':f.hinhThuc==='tk'?'ĐNTT qua TK':'ĐNTT')+' '+TT.sdk.replace('/','')+'.xlsx';
   document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);
   msg.innerHTML='Đã tạo <b>'+esc(a.download)+'</b> ('+dung.join(' + ')+'). Mở bằng Excel, kiểm tra rồi in, ký; nộp kèm hóa đơn và bộ chứng từ gốc.'}catch(e){msg.innerHTML='<span style="color:#c0392b">Không tạo được file: '+esc(e.message||e)+'</span>'}}
 /* gửi Phòng KH&CN duyệt (chủ nhiệm xác thực bằng email đã đăng ký) */
