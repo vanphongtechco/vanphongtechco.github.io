@@ -399,9 +399,9 @@ async function napNT(){if(!NT_API)return;
   DB.hs=DB.hs.filter(h=>h.src!=='Bảng tổng hợp'&&h.src!=='Sheet NT'&&h.src!=='QĐ T10').concat(moi).sort((a,b)=>b.ngay.localeCompare(a.ngay));NT_LUC=now();save();
   if(!$('app').classList.contains('hide'))nav(CUR);return}}catch(e){}
  const cur=thisMonth();const job=[];
- DT0.forEach(d=>{const mm=(d.tg||'').match(/(\d{2})\/(\d{4})/);let y=mm?+mm[2]:+cur.slice(0,4),m=mm?+mm[1]:1;
+ DT0.filter(d=>!/^Hết thời gian/.test(d.tt||'')).forEach(d=>{const mm=(d.tg||'').match(/(\d{2})\/(\d{4})/);let y=mm?+mm[2]:+cur.slice(0,4),m=mm?+mm[1]:1;
   const seen=new Set();for(let i=0;i<24;i++){const key=y+'-'+String(m).padStart(2,'0');if(key>cur)break;if(!seen.has(m)){seen.add(m);job.push([d,m])}m++;if(m>12){m=1;y++}}});
- const rs=await Promise.all(job.map(([d,m])=>fetch(NT_API+'?ma='+encodeURIComponent(d.sdk+'-T'+m)).then(r=>r.json()).then(j=>j&&j.found?[d,m,j]:null).catch(()=>null)));
+ const rs=new Array(job.length).fill(null);let ix=0;await Promise.all(Array.from({length:4},async()=>{while(ix<job.length){const k=ix++;const [d,m]=job[k];rs[k]=await fetch(NT_API+'?ma='+encodeURIComponent(d.sdk+'-T'+m)).then(r=>r.json()).then(j=>j&&j.found?[d,m,j]:null).catch(()=>null)}}));
  const ok=rs.filter(Boolean);if(!ok.length&&rs.every(x=>x===null)&&!rs.length)return;
  const moi=ok.map(([d,m,j])=>{const p=String(j.ngay).match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s*(\d{1,2}):(\d{2})/);const ny=p?+p[3]:+cur.slice(0,4),nm=p?+p[2]:m;const yy=m<=nm?ny:ny-1;
   const th=yy+'-'+String(m).padStart(2,'0');const ng=p?p[3]+'-'+p[2].padStart(2,'0')+'-'+p[1].padStart(2,'0')+' '+p[4].padStart(2,'0')+':'+p[5]:th+'-01 00:00';const st=stTu(j.trangThai||'');
