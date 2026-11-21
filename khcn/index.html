@@ -157,7 +157,6 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
  <div class="grid3" style="margin-top:10px">
   <div class="card svc" style="margin:0" onclick="go('phieu','nt')"><div class="ic">📋</div><h3>Nghiệm thu hàng tháng</h3><div class="muted">Đăng ký nghiệm thu khối lượng công việc đã thực hiện trong tháng của đề tài/dự án.</div></div>
   <div class="card svc" style="margin:0" onclick="go('phieu','td')"><div class="ic">📈</div><h3>Báo cáo tiến độ</h3><div class="muted">Báo cáo tình hình thực hiện, khó khăn vướng mắc, kiến nghị của chủ nhiệm.</div></div>
-  <div class="card svc" style="margin:0" onclick="go('tt')"><div class="ic">💳</div><h3>Hỗ trợ thanh toán</h3><div class="muted">Tải hóa đơn, hợp đồng lên – web tự đọc và lập Giấy đề nghị thanh toán / chuyển tiền theo mẫu Viện.</div></div>
   <div class="card svc" style="margin:0" onclick="go('phieu','dx')"><div class="ic">💡</div><h3>Đề xuất nhiệm vụ</h3><div class="muted">Đề xuất đặt hàng nhiệm vụ KH&amp;CN cấp Tập đoàn/Bộ cho năm kế hoạch.</div></div>
  </div>
  <div class="kicker" style="margin-top:30px">Quy trình</div>
@@ -182,11 +181,6 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
  </div>
  <div id="sent"></div>
  <form class="paper" id="paper" onsubmit="return false"></form>
-</section>
-
-<section id="v-tt" class="hide">
- <button class="btn sm" onclick="go('home')">← Quay lại</button>
- <div class="card" id="ttBox"></div>
 </section>
 
 <section id="v-tracuu" class="hide">
@@ -300,8 +294,7 @@ const tpill=t=>'<span class="pill t-'+t+'">'+TY[t].s+'</span>';
 /* ---------- public routing ---------- */
 function go(v,t){if(v==='app'){if(!USER){v='login'}else{showApp();return}}
  $('pub').classList.remove('hide');$('app').classList.add('hide');
- ['home','phieu','tracuu','login','tt'].forEach(x=>$('v-'+x).classList.toggle('hide',x!==v));
- if(v==='tt')ttVe();
+ ['home','phieu','tracuu','login'].forEach(x=>$('v-'+x).classList.toggle('hide',x!==v));
  if(v==='login'&&USER){showApp();return}
  if(v==='phieu'){if(t)$('ftype').value=t;renderForm($('ftype').value);$('sent').innerHTML=''}
  setHash(v);window.scrollTo(0,0)}
@@ -497,16 +490,16 @@ function logout(){addLog('Đăng xuất');USER=null;try{localStorage.removeItem(
 const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅','Duyệt hồ sơ online'],['dt','📚','Danh mục đề tài'],['lich','📅','Lịch nghiệm thu'],['gn','💰','Nghiệm thu & giải ngân'],['cp','🧾','Theo dõi chi phí'],['tt','💳','Hỗ trợ thanh toán'],['so','📒','Sổ tổng hợp'],['grp','','Nghiệp vụ'],['ky','✍️','Trình ký'],['cv','📝','Công văn'],['tv','📖','Thư viện'],['nk','🕘','Nhật ký hệ thống'],['grp','','Quản trị'],['tk','👤','Tài khoản &amp; phân quyền']];
 let CUR='dash',HSF={st:-1,q:''},DF={st:'q',src:''};
 function showApp(){const m=ME();if(!m||m.role===0||m.lock){USER=null;go('login');return}$('pub').classList.add('hide');$('app').classList.remove('hide');$('whoName').textContent=m.ten+' ('+m.u+')';$('whoRole').textContent=(m.cv||ROLES[m.role]).toUpperCase();nav(CUR)}
-const MENU_R={4:['dash','hs','dt','lich','gn','tt'],3:['dash','hs','duyet','dt','lich','gn','cp','tt','so','ky','cv','tv','nk']};
-function menuOK(k){const r=ROLE();if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
+const MENU_R={4:['dash','hs','dt','lich','gn','tt'],3:['dash','hs','duyet','dt','lich','gn','cp','so','ky','cv','tv','nk']};
+function menuOK(k){const r=ROLE();if(k==='tt')return r===1||r===4;if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
 function myDT(){const m=ME();return m?m.dt||[]:[]}
-function nav(p){if(p==='tt'){go('tt');return}if(!menuOK(p))p='dash';CUR=p;
+function nav(p){if(!menuOK(p))p='dash';CUR=p;
  const items=MENU.filter((m,i)=>{if(m[0]!=='grp')return menuOK(m[0]);for(let j=i+1;j<MENU.length&&MENU[j][0]!=='grp';j++)if(menuOK(MENU[j][0]))return true;return false});
  $('menu').innerHTML=items.map(m=>m[0]==='grp'?'<div class="grp">'+m[2]+'</div>':'<a class="'+(m[0]===p?'on':'')+'" onclick="nav(\''+m[0]+'\')"><span>'+m[1]+'</span>'+m[2]+(m[0]==='duyet'?' <b style="margin-left:auto;background:#e5534b;color:#fff;border-radius:10px;padding:0 7px;font-size:11px">'+DB.hs.filter(h=>h.st<=1).length+'</b>':'')+(m[0]==='tk'&&DB.users.some(u=>u.role===0)?' <b style="margin-left:auto;background:#e5534b;color:#fff;border-radius:10px;padding:0 7px;font-size:11px">'+DB.users.filter(u=>u.role===0).length+'</b>':'')+'</a>').join('');
  const full={hs:DB.hs,dt:DB.dt};
  if(ROLE()===4){const my=myDT();DB.hs=full.hs.filter(h=>my.includes(h.sdk)||h.by===USER);DB.dt=full.dt.filter(x=>my.includes(x.sdk))}
  try{$('content').innerHTML=(VIEWS[p]||VIEWS.dash)()}finally{DB.hs=full.hs;DB.dt=full.dt}
- if(p==='cv')cvPrev();lockUI();setHash('noibo-'+p);window.scrollTo(0,0)}
+ if(p==='cv')cvPrev();if(p==='tt')ttVe();lockUI();setHash('noibo-'+p);window.scrollTo(0,0)}
 const ACT=[['newInternal','taoHS'],['setSt(','duyet'],['editDT(','suaDT'],['newSign(','trinhKy'],['signStep(','kyDuyet'],['cvDoc(','congVan'],['DB.lib','thuVien'],['exportCSV','xuatSo'],['confirmReset','quanTri']];
 function lockUI(){document.querySelectorAll('#app [onclick]').forEach(el=>{const oc=el.getAttribute('onclick');const a=ACT.find(x=>oc.includes(x[0]));if(a&&!can(a[1]))el.style.display='none'})}
 const cnt=st=>DB.hs.filter(h=>h.st===st).length;
@@ -667,6 +660,7 @@ function cpCay(sdk){const t=CP.dt.find(x=>x.sdk===sdk)||{};const ns=[+t.nam1,+t.
  mu.forEach((m,i)=>{let j=i+1;while(j<mu.length&&mu[j].cap>m.cap)j++;m._den=j;m._i=i});
  mu.forEach(m=>{const s=[0,0,0];let n=0;for(let k=m._i;k<m._den;k++)(rieng[mu[k].id]||[]).forEach(c=>{const p=ns.indexOf(+c.nam);s[p<0?0:p]+=c.tien;n++});m._nam=s;m._tong=s[0]+s[1]+s[2];m._n=n});
  return {t,ns,mu,chi,rieng}}
+VIEWS.tt=function(){return '<div class="lc" id="ttBox"></div>'};
 VIEWS.cp=function(){
  if(!CP){if(!CP_LOI)setTimeout(napCP,0);return '<h2 class="pg">Theo dõi chi phí đề tài</h2><div class="note">'+esc(CP_LOI||'Đang tải dữ liệu…')+' <button class="btn sm lbtn" onclick="napCP()">↻ Tải lại</button></div>'}
  const {t,ns,mu,chi,rieng}=cpCay(CPF.sdk);const q=(CPF.q||'').toLowerCase().trim();
@@ -855,7 +849,7 @@ function ttVe(){const el=$('ttBox');if(!el)return;const f=TT.f,dt=ttDT(),tong=tt
  const inp=(k,ph,w)=>'<input class="in" style="'+(w||'')+'" value="'+esc(f[k]||'')+'" placeholder="'+esc(ph||'')+'" oninput="TT.f.'+k+'=this.value">';
  el.innerHTML='<h3 style="margin-top:0">Hỗ trợ chủ nhiệm: đọc hóa đơn, lập giấy đề nghị thanh toán / chuyển tiền</h3>'
  +'<div class="muted">Tải hóa đơn điện tử (XML hoặc PDF) và hợp đồng (PDF, ảnh quét) lên – web tự đọc và điền vào mẫu Giấy đề nghị của Viện. Bộ chứng từ khác (phiếu thu, biên bản bàn giao, …) chủ nhiệm tự chuẩn bị và nộp kèm bản gốc. Tệp chỉ đọc trên máy anh/chị; bản quét được gửi tạm sang Google để nhận dạng chữ rồi xóa.</div>'
- +'<label class="f">Đề tài</label><select class="in" onchange="TT.sdk=this.value;TT.f.tenDT=null;if(!TT.f.nguoi)TT.f.nguoi=ttDT().cn||\'\';ttVe()"><option value="">– chọn đề tài –</option>'+DT0.map(x=>'<option value="'+esc(x.sdk)+'"'+(x.sdk===TT.sdk?' selected':'')+'>'+esc(x.sdk)+' – '+esc(String(x.ten).slice(0,80))+'</option>').join('')+'</select>'
+ +'<label class="f">Đề tài</label><select class="in" onchange="TT.sdk=this.value;TT.f.tenDT=null;if(!TT.f.nguoi)TT.f.nguoi=ttDT().cn||\'\';ttVe()"><option value="">– chọn đề tài –</option>'+DT0.filter(x=>ROLE()!==4||myDT().includes(x.sdk)).map(x=>'<option value="'+esc(x.sdk)+'"'+(x.sdk===TT.sdk?' selected':'')+'>'+esc(x.sdk)+' – '+esc(String(x.ten).slice(0,80))+'</option>').join('')+'</select>'
  +'<label class="f">Hóa đơn, hợp đồng</label><input type="file" multiple accept=".xml,.pdf,.jpg,.jpeg,.png" onchange="ttDoc([...this.files]);this.value=\'\'">'
  +(TT.docs.length?'<div style="margin-top:6px;font-size:13px">'+TT.docs.map(d=>'<div>📄 '+esc(d.ten)+' – <b>'+esc(d.tt)+'</b>'+(d.cach?' <span class="muted">('+esc(d.cach)+')</span>':'')+'</div>').join('')+'</div>':'')
  +'<h4 style="margin:16px 0 6px">Hóa đơn ('+TT.hd.length+')</h4><div style="overflow:auto"><table class="lt" style="font-size:13px"><thead><tr><th>Ký hiệu</th><th>Số</th><th>Ngày</th><th>Bên bán</th><th>MST</th><th>Chưa VAT</th><th>VAT</th><th>Tổng thanh toán</th><th></th></tr></thead><tbody>'
@@ -940,7 +934,7 @@ function ttDuyet(id,ok){const tk=tkQT();if(!tk){dangNhapQT(()=>ttDuyet(id,ok));r
 $('qHome').placeholder='VD: 01NT/26-T'+thisMonth().slice(5,7)+' (thử mẫu: 99NT/26-T'+thisMonth().slice(5,7)+')';
 const h0=(location.hash||'').slice(1);
 napDT();napNT();napGN();
-if(h0.startsWith('noibo')){CUR=h0.split('-')[1]||'dash';go('app')}else go(['phieu','tracuu','login','tt'].includes(h0)?h0:'home');
+if(h0.startsWith('noibo')){CUR=h0.split('-')[1]||'dash';go('app')}else go(['phieu','tracuu','login'].includes(h0)?h0:'home');
 </script>
 </body>
 </html>
