@@ -887,8 +887,8 @@ async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg'
   wb=wb.replace(/<sheet name="([^"]+)"([^>]*?)\/>/g,(all,n,rest)=>{const nn=n.replace(/&amp;/g,'&');rest=rest.replace(/\sstate="[^"]*"/,'');return '<sheet name="'+n+'"'+rest+(dung.includes(nn)?'':' state="hidden"')+'/>'});
   wb=wb.replace(/activeTab="\d+"/,'activeTab="'+names.indexOf(dung[0])+'"');if(!/fullCalcOnLoad/.test(wb))wb=wb.replace(/<calcPr/,'<calcPr fullCalcOnLoad="1"');
   z.file('xl/workbook.xml',wb);
-  for(let i=1;i<=8;i++){const p='xl/worksheets/sheet'+i+'.xml';if(!z.file(p))continue;let x=await z.file(p).async('string');const on=dung.includes(names[i-1])&&names[i-1]===dung[0];x=x.replace(/tabSelected="1"/g,'tabSelected="0"');if(on)x=x.replace(/<sheetView /,'<sheetView tabSelected="1" ');z.file(p,x)}
-  const out=await z.generateAsync({type:'blob',mimeType:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+  for(let i=1;i<=8;i++){const p='xl/worksheets/sheet'+i+'.xml';if(!z.file(p))continue;let x=await z.file(p).async('string');const on=dung.includes(names[i-1])&&names[i-1]===dung[0];x=x.replace(/\stabSelected="\d"/g,'');if(on)x=x.replace(/<sheetView /,'<sheetView tabSelected="1" ');z.file(p,x)}
+  const out=await z.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6},mimeType:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
   const a=document.createElement('a');a.href=URL.createObjectURL(out);a.download=(f.ngay||new Date().toISOString().slice(0,10)).replace(/-/g,'.')+' '+(f.hinhThuc==='ck'?'ĐNCT':'ĐNTT')+' '+TT.sdk.replace('/','')+'.xlsx';
   document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);
   msg.innerHTML='Đã tạo <b>'+esc(a.download)+'</b> ('+dung.join(' + ')+'). Mở bằng Excel, kiểm tra rồi in, ký; nộp kèm hóa đơn và bộ chứng từ gốc.'}catch(e){msg.innerHTML='<span style="color:#c0392b">Không tạo được file: '+esc(e.message||e)+'</span>'}}
