@@ -468,6 +468,7 @@ async function doLogin(){const u=$('lgU').value.trim().toLowerCase(),p=$('lgP').
  if(NT_API){try{const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'tkLogin',u,h})}).then(r=>r.json());
   if(r&&r.tk){if(!r.ok){$('lgMsg').textContent=r.err||'Không đăng nhập được';return}
    let m=DB.users.find(x=>x.u===u);if(!m){m={u,ngay:now()};DB.users.push(m)}Object.assign(m,{ten:r.ten,cv:r.cv,email:r.email||m.email||'',role:+r.role,dt:r.dt||[],lock:false,pw:h});save();
+   if(r.wtk)try{localStorage.setItem('khcn_wtk',JSON.stringify({u,tk:r.wtk,han:Date.now()+6*3600e3}))}catch(x){}
    if(r.moi)addLog('Đặt mật khẩu lần đầu');USER=u;try{localStorage.setItem('khcn_user',u)}catch(x){}$('lgP').value='';addLog('Đăng nhập');showApp();return}}catch(e){}}
  /* chưa có máy chủ: lưu trên máy này */
  const m=DB.users.find(x=>x.u===u);
@@ -919,12 +920,18 @@ async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg'
   document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);
   msg.innerHTML='Đã tạo <b>'+esc(a.download)+'</b> ('+dung.join(' + ')+'). Mở bằng Excel, kiểm tra rồi in, ký; nộp kèm hóa đơn và bộ chứng từ gốc.'}catch(e){msg.innerHTML='<span style="color:#c0392b">Không tạo được file: '+esc(e.message||e)+'</span>'}}
 /* gửi Phòng KH&CN duyệt (chủ nhiệm xác thực bằng email đã đăng ký) */
+function ttRec(){const f=TT.f;return {nguoiDeNghi:ttNguoiHD()||f.nguoi||'',hinhThuc:f.hinhThuc,loaiChi:f.loaiChi,noiDung:ttND(),hopDong:f.hopDong||'',soTien:ttTong(),
+  hoaDon:TT.hd.map(h=>({kyHieu:h.kyHieu||'',so:h.so||'',ngay:h.ngay||'',ten:h.ten||'',mst:h.mst||'',chuaVat:h.chuaVat||0,vat:h.vat||0,tong:h.tong||0})),chuyenTra:{ten:f.ctTen||'',mst:f.ctMst||'',stk:f.ctStk||'',nh:f.ctNh||''}}}
 function ttGuiForm(){const tong=ttTong();if(!TT.sdk||!tong||!TT.hd.length){$('ttMsg').innerHTML='<span style="color:#c0392b">Chọn đề tài và nhập ít nhất 1 hóa đơn có số tiền.</span>';return}
+ const w=(()=>{try{const x=JSON.parse(localStorage.getItem('khcn_wtk')||'null');return x&&x.u===USER&&x.han>Date.now()?x.tk:null}catch(e){return null}})();
+ if(w){openM('<h3 style="margin-top:0">Gửi đề nghị '+esc(TT.sdk)+' – '+tong.toLocaleString('vi-VN')+' đ</h3><p class="muted" style="color:var(--lmut)">Gửi bằng tài khoản <b>'+esc(USER)+'</b>. Sau khi Phòng KH&amp;CN duyệt, khoản chi tự vào sổ Theo dõi chi phí của đề tài.</p><label class="fl">Email nhận thông báo (email nào cũng được, có thể để trống)</label><input class="lin" id="ttE"><div id="ttM" class="muted" style="margin-top:6px;color:var(--lmut)"></div><div class="flex" style="margin-top:12px;justify-content:flex-end"><button class="btn sm lbtn" onclick="closeM()">Hủy</button><button class="btn sm pri" id="ttOk">Gửi</button></div>',true);
+  $('ttOk').onclick=()=>{$('ttOk').disabled=true;const f=TT.f;fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ttGui',wtk:w,email:$('ttE').value.trim(),sdk:TT.sdk,rec:ttRec()})}).then(r=>r.json())
+   .then(r=>{if(!r.ok){$('ttM').textContent=r.err||'Lỗi';$('ttOk').disabled=false;return}closeM();TT.sent='<div class="ok">Đã gửi Phòng KH&amp;CN – mã đề nghị <b>'+esc(r.id)+'</b>. In, ký giấy đề nghị và nộp kèm chứng từ gốc.</div>';ttVe()})
+   .catch(()=>{$('ttM').textContent='Không kết nối được máy chủ';$('ttOk').disabled=false})};return}
  openM('<h3 style="margin-top:0">Gửi đề nghị '+esc(TT.sdk)+' – '+tong.toLocaleString('vi-VN')+' đ</h3><p class="muted" style="color:var(--lmut)">Chỉ chủ nhiệm đề tài gửi được, bằng email đã đăng ký với Phòng KH&amp;CN. Sau khi Phòng duyệt, khoản chi tự vào sổ Theo dõi chi phí đề tài.</p><label class="fl">Email chủ nhiệm</label><input class="lin" id="ttE"><div class="flex" style="margin-top:8px"><button class="btn sm lbtn" id="ttG">Gửi mã</button></div><label class="fl">Mã 6 số</label><input class="lin" id="ttO"><div id="ttM" class="muted" style="margin-top:6px;color:var(--lmut)"></div><div class="flex" style="margin-top:12px;justify-content:flex-end"><button class="btn sm lbtn" onclick="closeM()">Hủy</button><button class="btn sm pri" id="ttOk">Gửi</button></div>',true);
  const post=b=>fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(b)}).then(r=>r.json());
  $('ttG').onclick=()=>post({action:'otp',email:$('ttE').value.trim(),sdk:TT.sdk,viec:'tt'}).then(r=>$('ttM').textContent=r.ok?'Đã gửi mã, kiểm tra email.':(r.err||'Lỗi')).catch(()=>$('ttM').textContent='Không kết nối được máy chủ');
- $('ttOk').onclick=()=>{$('ttOk').disabled=true;const f=TT.f;post({action:'ttGui',email:$('ttE').value.trim(),otp:$('ttO').value.trim(),sdk:TT.sdk,rec:{nguoiDeNghi:ttNguoiHD()||f.nguoi||'',hinhThuc:f.hinhThuc,loaiChi:f.loaiChi,noiDung:ttND(),hopDong:f.hopDong||'',soTien:tong,
-   hoaDon:TT.hd.map(h=>({kyHieu:h.kyHieu||'',so:h.so||'',ngay:h.ngay||'',ten:h.ten||'',mst:h.mst||'',chuaVat:h.chuaVat||0,vat:h.vat||0,tong:h.tong||0})),chuyenTra:{ten:f.ctTen||'',mst:f.ctMst||'',stk:f.ctStk||'',nh:f.ctNh||''}}})
+ $('ttOk').onclick=()=>{$('ttOk').disabled=true;const f=TT.f;post({action:'ttGui',email:$('ttE').value.trim(),otp:$('ttO').value.trim(),sdk:TT.sdk,rec:ttRec()})
   .then(r=>{if(!r.ok){$('ttM').textContent=r.err||'Lỗi';$('ttOk').disabled=false;return}closeM();TT.sent='<div class="ok">Đã gửi Phòng KH&amp;CN – mã đề nghị <b>'+esc(r.id)+'</b>. Anh/chị in, ký giấy đề nghị và nộp kèm chứng từ gốc.</div>';ttVe()})
   .catch(()=>{$('ttM').textContent='Không kết nối được máy chủ';$('ttOk').disabled=false})}}
 /* Phòng KH&CN duyệt đề nghị (trong mục Theo dõi chi phí) */
