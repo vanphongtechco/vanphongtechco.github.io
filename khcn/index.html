@@ -491,7 +491,7 @@ const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅
 let CUR='dash',HSF={st:-1,q:''},DF={st:'q',src:''};
 function showApp(){const m=ME();if(!m||m.role===0||m.lock){USER=null;go('login');return}$('pub').classList.add('hide');$('app').classList.remove('hide');$('whoName').textContent=m.ten+' ('+m.u+')';$('whoRole').textContent=(m.cv||ROLES[m.role]).toUpperCase();nav(CUR)}
 const MENU_R={4:['dash','hs','dt','lich','gn','tt'],3:['dash','hs','duyet','dt','lich','gn','cp','so','ky','cv','tv','nk']};
-function menuOK(k){const r=ROLE();if(k==='tt')return r===1||r===4||myDT().length>0;if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
+function menuOK(k){const r=ROLE();if(k==='tt')return true;if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
 function myDT(){const m=ME();return m?m.dt||[]:[]}
 function nav(p){if(!menuOK(p))p='dash';CUR=p;
  const items=MENU.filter((m,i)=>{if(m[0]!=='grp')return menuOK(m[0]);for(let j=i+1;j<MENU.length&&MENU[j][0]!=='grp';j++)if(menuOK(MENU[j][0]))return true;return false});
@@ -845,7 +845,10 @@ const ttTong=()=>TT.hd.reduce((a,x)=>a+(+x.tong||0),0);
 const ttHDStr=()=>TT.hd.map(x=>(x.so||'…')+' ngày '+ttNgayVN(x.ngay)).join('; ');
 function ttDT(){return DT0.find(x=>x.sdk===TT.sdk)||{}}
 const ttNgan=t=>{t=String(t||'');if(t.length<=60)return t;const c=t.slice(0,60);return c.slice(0,c.lastIndexOf(' '))+'…'};
+const ttDuoc=()=>ROLE()===1||myDT().length>0;
 function ttVe(){const el=$('ttBox');if(!el)return;const f=TT.f,dt=ttDT(),tong=ttTong();
+ if(!ttDuoc()){el.innerHTML='<h3 style="margin-top:0">Hỗ trợ chủ nhiệm: đọc hóa đơn, lập giấy đề nghị thanh toán / chuyển tiền</h3><div class="note">Chức năng dành cho <b>chủ nhiệm đề tài</b> (với đề tài mình chủ nhiệm) và Quản trị. Tài khoản của anh/chị chỉ xem giới thiệu, không lập được đề nghị.</div>'
+  +'<ol style="line-height:1.7"><li>Chủ nhiệm chọn đề tài, tải hóa đơn điện tử (XML/PDF) và hợp đồng (PDF, ảnh quét) lên.</li><li>Web tự đọc số, ngày, bên bán, mã số thuế, số tiền, tài khoản ngân hàng; chủ nhiệm kiểm tra, sửa nếu cần.</li><li>Tải Giấy đề nghị chuyển tiền / thanh toán (kèm Giấy đề nghị nhập – xuất nếu là hàng hóa) theo mẫu Viện, in, ký, nộp kèm chứng từ gốc.</li><li>Gửi Phòng KH&amp;CN duyệt; duyệt xong khoản chi tự vào sổ Theo dõi chi phí của đề tài.</li></ol>';return}
  const inp=(k,ph,w)=>'<input class="in" style="'+(w||'')+'" value="'+esc(f[k]||'')+'" placeholder="'+esc(ph||'')+'" oninput="TT.f.'+k+'=this.value">';
  el.innerHTML='<h3 style="margin-top:0">Hỗ trợ chủ nhiệm: đọc hóa đơn, lập giấy đề nghị thanh toán / chuyển tiền</h3>'
  +'<div class="muted">Tải hóa đơn điện tử (XML hoặc PDF) và hợp đồng (PDF, ảnh quét) lên – web tự đọc và điền vào mẫu Giấy đề nghị của Viện. Bộ chứng từ khác (phiếu thu, biên bản bàn giao, …) chủ nhiệm tự chuẩn bị và nộp kèm bản gốc. Tệp chỉ đọc trên máy anh/chị; bản quét được gửi tạm sang Google để nhận dạng chữ rồi xóa.</div>'
