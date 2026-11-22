@@ -740,14 +740,14 @@ VIEWS.dash=function(){const nam=kyNT().slice(0,4);let ks=Object.keys(GN).filter(
   const th=ks.concat(kc.filter(k=>['03NT/22','09NT/22'].includes(k)));const dang=th.filter(k=>!/NT cấp TKV|nghiệm thu cấp TKV|Hoàn thành|quyết toán/i.test(ttOf(k).replace(/chờ (NT|nghiệm thu) cấp TKV/i,'')));
   return the('Tổng số đề tài',ka)+the('Đề tài thực hiện năm '+nam,th)+the('Đề tài đang thực hiện',dang,'#2f6fd6')})()
  +kpi('Chi phí đã nghiệm thu',fT(daChi),'trđ',Math.round(daChi/tong*100)+'% kinh phí '+ks.length+' đề tài','#2f6fd6')
- +kpi('Kinh phí thực hiện năm '+nam,fT(kpNam),'trđ','chi trong năm '+nam,'#e08a1e')+'</div>'
+ +kpi('Chi phí đã nghiệm thu '+nam,fT(kpNam),'trđ','','#e08a1e')+'</div>'
  +'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;margin-bottom:14px">'
  +donut('Tình trạng các đề tài',thuTT.map((a,i)=>[a,tt[a]||0,mauTT[i]]),'đề tài')
  +donut('Tổng kinh phí theo năm bắt đầu',ns.map(n=>[nhanNam(n)+' ('+soNam[n]+' đề tài)',theoNam[n]]),'trđ')
  +donut('Kinh phí '+ks.length+' đề tài đang theo dõi chi phí',ks.map(k=>[k+' – '+ten(k),KP_TONG[k]]),'trđ')
  +donut('Thành phần kinh phí (dự toán '+ks.length+' đề tài)',thuTu.map(a=>[a,tp[a]||0]),'trđ',[fT(tong),'trđ'])
  +donut('Nguồn kinh phí ('+ks.length+' đề tài)',[['Quỹ KHCN Tập đoàn TKV',ng[0]],['Vốn đối ứng',ng[1]]],'trđ',[fT(tong),'trđ'])
- +donut('Kinh phí thực hiện năm '+nam+' theo đề tài',ks.map(k=>[k+' – '+ten(k),nNam(k)]),'trđ')
+ +donut('Chi phí đã nghiệm thu '+nam+' theo đề tài',ks.map(k=>[k+' – '+ten(k),nNam(k)]),'trđ')
  +donut('Tình hình nghiệm thu ('+ks.length+' đề tài)',[['Đã nghiệm thu',daNT,'#2e9d5e'],['Chưa nghiệm thu',Math.max(0,tong-daNT),'#d5dbe3']],'trđ',[Math.round(daNT/tong*100)+'%','đã nghiệm thu'])
  +donut('Đề tài theo cấp quản lý',Object.entries(gom(ka,k=>T(k).cap||'Tập đoàn TKV')),'đề tài')
  +'</div>'
