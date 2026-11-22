@@ -783,9 +783,9 @@ function dnntDien(){const k=ctV('dnDT');const G=dnntCay(k);const f=$('paper');if
  const pc=i=>{const e=document.querySelector('.ndp[data-i="'+i+'"]');const v=e?Math.round(+e.value||100):100;return Math.min(100,Math.max(1,v))};
  G.forEach(g=>[g].concat(g.con).forEach(x=>{if(x.da>=100)return;const t=document.querySelector('.ndc[data-c=tt][data-i="'+x.i+'"]'),k=document.querySelector('.ndc[data-c=ke][data-i="'+x.i+'"]'),pk=document.querySelector('.ndpk[data-i="'+x.i+'"]');if(!t||!k||!pk)return;const v=pc(x.i);const an=t.checked&&v>=100;k.style.visibility=pk.style.visibility=an?'hidden':'';if(an){k.checked=false;delete k.dataset.tu;delete pk.dataset.sua;pk.value=100;return}if(t.checked&&v<100){if(!k.dataset.tu&&!k.checked){k.checked=true;k.dataset.tu=1}if(!pk.dataset.sua)pk.value=100-v}else if(k.dataset.tu){k.checked=false;delete k.dataset.tu;if(!pk.dataset.sua)pk.value=100}}));
  const pk=i=>{const e=document.querySelector('.ndpk[data-i="'+i+'"]');const v=e?Math.round(+e.value||100):100;return Math.min(100,Math.max(1,v))};
- const viet=c=>{const out=[];G.forEach(g=>{const p=x=>c==='tt'?pc(x.i):c==='ke'?pk(x.i):100;
-  if(!g.con.length){if(ck(c,g.i))out.push('- '+g.t+(p(g)<100?(c==='ke'?' (còn lại '+p(g)+'%)':' (đạt '+p(g)+'%)'):''));return}
-  const chon=g.con.filter(x=>ck(c,x.i));if(!chon.length)return;
+ const viet=c=>{const out=[];const ck2=(c,i)=>c==='ht'?(ck('ht',i)||ck('tt',i)):ck(c,i);G.forEach(g=>{const p=x=>c==='tt'?pc(x.i):c==='ke'?pk(x.i):(ck('ht',x.i)?100:pc(x.i));
+  if(!g.con.length){if(ck2(c,g.i))out.push('- '+g.t+(p(g)<100?(c==='ke'?' (còn lại '+p(g)+'%)':' (đạt '+p(g)+'%)'):''));return}
+  const chon=g.con.filter(x=>ck2(c,x.i));if(!chon.length)return;
   if(chon.length===g.con.length&&chon.every(x=>p(x)===100))out.push('- '+g.t);
   else{out.push('- '+g.t);chon.forEach(x=>out.push('   + '+x.t+(p(x)<100?(c==='ke'?' (còn lại '+p(x)+'%)':' (đạt '+p(x)+'%)'):'')))}});return out.join('\n')};
  const set=(n,v)=>{const e=f.querySelector('[name='+n+']');if(e)e.value=v};set('ht',viet('ht'));set('trongthang',viet('tt'));set('ke',viet('ke'));dnntGoiY();dnntTienDo();dnntDau()}
