@@ -551,7 +551,7 @@ const MENU=[['dash','📊','Tổng quan'],['duyet','✅','Duyệt hồ sơ onlin
 let CUR='dash',HSF={st:-1,q:''},DF={st:'q',src:''};
 function showApp(){const m=ME();if(!m||m.role===0||m.lock){USER=null;go('login');return}$('pub').classList.add('hide');$('app').classList.remove('hide');$('whoName').textContent=m.ten+' ('+m.u+')';const r4=ROLE()===4&&m.role!==4;$('whoRole').innerHTML=esc((r4?'Chủ nhiệm đề tài '+m.dt.join(', '):(m.cv||ROLES[m.role])+((m.dt||[]).length?' · CNĐT '+m.dt.join(', '):'')).toUpperCase())+(haiVai(m)?' <a href="#" style="color:#7fd1a6;text-transform:none" onclick="datVai(ROLE()===4?\'qt\':\'cndt\');showApp();return false">⇄ '+(r4?(m.role===1?'Quản trị':'Phòng KH&CN'):'Chủ nhiệm đề tài')+'</a>':'');nav(CUR)}
 const MENU_R={5:['dnnt','tt','ctac','lh'],4:['dash','hs','dt','lich','gn','dnnt','tt','ctac'],3:['dash','hs','duyet','dt','lich','gn','cp','so','ky','cv','dnnt','ctac','tv','nk']};
-function menuOK(k){const r=ROLE();if(k==='tt'||k==='lh')return true;if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
+function menuOK(k){const r=ROLE();if(k==='tt'||k==='lh'||k==='tv')return true;if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
 function myDT(){const m=ME();return m?m.dt||[]:[]}
 function nav(p){dnntTraVe();if(!menuOK(p))p=menuOK('dash')?'dash':'tt';CUR=p;
  const items=MENU.filter((m,i)=>{if(m[0]!=='grp')return menuOK(m[0]);for(let j=i+1;j<MENU.length&&MENU[j][0]!=='grp';j++)if(menuOK(MENU[j][0]))return true;return false});
@@ -560,6 +560,20 @@ function nav(p){dnntTraVe();if(!menuOK(p))p=menuOK('dash')?'dash':'tt';CUR=p;
  if(ROLE()===4){const my=myDT();DB.hs=full.hs.filter(h=>my.includes(h.sdk)||h.by===USER);DB.dt=full.dt.filter(x=>my.includes(x.sdk))}
  try{$('content').innerHTML=(VIEWS[p]||VIEWS.dash)()}finally{DB.hs=full.hs;DB.dt=full.dt}
  if(p==='cv')cvPrev();if(p==='ctac')ctPrev();if(p==='tt')ttVe();lockUI();setHash('noibo-'+p);window.scrollTo(0,0)}
+/* Thư viện: đọc danh sách tệp từ máy chủ (thư mục Drive của Phòng KH&CN) */
+let TV={};
+const tvIcon=l=>/pdf/.test(l)?'📕':/sheet|excel/.test(l)?'📗':/word|document/.test(l)?'📘':/image/.test(l)?'🖼':/folder/.test(l)?'📁':'📄';
+const tvBang=a=>{if(!a||!a.length)return '<span style="color:var(--lmut)">Chưa có tài liệu.</span>';const g={};a.forEach(x=>{(g[x.muc||'']=g[x.muc||'']||[]).push(x)});return Object.keys(g).sort().map(m=>(m?'<div style="font-weight:600;margin:10px 0 4px">📁 '+esc(m)+'</div>':'')+'<table class="lt"><tbody>'+g[m].sort((p,q)=>p.ten.localeCompare(q.ten,'vi')).map(x=>'<tr><td>'+tvIcon(x.loai)+' <a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.ten)+'</a></td><td style="width:100px;color:var(--lmut);font-size:12.5px">'+esc(x.ngay||'')+'</td></tr>').join('')+'</tbody></table>').join('')};
+function tvNap(moi){const c=$('tvChung'),b=$('tvDTDs');if(!c)return;let w=null;try{w=JSON.parse(localStorage.getItem('khcn_wtk')||'null')}catch(e){}
+ if(!NT_API||!w||!w.tk||w.han<Date.now()){c.innerHTML=b.innerHTML='<span style="color:#c0392b">Phiên đăng nhập đã hết – đăng xuất rồi đăng nhập lại để xem thư viện.</span>';return}
+ c.textContent=b.textContent='Đang tải…';
+ fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'tvDS',wtk:w.tk,moi:moi?1:0})}).then(r=>r.json()).then(r=>{
+  if(!r.ok){c.innerHTML=b.innerHTML='<span style="color:var(--lmut)">'+esc(r.err||'Chưa đọc được thư viện')+'</span>';return}
+  TV=r;c.innerHTML=tvBang(r.chung);const my=ROLE()===4?myDT():null;let ks=Object.keys(r.dt||{});if(my)ks=ks.filter(k=>my.includes(k));
+  const all=[...new Set(ks.concat(ctDS()))].filter(k=>!my||my.includes(k)).sort((a,b)=>(b.slice(-2)+b).localeCompare(a.slice(-2)+a));
+  const s=$('tvDT');s.innerHTML=all.map(k=>'<option value="'+esc(k)+'">'+esc(k)+' – '+esc((DT0.find(x=>x.sdk===k)||dtTT(k)||{}).ngan||'')+' ('+((r.dt||{})[k]||[]).length+')</option>').join('');tvVeDT()})
+ .catch(()=>{c.innerHTML=b.innerHTML='<span style="color:#c0392b">Không kết nối được máy chủ.</span>'})}
+function tvVeDT(){const b=$('tvDTDs'),k=ctV('tvDT');if(b)b.innerHTML=k?tvBang((TV.dt||{})[k]):'<span style="color:var(--lmut)">Chưa có đề tài.</span>'}
 const ACT=[['newInternal','taoHS'],['setSt(','duyet'],['editDT(','suaDT'],['newSign(','trinhKy'],['signStep(','kyDuyet'],['cvDoc(','congVan'],['DB.lib','thuVien'],['exportCSV','xuatSo'],['confirmReset','quanTri']];
 function lockUI(){document.querySelectorAll('#app [onclick]').forEach(el=>{const oc=el.getAttribute('onclick');const a=ACT.find(x=>oc.includes(x[0]));if(a&&!can(a[1]))el.style.display='none'})}
 const cnt=st=>DB.hs.filter(h=>h.st===st).length;
@@ -624,8 +638,13 @@ ctac(){const ds=ctDS();const n=new Date();const nx=new Date(n.getFullYear(),n.ge
  +'<div class="flex" style="gap:6px;margin-top:6px;flex-wrap:wrap"><input class="lin" id="ctTen" placeholder="Họ tên người thêm" style="flex:2;min-width:140px" onkeydown="if(event.key===\'Enter\')ctThem()"><input class="lin" id="ctCV" placeholder="Chức vụ (VD: Thành viên thực hiện)" style="flex:2;min-width:140px" onkeydown="if(event.key===\'Enter\')ctThem()"><button class="btn sm lbtn" onclick="ctThem()">＋ Thêm</button></div>'
  +inp('ctXe','Thuê phương tiện / đi lại (triệu đồng, không có thì để trống)','VD: 22','','number')
 +'<div id="ctK" style="margin-top:12px"></div><div class="flex" style="margin-top:10px"><button class="btn sm pri" onclick="ctDoc()">⬇ Xuất .docx</button><button class="btn sm lbtn" onclick="doPrint(\'ctP\')">🖨 In / PDF</button></div></div><div class="paper" id="ctP" style="padding:40px 40px 40px 60px;background:#fff"></div></div>'},
-tv(){return '<h2 class="pg">Thư viện văn bản</h2><div class="flex" style="margin-bottom:12px"><input class="lin" id="tvT" placeholder="Tên văn bản / mẫu biểu"><input class="lin" id="tvU" placeholder="Đường dẫn (Drive, web…)"><button class="btn sm pri" onclick="if(tvT.value.trim()){DB.lib.push({t:tvT.value.trim(),u:tvU.value.trim()});addLog(\'Thêm văn bản thư viện\');nav(\'tv\')}">＋ Thêm</button></div>'
- +'<div class="lc" style="padding:0"><table class="lt"><tbody>'+DB.lib.map((x,i)=>'<tr><td>📄 '+(x.u?'<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.t)+'</a>':esc(x.t))+'</td><td style="width:60px"><button class="btn sm lbtn" onclick="DB.lib.splice('+i+',1);save();nav(\'tv\')">Xóa</button></td></tr>').join('')+'</tbody></table></div>'},
+tv(){setTimeout(tvNap,0);const qt=can('thuVien');DB.lib=(DB.lib||[]).filter(x=>!/^\(Thêm văn bản/.test(x.t));
+ return '<h2 class="pg">Thư viện văn bản</h2><div class="note" style="margin-bottom:12px">Văn bản chung và tài liệu của từng đề tài, lấy từ thư mục lưu trữ của Phòng KH&amp;CN trên Drive. Bấm tên tệp để mở.</div>'
+ +'<div class="lc"><div class="flex" style="justify-content:space-between;align-items:center"><h3 style="margin:0">📚 Văn bản chung</h3><button class="btn sm lbtn" onclick="tvNap(1)">↻ Tải lại</button></div><div id="tvChung" style="margin-top:8px;color:var(--lmut)">Đang tải…</div>'
+ +(DB.lib.length||qt?'<table class="lt" style="margin-top:8px"><tbody>'+DB.lib.map((x,i)=>'<tr><td>🔗 '+(x.u?'<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.t)+'</a>':esc(x.t))+'</td><td style="width:60px">'+(qt?'<button class="btn sm lbtn" onclick="DB.lib.splice('+i+',1);save();nav(\'tv\')">Xóa</button>':'')+'</td></tr>').join('')+'</tbody></table>':'')
+ +(qt?'<div class="flex" style="margin-top:8px"><input class="lin" id="tvT" placeholder="Thêm liên kết: tên văn bản"><input class="lin" id="tvU" placeholder="Đường dẫn (Drive, web…)"><button class="btn sm pri" onclick="if(tvT.value.trim()){DB.lib.push({t:tvT.value.trim(),u:tvU.value.trim()});addLog(\'Thêm văn bản thư viện\');nav(\'tv\')}">＋ Thêm</button></div>':'')+'</div>'
+ +'<div class="lc" style="margin-top:12px"><div class="flex" style="gap:10px;align-items:center;flex-wrap:wrap"><h3 style="margin:0">📂 Tài liệu đề tài</h3><select class="lin" id="tvDT" style="width:auto;max-width:520px" onchange="tvVeDT()"></select></div><div id="tvDTDs" style="margin-top:8px;color:var(--lmut)">Đang tải…</div></div>'},
+
 tk(){const sel=(u)=>'<select class="lin" style="width:auto" onchange="setRole(\''+u.u+'\',+this.value)"'+(u.u==='binhlt'?' disabled':'')+'>'+[0,1,2,3,4].map(r=>'<option value="'+r+'"'+(u.role===r?' selected':'')+'>'+ROLES[r]+'</option>').join('')+'</select>';
  return '<h2 class="pg">Tài khoản &amp; phân quyền</h2><div class="note">Cấp 1 Quản trị: toàn quyền. Cấp 2 Thành viên Phòng KH&amp;CN: xem toàn bộ, thao tác theo bảng quyền bên dưới. Cấp 3 Chỉ xem (Lãnh đạo Viện và các thành viên khác của Phòng KH&amp;CN): xem toàn bộ, không sửa. Cấp 4 Chủ nhiệm đề tài: chỉ thấy đề tài được gán. Tên đăng nhập = tên + chữ đầu họ và đệm (Lê Thanh Bình → binhlt).</div>'
  +'<div class="lc" style="padding:0;overflow:auto"><table class="lt"><thead><tr><th>Tên đăng nhập</th><th>Họ và tên</th><th>Email</th><th>Ngày đăng ký</th><th>Quyền</th><th>Đề tài được gán (cấp 4)</th><th></th></tr></thead><tbody>'
