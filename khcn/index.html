@@ -603,7 +603,7 @@ ctac(){const ds=ctDS();const n=new Date();const nx=new Date(n.getFullYear(),n.ge
  +'<div class="g2" style="gap:8px">'+inp('ctChuyen','Số chuyến','',1,'number')+inp('ctNgayC','Số ngày/chuyến','',3,'number')+'</div><div class="muted" style="font-size:12px;color:var(--lmut)">Số đêm lưu trú = số ngày − 1</div>'
  +'<label class="fl">Thành viên đi công tác (bấm chọn / bỏ chọn)</label><div id="ctTVbox"></div>'
  +'<div class="flex" style="gap:6px;margin-top:6px;flex-wrap:wrap"><input class="lin" id="ctTen" placeholder="Họ tên người thêm" style="flex:2;min-width:140px" onkeydown="if(event.key===\'Enter\')ctThem()"><input class="lin" id="ctCV" placeholder="Chức vụ (VD: Thành viên thực hiện)" style="flex:2;min-width:140px" onkeydown="if(event.key===\'Enter\')ctThem()"><button class="btn sm lbtn" onclick="ctThem()">＋ Thêm</button></div>'
- +inp('ctXe','Thuê phương tiện / đi lại (triệu đồng)','VD: 22','','number')
+ +inp('ctXe','Thuê phương tiện / đi lại (triệu đồng, không có thì để trống)','VD: 22','','number')
 +'<div id="ctK" style="margin-top:12px"></div><div class="flex" style="margin-top:10px"><button class="btn sm pri" onclick="ctDoc()">⬇ Xuất .doc</button><button class="btn sm lbtn" onclick="doPrint(\'ctP\')">🖨 In / PDF</button></div></div><div class="paper" id="ctP" style="padding:40px 40px 40px 60px;background:#fff"></div></div>'},
 tv(){return '<h2 class="pg">Thư viện văn bản</h2><div class="flex" style="margin-bottom:12px"><input class="lin" id="tvT" placeholder="Tên văn bản / mẫu biểu"><input class="lin" id="tvU" placeholder="Đường dẫn (Drive, web…)"><button class="btn sm pri" onclick="if(tvT.value.trim()){DB.lib.push({t:tvT.value.trim(),u:tvU.value.trim()});addLog(\'Thêm văn bản thư viện\');nav(\'tv\')}">＋ Thêm</button></div>'
  +'<div class="lc" style="padding:0"><table class="lt"><tbody>'+DB.lib.map((x,i)=>'<tr><td>📄 '+(x.u?'<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.t)+'</a>':esc(x.t))+'</td><td style="width:60px"><button class="btn sm lbtn" onclick="DB.lib.splice('+i+',1);save();nav(\'tv\')">Xóa</button></td></tr>').join('')+'</tbody></table></div>'},
@@ -719,17 +719,16 @@ function ctKiem(o){const L=[],f=n=>Number(n).toLocaleString('vi-VN');const ok=(b
  ok(o.nguoi>0,'Thành viên đi công tác: '+o.nguoi+' người');ok(o.chuyen>0&&o.ngayC>0,'Số chuyến và số ngày/chuyến');
  ok(true,'Phụ cấp lưu trú: '+o.chuyen+' chuyến × '+o.nguoi+' người × '+o.ngayC+' ngày × 200.000 = '+f(o.pcTinh)+' đ → làm tròn '+f(o.pc)+' đ');
  ok(true,'Thuê phòng: '+o.chuyen+' chuyến × '+o.nguoi+' người × '+o.dem+' đêm × 300.000 = '+f(o.phongTinh)+' đ → làm tròn '+f(o.phong)+' đ');
- if(!o.xe)nhac('Chưa nhập chi phí thuê phương tiện / đi lại');
- ok(true,'Tổng: '+f(o.xe)+' + '+f(o.phong)+' + '+f(o.pc)+' = '+f(o.tong)+' đ');
+ ok(true,'Tổng: '+(o.xe?f(o.xe)+' + ':'')+f(o.phong)+' + '+f(o.pc)+' = '+f(o.tong)+' đ'+(o.xe?'':' (không có thuê phương tiện – bỏ dòng này trong tờ trình)'));
  return L}
 function ctHTML(o){const e=x=>esc(x||'');const f=n=>Number(n).toLocaleString('vi-VN');const [ty,tm]=(o.thang||'').split('-');const th=tm?(+tm)+'/'+ty:'…/…';
  const p2=n=>String(n).padStart(2,'0');const ve='Về kế hoạch đi công tác tháng '+th+' thực hiện đề tài '+e(o.sdk)+' “'+e(o.tenDT)+'”';
  const nd=['Để triển khai thực hiện đề tài '+e(o.sdk)+', nhóm thực hiện đề tài kính trình Viện trưởng phê duyệt kế hoạch và lịch trình công tác trong tháng '+th+', dự kiến thực hiện như sau:',
   '1) Địa điểm công tác: '+e(o.dd)+'.','2) Nội dung công việc: '+e(o.nd)+'.','3) Số chuyến dự kiến: '+p2(o.chuyen)+' chuyến.','4) Số người dự kiến: '+p2(o.nguoi)+' người (có danh sách kèm theo).',
   '5) Thời gian dự kiến: '+p2(o.ngayC)+' ngày/chuyến.','6) Kinh phí dự kiến:',
-  '- Thuê phương tiện di chuyển: '+f(o.xe)+' đồng.','- Thuê phòng nghỉ: '+f(o.phong)+' đồng.','- Phụ cấp lưu trú: '+f(o.pc)+' đồng.',
+  o.xe?'- Thuê phương tiện di chuyển: '+f(o.xe)+' đồng.':'','- Thuê phòng nghỉ: '+f(o.phong)+' đồng.','- Phụ cấp lưu trú: '+f(o.pc)+' đồng.',
   '<b>Tổng kinh phí dự kiến: '+f(o.tong)+' đồng</b> <i>('+e(ttChu(o.tong).replace(/\.$/,''))+')</i>.',
-  'Kính trình Viện trưởng xem xét, phê duyệt kế hoạch đi công tác để nhóm thực hiện đề tài triển khai thực hiện.','Xin trân trọng cảm ơn./.'];
+  'Kính trình Viện trưởng xem xét, phê duyệt kế hoạch đi công tác để nhóm thực hiện đề tài triển khai thực hiện.','Xin trân trọng cảm ơn./.'].filter(Boolean);
  const ky=['CHỦ NHIỆM ĐỀ TÀI','PHÒNG CHỦ QUẢN','PHÒNG KHCN','DUYỆT VIỆN'];
  const td='border:1px solid #000!important;padding:3px 5px;font-size:13pt';
  return '<div class="vb">'+vbDau(o)+'<p>&nbsp;</p><p class="c"><b>TỜ TRÌNH</b></p><p class="c"><b>'+ve+'</b></p><p>&nbsp;</p><p class="c">Kính gửi: Viện trưởng Viện Cơ khí Năng lượng và Mỏ - Vinacomin</p><p>&nbsp;</p>'
