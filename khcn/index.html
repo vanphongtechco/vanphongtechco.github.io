@@ -848,7 +848,7 @@ function dnntFormHTML(k){const x=DT0.find(y=>y.sdk===k)||{};const capQL=/Công T
  +dnntLayout(X)
  +'<div class="lab" style="margin-top:18px"><b>GỬI HỒ SƠ (chủ nhiệm đề tài)</b><div class="note" style="margin:6px 0">Chỉ chủ nhiệm đề tài nộp, bằng email đã đăng ký với Phòng KH&amp;CN. Bấm "Gửi mã" để nhận mã xác thực 6 số qua email đó.</div>'
  +'<div class="ln">Email chủ nhiệm *: <input name="email" type="email" placeholder="ten@iemm.com.vn"> <button type="button" class="btn sm" onclick="guiMaNT()">Gửi mã</button></div><div class="ln">Mã xác thực (6 số) *: <input name="otp" style="max-width:120px" placeholder="******"></div>'
- +'<div class="ln fileln">Tài liệu đính kèm * (báo cáo tiến độ, bảng chia lương…): <input type="file" name="files" multiple></div></div>'}
+ +'<div class="ln fileln">Tài liệu minh chứng * (báo cáo nội dung công việc đã thực hiện): <input type="file" name="files" multiple></div><div class="muted" style="font-size:12.5px;color:var(--lmut)">Báo cáo tiến độ chính là phiếu này, không cần đính kèm. Bảng chia lương lập sau khi Phòng KH&amp;CN duyệt tiến độ.</div></div>'}
 function dnntTienDo(){const k=ctV('dnDT');const f=$('paper');if(!f)return;const G=dnntCay(k);const th=isoM((f.querySelector('[name=thang]')||{}).value)||thisMonth();
  const thg=s=>{const a=String(s||'').match(/(\d{1,2})\/(\d{4})/g);if(!a)return null;const [mm,yy]=a[a.length-1].split('/');return +yy*12+(+mm)};const nTh=+th.slice(0,4)*12+(+th.slice(5,7));
  const xong=x=>x.da>=100||(()=>{const e=document.querySelector('.ndc[data-c=tt][data-i="'+x.i+'"]');const p=document.querySelector('.ndp[data-i="'+x.i+'"]');return !!(e&&e.checked&&(!p||+p.value>=100))})();
