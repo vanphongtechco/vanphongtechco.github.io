@@ -443,11 +443,17 @@ async function napDT(){if(!NT_API)return;try{const r=await fetch(NT_API+'?dt=1')
 /* Nạp toàn bộ các lần nộp nghiệm thu của 4 đề tài từ Sheet nghiệm thu (qua script tra cứu ?ma=…), trạng thái lấy đúng cột "Trạng thái" */
 const stTu=t=>/duyệt|chấp nhận/i.test(t)?3:/từ chối/i.test(t)?4:/bổ sung/i.test(t)?2:/xem xét|tiếp nhận/i.test(t)?1:0;
 let NT_LUC='';let NT_T=0;
+/* Lưu vết xử lý một phiếu (từ tab Nhat-ky-web): P.KHCN xử lý, CNĐT sửa phiếu/bổ sung lần 1, 2… */
+function lsVet(L){let n=0;return L.map(z=>{const [t,ai,tt,nd]=z;
+ if(/CNĐT|\(bổ sung\)/.test(tt)){n++;const sua=/sửa phiếu/i.test(nd)||/sửa phiếu/i.test(tt);const m=String(nd).match(/(\d+)\s*tệp/);const so=m?+m[1]:0;const gc=(String(nd).split(/tệp:\s*/)[1]||'').trim();
+  return [t,1,'🔁 CNĐT '+(sua?'sửa phiếu':'bổ sung tài liệu')+' lần '+n+(sua?(so?', kèm '+so+' tệp':''):' ('+so+' tệp)')+(gc?' – '+gc:'')]}
+ const st=stTu(tt);const nh={1:'Tiếp nhận',2:'Yêu cầu bổ sung',3:'Chấp nhận',4:'Từ chối'}[st]||tt;
+ return [t,st,'Phòng KH&CN: '+nh+(nd?' – ý kiến: '+nd:'')+(ai?' ('+ai+')':'')]})}
 async function napNT(){if(!NT_API)return;NT_T=Date.now();
  try{const r=await fetch(NT_API+'?ds=1').then(r=>r.json());if(r&&r.ok&&Array.isArray(r.ds)){
   const moi=r.ds.map(x=>{const d=DT0.find(y=>y.sdk===x.sdk)||{};const st=stTu(x.trangThai||'');const th=x.thang;const mm=th.slice(5);
-   return {code:x.sdk+'-T'+mm+'/'+th.slice(0,4)+(r.ds.filter(y=>y.sdk===x.sdk&&y.thang===th).length>1?' ('+(r.ds.filter(y=>y.sdk===x.sdk&&y.thang===th&&y.ngay<=x.ngay).length)+')':''),type:'nt',src:'Bảng tổng hợp',row:x.row,sdk:x.sdk,ten:d.ten,cn:d.cn,donvi:'',ngay:x.ngay,st,files:[],nopLai:/CNĐT (sửa phiếu|nộp bổ sung)/.test(x.ghiChu||'')&&!/duyệt/i.test(x.trangThai||''),data:{thang:th,pt:x.pct,ptd:x.pctDuoc,ptl:x.pctLuyKe},
-    hist:[[x.ngay,0,'Nộp phiếu nghiệm thu tháng '+mm+'/'+th.slice(0,4)+(x.pct?' – đề nghị '+x.pct+'%':'')+' ('+x.nguon+')'],[x.ngay,st,'Trạng thái: '+x.trangThai+(x.ghiChu?' – '+x.ghiChu:'')]]}});
+   return {code:x.sdk+'-T'+mm+'/'+th.slice(0,4)+(r.ds.filter(y=>y.sdk===x.sdk&&y.thang===th).length>1?' ('+(r.ds.filter(y=>y.sdk===x.sdk&&y.thang===th&&y.ngay<=x.ngay).length)+')':''),type:'nt',src:'Bảng tổng hợp',row:x.row,sdk:x.sdk,ten:d.ten,cn:d.cn,donvi:'',ngay:x.ngay,st,files:[],nopLai:(()=>{const L=x.ls||[];const z=L[L.length-1];return !!z&&/CNĐT|\(bổ sung\)/.test(z[2])})(),data:{thang:th,pt:x.pct,ptd:x.pctDuoc,ptl:x.pctLuyKe},
+    hist:[[x.ngay,0,'Nộp phiếu nghiệm thu tháng '+mm+'/'+th.slice(0,4)+(x.pct?' – đề nghị '+x.pct+'%':'')+' ('+x.nguon+')'],...((x.ls&&x.ls.length)?lsVet(x.ls):[[x.ngay,st,'Trạng thái: '+x.trangThai+(x.ghiChu?' – '+x.ghiChu:'')]])]}});
   DB.hs=DB.hs.filter(h=>h.src!=='Bảng tổng hợp'&&h.src!=='Sheet NT'&&h.src!=='QĐ T10').concat(moi).sort((a,b)=>b.ngay.localeCompare(a.ngay));NT_LUC=now();save();
   if(!$('app').classList.contains('hide'))nav(CUR);return}}catch(e){}
  const cur=thisMonth();const job=[];
@@ -704,9 +710,19 @@ function hsMau(h){const f=$('hsP');f.className='';f.style.cssText='padding:28px 
   const o=r.o,g=re=>{const k=Object.keys(o).find(x=>re.test(x));return k?o[k]:''};const th=(h.data&&h.data.thang)||'';
   const d={ten:g(/^1\./),sdk:g(/^2\./),cn:g(/^3\./),donvi:g(/^4\./),kp:g(/^5\./),bd:g(/^6\./),kt:g(/^7\./),thang:th,ht:g(/^9\./),trongthang:g(/^10\./),kpth:g(/^11\./),sl:g(/^Số lượng/i),cl:g(/^Chất lượng/i),tdo:g(/^Tiến độ/i),ke:g(/^13\./),pt:g(/^14\./),ngay:r.ngay,cap:(DT0.find(x=>x.sdk===h.sdk)||{}).cap||''};
   HS_MAU={h,d,tep:g(/^Tài liệu đính kèm/),email:g(/^Địa chỉ email/)};
-  f.innerHTML='<style>'+DN_CSS+'</style>'+dnntHTML(d);const sb=f.nextElementSibling;if(sb){let x=sb.querySelector('#hsInfo');if(!x){x=document.createElement('div');x.id='hsInfo';x.style.cssText='margin-top:16px;font-size:13px;line-height:1.6';sb.appendChild(x)}x.innerHTML='<h3 style="margin:0 0 6px">Thông tin gửi kèm</h3>Email CNĐT: '+esc(HS_MAU.email||'(không có)')+'<br>Tài liệu minh chứng: '+(HS_MAU.tep?HS_MAU.tep.split(/\s*,\s*/).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener">Tệp '+(i+1)+'</a>').join(' · '):'(không có)')}
+  f.innerHTML='<style>'+DN_CSS+'</style>'+dnntHTML(d);const sb=f.nextElementSibling;if(sb){let x=sb.querySelector('#hsInfo');if(!x){x=document.createElement('div');x.id='hsInfo';x.style.cssText='margin-top:16px;font-size:13px;line-height:1.6';sb.appendChild(x)}x.innerHTML='<h3 style="margin:0 0 6px">Thông tin gửi kèm</h3>Email CNĐT: '+esc(HS_MAU.email||'(không có)')+'<h3 style="margin:14px 0 6px">📎 Tài liệu đính kèm</h3><div id="hsTep">'+(HS_MAU.tep?'<span class="muted">Đang tải danh sách tệp…</span>':'(không có)')+'</div>';if(HS_MAU.tep)tepVe(h)}
   const b=$('hsDoc');if(b)b.style.display='';const sb2=$('hsSuaB');if(sb2)sb2.disabled=false}).catch(()=>{f.innerHTML='<p style="color:#c0392b">Không kết nối được máy chủ.</p>'})}
 function inPhieuHTML(d,ten){return '<html><head><meta charset="utf-8"><title>'+esc(ten||'')+'</title><style>@page{size:A4;margin:0}html,body{margin:0}table.trang{border-collapse:collapse;width:100%}table.trang>thead td,table.trang>tfoot td{height:2cm;padding:0}table.trang>tbody>tr>td{padding:0 1.5cm 0 2.5cm}'+DN_CSS+'</style></head><body><table class="trang"><thead><tr><td></td></tr></thead><tfoot><tr><td></td></tr></tfoot><tbody><tr><td>'+dnntHTML(d)+'</td></tr></tbody></table></body></html>'}
+/* Tệp đính kèm của phiếu: tải qua máy chủ (CNĐT không cần quyền Drive) */
+async function tepVe(h){const B=$('hsTep');const wtk=hsWtk();if(!B||!wtk)return;
+ try{const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'tepDS',wtk,row:h.row})}).then(r=>r.json());if(!r.ok)throw new Error(r.err);
+  B.innerHTML=r.ds.length?r.ds.map((f,i)=>'<div class="flex" style="gap:6px;align-items:flex-start;margin:4px 0"><span style="flex:1;word-break:break-word">'+(i+1)+'. '+esc(f.ten)+(f.kb?' <span class="muted">('+(f.kb>1024?(f.kb/1024).toFixed(1)+' MB':f.kb+' KB')+(f.ngay?', '+esc(f.ngay):'')+')</span>':'')+'</span><button class="btn sm lbtn" style="padding:2px 8px" onclick="tepTai('+h.row+',\''+f.id+'\',this)">⬇ Tải</button></div>').join('')+(r.ds.length>1?'<button class="btn sm lbtn" style="margin-top:6px" onclick="tepTatCa('+h.row+',this)">⬇ Tải tất cả</button>':''):'(không có)';
+  B.dataset.ids=JSON.stringify(r.ds.map(f=>f.id))}catch(e){B.innerHTML='<span style="color:#c0392b">Không đọc được danh sách tệp: '+esc(e.message||'')+'</span>'}}
+async function tepTai(row,id,btn){const wtk=hsWtk();if(!wtk){alert('Phiên đăng nhập đã hết – đăng nhập lại');return}const t=btn&&btn.textContent;if(btn){btn.disabled=true;btn.textContent='Đang tải…'}
+ try{const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'tepTai',wtk,row,id})}).then(r=>r.json());if(!r.ok)throw new Error(r.err);
+  const bin=atob(r.b64),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([u],{type:r.mime||'application/octet-stream'}));a.download=r.ten||'tep';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000)}
+ catch(e){alert('Không tải được tệp: '+e.message)}finally{if(btn){btn.disabled=false;btn.textContent=t}}}
+async function tepTatCa(row,btn){const B=$('hsTep');const ids=JSON.parse((B&&B.dataset.ids)||'[]');btn.disabled=true;for(const id of ids){btn.textContent='Đang tải '+(ids.indexOf(id)+1)+'/'+ids.length+'…';await tepTai(row,id)}btn.disabled=false;btn.textContent='⬇ Tải tất cả'}
 function hsPdf(){const el=$('hsP');if(!el)return;const d=HS_MAU&&HS_MAU.d;const w=window.open('','_blank');if(!w){doPrint('hsP');return}
  const ten=d?(d.sdk||'').replace('/','')+'_T'+((d.thang||'').slice(5))+'-'+((d.thang||'').slice(0,4)):'phieu';
  w.document.write(d?inPhieuHTML(d,ten):'<html><head><meta charset="utf-8"><style>'+DN_CSS+'</style></head><body>'+el.innerHTML+'</body></html>');w.document.close();setTimeout(()=>{try{w.focus();w.print()}catch(e){}},400)}
