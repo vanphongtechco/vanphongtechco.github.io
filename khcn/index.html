@@ -853,7 +853,13 @@ function dnntTienDo(){const k=ctV('dnDT');const f=$('paper');if(!f)return;const 
  const thg=s=>{const a=String(s||'').match(/(\d{1,2})\/(\d{4})/g);if(!a)return null;const [mm,yy]=a[a.length-1].split('/');return +yy*12+(+mm)};const nTh=+th.slice(0,4)*12+(+th.slice(5,7));
  const xong=x=>x.da>=100||(()=>{const e=document.querySelector('.ndc[data-c=tt][data-i="'+x.i+'"]');const p=document.querySelector('.ndp[data-i="'+x.i+'"]');return !!(e&&e.checked&&(!p||+p.value>=100))})();
  const ndXong=g=>g.con.length?g.con.every(xong):xong(g);let cham=0,ly='';
- G.forEach(g=>{const h=thg(g.tg);if(h&&h<nTh&&!ndXong(g)){const d=nTh-h;if(d>cham){cham=d;ly=g.ma+' phải xong tháng '+g.tg.match(/(\d{1,2})\/(\d{4})/g).pop()}}});
+ const thgD=s=>{const a=String(s||'').match(/(\d{1,2})\/(\d{4})/g);if(!a)return null;const [mm,yy]=a[0].split('/');return +yy*12+(+mm)};
+ const coLam=x=>x.da>0||(()=>{const e=document.querySelector('.ndc[data-c=tt][data-i="'+x.i+'"]');return !!(e&&e.checked)})();
+ const tTen=v=>{const y=Math.floor((v-1)/12),m=v-y*12;return m+'/'+y};
+ G.forEach(g=>{if(ndXong(g))return;const h=thg(g.tg),bd=thgD(g.tg);let d=0,l='';
+  if(h&&h<nTh){d=nTh-h;l=g.ma+' phải xong tháng '+tTen(h)}
+  else if(bd&&bd<nTh&&!(g.da>0)&&!g.con.some(c=>c.da>0)){d=nTh-bd;l=g.ma+' phải bắt đầu từ tháng '+tTen(bd)+(coLam(g)||g.con.some(coLam)?', đến tháng này mới thực hiện':', đến nay chưa thực hiện')}
+  if(d>cham){cham=d;ly=l}});
  if(!G.some(g=>thg(g.tg))){const x=DT0.find(y=>y.sdk===k)||{};const a=(x.tg||'').match(/\d{1,2}\/\d{4}/g)||[];const kt=thg(a[1]||a[0]);if(kt&&nTh>kt&&G.length&&!G.every(ndXong)){cham=nTh-kt;ly='hết thời gian hợp đồng tháng '+(a[1]||a[0])}}
  const set=(n,v)=>{const e=f.querySelector('[name='+n+']');if(e)e.value=v};
  set('sl',cham?'Chưa đảm bảo khối lượng công việc theo Hợp đồng':'Đảm bảo khối lượng công việc theo Hợp đồng');set('cl','Đảm bảo chất lượng theo Hợp đồng');
