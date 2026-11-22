@@ -139,7 +139,7 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
 <div id="pub">
 <header class="top">
  <div class="brand" onclick="go('home')"><div class="logo">KHCN</div><div><b>PHÒNG KHOA HỌC CÔNG NGHỆ</b><small>VIỆN CƠ KHÍ NĂNG LƯỢNG VÀ MỎ – VINACOMIN</small></div></div>
- <button class="btn" onclick="go('login')">Đăng nhập nội bộ</button>
+ <div class="flex"><button class="btn" onclick="go('lienhe')">Liên hệ</button><button class="btn" onclick="go('login')">Đăng nhập nội bộ</button></div>
 </header>
 <main class="pub">
 <section id="v-home">
@@ -159,6 +159,12 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
   <div class="card svc" style="margin:0" onclick="go('phieu','td')"><div class="ic">📈</div><h3>Báo cáo tiến độ</h3><div class="muted">Báo cáo tình hình thực hiện, khó khăn vướng mắc, kiến nghị của chủ nhiệm.</div></div>
   <div class="card svc" style="margin:0" onclick="go('phieu','dx')"><div class="ic">💡</div><h3>Đề xuất nhiệm vụ</h3><div class="muted">Đề xuất đặt hàng nhiệm vụ KH&amp;CN cấp Tập đoàn/Bộ cho năm kế hoạch.</div></div>
  </div>
+ <div class="kicker" style="margin-top:30px">Liên hệ</div>
+ <div class="grid3" style="margin-top:10px">
+  <a class="card svc" style="margin:0;text-decoration:none;color:inherit" href="tel:0983352271"><div class="ic">📞</div><h3>Điện thoại</h3><div class="muted" style="font-size:18px"><b>0983 352 271</b></div><div class="muted">Lê Thanh Bình – Trưởng phòng KH&amp;CN</div></a>
+  <a class="card svc" style="margin:0;text-decoration:none;color:inherit" href="https://zalo.me/0983352271" target="_blank" rel="noopener"><div class="ic">💬</div><h3>Zalo</h3><div class="muted" style="font-size:18px"><b>0983 352 271</b></div><div class="muted">Nhắn tin, gửi ảnh tài liệu qua Zalo</div></a>
+  <a class="card svc" style="margin:0;text-decoration:none;color:inherit" href="mailto:p5qlkhcn@gmail.com"><div class="ic">✉️</div><h3>Email</h3><div class="muted" style="font-size:16px"><b>p5qlkhcn@gmail.com</b></div><div class="muted">Phòng Khoa học Công nghệ</div></a>
+ </div>
  <div class="kicker" style="margin-top:30px">Quy trình</div>
  <div class="grid3" style="margin-top:10px">
   <div class="step"><i>1</i>Chủ nhiệm tạo hồ sơ online, đính kèm tài liệu</div>
@@ -167,6 +173,25 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
  </div>
 </section>
 
+<section id="v-lienhe" class="hide">
+ <div class="toolbar"><button class="btn sm" onclick="go('home')">← Quay lại</button></div>
+ <div class="kicker">Liên hệ</div>
+ <h1 style="font-size:30px">Phòng Khoa học Công nghệ</h1>
+ <p class="lead">Viện Cơ khí Năng lượng và Mỏ – Vinacomin. Mọi thắc mắc về hồ sơ nghiệm thu, thanh toán, đề xuất nhiệm vụ KH&amp;CN xin liên hệ:</p>
+ <div class="grid3" style="margin-top:10px">
+  <a class="card svc" style="margin:0;text-decoration:none;color:inherit" href="tel:0983352271"><div class="ic">📞</div><h3>Điện thoại</h3><div class="muted" style="font-size:18px"><b>0983 352 271</b></div><div class="muted">Lê Thanh Bình – Trưởng phòng KH&amp;CN</div></a>
+  <a class="card svc" style="margin:0;text-decoration:none;color:inherit" href="https://zalo.me/0983352271" target="_blank" rel="noopener"><div class="ic">💬</div><h3>Zalo</h3><div class="muted" style="font-size:18px"><b>0983 352 271</b></div><div class="muted">Nhắn tin, gửi ảnh tài liệu qua Zalo</div></a>
+  <a class="card svc" style="margin:0;text-decoration:none;color:inherit" href="mailto:p5qlkhcn@gmail.com"><div class="ic">✉️</div><h3>Email</h3><div class="muted" style="font-size:16px"><b>p5qlkhcn@gmail.com</b></div><div class="muted">Phòng Khoa học Công nghệ</div></a>
+ </div>
+ <div class="card" style="margin-top:20px"><h3>Gửi email cho Phòng KH&amp;CN</h3>
+  <label class="f">Họ và tên</label><input class="in" id="lhTen">
+  <label class="f">Email hoặc số điện thoại của anh/chị</label><input class="in" id="lhLL">
+  <label class="f">Tiêu đề</label><input class="in" id="lhTD">
+  <label class="f">Nội dung</label><textarea class="in" id="lhND" rows="5"></textarea>
+  <div class="row" style="margin-top:12px"><button class="btn pri" onclick="lhGui()">Gửi email →</button></div>
+  <div class="muted" style="font-size:12.5px;margin-top:6px">Bấm Gửi sẽ mở ứng dụng email trên máy với nội dung đã điền sẵn, gửi tới p5qlkhcn@gmail.com.</div>
+ </div>
+</section>
 <section id="v-phieu" class="hide">
  <div class="toolbar">
   <button class="btn sm" onclick="go('home')">← Quay lại</button>
@@ -295,9 +320,10 @@ const pill=st=>'<span class="pill s'+st+'">'+ST[st]+'</span>';
 const tpill=t=>'<span class="pill t-'+t+'">'+TY[t].s+'</span>';
 
 /* ---------- public routing ---------- */
+function lhGui(){const g=id=>($(id).value||'').trim();if(!g('lhND')){alert('Nhập nội dung');return}location.href='mailto:p5qlkhcn@gmail.com?subject='+encodeURIComponent(g('lhTD')||'Liên hệ Phòng KH&CN')+'&body='+encodeURIComponent(g('lhND')+'\n\n--\n'+g('lhTen')+(g('lhLL')?'\n'+g('lhLL'):''))}
 function go(v,t){if(v==='app'){if(!USER){v='login'}else{showApp();return}}
  $('pub').classList.remove('hide');$('app').classList.add('hide');
- ['home','phieu','tracuu','login'].forEach(x=>$('v-'+x).classList.toggle('hide',x!==v));
+ ['home','phieu','tracuu','login','lienhe'].forEach(x=>$('v-'+x).classList.toggle('hide',x!==v));
  if(v==='login'&&USER){showApp();return}
  if(v==='phieu'){if(t)$('ftype').value=t;renderForm($('ftype').value);$('sent').innerHTML=''}
  setHash(v);window.scrollTo(0,0)}
@@ -491,11 +517,11 @@ function doiMK(){const u=USER;if(!u)return;
   if(m){m.pw=h2;save()}addLog('Đổi mật khẩu');closeM();openM('<h3 style="margin-top:0">Đã đổi mật khẩu</h3><p>Lần sau đăng nhập bằng mật khẩu mới.</p><div class="flex" style="justify-content:flex-end"><button class="btn sm pri" onclick="closeM()">Đóng</button></div>',true)}}
 function logout(){addLog('Đăng xuất');USER=null;try{localStorage.removeItem('khcn_user')}catch(x){}go('home')}
 /* ---------- app ---------- */
-const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅','Duyệt hồ sơ online'],['dt','📚','Danh mục đề tài'],['lich','📅','Lịch nghiệm thu'],['gn','💰','Tổng hợp nghiệm thu'],['cp','🧾','Theo dõi chi phí'],['tt','💳','Lập hồ sơ thanh toán'],['so','📒','Sổ tổng hợp'],['grp','','Nghiệp vụ'],['ky','✍️','Trình ký'],['cv','📝','Công văn'],['tv','📖','Thư viện'],['nk','🕘','Nhật ký hệ thống'],['grp','','Quản trị'],['tk','👤','Tài khoản &amp; phân quyền']];
+const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅','Duyệt hồ sơ online'],['dt','📚','Danh mục đề tài'],['lich','📅','Lịch nghiệm thu'],['gn','💰','Tổng hợp nghiệm thu'],['cp','🧾','Theo dõi chi phí'],['tt','💳','Lập hồ sơ thanh toán'],['so','📒','Sổ tổng hợp'],['grp','','Nghiệp vụ'],['ky','✍️','Trình ký'],['cv','📝','Công văn'],['tv','📖','Thư viện'],['nk','🕘','Nhật ký hệ thống'],['lh','📞','Liên hệ'],['grp','','Quản trị'],['tk','👤','Tài khoản &amp; phân quyền']];
 let CUR='dash',HSF={st:-1,q:''},DF={st:'q',src:''};
 function showApp(){const m=ME();if(!m||m.role===0||m.lock){USER=null;go('login');return}$('pub').classList.add('hide');$('app').classList.remove('hide');$('whoName').textContent=m.ten+' ('+m.u+')';$('whoRole').textContent=(m.cv||ROLES[m.role]).toUpperCase()+((m.dt||[]).length?' · CNĐT '+m.dt.join(', '):'');nav(CUR)}
 const MENU_R={4:['dash','hs','dt','lich','gn','tt'],3:['dash','hs','duyet','dt','lich','gn','cp','so','ky','cv','tv','nk']};
-function menuOK(k){const r=ROLE();if(k==='tt')return true;if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
+function menuOK(k){const r=ROLE();if(k==='tt'||k==='lh')return true;if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
 function myDT(){const m=ME();return m?m.dt||[]:[]}
 function nav(p){if(!menuOK(p))p='dash';CUR=p;
  const items=MENU.filter((m,i)=>{if(m[0]!=='grp')return menuOK(m[0]);for(let j=i+1;j<MENU.length&&MENU[j][0]!=='grp';j++)if(menuOK(MENU[j][0]))return true;return false});
@@ -668,6 +694,7 @@ function cpCay(sdk){const t=CP.dt.find(x=>x.sdk===sdk)||{};const ns=[+t.nam1,+t.
 const KP_TP={"01NT/25": {"Tiền công": 273.2, "Đóng góp theo lương": 64.2, "Chi khác": 162.6}, "02NT/25": {"Tiền công": 773.003, "Thuê chuyên gia": 110.0, "Nguyên vật liệu": 773.578, "Chi khác": 448.397}, "03NT/25": {"Tiền công": 919.702, "Nguyên vật liệu": 561.428, "Thiết bị, máy móc": 20.5, "Chi khác": 464.237}, "04NT/25": {"Tiền công": 1540.472, "Thuê chuyên gia": 0.0, "Nguyên vật liệu": 1138.276, "Thiết bị, máy móc": 20.0, "Chi khác": 951.786}, "05NT/25": {"Tiền công": 1442.22, "Thuê chuyên gia": 120.0, "Nguyên vật liệu": 1230.0, "Thiết bị, máy móc": 115.0, "Chi khác": 1120.68}, "01NT/26": {"Tiền công": 290.7, "Đóng góp theo lương": 68.3, "Chi khác": 141.0}, "02NT/26": {"Tiền công": 2780.8, "Thuê chuyên gia": 320.0, "Nguyên vật liệu": 269.0, "Thiết bị, máy móc": 471.0, "Chi khác": 1057.7}, "03NT/26": {"Tiền công": 1112.4, "Thuê chuyên gia": 180.0, "Nguyên vật liệu": 400.0, "Thiết bị, máy móc": 71.0, "Chi khác": 516.6}};const KP_NG={"01NT/25": [500.0, 0.0], "02NT/25": [2105.0, 0.0], "03NT/25": [1383.939, 581.928], "04NT/25": [2059.918, 1590.736], "05NT/25": [2798.0, 1230.0], "01NT/26": [500.0, 0.0], "02NT/26": [4498.5, 400.0], "03NT/26": [1880.0, 400.0]};
 const KP_TONG={'01NT/26':500,'02NT/26':4898.5,'03NT/26':2280,'05NT/25':4028,'02NT/25':2105,'03NT/25':1965.9,'04NT/25':3650.7};
 const MAU8=['#2f6fd6','#2e9d5e','#e08a1e','#8e44ad','#c0392b','#16a2b8','#b8860b','#5d6d7e'];
+const LH_DONG='<div class="lc" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-size:14px"><b>Liên hệ Phòng KH&amp;CN:</b><a href="tel:0983352271">📞 0983 352 271</a><a href="https://zalo.me/0983352271" target="_blank" rel="noopener">💬 Zalo 0983 352 271</a><a href="mailto:p5qlkhcn@gmail.com">✉️ p5qlkhcn@gmail.com</a></div>';
 const fT=n=>Number(n).toLocaleString('vi-VN',{maximumFractionDigits:1});
 function donut(tieuDe,ds,dv,giua){ds=ds.filter(x=>x[1]>0);const T=ds.reduce((a,x)=>a+x[1],0)||1;const R=54,C=2*Math.PI*R;let off=0;
  const arcs=ds.map((x,i)=>{const l=x[1]/T*C;const a='<circle r="'+R+'" cx="70" cy="70" fill="none" stroke="'+(x[2]||MAU8[i%8])+'" stroke-width="24" stroke-dasharray="'+l+' '+(C-l)+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 70 70)"><title>'+esc(x[0])+': '+fT(x[1])+' '+dv+'</title></circle>';off+=l;return a}).join('');
@@ -699,8 +726,9 @@ VIEWS.dash=function(){const nam=kyNT().slice(0,4);let ks=Object.keys(GN).filter(
  +donut('Đề tài theo đơn vị chủ trì',Object.entries(bp),'đề tài')
  +'</div>'
  +'<div class="lc" style="padding:0;overflow:auto"><h3 style="padding:14px 16px 4px;margin:0">Tiến độ từng đề tài</h3><table class="lt"><thead><tr><th>Mã ĐT</th><th>Tên ngắn</th><th>Chủ nhiệm</th><th>Đơn vị</th><th style="text-align:right">Tổng KP (trđ)</th><th style="min-width:150px">Đã nghiệm thu</th><th style="min-width:150px">Đã giải ngân</th><th>Nghiệm thu gần nhất</th></tr></thead><tbody>'
- +ks.map(k=>{const g=GN[k];return '<tr><td><a href="#" onclick="openDT(\''+esc(k)+'\');return false"><b>'+esc(k)+'</b></a></td><td>'+esc(ten(k))+'</td><td>'+esc(T(k).cn||'')+'</td><td>'+esc(T(k).bp||'')+'</td><td style="text-align:right">'+fT(KP_TONG[k])+'</td><td>'+thanhTD(g.pctNT,'#2e9d5e')+'<div style="font-size:12px">'+fT(g.daNT)+' trđ · <b>'+g.pctNT+'%</b></div></td><td>'+thanhTD(g.pctChi,'#2f6fd6')+'<div style="font-size:12px">'+fT(g.daChi)+' trđ · <b>'+fT(g.pctChi)+'%</b></div></td><td>'+esc(g.ntCuoi||'')+'</td></tr>'}).join('')+'</tbody></table></div>'};
-VIEWS.gn=function(){return '<h2 class="pg">Tổng hợp nghiệm thu</h2>'+VIEWS._dashCu().replace(/^<h2[^>]*>.*?<\/h2>/,'')+'<h2 class="pg" style="margin-top:26px">Nghiệm thu &amp; giải ngân</h2>'+VIEWS._gnCu().replace(/^<h2[^>]*>.*?<\/h2>/,'')};
+ +ks.map(k=>{const g=GN[k];return '<tr><td><a href="#" onclick="openDT(\''+esc(k)+'\');return false"><b>'+esc(k)+'</b></a></td><td>'+esc(ten(k))+'</td><td>'+esc(T(k).cn||'')+'</td><td>'+esc(T(k).bp||'')+'</td><td style="text-align:right">'+fT(KP_TONG[k])+'</td><td>'+thanhTD(g.pctNT,'#2e9d5e')+'<div style="font-size:12px">'+fT(g.daNT)+' trđ · <b>'+g.pctNT+'%</b></div></td><td>'+thanhTD(g.pctChi,'#2f6fd6')+'<div style="font-size:12px">'+fT(g.daChi)+' trđ · <b>'+fT(g.pctChi)+'%</b></div></td><td>'+esc(g.ntCuoi||'')+'</td></tr>'}).join('')+'</tbody></table></div>'+LH_DONG};
+VIEWS.gn=function(){return '<h2 class="pg">Tổng hợp nghiệm thu</h2>'+VIEWS._dashCu().replace(/^<h2[^>]*>.*?<\/h2>/,'')+'<h2 class="pg" style="margin-top:26px">Nghiệm thu &amp; giải ngân</h2>'+VIEWS._gnCu().replace(/^<h2[^>]*>.*?<\/h2>/,'')+LH_DONG};
+VIEWS.lh=function(){return '<h2 class="pg">Liên hệ Phòng KH&amp;CN</h2><div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">'+[['📞','Điện thoại','0983 352 271','tel:0983352271'],['💬','Zalo','0983 352 271','https://zalo.me/0983352271'],['✉️','Email','p5qlkhcn@gmail.com','mailto:p5qlkhcn@gmail.com']].map(x=>'<a class="kpi" style="text-decoration:none;color:inherit" href="'+x[3]+'" target="_blank" rel="noopener"><div class="k" style="background:#eef0ff">'+x[0]+'</div><div><small>'+x[1]+'</small><b style="font-size:18px">'+x[2]+'</b></div></a>').join('')+'</div><div class="muted" style="color:var(--lmut)">Lê Thanh Bình – Trưởng phòng KH&amp;CN</div>'};
 VIEWS.tt=function(){return '<div class="lc" id="ttBox"></div>'};
 VIEWS.cp=function(){
  if(!CP){if(!CP_LOI)setTimeout(napCP,0);return '<h2 class="pg">Theo dõi chi phí đề tài</h2><div class="note">'+esc(CP_LOI||'Đang tải dữ liệu…')+' <button class="btn sm lbtn" onclick="napCP()">↻ Tải lại</button></div>'}
