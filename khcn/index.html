@@ -747,7 +747,6 @@ VIEWS.dash=function(){const nam=kyNT().slice(0,4);let ks=Object.keys(GN).filter(
  +'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;margin-bottom:14px">'
  +''+donut('Kinh phí đề tài thực hiện '+nam,TH.map(k=>[k+' – '+ten(k),kpOf(k)]),'trđ')
  +donut('Chi phí đã nghiệm thu '+nam+' theo đề tài',ks.map(k=>[k+' – '+ten(k),nNam(k)]),'trđ')
- +donut('Tình hình nghiệm thu ('+ks.length+' đề tài)',[['Đã nghiệm thu',daNT,'#2e9d5e'],['Chưa nghiệm thu',Math.max(0,tong-daNT),'#d5dbe3']],'trđ',[Math.round(daNT/tong*100)+'%','đã nghiệm thu'])
  +donut('Đề tài theo cấp quản lý',Object.entries(gom(ka,k=>T(k).cap||'Tập đoàn TKV')),'đề tài')
  +'</div>'
  +'<div class="lc" style="padding:0;overflow:auto"><h3 style="padding:14px 16px 4px;margin:0">Đề tài đang thực hiện</h3><table class="lt"><thead><tr><th>Mã ĐT</th><th>Tên ngắn</th><th>Chủ nhiệm</th><th>Đơn vị</th><th style="text-align:right">Tổng KP (trđ)</th><th style="min-width:150px">Đã nghiệm thu</th><th style="min-width:150px">Chi phí đã nghiệm thu</th><th>Nghiệm thu gần nhất</th></tr></thead><tbody>'
