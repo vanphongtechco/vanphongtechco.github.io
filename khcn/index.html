@@ -873,6 +873,7 @@ function aiCtx(){try{const m=ME();if(!m||ROLE()<1)return '';const xem=k=>ROLE()!
  Object.keys(GN).filter(k=>KP_TONG[k]&&xem(k)).forEach(k=>{const g=GN[k],t=DT0.find(x=>x.sdk===k)||{};L.push(k+' | '+(t.ngan||'')+' | CNĐT '+(t.cn||'')+' | '+(t.bp||'')+' | tổng KP '+KP_TONG[k]+' | đã nghiệm thu '+g.daNT+' ('+g.pctNT+'%) | chi phí đã nghiệm thu '+g.daChi+' ('+g.pctChi+'%) | nghiệm thu gần nhất '+(g.ntCuoi||'chưa'))});
  DT_CU.filter(x=>xem(x.sdk)).forEach(x=>{const t=dtTT(x.sdk);L.push(x.sdk+' | '+(t.ngan||'')+' | CNĐT '+(t.cn||'')+' | năm '+x.nam+' | KP '+x.kp+' | thời gian '+(t.tg||'')+' | tình trạng: '+String(x.tt||t.tt||'').split('. Chủ nhiệm')[0])});
  return L.join('\n')}catch(e){return ''}}
+function aiDM(){try{const L=[];DT0.forEach(t=>L.push(t.sdk+' | '+(t.ten||t.ngan||'')+' | CNĐT '+(t.cn||'')+' | '+(t.bp||'')+' | '+(t.tg||'')+' | '+String(t.tt||'Đang thực hiện').split('. Chủ nhiệm')[0]));DT_CU.forEach(x=>{if(DT0.some(t=>t.sdk===x.sdk))return;L.push(x.sdk+' | '+(x.ten||x.ngan||'')+' | CNĐT '+(x.cn||'')+' | '+(x.cap||'')+' | '+(x.tg||'')+' | '+(x.tt||''))});return L.join('\n')}catch(e){return ''}}
 function aiVe(){const b=$('aiTin');if(!b)return;const fm=t=>esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');
  b.innerHTML='<div style="background:#fff;border-radius:10px;padding:8px 11px;margin-bottom:8px;max-width:88%">Em là trợ lý AI của Phòng KH&amp;CN. Anh/chị cần hỏi gì về nộp nghiệm thu, tra cứu hồ sơ, lập hồ sơ thanh toán…?</div>'
  +AI_LS.map(m=>m.r==='u'?'<div style="background:#6b4fd8;color:#fff;border-radius:10px;padding:8px 11px;margin:0 0 8px auto;max-width:88%;width:fit-content">'+fm(m.t)+'</div>':'<div style="background:#fff;border-radius:10px;padding:8px 11px;margin-bottom:8px;max-width:88%;width:fit-content'+(m.loi?';color:#c0392b':'')+'">'+fm(m.t)+'</div>').join('')
@@ -880,8 +881,8 @@ function aiVe(){const b=$('aiTin');if(!b)return;const fm=t=>esc(t).replace(/\*\*
 function aiMo(){const h=$('aiHop');h.classList.toggle('hide');if(!h.classList.contains('hide')){aiVe();$('aiO').focus()}}
 function aiXoa(){AI_LS=[];aiVe()}
 async function aiGui(){const o=$('aiO'),q=o.value.trim();if(!q||AI_BAN)return;const ls=AI_LS.filter(m=>!m.loi).slice(-8).map(m=>({r:m.r,t:m.t}));AI_LS.push({r:'u',t:q});o.value='';AI_BAN=true;$('aiB').disabled=true;aiVe();
- try{const w=aiWtk();const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ai',hoi:q,ls,wtk:w,ctx:w?aiCtx():''})}).then(r=>r.json());
-  if(r&&r.ok)AI_LS.push({r:'a',t:r.tl});else AI_LS.push({r:'a',t:(r&&r.err)||'Không trả lời được, anh/chị thử lại.',loi:1})}
+ try{const w=aiWtk();const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ai',hoi:q,ls,wtk:w,ctx:w?aiCtx():'',dm:w?'':aiDM()})}).then(r=>r.json());
+  if(r&&r.ok)AI_LS.push({r:'a',t:r.tl+(!w&&USER&&ROLE()>=1?'\n\n(Anh/chị đang đăng nhập theo phiên cũ nên em chưa xem được số liệu và kho tài liệu. Bấm Đăng xuất rồi đăng nhập lại để hỏi chi tiết.)':'')});else AI_LS.push({r:'a',t:(r&&r.err)||'Không trả lời được, anh/chị thử lại.',loi:1})}
  catch(e){AI_LS.push({r:'a',t:'Không kết nối được máy chủ, anh/chị thử lại.',loi:1})}
  AI_BAN=false;$('aiB').disabled=false;aiVe();$('aiO').focus()}
 function napAI(){if(!NT_API)return;fetch(NT_API+'?ai=1').then(r=>r.json()).then(r=>{if(r&&r.ok&&r.co===true)$('aiNut').classList.remove('hide')}).catch(()=>{})}
@@ -953,7 +954,7 @@ async function ttDoc(files){for(const f of files){const d={ten:f.name,tt:'Đang 
   if(/\.xml$/i.test(f.name)){kq=ttXML(new TextDecoder().decode(buf));d.cach='XML hóa đơn điện tử'}
   else{let txt='';if(/\.pdf$/i.test(f.name)){txt=await ttPdfText(buf.slice(0));d.cach='PDF có chữ'}
    if(txt.replace(/\s/g,'').length<80){d.tt='Bản quét – đang nhận dạng chữ…';ttVe();txt=await ttOCR(f,buf);d.cach='Nhận dạng chữ (Google)'}
-   kq=ttVanBan(txt)}
+   kq=ttVanBan(txt);d.txt=txt.replace(/[ \t]+/g,' ').slice(0,3000);if(!kq&&d.txt.replace(/\s/g,'').length>60){d.tt='Tài liệu kèm theo';ttVe();continue}}
   if(!kq)throw new Error('Không nhận ra nội dung');d.kq=kq;d.tt=kq.loai==='hdkt'?'Hợp đồng':'Hóa đơn';
   if(kq.loai==='hd'){if(!TT.hd.some(h=>h.so&&h.so===kq.so&&h.mst===kq.mst)){TT.hd.push(Object.assign({nguon:f.name},kq));(kq.hang||[]).forEach(x=>TT.hh.push({ten:x.ten,dvt:x.dvt||'',sl:String(x.sl||'').replace(/,0+$/,'')}))}}
   else{TT.f.hopDong=TT.f.hopDong||(kq.so?kq.so+(kq.ngay?' ngày '+ttNgayVN(kq.ngay):''):'');TT.f.ctTen=TT.f.ctTen||kq.ten;TT.f.ctMst=TT.f.ctMst||kq.mst;TT.f.ctStk=TT.f.ctStk||kq.stk;TT.f.ctNh=TT.f.ctNh||kq.nh}
@@ -1004,7 +1005,8 @@ function ttVe(){const el=$('ttBox');if(!el)return;if(!TT.sdk&&ROLE()!==1&&myDT()
    +'</tbody></table><button class="btn sm lbtn" style="margin-top:6px" onclick="TT.hh.push({ten:\'\',dvt:\'\',sl:\'\'});ttVe()">＋ Thêm hàng hóa</button>':'')
  +(f.hinhThuc==='tk'?'<div class="g2" style="gap:10px"><div><label class="f">Tài khoản nhận của người đề nghị</label>'+inp('cnStk','Số tài khoản')+'</div><div><label class="f">Mở tại</label>'+inp('cnNh','Ngân hàng …')+'</div></div>':'')
  +(f.hinhThuc==='ck'?'<label class="f">Hợp đồng số</label>'+inp('hopDong','Số … ngày …')+'<div class="g2" style="gap:10px"><div><label class="f">Chuyển trả: tổ chức/cá nhân</label>'+inp('ctTen')+'</div><div><label class="f">Mã số thuế</label>'+inp('ctMst')+'</div><div><label class="f">Số tài khoản</label>'+inp('ctStk')+'</div><div><label class="f">Mở tại</label>'+inp('ctNh','Ngân hàng …')+'</div></div>':'')
- +'<div class="flex" style="margin-top:16px;flex-wrap:wrap;gap:8px"><button class="btn pri" onclick="ttXuat()">⬇ Tải giấy đề nghị (Excel theo mẫu Viện)</button><button class="btn" onclick="ttGuiForm()">Gửi Phòng KH&amp;CN duyệt →</button><button class="btn sm lbtn" onclick="TT={sdk:TT.sdk,docs:[],hd:[],hh:[],f:{hinhThuc:\'\',loaiChi:\'dv\'},sent:\'\'};ttVe()">Làm đề nghị mới</button></div>'
+ +ttKCHtml()
+ +'<div class="flex" style="margin-top:16px;flex-wrap:wrap;gap:8px"><button class="btn pri" onclick="ttXuat()">⬇ Tải giấy đề nghị (Excel theo mẫu Viện)</button><button class="btn" onclick="ttKiem()">🔎 Đối chiếu hợp đồng, dự toán (AI)</button><button class="btn" onclick="ttGuiForm()">Gửi Phòng KH&amp;CN duyệt →</button><button class="btn sm lbtn" onclick="TT={sdk:TT.sdk,docs:[],hd:[],hh:[],f:{hinhThuc:\'\',loaiChi:\'dv\'},sent:\'\'};ttVe()">Làm đề nghị mới</button></div>'
  +'<div id="ttMsg" style="margin-top:10px">'+(TT.sent||'')+'</div>'}
 /* ghi ô vào sheet XML của mẫu */
 function ttCell(x,ref,val){const esc2=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -1049,6 +1051,14 @@ async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg'
 /* gửi Phòng KH&CN duyệt (chủ nhiệm xác thực bằng email đã đăng ký) */
 function ttRec(){const f=TT.f;return {nguoiDeNghi:ttNguoiHD()||f.nguoi||'',hinhThuc:f.hinhThuc,loaiChi:f.loaiChi,noiDung:ttND(),hopDong:f.hopDong||'',soTien:ttTong(),
   hoaDon:TT.hd.map(h=>({kyHieu:h.kyHieu||'',so:h.so||'',ngay:h.ngay||'',ten:h.ten||'',mst:h.mst||'',chuaVat:h.chuaVat||0,vat:h.vat||0,tong:h.tong||0})),chuyenTra:{ten:f.ctTen||'',mst:f.ctMst||'',stk:f.ctStk||'',nh:f.ctNh||''}}}
+async function ttKiem(){const m=$('ttMsg');if(!TT.sdk||(!TT.hd.length&&!TT.docs.some(d=>d.txt))){m.innerHTML='<span style="color:#c0392b">Chọn đề tài và tải lên hóa đơn hoặc tài liệu trước.</span>';return}
+ const w=aiWtk();if(!w){m.innerHTML='<span style="color:#c0392b">Bấm Đăng xuất rồi đăng nhập lại để dùng chức năng đối chiếu.</span>';return}
+ TT.kc='…';m.innerHTML='Đang đối chiếu với hợp đồng, dự toán…';
+ try{const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ttKiem',wtk:w,sdk:TT.sdk,rec:ttRec(),hang:TT.hh,taiLieu:TT.docs.filter(d=>d.txt&&d.tt==='Tài liệu kèm theo').map(d=>({ten:d.ten,text:d.txt}))})}).then(r=>r.json());
+  if(!r||!r.ok)throw new Error((r&&r.err)||'Không đối chiếu được');TT.kc=r.tl;TT.kcGhi=(r.coDuToan?'':'Chưa có dự toán của đề tài trên web. ')+(r.coKho?'':'Chưa tìm thấy trích đoạn hợp đồng trong kho.');m.innerHTML='';ttVe()}
+ catch(e){TT.kc='';m.innerHTML='<span style="color:#c0392b">'+esc(e.message||e)+'</span>'}}
+function ttKCHtml(){if(!TT.kc||TT.kc==='…')return '';const t=esc(TT.kc).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');const mau=/Chưa thấy phù hợp/.test(TT.kc)?'#c0392b':/Cần lưu ý/.test(TT.kc)?'#e08a1e':'#2e9d5e';
+ return '<div style="margin-top:14px;border-left:4px solid '+mau+';background:rgba(138,164,200,.1);padding:12px 14px;border-radius:8px;font-size:14px;line-height:1.55"><b>Khuyến cáo của trợ lý AI (tham khảo)</b><br>'+t+(TT.kcGhi?'<div class="muted" style="font-size:12px;margin-top:6px">'+esc(TT.kcGhi)+'</div>':'')+'</div>'}
 function ttGuiForm(){const tong=ttTong();if(!TT.sdk||!tong||!TT.hd.length){$('ttMsg').innerHTML='<span style="color:#c0392b">Chọn đề tài và nhập ít nhất 1 hóa đơn có số tiền.</span>';return}
  const w=(()=>{try{const x=JSON.parse(localStorage.getItem('khcn_wtk')||'null');return x&&x.u===USER&&x.han>Date.now()?x.tk:null}catch(e){return null}})();
  if(w){openM('<h3 style="margin-top:0">Gửi đề nghị '+esc(TT.sdk)+' – '+tong.toLocaleString('vi-VN')+' đ</h3><p class="muted" style="color:var(--lmut)">Gửi bằng tài khoản <b>'+esc(USER)+'</b>. Sau khi Phòng KH&amp;CN duyệt, khoản chi tự vào sổ Theo dõi chi phí của đề tài.</p><label class="fl">Email nhận thông báo (email nào cũng được, có thể để trống)</label><input class="lin" id="ttE"><div id="ttM" class="muted" style="margin-top:6px;color:var(--lmut)"></div><div class="flex" style="margin-top:12px;justify-content:flex-end"><button class="btn sm lbtn" onclick="closeM()">Hủy</button><button class="btn sm pri" id="ttOk">Gửi</button></div>',true);
