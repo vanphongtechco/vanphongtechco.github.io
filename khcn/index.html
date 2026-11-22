@@ -491,7 +491,7 @@ function doiMK(){const u=USER;if(!u)return;
   if(m){m.pw=h2;save()}addLog('Đổi mật khẩu');closeM();openM('<h3 style="margin-top:0">Đã đổi mật khẩu</h3><p>Lần sau đăng nhập bằng mật khẩu mới.</p><div class="flex" style="justify-content:flex-end"><button class="btn sm pri" onclick="closeM()">Đóng</button></div>',true)}}
 function logout(){addLog('Đăng xuất');USER=null;try{localStorage.removeItem('khcn_user')}catch(x){}go('home')}
 /* ---------- app ---------- */
-const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅','Duyệt hồ sơ online'],['dt','📚','Danh mục đề tài'],['lich','📅','Lịch nghiệm thu'],['gn','💰','Nghiệm thu & giải ngân'],['cp','🧾','Theo dõi chi phí'],['tt','💳','Lập hồ sơ thanh toán'],['so','📒','Sổ tổng hợp'],['grp','','Nghiệp vụ'],['ky','✍️','Trình ký'],['cv','📝','Công văn'],['tv','📖','Thư viện'],['nk','🕘','Nhật ký hệ thống'],['grp','','Quản trị'],['tk','👤','Tài khoản &amp; phân quyền']];
+const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅','Duyệt hồ sơ online'],['dt','📚','Danh mục đề tài'],['lich','📅','Lịch nghiệm thu'],['gn','💰','Tổng hợp nghiệm thu'],['cp','🧾','Theo dõi chi phí'],['tt','💳','Lập hồ sơ thanh toán'],['so','📒','Sổ tổng hợp'],['grp','','Nghiệp vụ'],['ky','✍️','Trình ký'],['cv','📝','Công văn'],['tv','📖','Thư viện'],['nk','🕘','Nhật ký hệ thống'],['grp','','Quản trị'],['tk','👤','Tài khoản &amp; phân quyền']];
 let CUR='dash',HSF={st:-1,q:''},DF={st:'q',src:''};
 function showApp(){const m=ME();if(!m||m.role===0||m.lock){USER=null;go('login');return}$('pub').classList.add('hide');$('app').classList.remove('hide');$('whoName').textContent=m.ten+' ('+m.u+')';$('whoRole').textContent=(m.cv||ROLES[m.role]).toUpperCase()+((m.dt||[]).length?' · CNĐT '+m.dt.join(', '):'');nav(CUR)}
 const MENU_R={4:['dash','hs','dt','lich','gn','tt'],3:['dash','hs','duyet','dt','lich','gn','cp','so','ky','cv','tv','nk']};
@@ -508,7 +508,7 @@ const ACT=[['newInternal','taoHS'],['setSt(','duyet'],['editDT(','suaDT'],['newS
 function lockUI(){document.querySelectorAll('#app [onclick]').forEach(el=>{const oc=el.getAttribute('onclick');const a=ACT.find(x=>oc.includes(x[0]));if(a&&!can(a[1]))el.style.display='none'})}
 const cnt=st=>DB.hs.filter(h=>h.st===st).length;
 const VIEWS={
-dash(){const ky=kyNT(),cur=thisMonth();const hk=lanCuoi(DB.hs.filter(h=>h.type==='nt'&&thangHS(h)===ky));const ck=st=>hk.filter(h=>h.st===st).length;const som=lanCuoi(DB.hs.filter(h=>h.type==='nt'&&thangHS(h)===cur));const chuaNop=DB.dt.filter(x=>/đang/i.test(x.tt)&&!hk.some(h=>h.sdk===x.sdk));
+_dashCu(){const ky=kyNT(),cur=thisMonth();const hk=lanCuoi(DB.hs.filter(h=>h.type==='nt'&&thangHS(h)===ky));const ck=st=>hk.filter(h=>h.st===st).length;const som=lanCuoi(DB.hs.filter(h=>h.type==='nt'&&thangHS(h)===cur));const chuaNop=DB.dt.filter(x=>/đang/i.test(x.tt)&&!hk.some(h=>h.sdk===x.sdk));
  const dangTH=DB.dt.filter(x=>/đang/i.test(x.tt));const dsDN=[...new Set(hk.map(h=>h.sdk))];
  const k=[['Số đề tài đang thực hiện',dangTH.length,'📚','#eef7ee','D',dangTH.map(x=>x.sdk).join(', ')],['Số ĐT đề nghị nghiệm thu tháng '+mmyy(ky),dsDN.length,'🗂','#eef0ff',-1,dsDN.join(', ')],['Số ĐT không đề nghị nghiệm thu tháng '+mmyy(ky),chuaNop.length,'⚠️','#fde2e2','L',chuaNop.map(x=>x.sdk).join(', ')],['Đang xem xét',ck(0)+ck(1),'🔎','#e3eefc',1,hk.filter(h=>h.st<=1).map(h=>h.sdk).join(', ')],['Yêu cầu bổ sung',ck(2),'↩','#fde9d7',2,hk.filter(h=>h.st===2).map(h=>h.sdk).join(', ')],['Đã chấp nhận',ck(3),'✔','#e2f6ec',3,hk.filter(h=>h.st===3).map(h=>h.sdk).join(', ')]];
  const ms=cacThang(kyNT().slice(0,4)+'-01',kyNT());
@@ -531,7 +531,7 @@ duyet(){let a=DB.hs.filter(h=>(DF.st==='q'?h.st<=2:DF.st==='all'?true:h.st===+DF
 dt(){return '<h2 class="pg">Danh mục đề tài / nhiệm vụ</h2><div class="note">'+(DT_SV.length?'Đang thực hiện: '+DT_SV.length+' đề tài – tự cập nhật từ Sheet nghiệm thu (tab CNDT + phiếu nghiệm thu gần nhất).':'Chưa nạp được danh mục từ máy chủ – đang hiện dữ liệu lưu trên máy.')+' <button class="btn sm lbtn" onclick="napDT()">↻ Nạp lại</button></div>'+'<div class="flex" style="margin-bottom:12px"><button class="btn sm pri" onclick="editDT(-1)">＋ Thêm đề tài</button></div>'
  +'<div class="lc" style="padding:0;overflow:auto"><table class="lt"><thead><tr><th>Số ĐK</th><th>Tên nhiệm vụ</th><th>Chủ nhiệm</th><th>Cấp</th><th>Kinh phí (trđ)</th><th>Thời gian</th><th>Tình trạng</th><th>Nghiệm thu gần nhất</th><th>Hồ sơ</th><th></th></tr></thead><tbody>'
  +DB.dt.map((x,i)=>'<tr><td><b>'+esc(x.sdk)+'</b></td><td>'+esc(x.ten)+(x.hd?'<div style="font-size:12px;color:var(--lmut)">HĐ '+esc(x.hd)+'</div>':'')+'</td><td>'+esc(x.cn)+'</td><td>'+esc(x.cap)+'</td><td>'+esc(x.kp)+'</td><td>'+esc(x.tg)+'</td><td>'+esc(x.tt)+'</td><td>'+esc(x.ntCuoi||'')+(x.ttCuoi?' · '+esc(x.ttCuoi):'')+(x.pct?' · đã nghiệm thu '+esc(x.pct)+'%':'')+'</td><td><a href="#" onclick="HSF={st:-1,q:\''+esc(x.sdk)+'\'};nav(\'hs\');return false">'+DB.hs.filter(h=>h.sdk&&h.sdk===x.sdk).length+'</a></td><td><button class="btn sm lbtn" onclick="editDT('+i+')">Sửa</button></td></tr>').join('')+'</tbody></table></div>'},
-gn(){const ks=Object.keys(GN);const ms=[...new Set(ks.flatMap(k=>Object.keys(GN[k].thang)))].sort().filter(m=>m>='2025-09');
+_gnCu(){const ks=Object.keys(GN);const ms=[...new Set(ks.flatMap(k=>Object.keys(GN[k].thang)))].sort().filter(m=>m>='2025-09');
  const f=n=>n==null||n===''?'':Number(n).toLocaleString('vi-VN',{maximumFractionDigits:1});const T=d=>DT0.find(x=>x.sdk===d)||{};const tong=d=>({'01NT/26':500,'02NT/26':4898.5,'03NT/26':2280,'05NT/25':4028,'02NT/25':2105,'03NT/25':1965.9,'04NT/25':3650.7})[d];
  const bar=(p,c)=>'<div style="background:#eef0f4;border-radius:6px;height:8px;width:120px;display:inline-block;vertical-align:middle;margin-right:6px"><div style="height:8px;border-radius:6px;background:'+c+';width:'+Math.min(100,p)+'%"></div></div>'+f(p)+'%';
  return '<h2 class="pg">Theo dõi nghiệm thu &amp; giải ngân</h2><div class="note">'+esc(GN_NGUON)+'</div>'
@@ -664,6 +664,43 @@ function cpCay(sdk){const t=CP.dt.find(x=>x.sdk===sdk)||{};const ns=[+t.nam1,+t.
  mu.forEach((m,i)=>{let j=i+1;while(j<mu.length&&mu[j].cap>m.cap)j++;m._den=j;m._i=i});
  mu.forEach(m=>{const s=[0,0,0];let n=0;for(let k=m._i;k<m._den;k++)(rieng[mu[k].id]||[]).forEach(c=>{const p=ns.indexOf(+c.nam);s[p<0?0:p]+=c.tien;n++});m._nam=s;m._tong=s[0]+s[1]+s[2];m._n=n});
  return {t,ns,mu,chi,rieng}}
+/* ---------- Tổng quan cho lãnh đạo ---------- */
+const KP_TP={"01NT/25": {"Tiền công": 273.2, "Đóng góp theo lương": 64.2, "Chi khác": 162.6}, "02NT/25": {"Tiền công": 773.003, "Thuê chuyên gia": 110.0, "Nguyên vật liệu": 773.578, "Chi khác": 448.397}, "03NT/25": {"Tiền công": 919.702, "Nguyên vật liệu": 561.428, "Thiết bị, máy móc": 20.5, "Chi khác": 464.237}, "04NT/25": {"Tiền công": 1540.472, "Thuê chuyên gia": 0.0, "Nguyên vật liệu": 1138.276, "Thiết bị, máy móc": 20.0, "Chi khác": 951.786}, "05NT/25": {"Tiền công": 1442.22, "Thuê chuyên gia": 120.0, "Nguyên vật liệu": 1230.0, "Thiết bị, máy móc": 115.0, "Chi khác": 1120.68}, "01NT/26": {"Tiền công": 290.7, "Đóng góp theo lương": 68.3, "Chi khác": 141.0}, "02NT/26": {"Tiền công": 2780.8, "Thuê chuyên gia": 320.0, "Nguyên vật liệu": 269.0, "Thiết bị, máy móc": 471.0, "Chi khác": 1057.7}, "03NT/26": {"Tiền công": 1112.4, "Thuê chuyên gia": 180.0, "Nguyên vật liệu": 400.0, "Thiết bị, máy móc": 71.0, "Chi khác": 516.6}};const KP_NG={"01NT/25": [500.0, 0.0], "02NT/25": [2105.0, 0.0], "03NT/25": [1383.939, 581.928], "04NT/25": [2059.918, 1590.736], "05NT/25": [2798.0, 1230.0], "01NT/26": [500.0, 0.0], "02NT/26": [4498.5, 400.0], "03NT/26": [1880.0, 400.0]};
+const KP_TONG={'01NT/26':500,'02NT/26':4898.5,'03NT/26':2280,'05NT/25':4028,'02NT/25':2105,'03NT/25':1965.9,'04NT/25':3650.7};
+const MAU8=['#2f6fd6','#2e9d5e','#e08a1e','#8e44ad','#c0392b','#16a2b8','#b8860b','#5d6d7e'];
+const fT=n=>Number(n).toLocaleString('vi-VN',{maximumFractionDigits:1});
+function donut(tieuDe,ds,dv,giua){ds=ds.filter(x=>x[1]>0);const T=ds.reduce((a,x)=>a+x[1],0)||1;const R=54,C=2*Math.PI*R;let off=0;
+ const arcs=ds.map((x,i)=>{const l=x[1]/T*C;const a='<circle r="'+R+'" cx="70" cy="70" fill="none" stroke="'+(x[2]||MAU8[i%8])+'" stroke-width="24" stroke-dasharray="'+l+' '+(C-l)+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 70 70)"><title>'+esc(x[0])+': '+fT(x[1])+' '+dv+'</title></circle>';off+=l;return a}).join('');
+ return '<div class="lc" style="margin:0"><h3 style="margin:0 0 10px;font-size:15px">'+tieuDe+'</h3><div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><svg viewBox="0 0 140 140" width="150" height="150" style="flex:none">'+arcs+'<text x="70" y="66" text-anchor="middle" style="font:700 17px system-ui;fill:var(--ltxt)">'+(giua?giua[0]:fT(T))+'</text><text x="70" y="84" text-anchor="middle" style="font:11px system-ui;fill:var(--lmut)">'+(giua?giua[1]:dv)+'</text></svg>'
+ +'<div style="flex:1;min-width:170px;font-size:12.5px;line-height:1.55">'+ds.map((x,i)=>'<div style="display:flex;gap:6px;align-items:baseline"><span style="width:10px;height:10px;border-radius:2px;flex:none;background:'+(x[2]||MAU8[i%8])+'"></span><span style="flex:1">'+esc(x[0])+'</span><b style="white-space:nowrap">'+fT(x[1])+'</b><span style="color:var(--lmut);width:38px;text-align:right">'+Math.round(x[1]/T*100)+'%</span></div>').join('')+'</div></div></div>'}
+function thanhTD(p,c){return '<div style="background:#eef0f4;border-radius:6px;height:9px;width:100%;min-width:90px"><div style="height:9px;border-radius:6px;background:'+c+';width:'+Math.min(100,p)+'%"></div></div>'}
+VIEWS.dash=function(){const nam=kyNT().slice(0,4);let ks=Object.keys(GN).filter(k=>KP_TONG[k]);if(ROLE()===4)ks=ks.filter(k=>myDT().includes(k));
+ const T=k=>DT0.find(x=>x.sdk===k)||{};const ten=k=>T(k).ngan||String(T(k).ten||'').slice(0,40);
+ const tong=ks.reduce((a,k)=>a+KP_TONG[k],0),daNT=ks.reduce((a,k)=>a+(GN[k].daNT||0),0),daChi=ks.reduce((a,k)=>a+(GN[k].daChi||0),0);
+ const nNam=k=>Object.entries(GN[k].thang||{}).filter(([m])=>m.startsWith(nam)).reduce((a,[,v])=>a+v,0);const kpNam=ks.reduce((a,k)=>a+nNam(k),0);
+ const moi=ks.filter(k=>k.endsWith('/'+nam.slice(2))).length;
+ const kpi=(t,v,dv,ph,c)=>'<div class="kpi" style="cursor:default"><div><small>'+t+'</small><b style="color:'+(c||'inherit')+'">'+v+'<span style="font-size:14px;font-weight:600"> '+dv+'</span></b><div style="font-size:12px;color:var(--lmut)">'+ph+'</div></div></div>';
+ const bp={};ks.forEach(k=>{const b=T(k).bp||'Khác';bp[b]=(bp[b]||0)+1});
+ const ng=[0,0];ks.forEach(k=>{const x=KP_NG[k]||[KP_TONG[k],0];ng[0]+=x[0];ng[1]+=x[1]});
+ const tp={};ks.forEach(k=>Object.entries(KP_TP[k]||{}).forEach(([a,v])=>{tp[a]=(tp[a]||0)+v}));const thuTu=['Tiền công','Đóng góp theo lương','Thuê chuyên gia','Nguyên vật liệu','Thiết bị, máy móc','Chi khác'];
+ return '<h2 class="pg">Tổng quan nhiệm vụ KH&amp;CN năm '+nam+'</h2><div class="muted" style="color:var(--lmut);font-size:13px;margin:-6px 0 12px">Số liệu đến kỳ nghiệm thu tháng '+mmyy(kyNT())+' · thời gian cập nhật kinh phí: '+GN_LUC+' · đơn vị: triệu đồng</div>'
+ +'<div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">'
+ +kpi('Đề tài thực hiện năm '+nam,ks.length,'đề tài',moi+' mở mới năm '+nam+' · '+(ks.length-moi)+' chuyển tiếp')
+ +kpi('Tổng kinh phí các đề tài',fT(tong),'trđ','Quỹ KHCN TKV '+fT(ng[0])+' · đối ứng '+fT(ng[1]))
+ +kpi('Lũy kế đã nghiệm thu',fT(daNT),'trđ',Math.round(daNT/tong*100)+'% tổng kinh phí','#2e9d5e')
+ +kpi('Đã giải ngân (chi)',fT(daChi),'trđ',Math.round(daChi/tong*100)+'% tổng kinh phí','#2f6fd6')
+ +kpi('Kinh phí thực hiện năm '+nam,fT(kpNam),'trđ','chi trong năm '+nam,'#e08a1e')+'</div>'
+ +'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;margin-bottom:14px">'
+ +donut('Tổng kinh phí theo đề tài',ks.map(k=>[k+' – '+ten(k),KP_TONG[k]]),'trđ')
+ +donut('Thành phần kinh phí (theo dự toán)',thuTu.map(a=>[a,tp[a]||0]),'trđ')
+ +donut('Nguồn kinh phí',[['Quỹ KHCN Tập đoàn TKV',ng[0]],['Vốn đối ứng',ng[1]]],'trđ')
+ +donut('Kinh phí thực hiện năm '+nam+' theo đề tài',ks.map(k=>[k+' – '+ten(k),nNam(k)]),'trđ')
+ +donut('Tình hình nghiệm thu',[['Đã nghiệm thu',daNT,'#2e9d5e'],['Chưa nghiệm thu',Math.max(0,tong-daNT),'#d5dbe3']],'trđ',[Math.round(daNT/tong*100)+'%','đã nghiệm thu'])
+ +donut('Đề tài theo đơn vị chủ trì',Object.entries(bp),'đề tài')
+ +'</div>'
+ +'<div class="lc" style="padding:0;overflow:auto"><h3 style="padding:14px 16px 4px;margin:0">Tiến độ từng đề tài</h3><table class="lt"><thead><tr><th>Mã ĐT</th><th>Tên ngắn</th><th>Chủ nhiệm</th><th>Đơn vị</th><th style="text-align:right">Tổng KP (trđ)</th><th style="min-width:150px">Đã nghiệm thu</th><th style="min-width:150px">Đã giải ngân</th><th>Nghiệm thu gần nhất</th></tr></thead><tbody>'
+ +ks.map(k=>{const g=GN[k];return '<tr><td><a href="#" onclick="openDT(\''+esc(k)+'\');return false"><b>'+esc(k)+'</b></a></td><td>'+esc(ten(k))+'</td><td>'+esc(T(k).cn||'')+'</td><td>'+esc(T(k).bp||'')+'</td><td style="text-align:right">'+fT(KP_TONG[k])+'</td><td>'+thanhTD(g.pctNT,'#2e9d5e')+'<div style="font-size:12px">'+fT(g.daNT)+' trđ · <b>'+g.pctNT+'%</b></div></td><td>'+thanhTD(g.pctChi,'#2f6fd6')+'<div style="font-size:12px">'+fT(g.daChi)+' trđ · <b>'+fT(g.pctChi)+'%</b></div></td><td>'+esc(g.ntCuoi||'')+'</td></tr>'}).join('')+'</tbody></table></div>'};
+VIEWS.gn=function(){return '<h2 class="pg">Tổng hợp nghiệm thu</h2>'+VIEWS._dashCu().replace(/^<h2[^>]*>.*?<\/h2>/,'')+'<h2 class="pg" style="margin-top:26px">Nghiệm thu &amp; giải ngân</h2>'+VIEWS._gnCu().replace(/^<h2[^>]*>.*?<\/h2>/,'')};
 VIEWS.tt=function(){return '<div class="lc" id="ttBox"></div>'};
 VIEWS.cp=function(){
  if(!CP){if(!CP_LOI)setTimeout(napCP,0);return '<h2 class="pg">Theo dõi chi phí đề tài</h2><div class="note">'+esc(CP_LOI||'Đang tải dữ liệu…')+' <button class="btn sm lbtn" onclick="napCP()">↻ Tải lại</button></div>'}
