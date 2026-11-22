@@ -839,7 +839,9 @@ function dnntLayout(X,d){const e=x=>esc(x||'');const dvH=X.dvH;
  +row('9.','<p><b>Cam kết của chủ nhiệm nhiệm vụ:</b></p>'+X.cam)
  +row('10.','<p><b>Kiến nghị</b></p><p>Kính đề nghị Viện cho nghiệm thu khối lượng công việc đã thực hiện.</p>')
  +'</table><p>&nbsp;</p><table><tr>'+[['CHỦ NHIỆM ĐỀ TÀI',X.cnKy],[dvH,''],['PHÒNG KHCN',''],['DUYỆT VIỆN','']].map(x=>'<td class="c" style="width:25%"><p style="font-size:12pt"><b>'+x[0]+'</b></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p><b>'+x[1]+'</b></p></td>').join('')+'</tr></table></div>'}
-const dvHoa=dv=>String(dv||'').trim().replace(/^TT\s*/i,'TRUNG TÂM ').replace(/^Phòng\s*/i,'PHÒNG ').toUpperCase();
+const DV_TEN={'T1':'Trung tâm Nghiên cứu Phát triển Cơ khí','T2':'Trung tâm Thử nghiệm Kiểm định Công nghiệp','T3':'Trung tâm Chế tạo máy mỏ','T4':'Trung tâm Thiết bị Điện - Tuyển khoáng','T5':'Trung tâm Tự động hóa và Công nghệ thông tin','KHCN':'Phòng Quản lý, nghiên cứu KHCN và phát triển thị trường'};
+const dvTen=dv=>{const t=String(dv||'').trim(),m=t.match(/^(?:TT|Trung tâm)\s*(T\d)$/i)||t.match(/^Phòng\s*(KHCN)$/i);return m&&DV_TEN[m[1].toUpperCase()]||t};
+const dvHoa=dv=>dvTen(dv).replace(/^TT\s*/i,'TRUNG TÂM ').replace(/^Phòng\s*/i,'PHÒNG ').toUpperCase();
 function dnntFormHTML(k){const x=DT0.find(y=>y.sdk===k)||{};const capQL=/Công Thương/.test(x.cap||'')?'Bộ Công Thương':'Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam';
  const I=(n,w,ph,ro)=>'<input name="'+n+'" class="fi" style="width:'+w+'"'+(ph?' placeholder="'+ph+'"':'')+(ro?' readonly':'')+'>';
  const T=(n,r,ph)=>'<textarea name="'+n+'" class="fta" rows="'+r+'"'+(ph?' placeholder="'+ph+'"':'')+'></textarea>';
