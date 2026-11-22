@@ -728,6 +728,7 @@ VIEWS.dash=function(){const nam=kyNT().slice(0,4);let ks=Object.keys(GN).filter(
  return '<h2 class="pg">Tổng quan nhiệm vụ KH&amp;CN 2023 – '+nam+'</h2><div class="muted" style="color:var(--lmut);font-size:13px;margin:-6px 0 12px">Thời điểm cập nhật: '+GN_LUC+'</div>'
  +'<div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">'
  +kpi('Tổng số đề tài',ka.length,'đề tài',ns.map(n=>nhanNam(n)+': '+soNam[n]).join(' · '))
+ +(()=>{const th=ks.concat(kc.filter(k=>['03NT/22','09NT/22'].includes(k)));const dang=th.filter(k=>!/NT cấp TKV|nghiệm thu cấp TKV|Hoàn thành|quyết toán/i.test(ttOf(k).replace(/chờ (NT|nghiệm thu) cấp TKV/i,'')));return kpi('Đề tài thực hiện năm '+nam,th.length,'đề tài',th.join(', '))+kpi('Đề tài đang thực hiện',dang.length,'đề tài',dang.join(', '),'#2f6fd6')})()
  +kpi('Tổng kinh phí các đề tài',fT(tongAll),'trđ',ks.length+' đề tài đang theo dõi chi phí: '+fT(tong)+' (Quỹ TKV '+fT(ng[0])+', đối ứng '+fT(ng[1])+')')
  +kpi('Lũy kế đã nghiệm thu',fT(daNT),'trđ',Math.round(daNT/tong*100)+'% kinh phí '+ks.length+' đề tài đang theo dõi','#2e9d5e')
  +kpi('Chi phí đã nghiệm thu',fT(daChi),'trđ',Math.round(daChi/tong*100)+'% kinh phí '+ks.length+' đề tài','#2f6fd6')
