@@ -270,11 +270,18 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
 <div id="modal" class="hide" onclick="if(event.target===this)closeM()"><div class="box" id="mbox"></div></div>
 
 <div id="lhNoi" style="position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;flex-direction:column;gap:10px">
+ <a href="#" id="aiNut" class="hide" onclick="aiMo();return false" title="Hỏi trợ lý AI" style="width:54px;height:54px;border-radius:50%;background:#6b4fd8;color:#fff;display:flex;align-items:center;justify-content:center;font:800 15px system-ui;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35)">AI</a>
  <a href="https://zalo.me/0983352271" target="_blank" rel="noopener" title="Nhắn Zalo 0983 352 271" style="width:54px;height:54px;border-radius:50%;background:#0068ff;color:#fff;display:flex;align-items:center;justify-content:center;font:800 14px system-ui;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35)">Zalo</a>
  <a href="tel:0983352271" title="Gọi 0983 352 271" style="width:54px;height:54px;border-radius:50%;background:#2e9d5e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35);animation:lhRung 2s infinite">📞</a>
  <a href="mailto:p5qlkhcn@gmail.com" title="Email p5qlkhcn@gmail.com" style="width:54px;height:54px;border-radius:50%;background:#e08a1e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35)">✉️</a>
 </div>
-<style>@keyframes lhRung{0%,100%{transform:rotate(0)}5%,15%{transform:rotate(-15deg)}10%,20%{transform:rotate(15deg)}25%{transform:rotate(0)}}@media print{#lhNoi{display:none}}</style>
+<div id="aiHop" class="hide" style="position:fixed;right:84px;bottom:18px;z-index:9999;width:min(380px,calc(100vw - 100px));height:min(540px,calc(100vh - 40px));background:#fff;color:#1c2733;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.4);display:flex;flex-direction:column;overflow:hidden;font:14px/1.5 system-ui">
+ <div style="background:#6b4fd8;color:#fff;padding:11px 14px;display:flex;align-items:center;gap:8px"><b style="flex:1">Trợ lý AI – Phòng KH&amp;CN</b><a href="#" onclick="aiXoa();return false" style="color:#fff;font-size:12px;opacity:.85">Xóa</a><a href="#" onclick="aiMo();return false" style="color:#fff;font-size:20px;text-decoration:none;line-height:1">×</a></div>
+ <div id="aiTin" style="flex:1;overflow:auto;padding:12px;background:#f4f5f9"></div>
+ <div style="display:flex;gap:6px;padding:9px;border-top:1px solid #e3e6ec"><textarea id="aiO" rows="1" maxlength="600" placeholder="Nhập câu hỏi…" style="flex:1;resize:none;border:1px solid #cfd5df;border-radius:9px;padding:8px 10px;font:inherit;color:#1c2733;background:#fff" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();aiGui()}"></textarea><button id="aiB" onclick="aiGui()" style="border:0;border-radius:9px;background:#6b4fd8;color:#fff;padding:0 14px;font:600 14px system-ui;cursor:pointer">Gửi</button></div>
+ <div style="font-size:11px;color:#7a8594;padding:0 10px 7px">AI có thể trả lời chưa chính xác. Việc quan trọng xin liên hệ 0983 352 271.</div>
+</div>
+<style>#aiHop.hide{display:none!important}@keyframes lhRung{0%,100%{transform:rotate(0)}5%,15%{transform:rotate(-15deg)}10%,20%{transform:rotate(15deg)}25%{transform:rotate(0)}}@media print{#lhNoi{display:none}}</style>
 
 <script>
 /* ---------- data ---------- */
@@ -859,6 +866,25 @@ async function cpXuat(ds){let EJ;try{EJ=await cpExcelJS()}catch(e){openM('<h3 st
  const buf=await wb.xlsx.writeBuffer();const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}));
  a.download='Theo-doi-chi-phi_'+(ds.length===1?ds[0].replace('/',''):'tat-ca')+'_'+new Date().toISOString().slice(0,10).replace(/-/g,'')+'.xlsx';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);addLog('Xuất Excel chi phí: '+ds.join(', '))}
 /* Số liệu giải ngân tổng hợp trực tiếp từ dữ liệu chi phí trên web (?gn=1); khoản không có ngày tạm tính vào tháng chi cuối */
+/* ---------- Trợ lý AI ---------- */
+let AI_LS=[],AI_BAN=false;
+function aiWtk(){try{const w=JSON.parse(localStorage.getItem('khcn_wtk')||'null');return w&&w.u===USER&&w.han>Date.now()?w.tk:''}catch(e){return ''}}
+function aiCtx(){try{const m=ME();if(!m||ROLE()<1)return '';const xem=k=>ROLE()!==4||myDT().includes(k);const L=['Người hỏi: '+m.ten+' ('+(m.cv||ROLES[m.role]||'')+')','Kỳ nghiệm thu: tháng '+mmyy(kyNT())];
+ Object.keys(GN).filter(k=>KP_TONG[k]&&xem(k)).forEach(k=>{const g=GN[k],t=DT0.find(x=>x.sdk===k)||{};L.push(k+' | '+(t.ngan||'')+' | CNĐT '+(t.cn||'')+' | '+(t.bp||'')+' | tổng KP '+KP_TONG[k]+' | đã nghiệm thu '+g.daNT+' ('+g.pctNT+'%) | chi phí đã nghiệm thu '+g.daChi+' ('+g.pctChi+'%) | nghiệm thu gần nhất '+(g.ntCuoi||'chưa'))});
+ DT_CU.filter(x=>xem(x.sdk)).forEach(x=>{const t=dtTT(x.sdk);L.push(x.sdk+' | '+(t.ngan||'')+' | CNĐT '+(t.cn||'')+' | năm '+x.nam+' | KP '+x.kp+' | thời gian '+(t.tg||'')+' | tình trạng: '+String(x.tt||t.tt||'').split('. Chủ nhiệm')[0])});
+ return L.join('\n')}catch(e){return ''}}
+function aiVe(){const b=$('aiTin');if(!b)return;const fm=t=>esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');
+ b.innerHTML='<div style="background:#fff;border-radius:10px;padding:8px 11px;margin-bottom:8px;max-width:88%">Em là trợ lý AI của Phòng KH&amp;CN. Anh/chị cần hỏi gì về nộp nghiệm thu, tra cứu hồ sơ, lập hồ sơ thanh toán…?</div>'
+ +AI_LS.map(m=>m.r==='u'?'<div style="background:#6b4fd8;color:#fff;border-radius:10px;padding:8px 11px;margin:0 0 8px auto;max-width:88%;width:fit-content">'+fm(m.t)+'</div>':'<div style="background:#fff;border-radius:10px;padding:8px 11px;margin-bottom:8px;max-width:88%;width:fit-content'+(m.loi?';color:#c0392b':'')+'">'+fm(m.t)+'</div>').join('')
+ +(AI_BAN?'<div style="color:#7a8594;font-size:13px;padding:2px 6px">Đang trả lời…</div>':'');b.scrollTop=b.scrollHeight}
+function aiMo(){const h=$('aiHop');h.classList.toggle('hide');if(!h.classList.contains('hide')){aiVe();$('aiO').focus()}}
+function aiXoa(){AI_LS=[];aiVe()}
+async function aiGui(){const o=$('aiO'),q=o.value.trim();if(!q||AI_BAN)return;const ls=AI_LS.filter(m=>!m.loi).slice(-8).map(m=>({r:m.r,t:m.t}));AI_LS.push({r:'u',t:q});o.value='';AI_BAN=true;$('aiB').disabled=true;aiVe();
+ try{const w=aiWtk();const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ai',hoi:q,ls,wtk:w,ctx:w?aiCtx():''})}).then(r=>r.json());
+  if(r&&r.ok)AI_LS.push({r:'a',t:r.tl});else AI_LS.push({r:'a',t:(r&&r.err)||'Không trả lời được, anh/chị thử lại.',loi:1})}
+ catch(e){AI_LS.push({r:'a',t:'Không kết nối được máy chủ, anh/chị thử lại.',loi:1})}
+ AI_BAN=false;$('aiB').disabled=false;aiVe();$('aiO').focus()}
+function napAI(){if(!NT_API)return;fetch(NT_API+'?ai=1').then(r=>r.json()).then(r=>{if(r&&r.ok&&r.co===true)$('aiNut').classList.remove('hide')}).catch(()=>{})}
 function napGN(){if(!NT_API)return;fetch(NT_API+'?gn=1').then(r=>r.json()).then(r=>{if(!r.ok||!r.gn)return;let doi=false;
  Object.entries(r.gn).forEach(([sdk,x])=>{if(!GN[sdk])return;const th={};Object.entries(x.thang||{}).forEach(([m,v])=>{if(m>='2025-01')th[m]=Math.round(v/1e4)/100});
   const ms=Object.keys(th).sort();const cuoi=ms[ms.length-1];const kn=Math.round(((x.khongNgay||0)+Object.entries(x.thang||{}).filter(([m])=>m<'2025-01').reduce((a,[,v])=>a+v,0))/1e4)/100;if(kn>0.5&&cuoi)th[cuoi]=Math.round((th[cuoi]+kn)*100)/100;
@@ -1050,7 +1076,7 @@ function ttDuyet(id,ok){const tk=tkQT();if(!tk){dangNhapQT(()=>ttDuyet(id,ok));r
 /* ---------- start ---------- */
 $('qHome').placeholder='VD: 01NT/26-T'+thisMonth().slice(5,7)+' (thử mẫu: 99NT/26-T'+thisMonth().slice(5,7)+')';
 const h0=(location.hash||'').slice(1);
-napDT();napNT();napGN();
+napDT();napNT();napGN();napAI();
 if(h0.startsWith('noibo')){CUR=h0.split('-')[1]||'dash';go('app')}else go(['phieu','tracuu','login'].includes(h0)?h0:'home');
 </script>
 </body>
