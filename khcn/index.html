@@ -725,7 +725,7 @@ VIEWS.dash=function(){const nam=kyNT().slice(0,4);let ks=Object.keys(GN).filter(
  const ng=[0,0];ks.forEach(k=>{const x=KP_NG[k]||[KP_TONG[k],0];ng[0]+=x[0];ng[1]+=x[1]});
  const tp={};ks.forEach(k=>Object.entries(KP_TP[k]||{}).forEach(([a,v])=>{tp[a]=(tp[a]||0)+v}));const thuTu=['Tiền công','Đóng góp theo lương','Thuê chuyên gia','Nguyên vật liệu','Thiết bị, máy móc','Chi khác'];
  const nhanNam=n=>n==='2022'?'2022 (03, 09NT/22)':n;
- return '<h2 class="pg">Tổng quan nhiệm vụ KH&amp;CN 2023 – '+nam+'</h2><div class="muted" style="color:var(--lmut);font-size:13px;margin:-6px 0 12px">Đề tài các năm 2023–'+nam+' và 03NT/22, 09NT/22 · nghiệm thu đến kỳ tháng '+mmyy(kyNT())+' · thời gian cập nhật kinh phí: '+GN_LUC+' · đơn vị: triệu đồng</div>'
+ return '<h2 class="pg">Tổng quan nhiệm vụ KH&amp;CN 2023 – '+nam+'</h2><div class="muted" style="color:var(--lmut);font-size:13px;margin:-6px 0 12px">Thời điểm cập nhật: '+GN_LUC+'</div>'
  +'<div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">'
  +kpi('Tổng số đề tài',ka.length,'đề tài',ns.map(n=>nhanNam(n)+': '+soNam[n]).join(' · '))
  +kpi('Tổng kinh phí các đề tài',fT(tongAll),'trđ',ks.length+' đề tài đang theo dõi chi phí: '+fT(tong)+' (Quỹ TKV '+fT(ng[0])+', đối ứng '+fT(ng[1])+')')
