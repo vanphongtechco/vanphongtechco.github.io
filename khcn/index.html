@@ -867,24 +867,27 @@ async function cpXuat(ds){let EJ;try{EJ=await cpExcelJS()}catch(e){openM('<h3 st
  a.download='Theo-doi-chi-phi_'+(ds.length===1?ds[0].replace('/',''):'tat-ca')+'_'+new Date().toISOString().slice(0,10).replace(/-/g,'')+'.xlsx';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);addLog('Xuất Excel chi phí: '+ds.join(', '))}
 /* Số liệu giải ngân tổng hợp trực tiếp từ dữ liệu chi phí trên web (?gn=1); khoản không có ngày tạm tính vào tháng chi cuối */
 /* ---------- Trợ lý AI ---------- */
-let AI_LS=[],AI_BAN=false;
+let AI_LS=[],AI_BAN=false,AI_CUA=null;
+const aiKhoa=()=>'khcn_ai_'+(USER||'khach');
+function aiNap(){const k=aiKhoa();if(AI_CUA===k)return;AI_CUA=k;try{AI_LS=JSON.parse(localStorage.getItem(k)||'[]')||[]}catch(e){AI_LS=[]}}
+function aiLuu(){try{localStorage.setItem(aiKhoa(),JSON.stringify(AI_LS.filter(m=>!m.loi).slice(-80)))}catch(e){}}
 function aiWtk(){try{const w=JSON.parse(localStorage.getItem('khcn_wtk')||'null');return w&&w.u===USER&&w.han>Date.now()?w.tk:''}catch(e){return ''}}
 function aiCtx(){try{const m=ME();if(!m||ROLE()<1)return '';const xem=k=>ROLE()!==4||myDT().includes(k);const L=['Người hỏi: '+m.ten+' ('+(m.cv||ROLES[m.role]||'')+')','Kỳ nghiệm thu: tháng '+mmyy(kyNT())];
  Object.keys(GN).filter(k=>KP_TONG[k]&&xem(k)).forEach(k=>{const g=GN[k],t=DT0.find(x=>x.sdk===k)||{};L.push(k+' | '+(t.ngan||'')+' | CNĐT '+(t.cn||'')+' | '+(t.bp||'')+' | tổng KP '+KP_TONG[k]+' | đã nghiệm thu '+g.daNT+' ('+g.pctNT+'%) | chi phí đã nghiệm thu '+g.daChi+' ('+g.pctChi+'%) | nghiệm thu gần nhất '+(g.ntCuoi||'chưa'))});
  DT_CU.filter(x=>xem(x.sdk)).forEach(x=>{const t=dtTT(x.sdk);L.push(x.sdk+' | '+(t.ngan||'')+' | CNĐT '+(t.cn||'')+' | năm '+x.nam+' | KP '+x.kp+' | thời gian '+(t.tg||'')+' | tình trạng: '+String(x.tt||t.tt||'').split('. Chủ nhiệm')[0])});
  return L.join('\n')}catch(e){return ''}}
-function aiDM(){try{const L=[];DT0.forEach(t=>L.push(t.sdk+' | '+(t.ten||t.ngan||'')+' | CNĐT '+(t.cn||'')+' | '+(t.bp||'')+' | '+(t.tg||'')+' | '+String(t.tt||'Đang thực hiện').split('. Chủ nhiệm')[0]));DT_CU.forEach(x=>{if(DT0.some(t=>t.sdk===x.sdk))return;L.push(x.sdk+' | '+(x.ten||x.ngan||'')+' | CNĐT '+(x.cn||'')+' | '+(x.cap||'')+' | '+(x.tg||'')+' | '+(x.tt||''))});return L.join('\n')}catch(e){return ''}}
+function aiDM(){try{const L=[];DT0.forEach(t=>L.push(t.sdk+' | '+(t.ngan||t.ten||'')+' | CNĐT '+(t.cn||'')+' | '+(t.bp||'')+' | '+(t.tg||'')+' | '+String(t.tt||'Đang thực hiện').split('. Chủ nhiệm')[0]));DT_CU.forEach(x=>{if(DT0.some(t=>t.sdk===x.sdk))return;L.push(x.sdk+' | '+(x.ngan||x.ten||'')+' | CNĐT '+(x.cn||'')+' | '+(x.cap||'')+' | '+(x.tg||'')+' | '+(x.tt||''))});return L.join('\n')}catch(e){return ''}}
 function aiVe(){const b=$('aiTin');if(!b)return;const fm=t=>esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');
  b.innerHTML='<div style="background:#fff;border-radius:10px;padding:8px 11px;margin-bottom:8px;max-width:88%">Em là trợ lý AI của Phòng KH&amp;CN. Anh/chị cần hỏi gì về nộp nghiệm thu, tra cứu hồ sơ, lập hồ sơ thanh toán…?</div>'
  +AI_LS.map(m=>m.r==='u'?'<div style="background:#6b4fd8;color:#fff;border-radius:10px;padding:8px 11px;margin:0 0 8px auto;max-width:88%;width:fit-content">'+fm(m.t)+'</div>':'<div style="background:#fff;border-radius:10px;padding:8px 11px;margin-bottom:8px;max-width:88%;width:fit-content'+(m.loi?';color:#c0392b':'')+'">'+fm(m.t)+'</div>').join('')
  +(AI_BAN?'<div style="color:#7a8594;font-size:13px;padding:2px 6px">Đang trả lời…</div>':'');b.scrollTop=b.scrollHeight}
-function aiMo(){const h=$('aiHop');h.classList.toggle('hide');if(!h.classList.contains('hide')){aiVe();$('aiO').focus()}}
-function aiXoa(){AI_LS=[];aiVe()}
-async function aiGui(){const o=$('aiO'),q=o.value.trim();if(!q||AI_BAN)return;const ls=AI_LS.filter(m=>!m.loi).slice(-8).map(m=>({r:m.r,t:m.t}));AI_LS.push({r:'u',t:q});o.value='';AI_BAN=true;$('aiB').disabled=true;aiVe();
+function aiMo(){const h=$('aiHop');h.classList.toggle('hide');if(!h.classList.contains('hide')){aiNap();aiVe();$('aiO').focus()}}
+function aiXoa(){if(AI_LS.length&&!confirm('Xóa toàn bộ lịch sử chat của tài khoản này trên máy này?'))return;AI_LS=[];aiLuu();aiVe()}
+async function aiGui(){const o=$('aiO'),q=o.value.trim();if(!q||AI_BAN)return;aiNap();const ls=AI_LS.filter(m=>!m.loi).slice(-8).map(m=>({r:m.r,t:m.t}));AI_LS.push({r:'u',t:q,g:Date.now()});o.value='';AI_BAN=true;$('aiB').disabled=true;aiVe();
  try{const w=aiWtk();const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ai',hoi:q,ls,wtk:w,ctx:w?aiCtx():'',dm:w?'':aiDM()})}).then(r=>r.json());
   if(r&&r.ok)AI_LS.push({r:'a',t:r.tl+(!w&&USER&&ROLE()>=1?'\n\n(Anh/chị đang đăng nhập theo phiên cũ nên em chưa xem được số liệu và kho tài liệu. Bấm Đăng xuất rồi đăng nhập lại để hỏi chi tiết.)':'')});else AI_LS.push({r:'a',t:(r&&r.err)||'Không trả lời được, anh/chị thử lại.',loi:1})}
  catch(e){AI_LS.push({r:'a',t:'Không kết nối được máy chủ, anh/chị thử lại.',loi:1})}
- AI_BAN=false;$('aiB').disabled=false;aiVe();$('aiO').focus()}
+ AI_BAN=false;$('aiB').disabled=false;aiLuu();aiVe();$('aiO').focus()}
 function napAI(){if(!NT_API)return;fetch(NT_API+'?ai=1').then(r=>r.json()).then(r=>{if(r&&r.ok&&r.co===true)$('aiNut').classList.remove('hide')}).catch(()=>{})}
 function napGN(){if(!NT_API)return;fetch(NT_API+'?gn=1').then(r=>r.json()).then(r=>{if(!r.ok||!r.gn)return;let doi=false;
  Object.entries(r.gn).forEach(([sdk,x])=>{if(!GN[sdk])return;const th={};Object.entries(x.thang||{}).forEach(([m,v])=>{if(m>='2025-01')th[m]=Math.round(v/1e4)/100});
