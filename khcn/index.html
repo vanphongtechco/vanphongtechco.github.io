@@ -362,7 +362,7 @@ function formBody(t){
  <div class="ln">2. Số đăng ký *: <input name="sdk" list="dsSDK" placeholder="VD: 02NT/26" style="max-width:170px" onchange="dienDT(this)"><datalist id="dsSDK"></datalist> 3. Chủ nhiệm đề tài *: <input name="cn"></div>
  <div class="ln">4. Đơn vị (Trung tâm, Phòng) *: <input name="donvi"> 5. Kinh phí (trđ) *: <input name="kp" style="max-width:110px"></div>
  <div class="ln">6. Thời gian bắt đầu (tháng/năm) *: <input name="bd" placeholder="03/2026" style="max-width:110px"> 7. Thời gian kết thúc *: <input name="kt" placeholder="12/2026" style="max-width:110px"></div>
- <div class="ln">8. Tháng nghiệm thu *: <input name="thang" type="month" style="max-width:180px"></div>
+ <div class="ln">8. Tháng nghiệm thu *: <input name="thang" type="text" placeholder="mm/yyyy" style="max-width:110px"></div>
  <h4>Kết quả thực hiện</h4>
  <div class="ln" style="display:block">9. Các nội dung công việc đã hoàn thành (từ đầu đến thời điểm báo cáo) *:<textarea name="ht"></textarea></div>
  <div class="ln" style="display:block">10. Các nội dung công việc đã thực hiện trong tháng *:<textarea name="trongthang"></textarea></div>
@@ -376,7 +376,7 @@ function formBody(t){
  <h4>Tài liệu đính kèm *</h4>
  <div class="muted" style="font-size:13px">Báo cáo tiến độ, bảng chia lương… Tệp được tự đặt tên mở đầu bằng số đăng ký, VD: <i>03NT22 - Báo cáo tiến độ tháng 02.2025</i>.</div>
  <div class="ln fileln">Tệp: <input type="file" name="files" multiple></div>`;
- if(t==='td')return top3+`<div class="ln">Kỳ báo cáo: <input name="ky" type="month" style="max-width:180px"> Thời gian thực hiện: <input name="tg" placeholder="từ … đến …"></div>
+ if(t==='td')return top3+`<div class="ln">Kỳ báo cáo: <input name="ky" type="text" placeholder="mm/yyyy" style="max-width:110px"> Thời gian thực hiện: <input name="tg" placeholder="từ … đến …"></div>
  <h4>2. Tình hình thực hiện</h4>
  <div class="ln">Khối lượng hoàn thành (ước %): <input name="pct" style="max-width:80px"> Đánh giá: <select name="dg"><option>Đúng tiến độ</option><option>Chậm tiến độ</option><option>Vượt tiến độ</option></select></div>
  <div class="ln" style="display:block">Các nội dung đã thực hiện trong kỳ:<textarea name="nd"></textarea></div>
@@ -396,15 +396,20 @@ function formBody(t){
  <div class="ln">Đơn vị ứng dụng: <input name="udung"> Thời gian (tháng): <input name="tgth" style="max-width:60px"> Kinh phí dự kiến (trđ): <input name="kpdk" style="max-width:100px"></div>
  <div class="ln fileln">Tệp đính kèm: <input type="file" name="files" multiple></div>`}
 function paperHTML(t,code,h){const labSt=h?ST[h.st]:'';const last=h&&h.hist.length?h.hist[h.hist.length-1]:null;
- return hdr+`<div class="ln" style="justify-content:space-between;margin-top:8px"><span>Mã hồ sơ: <b>${esc(code||'(theo số đăng ký, cấp khi gửi)')}</b></span><span>Ngày lập: <input type="date" name="ngay"></span></div>
+ return hdr+`<div class="ln" style="justify-content:space-between;margin-top:8px"><span>Mã hồ sơ: <b>${esc(code||'(theo số đăng ký, cấp khi gửi)')}</b></span><span>Ngày lập: <input type="text" name="ngay" placeholder="dd/mm/yyyy" style="max-width:120px"></span></div>
  <h2>${TY[t].t}</h2>${formBody(t)}
  <div class="lab"><b>PHẦN DÀNH CHO PHÒNG KH&amp;CN</b>
   <div class="ln">Ngày tiếp nhận: <input disabled value="${h&&h.st>0?esc(h.hist[1]?h.hist[1][0]:''):''}"> Trạng thái: <input disabled value="${esc(labSt)}"></div>
   <div class="ln">Ý kiến: <input disabled value="${last&&h.st>0?esc(last[2]):''}"></div></div>
  <div class="sign"><div><b>PHÒNG KH&amp;CN</b><i>(Ký, ghi rõ họ tên)</i></div><div><b>${t==='dx'?'NGƯỜI ĐỀ XUẤT':'CHỦ NHIỆM NHIỆM VỤ'}</b><i>(Ký, ghi rõ họ tên)</i></div></div>`}
-function renderForm(t,target){const f=target||$('paper');f.innerHTML=paperHTML(t);f.querySelector('[name=ngay]').value=now().slice(0,10)}
-function readForm(f){const o={};f.querySelectorAll('input,select,textarea').forEach(e=>{if(!e.name||e.type==='file')return;o[e.name]=e.type==='checkbox'?e.checked:e.value});return o}
-function fillForm(f,o){f.querySelectorAll('input,select,textarea').forEach(e=>{if(!e.name||!(e.name in o)||e.type==='file')return;if(e.type==='checkbox')e.checked=!!o[e.name];else e.value=o[e.name]})}
+function renderForm(t,target){const f=target||$('paper');f.innerHTML=paperHTML(t);f.querySelector('[name=ngay]').value=fmD(now().slice(0,10))}
+const fmD=v=>/^\d{4}-\d{2}-\d{2}$/.test(v||'')?v.slice(8)+'/'+v.slice(5,7)+'/'+v.slice(0,4):(v||'');
+const fmM=v=>/^\d{4}-\d{2}$/.test(v||'')?v.slice(5)+'/'+v.slice(0,4):(v||'');
+const isoD=v=>{const m=String(v||'').trim().match(/^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4})$/);return m?m[3]+'-'+m[2].padStart(2,'0')+'-'+m[1].padStart(2,'0'):String(v||'').trim()};
+const isoM=v=>{const m=String(v||'').trim().match(/^(\d{1,2})[\/.-](\d{4})$/);return m?m[2]+'-'+m[1].padStart(2,'0'):String(v||'').trim()};
+const DNAME={ngay:1},MNAME={thang:1,ky:1};
+function readForm(f){const o={};f.querySelectorAll('input,select,textarea').forEach(e=>{if(!e.name||e.type==='file')return;o[e.name]=e.type==='checkbox'?e.checked:DNAME[e.name]?isoD(e.value):MNAME[e.name]?isoM(e.value):e.value});return o}
+function fillForm(f,o){f.querySelectorAll('input,select,textarea').forEach(e=>{if(!e.name||!(e.name in o)||e.type==='file')return;if(e.type==='checkbox')e.checked=!!o[e.name];else e.value=DNAME[e.name]?fmD(o[e.name]):MNAME[e.name]?fmM(o[e.name]):o[e.name]})}
 function makeHS(f,t,src){const d=readForm(f);if(!(d.cn||'').trim()||!(d.ten||'').trim())return {err:'Cần điền ít nhất <b>Tên nhiệm vụ</b> và <b>'+(t==='dx'?'Người đề xuất':'Chủ nhiệm')+'</b>.'};
  const fl=f.querySelector('[name=files]');const files=fl?[...fl.files].map(x=>x.name):[];
  const sdk=(d.sdk||'').trim().toUpperCase().replace(/\s+/g,'');if(t!=='dx'&&!sdk)return {err:'Cần điền <b>Số đăng ký</b> của đề tài (VD: 01NT/26) – mã hồ sơ đặt theo số đăng ký.'};d.sdk=sdk;
@@ -592,7 +597,7 @@ ky(){return '<h2 class="pg">Trình ký hồ sơ</h2><div class="note">Ký duyệ
  +(DB.sign.length?DB.sign.map((s,i)=>{const done=s.steps.every(x=>x.ok===true),rej=s.steps.some(x=>x.ok===false);const cur=s.steps.findIndex(x=>x.ok==null);
  return '<div class="lc"><div class="flex" style="justify-content:space-between"><b>'+esc(s.ten)+'</b><span class="pill '+(done?'s3':rej?'s4':'s1')+'">'+(done?'HOÀN TẤT':rej?'TỪ CHỐI':'ĐANG XỬ LÝ')+'</span></div><div style="font-size:13px;color:var(--lmut)">'+esc(s.loai)+(s.hs?' · Hồ sơ '+esc(s.hs):'')+' · Tạo '+esc(s.ngay)+'</div><ol style="margin:8px 0 0;padding-left:20px;font-size:13.5px">'+s.steps.map((x,j)=>'<li>'+esc(x.n)+' — '+(x.ok===true?'✔ đã ký '+esc(x.t):x.ok===false?'✖ từ chối '+esc(x.t):j===cur?'<b>đến lượt</b> <button class="btn sm pri" onclick="signStep('+i+','+j+',true)">Ký</button> <button class="btn sm red" onclick="signStep('+i+','+j+',false)">Từ chối</button>':'chờ')+'</li>').join('')+'</ol></div>'}).join(''):'<div class="lc">Chưa có luồng ký.</div>')},
 cv(){return '<h2 class="pg">Soạn công văn</h2><div class="g2"><div class="lc"><h3>Thông tin</h3>'
- +[['cvNgay','Ngày','',now().slice(0,10),'date'],['cvTY','Trích yếu (V/v)','VD: Phối hợp bảo dưỡng thiết bị'],['cvKG','Kính gửi','Tên đơn vị nhận; nhiều đơn vị ngăn cách bằng ;']].map(x=>'<label class="fl">'+x[1]+'</label><input class="lin" id="'+x[0]+'" placeholder="'+x[2]+'" value="'+(x[3]||'')+'" type="'+(x[4]||'text')+'" oninput="cvPrev()">').join('')
+ +[['cvNgay','Ngày (dd/mm/yyyy)','dd/mm/yyyy',fmD(now().slice(0,10)),'text'],['cvTY','Trích yếu (V/v)','VD: Phối hợp bảo dưỡng thiết bị'],['cvKG','Kính gửi','Tên đơn vị nhận; nhiều đơn vị ngăn cách bằng ;']].map(x=>'<label class="fl">'+x[1]+'</label><input class="lin" id="'+x[0]+'" placeholder="'+x[2]+'" value="'+(x[3]||'')+'" type="'+(x[4]||'text')+'" oninput="cvPrev()">').join('')
  +'<label class="fl">Người ký</label><select class="lin" id="cvNK" onchange="cvPrev()">'+CV_KY.map((x,k)=>'<option value="'+k+'"'+(k===1?' selected':'')+'>'+x[0]+'</option>').join('')+'</select><label class="fl">Nội dung (mỗi đoạn một dòng)</label><textarea class="lin" id="cvND" rows="8" oninput="cvPrev()"></textarea><label class="fl">Nơi nhận</label><textarea class="lin" id="cvNN" rows="3" oninput="cvPrev()">- Như Kính gửi;\n- Lãnh đạo Viện (để b/c);\n- Lưu: VP, KHCN, Phòng (Trung tâm).</textarea><div class="flex" style="margin-top:10px"><button class="btn sm pri" onclick="cvDoc()">⬇ Xuất .doc</button><button class="btn sm lbtn" onclick="doPrint(\'cvP\')">🖨 In / PDF</button></div></div><div class="paper" id="cvP" style="padding:40px 40px 40px 60px;background:#fff"></div></div>'},
 dnnt(){const ds=ctDS();setTimeout(dnntMo,0);
  return '<h2 class="pg">Lập đề nghị nghiệm thu</h2><div class="lc" style="margin-bottom:12px"><div class="flex" style="gap:10px;flex-wrap:wrap;align-items:center">'+(ds.length>1?'<label class="fl" style="margin:0">Đề tài</label><select class="lin" id="dnDT" style="max-width:520px" onchange="dnntMo()">'+ds.map(k=>'<option value="'+k+'">'+k+' – '+esc((DT0.find(x=>x.sdk===k)||{}).ngan||'')+'</option>').join('')+'</select>':'<input type="hidden" id="dnDT" value="'+(ds[0]||'')+'"><b>Đề tài '+esc(ds[0]||'')+'</b>')
@@ -601,7 +606,7 @@ ctac(){const ds=ctDS();const n=new Date();const nx=new Date(n.getFullYear(),n.ge
  const inp=(id,lb,ph,v,t)=>'<label class="fl">'+lb+'</label><input class="lin" id="'+id+'" placeholder="'+(ph||'')+'" value="'+(v==null?'':v)+'" type="'+(t||'text')+'" oninput="ctPrev()">';
  setTimeout(ctChonDT,0);
  return '<h2 class="pg">Tạo tờ trình đi công tác</h2><div class="g2"><div class="lc"><h3>Thông tin</h3><label class="fl">Đề tài</label><select class="lin" id="ctDT" onchange="ctChonDT()">'+ds.map(k=>'<option value="'+k+'">'+k+' – '+esc((DT0.find(x=>x.sdk===k)||{}).ngan||'')+'</option>').join('')+'</select>'
- +inp('ctNgay','Ngày lập','',now().slice(0,10),'date')+inp('ctThang','Tháng công tác','',thang,'month')
+ +inp('ctNgay','Ngày lập (dd/mm/yyyy)','dd/mm/yyyy',fmD(now().slice(0,10)),'text')+inp('ctThang','Tháng công tác (mm/yyyy)','mm/yyyy',fmM(thang),'text')
  +'<label class="fl">Địa điểm công tác (nhiều nơi ngăn cách bằng ;)</label><textarea class="lin" id="ctDD" rows="2" oninput="ctPrev()" placeholder="VD: Công ty Than Khe Chàm - TKV; Công ty CP Than Mông Dương - Vinacomin"></textarea>'
  +'<label class="fl">Nội dung công việc</label><textarea class="lin" id="ctND" rows="2" oninput="ctPrev()" placeholder="VD: Làm việc với các công ty mỏ, khảo sát áp lực mỏ…"></textarea>'
  +'<div class="g2" style="gap:8px">'+inp('ctChuyen','Số chuyến','',1,'number')+inp('ctNgayC','Số ngày/chuyến','',3,'number')+'</div><div class="muted" style="font-size:12px;color:var(--lmut)">Số đêm lưu trú = số ngày − 1</div>'
@@ -715,7 +720,7 @@ const trTron=n=>Math.ceil(n/1e6-1e-9)*1e6;
 function ctTV(){const k=ctV('ctDT');const ds=((TV_HD[k]||{}).ds||[]).map((x,i)=>({ten:x[0],cv:x[1],bs:x[2]||'',id:'h'+i})).concat(CT_THEM.map((x,i)=>({ten:x[0],cv:x[1],bs:'Tự thêm',id:'t'+i})));
  return ds.filter(x=>{const c=$('ctc_'+x.id);return c?c.checked:false})}
 function ctObj(){const k=ctV('ctDT');const d=DT0.find(x=>x.sdk===k)||{};const tv=ctTV();
- const o={sdk:k,tenDT:d.ten||'',cn:d.cn||'',ngay:ctV('ctNgay'),thang:ctV('ctThang'),dd:ctV('ctDD'),nd:ctV('ctND'),chuyen:Math.round(ctNum('ctChuyen')),ngayC:Math.round(ctNum('ctNgayC')),xe:Math.round(ctNum('ctXe')*1e6),tv,khongSo:1};
+ const o={sdk:k,tenDT:d.ten||'',cn:d.cn||'',ngay:isoD(ctV('ctNgay')),thang:isoM(ctV('ctThang')),dd:ctV('ctDD'),nd:ctV('ctND'),chuyen:Math.round(ctNum('ctChuyen')),ngayC:Math.round(ctNum('ctNgayC')),xe:Math.round(ctNum('ctXe')*1e6),tv,khongSo:1};
  o.nguoi=tv.length;o.dem=Math.max(o.ngayC-1,0);o.pcTinh=o.chuyen*o.nguoi*o.ngayC*CT_PC;o.phongTinh=o.chuyen*o.nguoi*o.dem*CT_PHONG;
  o.pc=trTron(o.pcTinh);o.phong=trTron(o.phongTinh);o.tong=o.xe+o.phong+o.pc;return o}
 function ctKiem(o){const L=[],f=n=>Number(n).toLocaleString('vi-VN');const ok=(b,t)=>L.push([b?'ok':'loi',t]);const nhac=t=>L.push(['nhac',t]);
@@ -791,7 +796,7 @@ function dnntGoiY(){const k=ctV('dnDT');const T=TL_HD[k];const B=$('dnntGY');if(
  const ql=T.ql/T.thang;const gyT=(cv+ql)/T.tong*100;
  // khối lượng thực tế đã hoàn thành đến kỳ trước (theo dự toán) so với lũy kế đã nghiệm thu
  let da=0;G.forEach(g=>{if(g.da>=100)da+=T.tl[g.ma]||g.con.reduce((a,c)=>a+(T.tl[c.ma]||0),0);else g.con.forEach(c=>{if(c.da>=100)da+=T.tl[c.ma]||0})});
- const thNT=($('paper')&&$('paper').querySelector('[name=thang]').value)||thisMonth();const soTh=Math.max(0,Math.min(T.thang,(+thNT.slice(0,4)-+T.bd.slice(0,4))*12+(+thNT.slice(5,7))-(+T.bd.slice(5,7))));
+ const thNT=isoM($('paper')&&$('paper').querySelector('[name=thang]').value)||thisMonth();const soTh=Math.max(0,Math.min(T.thang,(+thNT.slice(0,4)-+T.bd.slice(0,4))*12+(+thNT.slice(5,7))-(+T.bd.slice(5,7))));
  const thucTe=(da+T.ql*soTh/T.thang)/T.tong*100;const thieu=T.lk!=null?thucTe-T.lk:0;
  const gy=Math.round((gyT+(thieu>0.5?thieu:0))*10)/10;
  const f=$('paper');const e=f&&f.querySelector('[name=pt]');if(e&&!e.dataset.sua&&cv>0)e.value=pct(gy);const dn=e?+String(e.value).replace(',','.').replace('%',''):NaN;
@@ -834,9 +839,9 @@ function dnntMo(){const k=ctV('dnDT');const B=$('dnntBox');if(!B)return;B.append
  const f=$('paper');const set=(n,v)=>{const e=f.querySelector('[name='+n+']');if(e&&v!=null)e.value=v};
  set('sdk',k);dienDT(f.querySelector('[name=sdk]'));const d=DT0.find(x=>x.sdk===k)||{};if(!f.querySelector('[name=ten]').value)set('ten',d.ten);if(!f.querySelector('[name=cn]').value)set('cn',d.cn);if(!f.querySelector('[name=donvi]').value)set('donvi',d.bp);if(!f.querySelector('[name=kp]').value)set('kp',KP_TONG[k]!=null?String(KP_TONG[k]).replace('.',','):d.kp);
  const tg=(d.tg||'').match(/\d{1,2}\/\d{4}/g)||[];if(tg.length){if(!f.querySelector('[name=bd]').value)set('bd',tg[0].padStart(7,'0'));if(!f.querySelector('[name=kt]').value)set('kt',tg[tg.length-1].padStart(7,'0'))}
- const m=ME();if(m&&m.email&&ROLE()===4)set('email',m.email);const n=new Date();set('thang',n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0'));
+ const m=ME();if(m&&m.email&&ROLE()===4)set('email',m.email);const n=new Date();set('thang',String(n.getMonth()+1).padStart(2,'0')+'/'+n.getFullYear());
  const ok=dnntGuiDuoc(k);f.oninput=ev=>{if(ev.target&&ev.target.name==='pt')ev.target.dataset.sua=1;dnntGoiY();dnntXem()};f.onchange=()=>dnntXem();dnntND();dnntXem();$('dnntGui').innerHTML=ok?'<button class="btn sm pri" onclick="submitForm()">Gửi hồ sơ →</button>':'<span class="note" style="margin:0;font-size:12.5px">Dùng thử: chỉ chủ nhiệm đề tài '+esc(k)+' mới gửi được.</span>'}
-function cvObj(){const v=id=>(($(id)||{}).value||'');const k=CV_KY[+v('cvNK')||0]||CV_KY[0];return {so:'',ngay:v('cvNgay'),ty:v('cvTY'),kg:v('cvKG'),nd:v('cvND'),nn:v('cvNN'),cd:k[1],ten:k[2]}}
+function cvObj(){const v=id=>(($(id)||{}).value||'');const k=CV_KY[+v('cvNK')||0]||CV_KY[0];return {so:'',ngay:isoD(v('cvNgay')),ty:v('cvTY'),kg:v('cvKG'),nd:v('cvND'),nn:v('cvNN'),cd:k[1],ten:k[2]}}
 function cvPrev(){const p=$('cvP');if(!p)return;p.innerHTML='<style>'+VB_CSS+'</style>'+vbHTML(cvObj())}
 function cvDoc(){const o=cvObj();vbDoc(vbHTML(o),'CV_'+(vbSlug(o.ty.replace(/^V\/v:?\s*/i,''))||'Cong-van')+'_'+(o.ngay||'').replace(/-/g,'')+'_v1.doc');addLog('Xuất công văn .doc')}
 function exportCSV(){if(!can('xuatSo'))return;const H=['Mã','Loại','Nguồn','Số ĐK','Tên nhiệm vụ','Chủ nhiệm','Đơn vị','Email','Tháng nghiệm thu','Ngày gửi','Trạng thái','Tệp'];
