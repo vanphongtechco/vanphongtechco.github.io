@@ -507,7 +507,7 @@ const haiVai=m=>!!(m&&(m.dt||[]).length&&m.role>0&&m.role!==4&&m.role!==5);
 const ROLE=()=>{const m=ME();if(!m)return -1;return haiVai(m)&&VAI&&VAI.u===m.u&&VAI.v==='cndt'?4:m.role};
 function datVai(v){const m=ME();VAI={u:m.u,v};try{localStorage.setItem('khcn_vai',JSON.stringify(VAI))}catch(e){}}
 /* Tên vai hiển thị: lãnh đạo Viện theo chức vụ; cán bộ P.KHCN chỉ xem */
-function tenVai(m){if(!m)return '';if(m.role===1)return 'Quản trị';if(m.role===3)return /viện trưởng/i.test(m.cv||'')?m.cv:'Phòng KHCN (chỉ xem, không phê duyệt)';if(m.role===2)return 'Phòng KHCN';return ROLES[m.role]||''}
+function tenVai(m){if(!m)return '';if(m.role===1)return 'Quản trị';if(m.role===3)return /viện trưởng/i.test(m.cv||'')?m.cv:'Phòng KHCN';if(m.role===2)return 'Phòng KHCN';return ROLES[m.role]||''}
 function chonVai(sau){const m=ME();if(!haiVai(m)){sau();return}
  openM('<h3 style="margin-top:0">Đăng nhập với vai</h3><p style="color:var(--lmut);margin:0 0 14px">Tài khoản '+esc(m.u)+' có 2 vai. Chọn vai để làm việc (đổi lại được ở góc trên).</p><div class="flex" style="gap:10px;flex-wrap:wrap"><button class="btn pri" id="vaiQT" style="flex:1;padding:14px">'+(m.role===3?'👁 ':'🛠 ')+esc(tenVai(m))+'</button><button class="btn org" id="vaiCN" style="flex:1;padding:14px">📋 Chủ nhiệm đề tài<br><span style="font-size:12px;font-weight:400">'+esc(m.dt.join(', '))+'</span></button></div>',true);
  $('vaiQT').onclick=()=>{datVai('qt');closeM();addLog('Vào vai '+tenVai(m));sau()};$('vaiCN').onclick=()=>{datVai('cndt');closeM();addLog('Vào vai Chủ nhiệm đề tài');sau()}}
