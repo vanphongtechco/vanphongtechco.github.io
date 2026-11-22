@@ -726,7 +726,7 @@ function ctHTML(o){const e=x=>esc(x||'');const f=n=>Number(n).toLocaleString('vi
   '- Thuê phương tiện di chuyển dự kiến: '+f(o.xe)+' đồng.','- Thuê phòng nghỉ dự kiến: '+f(o.phong)+' đồng.','- Phụ cấp lưu trú dự kiến: '+f(o.pc)+' đồng.',
   '<b>Tổng kinh phí dự kiến: '+f(o.tong)+' đồng</b> <i>('+e(ttChu(o.tong).replace(/\.$/,''))+')</i>.',
   'Kính trình Viện trưởng xem xét, phê duyệt kế hoạch đi công tác để nhóm thực hiện đề tài triển khai thực hiện.','Xin trân trọng cảm ơn./.'];
- const ky=['CHỦ NHIỆM ĐỀ TÀI','PHÒNG CHỦ QUẢN','PHÒNG QLKHCN','DUYỆT VIỆN'];
+ const ky=['CHỦ NHIỆM ĐỀ TÀI','PHÒNG CHỦ QUẢN','PHÒNG KHCN','DUYỆT VIỆN'];
  const td='border:1px solid #000!important;padding:3px 5px;font-size:13pt';
  return '<div class="vb">'+vbDau(o)+'<p>&nbsp;</p><p class="c"><b>TỜ TRÌNH</b></p><p class="c"><b>'+ve+'</b></p><p>&nbsp;</p><p class="c">Kính gửi: Viện trưởng Viện Cơ khí Năng lượng và Mỏ - Vinacomin</p><p>&nbsp;</p>'
  +'<div class="nd">'+nd.map(x=>'<p>'+x+'</p>').join('')+'</div><p>&nbsp;</p>'
