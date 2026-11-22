@@ -726,7 +726,7 @@ function ctHTML(o){const e=x=>esc(x||'');const f=n=>Number(n).toLocaleString('vi
  const p2=n=>String(n).padStart(2,'0');const ve='Về kế hoạch đi công tác tháng '+th+' thực hiện đề tài '+e(o.sdk)+' “'+e(o.tenDT)+'”';
  const nd=['Để triển khai thực hiện đề tài '+e(o.sdk)+', nhóm thực hiện đề tài kính trình Viện trưởng phê duyệt kế hoạch và lịch trình công tác trong tháng '+th+', dự kiến thực hiện như sau:',
   '1) Địa điểm công tác: '+e(o.dd)+'.','2) Nội dung công việc: '+e(o.nd)+'.','3) Số chuyến dự kiến: '+p2(o.chuyen)+' chuyến.','4) Số người dự kiến: '+p2(o.nguoi)+' người (có danh sách kèm theo).',
-  '5) Thời gian dự kiến: '+p2(o.ngayC)+' ngày/chuyến tùy vào công việc thực tế.','6) Kinh phí dự kiến:',
+  '5) Thời gian dự kiến: '+p2(o.ngayC)+' ngày/chuyến.','6) Kinh phí dự kiến:',
   '- Thuê phương tiện di chuyển: '+f(o.xe)+' đồng.','- Thuê phòng nghỉ: '+f(o.phong)+' đồng.','- Phụ cấp lưu trú: '+f(o.pc)+' đồng.',
   '<b>Tổng kinh phí dự kiến: '+f(o.tong)+' đồng</b> <i>('+e(ttChu(o.tong).replace(/\.$/,''))+')</i>.',
   'Kính trình Viện trưởng xem xét, phê duyệt kế hoạch đi công tác để nhóm thực hiện đề tài triển khai thực hiện.','Xin trân trọng cảm ơn./.'];
