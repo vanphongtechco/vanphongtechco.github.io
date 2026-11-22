@@ -1066,7 +1066,7 @@ function dnntHTML(d){const e=x=>esc(x||'');const [y,m,dd]=(d.ngay||'').split('-'
  const lines=t=>String(t||'').split('\n').map(x=>x.replace(/\s+$/,'')).filter(x=>x.trim());
  const nd=t=>lines(t).map(x=>'<p style="padding-left:'+(/^\s*\+/.test(x)?'0.6cm':'0')+'">'+e(x.trim())+'</p>').join('')||'<p>…</p>';
  const dam=d.camket?d.camket!=='khong':!/không|chậm/i.test(d.tdo||'');
- return dnntLayout({dvH:e(dvHoa(d.donvi)),dvK:e(dvNgan(d.donvi)),ngayDong:'Hà Nội, ngày '+(dd?+dd:'&nbsp;&nbsp;&nbsp;')+' tháng '+(m?+m:'&nbsp;&nbsp;')+' năm '+(y||''),thang:th,thang2:th,ten:e(d.ten),cn:e(d.cn),sdk:e(d.sdk),kp:e(d.kp),bd:e(d.bd),kt:e(d.kt),
+ return dnntLayout({dvH:e(dvHoa(d.donvi)),dvK:e(dvNgan(d.donvi)),laKHCN:/KHCN|quản lý,? nghiên cứu/i.test(dvTen(d.donvi)+' '+String(d.donvi||'')),ngayDong:'Hà Nội, ngày '+(dd?+dd:'&nbsp;&nbsp;&nbsp;')+' tháng '+(m?+m:'&nbsp;&nbsp;')+' năm '+(y||''),thang:th,thang2:th,ten:e(d.ten),cn:e(d.cn),sdk:e(d.sdk),kp:e(d.kp),bd:e(d.bd),kt:e(d.kt),
   cap:/Công Thương/.test(d.cap||'')?'Bộ Công Thương':'Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam',ngay:(dd||'…')+'/'+(m||'…')+'/'+(y||'…'),donvi:e(dvTen(d.donvi)),ht:nd(d.ht),trongthang:nd(d.trongthang),kpth:d.kpth?e(d.kpth):'…',sl:e(d.sl),cl:e(d.cl),tdo:e(d.tdo),ke:nd(d.ke),pt:e(String(d.pt||'').replace('%',''))||'…',
   cam:'<p>'+(dam?'☒':'☐')+' Đảm bảo tiến độ</p><p>'+(dam?'☐':'☒')+' Không đảm bảo tiến độ</p>',cnKy:e(d.cn)})}
 function dnntDoc(){const d=dnntObj();const [ty,tm]=(d.thang||'').split('-');vbDoc('<style>'+DN_CSS+'</style>'+dnntHTML(d),(d.sdk||'').replace('/','').replace(/^(\d\d)([A-Z]+)(\d\d)$/,'$3.$1$2')+'_BC_Tien-do-de-nghi-NT-T'+(tm||'')+'-'+(ty||'')+'_'+(d.ngay||'').replace(/-/g,'')+'_v1.docx','2cm 1.5cm 2cm 2.5cm');addLog('Xuất báo cáo tiến độ – đề nghị nghiệm thu '+d.sdk)}
@@ -1080,7 +1080,7 @@ function dnntLayout(X,d){const e=x=>esc(x||'');const dvH=X.dvH;
  const nd=(html)=>'<td colspan="3">'+html+'</td>';
  const cols='<colgroup><col style="width:1cm"><col><col style="width:1cm"><col style="width:3.6cm"></colgroup>';
  const tr=(a)=>'<tr>'+a+'</tr>';
- const dvK=X.dvK||dvH;const ky=[['CHỦ NHIỆM ĐỀ TÀI',X.cnKy]].concat(/KHCN/i.test(dvK)?[]:[[dvK,'']]).concat([['PHÒNG KHCN',''],['DUYỆT VIỆN','']]);
+ const dvK=X.dvK||dvH;const ky=[['CHỦ NHIỆM ĐỀ TÀI',X.cnKy]].concat(X.laKHCN?[]:[['PHÒNG CHỦ QUẢN','']]).concat([['PHÒNG KHCN',''],['DUYỆT VIỆN','']]);
  return '<div class="dn"><table><tr><td class="c" style="width:44%;padding-right:12px"><p style="font-size:12pt">VIỆN CƠ KHÍ NĂNG LƯỢNG VÀ MỎ<br>VINACOMIN</p><p style="font-size:12pt"><b><u>'+dvH+'</u></b></p></td><td class="c nw" style="width:56%"><p style="font-size:12pt"><b>CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</b></p><p><b><u>Độc lập - Tự do - Hạnh phúc</u></b></p></td></tr><tr><td></td><td style="text-align:right"><p style="margin-top:6pt"><i>'+X.ngayDong+'</i></p></td></tr></table><p>&nbsp;</p>'
  +'<p class="c"><b>BÁO CÁO TIẾN ĐỘ ĐÃ THỰC HIỆN VÀ ĐỀ NGHỊ NGHIỆM THU<br>KHỐI LƯỢNG CÔNG VIỆC TRONG THÁNG '+X.thang+'</b></p><p class="c"><i>(Phục vụ kiểm tra, đánh giá)</i></p><p>&nbsp;</p>'
  +'<table style="width:auto;margin-left:1.5cm"><tr><td><p>Kính gửi:</p></td><td style="padding-left:8px"><p>- Viện trưởng Viện Cơ khí Năng lượng và Mỏ - Vinacomin;</p><p>- Phòng Khoa học Công nghệ.</p></td></tr></table><p>&nbsp;</p>'
