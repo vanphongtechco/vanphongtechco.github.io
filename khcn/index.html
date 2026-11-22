@@ -605,7 +605,7 @@ ctac(){const ds=ctDS();const n=new Date();const nx=new Date(n.getFullYear(),n.ge
  +inp('ctXe','Thuê phương tiện / đi lại (đ)','VD: 22000000','','number')
  +inp('ctPhong','Thuê phòng nghỉ (đ)','','','number')+'<div class="muted" id="ctPhg" style="font-size:12px;color:var(--lmut)"></div>'
  +inp('ctPC','Phụ cấp lưu trú (đ)','','','number')+'<div class="muted" id="ctPCg" style="font-size:12px;color:var(--lmut)"></div>'
- +'<div id="ctK" style="margin-top:12px"></div><div class="flex" style="margin-top:10px"><button class="btn sm pri" onclick="ctDoc()">⬇ Xuất .doc</button><button class="btn sm lbtn" onclick="doPrint(\'ctP\')">🖨 In / PDF</button></div></div><div class="paper" id="ctP" style="padding:40px 40px 40px 60px;background:#fff"></div></div>'},
+ +'<label style="display:flex;gap:6px;align-items:center;margin-top:10px;font-size:13px"><input type="checkbox" id="ctTron" checked onchange="ctPrev()"> Làm tròn tổng kinh phí đến hàng triệu đồng</label>'+'<div id="ctK" style="margin-top:12px"></div><div class="flex" style="margin-top:10px"><button class="btn sm pri" onclick="ctDoc()">⬇ Xuất .doc</button><button class="btn sm lbtn" onclick="doPrint(\'ctP\')">🖨 In / PDF</button></div></div><div class="paper" id="ctP" style="padding:40px 40px 40px 60px;background:#fff"></div></div>'},
 tv(){return '<h2 class="pg">Thư viện văn bản</h2><div class="flex" style="margin-bottom:12px"><input class="lin" id="tvT" placeholder="Tên văn bản / mẫu biểu"><input class="lin" id="tvU" placeholder="Đường dẫn (Drive, web…)"><button class="btn sm pri" onclick="if(tvT.value.trim()){DB.lib.push({t:tvT.value.trim(),u:tvU.value.trim()});addLog(\'Thêm văn bản thư viện\');nav(\'tv\')}">＋ Thêm</button></div>'
  +'<div class="lc" style="padding:0"><table class="lt"><tbody>'+DB.lib.map((x,i)=>'<tr><td>📄 '+(x.u?'<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.t)+'</a>':esc(x.t))+'</td><td style="width:60px"><button class="btn sm lbtn" onclick="DB.lib.splice('+i+',1);save();nav(\'tv\')">Xóa</button></td></tr>').join('')+'</tbody></table></div>'},
 tk(){const sel=(u)=>'<select class="lin" style="width:auto" onchange="setRole(\''+u.u+'\',+this.value)"'+(u.u==='binhlt'?' disabled':'')+'>'+[0,1,2,3,4].map(r=>'<option value="'+r+'"'+(u.role===r?' selected':'')+'>'+ROLES[r]+'</option>').join('')+'</select>';
@@ -708,7 +708,7 @@ function ctV(id){return (($(id)||{}).value||'').trim()}
 function ctObj(){const k=ctV('ctDT');const d=DT0.find(x=>x.sdk===k)||{};const tv=ctV('ctTV').split('\n').map(x=>x.trim()).filter(Boolean).map(x=>{const [a,b]=x.split('|').map(y=>(y||'').trim());return {ten:a,cv:b||'Thành viên thực hiện'}});
  const o={sdk:k,tenDT:d.ten||'',cn:d.cn||'',ngay:ctV('ctNgay'),thang:ctV('ctThang'),dd:ctV('ctDD'),nd:ctV('ctND'),chuyen:ctNum('ctChuyen'),ngayC:ctNum('ctNgayC'),gia:ctNum('ctGia'),xe:ctNum('ctXe'),pc:ctNum('ctPC'),phong:ctNum('ctPhong'),tv,khongSo:1};
  o.nguoi=tv.length;o.dem=Math.max(o.ngayC-1,0);o.pcMax=o.chuyen*o.nguoi*o.ngayC*CT_PC;o.phongMax=o.chuyen*o.nguoi*o.dem*Math.min(o.gia||CT_PHONG,CT_PHONG);
- if(!ctV('ctPC'))o.pc=o.pcMax;if(!ctV('ctPhong'))o.phong=o.phongMax;o.tong=o.xe+o.phong+o.pc;return o}
+ if(!ctV('ctPC'))o.pc=o.pcMax;if(!ctV('ctPhong'))o.phong=o.phongMax;o.cong=o.xe+o.phong+o.pc;o.lamTron=!!($('ctTron')||{}).checked;o.tong=o.lamTron?Math.round(o.cong/1e6)*1e6:o.cong;return o}
 function ctKiem(o){const L=[],f=n=>Number(n).toLocaleString('vi-VN');const ok=(b,t)=>L.push([b?'ok':'loi',t]);const nhac=t=>L.push(['nhac',t]);
  ok(!!o.sdk,'Đã chọn đề tài');ok(!!o.thang,'Có tháng công tác');ok(!!o.dd,'Có địa điểm công tác');ok(!!o.nd,'Có nội dung công việc');
  ok(o.nguoi>0,'Danh sách thành viên: '+o.nguoi+' người');ok(o.chuyen>0&&o.ngayC>0,'Số chuyến và số ngày/chuyến');
@@ -716,7 +716,7 @@ function ctKiem(o){const L=[],f=n=>Number(n).toLocaleString('vi-VN');const ok=(b
  ok(o.pc<=o.pcMax,'Phụ cấp lưu trú '+f(o.pc)+' đ '+(o.pc>o.pcMax?'VƯỢT':'≤')+' định mức '+o.chuyen+' chuyến × '+o.nguoi+' người × '+o.ngayC+' ngày × 200.000 = '+f(o.pcMax)+' đ');
  ok(o.phong<=o.phongMax,'Thuê phòng '+f(o.phong)+' đ '+(o.phong>o.phongMax?'VƯỢT':'≤')+' mức '+o.chuyen+' chuyến × '+o.nguoi+' người × '+o.dem+' đêm × '+f(Math.min(o.gia||CT_PHONG,CT_PHONG))+' = '+f(o.phongMax)+' đ');
  if(!o.xe)nhac('Chưa nhập chi phí đi lại / thuê xe');
- ok(o.tong===o.xe+o.phong+o.pc,'Tổng '+f(o.tong)+' đ = đi lại '+f(o.xe)+' + phòng '+f(o.phong)+' + phụ cấp '+f(o.pc));
+ ok(Math.abs(o.tong-o.cong)<500000,'Cộng các khoản: đi lại '+f(o.xe)+' + phòng '+f(o.phong)+' + phụ cấp '+f(o.pc)+' = '+f(o.cong)+' đ'+(o.tong!==o.cong?'; tổng làm tròn '+f(o.tong)+' đ':''));
  return L}
 function ctHTML(o){const e=x=>esc(x||'');const f=n=>Number(n).toLocaleString('vi-VN');const [ty,tm]=(o.thang||'').split('-');const th=tm?(+tm)+'/'+ty:'…/…';
  const p2=n=>String(n).padStart(2,'0');const ve='Về kế hoạch đi công tác tháng '+th+' thực hiện đề tài '+e(o.sdk)+' “'+e(o.tenDT)+'”';
