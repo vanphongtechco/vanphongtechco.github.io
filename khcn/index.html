@@ -146,7 +146,7 @@ table.lt th{font-size:11.5px;text-transform:uppercase;color:var(--lmut);backgrou
  <div class="kicker">Cổng hồ sơ KH&amp;CN trực tuyến</div>
  <h1>Phòng Khoa học Công nghệ</h1>
  <p class="lead">Nộp hồ sơ nghiệm thu khối lượng hàng tháng, báo cáo tiến độ và đề xuất nhiệm vụ KH&amp;CN trực tuyến; theo dõi trạng thái hồ sơ bằng mã tra cứu.</p>
- <div class="row"><button class="btn pri" onclick="go('phieu')">Tạo hồ sơ online →</button><button class="btn" onclick="go('tracuu')">Tra cứu hồ sơ</button></div>
+ <div class="row"><button class="btn pri" onclick="go('phieu')">Tạo hồ sơ online →</button><button class="btn" onclick="go('tracuu')">Tra cứu hồ sơ</button><button class="btn" onclick="vaoKhach()">Dùng thử lập hồ sơ thanh toán</button></div>
  <div class="tags"><span>Nghiệm thu hàng tháng</span><span>Báo cáo tiến độ</span><span>Đề xuất nhiệm vụ KH&amp;CN</span><span>Theo dõi trạng thái hồ sơ</span></div>
  <div class="card">
   <div class="flex"><div class="logo" style="width:40px;height:40px">🔍</div><div><h3>Theo dõi hồ sơ</h3><div class="muted">Nhập mã hồ sơ để xem trạng thái xử lý.</div></div></div>
@@ -474,7 +474,7 @@ function track(c){c=(c||'').trim().toUpperCase();go('tracuu');$('qTrack').value=
  +'<p>Trạng thái: '+pill(h.st)+(h.st===2&&note?' <span class="muted">– '+esc(note)+'</span>':'')+'</p><ul class="tl">'+steps.map((s,i)=>'<li class="'+(s[1]?(i===3&&h.st===4?'bad':'done'):(i===curI?'cur':''))+'">'+s[0]+'</li>').join('')+'</ul></div>'}
 
 /* ---------- tai khoan & phan quyen ---------- */
-const ROLES={1:'Quản trị',2:'Thành viên Phòng KH&CN',3:'Chỉ xem (Lãnh đạo Viện)',4:'Chủ nhiệm đề tài',0:'Chờ duyệt'};
+const ROLES={5:'Khách dùng thử',1:'Quản trị',2:'Thành viên Phòng KH&CN',3:'Chỉ xem (Lãnh đạo Viện)',4:'Chủ nhiệm đề tài',0:'Chờ duyệt'};
 const PERMS=[['taoHS','Tạo hồ sơ nội bộ'],['duyet','Tiếp nhận / duyệt hồ sơ'],['suaDT','Thêm, sửa danh mục đề tài'],['trinhKy','Tạo luồng trình ký'],['kyDuyet','Ký trong luồng trình ký'],['congVan','Soạn, xuất công văn'],['thuVien','Thêm, xóa thư viện'],['xuatSo','Xuất sổ tổng hợp']];
 const PDEF={2:{taoHS:1,duyet:1,suaDT:0,trinhKy:1,kyDuyet:1,congVan:1,thuVien:1,xuatSo:1},3:{xuatSo:1},4:{taoHS:1}};
 if(!DB.users)DB.users=[{u:'binhlt',ten:'Lê Thanh Bình',email:'',role:1,pw:'',dt:[],lock:false,ngay:now()}];
@@ -536,10 +536,10 @@ function logout(){addLog('Đăng xuất');USER=null;try{localStorage.removeItem(
 const MENU=[['dash','📊','Tổng quan'],['hs','🗂','Hồ sơ'],['duyet','✅','Duyệt hồ sơ online'],['dt','📚','Danh mục đề tài'],['lich','📅','Lịch nghiệm thu'],['gn','💰','Tổng hợp nghiệm thu'],['cp','🧾','Theo dõi chi phí'],['tt','💳','Lập hồ sơ thanh toán'],['so','📒','Sổ tổng hợp'],['grp','','Nghiệp vụ'],['ky','✍️','Trình ký'],['cv','📝','Công văn'],['tv','📖','Thư viện'],['nk','🕘','Nhật ký hệ thống'],['lh','📞','Liên hệ'],['grp','','Quản trị'],['tk','👤','Tài khoản &amp; phân quyền']];
 let CUR='dash',HSF={st:-1,q:''},DF={st:'q',src:''};
 function showApp(){const m=ME();if(!m||m.role===0||m.lock){USER=null;go('login');return}$('pub').classList.add('hide');$('app').classList.remove('hide');$('whoName').textContent=m.ten+' ('+m.u+')';$('whoRole').textContent=(m.cv||ROLES[m.role]).toUpperCase()+((m.dt||[]).length?' · CNĐT '+m.dt.join(', '):'');nav(CUR)}
-const MENU_R={4:['dash','hs','dt','lich','gn','tt'],3:['dash','hs','duyet','dt','lich','gn','cp','so','ky','cv','tv','nk']};
+const MENU_R={5:['tt','lh'],4:['dash','hs','dt','lich','gn','tt'],3:['dash','hs','duyet','dt','lich','gn','cp','so','ky','cv','tv','nk']};
 function menuOK(k){const r=ROLE();if(k==='tt'||k==='lh')return true;if(k==='tk')return r===1;if(k==='nk')return r===1||r===2||r===3;return !MENU_R[r]||MENU_R[r].includes(k)}
 function myDT(){const m=ME();return m?m.dt||[]:[]}
-function nav(p){if(!menuOK(p))p='dash';CUR=p;
+function nav(p){if(!menuOK(p))p=menuOK('dash')?'dash':'tt';CUR=p;
  const items=MENU.filter((m,i)=>{if(m[0]!=='grp')return menuOK(m[0]);for(let j=i+1;j<MENU.length&&MENU[j][0]!=='grp';j++)if(menuOK(MENU[j][0]))return true;return false});
  $('menu').innerHTML=items.map(m=>m[0]==='grp'?'<div class="grp">'+m[2]+'</div>':'<a class="'+(m[0]===p?'on':'')+'" onclick="nav(\''+m[0]+'\')"><span>'+m[1]+'</span>'+m[2]+(m[0]==='duyet'?' <b style="margin-left:auto;background:#e5534b;color:#fff;border-radius:10px;padding:0 7px;font-size:11px">'+DB.hs.filter(h=>h.st<=1).length+'</b>':'')+(m[0]==='tk'&&DB.users.some(u=>u.role===0)?' <b style="margin-left:auto;background:#e5534b;color:#fff;border-radius:10px;padding:0 7px;font-size:11px">'+DB.users.filter(u=>u.role===0).length+'</b>':'')+'</a>').join('');
  const full={hs:DB.hs,dt:DB.dt};
@@ -745,8 +745,8 @@ VIEWS.dash=function(){const nam=kyNT().slice(0,4);let ks=Object.keys(GN).filter(
  +kpi('Chi phí đã nghiệm thu '+nam,fT(kpNam),'trđ','','#e08a1e')
  +kpi('Tổng chi phí đã nghiệm thu',fT(daChi),'trđ','của các đề tài đang thực hiện','#2f6fd6')+'</div>'
  +'<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;margin-bottom:14px">'
- +''+donut('Kinh phí đề tài thực hiện '+nam,TH.map(k=>[k+' – '+ten(k),kpOf(k)]),'trđ')
- +donut('Chi phí đã nghiệm thu '+nam+' theo đề tài',ks.map(k=>[k+' – '+ten(k),nNam(k)]),'trđ')
+ +''+donut('Kinh phí đề tài thực hiện '+nam,TH.map(k=>[k,kpOf(k)]),'trđ')
+ +donut('Chi phí đã nghiệm thu '+nam+' theo đề tài',ks.map(k=>[k,nNam(k)]),'trđ')
  +donut('Đề tài theo cấp quản lý năm '+nam,Object.entries(gom(TH,k=>T(k).cap||'Tập đoàn TKV')),'đề tài')
  +'</div>'
  +'<div class="lc" style="padding:0;overflow:auto"><h3 style="padding:14px 16px 4px;margin:0">Đề tài đang thực hiện</h3><table class="lt"><thead><tr><th>Mã ĐT</th><th>Tên ngắn</th><th>Chủ nhiệm</th><th>Đơn vị</th><th style="text-align:right">Tổng KP (trđ)</th><th style="min-width:150px">Đã nghiệm thu</th><th style="min-width:150px">Chi phí đã nghiệm thu</th><th>Nghiệm thu gần nhất</th></tr></thead><tbody>'
@@ -882,7 +882,7 @@ function aiMo(){const h=$('aiHop');h.classList.toggle('hide');if(!h.classList.co
 function aiXoa(){if(AI_LS.length&&!confirm('Xóa toàn bộ lịch sử chat của tài khoản này trên máy này?'))return;AI_LS=[];aiLuu();aiVe()}
 async function aiGui(){const o=$('aiO'),q=o.value.trim();if(!q||AI_BAN)return;aiNap();const ls=AI_LS.filter(m=>!m.loi).slice(-8).map(m=>({r:m.r,t:m.t}));AI_LS.push({r:'u',t:q,g:Date.now()});o.value='';AI_BAN=true;$('aiB').disabled=true;aiVe();
  try{const w=aiWtk();const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ai',hoi:q,ls,wtk:w,ctx:w?aiCtx():'',dm:w?'':aiDM()})}).then(r=>r.json());
-  if(r&&r.ok)AI_LS.push({r:'a',t:r.tl+(!w&&USER&&ROLE()>=1?'\n\n(Anh/chị đang đăng nhập theo phiên cũ nên em chưa xem được số liệu và kho tài liệu. Bấm Đăng xuất rồi đăng nhập lại để hỏi chi tiết.)':'')});else AI_LS.push({r:'a',t:(r&&r.err)||'Không trả lời được, anh/chị thử lại.',loi:1})}
+  if(r&&r.ok)AI_LS.push({r:'a',t:r.tl+(!w&&USER&&ROLE()>=1&&ROLE()!==5?'\n\n(Anh/chị đang đăng nhập theo phiên cũ nên em chưa xem được số liệu và kho tài liệu. Bấm Đăng xuất rồi đăng nhập lại để hỏi chi tiết.)':'')});else AI_LS.push({r:'a',t:(r&&r.err)||'Không trả lời được, anh/chị thử lại.',loi:1})}
  catch(e){AI_LS.push({r:'a',t:'Không kết nối được máy chủ, anh/chị thử lại.',loi:1})}
  AI_BAN=false;$('aiB').disabled=false;aiLuu();aiVe();$('aiO').focus()}
 function napAI(){if(!NT_API)return;fetch(NT_API+'?ai=1').then(r=>r.json()).then(r=>{if(r&&r.ok&&r.co===true)$('aiNut').classList.remove('hide')}).catch(()=>{})}
@@ -975,14 +975,17 @@ const ttHDStr=()=>TT.hd.map(x=>(x.so||'…')+' ngày '+ttNgayVN(x.ngay)).join(';
 function ttDT(){return DT0.find(x=>x.sdk===TT.sdk)||{}}
 const ttTenNgan=d=>d.ngan||ttNgan(d.ten);
 const ttNgan=t=>{t=String(t||'');if(t.length<=60)return t;const c=t.slice(0,60);return c.slice(0,c.lastIndexOf(' '))+'…'};
-const ttDuoc=()=>ROLE()===1||myDT().length>0;
+const KHACH=()=>ROLE()===5;
+const ttDuoc=()=>ROLE()>=1;
+const ttGuiDuoc=()=>ROLE()===1||(ROLE()!==5&&myDT().includes(TT.sdk));
+function vaoKhach(){if(!DB.users.some(x=>x.u==='khach'))DB.users.push({u:'khach',ten:'Khách dùng thử',cv:'Khách dùng thử',role:5,dt:[],ngay:now()});USER='khach';CUR='tt';TT={sdk:'',docs:[],hd:[],hh:[],f:{hinhThuc:'',loaiChi:'dv'},sent:''};showApp()}
 function ttVe(){const el=$('ttBox');if(!el)return;if(!TT.sdk&&ROLE()!==1&&myDT().length===1)TT.sdk=myDT()[0];const f=TT.f,dt=ttDT(),tong=ttTong();
  if(!ttDuoc()){el.innerHTML='<h3 style="margin-top:0">Lập hồ sơ thanh toán</h3><div class="note">Chức năng dành cho <b>chủ nhiệm đề tài</b> (với đề tài mình chủ nhiệm) và Quản trị. Tài khoản của anh/chị chỉ xem giới thiệu, không lập được đề nghị.</div>'
   +'<ol style="line-height:1.7"><li>Chủ nhiệm chọn đề tài, tải hóa đơn điện tử (XML/PDF) và hợp đồng (PDF, ảnh quét) lên.</li><li>Web tự đọc số, ngày, bên bán, mã số thuế, số tiền, tài khoản ngân hàng; chủ nhiệm kiểm tra, sửa nếu cần.</li><li>Tải Giấy đề nghị chuyển tiền / thanh toán (kèm Giấy đề nghị nhập – xuất nếu là hàng hóa) theo mẫu Viện, in, ký, nộp kèm chứng từ gốc.</li><li>Gửi Phòng KH&amp;CN duyệt; duyệt xong khoản chi tự vào sổ Theo dõi chi phí của đề tài.</li></ol>';return}
  const inp=(k,ph,w)=>'<input class="in" style="'+(w||'')+'" value="'+esc(f[k]||'')+'" placeholder="'+esc(ph||'')+'" oninput="TT.f.'+k+'=this.value">';
- el.innerHTML='<h3 style="margin-top:0">Lập hồ sơ thanh toán</h3>'
+ el.innerHTML='<h3 style="margin-top:0">Lập hồ sơ thanh toán</h3>'+(!KHACH()&&ROLE()!==1&&!myDT().length?'<div class="note">Tài khoản của anh/chị không phải chủ nhiệm đề tài: dùng thử được đầy đủ (đọc hóa đơn, tải giấy đề nghị, đối chiếu hợp đồng, dự toán) nhưng không gửi duyệt được.</div>':'')+(KHACH()?'<div class="note"><b>Bản dùng thử cho khách.</b> Anh/chị thả hóa đơn, điền và tải Giấy đề nghị theo mẫu Viện được như chủ nhiệm đề tài; không gửi duyệt được và không có phần đối chiếu hợp đồng, dự toán.</div>':'')
  +'<div class="muted">Tải hóa đơn điện tử (XML hoặc PDF) và hợp đồng (PDF, ảnh quét) lên – web tự đọc và điền vào mẫu Giấy đề nghị của Viện. Bộ chứng từ khác (phiếu thu, biên bản bàn giao, …) chủ nhiệm tự chuẩn bị và nộp kèm bản gốc. Tệp chỉ đọc trên máy anh/chị; bản quét được gửi tạm sang Google để nhận dạng chữ rồi xóa.</div>'
- +'<label class="f">Đề tài</label><select class="in" onchange="TT.sdk=this.value;ttVe()"><option value="">– chọn đề tài –</option>'+DT0.filter(x=>ROLE()===1||myDT().includes(x.sdk)).sort((a,b)=>{const k=z=>{const m=String(z.sdk).match(/(\d+)\D+(\d+)/);return m?+m[2]*1000+ +m[1]:0};return k(b)-k(a)}).map(x=>'<option value="'+esc(x.sdk)+'"'+(x.sdk===TT.sdk?' selected':'')+'>'+esc(x.sdk)+' – '+esc(String(x.ten).slice(0,80))+'</option>').join('')+'</select>'
+ +'<label class="f">Đề tài</label><select class="in" onchange="TT.sdk=this.value;ttVe()"><option value="">– chọn đề tài –</option>'+DT0.filter(x=>ROLE()!==4||myDT().includes(x.sdk)).sort((a,b)=>{const k=z=>{const m=String(z.sdk).match(/(\d+)\D+(\d+)/);return m?+m[2]*1000+ +m[1]:0};return k(b)-k(a)}).map(x=>'<option value="'+esc(x.sdk)+'"'+(x.sdk===TT.sdk?' selected':'')+'>'+esc(x.sdk)+' – '+esc(String(x.ten).slice(0,80))+'</option>').join('')+'</select>'
  +'<label class="f">Hóa đơn, tài liệu kèm theo</label><label id="ttDrop" style="display:block;border:2px dashed #8aa4c8;border-radius:10px;padding:22px;text-align:center;cursor:pointer;background:rgba(138,164,200,.08)" ondragover="event.preventDefault();this.style.background=\'rgba(138,164,200,.25)\'" ondragleave="this.style.background=\'rgba(138,164,200,.08)\'" ondrop="event.preventDefault();this.style.background=\'rgba(138,164,200,.08)\';ttDoc([...event.dataTransfer.files].filter(f=>/\\.(xml|pdf|jpe?g|png)$/i.test(f.name)))"><div style="font-size:15px">📎 Kéo thả hóa đơn và các tài liệu liên quan nếu có (hợp đồng, phiếu thu, biên lai chuyển khoản...)</div><div class="muted" style="font-size:12px;margin-top:4px">hoặc bấm để chọn file (XML, PDF, ảnh) – chọn được nhiều file</div><input type="file" multiple accept=".xml,.pdf,.jpg,.jpeg,.png" style="display:none" onchange="ttDoc([...this.files]);this.value=\'\'"></label>'
  +(TT.docs.length?'<div style="margin-top:6px;font-size:13px">'+TT.docs.map(d=>'<div>📄 '+esc(d.ten)+' – <b>'+esc(d.tt)+'</b>'+(d.cach?' <span class="muted">('+esc(d.cach)+')</span>':'')+'</div>').join('')+'</div>':'')
  +'<h4 style="margin:16px 0 6px">Hóa đơn ('+TT.hd.length+')</h4><div style="overflow:auto"><table class="lt" style="font-size:13px"><thead><tr><th>Ký hiệu</th><th>Số</th><th>Ngày</th><th>Bên bán</th><th>MST</th><th>Chưa VAT</th><th>VAT</th><th>Tổng thanh toán</th><th></th></tr></thead><tbody>'
@@ -1051,7 +1054,7 @@ async function ttXuat(){const f=TT.f,dt=ttDT(),tong=ttTong();const msg=$('ttMsg'
 /* gửi Phòng KH&CN duyệt (chủ nhiệm xác thực bằng email đã đăng ký) */
 function ttRec(){const f=TT.f;return {nguoiDeNghi:ttNguoiHD()||f.nguoi||'',hinhThuc:f.hinhThuc,loaiChi:f.loaiChi,noiDung:ttND(),hopDong:f.hopDong||'',soTien:ttTong(),
   hoaDon:TT.hd.map(h=>({kyHieu:h.kyHieu||'',so:h.so||'',ngay:h.ngay||'',ten:h.ten||'',mst:h.mst||'',chuaVat:h.chuaVat||0,vat:h.vat||0,tong:h.tong||0})),chuyenTra:{ten:f.ctTen||'',mst:f.ctMst||'',stk:f.ctStk||'',nh:f.ctNh||''}}}
-async function ttKiem(){const m=$('ttMsg');if(!TT.sdk||(!TT.hd.length&&!TT.docs.some(d=>d.txt))){m.innerHTML='<span style="color:#c0392b">Chọn đề tài và tải lên hóa đơn hoặc tài liệu trước.</span>';return}
+async function ttKiem(){const m=$('ttMsg');if(KHACH()){m.innerHTML='<span style="color:#e08a1e">Bản dùng thử không có phần đối chiếu hợp đồng, dự toán. Đăng nhập bằng tài khoản chủ nhiệm đề tài để dùng.</span>';return}if(!TT.sdk||(!TT.hd.length&&!TT.docs.some(d=>d.txt))){m.innerHTML='<span style="color:#c0392b">Chọn đề tài và tải lên hóa đơn hoặc tài liệu trước.</span>';return}
  const w=aiWtk();if(!w){m.innerHTML='<span style="color:#c0392b">Bấm Đăng xuất rồi đăng nhập lại để dùng chức năng đối chiếu.</span>';return}
  TT.kc='…';m.innerHTML='Đang đối chiếu với hợp đồng, dự toán…';
  try{const r=await fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ttKiem',wtk:w,sdk:TT.sdk,rec:ttRec(),hang:TT.hh,taiLieu:TT.docs.filter(d=>d.txt&&d.tt==='Tài liệu kèm theo').map(d=>({ten:d.ten,text:d.txt}))})}).then(r=>r.json());
@@ -1059,7 +1062,7 @@ async function ttKiem(){const m=$('ttMsg');if(!TT.sdk||(!TT.hd.length&&!TT.docs.
  catch(e){TT.kc='';m.innerHTML='<span style="color:#c0392b">'+esc(e.message||e)+'</span>'}}
 function ttKCHtml(){if(!TT.kc||TT.kc==='…')return '';const t=esc(TT.kc).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');const mau=/Chưa thấy phù hợp/.test(TT.kc)?'#c0392b':/Cần lưu ý/.test(TT.kc)?'#e08a1e':'#2e9d5e';
  return '<div style="margin-top:14px;border-left:4px solid '+mau+';background:rgba(138,164,200,.1);padding:12px 14px;border-radius:8px;font-size:14px;line-height:1.55"><b>Khuyến cáo của trợ lý AI (tham khảo)</b><br>'+t+(TT.kcGhi?'<div class="muted" style="font-size:12px;margin-top:6px">'+esc(TT.kcGhi)+'</div>':'')+'</div>'}
-function ttGuiForm(){const tong=ttTong();if(!TT.sdk||!tong||!TT.hd.length){$('ttMsg').innerHTML='<span style="color:#c0392b">Chọn đề tài và nhập ít nhất 1 hóa đơn có số tiền.</span>';return}
+function ttGuiForm(){if(KHACH()){$('ttMsg').innerHTML='<span style="color:#e08a1e">Bản dùng thử không gửi duyệt được. Đăng nhập bằng tài khoản chủ nhiệm đề tài để gửi Phòng KH&amp;CN.</span>';return}if(!ttGuiDuoc()){$('ttMsg').innerHTML='<span style="color:#e08a1e">Chỉ chủ nhiệm của đề tài này (hoặc Quản trị) mới gửi duyệt được. Tài khoản của anh/chị dùng thử được mọi bước khác: đọc hóa đơn, tải giấy đề nghị, đối chiếu hợp đồng.</span>';return}const tong=ttTong();if(!TT.sdk||!tong||!TT.hd.length){$('ttMsg').innerHTML='<span style="color:#c0392b">Chọn đề tài và nhập ít nhất 1 hóa đơn có số tiền.</span>';return}
  const w=(()=>{try{const x=JSON.parse(localStorage.getItem('khcn_wtk')||'null');return x&&x.u===USER&&x.han>Date.now()?x.tk:null}catch(e){return null}})();
  if(w){openM('<h3 style="margin-top:0">Gửi đề nghị '+esc(TT.sdk)+' – '+tong.toLocaleString('vi-VN')+' đ</h3><p class="muted" style="color:var(--lmut)">Gửi bằng tài khoản <b>'+esc(USER)+'</b>. Sau khi Phòng KH&amp;CN duyệt, khoản chi tự vào sổ Theo dõi chi phí của đề tài.</p><label class="fl">Email nhận thông báo (email nào cũng được, có thể để trống)</label><input class="lin" id="ttE"><div id="ttM" class="muted" style="margin-top:6px;color:var(--lmut)"></div><div class="flex" style="margin-top:12px;justify-content:flex-end"><button class="btn sm lbtn" onclick="closeM()">Hủy</button><button class="btn sm pri" id="ttOk">Gửi</button></div>',true);
   $('ttOk').onclick=()=>{$('ttOk').disabled=true;const f=TT.f;fetch(NT_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'ttGui',wtk:w,email:$('ttE').value.trim(),sdk:TT.sdk,rec:ttRec()})}).then(r=>r.json())
