@@ -335,7 +335,7 @@ const tpill=t=>'<span class="pill t-'+t+'">'+TY[t].s+'</span>';
 
 /* ---------- public routing ---------- */
 function lhGui(){const g=id=>($(id).value||'').trim();if(!g('lhND')){alert('Nhập nội dung');return}location.href='mailto:p5qlkhcn@gmail.com?subject='+encodeURIComponent(g('lhTD')||'Liên hệ Phòng KH&CN')+'&body='+encodeURIComponent(g('lhND')+'\n\n--\n'+g('lhTen')+(g('lhLL')?'\n'+g('lhLL'):''))}
-function dnntTraVe(){const P=$('paper'),S=$('sent'),V=$('v-phieu');if(P&&V&&P.parentNode!==V){V.appendChild(S);V.appendChild(P);P.classList.remove('dnF');P.innerHTML=''}}
+function dnntTraVe(){const P=$('paper'),S=$('sent'),V=$('v-phieu');if(P&&V&&P.parentNode!==V){V.appendChild(S);V.appendChild(P);P.classList.remove('dnF');P.style.cssText='';P.innerHTML=''}}
 function go(v,t){dnntTraVe();if(v==='app'){if(!USER){v='login'}else{showApp();return}}
  $('pub').classList.remove('hide');$('app').classList.add('hide');
  ['home','phieu','tracuu','login','lienhe'].forEach(x=>$('v-'+x).classList.toggle('hide',x!==v));
@@ -706,7 +706,7 @@ function vbDau(o){const e=x=>esc(x||'');const [y,m,d]=(o.ngay||'').split('-');re
  +'<td style="text-align:right"><p style="font-size:13pt;margin-top:6pt"><i>Hà Nội, ngày '+(d?+d:'&nbsp;&nbsp;&nbsp;')+' tháng '+(m?+m:'&nbsp;&nbsp;&nbsp;')+' năm '+(y||'20&nbsp;&nbsp;')+'</i></p></td></tr></table>'}
 function vbKy(o){const e=x=>esc(x||'');const lines=t=>String(t||'').split('\n').map(x=>x.trim()).filter(Boolean);return '<table><tr><td style="width:50%"><p style="font-size:12pt;text-align:justify"><b><i>Nơi nhận</i>:</b></p>'+lines(o.nn||'- Như Kính gửi;\n- Lãnh đạo Viện (để b/c);\n- Lưu: VP, KHCN, Phòng (Trung tâm).').map(x=>'<p style="font-size:11pt">'+e(x)+'</p>').join('')+'</td>'
  +'<td class="c" style="width:50%">'+lines(o.cd||'VIỆN TRƯỞNG').map(x=>'<p><b>'+e(x)+'</b></p>').join('')+'<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p><b>'+e(o.ten)+'</b></p></td></tr></table>'}
-function vbDoc(html,ten){const doc='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><style>@page Section1{size:21cm 29.7cm;margin:2cm 2cm 2cm 3cm}div.Section1{page:Section1}body{font-family:"Times New Roman";font-size:14pt}'+VB_CSS+'</style></head><body><div class="Section1">'+html+'</div></body></html>';
+function vbDoc(html,ten,mar){const doc='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><style>@page Section1{size:21cm 29.7cm;margin:'+(mar||'2cm 2cm 2cm 3cm')+'}div.Section1{page:Section1}body{font-family:"Times New Roman";font-size:14pt}'+VB_CSS+'</style></head><body><div class="Section1">'+html+'</div></body></html>';
  try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['﻿'+doc],{type:'application/msword'}));a.download=ten;document.body.appendChild(a);a.click();a.remove()}catch(e){}}
 // ===== Tờ trình đi công tác (mẫu 22.03NT_TTr-2025, định dạng theo chuẩn công văn) =====
 const CT_PC=200000,CT_PHONG=300000;
@@ -805,60 +805,45 @@ function dnntGoiY(){const k=ctV('dnDT');const T=TL_HD[k];const B=$('dnntGY');if(
  +'<div style="font-size:12px;color:var(--lmut);margin-top:4px">Trong tháng: (thù lao công việc thực hiện × % đạt '+fT(cv)+' trđ + xây dựng thuyết minh, quản lý chung '+fT(T.ql)+' ÷ '+T.thang+' tháng = '+fT(ql)+' trđ) ÷ tổng thù lao '+fT(T.tong)+' trđ = <b>'+pct(gyT)+'%</b> (không tính thuê chuyên gia).'+(ct.length?' Chi tiết: '+esc(ct.join('; '))+'.':'')+'</div>'
  +(T.lk!=null?'<div style="font-size:12px;margin-top:4px">Lũy kế đã nghiệm thu: <b>'+pct(T.lk)+'%</b> ('+esc(T.lkNguon)+'); khối lượng thực tế đã hoàn thành đến kỳ trước theo dự toán: <b>'+pct(thucTe)+'%</b> (công việc đã xong '+fT(da)+' trđ + quản lý chung '+soTh+'/'+T.thang+' tháng).'+(thieu>0.5?' <span style="color:#c0392b">⚠️ Các kỳ trước đề nghị thấp hơn thực tế '+pct(thieu)+'% – đề xuất cộng thêm vào kỳ này.</span>':thieu<-0.5?' <span style="color:#e08a1e">⚠️ Lũy kế đã nghiệm thu cao hơn thực tế '+pct(-thieu)+'% – lưu ý không đề nghị vượt.</span>':' ✅ Lũy kế khớp thực tế.')+'</div>':'')+'</div>'}
 function dnntObj(){const f=$('paper');const d=f?readForm(f):{};const k=d.sdk||ctV('dnDT');const x=DT0.find(y=>y.sdk===k)||{};d.cap=x.cap||'Tập đoàn TKV';d.ngay=d.ngay||now().slice(0,10);return d}
-function dnntHTML(d){const e=x=>esc(x||'');const [y,m,dd]=(d.ngay||'').split('-');const [ty,tm]=(d.thang||'').split('-');const th=tm?(+tm)+'/'+ty:'…/…';
- const dv=String(d.donvi||'').trim();const dvHoa=dv.replace(/^TT\s*/i,'TRUNG TÂM ').replace(/^Phòng\s*/i,'PHÒNG ').toUpperCase();
+function dnntHTML(d){const e=x=>esc(x||'');const [y,m,dd]=(d.ngay||'').split('-');const [ty,tm]=(d.thang||'').split('-');const th=tm?tm+'/'+ty:'…/…';
  const lines=t=>String(t||'').split('\n').map(x=>x.replace(/\s+$/,'')).filter(x=>x.trim());
- const p=(t,st)=>'<p style="'+(st||'')+'">'+t+'</p>';const nd=t=>lines(t).map(x=>p(e(x.trim()).replace(/^\+/,'&nbsp;&nbsp;&nbsp;+'),'text-indent:0;padding-left:'+(/^\s*\+/.test(x)?'1.25cm':'0.6cm'))).join('')||p('…');
- const capQL=/Công Thương/.test(d.cap)?'Bộ Công Thương':'Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam';
- const dau='<table class="dau"><tr><td class="c nw" style="width:44%;padding-right:12px"><p style="font-size:12pt">VIỆN CƠ KHÍ NĂNG LƯỢNG VÀ MỎ<br>VINACOMIN</p><p style="font-size:12pt"><b><u>'+e(dvHoa)+'</u></b></p></td><td class="c nw" style="width:55%"><p style="font-size:12pt"><b>CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</b></p><p style="font-size:13pt"><b><u>Độc lập - Tự do - Hạnh phúc</u></b></p></td></tr><tr><td></td><td style="text-align:right"><p style="font-size:13pt;margin-top:6pt"><i>Hà Nội, ngày '+(dd?+dd:'&nbsp;&nbsp;&nbsp;')+' tháng '+(m?+m:'&nbsp;&nbsp;')+' năm '+(y||'')+'</i></p></td></tr></table>';
- const muc=(n,t)=>p('<b>'+n+' '+t+'</b>','text-indent:0');const pt=String(d.pt||'').replace('%','').trim();const dam=d.camket?d.camket!=='khong':!/không/i.test(d.tdo||'');
- const ky=[['CHỦ NHIỆM ĐỀ TÀI',d.cn],[dvHoa,''],['PHÒNG KHCN',''],['DUYỆT VIỆN','']];
- return '<div class="vb">'+dau+'<p>&nbsp;</p><p class="c"><b>BÁO CÁO TIẾN ĐỘ ĐÃ THỰC HIỆN VÀ ĐỀ NGHỊ NGHIỆM THU<br>KHỐI LƯỢNG CÔNG VIỆC TRONG THÁNG '+th+'</b></p><p class="c"><i>(Phục vụ kiểm tra, đánh giá)</i></p><p>&nbsp;</p>'
- +'<table style="width:auto;margin:0 auto"><tr><td style="vertical-align:top"><p>Kính gửi:</p></td><td><p>- Viện trưởng Viện Cơ khí Năng lượng và Mỏ - Vinacomin;</p><p>- Phòng Khoa học Công nghệ.</p></td></tr></table><p>&nbsp;</p>'
- +'<div class="nd">'+muc('1.','Tên nhiệm vụ: ')+p(e(d.ten),'text-indent:0;padding-left:0.6cm')
- +p('- Chủ nhiệm nhiệm vụ: '+e(d.cn),'text-indent:0;padding-left:0.6cm')+p('- Số đăng ký: '+e(d.sdk),'text-indent:0;padding-left:0.6cm')+p('- Kinh phí thực hiện: '+e(d.kp)+' triệu đồng','text-indent:0;padding-left:0.6cm')
- +p('- Thời gian thực hiện: '+e(d.bd)+' – '+e(d.kt),'text-indent:0;padding-left:0.6cm')+p('- Cấp quản lý: '+capQL,'text-indent:0;padding-left:0.6cm')
- +muc('2.','Ngày báo cáo: </b>'+(dd?+dd:'…')+'/'+(m?+m:'…')+'/'+(y||'…')+'<b>')
- +muc('3.','Trung tâm/Phòng chủ trì thực hiện nhiệm vụ: </b>'+e(dv)+'<b>')
- +muc('4.','Báo cáo nội dung khoa học, tiến độ thực hiện (đến thời điểm kiểm tra, đánh giá)')
- +p('<b><i>4.1. Các nội dung công việc đã hoàn thành</i></b>','text-indent:0;padding-left:0.6cm')+nd(d.ht)
- +p('<b><i>4.2. Các nội dung công việc đã thực hiện trong tháng '+th+'</i></b>','text-indent:0;padding-left:0.6cm')+nd(d.trongthang)
- +muc('5.','Kinh phí đã thực hiện: </b>'+(d.kpth?e(d.kpth)+' triệu đồng':'…')+'<b>')
- +muc('6.','Tự nhận xét và đánh giá kết quả đạt được so với yêu cầu trong kỳ báo cáo')
- +p('- Số lượng: '+e(d.sl),'text-indent:0;padding-left:0.6cm')+p('- Chất lượng: '+e(d.cl),'text-indent:0;padding-left:0.6cm')+p('- Tiến độ: '+e(d.tdo),'text-indent:0;padding-left:0.6cm')
- +muc('7.','Dự kiến những công việc cần triển khai tiếp trong tháng sau')+nd(d.ke)
- +muc('8.','Khối lượng công việc đề nghị nghiệm thu trong tháng '+th+': </b>'+(pt?e(pt)+'%':'…%')+'<b>')
- +muc('9.','Cam kết của chủ nhiệm nhiệm vụ:')+p((dam?'☒':'☐')+' Đảm bảo tiến độ &nbsp;&nbsp;&nbsp; '+(dam?'☐':'☒')+' Không đảm bảo tiến độ','text-indent:0;padding-left:0.6cm')
- +muc('10.','Kiến nghị')+p('Kính đề nghị Viện cho nghiệm thu khối lượng công việc đã thực hiện.')+'</div><p>&nbsp;</p>'
- +'<table><tr>'+ky.map(x=>'<td class="c" style="width:25%"><p style="font-size:12pt"><b>'+e(x[0])+'</b></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p style="font-size:13pt"><b>'+e(x[1])+'</b></p></td>').join('')+'</tr></table></div>'}
-function dnntDoc(){const d=dnntObj();const [ty,tm]=(d.thang||'').split('-');vbDoc(dnntHTML(d),(d.sdk||'').replace('/','').replace(/^(\d\d)([A-Z]+)(\d\d)$/,'$3.$1$2')+'_BC_Tien-do-de-nghi-NT-T'+(tm||'')+'-'+(ty||'')+'_'+(d.ngay||'').replace(/-/g,'')+'_v1.doc');addLog('Xuất báo cáo tiến độ – đề nghị nghiệm thu '+d.sdk)}
-function dnntIn(){const w=window.open('','_blank');if(!w)return;w.document.write('<html><head><meta charset="utf-8"><title>Báo cáo tiến độ – đề nghị nghiệm thu</title><style>@page{size:A4;margin:2cm 2cm 2cm 3cm}'+VB_CSS+'</style></head><body>'+dnntHTML(dnntObj())+'</body></html>');w.document.close();setTimeout(()=>w.print(),300)}
+ const nd=t=>lines(t).map(x=>'<p style="padding-left:'+(/^\s*\+/.test(x)?'0.6cm':'0')+'">'+e(x.trim())+'</p>').join('')||'<p>…</p>';
+ const dam=d.camket?d.camket!=='khong':!/không|chậm/i.test(d.tdo||'');
+ return dnntLayout({dvH:e(dvHoa(d.donvi)),ngayDong:'Hà Nội, ngày '+(dd?+dd:'&nbsp;&nbsp;&nbsp;')+' tháng '+(m?+m:'&nbsp;&nbsp;')+' năm '+(y||''),thang:th,thang2:th,ten:e(d.ten),cn:e(d.cn),sdk:e(d.sdk),kp:e(d.kp),bd:e(d.bd),kt:e(d.kt),
+  cap:/Công Thương/.test(d.cap||'')?'Bộ Công Thương':'Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam',ngay:(dd||'…')+'/'+(m||'…')+'/'+(y||'…'),donvi:e(d.donvi),ht:nd(d.ht),trongthang:nd(d.trongthang),kpth:d.kpth?e(d.kpth):'…',sl:e(d.sl),cl:e(d.cl),tdo:e(d.tdo),ke:nd(d.ke),pt:e(String(d.pt||'').replace('%',''))||'…',
+  cam:'<p>'+(dam?'☒':'☐')+' Đảm bảo tiến độ</p><p>'+(dam?'☐':'☒')+' Không đảm bảo tiến độ</p>',cnKy:e(d.cn)})}
+function dnntDoc(){const d=dnntObj();const [ty,tm]=(d.thang||'').split('-');vbDoc('<style>'+DN_CSS+'</style>'+dnntHTML(d),(d.sdk||'').replace('/','').replace(/^(\d\d)([A-Z]+)(\d\d)$/,'$3.$1$2')+'_BC_Tien-do-de-nghi-NT-T'+(tm||'')+'-'+(ty||'')+'_'+(d.ngay||'').replace(/-/g,'')+'_v1.doc','2cm 1.5cm 2cm 2.5cm');addLog('Xuất báo cáo tiến độ – đề nghị nghiệm thu '+d.sdk)}
+function dnntIn(){const w=window.open('','_blank');if(!w)return;w.document.write('<html><head><meta charset="utf-8"><title>Báo cáo tiến độ – đề nghị nghiệm thu</title><style>@page{size:A4;margin:2cm 1.5cm 2cm 2.5cm}'+DN_CSS+'</style></head><body>'+dnntHTML(dnntObj())+'</body></html>');w.document.close();setTimeout(()=>w.print(),300)}
 function dnntXem(){const B=$('dnntXem');if(!B)return;B.innerHTML='<style>'+VB_CSS+'</style>'+dnntHTML(dnntObj())}
 function dnntGuiDuoc(sdk){const r=ROLE();return r===1||(r===4&&myDT().includes(sdk))}
+// Bố cục chung theo mẫu NT_Mau-phieu-nghiem-thu-hang-thang.docx: A4, lề trên/dưới 2 cm, trái 2,5 cm, phải 1,5 cm; chữ 13pt; cột số thứ tự riêng (thụt treo)
+const DN_CSS='.dn{font-family:"Times New Roman",serif;font-size:13pt;line-height:1.3;color:#000}.dn p{margin:0;font-size:13pt}.dn b,.dn i,.dn u{font-size:inherit}.dn table{border-collapse:collapse;width:100%}.dn td{border:0!important;padding:1px 2px;vertical-align:top}.dn .c{text-align:center}.dn .nw{white-space:nowrap}.dn td.so{width:0.9cm}.dn .ndl p{text-align:justify}';
+function dnntLayout(X,d){const e=x=>esc(x||'');const dvH=X.dvH;
+ const row=(so,html)=>'<tr><td class="so"><p>'+(so?'<b>'+so+'</b>':'')+'</p></td><td>'+html+'</td></tr>';
+ return '<div class="dn"><table><tr><td class="c nw" style="width:44%;padding-right:12px"><p style="font-size:12pt">VIỆN CƠ KHÍ NĂNG LƯỢNG VÀ MỎ<br>VINACOMIN</p><p style="font-size:12pt"><b><u>'+dvH+'</u></b></p></td><td class="c nw" style="width:56%"><p style="font-size:12pt"><b>CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</b></p><p><b><u>Độc lập - Tự do - Hạnh phúc</u></b></p></td></tr><tr><td></td><td style="text-align:right"><p style="margin-top:6pt"><i>'+X.ngayDong+'</i></p></td></tr></table><p>&nbsp;</p>'
+ +'<p class="c"><b>BÁO CÁO TIẾN ĐỘ ĐÃ THỰC HIỆN VÀ ĐỀ NGHỊ NGHIỆM THU<br>KHỐI LƯỢNG CÔNG VIỆC TRONG THÁNG '+X.thang+'</b></p><p class="c"><i>(Phục vụ kiểm tra, đánh giá)</i></p><p>&nbsp;</p>'
+ +'<table style="width:auto;margin-left:1.5cm"><tr><td><p>Kính gửi:</p></td><td style="padding-left:8px"><p>- Viện trưởng Viện Cơ khí Năng lượng và Mỏ - Vinacomin;</p><p>- Phòng Khoa học Công nghệ.</p></td></tr></table><p>&nbsp;</p>'
+ +'<table class="ndl">'
+ +row('1.','<p><b>Tên nhiệm vụ:</b> '+X.ten+'</p><p>Chủ nhiệm nhiệm vụ: '+X.cn+'</p><p>Số đăng ký: '+X.sdk+'</p><p>Kinh phí thực hiện: '+X.kp+' triệu đồng</p><p>Thời gian thực hiện: '+X.bd+' – '+X.kt+'</p><p>Cấp quản lý: '+X.cap+'</p>')
+ +row('2.','<p><b>Ngày báo cáo:</b> '+X.ngay+'</p>')
+ +row('3.','<p><b>Trung tâm/Phòng chủ trì thực hiện nhiệm vụ:</b> '+X.donvi+'</p>')
+ +row('4.','<p><b>Báo cáo nội dung khoa học, tiến độ thực hiện (đến thời điểm kiểm tra, đánh giá)</b></p><p><b><i>4.1. Các nội dung công việc đã hoàn thành</i></b></p>'+X.ht+'<p><b><i>4.2. Các nội dung công việc đã thực hiện trong tháng '+X.thang2+'</i></b></p>'+X.trongthang)
+ +row('5.','<p><b>Kinh phí đã thực hiện:</b> '+X.kpth+' triệu đồng</p>')
+ +row('6.','<p><b>Tự nhận xét và đánh giá kết quả đạt được so với yêu cầu trong kỳ báo cáo:</b> Đánh giá các điểm chính về số lượng, chất lượng, tiến độ thực hiện và các vấn đề khác</p><p>- Số lượng: '+X.sl+'</p><p>- Chất lượng: '+X.cl+'</p><p>- Tiến độ: '+X.tdo+'</p>')
+ +row('7.','<p><b>Dự kiến những công việc cần triển khai tiếp trong tháng sau</b></p>'+X.ke)
+ +row('8.','<p><b>Khối lượng công việc đề nghị nghiệm thu trong tháng '+X.thang2+':</b> '+X.pt+' %</p>')
+ +row('9.','<p><b>Cam kết của chủ nhiệm nhiệm vụ:</b></p>'+X.cam)
+ +row('10.','<p><b>Kiến nghị</b></p><p>Kính đề nghị Viện cho nghiệm thu khối lượng công việc đã thực hiện.</p>')
+ +'</table><p>&nbsp;</p><table><tr>'+[['CHỦ NHIỆM ĐỀ TÀI',X.cnKy],[dvH,''],['PHÒNG KHCN',''],['DUYỆT VIỆN','']].map(x=>'<td class="c" style="width:25%"><p style="font-size:12pt"><b>'+x[0]+'</b></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p><b>'+x[1]+'</b></p></td>').join('')+'</tr></table></div>'}
+const dvHoa=dv=>String(dv||'').trim().replace(/^TT\s*/i,'TRUNG TÂM ').replace(/^Phòng\s*/i,'PHÒNG ').toUpperCase();
 function dnntFormHTML(k){const x=DT0.find(y=>y.sdk===k)||{};const capQL=/Công Thương/.test(x.cap||'')?'Bộ Công Thương':'Tập đoàn Công nghiệp Than - Khoáng sản Việt Nam';
  const I=(n,w,ph,ro)=>'<input name="'+n+'" class="fi" style="width:'+w+'"'+(ph?' placeholder="'+ph+'"':'')+(ro?' readonly':'')+'>';
  const T=(n,r,ph)=>'<textarea name="'+n+'" class="fta" rows="'+r+'"'+(ph?' placeholder="'+ph+'"':'')+'></textarea>';
- const P=(t,st)=>'<p style="text-indent:0;'+(st||'')+'">'+t+'</p>';const S='padding-left:0.6cm';
- return '<style>'+VB_CSS+'.vb .fi{font:inherit;border:0;border-bottom:1px dotted #888;background:#fffbe6;padding:0 3px}.vb .fi[readonly]{background:#f3f4f6}.vb .fta{font:inherit;width:100%;border:1px dotted #888;background:#fffbe6;padding:2px 4px;box-sizing:border-box;resize:vertical;line-height:1.3}</style>'
- +'<div class="vb"><table class="dau"><tr><td class="c nw" style="width:44%;padding-right:12px"><p style="font-size:12pt">VIỆN CƠ KHÍ NĂNG LƯỢNG VÀ MỎ<br>VINACOMIN</p><p style="font-size:12pt"><b><u id="dnH_dv"></u></b></p></td><td class="c nw" style="width:56%"><p style="font-size:12pt"><b>CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</b></p><p style="font-size:13pt"><b><u>Độc lập - Tự do - Hạnh phúc</u></b></p></td></tr><tr><td></td><td style="text-align:right"><p style="font-size:13pt;margin-top:6pt"><i id="dnH_ngay"></i></p></td></tr></table><p>&nbsp;</p>'
- +'<p class="c"><b>BÁO CÁO TIẾN ĐỘ ĐÃ THỰC HIỆN VÀ ĐỀ NGHỊ NGHIỆM THU<br>KHỐI LƯỢNG CÔNG VIỆC TRONG THÁNG '+I('thang','2.6cm','mm/yyyy')+'</b></p><p class="c"><i>(Phục vụ kiểm tra, đánh giá)</i></p><p>&nbsp;</p>'
- +'<table style="width:auto;margin:0 auto"><tr><td style="vertical-align:top"><p>Kính gửi:</p></td><td><p>- Viện trưởng Viện Cơ khí Năng lượng và Mỏ - Vinacomin;</p><p>- Phòng Khoa học Công nghệ.</p></td></tr></table><p>&nbsp;</p>'
- +P('<b>1. Tên nhiệm vụ:</b>')+'<div style="'+S+'">'+T('ten',2)+'</div>'
- +P('- Chủ nhiệm nhiệm vụ: '+I('cn','7cm'),S)+P('- Số đăng ký: '+I('sdk','3cm','',1),S)+P('- Kinh phí thực hiện: '+I('kp','6cm')+' triệu đồng',S)
- +P('- Thời gian thực hiện: '+I('bd','2.4cm','mm/yyyy')+' – '+I('kt','2.4cm','mm/yyyy'),S)+P('- Cấp quản lý: '+capQL,S)
- +P('<b>2. Ngày báo cáo:</b> '+I('ngay','3cm','dd/mm/yyyy'))
- +P('<b>3. Trung tâm/Phòng chủ trì thực hiện nhiệm vụ:</b> '+I('donvi','5cm'))
- +P('<b>4. Báo cáo nội dung khoa học, tiến độ thực hiện (đến thời điểm kiểm tra, đánh giá)</b>')
- +P('<b><i>4.1. Các nội dung công việc đã hoàn thành</i></b>',S)+'<div style="'+S+'">'+T('ht',6,'Tick ở bảng "Nội dung, công việc theo hợp đồng" để tự điền')+'</div>'
- +P('<b><i>4.2. Các nội dung công việc đã thực hiện trong tháng <span id="dnH_th"></span></i></b>',S)+'<div style="'+S+'">'+T('trongthang',4)+'</div>'
- +P('<b>5. Kinh phí đã thực hiện:</b> '+I('kpth','3cm','',1)+' triệu đồng')
- +P('<b>6. Tự nhận xét và đánh giá kết quả đạt được so với yêu cầu trong kỳ báo cáo:</b>')
- +P('- Số lượng: '+I('sl','calc(100% - 3.4cm)','',1),S)+P('- Chất lượng: '+I('cl','calc(100% - 3.6cm)','',1),S)+P('- Tiến độ: '+I('tdo','calc(100% - 3.2cm)','',1),S)
- +P('<b>7. Dự kiến những công việc cần triển khai tiếp trong tháng sau</b>')+'<div style="'+S+'">'+T('ke',3)+'</div>'
- +P('<b>8. Khối lượng công việc đề nghị nghiệm thu trong tháng <span id="dnH_th2"></span>:</b> '+I('pt','2cm')+' %')
- +P('<b>9. Cam kết của chủ nhiệm nhiệm vụ:</b>')+P('<label><input type="radio" name="camket" value="dam" checked disabled> Đảm bảo tiến độ</label> &nbsp;&nbsp; <label><input type="radio" name="camket" value="khong" disabled> Không đảm bảo tiến độ</label>',S)
- +P('<b>10. Kiến nghị</b>')+P('Kính đề nghị Viện cho nghiệm thu khối lượng công việc đã thực hiện.','text-indent:1.25cm')+'<p>&nbsp;</p>'
- +'<table><tr>'+[['CHỦ NHIỆM ĐỀ TÀI','<span id="dnH_cn"></span>'],['<span id="dnH_dv2"></span>',''],['PHÒNG KHCN',''],['DUYỆT VIỆN','']].map(x=>'<td class="c" style="width:25%"><p style="font-size:12pt"><b>'+x[0]+'</b></p><p>&nbsp;</p><p>&nbsp;</p><p style="font-size:13pt"><b>'+x[1]+'</b></p></td>').join('')+'</tr></table></div>'
+ const X={dvH:'<span id="dnH_dv"></span>',ngayDong:'<span id="dnH_ngay"></span>',thang:I('thang','2.4cm','mm/yyyy'),thang2:'<span id="dnH_th"></span>',ten:T('ten',2),cn:I('cn','6cm'),sdk:I('sdk','2.6cm','',1),kp:I('kp','9cm'),bd:I('bd','2.2cm','mm/yyyy'),kt:I('kt','2.2cm','mm/yyyy'),cap:capQL,ngay:I('ngay','3cm','dd/mm/yyyy'),donvi:I('donvi','4.5cm'),
+  ht:T('ht',6,'Tick ở bảng "Nội dung, công việc theo hợp đồng" để tự điền'),trongthang:T('trongthang',4),kpth:I('kpth','3cm','',1),sl:I('sl','calc(100% - 3cm)','',1),cl:I('cl','calc(100% - 3.2cm)','',1),tdo:I('tdo','calc(100% - 2.8cm)','',1),ke:T('ke',3),pt:I('pt','2cm'),
+  cam:'<p><label><input type="radio" name="camket" value="dam" checked disabled> Đảm bảo tiến độ</label></p><p><label><input type="radio" name="camket" value="khong" disabled> Không đảm bảo tiến độ</label></p>',cnKy:'<span id="dnH_cn"></span>'};
+ return '<style>'+DN_CSS+'.dn .fi{font:inherit;border:0;border-bottom:1px dotted #888;background:#fffbe6;padding:0 3px}.dn .fi[readonly]{background:#f3f4f6}.dn .ndl p{text-align:left}.dn input[type=radio]{width:auto!important;display:inline-block!important;margin:0 6px 0 0;vertical-align:middle}.dn label{display:inline!important;font-size:13pt}.dn .fi{font-size:13pt!important;font-family:\'Times New Roman\',serif!important}.dn .fta{font-family:\'Times New Roman\',serif!important;font-size:13pt!important;width:100%;border:1px dotted #888;background:#fffbe6;padding:2px 4px;box-sizing:border-box;resize:vertical;line-height:1.3}</style>'
+ +dnntLayout(X)
  +'<div class="lab" style="margin-top:18px"><b>GỬI HỒ SƠ (chủ nhiệm đề tài)</b><div class="note" style="margin:6px 0">Chỉ chủ nhiệm đề tài nộp, bằng email đã đăng ký với Phòng KH&amp;CN. Bấm "Gửi mã" để nhận mã xác thực 6 số qua email đó.</div>'
  +'<div class="ln">Email chủ nhiệm *: <input name="email" type="email" placeholder="ten@iemm.com.vn"> <button type="button" class="btn sm" onclick="guiMaNT()">Gửi mã</button></div><div class="ln">Mã xác thực (6 số) *: <input name="otp" style="max-width:120px" placeholder="******"></div>'
  +'<div class="ln fileln">Tài liệu đính kèm * (báo cáo tiến độ, bảng chia lương…): <input type="file" name="files" multiple></div></div>'}
@@ -872,11 +857,11 @@ function dnntTienDo(){const k=ctV('dnDT');const f=$('paper');if(!f)return;const 
  set('sl',cham?'Chưa đảm bảo khối lượng công việc theo Hợp đồng':'Đảm bảo khối lượng công việc theo Hợp đồng');set('cl','Đảm bảo chất lượng theo Hợp đồng');
  set('tdo',cham?'Chậm '+cham+' tháng so với Hợp đồng ('+ly+')':'Đảm bảo tiến độ theo Hợp đồng');
  const r=f.querySelector('[name=camket][value='+(cham?'khong':'dam')+']');if(r)r.checked=true}
-function dnntDau(){const f=$('paper');if(!f||!$('dnH_dv'))return;const g=n=>(f.querySelector('[name='+n+']')||{}).value||'';const dv=g('donvi').trim();const dvH=dv.replace(/^TT\s*/i,'TRUNG TÂM ').replace(/^Phòng\s*/i,'PHÒNG ').toUpperCase();
- const nd=isoD(g('ngay'));const [y,m,d]=nd.split('-');$('dnH_ngay').textContent='Hà Nội, ngày '+(d?+d:'…')+' tháng '+(m?+m:'…')+' năm '+(y||'…');$('dnH_dv').textContent=dvH;$('dnH_dv2').textContent=dvH;
- const th=g('thang');$('dnH_th').textContent=th;$('dnH_th2').textContent=th;$('dnH_cn').textContent=g('cn');const c=f.querySelector('[name=camket][value=khong]');if(c&&!c.dataset.sua){}
+function dnntDau(){const f=$('paper');if(!f||!$('dnH_dv'))return;const g=n=>(f.querySelector('[name='+n+']')||{}).value||'';const dvH=dvHoa(g('donvi'));
+ const [y,m,d]=isoD(g('ngay')).split('-');$('dnH_ngay').textContent='Hà Nội, ngày '+(d?+d:'…')+' tháng '+(m?+m:'…')+' năm '+(y||'…');document.querySelectorAll('#dnH_dv').forEach(x=>x.textContent=dvH);
+ document.querySelectorAll('#dnH_th').forEach(x=>x.textContent=g('thang'));$('dnH_cn').textContent=g('cn');
  f.querySelectorAll('.fta').forEach(t=>{t.style.height='auto';t.style.height=(t.scrollHeight+4)+'px'})}
-function dnntMo(){const k=ctV('dnDT');const B=$('dnntBox');if(!B)return;B.appendChild($('sent'));B.appendChild($('paper'));$('ftype').value='nt';$('paper').innerHTML=dnntFormHTML(k);$('paper').classList.add('dnF');$('paper').querySelector('[name=ngay]').value=fmD(now().slice(0,10));$('sent').innerHTML='';
+function dnntMo(){const k=ctV('dnDT');const B=$('dnntBox');if(!B)return;B.appendChild($('sent'));B.appendChild($('paper'));$('ftype').value='nt';$('paper').innerHTML=dnntFormHTML(k);$('paper').classList.add('dnF');$('paper').style.cssText='padding:2cm 1.5cm 2cm 2.5cm;max-width:21cm;box-sizing:border-box;background:#fff';$('paper').querySelector('[name=ngay]').value=fmD(now().slice(0,10));$('sent').innerHTML='';
  const f=$('paper');const set=(n,v)=>{const e=f.querySelector('[name='+n+']');if(e&&v!=null)e.value=v};
  set('sdk',k);dienDT(f.querySelector('[name=sdk]'));const d=DT0.find(x=>x.sdk===k)||{};if(!f.querySelector('[name=ten]').value)set('ten',d.ten);if(!f.querySelector('[name=cn]').value)set('cn',d.cn);if(!f.querySelector('[name=donvi]').value)set('donvi',d.bp);if(!f.querySelector('[name=kp]').value)set('kp',KP_TONG[k]!=null?String(KP_TONG[k]).replace('.',','):d.kp);
  const tg=(d.tg||'').match(/\d{1,2}\/\d{4}/g)||[];if(tg.length){if(!f.querySelector('[name=bd]').value)set('bd',tg[0].padStart(7,'0'));if(!f.querySelector('[name=kt]').value)set('kt',tg[tg.length-1].padStart(7,'0'))}
