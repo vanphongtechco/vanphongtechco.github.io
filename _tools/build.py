@@ -28,11 +28,15 @@ if r.returncode: sys.exit("LỖI khi sinh trang sản phẩm")
 import hashlib
 _v = hashlib.md5((REPO / "assets" / "bao-gia.js").read_bytes()).hexdigest()[:8]
 _v2 = hashlib.md5((REPO / "assets" / "doc-bai.js").read_bytes()).hexdigest()[:8]
+# bảo mật: CSP + referrer cho mọi trang (GitHub Pages không cho đặt header)
+_SEC = """<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: http: data: blob:; media-src 'self' https://translate.googleapis.com blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">"""
 for _f in REPO.rglob("*.html"):
     if ".git" in _f.parts or "_tools" in _f.parts: continue
     _t = _f.read_text(encoding="utf-8")
     _n = re.sub(r'/assets/bao-gia\.js(\?v=[0-9a-f]+)?"', f'/assets/bao-gia.js?v={_v}"', _t)
     _n = re.sub(r'/assets/doc-bai\.js(\?v=[0-9a-f]+)?"', f'/assets/doc-bai.js?v={_v2}"', _n)
+    _n = re.sub(r'<meta http-equiv="Content-Security-Policy"[^>]*>(<meta name="referrer"[^>]*>)?', '', _n)
+    _n = _n.replace('<meta charset="utf-8">', '<meta charset="utf-8">' + _SEC, 1)
     if _n != _t: _f.write_text(_n, encoding="utf-8")
 if "catalog" in sys.argv: subprocess.run([sys.executable, str(T / "catalog.py")], check=True)
 print("XONG – kiểm tra rồi commit/push.")
